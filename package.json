@@ -1,0 +1,41 @@
+{
+  "name": "pareto-boekhouding",
+  "version": "0.0.0",
+  "description": "Een tool voor het bijhouden van een boekhouding in text vorm",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "./dist/index.js",
+  "bin": {},
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "documentation"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Corno",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corno/pareto-boekhouding.git"
+  },
+  "bugs": {
+    "url": "https://github.com/corno/pareto-boekhouding/issues"
+  },
+  "homepage": "https://github.com/corno/pareto-boekhouding#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "exupery-core-alg": "^0.1.4",
+    "exupery-core-data": "^0.1.9",
+    "pareto-fountain-pen": "^0.1.12",
+    "pareto-standard-operations": "^0.1.2"
+  }
+}
