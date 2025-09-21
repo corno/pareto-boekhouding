@@ -1,6 +1,6 @@
 {
   "name": "pareto-boekhouding",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Een tool voor het bijhouden van een boekhouding in text vorm",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
