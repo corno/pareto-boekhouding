@@ -7,7 +7,7 @@ import * as sh_g from 'exupery-core-data/dist/shorthands/unresolved_transformati
 import * as _i_out from "../../generated/interface/schemas/boekhouding/data_types/target"
 import * as _i_signatures from "./signatures"
 
-import { pure } from "pareto-standard-operations"
+import { $$ as op_dictionary_filter } from "pareto-standard-operations/dist/pure/dictionary/filter"
 
 export const Beheer: _i_signatures.Beheer = ($) => ({
     'BTW-categorieen': sh_g.wrap_dictionary(_ea.cc($.Beheer['BTW-categorieen'], ($) => $.map(($): _i_out.Beheer.BTW$mi_categorieen.D<_ed.Source_Location> => ({
@@ -418,7 +418,7 @@ export const Jaren: _i_signatures.Jaren = ($, $p) => sh_g.wrap_dictionary($.Jare
     'Startdatum boekjaar': _ea.cc($['Startdatum boekjaar'], ($) => $),
 })))
 export const Mutaties: _i_signatures.Mutaties = ($, $p) => ({
-    'Bankrekening Mutatie Verwerkingen': _ea.cc($.Bankrekeningen, ($) => sh_g.wrap_dictionary($.map(($) => sh_g.wrap_dictionary(pure.dictionary.filter($.Mutaties.map(($) => _ea.cc($.Status, ($): _pt.Optional_Value<_i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<_ed.Source_Location>> => {
+    'Bankrekening Mutatie Verwerkingen': _ea.cc($.Bankrekeningen, ($) => sh_g.wrap_dictionary($.map(($) => sh_g.wrap_dictionary(op_dictionary_filter($.Mutaties.map(($) => _ea.cc($.Status, ($): _pt.Optional_Value<_i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<_ed.Source_Location>> => {
         switch ($[0]) {
             case 'Nog te verwerken': return _ea.ss($, ($) => _ea.not_set())
             case 'Verwerkt': return _ea.ss($, ($) => _ea.set(_ea.cc($.Afhandeling, ($): _i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<_ed.Source_Location> => {
