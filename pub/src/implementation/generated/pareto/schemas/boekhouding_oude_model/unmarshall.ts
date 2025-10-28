@@ -2,9 +2,9 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
-import * as _i_in from "../../../interface/core/astn_source"
-import * as _i_out from "../../../interface/schemas/boekhouding_oude_model/data_types/target"
-import * as _i_signatures from "../../../interface/schemas/boekhouding_oude_model/unmarshall"
+import * as _i_in from "../../../../../interface/generated/pareto/core/astn_source"
+import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/data_types/target"
+import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/unmarshall"
 
 
 export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(

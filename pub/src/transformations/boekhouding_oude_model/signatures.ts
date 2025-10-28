@@ -1,8 +1,8 @@
 import * as _pt from 'exupery-core-types'
 import * as _ed from 'exupery-core-data'
 
-import * as _i_in from "../../generated/interface/schemas/boekhouding_oude_model/data_types/source"
-import * as _i_out from "../..//generated/interface/schemas/boekhouding/data_types/target"
+import * as _i_in from "../../interface/generated/pareto/schemas/boekhouding_oude_model/data_types/source"
+import * as _i_out from "../../interface/generated/pareto/schemas/boekhouding/data_types/target"
 
 // **** TYPES
 
