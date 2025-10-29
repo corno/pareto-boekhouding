@@ -8,6 +8,8 @@ import * as _i_out from "../../../interface/generated/pareto/schemas/boekhouding
 import * as _i_signatures from "./signatures"
 
 import { $$ as op_dictionary_filter } from "pareto-standard-operations/dist/operations/pure/dictionary/filter"
+import { Signature } from "../../../interface/algorithms/transformations/boekhouding_oude_model/boekhouding"
+
 
 export const Beheer: _i_signatures.Beheer = ($) => ({
     'BTW-categorieen': sh_g.wrap_dictionary(_ea.cc($.Beheer['BTW-categorieen'], ($) => $.map(($): _i_out.Beheer.BTW$mi_categorieen.D<_ed.Source_Location> => ({
