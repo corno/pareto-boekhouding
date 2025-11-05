@@ -7,7 +7,7 @@ import * as sh_g from 'exupery-core-data/dist/shorthands/unresolved_transformati
 import * as _i_out from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
 import * as _i_signatures from "./signatures"
 
-import { $$ as op_dictionary_filter } from "pareto-standard-operations/dist/implementation/operations/pure/dictionary/filter"
+import { $$ as op_dictionary_filter } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/dictionary/filter"
 import { Signature } from "../../../../interface/algorithms/transformations/boekhouding_oude_model/boekhouding"
 
 
