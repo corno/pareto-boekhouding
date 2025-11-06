@@ -202,6 +202,7 @@ export type _T_Root = {
             >
             readonly 'Brondocument': _i_core._T_State_Group<null, 
                 | readonly ['Niet van toepassing', null]
+                | readonly ['Nog toevoegen', null]
                 | readonly ['Ontbreekt', null]
                 | readonly ['Toegevoegd', {
                     readonly 'Document': string
@@ -1717,6 +1718,10 @@ export namespace _T_Root {
                             }
                             export type Niet_van_toepassing = null
                             
+                            export namespace Nog_toevoegen {
+                            }
+                            export type Nog_toevoegen = null
+                            
                             export namespace Ontbreekt {
                             }
                             export type Ontbreekt = null
@@ -1730,6 +1735,7 @@ export namespace _T_Root {
                         }
                         export type SG = 
                             | readonly ['Niet van toepassing', null]
+                            | readonly ['Nog toevoegen', null]
                             | readonly ['Ontbreekt', null]
                             | readonly ['Toegevoegd', {
                                 readonly 'Document': string
@@ -1737,6 +1743,7 @@ export namespace _T_Root {
                     }
                     export type Brondocument = _i_core._T_State_Group<null, 
                         | readonly ['Niet van toepassing', null]
+                        | readonly ['Nog toevoegen', null]
                         | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
                             readonly 'Document': string
@@ -1928,6 +1935,7 @@ export namespace _T_Root {
                     >
                     readonly 'Brondocument': _i_core._T_State_Group<null, 
                         | readonly ['Niet van toepassing', null]
+                        | readonly ['Nog toevoegen', null]
                         | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
                             readonly 'Document': string
@@ -1987,6 +1995,7 @@ export namespace _T_Root {
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Niet van toepassing', null]
+                    | readonly ['Nog toevoegen', null]
                     | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
                         readonly 'Document': string
@@ -2814,6 +2823,7 @@ export namespace _T_Root {
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Niet van toepassing', null]
+                    | readonly ['Nog toevoegen', null]
                     | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
                         readonly 'Document': string
@@ -3070,6 +3080,7 @@ export namespace _T_Root {
             >
             readonly 'Brondocument': _i_core._T_State_Group<null, 
                 | readonly ['Niet van toepassing', null]
+                | readonly ['Nog toevoegen', null]
                 | readonly ['Ontbreekt', null]
                 | readonly ['Toegevoegd', {
                     readonly 'Document': string
@@ -4753,6 +4764,10 @@ export namespace Root {
                             }
                             export type Niet_van_toepassing = null
                             
+                            export namespace Nog_toevoegen {
+                            }
+                            export type Nog_toevoegen = null
+                            
                             export namespace Ontbreekt {
                             }
                             export type Ontbreekt = null
@@ -4766,6 +4781,7 @@ export namespace Root {
                         }
                         export type SG = 
                             | readonly ['Niet van toepassing', null]
+                            | readonly ['Nog toevoegen', null]
                             | readonly ['Ontbreekt', null]
                             | readonly ['Toegevoegd', {
                                 readonly 'Document': string
@@ -4773,6 +4789,7 @@ export namespace Root {
                     }
                     export type Brondocument = _i_core._T_State_Group<null, 
                         | readonly ['Niet van toepassing', null]
+                        | readonly ['Nog toevoegen', null]
                         | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
                             readonly 'Document': string
@@ -4964,6 +4981,7 @@ export namespace Root {
                     >
                     readonly 'Brondocument': _i_core._T_State_Group<null, 
                         | readonly ['Niet van toepassing', null]
+                        | readonly ['Nog toevoegen', null]
                         | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
                             readonly 'Document': string
@@ -5023,6 +5041,7 @@ export namespace Root {
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Niet van toepassing', null]
+                    | readonly ['Nog toevoegen', null]
                     | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
                         readonly 'Document': string
@@ -5850,6 +5869,7 @@ export namespace Root {
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Niet van toepassing', null]
+                    | readonly ['Nog toevoegen', null]
                     | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
                         readonly 'Document': string
@@ -6106,6 +6126,7 @@ export namespace Root {
             >
             readonly 'Brondocument': _i_core._T_State_Group<null, 
                 | readonly ['Niet van toepassing', null]
+                | readonly ['Nog toevoegen', null]
                 | readonly ['Ontbreekt', null]
                 | readonly ['Toegevoegd', {
                     readonly 'Document': string

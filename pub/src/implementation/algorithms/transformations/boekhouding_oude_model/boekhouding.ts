@@ -194,6 +194,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 case 'Toegevoegd': return _ea.ss($, ($) => sh_g.wrap_state_group(['Toegevoegd', ({
                     'Document': _ea.cc($['Document'], ($) => $),
                 })]))
+                case 'Nog toevoegen': return _ea.ss($, ($) => sh_g.wrap_state_group(['Ontbreekt', null]))//FIXME!!!!
                 default: return _ea.au($[0])
             }
         })),

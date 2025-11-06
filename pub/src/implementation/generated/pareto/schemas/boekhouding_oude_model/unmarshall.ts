@@ -1437,6 +1437,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         'properties': ($) => null,
                                                                     }
                                                                 )],
+                                                                'Nog toevoegen': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Nog toevoegen', _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => null,
+                                                                    }
+                                                                )],
                                                                 'Ontbreekt': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Ontbreekt', _i_generic.process_group(
                                                                     $,
                                                                     {

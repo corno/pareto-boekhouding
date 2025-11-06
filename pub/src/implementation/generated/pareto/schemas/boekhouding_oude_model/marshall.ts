@@ -605,6 +605,11 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         'value': ['verbose group', _pa.dictionary_literal({
                         })],
                     }))
+                    case 'Nog toevoegen': return _pa.ss($, ($) => ({
+                        'state': "Nog toevoegen",
+                        'value': ['verbose group', _pa.dictionary_literal({
+                        })],
+                    }))
                     case 'Ontbreekt': return _pa.ss($, ($) => ({
                         'state': "Ontbreekt",
                         'value': ['verbose group', _pa.dictionary_literal({
