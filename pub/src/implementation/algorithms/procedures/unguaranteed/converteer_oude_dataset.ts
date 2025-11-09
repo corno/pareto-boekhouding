@@ -18,13 +18,16 @@ const settings = {
 }
 
 
-export const $$: _easync.Unguaranteed_Procedure_Initializer<_eb.Parameters, _eb.Error> = () => {
+export const $$: _easync.Unguaranteed_Procedure_Initializer<_eb.Parameters, _eb.Error, null> = () => {
     return {
         __start: (on_success, on_error) => {
-            q_read_file.$$({
-                'path': settings['in'],
-                'escape spaces in path': true
-            }).__start(
+            q_read_file.$$(
+                {
+                    'path': settings['in'],
+                    'escape spaces in path': true
+                },
+                null,
+            ).__start(
                 (file_content) => {
                     temp_func(file_content).process(
                         ($) => {
@@ -35,7 +38,8 @@ export const $$: _easync.Unguaranteed_Procedure_Initializer<_eb.Parameters, _eb.
                                         'escape spaces in path': true,
                                     },
                                     'data': $
-                                }
+                                },
+                                null,
                             ).__start(
                                 on_success,
                                 ($) => {
@@ -48,14 +52,14 @@ export const $$: _easync.Unguaranteed_Procedure_Initializer<_eb.Parameters, _eb.
                             _ea.cc($, ($) => {
                                 switch ($[0]) {
                                     case 'parse error': return _ea.ss($, ($) => {
-                                        _ed.log_debug_message(`${$.range.start.relative.line}:${$.range.start.relative.column}-${$.range.end.relative.line}:${$.range.end.relative.column}`, () => {})
+                                        _ed.log_debug_message(`${$.range.start.relative.line}:${$.range.start.relative.column}-${$.range.end.relative.line}:${$.range.end.relative.column}`, () => { })
                                         _ea.cc($.type, ($) => {
                                             switch ($[0]) {
                                                 case 'lexer': return _ea.ss($, ($) => {
-                                                    _ed.log_debug_message(`Lexer error: ${$[0]}`, () => {})
+                                                    _ed.log_debug_message(`Lexer error: ${$[0]}`, () => { })
                                                 })
                                                 case 'parser': return _ea.ss($, ($) => {
-                                                    _ed.log_debug_message(`Parser error: ${$.cause[0]}`, () => {})
+                                                    _ed.log_debug_message(`Parser error: ${$.cause[0]}`, () => { })
                                                 })
                                                 default: return _ea.au($[0])
                                             }
@@ -64,14 +68,14 @@ export const $$: _easync.Unguaranteed_Procedure_Initializer<_eb.Parameters, _eb.
                                     default: return _ea.au($[0])
                                 }
                             })
-                            _ed.log_debug_message($[0], () => {})
+                            _ed.log_debug_message($[0], () => { })
                             on_error({ 'exit code': 1 })
                         }
                     )
 
                 },
                 () => {
-                    _ed.log_debug_message("Could not read input file", () => {})
+                    _ed.log_debug_message("Could not read input file", () => { })
                     on_error({ 'exit code': 1 })
                 }
             )
