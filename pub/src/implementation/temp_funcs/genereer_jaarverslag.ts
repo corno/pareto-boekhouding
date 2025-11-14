@@ -54,7 +54,7 @@ export type Some_Error =
 export const $$ = (
     file_content: string,
 
-): _ea.Refinement_Result<string, Some_Error> => {
+): _et.Refinement_Result<string, Some_Error> => {
 
     return parse(
         file_content,
