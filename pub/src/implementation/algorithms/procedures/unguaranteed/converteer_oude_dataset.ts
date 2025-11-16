@@ -43,7 +43,7 @@ export const $$: Procedure = _easync.create_command_procedure(
             },
         ).transform_error(($) => {
             return { 'exit code': 1 }
-        }).transform_result(($) => {
+        }).refine().transform_result(($) => {
             return {
                 'path': {
                     'path': settings['out filename'],
