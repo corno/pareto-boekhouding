@@ -20,7 +20,7 @@ const settings = {
 
 export type Resources = {
     'queries': {
-        'read file': _et.Query<d_read_file.Parameters, d_read_file.Result, d_read_file.Error>
+        'read file': _et.Data_Preparer<d_read_file.Parameters, d_read_file.Result, d_read_file.Error>
     },
     'commands': {
         'write file': _et.Command<d_write_file.Parameters, d_write_file.Error>
@@ -31,7 +31,7 @@ export type Procedure = _et.Command_Procedure<d_main.Parameters, d_main.Error, R
 
 
 export const $$: Procedure = _easync.create_command_procedure(
-    ($r, $p) => $r.commands['write file'].execute.query(
+    ($r, $p) => $r.commands['write file'].execute.prepare(
         ($) => {
             _ed.log_debug_message(`failed to write converted dataset to ${settings['out filename']}`, () => { })
             return ({ 'exit code': 1 })
@@ -41,9 +41,9 @@ export const $$: Procedure = _easync.create_command_procedure(
                 'path': settings['in'],
                 'escape spaces in path': true
             },
-        ).transform_error(($) => {
+        ).transform_error_temp(($) => {
             return { 'exit code': 1 }
-        }).refine().transform_result(($) => {
+        }).transform(($) => {
             return {
                 'path': {
                     'path': settings['out filename'],
@@ -56,11 +56,11 @@ export const $$: Procedure = _easync.create_command_procedure(
 )
 
 // {
-'path': {
-    'path': settings['out filename'],
-        'escape spaces in path': true,
-            },
-'data': $
+// 'path': {
+//     'path': settings['out filename'],
+//         'escape spaces in path': true,
+//             },
+// 'data': $
 // },
 
 

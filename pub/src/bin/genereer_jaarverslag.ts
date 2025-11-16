@@ -7,7 +7,7 @@ import { $$ as procedure } from "../implementation/algorithms/procedures/unguara
 _eb.run_main_procedure(
     ($r) => {
         return procedure({
-            'procedures': {
+            'commands': {
                 'write file': $r.commands['write file'],
             },
             'queries': {
