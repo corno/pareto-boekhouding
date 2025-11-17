@@ -1,0 +1,391 @@
+DEBUG 2011
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG         9
+DEBUG         11
+DEBUG         12
+DEBUG         13
+DEBUG         17
+DEBUG         19
+DEBUG         27
+DEBUG         28
+DEBUG         30
+DEBUG         45
+DEBUG         46
+DEBUG         47
+DEBUG         48
+DEBUG         49
+DEBUG         50
+DEBUG         51
+DEBUG         52
+DEBUG         53
+DEBUG         54
+DEBUG         55
+DEBUG         108
+DEBUG         109
+DEBUG         110
+DEBUG         111
+DEBUG         112
+DEBUG         124
+DEBUG         127
+DEBUG         128
+DEBUG         129
+DEBUG         130
+DEBUG         131
+DEBUG         134
+DEBUG         135
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     ING Spaarrekening
+DEBUG       'inkopen'
+DEBUG     ING rekening
+DEBUG       'inkopen'
+DEBUG     Nog te ontvangen rente
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Visa rekening
+DEBUG       'inkopen'
+DEBUG     Vooruit ontvangen bedragen
+DEBUG       'inkopen'
+DEBUG     Voorziening conflict Moxio
+DEBUG       'inkopen'
+DEBUG     Vordering BTW
+DEBUG       'inkopen'
+DEBUG     Vordering vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Administratie
+DEBUG       'inkopen'
+DEBUG         4
+DEBUG         22
+DEBUG         24
+DEBUG         44
+DEBUG         139
+DEBUG         140
+DEBUG         141
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Boetes belastingdienst
+DEBUG       'inkopen'
+DEBUG         102
+DEBUG     Claim Moxio
+DEBUG       'inkopen'
+DEBUG     Correctie schattingen
+DEBUG       'inkopen'
+DEBUG     Correctie voorgeschoten kosten M-industries 2010
+DEBUG       'inkopen'
+DEBUG     Diversen
+DEBUG       'inkopen'
+DEBUG         8
+DEBUG         14
+DEBUG         15
+DEBUG         21
+DEBUG         29
+DEBUG         107
+DEBUG         115
+DEBUG         116
+DEBUG         117
+DEBUG         118
+DEBUG         119
+DEBUG         120
+DEBUG         143
+DEBUG     Financieringskosten
+DEBUG       'inkopen'
+DEBUG     Heffingsrente
+DEBUG       'inkopen'
+DEBUG         71
+DEBUG         72
+DEBUG         73
+DEBUG         74
+DEBUG         104
+DEBUG         105
+DEBUG     Inhuur
+DEBUG       'inkopen'
+DEBUG         35
+DEBUG         36
+DEBUG         37
+DEBUG         38
+DEBUG         39
+DEBUG         40
+DEBUG         41
+DEBUG         42
+DEBUG         43
+DEBUG     Niet incasseerbaar
+DEBUG       'inkopen'
+DEBUG     Telefoon
+DEBUG       'inkopen'
+DEBUG     Vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG 2012
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Overgedragen bankrekeningen
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Voorziening conflict Moxio
+DEBUG       'inkopen'
+DEBUG     Vordering vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Claim Moxio
+DEBUG       'inkopen'
+DEBUG     Diversen
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG 2013
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Voorziening conflict Moxio
+DEBUG       'inkopen'
+DEBUG     Vordering vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Belastingrente
+DEBUG       'inkopen'
+DEBUG         3
+DEBUG         4
+DEBUG     Boetes belastingdienst
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG     Vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG         5
+DEBUG 2014
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Voorziening conflict Moxio
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Heffingsrente
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG     Vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG 2015
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Te betalen vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Voorziening conflict Moxio
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Claim Moxio
+DEBUG       'inkopen'
+DEBUG     Diversen
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG     Ontvangen rente
+DEBUG       'inkopen'
+DEBUG         2
+DEBUG     Vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG         3
+DEBUG 2016
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Te betalen vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG 2017
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Te betalen vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Te ontvangen vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Belastingrente
+DEBUG       'inkopen'
+DEBUG         1
+DEBUG         5
+DEBUG     Dividentuitkering
+DEBUG       'inkopen'
+DEBUG         4
+DEBUG     Vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG         2
+DEBUG         3
+DEBUG 2018
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Te ontvangen vennootschapsbelasting
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG 2019
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG 2020
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG 2021
+DEBUG   'balans'
+DEBUG     Aandelenkapitaal
+DEBUG       'inkopen'
+DEBUG     Crediteuren
+DEBUG       'inkopen'
+DEBUG     Debiteuren
+DEBUG       'inkopen'
+DEBUG     Openstaande BTW
+DEBUG       'inkopen'
+DEBUG     Rekening Courant Schraverus BV
+DEBUG       'inkopen'
+DEBUG     Resultaat
+DEBUG       'inkopen'
+DEBUG     Winstreserve
+DEBUG       'inkopen'
+DEBUG   'resultaat'
+DEBUG     Afrondingsverschillen
+DEBUG       'inkopen'
+DEBUG     Boetes belastingdienst
+DEBUG       'inkopen'
+DEBUG         1

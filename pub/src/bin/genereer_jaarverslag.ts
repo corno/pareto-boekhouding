@@ -2,7 +2,7 @@
 
 import * as _eb from 'exupery-core-bin'
 
-import { $$ as procedure } from "../implementation/algorithms/procedures/unguaranteed/genereer_jaarverslag"
+import { $$ as procedure } from "../implementation/commands/genereer_jaarverslag"
 
 _eb.run_main_procedure(
     ($r) => {

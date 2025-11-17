@@ -4,12 +4,10 @@ import * as _edev from 'exupery-core-dev'
 import * as _ed from 'exupery-core-data'
 import * as sh_g from 'exupery-core-data/dist/shorthands/unresolved_transformation'
 
-import * as _i_out from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
-import * as _i_signatures from "./signatures"
+import * as _i_out from "../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
+import * as _i_signatures from "../../../interface/boekhouding_oude_model_to_boekhouding"
 
 import { $$ as op_dictionary_filter } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/dictionary/filter"
-import { Signature } from "../../../../interface/algorithms/transformations/boekhouding_oude_model/boekhouding"
-
 
 export const Beheer: _i_signatures.Beheer = ($) => ({
     'BTW-categorieen': sh_g.wrap_dictionary(_ea.cc($.Beheer['BTW-categorieen'], ($) => $.map(($): _i_out.Beheer.BTW$mi_categorieen.D<_ed.Source_Location> => ({
