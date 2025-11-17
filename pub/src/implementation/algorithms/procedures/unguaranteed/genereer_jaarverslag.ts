@@ -10,7 +10,7 @@ import * as d_main from "exupery-resources/dist/interface/temp_main"
 
 import { Signature } from "../../../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
 
-import { Some_Error, $$ as temp_func } from "../../../temp_funcs/genereer_jaarverslag"
+import { Some_Error, $$ as temp_func } from "../../../refiners/genereer_jaarverslag"
 
 const settings = {
     'in': "./data/plicity-boekhouding.verbose.astn",

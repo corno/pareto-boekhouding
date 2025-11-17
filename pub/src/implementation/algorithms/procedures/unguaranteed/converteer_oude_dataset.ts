@@ -11,7 +11,7 @@ import * as d_main from "exupery-resources/dist/interface/temp_main"
 
 import { Signature } from "../../../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
 
-import { $$ as temp_func } from "../../../temp_funcs/converteer_oude_dataset"
+import { $$ as temp_func } from "../../../refiners/converteer_oude_dataset"
 
 const settings = {
     'in': "../../accounting_ruwe_data/out/temp/schraverus/boekhouding.verbose.astn",
