@@ -43,14 +43,14 @@ export const $$ = (
         'file content': string
     }
 
-): _et.Data_Preparation_Result<string, Some_Error> => {
+): _et.Staging_Result<string, Some_Error> => {
 
     return parse(
         $p['file content'],
         { 'tab size': 4 }
     ).transform_error_temp(
         ($): Some_Error => ['parse error', $]
-    ).process(
+    ).stage(
         ($) => {
             return _ei.data_processing.successful(unmarshall_boekhouding_oude_model.Root(
                 $.content,

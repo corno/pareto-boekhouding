@@ -6,13 +6,13 @@ import { $$ as procedure } from "../implementation/commands/genereer_jaarverslag
 
 _eb.run_main_procedure(
     ($r) => {
-        return procedure({
-            'commands': {
+        return procedure(
+            {
                 'write file': $r.commands['write file'],
             },
-            'queries': {
+            {
                 'read file': $r.queries['read file']
-            }
-        })
+            },
+        )
     },
 )

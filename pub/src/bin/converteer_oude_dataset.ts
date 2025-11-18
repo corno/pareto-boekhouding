@@ -8,13 +8,13 @@ import * as d_resources from "../implementation/commands/converteer_oude_dataset
 
 _eb.run_main_procedure(
     ($r) => {
-        return procedure({
-            'commands': {
+        return procedure(
+            {
                 'write file': $r.commands['write file'],
             },
-            'queries': {
+            {
                 'read file': $r.queries['read file']
-            }
-        })
+            },
+        )
     },
 )

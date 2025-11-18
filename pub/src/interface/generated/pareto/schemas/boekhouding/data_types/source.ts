@@ -1,11 +1,11 @@
-import * as _pt from 'exupery-core-types'
+import * as _et from 'exupery-core-types'
 
 import * as _i_core from "../../../core/resolved"
 
 // **** TYPES
 
 export type _T_Balans_Resultaat_Mutatie = {
-    readonly 'Jaar': _pt.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>>
+    readonly 'Jaar': _et.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>>
     readonly 'type': _i_core._T_State_Group<null, 
         | readonly ['BTW-periode', _i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaarbeheer.Resultaat.BTW_periodes.D>]
         | readonly ['Inkoop', _i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Handelstransacties.Inkopen.D>]
@@ -419,7 +419,7 @@ export namespace _T_Balans_Resultaat_Mutatie {
         }
         export type O = _i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>
     }
-    export type Jaar = _pt.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>>
+    export type Jaar = _et.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>>
     
     export namespace _type {
         
@@ -2881,7 +2881,7 @@ export namespace Balans_Resultaat_Mutatie {
         }
         export type O = _i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>
     }
-    export type Jaar = _pt.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>>
+    export type Jaar = _et.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<null, _T_Jaren.D>>
     
     export namespace _type {
         

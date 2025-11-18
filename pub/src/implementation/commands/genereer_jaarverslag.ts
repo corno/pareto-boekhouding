@@ -18,26 +18,20 @@ const settings = {
     'out filename': "./out/plicity-jaarverslag.astn",
 }
 
-export type Resources = {
-    'queries': {
-        'read file': _et.Data_Preparer<d_read_file.Parameters, d_read_file.Result, d_read_file.Error>
-    },
-    'commands': {
-        'write file': _et.Command<d_write_file.Parameters, d_write_file.Error>
-    }
+export type Query_Resources = {
+    'read file': _et.Stager<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
+}
+
+export type Command_Resources = {
+    'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
 }
 
 
-export type Procedure = _et.Command_Procedure<d_main.Parameters, d_main.Error, Resources>
-
+export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, Command_Resources, Query_Resources>
 
 export const $$: Procedure = _easync.create_command_procedure(
-    ($r, $p) => $r.commands['write file'].execute.prepare(
-        ($): d_main.Error => {
-            _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out filename']}`, () => { })
-            return ({ 'exit code': 1 })
-        },
-        $r.queries['read file'](
+    ($p, $cr, $qr) => _easync.p.prepare_data(
+        $qr['read file'](
             {
                 'path': settings['in'],
                 'escape spaces in path': true
@@ -45,7 +39,7 @@ export const $$: Procedure = _easync.create_command_procedure(
         ).transform_error_temp(($): d_main.Error => {
             _ed.log_debug_message(`fout tijdens lezen data`, () => { })
             return { 'exit code': 1 }
-        }).process(
+        }).stage(
             ($) => r_generer_jaarverslag({
                 'file content': $
             }),
@@ -61,6 +55,15 @@ export const $$: Procedure = _easync.create_command_procedure(
                 },
                 'data': $
             }
-        })
+        }),
+        ($v) => $cr['write file'].execute(
+            $v,
+            ($): d_main.Error => {
+                _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out filename']}`, () => { })
+                return ({ 'exit code': 1 })
+            },
+
+        )
     )
 )
+
