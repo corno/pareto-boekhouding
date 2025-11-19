@@ -19,7 +19,7 @@ const settings = {
 }
 
 export type Query_Resources = {
-    'read file': _et.Stager<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
+    'read file': _et.Query<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
 }
 
 export type Command_Resources = {
@@ -36,10 +36,11 @@ export const $$: Procedure = _easync.create_command_procedure(
                 'path': settings['in'],
                 'escape spaces in path': true
             },
-        ).transform_error_temp(($): d_main.Error => {
-            _ed.log_debug_message(`fout tijdens lezen data`, () => { })
-            return { 'exit code': 1 }
-        }).stage(
+            ($): d_main.Error => {
+                _ed.log_debug_message(`fout tijdens lezen data`, () => { })
+                return { 'exit code': 1 }
+            }
+        ).stage(
             ($) => r_generer_jaarverslag({
                 'file content': $
             }),

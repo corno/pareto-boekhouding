@@ -24,7 +24,7 @@ const settings = {
 }
 
 export type Query_Resources = {
-    'read file': _et.Stager<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
+    'read file': _et.Query<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
 }
 
 export type Command_Resources = {
@@ -41,10 +41,11 @@ export const $$: Procedure = _easync.create_command_procedure(
                     'path': settings['in'],
                     'escape spaces in path': true
                 },
-            ).transform_error_temp(($) => {
-                _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
-                return { 'exit code': 1 }
-            }).stage(
+                ($) => {
+                    _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
+                    return { 'exit code': 1 }
+                }
+            ).stage(
                 ($) => r_converteer_oude_dataset({
                     'file content': $
                 }),
