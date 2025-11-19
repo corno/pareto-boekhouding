@@ -30,7 +30,7 @@ export type Command_Resources = {
 export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, Command_Resources, Query_Resources>
 
 export const $$: Procedure = _easync.create_command_procedure(
-    ($p, $cr, $qr) => _easync.p.prepare_data(
+    ($p, $cr, $qr) => [_easync.p.stage(
         $qr['read file'](
             {
                 'path': settings['in'],
@@ -56,14 +56,17 @@ export const $$: Procedure = _easync.create_command_procedure(
                 'data': $
             }
         }),
-        ($v) => $cr['write file'].execute(
-            $v,
-            ($): d_main.Error => {
-                _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out filename']}`, () => { })
-                return ({ 'exit code': 1 })
-            },
+        ($v) => [
+            $cr['write file'].execute(
+                $v,
+                ($): d_main.Error => {
+                    _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out filename']}`, () => { })
+                    return ({ 'exit code': 1 })
+                },
 
-        )
+            )
+        ]
     )
+    ]
 )
 

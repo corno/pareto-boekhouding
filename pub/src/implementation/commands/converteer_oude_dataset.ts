@@ -34,42 +34,46 @@ export type Command_Resources = {
 export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, Command_Resources, Query_Resources>
 
 export const $$: Procedure = _easync.create_command_procedure(
-    ($p, $cr, $qr) => _easync.p.prepare_data(
-        $qr['read file'](
-            {
-                'path': settings['in'],
-                'escape spaces in path': true
-            },
-        ).transform_error_temp(($) => {
-            _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
-            return { 'exit code': 1 }
-        }).stage(
-            ($) => r_converteer_oude_dataset({
-                'file content': $
-            }),
-            ($): d_main.Error => {
-                _ed.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
-                return { 'exit code': 1 }
-            }
-        ).transform(($) => {
-            return {
-                'path': {
-                    'path': settings['out filename'],
-                    'escape spaces in path': true,
+    ($p, $cr, $qr) => [
+        _easync.p.stage(
+            $qr['read file'](
+                {
+                    'path': settings['in'],
+                    'escape spaces in path': true
                 },
-                'data': $
-            }
-        }),
-        ($v) => $cr['write file'].execute(
-            $v,
-            ($) => {
-                _ed.log_debug_message(`failed to write converted dataset to ${settings['out filename']}`, () => { })
-                return ({ 'exit code': 1 })
-            },
+            ).transform_error_temp(($) => {
+                _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
+                return { 'exit code': 1 }
+            }).stage(
+                ($) => r_converteer_oude_dataset({
+                    'file content': $
+                }),
+                ($): d_main.Error => {
+                    _ed.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
+                    return { 'exit code': 1 }
+                }
+            ).transform(($) => {
+                return {
+                    'path': {
+                        'path': settings['out filename'],
+                        'escape spaces in path': true,
+                    },
+                    'data': $
+                }
+            }),
+            ($v) => [
+                $cr['write file'].execute(
+                    $v,
+                    ($) => {
+                        _ed.log_debug_message(`failed to write converted dataset to ${settings['out filename']}`, () => { })
+                        return ({ 'exit code': 1 })
+                    },
+
+                )
+            ]
 
         )
-
-    )
+    ]
 
 
 
