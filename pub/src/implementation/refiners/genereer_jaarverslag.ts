@@ -34,7 +34,7 @@ export const $ = (
         ($): Error => ['parse error', $]
     ).stage(
         ($) => {
-            return _ei.data_processing.successful(um_boekhouding.Root(
+            return _ei.__create_success_refinement_result(um_boekhouding.Root(
                 $.content,
                 {
                     'value deserializers': {

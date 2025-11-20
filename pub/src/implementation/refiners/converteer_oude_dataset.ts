@@ -52,7 +52,7 @@ export const $$ = (
         ($): Some_Error => ['parse error', $]
     ).stage(
         ($) => {
-            return _ei.data_processing.successful(unmarshall_boekhouding_oude_model.Root(
+            return _ei.__create_success_refinement_result(unmarshall_boekhouding_oude_model.Root(
                 $.content,
                 {
                     'value deserializers': {
