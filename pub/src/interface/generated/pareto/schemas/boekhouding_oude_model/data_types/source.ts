@@ -4,16 +4,11 @@ import * as _i_core from "../../../core/resolved"
 
 // **** TYPES
 
+export type _T_Bestandsnaam = string
+
 export type _T_Root = {
     readonly 'Bankrekeningen': _i_core._T_Dictionary<null, null>
     readonly 'Beheer': {
-        readonly 'BTW-categorieen': _i_core._T_Dictionary<null, {
-            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                | readonly ['Ja', {
-                    readonly 'BTW-promillage': number
-                }]
-            >
-        }>
         readonly 'Balans': {
             readonly 'Grootboekrekeningen': _i_core._T_Dictionary<null, {
                 readonly 'Hoofdcategorie': string
@@ -24,23 +19,31 @@ export type _T_Root = {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
+        readonly 'BTW-categorieen': _i_core._T_Dictionary<null, {
+            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                | readonly ['Ja', {
+                    readonly 'BTW-promillage': number
+                }]
+                | readonly ['Nee', null]
+            >
+        }>
         readonly 'Gebruikers': _i_core._T_Dictionary<null, {
             readonly 'Volledige naam': string
             readonly 'Wachtwoord': string
@@ -66,21 +69,21 @@ export type _T_Root = {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
     }
@@ -90,29 +93,11 @@ export type _T_Root = {
             | readonly ['Ja', null]
             | readonly ['Nee', null]
         >
-        readonly 'BTW periode saldo': {
-            readonly 'Grootboekrekening': string
-        }
-        readonly 'BTW periodes': _i_core._T_Dictionary<null, {
-            readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-            readonly 'Documenten': _i_core._T_Dictionary<null, {
-                readonly 'Bestand': string
-            }>
-            readonly 'Omschrijving': string
-            readonly 'Status': _i_core._T_State_Group<null, 
-                | readonly ['Aangegeven', {
-                    readonly 'Afronding': number
-                    readonly 'Bedrag': number
-                    readonly 'Datum': number
-                }]
-                | readonly ['Openstaand', null]
-            >
-        }>
         readonly 'Balans grootboekrekeningen': _i_core._T_Dictionary<null, {
             readonly 'Type': _i_core._T_State_Group<null, 
                 | readonly ['Bankrekening', null]
-                | readonly ['Informele rekening', null]
                 | readonly ['Overig', null]
+                | readonly ['Informele rekening', null]
             >
         }>
         readonly 'Bankrekeningen': _i_core._T_Dictionary<null, {
@@ -126,23 +111,23 @@ export type _T_Root = {
                     | readonly ['Nog te verwerken', null]
                     | readonly ['Verwerkt', {
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
-                                readonly 'Jaar': string
-                            }]
-                            | readonly ['Informele rekening', {
-                                readonly 'Informele rekening': string
-                            }]
                             | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
+                            }]
+                            | readonly ['Verrekenpost', {
+                                readonly 'Verrekenpost': string
+                            }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
-                            | readonly ['Verrekenpost', {
-                                readonly 'Verrekenpost': string
+                            | readonly ['Informele rekening', {
+                                readonly 'Informele rekening': string
                             }]
                         >
                     }]
@@ -158,6 +143,24 @@ export type _T_Root = {
         }>
         readonly 'Beginsaldo nog aan te geven BTW': number
         readonly 'Beginsaldo winstreserve': number
+        readonly 'BTW periode saldo': {
+            readonly 'Grootboekrekening': string
+        }
+        readonly 'BTW periodes': _i_core._T_Dictionary<null, {
+            readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+            readonly 'Documenten': _i_core._T_Dictionary<null, {
+                readonly 'Bestand': _T_Bestandsnaam
+            }>
+            readonly 'Omschrijving': string
+            readonly 'Status': _i_core._T_State_Group<null, 
+                | readonly ['Aangegeven', {
+                    readonly 'Afronding': number
+                    readonly 'Bedrag': number
+                    readonly 'Datum': number
+                }]
+                | readonly ['Openstaand', null]
+            >
+        }>
         readonly 'Eerste boekjaar': _i_core._T_State_Group<null, 
             | readonly ['Ja', null]
             | readonly ['Nee', {
@@ -179,9 +182,6 @@ export type _T_Root = {
                 }]
             >
         }>
-        readonly 'Inkoop saldo': {
-            readonly 'Grootboekrekening': string
-        }
         readonly 'Inkopen': _i_core._T_Dictionary<null, {
             readonly 'Afhandeling': _i_core._T_State_Group<null, 
                 | readonly ['Mutaties', null]
@@ -201,12 +201,12 @@ export type _T_Root = {
                 }]
             >
             readonly 'Brondocument': _i_core._T_State_Group<null, 
-                | readonly ['Niet van toepassing', null]
-                | readonly ['Nog toevoegen', null]
-                | readonly ['Ontbreekt', null]
                 | readonly ['Toegevoegd', {
-                    readonly 'Document': string
+                    readonly 'Document': _T_Bestandsnaam
                 }]
+                | readonly ['Niet van toepassing', null]
+                | readonly ['Ontbreekt', null]
+                | readonly ['Nog toevoegen', null]
             >
             readonly 'Datum': number
             readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -236,11 +236,14 @@ export type _T_Root = {
                     readonly 'Ronde': string
                 }]
                 | readonly ['Salaris', {
-                    readonly 'Medewerker': string
                     readonly 'Ronde': string
+                    readonly 'Medewerker': string
                 }]
             >
         }>
+        readonly 'Inkoop saldo': {
+            readonly 'Grootboekrekening': string
+        }
         readonly 'Overige balans items': _i_core._T_Dictionary<null, {
             readonly 'Beginsaldo': number
             readonly 'Grootboekrekening': string
@@ -253,8 +256,8 @@ export type _T_Root = {
             readonly 'Nieuw': _i_core._T_State_Group<null, 
                 | readonly ['Ja', null]
                 | readonly ['Nee', {
-                    readonly 'Balans item': string
                     readonly 'Jaar': string
+                    readonly 'Balans item': string
                 }]
             >
         }>
@@ -271,73 +274,73 @@ export type _T_Root = {
                     readonly 'Rekening courant': string
                 }]
             >
-            readonly 'BTW-periode': string
             readonly 'Betalingstermijn': number
+            readonly 'BTW-periode': string
             readonly 'Brondocument': _i_core._T_State_Group<null, 
                 | readonly ['Toegevoegd', {
-                    readonly 'Document': string
+                    readonly 'Document': _T_Bestandsnaam
                 }]
             >
             readonly 'Contracttype': _i_core._T_State_Group<null, 
+                | readonly ['Project', {
+                    readonly 'Project': string
+                    readonly 'Offerte': string
+                }]
                 | readonly ['Licentieovereenkomst', {
                     readonly 'Overeenkomst': string
-                }]
-                | readonly ['Project', {
-                    readonly 'Offerte': string
-                    readonly 'Project': string
                 }]
             >
             readonly 'Datum': number
             readonly 'Debiteur': string
             readonly 'Regels': _i_core._T_Dictionary<null, {
                 readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                    | readonly ['Binnenland: heffing verlegd', null]
                     | readonly ['Intracommunautair', null]
                     | readonly ['Standaard', {
                         readonly 'BTW-categorie': string
                     }]
+                    | readonly ['Binnenland: heffing verlegd', null]
                 >
                 readonly 'Bedrag exclusief BTW': number
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
-                    | readonly ['Licentieovereenkomst', {
-                        readonly 'Periode': string
-                    }]
-                    | readonly ['Los', null]
                     | readonly ['Project', {
                         readonly 'Opbrengst': string
+                    }]
+                    | readonly ['Los', null]
+                    | readonly ['Licentieovereenkomst', {
+                        readonly 'Periode': string
                     }]
                 >
                 readonly 'Omschrijving': string
                 readonly 'Type': _i_core._T_State_Group<null, 
-                    | readonly ['Balans', {
-                        readonly 'Balans item': string
-                    }]
                     | readonly ['Opbrengsten', {
                         readonly 'Grootboekrekening': string
+                    }]
+                    | readonly ['Balans', {
+                        readonly 'Balans item': string
                     }]
                 >
             }>
         }>
         readonly 'Verrekenposten': _i_core._T_Dictionary<null, {
             readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                readonly 'Bedrag': number
                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                    | readonly ['BTW-periode', {
-                        readonly 'BTW-periode': string
+                    | readonly ['Inkoop', {
                         readonly 'Jaar': string
+                        readonly 'Inkoop': string
                     }]
                     | readonly ['Informele rekening', {
                         readonly 'Informele rekening': string
-                    }]
-                    | readonly ['Inkoop', {
-                        readonly 'Inkoop': string
-                        readonly 'Jaar': string
                     }]
                     | readonly ['Verkoop', {
                         readonly 'Jaar': string
                         readonly 'Verkoop': string
                     }]
+                    | readonly ['BTW-periode', {
+                        readonly 'Jaar': string
+                        readonly 'BTW-periode': string
+                    }]
                 >
-                readonly 'Bedrag': number
             }>
         }>
     }>
@@ -366,6 +369,8 @@ export type _T_Root = {
 
 // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
 
+export type Bestandsnaam = _T_Bestandsnaam
+
 export type Root = _T_Root
 
 // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
@@ -381,48 +386,6 @@ export namespace _T_Root {
     export type Bankrekeningen = _i_core._T_Dictionary<null, null>
     
     export namespace Beheer {
-        
-        export namespace BTW$mi_categorieen {
-            
-            export namespace D {
-                
-                export namespace BTW$mi_heffing {
-                    
-                    export namespace SG {
-                        
-                        export namespace Ja {
-                            export type BTW$mi_promillage = number
-                        }
-                        export type Ja = {
-                            readonly 'BTW-promillage': number
-                        }
-                    }
-                    export type SG = 
-                        | readonly ['Ja', {
-                            readonly 'BTW-promillage': number
-                        }]
-                }
-                export type BTW$mi_heffing = _i_core._T_State_Group<null, 
-                    | readonly ['Ja', {
-                        readonly 'BTW-promillage': number
-                    }]
-                >
-            }
-            export type D = {
-                readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                    | readonly ['Ja', {
-                        readonly 'BTW-promillage': number
-                    }]
-                >
-            }
-        }
-        export type BTW$mi_categorieen = _i_core._T_Dictionary<null, {
-            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                | readonly ['Ja', {
-                    readonly 'BTW-promillage': number
-                }]
-            >
-        }>
         
         export namespace Balans {
             
@@ -475,6 +438,27 @@ export namespace _T_Root {
                 
                 export namespace D {
                     
+                    export namespace Zijde {
+                        
+                        export namespace SG {
+                            
+                            export namespace Activa {
+                            }
+                            export type Activa = null
+                            
+                            export namespace Passiva {
+                            }
+                            export type Passiva = null
+                        }
+                        export type SG = 
+                            | readonly ['Activa', null]
+                            | readonly ['Passiva', null]
+                    }
+                    export type Zijde = _i_core._T_State_Group<null, 
+                        | readonly ['Activa', null]
+                        | readonly ['Passiva', null]
+                    >
+                    
                     export namespace Subcategorieen {
                         
                         export namespace D {
@@ -490,6 +474,32 @@ export namespace _T_Root {
                         readonly 'Hoofdcategorie fiscus': string
                         readonly 'Subcategorie fiscus': string
                     }>
+                }
+                export type D = {
+                    readonly 'Zijde': _i_core._T_State_Group<null, 
+                        | readonly ['Activa', null]
+                        | readonly ['Passiva', null]
+                    >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                        readonly 'Hoofdcategorie fiscus': string
+                        readonly 'Subcategorie fiscus': string
+                    }>
+                }
+            }
+            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                    readonly 'Hoofdcategorie fiscus': string
+                    readonly 'Subcategorie fiscus': string
+                }>
+            }>
+            
+            export namespace Hoofdcategorieen_fiscus {
+                
+                export namespace D {
                     
                     export namespace Zijde {
                         
@@ -511,32 +521,6 @@ export namespace _T_Root {
                         | readonly ['Activa', null]
                         | readonly ['Passiva', null]
                     >
-                }
-                export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                        readonly 'Hoofdcategorie fiscus': string
-                        readonly 'Subcategorie fiscus': string
-                    }>
-                    readonly 'Zijde': _i_core._T_State_Group<null, 
-                        | readonly ['Activa', null]
-                        | readonly ['Passiva', null]
-                    >
-                }
-            }
-            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                    readonly 'Hoofdcategorie fiscus': string
-                    readonly 'Subcategorie fiscus': string
-                }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
-            }>
-            
-            export namespace Hoofdcategorieen_fiscus {
-                
-                export namespace D {
                     
                     export namespace Subcategorieen {
                         
@@ -545,42 +529,21 @@ export namespace _T_Root {
                         export type D = null
                     }
                     export type Subcategorieen = _i_core._T_Dictionary<null, null>
-                    
-                    export namespace Zijde {
-                        
-                        export namespace SG {
-                            
-                            export namespace Activa {
-                            }
-                            export type Activa = null
-                            
-                            export namespace Passiva {
-                            }
-                            export type Passiva = null
-                        }
-                        export type SG = 
-                            | readonly ['Activa', null]
-                            | readonly ['Passiva', null]
-                    }
-                    export type Zijde = _i_core._T_State_Group<null, 
-                        | readonly ['Activa', null]
-                        | readonly ['Passiva', null]
-                    >
                 }
                 export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                     readonly 'Zijde': _i_core._T_State_Group<null, 
                         | readonly ['Activa', null]
                         | readonly ['Passiva', null]
                     >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 }
             }
             export type Hoofdcategorieen_fiscus = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
         export type Balans = {
@@ -593,23 +556,73 @@ export namespace _T_Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
+        
+        export namespace BTW$mi_categorieen {
+            
+            export namespace D {
+                
+                export namespace BTW$mi_heffing {
+                    
+                    export namespace SG {
+                        
+                        export namespace Ja {
+                            export type BTW$mi_promillage = number
+                        }
+                        export type Ja = {
+                            readonly 'BTW-promillage': number
+                        }
+                        
+                        export namespace Nee {
+                        }
+                        export type Nee = null
+                    }
+                    export type SG = 
+                        | readonly ['Ja', {
+                            readonly 'BTW-promillage': number
+                        }]
+                        | readonly ['Nee', null]
+                }
+                export type BTW$mi_heffing = _i_core._T_State_Group<null, 
+                    | readonly ['Ja', {
+                        readonly 'BTW-promillage': number
+                    }]
+                    | readonly ['Nee', null]
+                >
+            }
+            export type D = {
+                readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                    | readonly ['Ja', {
+                        readonly 'BTW-promillage': number
+                    }]
+                    | readonly ['Nee', null]
+                >
+            }
+        }
+        export type BTW$mi_categorieen = _i_core._T_Dictionary<null, {
+            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                | readonly ['Ja', {
+                    readonly 'BTW-promillage': number
+                }]
+                | readonly ['Nee', null]
+            >
+        }>
         
         export namespace Gebruikers {
             
@@ -755,6 +768,27 @@ export namespace _T_Root {
                 
                 export namespace D {
                     
+                    export namespace Zijde {
+                        
+                        export namespace SG {
+                            
+                            export namespace Kosten {
+                            }
+                            export type Kosten = null
+                            
+                            export namespace Opbrengsten {
+                            }
+                            export type Opbrengsten = null
+                        }
+                        export type SG = 
+                            | readonly ['Kosten', null]
+                            | readonly ['Opbrengsten', null]
+                    }
+                    export type Zijde = _i_core._T_State_Group<null, 
+                        | readonly ['Kosten', null]
+                        | readonly ['Opbrengsten', null]
+                    >
+                    
                     export namespace Subcategorieen {
                         
                         export namespace D {
@@ -770,6 +804,32 @@ export namespace _T_Root {
                         readonly 'Hoofdcategorie fiscus': string
                         readonly 'Subcategorie fiscus': string
                     }>
+                }
+                export type D = {
+                    readonly 'Zijde': _i_core._T_State_Group<null, 
+                        | readonly ['Kosten', null]
+                        | readonly ['Opbrengsten', null]
+                    >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                        readonly 'Hoofdcategorie fiscus': string
+                        readonly 'Subcategorie fiscus': string
+                    }>
+                }
+            }
+            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                    readonly 'Hoofdcategorie fiscus': string
+                    readonly 'Subcategorie fiscus': string
+                }>
+            }>
+            
+            export namespace Hoofdcategorieen_fiscus {
+                
+                export namespace D {
                     
                     export namespace Zijde {
                         
@@ -791,32 +851,6 @@ export namespace _T_Root {
                         | readonly ['Kosten', null]
                         | readonly ['Opbrengsten', null]
                     >
-                }
-                export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                        readonly 'Hoofdcategorie fiscus': string
-                        readonly 'Subcategorie fiscus': string
-                    }>
-                    readonly 'Zijde': _i_core._T_State_Group<null, 
-                        | readonly ['Kosten', null]
-                        | readonly ['Opbrengsten', null]
-                    >
-                }
-            }
-            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                    readonly 'Hoofdcategorie fiscus': string
-                    readonly 'Subcategorie fiscus': string
-                }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
-            }>
-            
-            export namespace Hoofdcategorieen_fiscus {
-                
-                export namespace D {
                     
                     export namespace Subcategorieen {
                         
@@ -825,42 +859,21 @@ export namespace _T_Root {
                         export type D = null
                     }
                     export type Subcategorieen = _i_core._T_Dictionary<null, null>
-                    
-                    export namespace Zijde {
-                        
-                        export namespace SG {
-                            
-                            export namespace Kosten {
-                            }
-                            export type Kosten = null
-                            
-                            export namespace Opbrengsten {
-                            }
-                            export type Opbrengsten = null
-                        }
-                        export type SG = 
-                            | readonly ['Kosten', null]
-                            | readonly ['Opbrengsten', null]
-                    }
-                    export type Zijde = _i_core._T_State_Group<null, 
-                        | readonly ['Kosten', null]
-                        | readonly ['Opbrengsten', null]
-                    >
                 }
                 export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                     readonly 'Zijde': _i_core._T_State_Group<null, 
                         | readonly ['Kosten', null]
                         | readonly ['Opbrengsten', null]
                     >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 }
             }
             export type Hoofdcategorieen_fiscus = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
         export type Resultaat = {
@@ -883,32 +896,25 @@ export namespace _T_Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
     }
     export type Beheer = {
-        readonly 'BTW-categorieen': _i_core._T_Dictionary<null, {
-            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                | readonly ['Ja', {
-                    readonly 'BTW-promillage': number
-                }]
-            >
-        }>
         readonly 'Balans': {
             readonly 'Grootboekrekeningen': _i_core._T_Dictionary<null, {
                 readonly 'Hoofdcategorie': string
@@ -919,23 +925,31 @@ export namespace _T_Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
+        readonly 'BTW-categorieen': _i_core._T_Dictionary<null, {
+            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                | readonly ['Ja', {
+                    readonly 'BTW-promillage': number
+                }]
+                | readonly ['Nee', null]
+            >
+        }>
         readonly 'Gebruikers': _i_core._T_Dictionary<null, {
             readonly 'Volledige naam': string
             readonly 'Wachtwoord': string
@@ -961,21 +975,21 @@ export namespace _T_Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
     }
@@ -1013,107 +1027,6 @@ export namespace _T_Root {
                 | readonly ['Nee', null]
             >
             
-            export namespace BTW_periode_saldo {
-                export type Grootboekrekening = string
-            }
-            export type BTW_periode_saldo = {
-                readonly 'Grootboekrekening': string
-            }
-            
-            export namespace BTW_periodes {
-                
-                export namespace D {
-                    
-                    export namespace _11$pe__BTW$mi_categorieen {
-                        
-                        export namespace D {
-                        }
-                        export type D = null
-                    }
-                    export type _11$pe__BTW$mi_categorieen = _i_core._T_Dictionary<null, null>
-                    
-                    export namespace Documenten {
-                        
-                        export namespace D {
-                            export type Bestand = string
-                        }
-                        export type D = {
-                            readonly 'Bestand': string
-                        }
-                    }
-                    export type Documenten = _i_core._T_Dictionary<null, {
-                        readonly 'Bestand': string
-                    }>
-                    export type Omschrijving = string
-                    
-                    export namespace Status {
-                        
-                        export namespace SG {
-                            
-                            export namespace Aangegeven {
-                                export type Afronding = number
-                                export type Bedrag = number
-                                export type Datum = number
-                            }
-                            export type Aangegeven = {
-                                readonly 'Afronding': number
-                                readonly 'Bedrag': number
-                                readonly 'Datum': number
-                            }
-                            
-                            export namespace Openstaand {
-                            }
-                            export type Openstaand = null
-                        }
-                        export type SG = 
-                            | readonly ['Aangegeven', {
-                                readonly 'Afronding': number
-                                readonly 'Bedrag': number
-                                readonly 'Datum': number
-                            }]
-                            | readonly ['Openstaand', null]
-                    }
-                    export type Status = _i_core._T_State_Group<null, 
-                        | readonly ['Aangegeven', {
-                            readonly 'Afronding': number
-                            readonly 'Bedrag': number
-                            readonly 'Datum': number
-                        }]
-                        | readonly ['Openstaand', null]
-                    >
-                }
-                export type D = {
-                    readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-                    readonly 'Documenten': _i_core._T_Dictionary<null, {
-                        readonly 'Bestand': string
-                    }>
-                    readonly 'Omschrijving': string
-                    readonly 'Status': _i_core._T_State_Group<null, 
-                        | readonly ['Aangegeven', {
-                            readonly 'Afronding': number
-                            readonly 'Bedrag': number
-                            readonly 'Datum': number
-                        }]
-                        | readonly ['Openstaand', null]
-                    >
-                }
-            }
-            export type BTW_periodes = _i_core._T_Dictionary<null, {
-                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-                readonly 'Documenten': _i_core._T_Dictionary<null, {
-                    readonly 'Bestand': string
-                }>
-                readonly 'Omschrijving': string
-                readonly 'Status': _i_core._T_State_Group<null, 
-                    | readonly ['Aangegeven', {
-                        readonly 'Afronding': number
-                        readonly 'Bedrag': number
-                        readonly 'Datum': number
-                    }]
-                    | readonly ['Openstaand', null]
-                >
-            }>
-            
             export namespace Balans_grootboekrekeningen {
                 
                 export namespace D {
@@ -1126,38 +1039,38 @@ export namespace _T_Root {
                             }
                             export type Bankrekening = null
                             
-                            export namespace Informele_rekening {
-                            }
-                            export type Informele_rekening = null
-                            
                             export namespace Overig {
                             }
                             export type Overig = null
+                            
+                            export namespace Informele_rekening {
+                            }
+                            export type Informele_rekening = null
                         }
                         export type SG = 
                             | readonly ['Bankrekening', null]
-                            | readonly ['Informele rekening', null]
                             | readonly ['Overig', null]
+                            | readonly ['Informele rekening', null]
                     }
                     export type Type = _i_core._T_State_Group<null, 
                         | readonly ['Bankrekening', null]
-                        | readonly ['Informele rekening', null]
                         | readonly ['Overig', null]
+                        | readonly ['Informele rekening', null]
                     >
                 }
                 export type D = {
                     readonly 'Type': _i_core._T_State_Group<null, 
                         | readonly ['Bankrekening', null]
-                        | readonly ['Informele rekening', null]
                         | readonly ['Overig', null]
+                        | readonly ['Informele rekening', null]
                     >
                 }
             }
             export type Balans_grootboekrekeningen = _i_core._T_Dictionary<null, {
                 readonly 'Type': _i_core._T_State_Group<null, 
                     | readonly ['Bankrekening', null]
-                    | readonly ['Informele rekening', null]
                     | readonly ['Overig', null]
+                    | readonly ['Informele rekening', null]
                 >
             }>
             
@@ -1188,29 +1101,29 @@ export namespace _T_Root {
                                             
                                             export namespace SG {
                                                 
-                                                export namespace BTW$mi_periode {
-                                                    export type BTW$mi_periode = string
-                                                    export type Jaar = string
-                                                }
-                                                export type BTW$mi_periode = {
-                                                    readonly 'BTW-periode': string
-                                                    readonly 'Jaar': string
-                                                }
-                                                
-                                                export namespace Informele_rekening {
-                                                    export type Informele_rekening = string
-                                                }
-                                                export type Informele_rekening = {
-                                                    readonly 'Informele rekening': string
-                                                }
-                                                
                                                 export namespace Inkoop {
-                                                    export type Inkoop = string
                                                     export type Jaar = string
+                                                    export type Inkoop = string
                                                 }
                                                 export type Inkoop = {
-                                                    readonly 'Inkoop': string
                                                     readonly 'Jaar': string
+                                                    readonly 'Inkoop': string
+                                                }
+                                                
+                                                export namespace Verrekenpost {
+                                                    export type Verrekenpost = string
+                                                }
+                                                export type Verrekenpost = {
+                                                    readonly 'Verrekenpost': string
+                                                }
+                                                
+                                                export namespace BTW$mi_periode {
+                                                    export type Jaar = string
+                                                    export type BTW$mi_periode = string
+                                                }
+                                                export type BTW$mi_periode = {
+                                                    readonly 'Jaar': string
+                                                    readonly 'BTW-periode': string
                                                 }
                                                 
                                                 export namespace Verkoop {
@@ -1222,73 +1135,73 @@ export namespace _T_Root {
                                                     readonly 'Verkoop': string
                                                 }
                                                 
-                                                export namespace Verrekenpost {
-                                                    export type Verrekenpost = string
+                                                export namespace Informele_rekening {
+                                                    export type Informele_rekening = string
                                                 }
-                                                export type Verrekenpost = {
-                                                    readonly 'Verrekenpost': string
+                                                export type Informele_rekening = {
+                                                    readonly 'Informele rekening': string
                                                 }
                                             }
                                             export type SG = 
-                                                | readonly ['BTW-periode', {
-                                                    readonly 'BTW-periode': string
-                                                    readonly 'Jaar': string
-                                                }]
-                                                | readonly ['Informele rekening', {
-                                                    readonly 'Informele rekening': string
-                                                }]
                                                 | readonly ['Inkoop', {
-                                                    readonly 'Inkoop': string
                                                     readonly 'Jaar': string
+                                                    readonly 'Inkoop': string
+                                                }]
+                                                | readonly ['Verrekenpost', {
+                                                    readonly 'Verrekenpost': string
+                                                }]
+                                                | readonly ['BTW-periode', {
+                                                    readonly 'Jaar': string
+                                                    readonly 'BTW-periode': string
                                                 }]
                                                 | readonly ['Verkoop', {
                                                     readonly 'Jaar': string
                                                     readonly 'Verkoop': string
                                                 }]
-                                                | readonly ['Verrekenpost', {
-                                                    readonly 'Verrekenpost': string
+                                                | readonly ['Informele rekening', {
+                                                    readonly 'Informele rekening': string
                                                 }]
                                         }
                                         export type Afhandeling = _i_core._T_State_Group<null, 
-                                            | readonly ['BTW-periode', {
-                                                readonly 'BTW-periode': string
-                                                readonly 'Jaar': string
-                                            }]
-                                            | readonly ['Informele rekening', {
-                                                readonly 'Informele rekening': string
-                                            }]
                                             | readonly ['Inkoop', {
-                                                readonly 'Inkoop': string
                                                 readonly 'Jaar': string
+                                                readonly 'Inkoop': string
+                                            }]
+                                            | readonly ['Verrekenpost', {
+                                                readonly 'Verrekenpost': string
+                                            }]
+                                            | readonly ['BTW-periode', {
+                                                readonly 'Jaar': string
+                                                readonly 'BTW-periode': string
                                             }]
                                             | readonly ['Verkoop', {
                                                 readonly 'Jaar': string
                                                 readonly 'Verkoop': string
                                             }]
-                                            | readonly ['Verrekenpost', {
-                                                readonly 'Verrekenpost': string
+                                            | readonly ['Informele rekening', {
+                                                readonly 'Informele rekening': string
                                             }]
                                         >
                                     }
                                     export type Verwerkt = {
                                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                            | readonly ['BTW-periode', {
-                                                readonly 'BTW-periode': string
-                                                readonly 'Jaar': string
-                                            }]
-                                            | readonly ['Informele rekening', {
-                                                readonly 'Informele rekening': string
-                                            }]
                                             | readonly ['Inkoop', {
-                                                readonly 'Inkoop': string
                                                 readonly 'Jaar': string
+                                                readonly 'Inkoop': string
+                                            }]
+                                            | readonly ['Verrekenpost', {
+                                                readonly 'Verrekenpost': string
+                                            }]
+                                            | readonly ['BTW-periode', {
+                                                readonly 'Jaar': string
+                                                readonly 'BTW-periode': string
                                             }]
                                             | readonly ['Verkoop', {
                                                 readonly 'Jaar': string
                                                 readonly 'Verkoop': string
                                             }]
-                                            | readonly ['Verrekenpost', {
-                                                readonly 'Verrekenpost': string
+                                            | readonly ['Informele rekening', {
+                                                readonly 'Informele rekening': string
                                             }]
                                         >
                                     }
@@ -1297,23 +1210,23 @@ export namespace _T_Root {
                                     | readonly ['Nog te verwerken', null]
                                     | readonly ['Verwerkt', {
                                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                            | readonly ['BTW-periode', {
-                                                readonly 'BTW-periode': string
-                                                readonly 'Jaar': string
-                                            }]
-                                            | readonly ['Informele rekening', {
-                                                readonly 'Informele rekening': string
-                                            }]
                                             | readonly ['Inkoop', {
-                                                readonly 'Inkoop': string
                                                 readonly 'Jaar': string
+                                                readonly 'Inkoop': string
+                                            }]
+                                            | readonly ['Verrekenpost', {
+                                                readonly 'Verrekenpost': string
+                                            }]
+                                            | readonly ['BTW-periode', {
+                                                readonly 'Jaar': string
+                                                readonly 'BTW-periode': string
                                             }]
                                             | readonly ['Verkoop', {
                                                 readonly 'Jaar': string
                                                 readonly 'Verkoop': string
                                             }]
-                                            | readonly ['Verrekenpost', {
-                                                readonly 'Verrekenpost': string
+                                            | readonly ['Informele rekening', {
+                                                readonly 'Informele rekening': string
                                             }]
                                         >
                                     }]
@@ -1322,23 +1235,23 @@ export namespace _T_Root {
                                 | readonly ['Nog te verwerken', null]
                                 | readonly ['Verwerkt', {
                                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                        | readonly ['BTW-periode', {
-                                            readonly 'BTW-periode': string
-                                            readonly 'Jaar': string
-                                        }]
-                                        | readonly ['Informele rekening', {
-                                            readonly 'Informele rekening': string
-                                        }]
                                         | readonly ['Inkoop', {
-                                            readonly 'Inkoop': string
                                             readonly 'Jaar': string
+                                            readonly 'Inkoop': string
+                                        }]
+                                        | readonly ['Verrekenpost', {
+                                            readonly 'Verrekenpost': string
+                                        }]
+                                        | readonly ['BTW-periode', {
+                                            readonly 'Jaar': string
+                                            readonly 'BTW-periode': string
                                         }]
                                         | readonly ['Verkoop', {
                                             readonly 'Jaar': string
                                             readonly 'Verkoop': string
                                         }]
-                                        | readonly ['Verrekenpost', {
-                                            readonly 'Verrekenpost': string
+                                        | readonly ['Informele rekening', {
+                                            readonly 'Informele rekening': string
                                         }]
                                     >
                                 }]
@@ -1352,23 +1265,23 @@ export namespace _T_Root {
                                 | readonly ['Nog te verwerken', null]
                                 | readonly ['Verwerkt', {
                                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                        | readonly ['BTW-periode', {
-                                            readonly 'BTW-periode': string
-                                            readonly 'Jaar': string
-                                        }]
-                                        | readonly ['Informele rekening', {
-                                            readonly 'Informele rekening': string
-                                        }]
                                         | readonly ['Inkoop', {
-                                            readonly 'Inkoop': string
                                             readonly 'Jaar': string
+                                            readonly 'Inkoop': string
+                                        }]
+                                        | readonly ['Verrekenpost', {
+                                            readonly 'Verrekenpost': string
+                                        }]
+                                        | readonly ['BTW-periode', {
+                                            readonly 'Jaar': string
+                                            readonly 'BTW-periode': string
                                         }]
                                         | readonly ['Verkoop', {
                                             readonly 'Jaar': string
                                             readonly 'Verkoop': string
                                         }]
-                                        | readonly ['Verrekenpost', {
-                                            readonly 'Verrekenpost': string
+                                        | readonly ['Informele rekening', {
+                                            readonly 'Informele rekening': string
                                         }]
                                     >
                                 }]
@@ -1383,23 +1296,23 @@ export namespace _T_Root {
                             | readonly ['Nog te verwerken', null]
                             | readonly ['Verwerkt', {
                                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                    | readonly ['BTW-periode', {
-                                        readonly 'BTW-periode': string
-                                        readonly 'Jaar': string
-                                    }]
-                                    | readonly ['Informele rekening', {
-                                        readonly 'Informele rekening': string
-                                    }]
                                     | readonly ['Inkoop', {
-                                        readonly 'Inkoop': string
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
+                                    }]
+                                    | readonly ['Verrekenpost', {
+                                        readonly 'Verrekenpost': string
+                                    }]
+                                    | readonly ['BTW-periode', {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
                                     }]
                                     | readonly ['Verkoop', {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }]
-                                    | readonly ['Verrekenpost', {
-                                        readonly 'Verrekenpost': string
+                                    | readonly ['Informele rekening', {
+                                        readonly 'Informele rekening': string
                                     }]
                                 >
                             }]
@@ -1449,23 +1362,23 @@ export namespace _T_Root {
                             | readonly ['Nog te verwerken', null]
                             | readonly ['Verwerkt', {
                                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                    | readonly ['BTW-periode', {
-                                        readonly 'BTW-periode': string
-                                        readonly 'Jaar': string
-                                    }]
-                                    | readonly ['Informele rekening', {
-                                        readonly 'Informele rekening': string
-                                    }]
                                     | readonly ['Inkoop', {
-                                        readonly 'Inkoop': string
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
+                                    }]
+                                    | readonly ['Verrekenpost', {
+                                        readonly 'Verrekenpost': string
+                                    }]
+                                    | readonly ['BTW-periode', {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
                                     }]
                                     | readonly ['Verkoop', {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }]
-                                    | readonly ['Verrekenpost', {
-                                        readonly 'Verrekenpost': string
+                                    | readonly ['Informele rekening', {
+                                        readonly 'Informele rekening': string
                                     }]
                                 >
                             }]
@@ -1491,23 +1404,23 @@ export namespace _T_Root {
                         | readonly ['Nog te verwerken', null]
                         | readonly ['Verwerkt', {
                             readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
-                                    readonly 'Jaar': string
-                                }]
-                                | readonly ['Informele rekening', {
-                                    readonly 'Informele rekening': string
-                                }]
                                 | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
+                                }]
+                                | readonly ['Verrekenpost', {
+                                    readonly 'Verrekenpost': string
+                                }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
-                                | readonly ['Verrekenpost', {
-                                    readonly 'Verrekenpost': string
+                                | readonly ['Informele rekening', {
+                                    readonly 'Informele rekening': string
                                 }]
                             >
                         }]
@@ -1523,6 +1436,110 @@ export namespace _T_Root {
             }>
             export type Beginsaldo_nog_aan_te_geven_BTW = number
             export type Beginsaldo_winstreserve = number
+            
+            export namespace BTW_periode_saldo {
+                export type Grootboekrekening = string
+            }
+            export type BTW_periode_saldo = {
+                readonly 'Grootboekrekening': string
+            }
+            
+            export namespace BTW_periodes {
+                
+                export namespace D {
+                    
+                    export namespace _11$pe__BTW$mi_categorieen {
+                        
+                        export namespace D {
+                        }
+                        export type D = null
+                    }
+                    export type _11$pe__BTW$mi_categorieen = _i_core._T_Dictionary<null, null>
+                    
+                    export namespace Documenten {
+                        
+                        export namespace D {
+                            
+                            export namespace Bestand {
+                            }
+                            export type Bestand = _T_Bestandsnaam
+                        }
+                        export type D = {
+                            readonly 'Bestand': _T_Bestandsnaam
+                        }
+                    }
+                    export type Documenten = _i_core._T_Dictionary<null, {
+                        readonly 'Bestand': _T_Bestandsnaam
+                    }>
+                    export type Omschrijving = string
+                    
+                    export namespace Status {
+                        
+                        export namespace SG {
+                            
+                            export namespace Aangegeven {
+                                export type Afronding = number
+                                export type Bedrag = number
+                                export type Datum = number
+                            }
+                            export type Aangegeven = {
+                                readonly 'Afronding': number
+                                readonly 'Bedrag': number
+                                readonly 'Datum': number
+                            }
+                            
+                            export namespace Openstaand {
+                            }
+                            export type Openstaand = null
+                        }
+                        export type SG = 
+                            | readonly ['Aangegeven', {
+                                readonly 'Afronding': number
+                                readonly 'Bedrag': number
+                                readonly 'Datum': number
+                            }]
+                            | readonly ['Openstaand', null]
+                    }
+                    export type Status = _i_core._T_State_Group<null, 
+                        | readonly ['Aangegeven', {
+                            readonly 'Afronding': number
+                            readonly 'Bedrag': number
+                            readonly 'Datum': number
+                        }]
+                        | readonly ['Openstaand', null]
+                    >
+                }
+                export type D = {
+                    readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+                    readonly 'Documenten': _i_core._T_Dictionary<null, {
+                        readonly 'Bestand': _T_Bestandsnaam
+                    }>
+                    readonly 'Omschrijving': string
+                    readonly 'Status': _i_core._T_State_Group<null, 
+                        | readonly ['Aangegeven', {
+                            readonly 'Afronding': number
+                            readonly 'Bedrag': number
+                            readonly 'Datum': number
+                        }]
+                        | readonly ['Openstaand', null]
+                    >
+                }
+            }
+            export type BTW_periodes = _i_core._T_Dictionary<null, {
+                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+                readonly 'Documenten': _i_core._T_Dictionary<null, {
+                    readonly 'Bestand': _T_Bestandsnaam
+                }>
+                readonly 'Omschrijving': string
+                readonly 'Status': _i_core._T_State_Group<null, 
+                    | readonly ['Aangegeven', {
+                        readonly 'Afronding': number
+                        readonly 'Bedrag': number
+                        readonly 'Datum': number
+                    }]
+                    | readonly ['Openstaand', null]
+                >
+            }>
             
             export namespace Eerste_boekjaar {
                 
@@ -1618,13 +1635,6 @@ export namespace _T_Root {
                 >
             }>
             
-            export namespace Inkoop_saldo {
-                export type Grootboekrekening = string
-            }
-            export type Inkoop_saldo = {
-                readonly 'Grootboekrekening': string
-            }
-            
             export namespace Inkopen {
                 
                 export namespace D {
@@ -1714,40 +1724,43 @@ export namespace _T_Root {
                         
                         export namespace SG {
                             
+                            export namespace Toegevoegd {
+                                
+                                export namespace Document {
+                                }
+                                export type Document = _T_Bestandsnaam
+                            }
+                            export type Toegevoegd = {
+                                readonly 'Document': _T_Bestandsnaam
+                            }
+                            
                             export namespace Niet_van_toepassing {
                             }
                             export type Niet_van_toepassing = null
-                            
-                            export namespace Nog_toevoegen {
-                            }
-                            export type Nog_toevoegen = null
                             
                             export namespace Ontbreekt {
                             }
                             export type Ontbreekt = null
                             
-                            export namespace Toegevoegd {
-                                export type Document = string
+                            export namespace Nog_toevoegen {
                             }
-                            export type Toegevoegd = {
-                                readonly 'Document': string
-                            }
+                            export type Nog_toevoegen = null
                         }
                         export type SG = 
-                            | readonly ['Niet van toepassing', null]
-                            | readonly ['Nog toevoegen', null]
-                            | readonly ['Ontbreekt', null]
                             | readonly ['Toegevoegd', {
-                                readonly 'Document': string
+                                readonly 'Document': _T_Bestandsnaam
                             }]
+                            | readonly ['Niet van toepassing', null]
+                            | readonly ['Ontbreekt', null]
+                            | readonly ['Nog toevoegen', null]
                     }
                     export type Brondocument = _i_core._T_State_Group<null, 
-                        | readonly ['Niet van toepassing', null]
-                        | readonly ['Nog toevoegen', null]
-                        | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
+                        | readonly ['Niet van toepassing', null]
+                        | readonly ['Ontbreekt', null]
+                        | readonly ['Nog toevoegen', null]
                     >
                     export type Datum = number
                     
@@ -1878,12 +1891,12 @@ export namespace _T_Root {
                             }
                             
                             export namespace Salaris {
-                                export type Medewerker = string
                                 export type Ronde = string
+                                export type Medewerker = string
                             }
                             export type Salaris = {
-                                readonly 'Medewerker': string
                                 readonly 'Ronde': string
+                                readonly 'Medewerker': string
                             }
                         }
                         export type SG = 
@@ -1896,8 +1909,8 @@ export namespace _T_Root {
                                 readonly 'Ronde': string
                             }]
                             | readonly ['Salaris', {
-                                readonly 'Medewerker': string
                                 readonly 'Ronde': string
+                                readonly 'Medewerker': string
                             }]
                     }
                     export type Type = _i_core._T_State_Group<null, 
@@ -1910,8 +1923,8 @@ export namespace _T_Root {
                             readonly 'Ronde': string
                         }]
                         | readonly ['Salaris', {
-                            readonly 'Medewerker': string
                             readonly 'Ronde': string
+                            readonly 'Medewerker': string
                         }]
                     >
                 }
@@ -1934,12 +1947,12 @@ export namespace _T_Root {
                         }]
                     >
                     readonly 'Brondocument': _i_core._T_State_Group<null, 
-                        | readonly ['Niet van toepassing', null]
-                        | readonly ['Nog toevoegen', null]
-                        | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
+                        | readonly ['Niet van toepassing', null]
+                        | readonly ['Ontbreekt', null]
+                        | readonly ['Nog toevoegen', null]
                     >
                     readonly 'Datum': number
                     readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -1969,8 +1982,8 @@ export namespace _T_Root {
                             readonly 'Ronde': string
                         }]
                         | readonly ['Salaris', {
-                            readonly 'Medewerker': string
                             readonly 'Ronde': string
+                            readonly 'Medewerker': string
                         }]
                     >
                 }
@@ -1994,12 +2007,12 @@ export namespace _T_Root {
                     }]
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
-                    | readonly ['Niet van toepassing', null]
-                    | readonly ['Nog toevoegen', null]
-                    | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
+                    | readonly ['Niet van toepassing', null]
+                    | readonly ['Ontbreekt', null]
+                    | readonly ['Nog toevoegen', null]
                 >
                 readonly 'Datum': number
                 readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -2029,11 +2042,18 @@ export namespace _T_Root {
                         readonly 'Ronde': string
                     }]
                     | readonly ['Salaris', {
-                        readonly 'Medewerker': string
                         readonly 'Ronde': string
+                        readonly 'Medewerker': string
                     }]
                 >
             }>
+            
+            export namespace Inkoop_saldo {
+                export type Grootboekrekening = string
+            }
+            export type Inkoop_saldo = {
+                readonly 'Grootboekrekening': string
+            }
             
             export namespace Overige_balans_items {
                 
@@ -2072,26 +2092,26 @@ export namespace _T_Root {
                             export type Ja = null
                             
                             export namespace Nee {
-                                export type Balans_item = string
                                 export type Jaar = string
+                                export type Balans_item = string
                             }
                             export type Nee = {
-                                readonly 'Balans item': string
                                 readonly 'Jaar': string
+                                readonly 'Balans item': string
                             }
                         }
                         export type SG = 
                             | readonly ['Ja', null]
                             | readonly ['Nee', {
-                                readonly 'Balans item': string
                                 readonly 'Jaar': string
+                                readonly 'Balans item': string
                             }]
                     }
                     export type Nieuw = _i_core._T_State_Group<null, 
                         | readonly ['Ja', null]
                         | readonly ['Nee', {
-                            readonly 'Balans item': string
                             readonly 'Jaar': string
+                            readonly 'Balans item': string
                         }]
                     >
                 }
@@ -2107,8 +2127,8 @@ export namespace _T_Root {
                     readonly 'Nieuw': _i_core._T_State_Group<null, 
                         | readonly ['Ja', null]
                         | readonly ['Nee', {
-                            readonly 'Balans item': string
                             readonly 'Jaar': string
+                            readonly 'Balans item': string
                         }]
                     >
                 }
@@ -2125,8 +2145,8 @@ export namespace _T_Root {
                 readonly 'Nieuw': _i_core._T_State_Group<null, 
                     | readonly ['Ja', null]
                     | readonly ['Nee', {
-                        readonly 'Balans item': string
                         readonly 'Jaar': string
+                        readonly 'Balans item': string
                     }]
                 >
             }>
@@ -2186,28 +2206,31 @@ export namespace _T_Root {
                             readonly 'Rekening courant': string
                         }]
                     >
-                    export type BTW$mi_periode = string
                     export type Betalingstermijn = number
+                    export type BTW$mi_periode = string
                     
                     export namespace Brondocument {
                         
                         export namespace SG {
                             
                             export namespace Toegevoegd {
-                                export type Document = string
+                                
+                                export namespace Document {
+                                }
+                                export type Document = _T_Bestandsnaam
                             }
                             export type Toegevoegd = {
-                                readonly 'Document': string
+                                readonly 'Document': _T_Bestandsnaam
                             }
                         }
                         export type SG = 
                             | readonly ['Toegevoegd', {
-                                readonly 'Document': string
+                                readonly 'Document': _T_Bestandsnaam
                             }]
                     }
                     export type Brondocument = _i_core._T_State_Group<null, 
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
                     >
                     
@@ -2215,38 +2238,38 @@ export namespace _T_Root {
                         
                         export namespace SG {
                             
+                            export namespace Project {
+                                export type Project = string
+                                export type Offerte = string
+                            }
+                            export type Project = {
+                                readonly 'Project': string
+                                readonly 'Offerte': string
+                            }
+                            
                             export namespace Licentieovereenkomst {
                                 export type Overeenkomst = string
                             }
                             export type Licentieovereenkomst = {
                                 readonly 'Overeenkomst': string
                             }
-                            
-                            export namespace Project {
-                                export type Offerte = string
-                                export type Project = string
-                            }
-                            export type Project = {
-                                readonly 'Offerte': string
-                                readonly 'Project': string
-                            }
                         }
                         export type SG = 
+                            | readonly ['Project', {
+                                readonly 'Project': string
+                                readonly 'Offerte': string
+                            }]
                             | readonly ['Licentieovereenkomst', {
                                 readonly 'Overeenkomst': string
                             }]
-                            | readonly ['Project', {
-                                readonly 'Offerte': string
-                                readonly 'Project': string
-                            }]
                     }
                     export type Contracttype = _i_core._T_State_Group<null, 
+                        | readonly ['Project', {
+                            readonly 'Project': string
+                            readonly 'Offerte': string
+                        }]
                         | readonly ['Licentieovereenkomst', {
                             readonly 'Overeenkomst': string
-                        }]
-                        | readonly ['Project', {
-                            readonly 'Offerte': string
-                            readonly 'Project': string
                         }]
                     >
                     export type Datum = number
@@ -2260,10 +2283,6 @@ export namespace _T_Root {
                                 
                                 export namespace SG {
                                     
-                                    export namespace Binnenland$cl__heffing_verlegd {
-                                    }
-                                    export type Binnenland$cl__heffing_verlegd = null
-                                    
                                     export namespace Intracommunautair {
                                     }
                                     export type Intracommunautair = null
@@ -2274,20 +2293,24 @@ export namespace _T_Root {
                                     export type Standaard = {
                                         readonly 'BTW-categorie': string
                                     }
+                                    
+                                    export namespace Binnenland$cl__heffing_verlegd {
+                                    }
+                                    export type Binnenland$cl__heffing_verlegd = null
                                 }
                                 export type SG = 
-                                    | readonly ['Binnenland: heffing verlegd', null]
                                     | readonly ['Intracommunautair', null]
                                     | readonly ['Standaard', {
                                         readonly 'BTW-categorie': string
                                     }]
+                                    | readonly ['Binnenland: heffing verlegd', null]
                             }
                             export type BTW$mi_regime = _i_core._T_State_Group<null, 
-                                | readonly ['Binnenland: heffing verlegd', null]
                                 | readonly ['Intracommunautair', null]
                                 | readonly ['Standaard', {
                                     readonly 'BTW-categorie': string
                                 }]
+                                | readonly ['Binnenland: heffing verlegd', null]
                             >
                             export type Bedrag_exclusief_BTW = number
                             
@@ -2295,40 +2318,40 @@ export namespace _T_Root {
                                 
                                 export namespace SG {
                                     
-                                    export namespace Licentieovereenkomst {
-                                        export type Periode = string
-                                    }
-                                    export type Licentieovereenkomst = {
-                                        readonly 'Periode': string
-                                    }
-                                    
-                                    export namespace Los {
-                                    }
-                                    export type Los = null
-                                    
                                     export namespace Project {
                                         export type Opbrengst = string
                                     }
                                     export type Project = {
                                         readonly 'Opbrengst': string
                                     }
+                                    
+                                    export namespace Los {
+                                    }
+                                    export type Los = null
+                                    
+                                    export namespace Licentieovereenkomst {
+                                        export type Periode = string
+                                    }
+                                    export type Licentieovereenkomst = {
+                                        readonly 'Periode': string
+                                    }
                                 }
                                 export type SG = 
-                                    | readonly ['Licentieovereenkomst', {
-                                        readonly 'Periode': string
-                                    }]
-                                    | readonly ['Los', null]
                                     | readonly ['Project', {
                                         readonly 'Opbrengst': string
                                     }]
+                                    | readonly ['Los', null]
+                                    | readonly ['Licentieovereenkomst', {
+                                        readonly 'Periode': string
+                                    }]
                             }
                             export type Contracttype = _i_core._T_State_Group<null, 
-                                | readonly ['Licentieovereenkomst', {
-                                    readonly 'Periode': string
-                                }]
-                                | readonly ['Los', null]
                                 | readonly ['Project', {
                                     readonly 'Opbrengst': string
+                                }]
+                                | readonly ['Los', null]
+                                | readonly ['Licentieovereenkomst', {
+                                    readonly 'Periode': string
                                 }]
                             >
                             export type Omschrijving = string
@@ -2337,91 +2360,91 @@ export namespace _T_Root {
                                 
                                 export namespace SG {
                                     
-                                    export namespace Balans {
-                                        export type Balans_item = string
-                                    }
-                                    export type Balans = {
-                                        readonly 'Balans item': string
-                                    }
-                                    
                                     export namespace Opbrengsten {
                                         export type Grootboekrekening = string
                                     }
                                     export type Opbrengsten = {
                                         readonly 'Grootboekrekening': string
                                     }
+                                    
+                                    export namespace Balans {
+                                        export type Balans_item = string
+                                    }
+                                    export type Balans = {
+                                        readonly 'Balans item': string
+                                    }
                                 }
                                 export type SG = 
-                                    | readonly ['Balans', {
-                                        readonly 'Balans item': string
-                                    }]
                                     | readonly ['Opbrengsten', {
                                         readonly 'Grootboekrekening': string
                                     }]
+                                    | readonly ['Balans', {
+                                        readonly 'Balans item': string
+                                    }]
                             }
                             export type Type = _i_core._T_State_Group<null, 
-                                | readonly ['Balans', {
-                                    readonly 'Balans item': string
-                                }]
                                 | readonly ['Opbrengsten', {
                                     readonly 'Grootboekrekening': string
+                                }]
+                                | readonly ['Balans', {
+                                    readonly 'Balans item': string
                                 }]
                             >
                         }
                         export type D = {
                             readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                                | readonly ['Binnenland: heffing verlegd', null]
                                 | readonly ['Intracommunautair', null]
                                 | readonly ['Standaard', {
                                     readonly 'BTW-categorie': string
                                 }]
+                                | readonly ['Binnenland: heffing verlegd', null]
                             >
                             readonly 'Bedrag exclusief BTW': number
                             readonly 'Contracttype': _i_core._T_State_Group<null, 
-                                | readonly ['Licentieovereenkomst', {
-                                    readonly 'Periode': string
-                                }]
-                                | readonly ['Los', null]
                                 | readonly ['Project', {
                                     readonly 'Opbrengst': string
+                                }]
+                                | readonly ['Los', null]
+                                | readonly ['Licentieovereenkomst', {
+                                    readonly 'Periode': string
                                 }]
                             >
                             readonly 'Omschrijving': string
                             readonly 'Type': _i_core._T_State_Group<null, 
-                                | readonly ['Balans', {
-                                    readonly 'Balans item': string
-                                }]
                                 | readonly ['Opbrengsten', {
                                     readonly 'Grootboekrekening': string
+                                }]
+                                | readonly ['Balans', {
+                                    readonly 'Balans item': string
                                 }]
                             >
                         }
                     }
                     export type Regels = _i_core._T_Dictionary<null, {
                         readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                            | readonly ['Binnenland: heffing verlegd', null]
                             | readonly ['Intracommunautair', null]
                             | readonly ['Standaard', {
                                 readonly 'BTW-categorie': string
                             }]
+                            | readonly ['Binnenland: heffing verlegd', null]
                         >
                         readonly 'Bedrag exclusief BTW': number
                         readonly 'Contracttype': _i_core._T_State_Group<null, 
-                            | readonly ['Licentieovereenkomst', {
-                                readonly 'Periode': string
-                            }]
-                            | readonly ['Los', null]
                             | readonly ['Project', {
                                 readonly 'Opbrengst': string
+                            }]
+                            | readonly ['Los', null]
+                            | readonly ['Licentieovereenkomst', {
+                                readonly 'Periode': string
                             }]
                         >
                         readonly 'Omschrijving': string
                         readonly 'Type': _i_core._T_State_Group<null, 
-                            | readonly ['Balans', {
-                                readonly 'Balans item': string
-                            }]
                             | readonly ['Opbrengsten', {
                                 readonly 'Grootboekrekening': string
+                            }]
+                            | readonly ['Balans', {
+                                readonly 'Balans item': string
                             }]
                         >
                     }>
@@ -2433,49 +2456,49 @@ export namespace _T_Root {
                             readonly 'Rekening courant': string
                         }]
                     >
-                    readonly 'BTW-periode': string
                     readonly 'Betalingstermijn': number
+                    readonly 'BTW-periode': string
                     readonly 'Brondocument': _i_core._T_State_Group<null, 
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
                     >
                     readonly 'Contracttype': _i_core._T_State_Group<null, 
+                        | readonly ['Project', {
+                            readonly 'Project': string
+                            readonly 'Offerte': string
+                        }]
                         | readonly ['Licentieovereenkomst', {
                             readonly 'Overeenkomst': string
-                        }]
-                        | readonly ['Project', {
-                            readonly 'Offerte': string
-                            readonly 'Project': string
                         }]
                     >
                     readonly 'Datum': number
                     readonly 'Debiteur': string
                     readonly 'Regels': _i_core._T_Dictionary<null, {
                         readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                            | readonly ['Binnenland: heffing verlegd', null]
                             | readonly ['Intracommunautair', null]
                             | readonly ['Standaard', {
                                 readonly 'BTW-categorie': string
                             }]
+                            | readonly ['Binnenland: heffing verlegd', null]
                         >
                         readonly 'Bedrag exclusief BTW': number
                         readonly 'Contracttype': _i_core._T_State_Group<null, 
-                            | readonly ['Licentieovereenkomst', {
-                                readonly 'Periode': string
-                            }]
-                            | readonly ['Los', null]
                             | readonly ['Project', {
                                 readonly 'Opbrengst': string
+                            }]
+                            | readonly ['Los', null]
+                            | readonly ['Licentieovereenkomst', {
+                                readonly 'Periode': string
                             }]
                         >
                         readonly 'Omschrijving': string
                         readonly 'Type': _i_core._T_State_Group<null, 
-                            | readonly ['Balans', {
-                                readonly 'Balans item': string
-                            }]
                             | readonly ['Opbrengsten', {
                                 readonly 'Grootboekrekening': string
+                            }]
+                            | readonly ['Balans', {
+                                readonly 'Balans item': string
                             }]
                         >
                     }>
@@ -2488,49 +2511,49 @@ export namespace _T_Root {
                         readonly 'Rekening courant': string
                     }]
                 >
-                readonly 'BTW-periode': string
                 readonly 'Betalingstermijn': number
+                readonly 'BTW-periode': string
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
                 >
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
+                    | readonly ['Project', {
+                        readonly 'Project': string
+                        readonly 'Offerte': string
+                    }]
                     | readonly ['Licentieovereenkomst', {
                         readonly 'Overeenkomst': string
-                    }]
-                    | readonly ['Project', {
-                        readonly 'Offerte': string
-                        readonly 'Project': string
                     }]
                 >
                 readonly 'Datum': number
                 readonly 'Debiteur': string
                 readonly 'Regels': _i_core._T_Dictionary<null, {
                     readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                        | readonly ['Binnenland: heffing verlegd', null]
                         | readonly ['Intracommunautair', null]
                         | readonly ['Standaard', {
                             readonly 'BTW-categorie': string
                         }]
+                        | readonly ['Binnenland: heffing verlegd', null]
                     >
                     readonly 'Bedrag exclusief BTW': number
                     readonly 'Contracttype': _i_core._T_State_Group<null, 
-                        | readonly ['Licentieovereenkomst', {
-                            readonly 'Periode': string
-                        }]
-                        | readonly ['Los', null]
                         | readonly ['Project', {
                             readonly 'Opbrengst': string
+                        }]
+                        | readonly ['Los', null]
+                        | readonly ['Licentieovereenkomst', {
+                            readonly 'Periode': string
                         }]
                     >
                     readonly 'Omschrijving': string
                     readonly 'Type': _i_core._T_State_Group<null, 
-                        | readonly ['Balans', {
-                            readonly 'Balans item': string
-                        }]
                         | readonly ['Opbrengsten', {
                             readonly 'Grootboekrekening': string
+                        }]
+                        | readonly ['Balans', {
+                            readonly 'Balans item': string
                         }]
                     >
                 }>
@@ -2543,18 +2566,19 @@ export namespace _T_Root {
                     export namespace Mutaties {
                         
                         export namespace D {
+                            export type Bedrag = number
                             
                             export namespace Afhandeling {
                                 
                                 export namespace SG {
                                     
-                                    export namespace BTW$mi_periode {
-                                        export type BTW$mi_periode = string
+                                    export namespace Inkoop {
                                         export type Jaar = string
+                                        export type Inkoop = string
                                     }
-                                    export type BTW$mi_periode = {
-                                        readonly 'BTW-periode': string
+                                    export type Inkoop = {
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
                                     }
                                     
                                     export namespace Informele_rekening {
@@ -2562,15 +2586,6 @@ export namespace _T_Root {
                                     }
                                     export type Informele_rekening = {
                                         readonly 'Informele rekening': string
-                                    }
-                                    
-                                    export namespace Inkoop {
-                                        export type Inkoop = string
-                                        export type Jaar = string
-                                    }
-                                    export type Inkoop = {
-                                        readonly 'Inkoop': string
-                                        readonly 'Jaar': string
                                     }
                                     
                                     export namespace Verkoop {
@@ -2581,128 +2596,136 @@ export namespace _T_Root {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }
+                                    
+                                    export namespace BTW$mi_periode {
+                                        export type Jaar = string
+                                        export type BTW$mi_periode = string
+                                    }
+                                    export type BTW$mi_periode = {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
+                                    }
                                 }
                                 export type SG = 
-                                    | readonly ['BTW-periode', {
-                                        readonly 'BTW-periode': string
+                                    | readonly ['Inkoop', {
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
                                     }]
                                     | readonly ['Informele rekening', {
                                         readonly 'Informele rekening': string
-                                    }]
-                                    | readonly ['Inkoop', {
-                                        readonly 'Inkoop': string
-                                        readonly 'Jaar': string
                                     }]
                                     | readonly ['Verkoop', {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }]
+                                    | readonly ['BTW-periode', {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
+                                    }]
                             }
                             export type Afhandeling = _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
+                                | readonly ['Inkoop', {
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
                                 }]
                                 | readonly ['Informele rekening', {
                                     readonly 'Informele rekening': string
-                                }]
-                                | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
-                                    readonly 'Jaar': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
+                                }]
                             >
-                            export type Bedrag = number
                         }
                         export type D = {
+                            readonly 'Bedrag': number
                             readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
+                                | readonly ['Inkoop', {
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
                                 }]
                                 | readonly ['Informele rekening', {
                                     readonly 'Informele rekening': string
-                                }]
-                                | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
-                                    readonly 'Jaar': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
+                                }]
                             >
-                            readonly 'Bedrag': number
                         }
                     }
                     export type Mutaties = _i_core._T_Dictionary<null, {
+                        readonly 'Bedrag': number
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
+                            | readonly ['Inkoop', {
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
                             }]
                             | readonly ['Informele rekening', {
                                 readonly 'Informele rekening': string
-                            }]
-                            | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
-                                readonly 'Jaar': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
+                            }]
                         >
-                        readonly 'Bedrag': number
                     }>
                 }
                 export type D = {
                     readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                        readonly 'Bedrag': number
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
+                            | readonly ['Inkoop', {
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
                             }]
                             | readonly ['Informele rekening', {
                                 readonly 'Informele rekening': string
-                            }]
-                            | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
-                                readonly 'Jaar': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
+                            }]
                         >
-                        readonly 'Bedrag': number
                     }>
                 }
             }
             export type Verrekenposten = _i_core._T_Dictionary<null, {
                 readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                    readonly 'Bedrag': number
                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                        | readonly ['BTW-periode', {
-                            readonly 'BTW-periode': string
+                        | readonly ['Inkoop', {
                             readonly 'Jaar': string
+                            readonly 'Inkoop': string
                         }]
                         | readonly ['Informele rekening', {
                             readonly 'Informele rekening': string
-                        }]
-                        | readonly ['Inkoop', {
-                            readonly 'Inkoop': string
-                            readonly 'Jaar': string
                         }]
                         | readonly ['Verkoop', {
                             readonly 'Jaar': string
                             readonly 'Verkoop': string
                         }]
+                        | readonly ['BTW-periode', {
+                            readonly 'Jaar': string
+                            readonly 'BTW-periode': string
+                        }]
                     >
-                    readonly 'Bedrag': number
                 }>
             }>
         }
@@ -2711,29 +2734,11 @@ export namespace _T_Root {
                 | readonly ['Ja', null]
                 | readonly ['Nee', null]
             >
-            readonly 'BTW periode saldo': {
-                readonly 'Grootboekrekening': string
-            }
-            readonly 'BTW periodes': _i_core._T_Dictionary<null, {
-                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-                readonly 'Documenten': _i_core._T_Dictionary<null, {
-                    readonly 'Bestand': string
-                }>
-                readonly 'Omschrijving': string
-                readonly 'Status': _i_core._T_State_Group<null, 
-                    | readonly ['Aangegeven', {
-                        readonly 'Afronding': number
-                        readonly 'Bedrag': number
-                        readonly 'Datum': number
-                    }]
-                    | readonly ['Openstaand', null]
-                >
-            }>
             readonly 'Balans grootboekrekeningen': _i_core._T_Dictionary<null, {
                 readonly 'Type': _i_core._T_State_Group<null, 
                     | readonly ['Bankrekening', null]
-                    | readonly ['Informele rekening', null]
                     | readonly ['Overig', null]
+                    | readonly ['Informele rekening', null]
                 >
             }>
             readonly 'Bankrekeningen': _i_core._T_Dictionary<null, {
@@ -2747,23 +2752,23 @@ export namespace _T_Root {
                         | readonly ['Nog te verwerken', null]
                         | readonly ['Verwerkt', {
                             readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
-                                    readonly 'Jaar': string
-                                }]
-                                | readonly ['Informele rekening', {
-                                    readonly 'Informele rekening': string
-                                }]
                                 | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
+                                }]
+                                | readonly ['Verrekenpost', {
+                                    readonly 'Verrekenpost': string
+                                }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
-                                | readonly ['Verrekenpost', {
-                                    readonly 'Verrekenpost': string
+                                | readonly ['Informele rekening', {
+                                    readonly 'Informele rekening': string
                                 }]
                             >
                         }]
@@ -2779,6 +2784,24 @@ export namespace _T_Root {
             }>
             readonly 'Beginsaldo nog aan te geven BTW': number
             readonly 'Beginsaldo winstreserve': number
+            readonly 'BTW periode saldo': {
+                readonly 'Grootboekrekening': string
+            }
+            readonly 'BTW periodes': _i_core._T_Dictionary<null, {
+                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+                readonly 'Documenten': _i_core._T_Dictionary<null, {
+                    readonly 'Bestand': _T_Bestandsnaam
+                }>
+                readonly 'Omschrijving': string
+                readonly 'Status': _i_core._T_State_Group<null, 
+                    | readonly ['Aangegeven', {
+                        readonly 'Afronding': number
+                        readonly 'Bedrag': number
+                        readonly 'Datum': number
+                    }]
+                    | readonly ['Openstaand', null]
+                >
+            }>
             readonly 'Eerste boekjaar': _i_core._T_State_Group<null, 
                 | readonly ['Ja', null]
                 | readonly ['Nee', {
@@ -2800,9 +2823,6 @@ export namespace _T_Root {
                     }]
                 >
             }>
-            readonly 'Inkoop saldo': {
-                readonly 'Grootboekrekening': string
-            }
             readonly 'Inkopen': _i_core._T_Dictionary<null, {
                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
                     | readonly ['Mutaties', null]
@@ -2822,12 +2842,12 @@ export namespace _T_Root {
                     }]
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
-                    | readonly ['Niet van toepassing', null]
-                    | readonly ['Nog toevoegen', null]
-                    | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
+                    | readonly ['Niet van toepassing', null]
+                    | readonly ['Ontbreekt', null]
+                    | readonly ['Nog toevoegen', null]
                 >
                 readonly 'Datum': number
                 readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -2857,11 +2877,14 @@ export namespace _T_Root {
                         readonly 'Ronde': string
                     }]
                     | readonly ['Salaris', {
-                        readonly 'Medewerker': string
                         readonly 'Ronde': string
+                        readonly 'Medewerker': string
                     }]
                 >
             }>
+            readonly 'Inkoop saldo': {
+                readonly 'Grootboekrekening': string
+            }
             readonly 'Overige balans items': _i_core._T_Dictionary<null, {
                 readonly 'Beginsaldo': number
                 readonly 'Grootboekrekening': string
@@ -2874,8 +2897,8 @@ export namespace _T_Root {
                 readonly 'Nieuw': _i_core._T_State_Group<null, 
                     | readonly ['Ja', null]
                     | readonly ['Nee', {
-                        readonly 'Balans item': string
                         readonly 'Jaar': string
+                        readonly 'Balans item': string
                     }]
                 >
             }>
@@ -2892,73 +2915,73 @@ export namespace _T_Root {
                         readonly 'Rekening courant': string
                     }]
                 >
-                readonly 'BTW-periode': string
                 readonly 'Betalingstermijn': number
+                readonly 'BTW-periode': string
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
                 >
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
+                    | readonly ['Project', {
+                        readonly 'Project': string
+                        readonly 'Offerte': string
+                    }]
                     | readonly ['Licentieovereenkomst', {
                         readonly 'Overeenkomst': string
-                    }]
-                    | readonly ['Project', {
-                        readonly 'Offerte': string
-                        readonly 'Project': string
                     }]
                 >
                 readonly 'Datum': number
                 readonly 'Debiteur': string
                 readonly 'Regels': _i_core._T_Dictionary<null, {
                     readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                        | readonly ['Binnenland: heffing verlegd', null]
                         | readonly ['Intracommunautair', null]
                         | readonly ['Standaard', {
                             readonly 'BTW-categorie': string
                         }]
+                        | readonly ['Binnenland: heffing verlegd', null]
                     >
                     readonly 'Bedrag exclusief BTW': number
                     readonly 'Contracttype': _i_core._T_State_Group<null, 
-                        | readonly ['Licentieovereenkomst', {
-                            readonly 'Periode': string
-                        }]
-                        | readonly ['Los', null]
                         | readonly ['Project', {
                             readonly 'Opbrengst': string
+                        }]
+                        | readonly ['Los', null]
+                        | readonly ['Licentieovereenkomst', {
+                            readonly 'Periode': string
                         }]
                     >
                     readonly 'Omschrijving': string
                     readonly 'Type': _i_core._T_State_Group<null, 
-                        | readonly ['Balans', {
-                            readonly 'Balans item': string
-                        }]
                         | readonly ['Opbrengsten', {
                             readonly 'Grootboekrekening': string
+                        }]
+                        | readonly ['Balans', {
+                            readonly 'Balans item': string
                         }]
                     >
                 }>
             }>
             readonly 'Verrekenposten': _i_core._T_Dictionary<null, {
                 readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                    readonly 'Bedrag': number
                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                        | readonly ['BTW-periode', {
-                            readonly 'BTW-periode': string
+                        | readonly ['Inkoop', {
                             readonly 'Jaar': string
+                            readonly 'Inkoop': string
                         }]
                         | readonly ['Informele rekening', {
                             readonly 'Informele rekening': string
-                        }]
-                        | readonly ['Inkoop', {
-                            readonly 'Inkoop': string
-                            readonly 'Jaar': string
                         }]
                         | readonly ['Verkoop', {
                             readonly 'Jaar': string
                             readonly 'Verkoop': string
                         }]
+                        | readonly ['BTW-periode', {
+                            readonly 'Jaar': string
+                            readonly 'BTW-periode': string
+                        }]
                     >
-                    readonly 'Bedrag': number
                 }>
             }>
         }
@@ -2968,29 +2991,11 @@ export namespace _T_Root {
             | readonly ['Ja', null]
             | readonly ['Nee', null]
         >
-        readonly 'BTW periode saldo': {
-            readonly 'Grootboekrekening': string
-        }
-        readonly 'BTW periodes': _i_core._T_Dictionary<null, {
-            readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-            readonly 'Documenten': _i_core._T_Dictionary<null, {
-                readonly 'Bestand': string
-            }>
-            readonly 'Omschrijving': string
-            readonly 'Status': _i_core._T_State_Group<null, 
-                | readonly ['Aangegeven', {
-                    readonly 'Afronding': number
-                    readonly 'Bedrag': number
-                    readonly 'Datum': number
-                }]
-                | readonly ['Openstaand', null]
-            >
-        }>
         readonly 'Balans grootboekrekeningen': _i_core._T_Dictionary<null, {
             readonly 'Type': _i_core._T_State_Group<null, 
                 | readonly ['Bankrekening', null]
-                | readonly ['Informele rekening', null]
                 | readonly ['Overig', null]
+                | readonly ['Informele rekening', null]
             >
         }>
         readonly 'Bankrekeningen': _i_core._T_Dictionary<null, {
@@ -3004,23 +3009,23 @@ export namespace _T_Root {
                     | readonly ['Nog te verwerken', null]
                     | readonly ['Verwerkt', {
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
-                                readonly 'Jaar': string
-                            }]
-                            | readonly ['Informele rekening', {
-                                readonly 'Informele rekening': string
-                            }]
                             | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
+                            }]
+                            | readonly ['Verrekenpost', {
+                                readonly 'Verrekenpost': string
+                            }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
-                            | readonly ['Verrekenpost', {
-                                readonly 'Verrekenpost': string
+                            | readonly ['Informele rekening', {
+                                readonly 'Informele rekening': string
                             }]
                         >
                     }]
@@ -3036,6 +3041,24 @@ export namespace _T_Root {
         }>
         readonly 'Beginsaldo nog aan te geven BTW': number
         readonly 'Beginsaldo winstreserve': number
+        readonly 'BTW periode saldo': {
+            readonly 'Grootboekrekening': string
+        }
+        readonly 'BTW periodes': _i_core._T_Dictionary<null, {
+            readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+            readonly 'Documenten': _i_core._T_Dictionary<null, {
+                readonly 'Bestand': _T_Bestandsnaam
+            }>
+            readonly 'Omschrijving': string
+            readonly 'Status': _i_core._T_State_Group<null, 
+                | readonly ['Aangegeven', {
+                    readonly 'Afronding': number
+                    readonly 'Bedrag': number
+                    readonly 'Datum': number
+                }]
+                | readonly ['Openstaand', null]
+            >
+        }>
         readonly 'Eerste boekjaar': _i_core._T_State_Group<null, 
             | readonly ['Ja', null]
             | readonly ['Nee', {
@@ -3057,9 +3080,6 @@ export namespace _T_Root {
                 }]
             >
         }>
-        readonly 'Inkoop saldo': {
-            readonly 'Grootboekrekening': string
-        }
         readonly 'Inkopen': _i_core._T_Dictionary<null, {
             readonly 'Afhandeling': _i_core._T_State_Group<null, 
                 | readonly ['Mutaties', null]
@@ -3079,12 +3099,12 @@ export namespace _T_Root {
                 }]
             >
             readonly 'Brondocument': _i_core._T_State_Group<null, 
-                | readonly ['Niet van toepassing', null]
-                | readonly ['Nog toevoegen', null]
-                | readonly ['Ontbreekt', null]
                 | readonly ['Toegevoegd', {
-                    readonly 'Document': string
+                    readonly 'Document': _T_Bestandsnaam
                 }]
+                | readonly ['Niet van toepassing', null]
+                | readonly ['Ontbreekt', null]
+                | readonly ['Nog toevoegen', null]
             >
             readonly 'Datum': number
             readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -3114,11 +3134,14 @@ export namespace _T_Root {
                     readonly 'Ronde': string
                 }]
                 | readonly ['Salaris', {
-                    readonly 'Medewerker': string
                     readonly 'Ronde': string
+                    readonly 'Medewerker': string
                 }]
             >
         }>
+        readonly 'Inkoop saldo': {
+            readonly 'Grootboekrekening': string
+        }
         readonly 'Overige balans items': _i_core._T_Dictionary<null, {
             readonly 'Beginsaldo': number
             readonly 'Grootboekrekening': string
@@ -3131,8 +3154,8 @@ export namespace _T_Root {
             readonly 'Nieuw': _i_core._T_State_Group<null, 
                 | readonly ['Ja', null]
                 | readonly ['Nee', {
-                    readonly 'Balans item': string
                     readonly 'Jaar': string
+                    readonly 'Balans item': string
                 }]
             >
         }>
@@ -3149,73 +3172,73 @@ export namespace _T_Root {
                     readonly 'Rekening courant': string
                 }]
             >
-            readonly 'BTW-periode': string
             readonly 'Betalingstermijn': number
+            readonly 'BTW-periode': string
             readonly 'Brondocument': _i_core._T_State_Group<null, 
                 | readonly ['Toegevoegd', {
-                    readonly 'Document': string
+                    readonly 'Document': _T_Bestandsnaam
                 }]
             >
             readonly 'Contracttype': _i_core._T_State_Group<null, 
+                | readonly ['Project', {
+                    readonly 'Project': string
+                    readonly 'Offerte': string
+                }]
                 | readonly ['Licentieovereenkomst', {
                     readonly 'Overeenkomst': string
-                }]
-                | readonly ['Project', {
-                    readonly 'Offerte': string
-                    readonly 'Project': string
                 }]
             >
             readonly 'Datum': number
             readonly 'Debiteur': string
             readonly 'Regels': _i_core._T_Dictionary<null, {
                 readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                    | readonly ['Binnenland: heffing verlegd', null]
                     | readonly ['Intracommunautair', null]
                     | readonly ['Standaard', {
                         readonly 'BTW-categorie': string
                     }]
+                    | readonly ['Binnenland: heffing verlegd', null]
                 >
                 readonly 'Bedrag exclusief BTW': number
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
-                    | readonly ['Licentieovereenkomst', {
-                        readonly 'Periode': string
-                    }]
-                    | readonly ['Los', null]
                     | readonly ['Project', {
                         readonly 'Opbrengst': string
+                    }]
+                    | readonly ['Los', null]
+                    | readonly ['Licentieovereenkomst', {
+                        readonly 'Periode': string
                     }]
                 >
                 readonly 'Omschrijving': string
                 readonly 'Type': _i_core._T_State_Group<null, 
-                    | readonly ['Balans', {
-                        readonly 'Balans item': string
-                    }]
                     | readonly ['Opbrengsten', {
                         readonly 'Grootboekrekening': string
+                    }]
+                    | readonly ['Balans', {
+                        readonly 'Balans item': string
                     }]
                 >
             }>
         }>
         readonly 'Verrekenposten': _i_core._T_Dictionary<null, {
             readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                readonly 'Bedrag': number
                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                    | readonly ['BTW-periode', {
-                        readonly 'BTW-periode': string
+                    | readonly ['Inkoop', {
                         readonly 'Jaar': string
+                        readonly 'Inkoop': string
                     }]
                     | readonly ['Informele rekening', {
                         readonly 'Informele rekening': string
-                    }]
-                    | readonly ['Inkoop', {
-                        readonly 'Inkoop': string
-                        readonly 'Jaar': string
                     }]
                     | readonly ['Verkoop', {
                         readonly 'Jaar': string
                         readonly 'Verkoop': string
                     }]
+                    | readonly ['BTW-periode', {
+                        readonly 'Jaar': string
+                        readonly 'BTW-periode': string
+                    }]
                 >
-                readonly 'Bedrag': number
             }>
         }>
     }>
@@ -3428,48 +3451,6 @@ export namespace Root {
     
     export namespace Beheer {
         
-        export namespace BTW$mi_categorieen {
-            
-            export namespace D {
-                
-                export namespace BTW$mi_heffing {
-                    
-                    export namespace SG {
-                        
-                        export namespace Ja {
-                            export type BTW$mi_promillage = number
-                        }
-                        export type Ja = {
-                            readonly 'BTW-promillage': number
-                        }
-                    }
-                    export type SG = 
-                        | readonly ['Ja', {
-                            readonly 'BTW-promillage': number
-                        }]
-                }
-                export type BTW$mi_heffing = _i_core._T_State_Group<null, 
-                    | readonly ['Ja', {
-                        readonly 'BTW-promillage': number
-                    }]
-                >
-            }
-            export type D = {
-                readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                    | readonly ['Ja', {
-                        readonly 'BTW-promillage': number
-                    }]
-                >
-            }
-        }
-        export type BTW$mi_categorieen = _i_core._T_Dictionary<null, {
-            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                | readonly ['Ja', {
-                    readonly 'BTW-promillage': number
-                }]
-            >
-        }>
-        
         export namespace Balans {
             
             export namespace Grootboekrekeningen {
@@ -3521,6 +3502,27 @@ export namespace Root {
                 
                 export namespace D {
                     
+                    export namespace Zijde {
+                        
+                        export namespace SG {
+                            
+                            export namespace Activa {
+                            }
+                            export type Activa = null
+                            
+                            export namespace Passiva {
+                            }
+                            export type Passiva = null
+                        }
+                        export type SG = 
+                            | readonly ['Activa', null]
+                            | readonly ['Passiva', null]
+                    }
+                    export type Zijde = _i_core._T_State_Group<null, 
+                        | readonly ['Activa', null]
+                        | readonly ['Passiva', null]
+                    >
+                    
                     export namespace Subcategorieen {
                         
                         export namespace D {
@@ -3536,6 +3538,32 @@ export namespace Root {
                         readonly 'Hoofdcategorie fiscus': string
                         readonly 'Subcategorie fiscus': string
                     }>
+                }
+                export type D = {
+                    readonly 'Zijde': _i_core._T_State_Group<null, 
+                        | readonly ['Activa', null]
+                        | readonly ['Passiva', null]
+                    >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                        readonly 'Hoofdcategorie fiscus': string
+                        readonly 'Subcategorie fiscus': string
+                    }>
+                }
+            }
+            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                    readonly 'Hoofdcategorie fiscus': string
+                    readonly 'Subcategorie fiscus': string
+                }>
+            }>
+            
+            export namespace Hoofdcategorieen_fiscus {
+                
+                export namespace D {
                     
                     export namespace Zijde {
                         
@@ -3557,32 +3585,6 @@ export namespace Root {
                         | readonly ['Activa', null]
                         | readonly ['Passiva', null]
                     >
-                }
-                export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                        readonly 'Hoofdcategorie fiscus': string
-                        readonly 'Subcategorie fiscus': string
-                    }>
-                    readonly 'Zijde': _i_core._T_State_Group<null, 
-                        | readonly ['Activa', null]
-                        | readonly ['Passiva', null]
-                    >
-                }
-            }
-            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                    readonly 'Hoofdcategorie fiscus': string
-                    readonly 'Subcategorie fiscus': string
-                }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
-            }>
-            
-            export namespace Hoofdcategorieen_fiscus {
-                
-                export namespace D {
                     
                     export namespace Subcategorieen {
                         
@@ -3591,42 +3593,21 @@ export namespace Root {
                         export type D = null
                     }
                     export type Subcategorieen = _i_core._T_Dictionary<null, null>
-                    
-                    export namespace Zijde {
-                        
-                        export namespace SG {
-                            
-                            export namespace Activa {
-                            }
-                            export type Activa = null
-                            
-                            export namespace Passiva {
-                            }
-                            export type Passiva = null
-                        }
-                        export type SG = 
-                            | readonly ['Activa', null]
-                            | readonly ['Passiva', null]
-                    }
-                    export type Zijde = _i_core._T_State_Group<null, 
-                        | readonly ['Activa', null]
-                        | readonly ['Passiva', null]
-                    >
                 }
                 export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                     readonly 'Zijde': _i_core._T_State_Group<null, 
                         | readonly ['Activa', null]
                         | readonly ['Passiva', null]
                     >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 }
             }
             export type Hoofdcategorieen_fiscus = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
         export type Balans = {
@@ -3639,23 +3620,73 @@ export namespace Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
+        
+        export namespace BTW$mi_categorieen {
+            
+            export namespace D {
+                
+                export namespace BTW$mi_heffing {
+                    
+                    export namespace SG {
+                        
+                        export namespace Ja {
+                            export type BTW$mi_promillage = number
+                        }
+                        export type Ja = {
+                            readonly 'BTW-promillage': number
+                        }
+                        
+                        export namespace Nee {
+                        }
+                        export type Nee = null
+                    }
+                    export type SG = 
+                        | readonly ['Ja', {
+                            readonly 'BTW-promillage': number
+                        }]
+                        | readonly ['Nee', null]
+                }
+                export type BTW$mi_heffing = _i_core._T_State_Group<null, 
+                    | readonly ['Ja', {
+                        readonly 'BTW-promillage': number
+                    }]
+                    | readonly ['Nee', null]
+                >
+            }
+            export type D = {
+                readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                    | readonly ['Ja', {
+                        readonly 'BTW-promillage': number
+                    }]
+                    | readonly ['Nee', null]
+                >
+            }
+        }
+        export type BTW$mi_categorieen = _i_core._T_Dictionary<null, {
+            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                | readonly ['Ja', {
+                    readonly 'BTW-promillage': number
+                }]
+                | readonly ['Nee', null]
+            >
+        }>
         
         export namespace Gebruikers {
             
@@ -3801,6 +3832,27 @@ export namespace Root {
                 
                 export namespace D {
                     
+                    export namespace Zijde {
+                        
+                        export namespace SG {
+                            
+                            export namespace Kosten {
+                            }
+                            export type Kosten = null
+                            
+                            export namespace Opbrengsten {
+                            }
+                            export type Opbrengsten = null
+                        }
+                        export type SG = 
+                            | readonly ['Kosten', null]
+                            | readonly ['Opbrengsten', null]
+                    }
+                    export type Zijde = _i_core._T_State_Group<null, 
+                        | readonly ['Kosten', null]
+                        | readonly ['Opbrengsten', null]
+                    >
+                    
                     export namespace Subcategorieen {
                         
                         export namespace D {
@@ -3816,6 +3868,32 @@ export namespace Root {
                         readonly 'Hoofdcategorie fiscus': string
                         readonly 'Subcategorie fiscus': string
                     }>
+                }
+                export type D = {
+                    readonly 'Zijde': _i_core._T_State_Group<null, 
+                        | readonly ['Kosten', null]
+                        | readonly ['Opbrengsten', null]
+                    >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                        readonly 'Hoofdcategorie fiscus': string
+                        readonly 'Subcategorie fiscus': string
+                    }>
+                }
+            }
+            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
+                    readonly 'Hoofdcategorie fiscus': string
+                    readonly 'Subcategorie fiscus': string
+                }>
+            }>
+            
+            export namespace Hoofdcategorieen_fiscus {
+                
+                export namespace D {
                     
                     export namespace Zijde {
                         
@@ -3837,32 +3915,6 @@ export namespace Root {
                         | readonly ['Kosten', null]
                         | readonly ['Opbrengsten', null]
                     >
-                }
-                export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                        readonly 'Hoofdcategorie fiscus': string
-                        readonly 'Subcategorie fiscus': string
-                    }>
-                    readonly 'Zijde': _i_core._T_State_Group<null, 
-                        | readonly ['Kosten', null]
-                        | readonly ['Opbrengsten', null]
-                    >
-                }
-            }
-            export type Hoofdcategorieen = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
-                    readonly 'Hoofdcategorie fiscus': string
-                    readonly 'Subcategorie fiscus': string
-                }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
-            }>
-            
-            export namespace Hoofdcategorieen_fiscus {
-                
-                export namespace D {
                     
                     export namespace Subcategorieen {
                         
@@ -3871,42 +3923,21 @@ export namespace Root {
                         export type D = null
                     }
                     export type Subcategorieen = _i_core._T_Dictionary<null, null>
-                    
-                    export namespace Zijde {
-                        
-                        export namespace SG {
-                            
-                            export namespace Kosten {
-                            }
-                            export type Kosten = null
-                            
-                            export namespace Opbrengsten {
-                            }
-                            export type Opbrengsten = null
-                        }
-                        export type SG = 
-                            | readonly ['Kosten', null]
-                            | readonly ['Opbrengsten', null]
-                    }
-                    export type Zijde = _i_core._T_State_Group<null, 
-                        | readonly ['Kosten', null]
-                        | readonly ['Opbrengsten', null]
-                    >
                 }
                 export type D = {
-                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                     readonly 'Zijde': _i_core._T_State_Group<null, 
                         | readonly ['Kosten', null]
                         | readonly ['Opbrengsten', null]
                     >
+                    readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 }
             }
             export type Hoofdcategorieen_fiscus = _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
         export type Resultaat = {
@@ -3929,32 +3960,25 @@ export namespace Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
     }
     export type Beheer = {
-        readonly 'BTW-categorieen': _i_core._T_Dictionary<null, {
-            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
-                | readonly ['Ja', {
-                    readonly 'BTW-promillage': number
-                }]
-            >
-        }>
         readonly 'Balans': {
             readonly 'Grootboekrekeningen': _i_core._T_Dictionary<null, {
                 readonly 'Hoofdcategorie': string
@@ -3965,23 +3989,31 @@ export namespace Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Activa', null]
+                    | readonly ['Passiva', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Activa', null]
-                    | readonly ['Passiva', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Activa', null]
                     | readonly ['Passiva', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
+        readonly 'BTW-categorieen': _i_core._T_Dictionary<null, {
+            readonly 'BTW-heffing': _i_core._T_State_Group<null, 
+                | readonly ['Ja', {
+                    readonly 'BTW-promillage': number
+                }]
+                | readonly ['Nee', null]
+            >
+        }>
         readonly 'Gebruikers': _i_core._T_Dictionary<null, {
             readonly 'Volledige naam': string
             readonly 'Wachtwoord': string
@@ -4007,21 +4039,21 @@ export namespace Root {
                 >
             }>
             readonly 'Hoofdcategorieen': _i_core._T_Dictionary<null, {
+                readonly 'Zijde': _i_core._T_State_Group<null, 
+                    | readonly ['Kosten', null]
+                    | readonly ['Opbrengsten', null]
+                >
                 readonly 'Subcategorieen': _i_core._T_Dictionary<null, {
                     readonly 'Hoofdcategorie fiscus': string
                     readonly 'Subcategorie fiscus': string
                 }>
-                readonly 'Zijde': _i_core._T_State_Group<null, 
-                    | readonly ['Kosten', null]
-                    | readonly ['Opbrengsten', null]
-                >
             }>
             readonly 'Hoofdcategorieen fiscus': _i_core._T_Dictionary<null, {
-                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
                 readonly 'Zijde': _i_core._T_State_Group<null, 
                     | readonly ['Kosten', null]
                     | readonly ['Opbrengsten', null]
                 >
+                readonly 'Subcategorieen': _i_core._T_Dictionary<null, null>
             }>
         }
     }
@@ -4059,107 +4091,6 @@ export namespace Root {
                 | readonly ['Nee', null]
             >
             
-            export namespace BTW_periode_saldo {
-                export type Grootboekrekening = string
-            }
-            export type BTW_periode_saldo = {
-                readonly 'Grootboekrekening': string
-            }
-            
-            export namespace BTW_periodes {
-                
-                export namespace D {
-                    
-                    export namespace _11$pe__BTW$mi_categorieen {
-                        
-                        export namespace D {
-                        }
-                        export type D = null
-                    }
-                    export type _11$pe__BTW$mi_categorieen = _i_core._T_Dictionary<null, null>
-                    
-                    export namespace Documenten {
-                        
-                        export namespace D {
-                            export type Bestand = string
-                        }
-                        export type D = {
-                            readonly 'Bestand': string
-                        }
-                    }
-                    export type Documenten = _i_core._T_Dictionary<null, {
-                        readonly 'Bestand': string
-                    }>
-                    export type Omschrijving = string
-                    
-                    export namespace Status {
-                        
-                        export namespace SG {
-                            
-                            export namespace Aangegeven {
-                                export type Afronding = number
-                                export type Bedrag = number
-                                export type Datum = number
-                            }
-                            export type Aangegeven = {
-                                readonly 'Afronding': number
-                                readonly 'Bedrag': number
-                                readonly 'Datum': number
-                            }
-                            
-                            export namespace Openstaand {
-                            }
-                            export type Openstaand = null
-                        }
-                        export type SG = 
-                            | readonly ['Aangegeven', {
-                                readonly 'Afronding': number
-                                readonly 'Bedrag': number
-                                readonly 'Datum': number
-                            }]
-                            | readonly ['Openstaand', null]
-                    }
-                    export type Status = _i_core._T_State_Group<null, 
-                        | readonly ['Aangegeven', {
-                            readonly 'Afronding': number
-                            readonly 'Bedrag': number
-                            readonly 'Datum': number
-                        }]
-                        | readonly ['Openstaand', null]
-                    >
-                }
-                export type D = {
-                    readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-                    readonly 'Documenten': _i_core._T_Dictionary<null, {
-                        readonly 'Bestand': string
-                    }>
-                    readonly 'Omschrijving': string
-                    readonly 'Status': _i_core._T_State_Group<null, 
-                        | readonly ['Aangegeven', {
-                            readonly 'Afronding': number
-                            readonly 'Bedrag': number
-                            readonly 'Datum': number
-                        }]
-                        | readonly ['Openstaand', null]
-                    >
-                }
-            }
-            export type BTW_periodes = _i_core._T_Dictionary<null, {
-                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-                readonly 'Documenten': _i_core._T_Dictionary<null, {
-                    readonly 'Bestand': string
-                }>
-                readonly 'Omschrijving': string
-                readonly 'Status': _i_core._T_State_Group<null, 
-                    | readonly ['Aangegeven', {
-                        readonly 'Afronding': number
-                        readonly 'Bedrag': number
-                        readonly 'Datum': number
-                    }]
-                    | readonly ['Openstaand', null]
-                >
-            }>
-            
             export namespace Balans_grootboekrekeningen {
                 
                 export namespace D {
@@ -4172,38 +4103,38 @@ export namespace Root {
                             }
                             export type Bankrekening = null
                             
-                            export namespace Informele_rekening {
-                            }
-                            export type Informele_rekening = null
-                            
                             export namespace Overig {
                             }
                             export type Overig = null
+                            
+                            export namespace Informele_rekening {
+                            }
+                            export type Informele_rekening = null
                         }
                         export type SG = 
                             | readonly ['Bankrekening', null]
-                            | readonly ['Informele rekening', null]
                             | readonly ['Overig', null]
+                            | readonly ['Informele rekening', null]
                     }
                     export type Type = _i_core._T_State_Group<null, 
                         | readonly ['Bankrekening', null]
-                        | readonly ['Informele rekening', null]
                         | readonly ['Overig', null]
+                        | readonly ['Informele rekening', null]
                     >
                 }
                 export type D = {
                     readonly 'Type': _i_core._T_State_Group<null, 
                         | readonly ['Bankrekening', null]
-                        | readonly ['Informele rekening', null]
                         | readonly ['Overig', null]
+                        | readonly ['Informele rekening', null]
                     >
                 }
             }
             export type Balans_grootboekrekeningen = _i_core._T_Dictionary<null, {
                 readonly 'Type': _i_core._T_State_Group<null, 
                     | readonly ['Bankrekening', null]
-                    | readonly ['Informele rekening', null]
                     | readonly ['Overig', null]
+                    | readonly ['Informele rekening', null]
                 >
             }>
             
@@ -4234,29 +4165,29 @@ export namespace Root {
                                             
                                             export namespace SG {
                                                 
-                                                export namespace BTW$mi_periode {
-                                                    export type BTW$mi_periode = string
-                                                    export type Jaar = string
-                                                }
-                                                export type BTW$mi_periode = {
-                                                    readonly 'BTW-periode': string
-                                                    readonly 'Jaar': string
-                                                }
-                                                
-                                                export namespace Informele_rekening {
-                                                    export type Informele_rekening = string
-                                                }
-                                                export type Informele_rekening = {
-                                                    readonly 'Informele rekening': string
-                                                }
-                                                
                                                 export namespace Inkoop {
-                                                    export type Inkoop = string
                                                     export type Jaar = string
+                                                    export type Inkoop = string
                                                 }
                                                 export type Inkoop = {
-                                                    readonly 'Inkoop': string
                                                     readonly 'Jaar': string
+                                                    readonly 'Inkoop': string
+                                                }
+                                                
+                                                export namespace Verrekenpost {
+                                                    export type Verrekenpost = string
+                                                }
+                                                export type Verrekenpost = {
+                                                    readonly 'Verrekenpost': string
+                                                }
+                                                
+                                                export namespace BTW$mi_periode {
+                                                    export type Jaar = string
+                                                    export type BTW$mi_periode = string
+                                                }
+                                                export type BTW$mi_periode = {
+                                                    readonly 'Jaar': string
+                                                    readonly 'BTW-periode': string
                                                 }
                                                 
                                                 export namespace Verkoop {
@@ -4268,73 +4199,73 @@ export namespace Root {
                                                     readonly 'Verkoop': string
                                                 }
                                                 
-                                                export namespace Verrekenpost {
-                                                    export type Verrekenpost = string
+                                                export namespace Informele_rekening {
+                                                    export type Informele_rekening = string
                                                 }
-                                                export type Verrekenpost = {
-                                                    readonly 'Verrekenpost': string
+                                                export type Informele_rekening = {
+                                                    readonly 'Informele rekening': string
                                                 }
                                             }
                                             export type SG = 
-                                                | readonly ['BTW-periode', {
-                                                    readonly 'BTW-periode': string
-                                                    readonly 'Jaar': string
-                                                }]
-                                                | readonly ['Informele rekening', {
-                                                    readonly 'Informele rekening': string
-                                                }]
                                                 | readonly ['Inkoop', {
-                                                    readonly 'Inkoop': string
                                                     readonly 'Jaar': string
+                                                    readonly 'Inkoop': string
+                                                }]
+                                                | readonly ['Verrekenpost', {
+                                                    readonly 'Verrekenpost': string
+                                                }]
+                                                | readonly ['BTW-periode', {
+                                                    readonly 'Jaar': string
+                                                    readonly 'BTW-periode': string
                                                 }]
                                                 | readonly ['Verkoop', {
                                                     readonly 'Jaar': string
                                                     readonly 'Verkoop': string
                                                 }]
-                                                | readonly ['Verrekenpost', {
-                                                    readonly 'Verrekenpost': string
+                                                | readonly ['Informele rekening', {
+                                                    readonly 'Informele rekening': string
                                                 }]
                                         }
                                         export type Afhandeling = _i_core._T_State_Group<null, 
-                                            | readonly ['BTW-periode', {
-                                                readonly 'BTW-periode': string
-                                                readonly 'Jaar': string
-                                            }]
-                                            | readonly ['Informele rekening', {
-                                                readonly 'Informele rekening': string
-                                            }]
                                             | readonly ['Inkoop', {
-                                                readonly 'Inkoop': string
                                                 readonly 'Jaar': string
+                                                readonly 'Inkoop': string
+                                            }]
+                                            | readonly ['Verrekenpost', {
+                                                readonly 'Verrekenpost': string
+                                            }]
+                                            | readonly ['BTW-periode', {
+                                                readonly 'Jaar': string
+                                                readonly 'BTW-periode': string
                                             }]
                                             | readonly ['Verkoop', {
                                                 readonly 'Jaar': string
                                                 readonly 'Verkoop': string
                                             }]
-                                            | readonly ['Verrekenpost', {
-                                                readonly 'Verrekenpost': string
+                                            | readonly ['Informele rekening', {
+                                                readonly 'Informele rekening': string
                                             }]
                                         >
                                     }
                                     export type Verwerkt = {
                                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                            | readonly ['BTW-periode', {
-                                                readonly 'BTW-periode': string
-                                                readonly 'Jaar': string
-                                            }]
-                                            | readonly ['Informele rekening', {
-                                                readonly 'Informele rekening': string
-                                            }]
                                             | readonly ['Inkoop', {
-                                                readonly 'Inkoop': string
                                                 readonly 'Jaar': string
+                                                readonly 'Inkoop': string
+                                            }]
+                                            | readonly ['Verrekenpost', {
+                                                readonly 'Verrekenpost': string
+                                            }]
+                                            | readonly ['BTW-periode', {
+                                                readonly 'Jaar': string
+                                                readonly 'BTW-periode': string
                                             }]
                                             | readonly ['Verkoop', {
                                                 readonly 'Jaar': string
                                                 readonly 'Verkoop': string
                                             }]
-                                            | readonly ['Verrekenpost', {
-                                                readonly 'Verrekenpost': string
+                                            | readonly ['Informele rekening', {
+                                                readonly 'Informele rekening': string
                                             }]
                                         >
                                     }
@@ -4343,23 +4274,23 @@ export namespace Root {
                                     | readonly ['Nog te verwerken', null]
                                     | readonly ['Verwerkt', {
                                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                            | readonly ['BTW-periode', {
-                                                readonly 'BTW-periode': string
-                                                readonly 'Jaar': string
-                                            }]
-                                            | readonly ['Informele rekening', {
-                                                readonly 'Informele rekening': string
-                                            }]
                                             | readonly ['Inkoop', {
-                                                readonly 'Inkoop': string
                                                 readonly 'Jaar': string
+                                                readonly 'Inkoop': string
+                                            }]
+                                            | readonly ['Verrekenpost', {
+                                                readonly 'Verrekenpost': string
+                                            }]
+                                            | readonly ['BTW-periode', {
+                                                readonly 'Jaar': string
+                                                readonly 'BTW-periode': string
                                             }]
                                             | readonly ['Verkoop', {
                                                 readonly 'Jaar': string
                                                 readonly 'Verkoop': string
                                             }]
-                                            | readonly ['Verrekenpost', {
-                                                readonly 'Verrekenpost': string
+                                            | readonly ['Informele rekening', {
+                                                readonly 'Informele rekening': string
                                             }]
                                         >
                                     }]
@@ -4368,23 +4299,23 @@ export namespace Root {
                                 | readonly ['Nog te verwerken', null]
                                 | readonly ['Verwerkt', {
                                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                        | readonly ['BTW-periode', {
-                                            readonly 'BTW-periode': string
-                                            readonly 'Jaar': string
-                                        }]
-                                        | readonly ['Informele rekening', {
-                                            readonly 'Informele rekening': string
-                                        }]
                                         | readonly ['Inkoop', {
-                                            readonly 'Inkoop': string
                                             readonly 'Jaar': string
+                                            readonly 'Inkoop': string
+                                        }]
+                                        | readonly ['Verrekenpost', {
+                                            readonly 'Verrekenpost': string
+                                        }]
+                                        | readonly ['BTW-periode', {
+                                            readonly 'Jaar': string
+                                            readonly 'BTW-periode': string
                                         }]
                                         | readonly ['Verkoop', {
                                             readonly 'Jaar': string
                                             readonly 'Verkoop': string
                                         }]
-                                        | readonly ['Verrekenpost', {
-                                            readonly 'Verrekenpost': string
+                                        | readonly ['Informele rekening', {
+                                            readonly 'Informele rekening': string
                                         }]
                                     >
                                 }]
@@ -4398,23 +4329,23 @@ export namespace Root {
                                 | readonly ['Nog te verwerken', null]
                                 | readonly ['Verwerkt', {
                                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                        | readonly ['BTW-periode', {
-                                            readonly 'BTW-periode': string
-                                            readonly 'Jaar': string
-                                        }]
-                                        | readonly ['Informele rekening', {
-                                            readonly 'Informele rekening': string
-                                        }]
                                         | readonly ['Inkoop', {
-                                            readonly 'Inkoop': string
                                             readonly 'Jaar': string
+                                            readonly 'Inkoop': string
+                                        }]
+                                        | readonly ['Verrekenpost', {
+                                            readonly 'Verrekenpost': string
+                                        }]
+                                        | readonly ['BTW-periode', {
+                                            readonly 'Jaar': string
+                                            readonly 'BTW-periode': string
                                         }]
                                         | readonly ['Verkoop', {
                                             readonly 'Jaar': string
                                             readonly 'Verkoop': string
                                         }]
-                                        | readonly ['Verrekenpost', {
-                                            readonly 'Verrekenpost': string
+                                        | readonly ['Informele rekening', {
+                                            readonly 'Informele rekening': string
                                         }]
                                     >
                                 }]
@@ -4429,23 +4360,23 @@ export namespace Root {
                             | readonly ['Nog te verwerken', null]
                             | readonly ['Verwerkt', {
                                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                    | readonly ['BTW-periode', {
-                                        readonly 'BTW-periode': string
-                                        readonly 'Jaar': string
-                                    }]
-                                    | readonly ['Informele rekening', {
-                                        readonly 'Informele rekening': string
-                                    }]
                                     | readonly ['Inkoop', {
-                                        readonly 'Inkoop': string
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
+                                    }]
+                                    | readonly ['Verrekenpost', {
+                                        readonly 'Verrekenpost': string
+                                    }]
+                                    | readonly ['BTW-periode', {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
                                     }]
                                     | readonly ['Verkoop', {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }]
-                                    | readonly ['Verrekenpost', {
-                                        readonly 'Verrekenpost': string
+                                    | readonly ['Informele rekening', {
+                                        readonly 'Informele rekening': string
                                     }]
                                 >
                             }]
@@ -4495,23 +4426,23 @@ export namespace Root {
                             | readonly ['Nog te verwerken', null]
                             | readonly ['Verwerkt', {
                                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                    | readonly ['BTW-periode', {
-                                        readonly 'BTW-periode': string
-                                        readonly 'Jaar': string
-                                    }]
-                                    | readonly ['Informele rekening', {
-                                        readonly 'Informele rekening': string
-                                    }]
                                     | readonly ['Inkoop', {
-                                        readonly 'Inkoop': string
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
+                                    }]
+                                    | readonly ['Verrekenpost', {
+                                        readonly 'Verrekenpost': string
+                                    }]
+                                    | readonly ['BTW-periode', {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
                                     }]
                                     | readonly ['Verkoop', {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }]
-                                    | readonly ['Verrekenpost', {
-                                        readonly 'Verrekenpost': string
+                                    | readonly ['Informele rekening', {
+                                        readonly 'Informele rekening': string
                                     }]
                                 >
                             }]
@@ -4537,23 +4468,23 @@ export namespace Root {
                         | readonly ['Nog te verwerken', null]
                         | readonly ['Verwerkt', {
                             readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
-                                    readonly 'Jaar': string
-                                }]
-                                | readonly ['Informele rekening', {
-                                    readonly 'Informele rekening': string
-                                }]
                                 | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
+                                }]
+                                | readonly ['Verrekenpost', {
+                                    readonly 'Verrekenpost': string
+                                }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
-                                | readonly ['Verrekenpost', {
-                                    readonly 'Verrekenpost': string
+                                | readonly ['Informele rekening', {
+                                    readonly 'Informele rekening': string
                                 }]
                             >
                         }]
@@ -4569,6 +4500,110 @@ export namespace Root {
             }>
             export type Beginsaldo_nog_aan_te_geven_BTW = number
             export type Beginsaldo_winstreserve = number
+            
+            export namespace BTW_periode_saldo {
+                export type Grootboekrekening = string
+            }
+            export type BTW_periode_saldo = {
+                readonly 'Grootboekrekening': string
+            }
+            
+            export namespace BTW_periodes {
+                
+                export namespace D {
+                    
+                    export namespace _11$pe__BTW$mi_categorieen {
+                        
+                        export namespace D {
+                        }
+                        export type D = null
+                    }
+                    export type _11$pe__BTW$mi_categorieen = _i_core._T_Dictionary<null, null>
+                    
+                    export namespace Documenten {
+                        
+                        export namespace D {
+                            
+                            export namespace Bestand {
+                            }
+                            export type Bestand = _T_Bestandsnaam
+                        }
+                        export type D = {
+                            readonly 'Bestand': _T_Bestandsnaam
+                        }
+                    }
+                    export type Documenten = _i_core._T_Dictionary<null, {
+                        readonly 'Bestand': _T_Bestandsnaam
+                    }>
+                    export type Omschrijving = string
+                    
+                    export namespace Status {
+                        
+                        export namespace SG {
+                            
+                            export namespace Aangegeven {
+                                export type Afronding = number
+                                export type Bedrag = number
+                                export type Datum = number
+                            }
+                            export type Aangegeven = {
+                                readonly 'Afronding': number
+                                readonly 'Bedrag': number
+                                readonly 'Datum': number
+                            }
+                            
+                            export namespace Openstaand {
+                            }
+                            export type Openstaand = null
+                        }
+                        export type SG = 
+                            | readonly ['Aangegeven', {
+                                readonly 'Afronding': number
+                                readonly 'Bedrag': number
+                                readonly 'Datum': number
+                            }]
+                            | readonly ['Openstaand', null]
+                    }
+                    export type Status = _i_core._T_State_Group<null, 
+                        | readonly ['Aangegeven', {
+                            readonly 'Afronding': number
+                            readonly 'Bedrag': number
+                            readonly 'Datum': number
+                        }]
+                        | readonly ['Openstaand', null]
+                    >
+                }
+                export type D = {
+                    readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+                    readonly 'Documenten': _i_core._T_Dictionary<null, {
+                        readonly 'Bestand': _T_Bestandsnaam
+                    }>
+                    readonly 'Omschrijving': string
+                    readonly 'Status': _i_core._T_State_Group<null, 
+                        | readonly ['Aangegeven', {
+                            readonly 'Afronding': number
+                            readonly 'Bedrag': number
+                            readonly 'Datum': number
+                        }]
+                        | readonly ['Openstaand', null]
+                    >
+                }
+            }
+            export type BTW_periodes = _i_core._T_Dictionary<null, {
+                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+                readonly 'Documenten': _i_core._T_Dictionary<null, {
+                    readonly 'Bestand': _T_Bestandsnaam
+                }>
+                readonly 'Omschrijving': string
+                readonly 'Status': _i_core._T_State_Group<null, 
+                    | readonly ['Aangegeven', {
+                        readonly 'Afronding': number
+                        readonly 'Bedrag': number
+                        readonly 'Datum': number
+                    }]
+                    | readonly ['Openstaand', null]
+                >
+            }>
             
             export namespace Eerste_boekjaar {
                 
@@ -4664,13 +4699,6 @@ export namespace Root {
                 >
             }>
             
-            export namespace Inkoop_saldo {
-                export type Grootboekrekening = string
-            }
-            export type Inkoop_saldo = {
-                readonly 'Grootboekrekening': string
-            }
-            
             export namespace Inkopen {
                 
                 export namespace D {
@@ -4760,40 +4788,43 @@ export namespace Root {
                         
                         export namespace SG {
                             
+                            export namespace Toegevoegd {
+                                
+                                export namespace Document {
+                                }
+                                export type Document = _T_Bestandsnaam
+                            }
+                            export type Toegevoegd = {
+                                readonly 'Document': _T_Bestandsnaam
+                            }
+                            
                             export namespace Niet_van_toepassing {
                             }
                             export type Niet_van_toepassing = null
-                            
-                            export namespace Nog_toevoegen {
-                            }
-                            export type Nog_toevoegen = null
                             
                             export namespace Ontbreekt {
                             }
                             export type Ontbreekt = null
                             
-                            export namespace Toegevoegd {
-                                export type Document = string
+                            export namespace Nog_toevoegen {
                             }
-                            export type Toegevoegd = {
-                                readonly 'Document': string
-                            }
+                            export type Nog_toevoegen = null
                         }
                         export type SG = 
-                            | readonly ['Niet van toepassing', null]
-                            | readonly ['Nog toevoegen', null]
-                            | readonly ['Ontbreekt', null]
                             | readonly ['Toegevoegd', {
-                                readonly 'Document': string
+                                readonly 'Document': _T_Bestandsnaam
                             }]
+                            | readonly ['Niet van toepassing', null]
+                            | readonly ['Ontbreekt', null]
+                            | readonly ['Nog toevoegen', null]
                     }
                     export type Brondocument = _i_core._T_State_Group<null, 
-                        | readonly ['Niet van toepassing', null]
-                        | readonly ['Nog toevoegen', null]
-                        | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
+                        | readonly ['Niet van toepassing', null]
+                        | readonly ['Ontbreekt', null]
+                        | readonly ['Nog toevoegen', null]
                     >
                     export type Datum = number
                     
@@ -4924,12 +4955,12 @@ export namespace Root {
                             }
                             
                             export namespace Salaris {
-                                export type Medewerker = string
                                 export type Ronde = string
+                                export type Medewerker = string
                             }
                             export type Salaris = {
-                                readonly 'Medewerker': string
                                 readonly 'Ronde': string
+                                readonly 'Medewerker': string
                             }
                         }
                         export type SG = 
@@ -4942,8 +4973,8 @@ export namespace Root {
                                 readonly 'Ronde': string
                             }]
                             | readonly ['Salaris', {
-                                readonly 'Medewerker': string
                                 readonly 'Ronde': string
+                                readonly 'Medewerker': string
                             }]
                     }
                     export type Type = _i_core._T_State_Group<null, 
@@ -4956,8 +4987,8 @@ export namespace Root {
                             readonly 'Ronde': string
                         }]
                         | readonly ['Salaris', {
-                            readonly 'Medewerker': string
                             readonly 'Ronde': string
+                            readonly 'Medewerker': string
                         }]
                     >
                 }
@@ -4980,12 +5011,12 @@ export namespace Root {
                         }]
                     >
                     readonly 'Brondocument': _i_core._T_State_Group<null, 
-                        | readonly ['Niet van toepassing', null]
-                        | readonly ['Nog toevoegen', null]
-                        | readonly ['Ontbreekt', null]
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
+                        | readonly ['Niet van toepassing', null]
+                        | readonly ['Ontbreekt', null]
+                        | readonly ['Nog toevoegen', null]
                     >
                     readonly 'Datum': number
                     readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -5015,8 +5046,8 @@ export namespace Root {
                             readonly 'Ronde': string
                         }]
                         | readonly ['Salaris', {
-                            readonly 'Medewerker': string
                             readonly 'Ronde': string
+                            readonly 'Medewerker': string
                         }]
                     >
                 }
@@ -5040,12 +5071,12 @@ export namespace Root {
                     }]
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
-                    | readonly ['Niet van toepassing', null]
-                    | readonly ['Nog toevoegen', null]
-                    | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
+                    | readonly ['Niet van toepassing', null]
+                    | readonly ['Ontbreekt', null]
+                    | readonly ['Nog toevoegen', null]
                 >
                 readonly 'Datum': number
                 readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -5075,11 +5106,18 @@ export namespace Root {
                         readonly 'Ronde': string
                     }]
                     | readonly ['Salaris', {
-                        readonly 'Medewerker': string
                         readonly 'Ronde': string
+                        readonly 'Medewerker': string
                     }]
                 >
             }>
+            
+            export namespace Inkoop_saldo {
+                export type Grootboekrekening = string
+            }
+            export type Inkoop_saldo = {
+                readonly 'Grootboekrekening': string
+            }
             
             export namespace Overige_balans_items {
                 
@@ -5118,26 +5156,26 @@ export namespace Root {
                             export type Ja = null
                             
                             export namespace Nee {
-                                export type Balans_item = string
                                 export type Jaar = string
+                                export type Balans_item = string
                             }
                             export type Nee = {
-                                readonly 'Balans item': string
                                 readonly 'Jaar': string
+                                readonly 'Balans item': string
                             }
                         }
                         export type SG = 
                             | readonly ['Ja', null]
                             | readonly ['Nee', {
-                                readonly 'Balans item': string
                                 readonly 'Jaar': string
+                                readonly 'Balans item': string
                             }]
                     }
                     export type Nieuw = _i_core._T_State_Group<null, 
                         | readonly ['Ja', null]
                         | readonly ['Nee', {
-                            readonly 'Balans item': string
                             readonly 'Jaar': string
+                            readonly 'Balans item': string
                         }]
                     >
                 }
@@ -5153,8 +5191,8 @@ export namespace Root {
                     readonly 'Nieuw': _i_core._T_State_Group<null, 
                         | readonly ['Ja', null]
                         | readonly ['Nee', {
-                            readonly 'Balans item': string
                             readonly 'Jaar': string
+                            readonly 'Balans item': string
                         }]
                     >
                 }
@@ -5171,8 +5209,8 @@ export namespace Root {
                 readonly 'Nieuw': _i_core._T_State_Group<null, 
                     | readonly ['Ja', null]
                     | readonly ['Nee', {
-                        readonly 'Balans item': string
                         readonly 'Jaar': string
+                        readonly 'Balans item': string
                     }]
                 >
             }>
@@ -5232,28 +5270,31 @@ export namespace Root {
                             readonly 'Rekening courant': string
                         }]
                     >
-                    export type BTW$mi_periode = string
                     export type Betalingstermijn = number
+                    export type BTW$mi_periode = string
                     
                     export namespace Brondocument {
                         
                         export namespace SG {
                             
                             export namespace Toegevoegd {
-                                export type Document = string
+                                
+                                export namespace Document {
+                                }
+                                export type Document = _T_Bestandsnaam
                             }
                             export type Toegevoegd = {
-                                readonly 'Document': string
+                                readonly 'Document': _T_Bestandsnaam
                             }
                         }
                         export type SG = 
                             | readonly ['Toegevoegd', {
-                                readonly 'Document': string
+                                readonly 'Document': _T_Bestandsnaam
                             }]
                     }
                     export type Brondocument = _i_core._T_State_Group<null, 
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
                     >
                     
@@ -5261,38 +5302,38 @@ export namespace Root {
                         
                         export namespace SG {
                             
+                            export namespace Project {
+                                export type Project = string
+                                export type Offerte = string
+                            }
+                            export type Project = {
+                                readonly 'Project': string
+                                readonly 'Offerte': string
+                            }
+                            
                             export namespace Licentieovereenkomst {
                                 export type Overeenkomst = string
                             }
                             export type Licentieovereenkomst = {
                                 readonly 'Overeenkomst': string
                             }
-                            
-                            export namespace Project {
-                                export type Offerte = string
-                                export type Project = string
-                            }
-                            export type Project = {
-                                readonly 'Offerte': string
-                                readonly 'Project': string
-                            }
                         }
                         export type SG = 
+                            | readonly ['Project', {
+                                readonly 'Project': string
+                                readonly 'Offerte': string
+                            }]
                             | readonly ['Licentieovereenkomst', {
                                 readonly 'Overeenkomst': string
                             }]
-                            | readonly ['Project', {
-                                readonly 'Offerte': string
-                                readonly 'Project': string
-                            }]
                     }
                     export type Contracttype = _i_core._T_State_Group<null, 
+                        | readonly ['Project', {
+                            readonly 'Project': string
+                            readonly 'Offerte': string
+                        }]
                         | readonly ['Licentieovereenkomst', {
                             readonly 'Overeenkomst': string
-                        }]
-                        | readonly ['Project', {
-                            readonly 'Offerte': string
-                            readonly 'Project': string
                         }]
                     >
                     export type Datum = number
@@ -5306,10 +5347,6 @@ export namespace Root {
                                 
                                 export namespace SG {
                                     
-                                    export namespace Binnenland$cl__heffing_verlegd {
-                                    }
-                                    export type Binnenland$cl__heffing_verlegd = null
-                                    
                                     export namespace Intracommunautair {
                                     }
                                     export type Intracommunautair = null
@@ -5320,20 +5357,24 @@ export namespace Root {
                                     export type Standaard = {
                                         readonly 'BTW-categorie': string
                                     }
+                                    
+                                    export namespace Binnenland$cl__heffing_verlegd {
+                                    }
+                                    export type Binnenland$cl__heffing_verlegd = null
                                 }
                                 export type SG = 
-                                    | readonly ['Binnenland: heffing verlegd', null]
                                     | readonly ['Intracommunautair', null]
                                     | readonly ['Standaard', {
                                         readonly 'BTW-categorie': string
                                     }]
+                                    | readonly ['Binnenland: heffing verlegd', null]
                             }
                             export type BTW$mi_regime = _i_core._T_State_Group<null, 
-                                | readonly ['Binnenland: heffing verlegd', null]
                                 | readonly ['Intracommunautair', null]
                                 | readonly ['Standaard', {
                                     readonly 'BTW-categorie': string
                                 }]
+                                | readonly ['Binnenland: heffing verlegd', null]
                             >
                             export type Bedrag_exclusief_BTW = number
                             
@@ -5341,40 +5382,40 @@ export namespace Root {
                                 
                                 export namespace SG {
                                     
-                                    export namespace Licentieovereenkomst {
-                                        export type Periode = string
-                                    }
-                                    export type Licentieovereenkomst = {
-                                        readonly 'Periode': string
-                                    }
-                                    
-                                    export namespace Los {
-                                    }
-                                    export type Los = null
-                                    
                                     export namespace Project {
                                         export type Opbrengst = string
                                     }
                                     export type Project = {
                                         readonly 'Opbrengst': string
                                     }
+                                    
+                                    export namespace Los {
+                                    }
+                                    export type Los = null
+                                    
+                                    export namespace Licentieovereenkomst {
+                                        export type Periode = string
+                                    }
+                                    export type Licentieovereenkomst = {
+                                        readonly 'Periode': string
+                                    }
                                 }
                                 export type SG = 
-                                    | readonly ['Licentieovereenkomst', {
-                                        readonly 'Periode': string
-                                    }]
-                                    | readonly ['Los', null]
                                     | readonly ['Project', {
                                         readonly 'Opbrengst': string
                                     }]
+                                    | readonly ['Los', null]
+                                    | readonly ['Licentieovereenkomst', {
+                                        readonly 'Periode': string
+                                    }]
                             }
                             export type Contracttype = _i_core._T_State_Group<null, 
-                                | readonly ['Licentieovereenkomst', {
-                                    readonly 'Periode': string
-                                }]
-                                | readonly ['Los', null]
                                 | readonly ['Project', {
                                     readonly 'Opbrengst': string
+                                }]
+                                | readonly ['Los', null]
+                                | readonly ['Licentieovereenkomst', {
+                                    readonly 'Periode': string
                                 }]
                             >
                             export type Omschrijving = string
@@ -5383,91 +5424,91 @@ export namespace Root {
                                 
                                 export namespace SG {
                                     
-                                    export namespace Balans {
-                                        export type Balans_item = string
-                                    }
-                                    export type Balans = {
-                                        readonly 'Balans item': string
-                                    }
-                                    
                                     export namespace Opbrengsten {
                                         export type Grootboekrekening = string
                                     }
                                     export type Opbrengsten = {
                                         readonly 'Grootboekrekening': string
                                     }
+                                    
+                                    export namespace Balans {
+                                        export type Balans_item = string
+                                    }
+                                    export type Balans = {
+                                        readonly 'Balans item': string
+                                    }
                                 }
                                 export type SG = 
-                                    | readonly ['Balans', {
-                                        readonly 'Balans item': string
-                                    }]
                                     | readonly ['Opbrengsten', {
                                         readonly 'Grootboekrekening': string
                                     }]
+                                    | readonly ['Balans', {
+                                        readonly 'Balans item': string
+                                    }]
                             }
                             export type Type = _i_core._T_State_Group<null, 
-                                | readonly ['Balans', {
-                                    readonly 'Balans item': string
-                                }]
                                 | readonly ['Opbrengsten', {
                                     readonly 'Grootboekrekening': string
+                                }]
+                                | readonly ['Balans', {
+                                    readonly 'Balans item': string
                                 }]
                             >
                         }
                         export type D = {
                             readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                                | readonly ['Binnenland: heffing verlegd', null]
                                 | readonly ['Intracommunautair', null]
                                 | readonly ['Standaard', {
                                     readonly 'BTW-categorie': string
                                 }]
+                                | readonly ['Binnenland: heffing verlegd', null]
                             >
                             readonly 'Bedrag exclusief BTW': number
                             readonly 'Contracttype': _i_core._T_State_Group<null, 
-                                | readonly ['Licentieovereenkomst', {
-                                    readonly 'Periode': string
-                                }]
-                                | readonly ['Los', null]
                                 | readonly ['Project', {
                                     readonly 'Opbrengst': string
+                                }]
+                                | readonly ['Los', null]
+                                | readonly ['Licentieovereenkomst', {
+                                    readonly 'Periode': string
                                 }]
                             >
                             readonly 'Omschrijving': string
                             readonly 'Type': _i_core._T_State_Group<null, 
-                                | readonly ['Balans', {
-                                    readonly 'Balans item': string
-                                }]
                                 | readonly ['Opbrengsten', {
                                     readonly 'Grootboekrekening': string
+                                }]
+                                | readonly ['Balans', {
+                                    readonly 'Balans item': string
                                 }]
                             >
                         }
                     }
                     export type Regels = _i_core._T_Dictionary<null, {
                         readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                            | readonly ['Binnenland: heffing verlegd', null]
                             | readonly ['Intracommunautair', null]
                             | readonly ['Standaard', {
                                 readonly 'BTW-categorie': string
                             }]
+                            | readonly ['Binnenland: heffing verlegd', null]
                         >
                         readonly 'Bedrag exclusief BTW': number
                         readonly 'Contracttype': _i_core._T_State_Group<null, 
-                            | readonly ['Licentieovereenkomst', {
-                                readonly 'Periode': string
-                            }]
-                            | readonly ['Los', null]
                             | readonly ['Project', {
                                 readonly 'Opbrengst': string
+                            }]
+                            | readonly ['Los', null]
+                            | readonly ['Licentieovereenkomst', {
+                                readonly 'Periode': string
                             }]
                         >
                         readonly 'Omschrijving': string
                         readonly 'Type': _i_core._T_State_Group<null, 
-                            | readonly ['Balans', {
-                                readonly 'Balans item': string
-                            }]
                             | readonly ['Opbrengsten', {
                                 readonly 'Grootboekrekening': string
+                            }]
+                            | readonly ['Balans', {
+                                readonly 'Balans item': string
                             }]
                         >
                     }>
@@ -5479,49 +5520,49 @@ export namespace Root {
                             readonly 'Rekening courant': string
                         }]
                     >
-                    readonly 'BTW-periode': string
                     readonly 'Betalingstermijn': number
+                    readonly 'BTW-periode': string
                     readonly 'Brondocument': _i_core._T_State_Group<null, 
                         | readonly ['Toegevoegd', {
-                            readonly 'Document': string
+                            readonly 'Document': _T_Bestandsnaam
                         }]
                     >
                     readonly 'Contracttype': _i_core._T_State_Group<null, 
+                        | readonly ['Project', {
+                            readonly 'Project': string
+                            readonly 'Offerte': string
+                        }]
                         | readonly ['Licentieovereenkomst', {
                             readonly 'Overeenkomst': string
-                        }]
-                        | readonly ['Project', {
-                            readonly 'Offerte': string
-                            readonly 'Project': string
                         }]
                     >
                     readonly 'Datum': number
                     readonly 'Debiteur': string
                     readonly 'Regels': _i_core._T_Dictionary<null, {
                         readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                            | readonly ['Binnenland: heffing verlegd', null]
                             | readonly ['Intracommunautair', null]
                             | readonly ['Standaard', {
                                 readonly 'BTW-categorie': string
                             }]
+                            | readonly ['Binnenland: heffing verlegd', null]
                         >
                         readonly 'Bedrag exclusief BTW': number
                         readonly 'Contracttype': _i_core._T_State_Group<null, 
-                            | readonly ['Licentieovereenkomst', {
-                                readonly 'Periode': string
-                            }]
-                            | readonly ['Los', null]
                             | readonly ['Project', {
                                 readonly 'Opbrengst': string
+                            }]
+                            | readonly ['Los', null]
+                            | readonly ['Licentieovereenkomst', {
+                                readonly 'Periode': string
                             }]
                         >
                         readonly 'Omschrijving': string
                         readonly 'Type': _i_core._T_State_Group<null, 
-                            | readonly ['Balans', {
-                                readonly 'Balans item': string
-                            }]
                             | readonly ['Opbrengsten', {
                                 readonly 'Grootboekrekening': string
+                            }]
+                            | readonly ['Balans', {
+                                readonly 'Balans item': string
                             }]
                         >
                     }>
@@ -5534,49 +5575,49 @@ export namespace Root {
                         readonly 'Rekening courant': string
                     }]
                 >
-                readonly 'BTW-periode': string
                 readonly 'Betalingstermijn': number
+                readonly 'BTW-periode': string
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
                 >
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
+                    | readonly ['Project', {
+                        readonly 'Project': string
+                        readonly 'Offerte': string
+                    }]
                     | readonly ['Licentieovereenkomst', {
                         readonly 'Overeenkomst': string
-                    }]
-                    | readonly ['Project', {
-                        readonly 'Offerte': string
-                        readonly 'Project': string
                     }]
                 >
                 readonly 'Datum': number
                 readonly 'Debiteur': string
                 readonly 'Regels': _i_core._T_Dictionary<null, {
                     readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                        | readonly ['Binnenland: heffing verlegd', null]
                         | readonly ['Intracommunautair', null]
                         | readonly ['Standaard', {
                             readonly 'BTW-categorie': string
                         }]
+                        | readonly ['Binnenland: heffing verlegd', null]
                     >
                     readonly 'Bedrag exclusief BTW': number
                     readonly 'Contracttype': _i_core._T_State_Group<null, 
-                        | readonly ['Licentieovereenkomst', {
-                            readonly 'Periode': string
-                        }]
-                        | readonly ['Los', null]
                         | readonly ['Project', {
                             readonly 'Opbrengst': string
+                        }]
+                        | readonly ['Los', null]
+                        | readonly ['Licentieovereenkomst', {
+                            readonly 'Periode': string
                         }]
                     >
                     readonly 'Omschrijving': string
                     readonly 'Type': _i_core._T_State_Group<null, 
-                        | readonly ['Balans', {
-                            readonly 'Balans item': string
-                        }]
                         | readonly ['Opbrengsten', {
                             readonly 'Grootboekrekening': string
+                        }]
+                        | readonly ['Balans', {
+                            readonly 'Balans item': string
                         }]
                     >
                 }>
@@ -5589,18 +5630,19 @@ export namespace Root {
                     export namespace Mutaties {
                         
                         export namespace D {
+                            export type Bedrag = number
                             
                             export namespace Afhandeling {
                                 
                                 export namespace SG {
                                     
-                                    export namespace BTW$mi_periode {
-                                        export type BTW$mi_periode = string
+                                    export namespace Inkoop {
                                         export type Jaar = string
+                                        export type Inkoop = string
                                     }
-                                    export type BTW$mi_periode = {
-                                        readonly 'BTW-periode': string
+                                    export type Inkoop = {
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
                                     }
                                     
                                     export namespace Informele_rekening {
@@ -5608,15 +5650,6 @@ export namespace Root {
                                     }
                                     export type Informele_rekening = {
                                         readonly 'Informele rekening': string
-                                    }
-                                    
-                                    export namespace Inkoop {
-                                        export type Inkoop = string
-                                        export type Jaar = string
-                                    }
-                                    export type Inkoop = {
-                                        readonly 'Inkoop': string
-                                        readonly 'Jaar': string
                                     }
                                     
                                     export namespace Verkoop {
@@ -5627,128 +5660,136 @@ export namespace Root {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }
+                                    
+                                    export namespace BTW$mi_periode {
+                                        export type Jaar = string
+                                        export type BTW$mi_periode = string
+                                    }
+                                    export type BTW$mi_periode = {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
+                                    }
                                 }
                                 export type SG = 
-                                    | readonly ['BTW-periode', {
-                                        readonly 'BTW-periode': string
+                                    | readonly ['Inkoop', {
                                         readonly 'Jaar': string
+                                        readonly 'Inkoop': string
                                     }]
                                     | readonly ['Informele rekening', {
                                         readonly 'Informele rekening': string
-                                    }]
-                                    | readonly ['Inkoop', {
-                                        readonly 'Inkoop': string
-                                        readonly 'Jaar': string
                                     }]
                                     | readonly ['Verkoop', {
                                         readonly 'Jaar': string
                                         readonly 'Verkoop': string
                                     }]
+                                    | readonly ['BTW-periode', {
+                                        readonly 'Jaar': string
+                                        readonly 'BTW-periode': string
+                                    }]
                             }
                             export type Afhandeling = _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
+                                | readonly ['Inkoop', {
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
                                 }]
                                 | readonly ['Informele rekening', {
                                     readonly 'Informele rekening': string
-                                }]
-                                | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
-                                    readonly 'Jaar': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
+                                }]
                             >
-                            export type Bedrag = number
                         }
                         export type D = {
+                            readonly 'Bedrag': number
                             readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
+                                | readonly ['Inkoop', {
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
                                 }]
                                 | readonly ['Informele rekening', {
                                     readonly 'Informele rekening': string
-                                }]
-                                | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
-                                    readonly 'Jaar': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
+                                }]
                             >
-                            readonly 'Bedrag': number
                         }
                     }
                     export type Mutaties = _i_core._T_Dictionary<null, {
+                        readonly 'Bedrag': number
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
+                            | readonly ['Inkoop', {
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
                             }]
                             | readonly ['Informele rekening', {
                                 readonly 'Informele rekening': string
-                            }]
-                            | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
-                                readonly 'Jaar': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
+                            }]
                         >
-                        readonly 'Bedrag': number
                     }>
                 }
                 export type D = {
                     readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                        readonly 'Bedrag': number
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
+                            | readonly ['Inkoop', {
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
                             }]
                             | readonly ['Informele rekening', {
                                 readonly 'Informele rekening': string
-                            }]
-                            | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
-                                readonly 'Jaar': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
+                            }]
                         >
-                        readonly 'Bedrag': number
                     }>
                 }
             }
             export type Verrekenposten = _i_core._T_Dictionary<null, {
                 readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                    readonly 'Bedrag': number
                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                        | readonly ['BTW-periode', {
-                            readonly 'BTW-periode': string
+                        | readonly ['Inkoop', {
                             readonly 'Jaar': string
+                            readonly 'Inkoop': string
                         }]
                         | readonly ['Informele rekening', {
                             readonly 'Informele rekening': string
-                        }]
-                        | readonly ['Inkoop', {
-                            readonly 'Inkoop': string
-                            readonly 'Jaar': string
                         }]
                         | readonly ['Verkoop', {
                             readonly 'Jaar': string
                             readonly 'Verkoop': string
                         }]
+                        | readonly ['BTW-periode', {
+                            readonly 'Jaar': string
+                            readonly 'BTW-periode': string
+                        }]
                     >
-                    readonly 'Bedrag': number
                 }>
             }>
         }
@@ -5757,29 +5798,11 @@ export namespace Root {
                 | readonly ['Ja', null]
                 | readonly ['Nee', null]
             >
-            readonly 'BTW periode saldo': {
-                readonly 'Grootboekrekening': string
-            }
-            readonly 'BTW periodes': _i_core._T_Dictionary<null, {
-                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-                readonly 'Documenten': _i_core._T_Dictionary<null, {
-                    readonly 'Bestand': string
-                }>
-                readonly 'Omschrijving': string
-                readonly 'Status': _i_core._T_State_Group<null, 
-                    | readonly ['Aangegeven', {
-                        readonly 'Afronding': number
-                        readonly 'Bedrag': number
-                        readonly 'Datum': number
-                    }]
-                    | readonly ['Openstaand', null]
-                >
-            }>
             readonly 'Balans grootboekrekeningen': _i_core._T_Dictionary<null, {
                 readonly 'Type': _i_core._T_State_Group<null, 
                     | readonly ['Bankrekening', null]
-                    | readonly ['Informele rekening', null]
                     | readonly ['Overig', null]
+                    | readonly ['Informele rekening', null]
                 >
             }>
             readonly 'Bankrekeningen': _i_core._T_Dictionary<null, {
@@ -5793,23 +5816,23 @@ export namespace Root {
                         | readonly ['Nog te verwerken', null]
                         | readonly ['Verwerkt', {
                             readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                                | readonly ['BTW-periode', {
-                                    readonly 'BTW-periode': string
-                                    readonly 'Jaar': string
-                                }]
-                                | readonly ['Informele rekening', {
-                                    readonly 'Informele rekening': string
-                                }]
                                 | readonly ['Inkoop', {
-                                    readonly 'Inkoop': string
                                     readonly 'Jaar': string
+                                    readonly 'Inkoop': string
+                                }]
+                                | readonly ['Verrekenpost', {
+                                    readonly 'Verrekenpost': string
+                                }]
+                                | readonly ['BTW-periode', {
+                                    readonly 'Jaar': string
+                                    readonly 'BTW-periode': string
                                 }]
                                 | readonly ['Verkoop', {
                                     readonly 'Jaar': string
                                     readonly 'Verkoop': string
                                 }]
-                                | readonly ['Verrekenpost', {
-                                    readonly 'Verrekenpost': string
+                                | readonly ['Informele rekening', {
+                                    readonly 'Informele rekening': string
                                 }]
                             >
                         }]
@@ -5825,6 +5848,24 @@ export namespace Root {
             }>
             readonly 'Beginsaldo nog aan te geven BTW': number
             readonly 'Beginsaldo winstreserve': number
+            readonly 'BTW periode saldo': {
+                readonly 'Grootboekrekening': string
+            }
+            readonly 'BTW periodes': _i_core._T_Dictionary<null, {
+                readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+                readonly 'Documenten': _i_core._T_Dictionary<null, {
+                    readonly 'Bestand': _T_Bestandsnaam
+                }>
+                readonly 'Omschrijving': string
+                readonly 'Status': _i_core._T_State_Group<null, 
+                    | readonly ['Aangegeven', {
+                        readonly 'Afronding': number
+                        readonly 'Bedrag': number
+                        readonly 'Datum': number
+                    }]
+                    | readonly ['Openstaand', null]
+                >
+            }>
             readonly 'Eerste boekjaar': _i_core._T_State_Group<null, 
                 | readonly ['Ja', null]
                 | readonly ['Nee', {
@@ -5846,9 +5887,6 @@ export namespace Root {
                     }]
                 >
             }>
-            readonly 'Inkoop saldo': {
-                readonly 'Grootboekrekening': string
-            }
             readonly 'Inkopen': _i_core._T_Dictionary<null, {
                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
                     | readonly ['Mutaties', null]
@@ -5868,12 +5906,12 @@ export namespace Root {
                     }]
                 >
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
-                    | readonly ['Niet van toepassing', null]
-                    | readonly ['Nog toevoegen', null]
-                    | readonly ['Ontbreekt', null]
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
+                    | readonly ['Niet van toepassing', null]
+                    | readonly ['Ontbreekt', null]
+                    | readonly ['Nog toevoegen', null]
                 >
                 readonly 'Datum': number
                 readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -5903,11 +5941,14 @@ export namespace Root {
                         readonly 'Ronde': string
                     }]
                     | readonly ['Salaris', {
-                        readonly 'Medewerker': string
                         readonly 'Ronde': string
+                        readonly 'Medewerker': string
                     }]
                 >
             }>
+            readonly 'Inkoop saldo': {
+                readonly 'Grootboekrekening': string
+            }
             readonly 'Overige balans items': _i_core._T_Dictionary<null, {
                 readonly 'Beginsaldo': number
                 readonly 'Grootboekrekening': string
@@ -5920,8 +5961,8 @@ export namespace Root {
                 readonly 'Nieuw': _i_core._T_State_Group<null, 
                     | readonly ['Ja', null]
                     | readonly ['Nee', {
-                        readonly 'Balans item': string
                         readonly 'Jaar': string
+                        readonly 'Balans item': string
                     }]
                 >
             }>
@@ -5938,73 +5979,73 @@ export namespace Root {
                         readonly 'Rekening courant': string
                     }]
                 >
-                readonly 'BTW-periode': string
                 readonly 'Betalingstermijn': number
+                readonly 'BTW-periode': string
                 readonly 'Brondocument': _i_core._T_State_Group<null, 
                     | readonly ['Toegevoegd', {
-                        readonly 'Document': string
+                        readonly 'Document': _T_Bestandsnaam
                     }]
                 >
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
+                    | readonly ['Project', {
+                        readonly 'Project': string
+                        readonly 'Offerte': string
+                    }]
                     | readonly ['Licentieovereenkomst', {
                         readonly 'Overeenkomst': string
-                    }]
-                    | readonly ['Project', {
-                        readonly 'Offerte': string
-                        readonly 'Project': string
                     }]
                 >
                 readonly 'Datum': number
                 readonly 'Debiteur': string
                 readonly 'Regels': _i_core._T_Dictionary<null, {
                     readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                        | readonly ['Binnenland: heffing verlegd', null]
                         | readonly ['Intracommunautair', null]
                         | readonly ['Standaard', {
                             readonly 'BTW-categorie': string
                         }]
+                        | readonly ['Binnenland: heffing verlegd', null]
                     >
                     readonly 'Bedrag exclusief BTW': number
                     readonly 'Contracttype': _i_core._T_State_Group<null, 
-                        | readonly ['Licentieovereenkomst', {
-                            readonly 'Periode': string
-                        }]
-                        | readonly ['Los', null]
                         | readonly ['Project', {
                             readonly 'Opbrengst': string
+                        }]
+                        | readonly ['Los', null]
+                        | readonly ['Licentieovereenkomst', {
+                            readonly 'Periode': string
                         }]
                     >
                     readonly 'Omschrijving': string
                     readonly 'Type': _i_core._T_State_Group<null, 
-                        | readonly ['Balans', {
-                            readonly 'Balans item': string
-                        }]
                         | readonly ['Opbrengsten', {
                             readonly 'Grootboekrekening': string
+                        }]
+                        | readonly ['Balans', {
+                            readonly 'Balans item': string
                         }]
                     >
                 }>
             }>
             readonly 'Verrekenposten': _i_core._T_Dictionary<null, {
                 readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                    readonly 'Bedrag': number
                     readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                        | readonly ['BTW-periode', {
-                            readonly 'BTW-periode': string
+                        | readonly ['Inkoop', {
                             readonly 'Jaar': string
+                            readonly 'Inkoop': string
                         }]
                         | readonly ['Informele rekening', {
                             readonly 'Informele rekening': string
-                        }]
-                        | readonly ['Inkoop', {
-                            readonly 'Inkoop': string
-                            readonly 'Jaar': string
                         }]
                         | readonly ['Verkoop', {
                             readonly 'Jaar': string
                             readonly 'Verkoop': string
                         }]
+                        | readonly ['BTW-periode', {
+                            readonly 'Jaar': string
+                            readonly 'BTW-periode': string
+                        }]
                     >
-                    readonly 'Bedrag': number
                 }>
             }>
         }
@@ -6014,29 +6055,11 @@ export namespace Root {
             | readonly ['Ja', null]
             | readonly ['Nee', null]
         >
-        readonly 'BTW periode saldo': {
-            readonly 'Grootboekrekening': string
-        }
-        readonly 'BTW periodes': _i_core._T_Dictionary<null, {
-            readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
-            readonly 'Documenten': _i_core._T_Dictionary<null, {
-                readonly 'Bestand': string
-            }>
-            readonly 'Omschrijving': string
-            readonly 'Status': _i_core._T_State_Group<null, 
-                | readonly ['Aangegeven', {
-                    readonly 'Afronding': number
-                    readonly 'Bedrag': number
-                    readonly 'Datum': number
-                }]
-                | readonly ['Openstaand', null]
-            >
-        }>
         readonly 'Balans grootboekrekeningen': _i_core._T_Dictionary<null, {
             readonly 'Type': _i_core._T_State_Group<null, 
                 | readonly ['Bankrekening', null]
-                | readonly ['Informele rekening', null]
                 | readonly ['Overig', null]
+                | readonly ['Informele rekening', null]
             >
         }>
         readonly 'Bankrekeningen': _i_core._T_Dictionary<null, {
@@ -6050,23 +6073,23 @@ export namespace Root {
                     | readonly ['Nog te verwerken', null]
                     | readonly ['Verwerkt', {
                         readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                            | readonly ['BTW-periode', {
-                                readonly 'BTW-periode': string
-                                readonly 'Jaar': string
-                            }]
-                            | readonly ['Informele rekening', {
-                                readonly 'Informele rekening': string
-                            }]
                             | readonly ['Inkoop', {
-                                readonly 'Inkoop': string
                                 readonly 'Jaar': string
+                                readonly 'Inkoop': string
+                            }]
+                            | readonly ['Verrekenpost', {
+                                readonly 'Verrekenpost': string
+                            }]
+                            | readonly ['BTW-periode', {
+                                readonly 'Jaar': string
+                                readonly 'BTW-periode': string
                             }]
                             | readonly ['Verkoop', {
                                 readonly 'Jaar': string
                                 readonly 'Verkoop': string
                             }]
-                            | readonly ['Verrekenpost', {
-                                readonly 'Verrekenpost': string
+                            | readonly ['Informele rekening', {
+                                readonly 'Informele rekening': string
                             }]
                         >
                     }]
@@ -6082,6 +6105,24 @@ export namespace Root {
         }>
         readonly 'Beginsaldo nog aan te geven BTW': number
         readonly 'Beginsaldo winstreserve': number
+        readonly 'BTW periode saldo': {
+            readonly 'Grootboekrekening': string
+        }
+        readonly 'BTW periodes': _i_core._T_Dictionary<null, {
+            readonly '1. BTW-categorieen': _i_core._T_Dictionary<null, null>
+            readonly 'Documenten': _i_core._T_Dictionary<null, {
+                readonly 'Bestand': _T_Bestandsnaam
+            }>
+            readonly 'Omschrijving': string
+            readonly 'Status': _i_core._T_State_Group<null, 
+                | readonly ['Aangegeven', {
+                    readonly 'Afronding': number
+                    readonly 'Bedrag': number
+                    readonly 'Datum': number
+                }]
+                | readonly ['Openstaand', null]
+            >
+        }>
         readonly 'Eerste boekjaar': _i_core._T_State_Group<null, 
             | readonly ['Ja', null]
             | readonly ['Nee', {
@@ -6103,9 +6144,6 @@ export namespace Root {
                 }]
             >
         }>
-        readonly 'Inkoop saldo': {
-            readonly 'Grootboekrekening': string
-        }
         readonly 'Inkopen': _i_core._T_Dictionary<null, {
             readonly 'Afhandeling': _i_core._T_State_Group<null, 
                 | readonly ['Mutaties', null]
@@ -6125,12 +6163,12 @@ export namespace Root {
                 }]
             >
             readonly 'Brondocument': _i_core._T_State_Group<null, 
-                | readonly ['Niet van toepassing', null]
-                | readonly ['Nog toevoegen', null]
-                | readonly ['Ontbreekt', null]
                 | readonly ['Toegevoegd', {
-                    readonly 'Document': string
+                    readonly 'Document': _T_Bestandsnaam
                 }]
+                | readonly ['Niet van toepassing', null]
+                | readonly ['Ontbreekt', null]
+                | readonly ['Nog toevoegen', null]
             >
             readonly 'Datum': number
             readonly 'Regels': _i_core._T_Dictionary<null, {
@@ -6160,11 +6198,14 @@ export namespace Root {
                     readonly 'Ronde': string
                 }]
                 | readonly ['Salaris', {
-                    readonly 'Medewerker': string
                     readonly 'Ronde': string
+                    readonly 'Medewerker': string
                 }]
             >
         }>
+        readonly 'Inkoop saldo': {
+            readonly 'Grootboekrekening': string
+        }
         readonly 'Overige balans items': _i_core._T_Dictionary<null, {
             readonly 'Beginsaldo': number
             readonly 'Grootboekrekening': string
@@ -6177,8 +6218,8 @@ export namespace Root {
             readonly 'Nieuw': _i_core._T_State_Group<null, 
                 | readonly ['Ja', null]
                 | readonly ['Nee', {
-                    readonly 'Balans item': string
                     readonly 'Jaar': string
+                    readonly 'Balans item': string
                 }]
             >
         }>
@@ -6195,73 +6236,73 @@ export namespace Root {
                     readonly 'Rekening courant': string
                 }]
             >
-            readonly 'BTW-periode': string
             readonly 'Betalingstermijn': number
+            readonly 'BTW-periode': string
             readonly 'Brondocument': _i_core._T_State_Group<null, 
                 | readonly ['Toegevoegd', {
-                    readonly 'Document': string
+                    readonly 'Document': _T_Bestandsnaam
                 }]
             >
             readonly 'Contracttype': _i_core._T_State_Group<null, 
+                | readonly ['Project', {
+                    readonly 'Project': string
+                    readonly 'Offerte': string
+                }]
                 | readonly ['Licentieovereenkomst', {
                     readonly 'Overeenkomst': string
-                }]
-                | readonly ['Project', {
-                    readonly 'Offerte': string
-                    readonly 'Project': string
                 }]
             >
             readonly 'Datum': number
             readonly 'Debiteur': string
             readonly 'Regels': _i_core._T_Dictionary<null, {
                 readonly 'BTW-regime': _i_core._T_State_Group<null, 
-                    | readonly ['Binnenland: heffing verlegd', null]
                     | readonly ['Intracommunautair', null]
                     | readonly ['Standaard', {
                         readonly 'BTW-categorie': string
                     }]
+                    | readonly ['Binnenland: heffing verlegd', null]
                 >
                 readonly 'Bedrag exclusief BTW': number
                 readonly 'Contracttype': _i_core._T_State_Group<null, 
-                    | readonly ['Licentieovereenkomst', {
-                        readonly 'Periode': string
-                    }]
-                    | readonly ['Los', null]
                     | readonly ['Project', {
                         readonly 'Opbrengst': string
+                    }]
+                    | readonly ['Los', null]
+                    | readonly ['Licentieovereenkomst', {
+                        readonly 'Periode': string
                     }]
                 >
                 readonly 'Omschrijving': string
                 readonly 'Type': _i_core._T_State_Group<null, 
-                    | readonly ['Balans', {
-                        readonly 'Balans item': string
-                    }]
                     | readonly ['Opbrengsten', {
                         readonly 'Grootboekrekening': string
+                    }]
+                    | readonly ['Balans', {
+                        readonly 'Balans item': string
                     }]
                 >
             }>
         }>
         readonly 'Verrekenposten': _i_core._T_Dictionary<null, {
             readonly 'Mutaties': _i_core._T_Dictionary<null, {
+                readonly 'Bedrag': number
                 readonly 'Afhandeling': _i_core._T_State_Group<null, 
-                    | readonly ['BTW-periode', {
-                        readonly 'BTW-periode': string
+                    | readonly ['Inkoop', {
                         readonly 'Jaar': string
+                        readonly 'Inkoop': string
                     }]
                     | readonly ['Informele rekening', {
                         readonly 'Informele rekening': string
-                    }]
-                    | readonly ['Inkoop', {
-                        readonly 'Inkoop': string
-                        readonly 'Jaar': string
                     }]
                     | readonly ['Verkoop', {
                         readonly 'Jaar': string
                         readonly 'Verkoop': string
                     }]
+                    | readonly ['BTW-periode', {
+                        readonly 'Jaar': string
+                        readonly 'BTW-periode': string
+                    }]
                 >
-                readonly 'Bedrag': number
             }>
         }>
     }>

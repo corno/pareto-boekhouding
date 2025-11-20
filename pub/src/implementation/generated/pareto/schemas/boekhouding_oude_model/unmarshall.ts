@@ -2,11 +2,15 @@ import * as _pa from 'exupery-core-alg'
 import * as _pd from 'exupery-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
+import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/unmarshall"
 import * as _i_in from "../../../../../interface/generated/pareto/core/astn_source"
 import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/data_types/target"
-import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/unmarshall"
 
 
+export const Bestandsnaam: _i_signatures._T_Bestandsnaam = ($, $p) => _i_generic.process_text(
+    $,
+    null
+)
 export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
     $,
     {
@@ -36,53 +40,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                 $,
                 {
                     'properties': ($) => ({
-                        'BTW-categorieen': _pa.cc(_i_generic.get_entry(
-                            $,
-                            {
-                                'key': "BTW-categorieen",
-                            }
-                        ), ($) => _i_generic.process_unconstrained_dictionary(
-                            $,
-                            {
-                                'value': ($) => _i_generic.process_group(
-                                    $,
-                                    {
-                                        'properties': ($) => ({
-                                            'BTW-heffing': _pa.cc(_i_generic.get_entry(
-                                                $,
-                                                {
-                                                    'key': "BTW-heffing",
-                                                }
-                                            ), ($) => _i_generic.process_unconstrained_state_group(
-                                                $,
-                                                {
-                                                    'states': _pa.dictionary_literal({
-                                                        'Ja': ($): _i_out._T_Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG => ['Ja', _i_generic.process_group(
-                                                            $,
-                                                            {
-                                                                'properties': ($) => ({
-                                                                    'BTW-promillage': _pa.cc(_i_generic.get_entry(
-                                                                        $,
-                                                                        {
-                                                                            'key': "BTW-promillage",
-                                                                        }
-                                                                    ), ($) => _i_generic.process_number(
-                                                                        $,
-                                                                        {
-                                                                            'deserializer': $p['value deserializers']['custom numbers']['Promillage'],
-                                                                        }
-                                                                    )),
-                                                                }),
-                                                            }
-                                                        )],
-                                                    }),
-                                                }
-                                            )),
-                                        }),
-                                    }
-                                ),
-                            }
-                        )),
                         'Balans': _pa.cc(_i_generic.get_entry(
                             $,
                             {
@@ -163,6 +120,30 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
+                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "Zijde",
+                                                            }
+                                                        ), ($) => _i_generic.process_unconstrained_state_group(
+                                                            $,
+                                                            {
+                                                                'states': _pa.dictionary_literal({
+                                                                    'Activa': ($): _i_out._T_Root.Beheer.Balans.Hoofdcategorieen.D.Zijde.SG => ['Activa', _i_generic.process_group(
+                                                                        $,
+                                                                        {
+                                                                            'properties': ($) => null,
+                                                                        }
+                                                                    )],
+                                                                    'Passiva': ($): _i_out._T_Root.Beheer.Balans.Hoofdcategorieen.D.Zijde.SG => ['Passiva', _i_generic.process_group(
+                                                                        $,
+                                                                        {
+                                                                            'properties': ($) => null,
+                                                                        }
+                                                                    )],
+                                                                }),
+                                                            }
+                                                        )),
                                                         'Subcategorieen': _pa.cc(_i_generic.get_entry(
                                                             $,
                                                             {
@@ -198,30 +179,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 ),
                                                             }
                                                         )),
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "Zijde",
-                                                            }
-                                                        ), ($) => _i_generic.process_unconstrained_state_group(
-                                                            $,
-                                                            {
-                                                                'states': _pa.dictionary_literal({
-                                                                    'Activa': ($): _i_out._T_Root.Beheer.Balans.Hoofdcategorieen.D.Zijde.SG => ['Activa', _i_generic.process_group(
-                                                                        $,
-                                                                        {
-                                                                            'properties': ($) => null,
-                                                                        }
-                                                                    )],
-                                                                    'Passiva': ($): _i_out._T_Root.Beheer.Balans.Hoofdcategorieen.D.Zijde.SG => ['Passiva', _i_generic.process_group(
-                                                                        $,
-                                                                        {
-                                                                            'properties': ($) => null,
-                                                                        }
-                                                                    )],
-                                                                }),
-                                                            }
-                                                        )),
                                                     }),
                                                 }
                                             ),
@@ -239,22 +196,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "Subcategorieen",
-                                                            }
-                                                        ), ($) => _i_generic.process_unconstrained_dictionary(
-                                                            $,
-                                                            {
-                                                                'value': ($) => _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => null,
-                                                                    }
-                                                                ),
-                                                            }
-                                                        )),
                                                         'Zijde': _pa.cc(_i_generic.get_entry(
                                                             $,
                                                             {
@@ -279,12 +220,81 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 }),
                                                             }
                                                         )),
+                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "Subcategorieen",
+                                                            }
+                                                        ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                            $,
+                                                            {
+                                                                'value': ($) => _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => null,
+                                                                    }
+                                                                ),
+                                                            }
+                                                        )),
                                                     }),
                                                 }
                                             ),
                                         }
                                     )),
                                 }),
+                            }
+                        )),
+                        'BTW-categorieen': _pa.cc(_i_generic.get_entry(
+                            $,
+                            {
+                                'key': "BTW-categorieen",
+                            }
+                        ), ($) => _i_generic.process_unconstrained_dictionary(
+                            $,
+                            {
+                                'value': ($) => _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'BTW-heffing': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "BTW-heffing",
+                                                }
+                                            ), ($) => _i_generic.process_unconstrained_state_group(
+                                                $,
+                                                {
+                                                    'states': _pa.dictionary_literal({
+                                                        'Ja': ($): _i_out._T_Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG => ['Ja', _i_generic.process_group(
+                                                            $,
+                                                            {
+                                                                'properties': ($) => ({
+                                                                    'BTW-promillage': _pa.cc(_i_generic.get_entry(
+                                                                        $,
+                                                                        {
+                                                                            'key': "BTW-promillage",
+                                                                        }
+                                                                    ), ($) => _i_generic.process_number(
+                                                                        $,
+                                                                        {
+                                                                            'deserializer': $p['value deserializers']['custom numbers']['Promillage'],
+                                                                        }
+                                                                    )),
+                                                                }),
+                                                            }
+                                                        )],
+                                                        'Nee': ($): _i_out._T_Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG => ['Nee', _i_generic.process_group(
+                                                            $,
+                                                            {
+                                                                'properties': ($) => null,
+                                                            }
+                                                        )],
+                                                    }),
+                                                }
+                                            )),
+                                        }),
+                                    }
+                                ),
                             }
                         )),
                         'Gebruikers': _pa.cc(_i_generic.get_entry(
@@ -476,6 +486,30 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
+                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "Zijde",
+                                                            }
+                                                        ), ($) => _i_generic.process_unconstrained_state_group(
+                                                            $,
+                                                            {
+                                                                'states': _pa.dictionary_literal({
+                                                                    'Kosten': ($): _i_out._T_Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde.SG => ['Kosten', _i_generic.process_group(
+                                                                        $,
+                                                                        {
+                                                                            'properties': ($) => null,
+                                                                        }
+                                                                    )],
+                                                                    'Opbrengsten': ($): _i_out._T_Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde.SG => ['Opbrengsten', _i_generic.process_group(
+                                                                        $,
+                                                                        {
+                                                                            'properties': ($) => null,
+                                                                        }
+                                                                    )],
+                                                                }),
+                                                            }
+                                                        )),
                                                         'Subcategorieen': _pa.cc(_i_generic.get_entry(
                                                             $,
                                                             {
@@ -511,30 +545,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 ),
                                                             }
                                                         )),
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "Zijde",
-                                                            }
-                                                        ), ($) => _i_generic.process_unconstrained_state_group(
-                                                            $,
-                                                            {
-                                                                'states': _pa.dictionary_literal({
-                                                                    'Kosten': ($): _i_out._T_Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde.SG => ['Kosten', _i_generic.process_group(
-                                                                        $,
-                                                                        {
-                                                                            'properties': ($) => null,
-                                                                        }
-                                                                    )],
-                                                                    'Opbrengsten': ($): _i_out._T_Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde.SG => ['Opbrengsten', _i_generic.process_group(
-                                                                        $,
-                                                                        {
-                                                                            'properties': ($) => null,
-                                                                        }
-                                                                    )],
-                                                                }),
-                                                            }
-                                                        )),
                                                     }),
                                                 }
                                             ),
@@ -552,22 +562,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
-                                                            $,
-                                                            {
-                                                                'key': "Subcategorieen",
-                                                            }
-                                                        ), ($) => _i_generic.process_unconstrained_dictionary(
-                                                            $,
-                                                            {
-                                                                'value': ($) => _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => null,
-                                                                    }
-                                                                ),
-                                                            }
-                                                        )),
                                                         'Zijde': _pa.cc(_i_generic.get_entry(
                                                             $,
                                                             {
@@ -590,6 +584,22 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         }
                                                                     )],
                                                                 }),
+                                                            }
+                                                        )),
+                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
+                                                            $,
+                                                            {
+                                                                'key': "Subcategorieen",
+                                                            }
+                                                        ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                            $,
+                                                            {
+                                                                'value': ($) => _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => null,
+                                                                    }
+                                                                ),
                                                             }
                                                         )),
                                                     }),
@@ -655,153 +665,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'BTW periode saldo': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "BTW periode saldo",
-                                    }
-                                ), ($) => _i_generic.process_group(
-                                    $,
-                                    {
-                                        'properties': ($) => ({
-                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
-                                                $,
-                                                {
-                                                    'key': "Grootboekrekening",
-                                                }
-                                            ), ($) => _i_generic.process_text(
-                                                $,
-                                                null
-                                            )),
-                                        }),
-                                    }
-                                )),
-                                'BTW periodes': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "BTW periodes",
-                                    }
-                                ), ($) => _i_generic.process_unconstrained_dictionary(
-                                    $,
-                                    {
-                                        'value': ($) => _i_generic.process_group(
-                                            $,
-                                            {
-                                                'properties': ($) => ({
-                                                    '1. BTW-categorieen': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "1. BTW-categorieen",
-                                                        }
-                                                    ), ($) => _i_generic.process_unconstrained_dictionary(
-                                                        $,
-                                                        {
-                                                            'value': ($) => _i_generic.process_group(
-                                                                $,
-                                                                {
-                                                                    'properties': ($) => null,
-                                                                }
-                                                            ),
-                                                        }
-                                                    )),
-                                                    'Documenten': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "Documenten",
-                                                        }
-                                                    ), ($) => _i_generic.process_unconstrained_dictionary(
-                                                        $,
-                                                        {
-                                                            'value': ($) => _i_generic.process_group(
-                                                                $,
-                                                                {
-                                                                    'properties': ($) => ({
-                                                                        'Bestand': _pa.cc(_i_generic.get_entry(
-                                                                            $,
-                                                                            {
-                                                                                'key': "Bestand",
-                                                                            }
-                                                                        ), ($) => _i_generic.process_text(
-                                                                            $,
-                                                                            null
-                                                                        )),
-                                                                    }),
-                                                                }
-                                                            ),
-                                                        }
-                                                    )),
-                                                    'Omschrijving': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "Omschrijving",
-                                                        }
-                                                    ), ($) => _i_generic.process_text(
-                                                        $,
-                                                        null
-                                                    )),
-                                                    'Status': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "Status",
-                                                        }
-                                                    ), ($) => _i_generic.process_unconstrained_state_group(
-                                                        $,
-                                                        {
-                                                            'states': _pa.dictionary_literal({
-                                                                'Aangegeven': ($): _i_out._T_Root.Jaren.D.BTW_periodes.D.Status.SG => ['Aangegeven', _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => ({
-                                                                            'Afronding': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "Afronding",
-                                                                                }
-                                                                            ), ($) => _i_generic.process_number(
-                                                                                $,
-                                                                                {
-                                                                                    'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
-                                                                                }
-                                                                            )),
-                                                                            'Bedrag': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "Bedrag",
-                                                                                }
-                                                                            ), ($) => _i_generic.process_number(
-                                                                                $,
-                                                                                {
-                                                                                    'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
-                                                                                }
-                                                                            )),
-                                                                            'Datum': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "Datum",
-                                                                                }
-                                                                            ), ($) => _i_generic.process_number(
-                                                                                $,
-                                                                                {
-                                                                                    'deserializer': $p['value deserializers']['custom numbers']['Datum'],
-                                                                                }
-                                                                            )),
-                                                                        }),
-                                                                    }
-                                                                )],
-                                                                'Openstaand': ($): _i_out._T_Root.Jaren.D.BTW_periodes.D.Status.SG => ['Openstaand', _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => null,
-                                                                    }
-                                                                )],
-                                                            }),
-                                                        }
-                                                    )),
-                                                }),
-                                            }
-                                        ),
-                                    }
-                                )),
                                 'Balans grootboekrekeningen': _pa.cc(_i_generic.get_entry(
                                     $,
                                     {
@@ -829,13 +692,13 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         'properties': ($) => null,
                                                                     }
                                                                 )],
-                                                                'Informele rekening': ($): _i_out._T_Root.Jaren.D.Balans_grootboekrekeningen.D.Type.SG => ['Informele rekening', _i_generic.process_group(
+                                                                'Overig': ($): _i_out._T_Root.Jaren.D.Balans_grootboekrekeningen.D.Type.SG => ['Overig', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => null,
                                                                     }
                                                                 )],
-                                                                'Overig': ($): _i_out._T_Root.Jaren.D.Balans_grootboekrekeningen.D.Type.SG => ['Overig', _i_generic.process_group(
+                                                                'Informele rekening': ($): _i_out._T_Root.Jaren.D.Balans_grootboekrekeningen.D.Type.SG => ['Informele rekening', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => null,
@@ -952,19 +815,10 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     $,
                                                                                                     {
                                                                                                         'states': _pa.dictionary_literal({
-                                                                                                            'BTW-periode': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['BTW-periode', _i_generic.process_group(
+                                                                                                            'Inkoop': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Inkoop', _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'BTW-periode': _pa.cc(_i_generic.get_entry(
-                                                                                                                            $,
-                                                                                                                            {
-                                                                                                                                'key': "BTW-periode",
-                                                                                                                            }
-                                                                                                                        ), ($) => _i_generic.process_text(
-                                                                                                                            $,
-                                                                                                                            null
-                                                                                                                        )),
                                                                                                                         'Jaar': _pa.cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
@@ -974,29 +828,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                             $,
                                                                                                                             null
                                                                                                                         )),
-                                                                                                                    }),
-                                                                                                                }
-                                                                                                            )],
-                                                                                                            'Informele rekening': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Informele rekening', _i_generic.process_group(
-                                                                                                                $,
-                                                                                                                {
-                                                                                                                    'properties': ($) => ({
-                                                                                                                        'Informele rekening': _pa.cc(_i_generic.get_entry(
-                                                                                                                            $,
-                                                                                                                            {
-                                                                                                                                'key': "Informele rekening",
-                                                                                                                            }
-                                                                                                                        ), ($) => _i_generic.process_text(
-                                                                                                                            $,
-                                                                                                                            null
-                                                                                                                        )),
-                                                                                                                    }),
-                                                                                                                }
-                                                                                                            )],
-                                                                                                            'Inkoop': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Inkoop', _i_generic.process_group(
-                                                                                                                $,
-                                                                                                                {
-                                                                                                                    'properties': ($) => ({
                                                                                                                         'Inkoop': _pa.cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
@@ -1006,10 +837,42 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                             $,
                                                                                                                             null
                                                                                                                         )),
+                                                                                                                    }),
+                                                                                                                }
+                                                                                                            )],
+                                                                                                            'Verrekenpost': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Verrekenpost', _i_generic.process_group(
+                                                                                                                $,
+                                                                                                                {
+                                                                                                                    'properties': ($) => ({
+                                                                                                                        'Verrekenpost': _pa.cc(_i_generic.get_entry(
+                                                                                                                            $,
+                                                                                                                            {
+                                                                                                                                'key': "Verrekenpost",
+                                                                                                                            }
+                                                                                                                        ), ($) => _i_generic.process_text(
+                                                                                                                            $,
+                                                                                                                            null
+                                                                                                                        )),
+                                                                                                                    }),
+                                                                                                                }
+                                                                                                            )],
+                                                                                                            'BTW-periode': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['BTW-periode', _i_generic.process_group(
+                                                                                                                $,
+                                                                                                                {
+                                                                                                                    'properties': ($) => ({
                                                                                                                         'Jaar': _pa.cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Jaar",
+                                                                                                                            }
+                                                                                                                        ), ($) => _i_generic.process_text(
+                                                                                                                            $,
+                                                                                                                            null
+                                                                                                                        )),
+                                                                                                                        'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                                                                            $,
+                                                                                                                            {
+                                                                                                                                'key': "BTW-periode",
                                                                                                                             }
                                                                                                                         ), ($) => _i_generic.process_text(
                                                                                                                             $,
@@ -1043,14 +906,14 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                     }),
                                                                                                                 }
                                                                                                             )],
-                                                                                                            'Verrekenpost': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Verrekenpost', _i_generic.process_group(
+                                                                                                            'Informele rekening': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Informele rekening', _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'Verrekenpost': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Informele rekening': _pa.cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
-                                                                                                                                'key': "Verrekenpost",
+                                                                                                                                'key': "Informele rekening",
                                                                                                                             }
                                                                                                                         ), ($) => _i_generic.process_text(
                                                                                                                             $,
@@ -1141,6 +1004,155 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
+                                    }
+                                )),
+                                'BTW periode saldo': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "BTW periode saldo",
+                                    }
+                                ), ($) => _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "Grootboekrekening",
+                                                }
+                                            ), ($) => _i_generic.process_text(
+                                                $,
+                                                null
+                                            )),
+                                        }),
+                                    }
+                                )),
+                                'BTW periodes': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "BTW periodes",
+                                    }
+                                ), ($) => _i_generic.process_unconstrained_dictionary(
+                                    $,
+                                    {
+                                        'value': ($) => _i_generic.process_group(
+                                            $,
+                                            {
+                                                'properties': ($) => ({
+                                                    '1. BTW-categorieen': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "1. BTW-categorieen",
+                                                        }
+                                                    ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                        $,
+                                                        {
+                                                            'value': ($) => _i_generic.process_group(
+                                                                $,
+                                                                {
+                                                                    'properties': ($) => null,
+                                                                }
+                                                            ),
+                                                        }
+                                                    )),
+                                                    'Documenten': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "Documenten",
+                                                        }
+                                                    ), ($) => _i_generic.process_unconstrained_dictionary(
+                                                        $,
+                                                        {
+                                                            'value': ($) => _i_generic.process_group(
+                                                                $,
+                                                                {
+                                                                    'properties': ($) => ({
+                                                                        'Bestand': _pa.cc(_i_generic.get_entry(
+                                                                            $,
+                                                                            {
+                                                                                'key': "Bestand",
+                                                                            }
+                                                                        ), ($) => Bestandsnaam(
+                                                                            $,
+                                                                            {
+                                                                                'value deserializers': $p['value deserializers'],
+                                                                            }
+                                                                        )),
+                                                                    }),
+                                                                }
+                                                            ),
+                                                        }
+                                                    )),
+                                                    'Omschrijving': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "Omschrijving",
+                                                        }
+                                                    ), ($) => _i_generic.process_text(
+                                                        $,
+                                                        null
+                                                    )),
+                                                    'Status': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "Status",
+                                                        }
+                                                    ), ($) => _i_generic.process_unconstrained_state_group(
+                                                        $,
+                                                        {
+                                                            'states': _pa.dictionary_literal({
+                                                                'Aangegeven': ($): _i_out._T_Root.Jaren.D.BTW_periodes.D.Status.SG => ['Aangegeven', _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => ({
+                                                                            'Afronding': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "Afronding",
+                                                                                }
+                                                                            ), ($) => _i_generic.process_number(
+                                                                                $,
+                                                                                {
+                                                                                    'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
+                                                                                }
+                                                                            )),
+                                                                            'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "Bedrag",
+                                                                                }
+                                                                            ), ($) => _i_generic.process_number(
+                                                                                $,
+                                                                                {
+                                                                                    'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
+                                                                                }
+                                                                            )),
+                                                                            'Datum': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "Datum",
+                                                                                }
+                                                                            ), ($) => _i_generic.process_number(
+                                                                                $,
+                                                                                {
+                                                                                    'deserializer': $p['value deserializers']['custom numbers']['Datum'],
+                                                                                }
+                                                                            )),
+                                                                        }),
+                                                                    }
+                                                                )],
+                                                                'Openstaand': ($): _i_out._T_Root.Jaren.D.BTW_periodes.D.Status.SG => ['Openstaand', _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => null,
+                                                                    }
+                                                                )],
+                                                            }),
+                                                        }
+                                                    )),
+                                                }),
+                                            }
+                                        ),
                                     }
                                 )),
                                 'Eerste boekjaar': _pa.cc(_i_generic.get_entry(
@@ -1293,27 +1305,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Inkoop saldo': _pa.cc(_i_generic.get_entry(
-                                    $,
-                                    {
-                                        'key': "Inkoop saldo",
-                                    }
-                                ), ($) => _i_generic.process_group(
-                                    $,
-                                    {
-                                        'properties': ($) => ({
-                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
-                                                $,
-                                                {
-                                                    'key': "Grootboekrekening",
-                                                }
-                                            ), ($) => _i_generic.process_text(
-                                                $,
-                                                null
-                                            )),
-                                        }),
-                                    }
-                                )),
                                 'Inkopen': _pa.cc(_i_generic.get_entry(
                                     $,
                                     {
@@ -1431,13 +1422,25 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         {
                                                             'states': _pa.dictionary_literal({
-                                                                'Niet van toepassing': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Niet van toepassing', _i_generic.process_group(
+                                                                'Toegevoegd': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Toegevoegd', _i_generic.process_group(
                                                                     $,
                                                                     {
-                                                                        'properties': ($) => null,
+                                                                        'properties': ($) => ({
+                                                                            'Document': _pa.cc(_i_generic.get_entry(
+                                                                                $,
+                                                                                {
+                                                                                    'key': "Document",
+                                                                                }
+                                                                            ), ($) => Bestandsnaam(
+                                                                                $,
+                                                                                {
+                                                                                    'value deserializers': $p['value deserializers'],
+                                                                                }
+                                                                            )),
+                                                                        }),
                                                                     }
                                                                 )],
-                                                                'Nog toevoegen': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Nog toevoegen', _i_generic.process_group(
+                                                                'Niet van toepassing': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Niet van toepassing', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => null,
@@ -1449,20 +1452,10 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         'properties': ($) => null,
                                                                     }
                                                                 )],
-                                                                'Toegevoegd': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Toegevoegd', _i_generic.process_group(
+                                                                'Nog toevoegen': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Nog toevoegen', _i_generic.process_group(
                                                                     $,
                                                                     {
-                                                                        'properties': ($) => ({
-                                                                            'Document': _pa.cc(_i_generic.get_entry(
-                                                                                $,
-                                                                                {
-                                                                                    'key': "Document",
-                                                                                }
-                                                                            ), ($) => _i_generic.process_text(
-                                                                                $,
-                                                                                null
-                                                                            )),
-                                                                        }),
+                                                                        'properties': ($) => null,
                                                                     }
                                                                 )],
                                                             }),
@@ -1650,19 +1643,19 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Medewerker': _pa.cc(_i_generic.get_entry(
+                                                                            'Ronde': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
-                                                                                    'key': "Medewerker",
+                                                                                    'key': "Ronde",
                                                                                 }
                                                                             ), ($) => _i_generic.process_text(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Ronde': _pa.cc(_i_generic.get_entry(
+                                                                            'Medewerker': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
-                                                                                    'key': "Ronde",
+                                                                                    'key': "Medewerker",
                                                                                 }
                                                                             ), ($) => _i_generic.process_text(
                                                                                 $,
@@ -1677,6 +1670,27 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 }),
                                             }
                                         ),
+                                    }
+                                )),
+                                'Inkoop saldo': _pa.cc(_i_generic.get_entry(
+                                    $,
+                                    {
+                                        'key': "Inkoop saldo",
+                                    }
+                                ), ($) => _i_generic.process_group(
+                                    $,
+                                    {
+                                        'properties': ($) => ({
+                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                $,
+                                                {
+                                                    'key': "Grootboekrekening",
+                                                }
+                                            ), ($) => _i_generic.process_text(
+                                                $,
+                                                null
+                                            )),
+                                        }),
                                     }
                                 )),
                                 'Overige balans items': _pa.cc(_i_generic.get_entry(
@@ -1787,19 +1801,19 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Balans item': _pa.cc(_i_generic.get_entry(
+                                                                            'Jaar': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
-                                                                                    'key': "Balans item",
+                                                                                    'key': "Jaar",
                                                                                 }
                                                                             ), ($) => _i_generic.process_text(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                            'Balans item': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
-                                                                                    'key': "Jaar",
+                                                                                    'key': "Balans item",
                                                                                 }
                                                                             ), ($) => _i_generic.process_text(
                                                                                 $,
@@ -1926,15 +1940,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'BTW-periode': _pa.cc(_i_generic.get_entry(
-                                                        $,
-                                                        {
-                                                            'key': "BTW-periode",
-                                                        }
-                                                    ), ($) => _i_generic.process_text(
-                                                        $,
-                                                        null
-                                                    )),
                                                     'Betalingstermijn': _pa.cc(_i_generic.get_entry(
                                                         $,
                                                         {
@@ -1945,6 +1950,15 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         {
                                                             'deserializer': $p['value deserializers']['custom numbers']['Dagen'],
                                                         }
+                                                    )),
+                                                    'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                        $,
+                                                        {
+                                                            'key': "BTW-periode",
+                                                        }
+                                                    ), ($) => _i_generic.process_text(
+                                                        $,
+                                                        null
                                                     )),
                                                     'Brondocument': _pa.cc(_i_generic.get_entry(
                                                         $,
@@ -1964,9 +1978,11 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 {
                                                                                     'key': "Document",
                                                                                 }
-                                                                            ), ($) => _i_generic.process_text(
+                                                                            ), ($) => Bestandsnaam(
                                                                                 $,
-                                                                                null
+                                                                                {
+                                                                                    'value deserializers': $p['value deserializers'],
+                                                                                }
                                                                             )),
                                                                         }),
                                                                     }
@@ -1983,26 +1999,19 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         {
                                                             'states': _pa.dictionary_literal({
-                                                                'Licentieovereenkomst': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Contracttype.SG => ['Licentieovereenkomst', _i_generic.process_group(
+                                                                'Project': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Contracttype.SG => ['Project', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Overeenkomst': _pa.cc(_i_generic.get_entry(
+                                                                            'Project': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
-                                                                                    'key': "Overeenkomst",
+                                                                                    'key': "Project",
                                                                                 }
                                                                             ), ($) => _i_generic.process_text(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                        }),
-                                                                    }
-                                                                )],
-                                                                'Project': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Contracttype.SG => ['Project', _i_generic.process_group(
-                                                                    $,
-                                                                    {
-                                                                        'properties': ($) => ({
                                                                             'Offerte': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
@@ -2012,10 +2021,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Project': _pa.cc(_i_generic.get_entry(
+                                                                        }),
+                                                                    }
+                                                                )],
+                                                                'Licentieovereenkomst': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Contracttype.SG => ['Licentieovereenkomst', _i_generic.process_group(
+                                                                    $,
+                                                                    {
+                                                                        'properties': ($) => ({
+                                                                            'Overeenkomst': _pa.cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
-                                                                                    'key': "Project",
+                                                                                    'key': "Overeenkomst",
                                                                                 }
                                                                             ), ($) => _i_generic.process_text(
                                                                                 $,
@@ -2068,12 +2084,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             {
                                                                                 'states': _pa.dictionary_literal({
-                                                                                    'Binnenland: heffing verlegd': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime.SG => ['Binnenland: heffing verlegd', _i_generic.process_group(
-                                                                                        $,
-                                                                                        {
-                                                                                            'properties': ($) => null,
-                                                                                        }
-                                                                                    )],
                                                                                     'Intracommunautair': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime.SG => ['Intracommunautair', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -2094,6 +2104,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     null
                                                                                                 )),
                                                                                             }),
+                                                                                        }
+                                                                                    )],
+                                                                                    'Binnenland: heffing verlegd': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime.SG => ['Binnenland: heffing verlegd', _i_generic.process_group(
+                                                                                        $,
+                                                                                        {
+                                                                                            'properties': ($) => null,
                                                                                         }
                                                                                     )],
                                                                                 }),
@@ -2119,14 +2135,14 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             {
                                                                                 'states': _pa.dictionary_literal({
-                                                                                    'Licentieovereenkomst': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Contracttype.SG => ['Licentieovereenkomst', _i_generic.process_group(
+                                                                                    'Project': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Contracttype.SG => ['Project', _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Periode': _pa.cc(_i_generic.get_entry(
+                                                                                                'Opbrengst': _pa.cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
-                                                                                                        'key': "Periode",
+                                                                                                        'key': "Opbrengst",
                                                                                                     }
                                                                                                 ), ($) => _i_generic.process_text(
                                                                                                     $,
@@ -2141,14 +2157,14 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                             'properties': ($) => null,
                                                                                         }
                                                                                     )],
-                                                                                    'Project': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Contracttype.SG => ['Project', _i_generic.process_group(
+                                                                                    'Licentieovereenkomst': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Contracttype.SG => ['Licentieovereenkomst', _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Opbrengst': _pa.cc(_i_generic.get_entry(
+                                                                                                'Periode': _pa.cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
-                                                                                                        'key': "Opbrengst",
+                                                                                                        'key': "Periode",
                                                                                                     }
                                                                                                 ), ($) => _i_generic.process_text(
                                                                                                     $,
@@ -2178,22 +2194,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             {
                                                                                 'states': _pa.dictionary_literal({
-                                                                                    'Balans': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Type.SG => ['Balans', _i_generic.process_group(
-                                                                                        $,
-                                                                                        {
-                                                                                            'properties': ($) => ({
-                                                                                                'Balans item': _pa.cc(_i_generic.get_entry(
-                                                                                                    $,
-                                                                                                    {
-                                                                                                        'key': "Balans item",
-                                                                                                    }
-                                                                                                ), ($) => _i_generic.process_text(
-                                                                                                    $,
-                                                                                                    null
-                                                                                                )),
-                                                                                            }),
-                                                                                        }
-                                                                                    )],
                                                                                     'Opbrengsten': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Type.SG => ['Opbrengsten', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -2202,6 +2202,22 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Grootboekrekening",
+                                                                                                    }
+                                                                                                ), ($) => _i_generic.process_text(
+                                                                                                    $,
+                                                                                                    null
+                                                                                                )),
+                                                                                            }),
+                                                                                        }
+                                                                                    )],
+                                                                                    'Balans': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Type.SG => ['Balans', _i_generic.process_group(
+                                                                                        $,
+                                                                                        {
+                                                                                            'properties': ($) => ({
+                                                                                                'Balans item': _pa.cc(_i_generic.get_entry(
+                                                                                                    $,
+                                                                                                    {
+                                                                                                        'key': "Balans item",
                                                                                                     }
                                                                                                 ), ($) => _i_generic.process_text(
                                                                                                     $,
@@ -2247,6 +2263,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
+                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                            $,
+                                                                            {
+                                                                                'key': "Bedrag",
+                                                                            }
+                                                                        ), ($) => _i_generic.process_number(
+                                                                            $,
+                                                                            {
+                                                                                'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
+                                                                            }
+                                                                        )),
                                                                         'Afhandeling': _pa.cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
@@ -2256,23 +2283,23 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             {
                                                                                 'states': _pa.dictionary_literal({
-                                                                                    'BTW-periode': ($): _i_out._T_Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling.SG => ['BTW-periode', _i_generic.process_group(
+                                                                                    'Inkoop': ($): _i_out._T_Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling.SG => ['Inkoop', _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
-                                                                                                        'key': "BTW-periode",
+                                                                                                        'key': "Jaar",
                                                                                                     }
                                                                                                 ), ($) => _i_generic.process_text(
                                                                                                     $,
                                                                                                     null
                                                                                                 )),
-                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                'Inkoop': _pa.cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
-                                                                                                        'key': "Jaar",
+                                                                                                        'key': "Inkoop",
                                                                                                     }
                                                                                                 ), ($) => _i_generic.process_text(
                                                                                                     $,
@@ -2289,31 +2316,6 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Informele rekening",
-                                                                                                    }
-                                                                                                ), ($) => _i_generic.process_text(
-                                                                                                    $,
-                                                                                                    null
-                                                                                                )),
-                                                                                            }),
-                                                                                        }
-                                                                                    )],
-                                                                                    'Inkoop': ($): _i_out._T_Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling.SG => ['Inkoop', _i_generic.process_group(
-                                                                                        $,
-                                                                                        {
-                                                                                            'properties': ($) => ({
-                                                                                                'Inkoop': _pa.cc(_i_generic.get_entry(
-                                                                                                    $,
-                                                                                                    {
-                                                                                                        'key': "Inkoop",
-                                                                                                    }
-                                                                                                ), ($) => _i_generic.process_text(
-                                                                                                    $,
-                                                                                                    null
-                                                                                                )),
-                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
-                                                                                                    $,
-                                                                                                    {
-                                                                                                        'key': "Jaar",
                                                                                                     }
                                                                                                 ), ($) => _i_generic.process_text(
                                                                                                     $,
@@ -2347,18 +2349,32 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                             }),
                                                                                         }
                                                                                     )],
+                                                                                    'BTW-periode': ($): _i_out._T_Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling.SG => ['BTW-periode', _i_generic.process_group(
+                                                                                        $,
+                                                                                        {
+                                                                                            'properties': ($) => ({
+                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                    $,
+                                                                                                    {
+                                                                                                        'key': "Jaar",
+                                                                                                    }
+                                                                                                ), ($) => _i_generic.process_text(
+                                                                                                    $,
+                                                                                                    null
+                                                                                                )),
+                                                                                                'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                                                    $,
+                                                                                                    {
+                                                                                                        'key': "BTW-periode",
+                                                                                                    }
+                                                                                                ), ($) => _i_generic.process_text(
+                                                                                                    $,
+                                                                                                    null
+                                                                                                )),
+                                                                                            }),
+                                                                                        }
+                                                                                    )],
                                                                                 }),
-                                                                            }
-                                                                        )),
-                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
-                                                                            $,
-                                                                            {
-                                                                                'key': "Bedrag",
-                                                                            }
-                                                                        ), ($) => _i_generic.process_number(
-                                                                            $,
-                                                                            {
-                                                                                'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                             }
                                                                         )),
                                                                     }),
