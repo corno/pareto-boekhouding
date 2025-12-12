@@ -32,6 +32,7 @@
     "exupery-core-data": "^0.3.3",
     "exupery-core-dev": "^0.3.2",
     "exupery-resources": "^0.3.16",
-    "pareto-standard-operations": "^0.3.9"
+    "pareto-standard-operations": "^0.3.9",
+    "pareto-static-html": "^0.1.0"
   }
 }

@@ -26,13 +26,13 @@ export const $ = (
     $p: {
         'file content': string
     }
-): _et.Staging_Result<string, Error> => {
+): _et.Refinement_Result<string, Error> => {
     return parse(
         $p['file content'],
         { 'tab size': 4 }
     ).transform_error_temp(
         ($): Error => ['parse error', $]
-    ).stage(
+    ).refine(
         ($) => {
             return _ei.__create_success_refinement_result(um_boekhouding.Root(
                 $.content,
@@ -51,7 +51,7 @@ export const $ = (
             ))
         },
         ($): Error => ['cannot happen because implementation throws which it should not', null]
-    ).transform(
+    ).transform_result(
         ($) => {
             return t_bh_to_aggregatie.Root(
                 r_bh.r_Root(
@@ -68,7 +68,7 @@ export const $ = (
                 )
             )
         },
-    ).transform(
+    ).transform_result(
         ($) => {
             $.jaren.map(($, key) => {
                 _ed.log_debug_message(key, () => { })

@@ -13,9 +13,14 @@ import { Signature } from "../../interface/algorithms/procedures/unguaranteed/ge
 import { Error } from "../refiners/genereer_jaarverslag"
 import { $ as r_generer_jaarverslag } from "../refiners/genereer_jaarverslag"
 
+import * as dummy_jaarverslag from "../../temp_static_html_rapportage"
+
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/algorithms/transformations/html/fountain_pen"
+import * as t_fp_to_text from "pareto-fountain-pen/dist/implementation/algorithms/transformations/block/text"
+
+
 const settings = {
-    'in': "./data/plicity-boekhouding.verbose.astn",
-    'out filename': "./out/plicity-jaarverslag.astn",
+    'out filename': "./out/rapportage.html",
 }
 
 export type Query_Resources = {
@@ -30,44 +35,30 @@ export type Command_Resources = {
 export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, Command_Resources, Query_Resources>
 
 export const $$: Procedure = _easync.create_command_procedure(
-    ($p, $cr, $qr) => [_easync.p.query_without_error_transformation(
-        $qr['read file'](
+    ($p, $cr, $qr) => [
+
+
+        $cr['write file'].execute(
             {
-                'path': settings['in'],
-                'escape spaces in path': true
-            },
-            ($): d_main.Error => {
-                _ed.log_debug_message(`fout tijdens lezen data`, () => { })
-                return { 'exit code': 1 }
-            }
-        ).refine(
-            ($) => r_generer_jaarverslag({
-                'file content': $
-            }),
-            ($): d_main.Error => {
-                _ed.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
-                return { 'exit code': 1 }
-            }
-        ).transform_result(($) => {
-            return {
                 'path': {
                     'path': settings['out filename'],
                     'escape spaces in path': true,
                 },
-                'data': $
-            }
-        }),
-        ($v) => [
-            $cr['write file'].execute(
-                $v,
-                ($): d_main.Error => {
-                    _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out filename']}`, () => { })
-                    return ({ 'exit code': 1 })
-                },
+                'data': t_fp_to_text.Group(
+                    t_static_html_to_fp.Document(
+                        dummy_jaarverslag.rapportage
+                    ),
+                    {
+                        'indentation': `    `,
+                    }
+                )
+            },
+            ($): d_main.Error => {
+                _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out filename']}`, () => { })
+                return ({ 'exit code': 1 })
+            },
 
-            )
-        ]
-    )
+        )
     ]
 )
 

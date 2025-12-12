@@ -43,14 +43,14 @@ export const $$ = (
         'file content': string
     }
 
-): _et.Staging_Result<string, Some_Error> => {
+): _et.Refinement_Result<string, Some_Error> => {
 
     return parse(
         $p['file content'],
         { 'tab size': 4 }
     ).transform_error_temp(
         ($): Some_Error => ['parse error', $]
-    ).stage(
+    ).refine(
         ($) => {
             return _ei.__create_success_refinement_result(unmarshall_boekhouding_oude_model.Root(
                 $.content,
@@ -69,7 +69,7 @@ export const $$ = (
             ))
         },
         ($): Some_Error => ['cannot happen because implementation throws which it should not', null]
-    ).transform(
+    ).transform_result(
         ($) => serialize_boekhouding.Root(
             resolve_boekhouding.r_Root(
                 t_bh_oud_to_bh.Root($, null),

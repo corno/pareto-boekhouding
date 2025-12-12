@@ -35,7 +35,7 @@ export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, C
 
 export const $$: Procedure = _easync.create_command_procedure(
     ($p, $cr, $qr) => [
-        _easync.p.stage_without_error_transformation(
+        _easync.p.query_without_error_transformation(
             $qr['read file'](
                 {
                     'path': settings['in'],
@@ -45,7 +45,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                     _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
                     return { 'exit code': 1 }
                 }
-            ).stage(
+            ).refine(
                 ($) => r_converteer_oude_dataset({
                     'file content': $
                 }),
@@ -53,7 +53,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                     _ed.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
                     return { 'exit code': 1 }
                 }
-            ).transform(($) => {
+            ).transform_result(($) => {
                 return {
                     'path': {
                         'path': settings['out filename'],

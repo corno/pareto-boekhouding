@@ -16,6 +16,7 @@ export const Beheer: _i_signatures.Beheer = ($) => ({
                 case 'Ja': return _ea.ss($, ($) => sh_g.wrap_state_group(['Ja', ({
                     'BTW-promillage': _ea.cc($['BTW-promillage'], ($) => $),
                 })]))
+                case 'Nee': return _ea.ss($, ($) => _ea.deprecated_panic("SDFS"))
                 default: return _ea.au($[0])
             }
         })),
