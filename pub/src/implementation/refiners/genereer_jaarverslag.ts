@@ -30,7 +30,7 @@ export const $ = (
     return parse(
         $p['file content'],
         { 'tab size': 4 }
-    ).transform_error_temp(
+    ).deprecated_transform_error(
         ($): Error => ['parse error', $]
     ).refine(
         ($) => {
