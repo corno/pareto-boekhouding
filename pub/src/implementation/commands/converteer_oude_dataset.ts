@@ -54,13 +54,10 @@ export const $$: Procedure = _easync.create_command_procedure(
     ($p, $cr, $qr) => [
         _easync.p.query_without_error_transformation(
             $qr['read file'](
-                {
-                    'path': t_path_to_path.create_node_path(
-                        r_path_from_text.Context_Path(settings['in']['dir']),
-                        settings['in']['file'],
-                    ),
-                    'escape spaces in path': true
-                },
+                t_path_to_path.create_node_path(
+                    r_path_from_text.Context_Path(settings['in']['dir']),
+                    settings['in']['file'],
+                ),
                 ($) => {
                     _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
                     return { 'exit code': 1 }
@@ -75,13 +72,10 @@ export const $$: Procedure = _easync.create_command_procedure(
                 }
             ).transform_result(($) => {
                 return {
-                    'path': {
-                        'path': t_path_to_path.create_node_path(
-                            r_path_from_text.Context_Path(settings['out']['dir']),
-                            settings['out']['file'],
-                        ),
-                        'escape spaces in path': true,
-                    },
+                    'path': t_path_to_path.create_node_path(
+                        r_path_from_text.Context_Path(settings['out']['dir']),
+                        settings['out']['file'],
+                    ),
                     'data': $
                 }
             }),

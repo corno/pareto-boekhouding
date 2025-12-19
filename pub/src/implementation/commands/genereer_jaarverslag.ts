@@ -50,13 +50,10 @@ import * as r_path_from_text from "exupery-resources/dist/implementation/refiner
 export const $$: Procedure = _easync.create_command_procedure(
     ($p, $cr, $qr) => [_easync.p.query_without_error_transformation(
         $qr['read file'](
-            {
-                'path': t_path_to_path.create_node_path(
-                    r_path_from_text.Context_Path(settings['in']['dir']),
-                    settings['in']['file'],
-                ),
-                'escape spaces in path': true
-            },
+            t_path_to_path.create_node_path(
+                r_path_from_text.Context_Path(settings['in']['dir']),
+                settings['in']['file'],
+            ),
             ($): d_main.Error => {
                 _ed.log_debug_message(`fout tijdens lezen data`, () => { })
                 return { 'exit code': 1 }
@@ -71,13 +68,10 @@ export const $$: Procedure = _easync.create_command_procedure(
             }
         ).transform_result(($) => {
             return {
-                'path': {
-                    'path': t_path_to_path.create_node_path(
-                        r_path_from_text.Context_Path(settings['out']['dir']),
-                        settings['out']['file'],
-                    ),
-                    'escape spaces in path': true,
-                },
+                'path': t_path_to_path.create_node_path(
+                    r_path_from_text.Context_Path(settings['out']['dir']),
+                    settings['out']['file'],
+                ),
                 'data': $
             }
         }),

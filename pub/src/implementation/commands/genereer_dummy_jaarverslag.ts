@@ -53,13 +53,10 @@ export const $$: Procedure = _easync.create_command_procedure(
 
         $cr['write file'].execute(
             {
-                'path': {
-                    'path': t_path_to_path.create_node_path(
-                        r_path_from_text.Context_Path(settings['out']['dir']),
-                        settings['out']['file'],
-                    ),
-                    'escape spaces in path': true,
-                },
+                'path': t_path_to_path.create_node_path(
+                    r_path_from_text.Context_Path(settings['out']['dir']),
+                    settings['out']['file'],
+                ),
                 'data': t_fp_to_text.Group(
                     t_static_html_to_fp.Document(
                         dummy_jaarverslag.rapportage
