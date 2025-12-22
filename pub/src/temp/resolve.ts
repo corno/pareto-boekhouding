@@ -1143,7 +1143,7 @@ export const r_Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p
                                                 const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype = _pa.cc($['Contracttype'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
                                                     switch ($[0]) {
                                                         case 'Licentieovereenkomst': return _pa.ss($, ($) => ['Licentieovereenkomst', _pa.block(() => {
-                                                            const c_Definitie = p_parent_contract_type[0] === 'Licentieovereenkomst' ? p_parent_contract_type[1] : _pd.implement_me()
+                                                            const c_Definitie = p_parent_contract_type[0] === 'Licentieovereenkomst' ? p_parent_contract_type[1] : _pd.implement_me("xx")
                                                             return _pa.block(() => {
                                                                 const p_Periode: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Licentieovereenkomst.Periode = _pa.cc($['Periode'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
@@ -1164,7 +1164,7 @@ export const r_Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p
                                                             return null
                                                         })])
                                                         case 'Project': return _pa.ss($, ($) => ['Project', _pa.block(() => {
-                                                            const c_Definitie = p_parent_contract_type[0] === 'Project' ? p_parent_contract_type[1] : _pd.implement_me()
+                                                            const c_Definitie = p_parent_contract_type[0] === 'Project' ? p_parent_contract_type[1] : _pd.implement_me("xx")
                                                             return _pa.block(() => {
                                                                 const p_Opbrengst: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Project.Opbrengst = _pa.cc($['Opbrengst'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
@@ -1432,7 +1432,7 @@ export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block((
                                             return null
                                         })])
                                         case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
-                                            const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pd.implement_me()
+                                            const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pd.implement_me("xx")
                                             return _pa.block(() => {
                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => r_Verwijzing_naar_Informele_rekening(
                                                     $,
@@ -1488,7 +1488,7 @@ export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block((
                                             return null
                                         })])
                                         case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
-                                            const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pd.implement_me()
+                                            const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pd.implement_me("xx")
                                             return _pa.block(() => {
                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => r_Verwijzing_naar_Bankrekening(
                                                     $,
@@ -1919,7 +1919,7 @@ export const r_Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, 
                     return null
                 })])
                 case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
-                    const c_Volgend_boekjaar = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pd.implement_me()
+                    const c_Volgend_boekjaar = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pd.implement_me("xx")
                     return _pa.block(() => {
                         const p_Balans_item: _i_out._T_Overige_balans_item.Nieuw.SG.Nee.Balans_item = _pa.cc($['Balans item'], ($) => _i_generic.get_entry(
                             _i_generic.dictionary_to_lookup(
