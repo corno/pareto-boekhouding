@@ -35,9 +35,6 @@ export type Command_Resources = {
     'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
 }
 
-import { Signature } from "../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
-
-
 export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.Parameters>, Command_Resources, Query_Resources>
 
 //dependencies

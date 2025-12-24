@@ -34,10 +34,6 @@ export type Command_Resources = {
     'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
 }
 
-
-import { Signature } from "../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
-
-
 export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.Parameters>, Command_Resources, Query_Resources>
 
 //dependencies
@@ -45,7 +41,7 @@ export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.P
 import { $$ as r_converteer_oude_dataset } from "../refiners/converteer_oude_dataset"
 
 import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
-import * as t_fountain_pen_to_text from "pareto-fountain-pen/dist/implementation/algorithms/transformations/block/text"
+import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/serializers/block"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
@@ -59,7 +55,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                     settings['in']['file'],
                 ),
                 ($) => {
-                    _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
+                    _ed.log_debug_message(`kon bestand niet lezen ${s_fountain_pen.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    `, 'newline': `\n` })}`, () => { })
                     return { 'exit code': 1 }
                 }
             ).deprecated_refine_old(

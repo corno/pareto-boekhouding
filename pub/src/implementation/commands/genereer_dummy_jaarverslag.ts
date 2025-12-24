@@ -21,8 +21,6 @@ import * as d_read_file from "exupery-resources/dist/interface/generated/pareto/
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 
-import { Signature } from "../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
-
 import { Error } from "../refiners/genereer_jaarverslag"
 
 export type Query_Resources = {
@@ -42,7 +40,7 @@ export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.P
 import { $ as r_genereer_jaarverslag } from "../refiners/genereer_jaarverslag"
 
 import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformations/html/fountain_pen"
-import * as t_fp_to_text from "pareto-fountain-pen/dist/implementation/algorithms/transformations/block/text"
+import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/block"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
@@ -57,12 +55,13 @@ export const $$: Procedure = _easync.create_command_procedure(
                     ds_path.Context_Path(settings['out']['dir']),
                     settings['out']['file'],
                 ),
-                'data': t_fp_to_text.Group(
+                'data': s_fp.Group(
                     t_static_html_to_fp.Document(
                         dummy_jaarverslag.rapportage
                     ),
                     {
                         'indentation': `    `,
+                        'newline': `\n`,
                     }
                 )
             },
