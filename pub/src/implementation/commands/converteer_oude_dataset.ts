@@ -24,7 +24,7 @@ const settings = {
 
 import * as d_read_file from "exupery-resources/dist/interface/generated/pareto/schemas/read_file/data_types/source"
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
-import * as d_main from "exupery-resources/dist/interface/temp_main"
+import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 
 export type Query_Resources = {
     'read file': _et.Query<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
@@ -38,16 +38,16 @@ export type Command_Resources = {
 import { Signature } from "../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
 
 
-export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, Command_Resources, Query_Resources>
+export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.Parameters>, Command_Resources, Query_Resources>
 
 //dependencies
 
 import { $$ as r_converteer_oude_dataset } from "../refiners/converteer_oude_dataset"
 
-import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/read_file/fountain_pen"
+import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
 import * as t_fountain_pen_to_text from "pareto-fountain-pen/dist/implementation/algorithms/transformations/block/text"
-import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/path/path"
-import * as r_path_from_text from "exupery-resources/dist/implementation/refiners/context_path/text"
+import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
+import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
 
 export const $$: Procedure = _easync.create_command_procedure(
@@ -55,7 +55,7 @@ export const $$: Procedure = _easync.create_command_procedure(
         _easync.p.query_without_error_transformation(
             $qr['read file'](
                 t_path_to_path.create_node_path(
-                    r_path_from_text.Context_Path(settings['in']['dir']),
+                    ds_path.Context_Path(settings['in']['dir']),
                     settings['in']['file'],
                 ),
                 ($) => {
@@ -73,7 +73,7 @@ export const $$: Procedure = _easync.create_command_procedure(
             ).transform_result(($) => {
                 return {
                     'path': t_path_to_path.create_node_path(
-                        r_path_from_text.Context_Path(settings['out']['dir']),
+                        ds_path.Context_Path(settings['out']['dir']),
                         settings['out']['file'],
                     ),
                     'data': $

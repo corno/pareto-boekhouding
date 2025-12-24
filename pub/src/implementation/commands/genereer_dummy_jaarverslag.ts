@@ -19,7 +19,7 @@ import * as dummy_jaarverslag from "../../data/temp_static_html_rapportage"
 
 import * as d_read_file from "exupery-resources/dist/interface/generated/pareto/schemas/read_file/data_types/source"
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
-import * as d_main from "exupery-resources/dist/interface/temp_main"
+import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 
 import { Signature } from "../../interface/algorithms/procedures/unguaranteed/genereer_jaarverslag"
 
@@ -34,7 +34,7 @@ export type Command_Resources = {
 }
 
 
-export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, Command_Resources, Query_Resources>
+export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.Parameters>, Command_Resources, Query_Resources>
 
 
 //dependencies
@@ -43,8 +43,8 @@ import { $ as r_genereer_jaarverslag } from "../refiners/genereer_jaarverslag"
 
 import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformations/html/fountain_pen"
 import * as t_fp_to_text from "pareto-fountain-pen/dist/implementation/algorithms/transformations/block/text"
-import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/path/path"
-import * as r_path_from_text from "exupery-resources/dist/implementation/refiners/context_path/text"
+import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
+import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
 
 export const $$: Procedure = _easync.create_command_procedure(
@@ -54,7 +54,7 @@ export const $$: Procedure = _easync.create_command_procedure(
         $cr['write file'].execute(
             {
                 'path': t_path_to_path.create_node_path(
-                    r_path_from_text.Context_Path(settings['out']['dir']),
+                    ds_path.Context_Path(settings['out']['dir']),
                     settings['out']['file'],
                 ),
                 'data': t_fp_to_text.Group(
