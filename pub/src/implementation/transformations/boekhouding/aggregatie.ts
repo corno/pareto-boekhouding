@@ -5,8 +5,8 @@ import * as d_in from "../../../interface/generated/pareto/schemas/boekhouding/d
 
 import * as d_out from "../../../interface/to_be_generated/aggregatie"
 
-import { $$ as o_filter } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/dictionary/filter"
-import { $$ as o_is_empty } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/is_empty"
+import { $$ as o_filter } from "pareto-standard-operations/dist/implementation/operations/pure/dictionary/filter"
+import { $$ as o_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/is_empty"
 
 type Possibly_Relevant_Entry<T> = {
     'is relevant': boolean

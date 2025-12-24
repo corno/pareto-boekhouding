@@ -32,7 +32,7 @@ export const $ = (
         { 'tab size': 4 }
     ).deprecated_transform_error(
         ($): Error => ['parse error', $]
-    ).refine(
+    ).deprecated_refine_old(
         ($) => {
             return _ei.__create_success_refinement_result(um_boekhouding.Root(
                 $.content,

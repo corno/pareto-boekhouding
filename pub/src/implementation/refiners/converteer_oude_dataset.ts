@@ -19,16 +19,16 @@ import * as resolve_boekhouding from "../../temp/resolve"
 
 import * as serialize_boekhouding from "../generated/pareto/schemas/boekhouding/serialize"
 
-import { $$ as deserialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/algorithms/integer/fractional_decimal/deserializer"
-import { $$ as deserialize_decimal } from "pareto-standard-operations/dist/implementation/algorithms/integer/decimal/deserializer"
-import { $$ as deserialize_date } from "pareto-standard-operations/dist/implementation/algorithms/integer/iso_udhr/deserializer"
-import { $$ as deserialize_boolean } from "pareto-standard-operations/dist/implementation/algorithms/boolean/true_false/deserializer"
+import { $$ as deserialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
+import { $$ as deserialize_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
+import { $$ as deserialize_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
+import { $$ as deserialize_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
 
 
-import { $$ as serialize_decimal } from "pareto-standard-operations/dist/implementation/algorithms/integer/decimal/serializer"
-import { $$ as serialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/algorithms/integer/fractional_decimal/serializer"
-import { $$ as serialize_date } from "pareto-standard-operations/dist/implementation/algorithms/integer/iso_udhr/serializer"
-import { $$ as serialize_boolean } from "pareto-standard-operations/dist/implementation/algorithms/boolean/true_false/serializer"
+import { $$ as serialize_decimal } from "pareto-standard-operations/dist/implementation/serializers/primitives/integer/decimal"
+import { $$ as serialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/serializers/primitives/integer/fractional_decimal"
+import { $$ as serialize_date } from "pareto-standard-operations/dist/implementation/serializers/primitives/integer/iso_udhr"
+import { $$ as serialize_boolean } from "pareto-standard-operations/dist/implementation/serializers/primitives/boolean/true_false"
 
 const abort = () => {
     _ea.deprecated_panic("abort called")
@@ -50,7 +50,7 @@ export const $$ = (
         { 'tab size': 4 }
     ).deprecated_transform_error(
         ($): Some_Error => ['parse error', $]
-    ).refine(
+    ).deprecated_refine_old(
         ($) => {
             return _ei.__create_success_refinement_result(unmarshall_boekhouding_oude_model.Root(
                 $.content,

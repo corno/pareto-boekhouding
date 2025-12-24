@@ -58,7 +58,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                 _ed.log_debug_message(`fout tijdens lezen data`, () => { })
                 return { 'exit code': 1 }
             }
-        ).refine(
+        ).deprecated_refine_old(
             ($) => r_genereer_jaarverslag({
                 'file content': $
             }),

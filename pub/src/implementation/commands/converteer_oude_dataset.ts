@@ -62,7 +62,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                     _ed.log_debug_message(`kon bestand niet lezen ${t_fountain_pen_to_text.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    ` })}`, () => { })
                     return { 'exit code': 1 }
                 }
-            ).refine(
+            ).deprecated_refine_old(
                 ($) => r_converteer_oude_dataset({
                     'file content': $
                 }),

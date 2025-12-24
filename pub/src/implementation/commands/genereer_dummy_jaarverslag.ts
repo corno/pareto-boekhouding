@@ -41,7 +41,7 @@ export type Procedure = _et.Command_Procedure<d_main.Error, d_main.Parameters, C
 
 import { $ as r_genereer_jaarverslag } from "../refiners/genereer_jaarverslag"
 
-import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/algorithms/transformations/html/fountain_pen"
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformations/html/fountain_pen"
 import * as t_fp_to_text from "pareto-fountain-pen/dist/implementation/algorithms/transformations/block/text"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/path/path"
 import * as r_path_from_text from "exupery-resources/dist/implementation/refiners/context_path/text"
