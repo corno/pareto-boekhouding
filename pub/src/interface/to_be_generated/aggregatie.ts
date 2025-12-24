@@ -1,6 +1,6 @@
 import * as _et from 'exupery-core-types'
 
-import * as d_boekhouding from "./generated/pareto/schemas/boekhouding/data_types/source"
+import * as d_boekhouding from "../generated/pareto/schemas/boekhouding/data_types/source"
 
 export type Root = {
     'bron': d_boekhouding.Root

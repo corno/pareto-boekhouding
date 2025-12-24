@@ -13,7 +13,7 @@ const settings = {
     },
 }
 
-import * as dummy_jaarverslag from "../../temp_static_html_rapportage"
+import * as dummy_jaarverslag from "../../data/temp_static_html_rapportage"
 
 //interface
 

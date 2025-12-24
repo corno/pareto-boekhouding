@@ -3,7 +3,7 @@ import * as _ea from 'exupery-core-alg'
 
 import * as d_in from "../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
 
-import * as d_out from "../../../interface/aggregatie"
+import * as d_out from "../../../interface/to_be_generated/aggregatie"
 
 import { $$ as o_filter } from "pareto-standard-operations/dist/implementation/algorithms/operations/pure/dictionary/filter"
 import { $$ as o_is_empty } from "pareto-standard-operations/dist/implementation/algorithms/operations/impure/dictionary/is_empty"
