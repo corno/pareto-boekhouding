@@ -41,8 +41,8 @@ export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, C
 
 import { $ as r_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
 
-import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformations/html/fountain_pen"
-import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/block"
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformers/schemas/html/fountain_pen"
+import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 

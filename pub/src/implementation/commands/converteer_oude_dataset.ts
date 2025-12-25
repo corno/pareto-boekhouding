@@ -44,7 +44,7 @@ export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, C
 import { $$ as r_converteer_oude_dataset } from "../deserializers/primitives/text/converteer_oude_dataset"
 
 import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
-import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/serializers/block"
+import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
