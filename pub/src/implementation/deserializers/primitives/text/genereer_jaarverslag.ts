@@ -8,13 +8,13 @@ import * as _ei from 'exupery-core-internals'
 // import * as d_m3 from "../../interface/generated/pareto/schemas/lioncore/data_types/source"
 // import * as d_st from "../../interface/generated/pareto/schemas/serialization_tree/data_types/source"
 
-import { parse } from "../generated/pareto/generic/parse/parse"
-import * as um_boekhouding from "../generated/pareto/schemas/boekhouding/unmarshall"
-import { _T_Parse_Error } from '../../interface/generated/pareto/core/parse_result'
+import { parse } from "../../../generated/pareto/generic/parse/parse"
+import * as um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
+import { _T_Parse_Error } from '../../../../interface/generated/pareto/core/parse_result'
 
-import * as r_bh from "../../temp/resolve"
+import * as r_bh from "../../../refiners/schemas/boekhouding_target/boekhouding_source"
 
-import * as t_bh_to_aggregatie from "../transformations/boekhouding/aggregatie"
+import * as t_bh_to_aggregatie from "../../../transformers/schemas/boekhouding/aggregatie"
 
 
 

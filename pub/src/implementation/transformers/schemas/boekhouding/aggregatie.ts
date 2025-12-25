@@ -1,12 +1,11 @@
 import * as _et from 'exupery-core-types'
 import * as _ea from 'exupery-core-alg'
 
-import * as d_in from "../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
+import * as d_in from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
 
-import * as d_out from "../../../interface/to_be_generated/aggregatie"
+import * as d_out from "../../../../interface/to_be_generated/aggregatie"
 
 import { $$ as o_filter } from "pareto-standard-operations/dist/implementation/operations/pure/dictionary/filter"
-import { $$ as o_is_empty } from "pareto-standard-operations/dist/implementation/operations/impure/dictionary/is_empty"
 
 type Possibly_Relevant_Entry<T> = {
     'is relevant': boolean

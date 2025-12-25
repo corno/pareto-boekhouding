@@ -4,8 +4,8 @@ import * as _edev from 'exupery-core-dev'
 import * as _ed from 'exupery-core-data'
 import * as sh_g from 'exupery-core-data/dist/shorthands/unresolved_transformation'
 
-import * as _i_out from "../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
-import * as _i_signatures from "../../../interface/boekhouding_oude_model_to_boekhouding"
+import * as _i_out from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
+import * as _i_signatures from "../../../../interface/signatures/transformers/boekhouding/oude_model"
 
 import { $$ as op_dictionary_filter } from "pareto-standard-operations/dist/implementation/operations/pure/dictionary/filter"
 

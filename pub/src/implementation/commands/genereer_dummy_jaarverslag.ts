@@ -21,7 +21,7 @@ import * as d_read_file from "exupery-resources/dist/interface/generated/pareto/
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 
-import { Error } from "../refiners/genereer_jaarverslag"
+import { Error } from "../deserializers/primitives/text/genereer_jaarverslag"
 
 import * as resources_exupery from "exupery-resources/dist/interface/resources"
 
@@ -39,7 +39,7 @@ export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, C
 
 //dependencies
 
-import { $ as r_genereer_jaarverslag } from "../refiners/genereer_jaarverslag"
+import { $ as r_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
 
 import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformations/html/fountain_pen"
 import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/block"

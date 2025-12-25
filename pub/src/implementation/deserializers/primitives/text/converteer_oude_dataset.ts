@@ -5,19 +5,19 @@ import * as _ed from 'exupery-core-dev'
 import * as _et from 'exupery-core-types'
 import * as _ei from 'exupery-core-internals'
 
-import * as d_parse_result from "../../interface/generated/pareto/core/parse_result"
+import * as d_parse_result from "../../../../interface/generated/pareto/core/parse_result"
 
 
 
-import { parse } from "../generated/pareto/generic/parse/parse"
+import { parse } from "../../../generated/pareto/generic/parse/parse"
 
-import * as unmarshall_boekhouding_oude_model from "../generated/pareto/schemas/boekhouding_oude_model/unmarshall"
+import * as unmarshall_boekhouding_oude_model from "../../../generated/pareto/schemas/boekhouding_oude_model/unmarshall"
 
-import * as t_bh_oud_to_bh from "../transformations/boekhouding_oude_model/boekhouding"
+import * as t_bh_oud_to_bh from "../../../transformers/schemas/boekhouding_oude_model/boekhouding"
 
-import * as resolve_boekhouding from "../../temp/resolve"
+import * as resolve_boekhouding from "../../../refiners/schemas/boekhouding_target/boekhouding_source"
 
-import * as serialize_boekhouding from "../generated/pareto/schemas/boekhouding/serialize"
+import * as serialize_boekhouding from "../../../generated/pareto/schemas/boekhouding/serialize"
 
 import { $$ as deserialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
 import { $$ as deserialize_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"

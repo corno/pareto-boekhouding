@@ -25,10 +25,10 @@ import * as d_write_file from "exupery-resources/dist/interface/generated/pareto
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 
 
-import { Error } from "../refiners/genereer_jaarverslag"
+import { Error } from "../deserializers/primitives/text/genereer_jaarverslag"
 
 export type Query_Resources = {
-    'read file': _et.Query<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
+    'read file': resources_exupery.queries.read_file
 }
 
 import * as resources_exupery from "exupery-resources/dist/interface/resources"
@@ -42,7 +42,7 @@ export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, C
 
 //dependencies
 
-import { $ as r_genereer_jaarverslag } from "../refiners/genereer_jaarverslag"
+import { $ as r_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
