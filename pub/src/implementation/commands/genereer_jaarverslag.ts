@@ -31,11 +31,14 @@ export type Query_Resources = {
     'read file': _et.Query<d_read_file.Result, d_read_file.Error, d_read_file.Parameters>
 }
 
+import * as resources_exupery from "exupery-resources/dist/interface/resources"
+
+
 export type Command_Resources = {
-    'write file': _et.Command<d_write_file.Error, d_write_file.Parameters>
+    'write file': resources_exupery.commands.write_file
 }
 
-export type Procedure = _et.Command_Procedure<_et.Command<d_main.Error, d_main.Parameters>, Command_Resources, Query_Resources>
+export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, Command_Resources, Query_Resources>
 
 //dependencies
 
