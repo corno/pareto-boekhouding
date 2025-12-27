@@ -5,18 +5,16 @@ import * as d_in from "../../../../interface/generated/pareto/schemas/boekhoudin
 
 import * as d_out from "../../../../interface/to_be_generated/aggregatie"
 
-import { $$ as o_filter } from "pareto-standard-operations/dist/implementation/operations/pure/dictionary/filter"
-
 type Possibly_Relevant_Entry<T> = {
     'is relevant': boolean
     'entry': T
 }
 
 const o_filter_relevant = <T>($: _et.Dictionary<Possibly_Relevant_Entry<T>>): _et.Dictionary<T> => {
-    return o_filter($.map(($) => $['is relevant']
+    return $.filter(($) => $['is relevant']
         ? _ea.set($['entry'])
         : _ea.not_set()
-    ))
+    )
 }
 
 export const Root = ($: d_in.Root): d_out.Root => {
