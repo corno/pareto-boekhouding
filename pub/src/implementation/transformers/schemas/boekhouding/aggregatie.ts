@@ -48,7 +48,7 @@ export const Root = ($: d_in.Root): d_out.Root => {
                                     }
                                 }))
                                 return {
-                                    'is relevant': regels.__get_number_of_entries() > 0,
+                                    'is relevant': !regels.is_empty(),
                                     'entry': {
                                         'bron': $,
                                         'regels': regels
@@ -77,7 +77,7 @@ export const Root = ($: d_in.Root): d_out.Root => {
                                     }
                                 }))
                                 return {
-                                    'is relevant': regels.__get_number_of_entries() > 0,
+                                    'is relevant': !regels.is_empty(),
                                     'entry': {
                                         'bron': $,
                                         'regels': regels
