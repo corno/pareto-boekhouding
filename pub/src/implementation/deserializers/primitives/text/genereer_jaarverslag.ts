@@ -2,30 +2,34 @@ import * as _pt from 'pareto-core-transformer'
 import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core-interface'
 
+
+export type Error =
+    | ['parse error', _T_Parse_Error]
+    | ['primitive deserialization', null]
+    
+export type Signature = _pi.Deserializer<string, Error>
+
 //data types
 import { _T_Parse_Error } from '../../../../interface/generated/pareto/core/parse_result'
 
-//dependencies
-import { parse } from "../../../generated/pareto/generic/parse/parse"
-import * as um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
-import { $$ as deserialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
-import { $$ as deserialize_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
-import { $$ as deserialize_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
-import { $$ as deserialize_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
 
+
+//dependencies
+import { parse as ds_parse } from "../../../generated/pareto/generic/parse/parse"
+import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
+import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
+import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
+import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
+
+import * as r_um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
 import * as r_bh from "../../../refiners/schemas/boekhouding_target/boekhouding_source"
 
 import * as t_bh_to_aggregatie from "../../../transformers/schemas/boekhouding/aggregatie"
 
 
+export const $: Signature = ($, abort) => {
 
-export type Error =
-    | ['parse error', _T_Parse_Error]
-    | ['primitive deserialization', null]
-
-export const $: _pi.Deserializer<string, Error> = ($, abort) => {
-
-    const x = parse(
+    const x = ds_parse(
         $,
         { 'tab size': 4 },
         ($) => abort(['parse error', $])
@@ -33,17 +37,17 @@ export const $: _pi.Deserializer<string, Error> = ($, abort) => {
 
     const abort2 = ($: string) => abort(['primitive deserialization', null])
 
-    const x2 = um_boekhouding.Root(
+    const x2 = r_um_boekhouding.Root(
         x.content,
         {
             'value deserializers': {
-                'boolean': (s: string) => deserialize_boolean(s, abort2),
-                'default number': ($) => deserialize_decimal($, abort2),
+                'boolean': (s: string) => ds_boolean(s, abort2),
+                'default number': ($) => ds_decimal($, abort2),
                 'custom numbers': {
-                    'Bedrag': ($) => deserialize_decimal($, abort2),
-                    'Promillage': ($) => deserialize_decimal($, abort2),
-                    'Dagen': ($) => deserialize_decimal($, abort2),
-                    'Datum': ($) => deserialize_date($, abort2) - 711471, //klopt deze offset hier?
+                    'Bedrag': ($) => ds_decimal($, abort2),
+                    'Promillage': ($) => ds_decimal($, abort2),
+                    'Dagen': ($) => ds_decimal($, abort2),
+                    'Datum': ($) => ds_date($, abort2) - 711471, //klopt deze offset hier?
                 }
             }
         }

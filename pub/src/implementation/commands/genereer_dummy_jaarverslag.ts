@@ -2,8 +2,24 @@ import * as _pc from 'pareto-core-command'
 import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core-interface'
 
-//data
 
+import * as resources_exupery from "exupery-resources/dist/interface/resources"
+
+export type Signature = _pi.Command_Procedure<
+    resources_exupery.commands.main,
+    {
+        'write file': resources_exupery.commands.write_file
+    },
+    {
+        'read file': resources_exupery.queries.read_file
+    }
+>
+import * as dummy_jaarverslag from "../../data/temp_static_html_rapportage"
+
+//data types
+import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
+
+//data
 const settings = {
     'out': {
         'dir': "./out",
@@ -11,44 +27,17 @@ const settings = {
     },
 }
 
-import * as dummy_jaarverslag from "../../data/temp_static_html_rapportage"
-
-//interface
-
-import * as d_read_file from "exupery-resources/dist/interface/generated/pareto/schemas/read_file/data_types/source"
-import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/source"
-import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
-
-import { Error } from "../deserializers/primitives/text/genereer_jaarverslag"
-
-import * as resources_exupery from "exupery-resources/dist/interface/resources"
-
-export type Query_Resources = {
-    'read file': resources_exupery.queries.read_file
-}
-
-export type Command_Resources = {
-    'write file': resources_exupery.commands.write_file
-}
-
-
-export type Procedure = _pi.Command_Procedure<resources_exupery.commands.main, Command_Resources, Query_Resources>
-
-
 //dependencies
-
-import { $ as r_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
-
-import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformers/schemas/html/fountain_pen"
-import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
-import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
+import { $ as ds_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformers/schemas/html/fountain_pen"
+import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
+import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
 
-export const $$: Procedure = _pc.create_command_procedure(
+
+export const $$: Signature = _pc.create_command_procedure(
     ($p, $cr, $qr) => [
-
-
         $cr['write file'].execute(
             {
                 'path': t_path_to_path.create_node_path(

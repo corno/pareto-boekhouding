@@ -1,14 +1,17 @@
 import * as _pi from 'pareto-core-interface'
 import * as _pt from 'pareto-core-transformer'
 
-import * as d_in from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
 
+//data types
+import * as d_in from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
 import * as d_out from "../../../../interface/to_be_generated/aggregatie"
 
 type Possibly_Relevant_Entry<T> = {
     'is relevant': boolean
     'entry': T
 }
+
+//dependencies
 
 const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _pi.Dictionary<T> => {
     return $.filter(($) => $['is relevant']
@@ -17,7 +20,9 @@ const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _p
     )
 }
 
-export const Root = ($: d_in.Root): d_out.Root => {
+
+
+export const Root: _pi.Transformer<d_in.Root, d_out.Root> =($) => {
     const bron_root = $
     return {
         'bron': $,
