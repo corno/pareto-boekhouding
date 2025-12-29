@@ -1,8 +1,6 @@
-import * as _ea from 'exupery-core-alg'
-import * as _eb from 'exupery-core-bin'
-import * as _easync from 'exupery-core-async'
-import * as _ed from 'exupery-core-dev'
-import * as _et from 'exupery-core-types'
+import * as _pc from 'pareto-core-command'
+import * as _pdev from 'pareto-core-dev'
+import * as _pi from 'pareto-core-interface'
 
 //data
 
@@ -34,7 +32,7 @@ export type Command_Resources = {
 }
 
 
-export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, Command_Resources, Query_Resources>
+export type Procedure = _pi.Command_Procedure<resources_exupery.commands.main, Command_Resources, Query_Resources>
 
 
 //dependencies
@@ -47,7 +45,7 @@ import * as t_path_to_path from "exupery-resources/dist/implementation/transform
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
 
-export const $$: Procedure = _easync.create_command_procedure(
+export const $$: Procedure = _pc.create_command_procedure(
     ($p, $cr, $qr) => [
 
 
@@ -68,7 +66,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                 )
             },
             ($): d_main.Error => {
-                _ed.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out']['file']}`, () => { })
+                _pdev.log_debug_message(`fout bij schrijven jaarverslag naar ${settings['out']['file']}`, () => { })
                 return ({ 'exit code': 1 })
             },
 

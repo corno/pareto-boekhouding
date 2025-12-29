@@ -1,10 +1,10 @@
 #!/usr/bin/env -S node --enable-source-maps
 
-import * as _eb from 'exupery-core-bin'
+import * as _pn from 'pareto-host-nodejs'
 
 import { $$ as procedure } from "../implementation/commands/genereer_jaarverslag"
 
-_eb.run_main_procedure(
+_pn.run_main_procedure(
     ($r) => {
         return procedure(
             {

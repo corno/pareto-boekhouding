@@ -1,5 +1,5 @@
-import * as _et from 'exupery-core-types'
-import * as _ea from 'exupery-core-alg'
+import * as _pi from 'pareto-core-interface'
+import * as _pt from 'pareto-core-transformer'
 
 import * as d_in from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
 
@@ -10,10 +10,10 @@ type Possibly_Relevant_Entry<T> = {
     'entry': T
 }
 
-const o_filter_relevant = <T>($: _et.Dictionary<Possibly_Relevant_Entry<T>>): _et.Dictionary<T> => {
+const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _pi.Dictionary<T> => {
     return $.filter(($) => $['is relevant']
-        ? _ea.set($['entry'])
-        : _ea.not_set()
+        ? _pt.set($['entry'])
+        : _pt.not_set()
     )
 }
 
@@ -33,11 +33,11 @@ export const Root = ($: d_in.Root): d_out.Root => {
 
                                 const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
                                     return {
-                                        'is relevant': _ea.cc($.Type, ($) => {
+                                        'is relevant': _pt.cc($.Type, ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return _ea.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
-                                                case 'Kosten': return _ea.ss($, ($) => false)
-                                                default: return _ea.au($[0])
+                                                case 'Balans': return _pt.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
+                                                case 'Kosten': return _pt.ss($, ($) => false)
+                                                default: return _pt.au($[0])
                                             }
                                         }),
                                         'entry': {
@@ -62,11 +62,11 @@ export const Root = ($: d_in.Root): d_out.Root => {
 
                                 const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
                                     return {
-                                        'is relevant': _ea.cc($.Type, ($) => {
+                                        'is relevant': _pt.cc($.Type, ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return _ea.ss($, ($) => false)
-                                                case 'Kosten': return _ea.ss($, ($) => $.Grootboekrekening.key === key)
-                                                default: return _ea.au($[0])
+                                                case 'Balans': return _pt.ss($, ($) => false)
+                                                case 'Kosten': return _pt.ss($, ($) => $.Grootboekrekening.key === key)
+                                                default: return _pt.au($[0])
                                             }
                                         }),
                                         'entry': {

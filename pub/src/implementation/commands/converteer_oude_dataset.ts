@@ -1,8 +1,7 @@
-import * as _ea from 'exupery-core-alg'
-import * as _eb from 'exupery-core-bin'
-import * as _easync from 'exupery-core-async'
-import * as _ed from 'exupery-core-dev'
-import * as _et from 'exupery-core-types'
+import * as _pc from 'pareto-core-command'
+import * as _pdev from 'pareto-core-dev'
+import * as _pi from 'pareto-core-interface'
+import * as _pinternals from 'pareto-core-internals'
 
 //data
 
@@ -37,11 +36,11 @@ export type Command_Resources = {
     'write file': resources_exupery.commands.write_file
 }
 
-export type Procedure = _et.Command_Procedure<resources_exupery.commands.main, Command_Resources, Query_Resources>
+export type Procedure = _pi.Command_Procedure<resources_exupery.commands.main, Command_Resources, Query_Resources>
 
 //dependencies
 
-import { $$ as r_converteer_oude_dataset } from "../deserializers/primitives/text/converteer_oude_dataset"
+import { $$ as r_converteer_oude_dataset, Some_Error } from "../deserializers/primitives/text/converteer_oude_dataset"
 
 import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
 import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
@@ -49,24 +48,22 @@ import * as t_path_to_path from "exupery-resources/dist/implementation/transform
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
 
-export const $$: Procedure = _easync.create_command_procedure(
+export const $$: Procedure = _pc.create_command_procedure(
     ($p, $cr, $qr) => [
-        _easync.p.query_without_error_transformation(
+        _pc.query_without_error_transformation(
             $qr['read file'](
                 t_path_to_path.create_node_path(
                     ds_path.Context_Path(settings['in']['dir']),
                     settings['in']['file'],
                 ),
                 ($) => {
-                    _ed.log_debug_message(`kon bestand niet lezen ${s_fountain_pen.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    `, 'newline': `\n` })}`, () => { })
+                    _pdev.log_debug_message(`kon bestand niet lezen ${s_fountain_pen.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    `, 'newline': `\n` })}`, () => { })
                     return { 'exit code': 1 }
                 }
             ).deprecated_refine_old(
-                ($) => r_converteer_oude_dataset({
-                    'file content': $
-                }),
+                ($) => _pinternals.deprecated_create_refinement_context<string, Some_Error>((abort) => r_converteer_oude_dataset($, abort)),
                 ($): d_main.Error => {
-                    _ed.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
+                    _pdev.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
                     return { 'exit code': 1 }
                 }
             ).transform_result(($) => {
@@ -82,7 +79,7 @@ export const $$: Procedure = _easync.create_command_procedure(
                 $cr['write file'].execute(
                     $v,
                     ($) => {
-                        _ed.log_debug_message(`failed to write converted dataset to ${settings['out']['file']}`, () => { })
+                        _pdev.log_debug_message(`failed to write converted dataset to ${settings['out']['file']}`, () => { })
                         return ({ 'exit code': 1 })
                     },
 

@@ -1,16 +1,17 @@
-import * as _ea from 'exupery-core-alg'
-import * as _eb from 'exupery-core-bin'
-import * as _easync from 'exupery-core-async'
-import * as _ed from 'exupery-core-dev'
-import * as _et from 'exupery-core-types'
-import * as _ei from 'exupery-core-internals'
+import * as _pt from 'pareto-core-transformer'
+import * as _pdev from 'pareto-core-dev'
+import * as _pi from 'pareto-core-interface'
 
-// import * as d_m3 from "../../interface/generated/pareto/schemas/lioncore/data_types/source"
-// import * as d_st from "../../interface/generated/pareto/schemas/serialization_tree/data_types/source"
+//data types
+import { _T_Parse_Error } from '../../../../interface/generated/pareto/core/parse_result'
 
+//dependencies
 import { parse } from "../../../generated/pareto/generic/parse/parse"
 import * as um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
-import { _T_Parse_Error } from '../../../../interface/generated/pareto/core/parse_result'
+import { $$ as deserialize_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
+import { $$ as deserialize_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
+import { $$ as deserialize_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
+import { $$ as deserialize_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
 
 import * as r_bh from "../../../refiners/schemas/boekhouding_target/boekhouding_source"
 
@@ -20,76 +21,68 @@ import * as t_bh_to_aggregatie from "../../../transformers/schemas/boekhouding/a
 
 export type Error =
     | ['parse error', _T_Parse_Error]
-    | ['cannot happen because implementation throws which it should not', null]
+    | ['primitive deserialization', null]
 
-export const $ = (
-    $p: {
-        'file content': string
-    }
-): _et.Refinement_Result<string, Error> => {
-    return parse(
-        $p['file content'],
-        { 'tab size': 4 }
-    ).deprecated_transform_error(
-        ($): Error => ['parse error', $]
-    ).deprecated_refine_old(
-        ($) => {
-            return _ei.__create_success_refinement_result(um_boekhouding.Root(
-                $.content,
-                {
-                    'value deserializers': {
-                        'boolean': (s: string) => $ ? true : false,
-                        'default number': (s: string) => 42,
-                        'custom numbers': {
-                            'Bedrag': (s: string) => 42,
-                            'Promillage': (s: string) => 42,
-                            'Dagen': (s: string) => 42,
-                            'Datum': (s: string) => 42,
-                        }
-                    }
+export const $: _pi.Deserializer<string, Error> = ($, abort) => {
+
+    const x = parse(
+        $,
+        { 'tab size': 4 },
+        ($) => abort(['parse error', $])
+    )
+
+    const abort2 = ($: string) => abort(['primitive deserialization', null])
+
+    const x2 = um_boekhouding.Root(
+        x.content,
+        {
+            'value deserializers': {
+                'boolean': (s: string) => deserialize_boolean(s, abort2),
+                'default number': ($) => deserialize_decimal($, abort2),
+                'custom numbers': {
+                    'Bedrag': ($) => deserialize_decimal($, abort2),
+                    'Promillage': ($) => deserialize_decimal($, abort2),
+                    'Dagen': ($) => deserialize_decimal($, abort2),
+                    'Datum': ($) => deserialize_date($, abort2) - 711471, //klopt deze offset hier?
                 }
-            ))
-        },
-        ($): Error => ['cannot happen because implementation throws which it should not', null]
-    ).transform_result(
-        ($) => {
-            return t_bh_to_aggregatie.Root(
-                r_bh.r_Root(
-                    $,
-                    {
-                        'location 2 string': (location) => {
-                            return `${location.start.relative.line}:${location.start.relative.column}-${location.end.relative.line}:${location.end.relative.column}`
-                        },
-                        'parameters': {
-                            'lookups': null,
-                            'values': null,
-                        }
-                    }
-                )
-            )
-        },
-    ).transform_result(
-        ($) => {
-            $.jaren.map(($, key) => {
-                _ed.log_debug_message(key, () => { })
-                _ed.log_debug_message(`  'balans'`, () => { })
-                $.grootboekrekeningen.balans.map(($, key) => {
-                    _ed.log_debug_message(`    ${key}`, () => { })
-                    _ed.log_debug_message(`      'inkopen'`, () => { })
-                    $['gerelateerde inkopen'].map(($, key) => {
-                        _ed.log_debug_message(`        ${key}`, () => { })
-                    })
-                })
-                _ed.log_debug_message(`  'resultaat'`, () => { })
-                $.grootboekrekeningen.resultaat.map(($, key) => {
-                    _ed.log_debug_message(`    ${key}`, () => { })
-                    _ed.log_debug_message(`      'inkopen'`, () => { })
-                    $['gerelateerde inkopen'].map(($, key) => {
-                        _ed.log_debug_message(`        ${key}`, () => { })
-                    })
-                })
-            })
-            return "success"
+            }
         }
     )
+
+    const x3 = t_bh_to_aggregatie.Root(
+        r_bh.r_Root(
+            x2,
+            {
+                'location 2 string': (location) => {
+                    return `${location.start.relative.line}:${location.start.relative.column}-${location.end.relative.line}:${location.end.relative.column}`
+                },
+                'parameters': {
+                    'lookups': null,
+                    'values': null,
+                }
+            }
+        )
+    )
+
+
+    x3.jaren.map(($, key) => {
+        _pdev.log_debug_message(key, () => { })
+        _pdev.log_debug_message(`  'balans'`, () => { })
+        $.grootboekrekeningen.balans.map(($, key) => {
+            _pdev.log_debug_message(`    ${key}`, () => { })
+            _pdev.log_debug_message(`      'inkopen'`, () => { })
+            $['gerelateerde inkopen'].map(($, key) => {
+                _pdev.log_debug_message(`        ${key}`, () => { })
+            })
+        })
+        _pdev.log_debug_message(`  'resultaat'`, () => { })
+        $.grootboekrekeningen.resultaat.map(($, key) => {
+            _pdev.log_debug_message(`    ${key}`, () => { })
+            _pdev.log_debug_message(`      'inkopen'`, () => { })
+            $['gerelateerde inkopen'].map(($, key) => {
+                _pdev.log_debug_message(`        ${key}`, () => { })
+            })
+        })
+    })
+    return "success"
 }
