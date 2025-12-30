@@ -42,12 +42,14 @@ export const $$: signatures.commands.converteer_oude_dataset = _pc.create_comman
                     _pdev.log_debug_message(`kon bestand niet lezen ${s_fountain_pen.Block_Part(t_read_file_to_fountain_pen.Error($), { 'indentation': `    `, 'newline': `\n` })}`, () => { })
                     return { 'exit code': 1 }
                 }
-            ).deprecated_refine_old(
-                ($) => _pinternals.deprecated_create_refinement_context<string, d_converteer_oude_dataset.Some_Error>((abort) => ds_converteer_oude_dataset($, abort)),
-                ($): d_main.Error => {
-                    _pdev.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
-                    return { 'exit code': 1 }
-                }
+            ).refine_without_error_transformation(
+                ($, abort) => ds_converteer_oude_dataset(
+                    $,
+                    ($) => {
+                        _pdev.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
+                        return abort({ 'exit code': 1 })
+                    }
+                )
             ).transform_result(($) => {
                 return {
                     'path': t_path_to_path.create_node_path(

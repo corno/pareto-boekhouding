@@ -121,9 +121,8 @@ export const $$: signatures.commands.genereer_jaarverslag = _pc.create_command_p
         _pc.create_error_handling_context<d_main.Error, My_Error>(
             [
 
-                _pc.refine_with_error_transformation(
-                    _pinternals.deprecated_create_refinement_context<Parameters, My_Error>((abort) => r_parse_arguments($p, abort)),
-                    ($): My_Error => $,
+                _pc.refine_without_error_transformation(
+                    (abort) => r_parse_arguments($p, abort),
                     ($r) => [
 
                         _pc.query_without_error_transformation(
@@ -134,11 +133,11 @@ export const $$: signatures.commands.genereer_jaarverslag = _pc.create_command_p
                                     // _pdev.log_debug_message(`fout tijdens lezen data: ` + s_fp.Block_Part(t_read_file.Error($), { 'indentation': `    `, 'newline': '\n' }), () => { })
                                     return ['fout tijdens lezen data', $]
                                 }
-                            ).deprecated_refine_old(
-                                ($) => _pinternals.deprecated_create_refinement_context<string, d_genereer_jaarverslag.Error>((abort) => ds_genereer_jaarverslag($, abort)),
-                                ($) => {
-                                    return ['fout tijdens genereren jaarverslag', $]
-                                }
+                            ).refine_without_error_transformation(
+                                ($, abort) => ds_genereer_jaarverslag(
+                                    $,
+                                    ($) => abort(['fout tijdens genereren jaarverslag', $])
+                                )
                             ).transform_result(($) => {
                                 return {
                                     'path': $r.out,
