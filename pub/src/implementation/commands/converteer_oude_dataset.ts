@@ -1,6 +1,5 @@
 import * as _pc from 'pareto-core-command'
 import * as _pdev from 'pareto-core-dev'
-import * as _pinternals from 'pareto-core-internals'
 
 import * as signatures from "../../interface/signatures"
 
