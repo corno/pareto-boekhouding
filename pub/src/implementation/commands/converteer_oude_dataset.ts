@@ -3,23 +3,11 @@ import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core-interface'
 import * as _pinternals from 'pareto-core-internals'
 
-
-import * as resources_exupery from "exupery-resources/dist/interface/resources"
-
-export type Signature = _pi.Command_Procedure<
-    resources_exupery.commands.main,
-    {
-        'write file': resources_exupery.commands.write_file
-    },
-    {
-        'read file': resources_exupery.queries.read_file
-    }
->
+import * as signatures from "../../interface/signatures"
 
 //data types
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 import * as d_converteer_oude_dataset from "../deserializers/primitives/text/converteer_oude_dataset"
-
 
 //data
 const settings = {
@@ -43,7 +31,7 @@ import * as t_path_to_path from "exupery-resources/dist/implementation/transform
 import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
 
 
-export const $$: Signature = _pc.create_command_procedure(
+export const $$: signatures.commands.converteer_oude_dataset = _pc.create_command_procedure(
     ($p, $cr, $qr) => [
         _pc.query_without_error_transformation(
             $qr['read file'](

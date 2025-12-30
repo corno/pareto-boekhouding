@@ -5,7 +5,7 @@ import * as _pi from 'pareto-core-interface'
 
 export type Error =
     | ['parse error', _T_Parse_Error]
-    | ['primitive deserialization', null]
+    | ['primitive deserialization', string]
     
 export type Signature = _pi.Deserializer<string, Error>
 
@@ -35,7 +35,7 @@ export const $: Signature = ($, abort) => {
         ($) => abort(['parse error', $])
     )
 
-    const abort2 = ($: string) => abort(['primitive deserialization', null])
+    const abort2 = ($: string) => abort(['primitive deserialization', $])
 
     const x2 = r_um_boekhouding.Root(
         x.content,

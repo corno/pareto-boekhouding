@@ -9,9 +9,10 @@ _pn.run_main_procedure(
         return procedure(
             {
                 'write file': $r.commands['write file'],
+                'log error': $r.commands['log error'],
             },
             {
-                'read file': $r.queries['read file']
+                'read file': $r.queries['read file'],
             },
         )
     },

@@ -8,7 +8,7 @@ import * as d_parse_result from "../../../../interface/generated/pareto/core/par
 
 export type Some_Error =
     | ['parse error', d_parse_result._T_Parse_Error]
-    | ['primitive deserialization', null]
+    | ['primitive deserialization', string]
 
 //dependencies
 import { parse as ds_parse } from "../../../generated/pareto/generic/parse/parse"
@@ -37,19 +37,19 @@ export const $$: Signature = ($, abort) => {
         ($) => abort(['parse error', $])
     )
 
-    const abort2 = ($: string) => abort(['primitive deserialization', null])
+    const abort2 = ($: string) => abort(['primitive deserialization', $])
 
     const x2 = r_unmarshall_boekhouding_oude_model.Root(
         x.content,
         {
             'value deserializers': {
-                'boolean': ($) => ds_boolean($, abort2),
-                'default number': ($) => ds_decimal($, abort2),
+                'boolean': ($) => ds_boolean($, () => abort2('boolean')),
+                'default number': ($) => ds_decimal($, () => abort2('default number')),
                 'custom numbers': {
-                    'Bedrag': ($) => ds_decimal($, abort2),
-                    'Promillage': ($) => ds_decimal($, abort2),
-                    'Dagen': ($) => ds_decimal($, abort2),
-                    'Datum': ($) => ds_date($, abort2) - 711471,
+                    'Bedrag': ($) => ds_decimal($, () => abort2('Bedrag')),
+                    'Promillage': ($) => ds_decimal($, () => abort2('Promillage')),
+                    'Dagen': ($) => ds_decimal($, () => abort2('Dagen')),
+                    'Datum': ($) => ds_date($, () => abort2('Datum')) - 711471,
                 }
             }
         }
