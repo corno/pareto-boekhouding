@@ -3,8 +3,8 @@ import * as _pi from 'pareto-core-interface'
 import * as _psh from 'pareto-core-transformer/dist/deprecated_shorthands_for_unresolved'
 import * as _pinternals from 'pareto-core-internals'
 
-import * as _i_out from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
-import * as _i_signatures from "../../../../interface/signatures/transformers/boekhouding/oude_model"
+import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
+import * as _i_signatures from "../../../../../interface/signatures/transformers/boekhouding/oude_model"
 
 export const Beheer: _i_signatures.Beheer = ($) => ({
     'BTW-categorieen': _psh.wrap_dictionary(_pt.cc($.Beheer['BTW-categorieen'], ($) => $.map(($): _i_out.Beheer.BTW$mi_categorieen.D<_pi.Deprecated_Source_Location> => ({

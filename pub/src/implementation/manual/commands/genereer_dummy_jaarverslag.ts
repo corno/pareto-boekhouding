@@ -1,13 +1,13 @@
 import * as _pc from 'pareto-core-command'
 import * as _pdev from 'pareto-core-dev'
 
-import * as signatures from "../../interface/signatures"
+import * as signatures from "../../../interface/signatures"
 
 //data types
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 
 //data
-import * as dummy_jaarverslag from "../../data/temp_static_html_rapportage"
+import * as dummy_jaarverslag from "../../../data/temp_static_html_rapportage"
 const settings = {
     'out': {
         'dir': "./out",
@@ -16,7 +16,7 @@ const settings = {
 }
 
 //dependencies
-import { $ as ds_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
+import { $ as ds_genereer_jaarverslag } from "../primitives/text/deserializers/genereer_jaarverslag"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
 import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformers/schemas/html/fountain_pen"

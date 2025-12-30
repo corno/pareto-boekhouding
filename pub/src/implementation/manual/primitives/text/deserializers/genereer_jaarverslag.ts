@@ -10,21 +10,21 @@ export type Error =
 export type Signature = _pi.Deserializer<string, Error>
 
 //data types
-import { _T_Parse_Error } from '../../../../interface/generated/pareto/core/parse_result'
+import { _T_Parse_Error } from '../../../../../interface/generated/pareto/core/parse_result'
 
 
 
 //dependencies
-import { parse as ds_parse } from "../../../generated/pareto/generic/parse/parse"
+import { parse as ds_parse } from "../../../../generated/pareto/generic/parse/parse"
 import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
 import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
 import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
 import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
 
-import * as r_um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
-import * as r_bh from "../../../refiners/schemas/boekhouding_target/boekhouding_source"
+import * as r_um_boekhouding from "../../../../generated/pareto/schemas/boekhouding/unmarshall"
+import * as r_bh from "../../../schemas/boekhouding_target/refiners/boekhouding_source"
 
-import * as t_bh_to_aggregatie from "../../../transformers/schemas/boekhouding/aggregatie"
+import * as t_bh_to_aggregatie from "../../../schemas/boekhouding_source/transformers/aggregatie"
 
 
 export const $: Signature = ($, abort) => {

@@ -2,7 +2,7 @@
 
 import * as _pn from 'pareto-host-nodejs'
 
-import { $$ as procedure } from "../implementation/commands/genereer_jaarverslag"
+import { $$ as procedure } from "../implementation/manual/commands/genereer_jaarverslag"
 
 _pn.run_main_procedure(
     ($r) => {

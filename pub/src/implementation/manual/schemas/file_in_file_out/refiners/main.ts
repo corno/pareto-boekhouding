@@ -2,7 +2,7 @@ import * as _pr from 'pareto-core-refiner'
 import * as _pi from 'pareto-core-interface'
 
 //data types
-import * as d_file_in_file_out from "../../../../interface/to_be_generated/file_in_file_out"
+import * as d_file_in_file_out from "../../../../../interface/to_be_generated/file_in_file_out"
 import * as d_path from "exupery-resources/dist/interface/generated/pareto/schemas/path/data_types/target"
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
 

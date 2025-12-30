@@ -5,22 +5,22 @@ import * as _pinternals from 'pareto-core-internals'
 import * as _pr from 'pareto-core-refiner'
 import * as _pt from 'pareto-core-transformer'
 
-import * as signatures from "../../interface/signatures"
+import * as signatures from "../../../interface/signatures"
 
 //data types
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
-import * as d_genereer_jaarverslag from "../deserializers/primitives/text/genereer_jaarverslag"
+import * as d_genereer_jaarverslag from "../primitives/text/deserializers/genereer_jaarverslag"
 import * as d_read_file from "exupery-resources/dist/interface/generated/pareto/schemas/read_file/data_types/target"
 import * as d_write_file from "exupery-resources/dist/interface/generated/pareto/schemas/write_file/data_types/target"
-import * as d_file_in_file_out from "../../interface/to_be_generated/file_in_file_out"
+import * as d_file_in_file_out from "../../../interface/to_be_generated/file_in_file_out"
 
 //dependencies
-import { $ as ds_genereer_jaarverslag } from "../deserializers/primitives/text/genereer_jaarverslag"
+import { $ as ds_genereer_jaarverslag } from "../primitives/text/deserializers/genereer_jaarverslag"
 import * as t_read_file from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
 import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
-import * as s_file_in_file_out from "../../implementation/serializers/schemas/file_in_file_out"
+import * as s_file_in_file_out from "../schemas/file_in_file_out/serializers"
 
-import { Parameters } from '../refiners/schemas/file_in_file_out/main'
+import { Parameters } from '../schemas/file_in_file_out/refiners/main'
 
 
 type My_Error =

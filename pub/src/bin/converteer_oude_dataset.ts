@@ -2,9 +2,9 @@
 
 import * as _pn from 'pareto-host-nodejs'
 
-import { $$ as procedure } from "../implementation/commands/converteer_oude_dataset"
+import { $$ as procedure } from "../implementation/manual/commands/converteer_oude_dataset"
 
-import * as d_resources from "../implementation/commands/converteer_oude_dataset"
+import * as d_resources from "../implementation/manual/commands/converteer_oude_dataset"
 
 _pn.run_main_procedure(
     ($r) => {

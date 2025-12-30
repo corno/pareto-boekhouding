@@ -1,11 +1,11 @@
 import * as _pc from 'pareto-core-command'
 import * as _pdev from 'pareto-core-dev'
 
-import * as signatures from "../../interface/signatures"
+import * as signatures from "../../../interface/signatures"
 
 //data types
 import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
-import * as d_converteer_oude_dataset from "../deserializers/primitives/text/converteer_oude_dataset"
+import * as d_converteer_oude_dataset from "../primitives/text/deserializers/converteer_oude_dataset"
 
 //data
 const settings = {
@@ -22,7 +22,7 @@ const settings = {
 
 //dependencies
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
-import { $$ as ds_converteer_oude_dataset } from "../deserializers/primitives/text/converteer_oude_dataset"
+import { $$ as ds_converteer_oude_dataset } from "../primitives/text/deserializers/converteer_oude_dataset"
 
 import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"

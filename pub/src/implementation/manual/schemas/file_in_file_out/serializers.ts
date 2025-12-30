@@ -1,6 +1,6 @@
 import * as _ps from 'pareto-core-serializer'
 
-import * as d_file_in_file_out from "../../../interface/to_be_generated/file_in_file_out"
+import * as d_file_in_file_out from "../../../../interface/to_be_generated/file_in_file_out"
 
 export const Path_Error = ($: d_file_in_file_out.Path_Error): string => {
     return _ps.cc($, ($) => {
