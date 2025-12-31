@@ -17,7 +17,7 @@ import * as d_file_in_file_out from "../../../interface/to_be_generated/file_in_
 //dependencies
 import { $ as ds_genereer_jaarverslag } from "../primitives/text/deserializers/genereer_jaarverslag"
 import * as t_read_file from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
-import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
+import * as s_fp from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
 import * as s_file_in_file_out from "../schemas/file_in_file_out/serializers"
 
 import { Parameters } from '../schemas/file_in_file_out/refiners/main'

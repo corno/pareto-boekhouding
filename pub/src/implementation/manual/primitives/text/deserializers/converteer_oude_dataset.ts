@@ -12,10 +12,10 @@ export type Some_Error =
 
 //dependencies
 import { parse as ds_parse } from "../../../../generated/pareto/generic/parse/parse"
-import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
-import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
-import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
-import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
+import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/fractional_decimal"
+import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/decimal"
+import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/iso_udhr"
+import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/manual/primitives/boolean/deserializers/true_false"
 
 import * as r_unmarshall_boekhouding_oude_model from "../../../../generated/pareto/schemas/boekhouding_oude_model/unmarshall"
 import * as r_resolve_boekhouding from "../../../schemas/boekhouding_target/refiners/boekhouding_source"
@@ -23,10 +23,10 @@ import * as r_resolve_boekhouding from "../../../schemas/boekhouding_target/refi
 import * as t_bh_oud_to_bh from "../../../schemas/boekhouding_oude_model/transformers/boekhouding_target"
 
 import * as s_boekhouding from "../../../../generated/pareto/schemas/boekhouding/serialize"
-import { $$ as s_decimal } from "pareto-standard-operations/dist/implementation/serializers/primitives/integer/decimal"
-import { $$ as s_fractional_decimal } from "pareto-standard-operations/dist/implementation/serializers/primitives/integer/fractional_decimal"
-import { $$ as s_date } from "pareto-standard-operations/dist/implementation/serializers/primitives/integer/iso_udhr"
-import { $$ as s_boolean } from "pareto-standard-operations/dist/implementation/serializers/primitives/boolean/true_false"
+import { $$ as s_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/decimal"
+import { $$ as s_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/fractional_decimal"
+import { $$ as s_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/iso_udhr"
+import { $$ as s_boolean } from "pareto-standard-operations/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
 
 export const $$: Signature = ($, abort) => {

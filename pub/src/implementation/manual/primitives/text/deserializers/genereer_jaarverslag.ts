@@ -16,10 +16,10 @@ import { _T_Parse_Error } from '../../../../../interface/generated/pareto/core/p
 
 //dependencies
 import { parse as ds_parse } from "../../../../generated/pareto/generic/parse/parse"
-import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/fractional_decimal"
-import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/decimal"
-import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/deserializers/primitives/integer/iso_udhr"
-import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/deserializers/primitives/boolean/true_false"
+import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/fractional_decimal"
+import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/decimal"
+import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/iso_udhr"
+import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/manual/primitives/boolean/deserializers/true_false"
 
 import * as r_um_boekhouding from "../../../../generated/pareto/schemas/boekhouding/unmarshall"
 import * as r_bh from "../../../schemas/boekhouding_target/refiners/boekhouding_source"

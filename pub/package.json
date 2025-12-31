@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "pareto-host-nodejs": "^0.1.1",
-    "pareto-resources": "^0.1.0",
-    "pareto-standard-operations": "^0.3.30",
-    "pareto-static-html": "^0.1.10"
+    "pareto-resources": "^0.1.1",
+    "pareto-standard-operations": "^0.3.32",
+    "pareto-static-html": "^0.1.11"
   }
 }

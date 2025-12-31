@@ -26,7 +26,7 @@ import { $$ as ds_converteer_oude_dataset } from "../primitives/text/deserialize
 
 import * as t_read_file_to_fountain_pen from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
-import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
+import * as s_fountain_pen from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
 
 
 export const $$: signatures.commands.converteer_oude_dataset = _pc.create_command_procedure(

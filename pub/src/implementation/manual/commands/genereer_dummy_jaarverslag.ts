@@ -19,9 +19,9 @@ const settings = {
 import { $ as ds_genereer_jaarverslag } from "../primitives/text/deserializers/genereer_jaarverslag"
 import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/context_path"
 
-import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/transformers/schemas/html/fountain_pen"
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/manual/schemas/html/transformers/fountain_pen"
 import * as t_path_to_path from "exupery-resources/dist/implementation/transformers/schemas/path/path"
-import * as s_fp from "pareto-fountain-pen/dist/implementation/serializers/schemas/block"
+import * as s_fp from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
 
 
 export const $$: signatures.commands.genereer_dummy_jaarverslag = _pc.create_command_procedure(
