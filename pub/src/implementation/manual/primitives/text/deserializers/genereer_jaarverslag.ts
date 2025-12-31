@@ -6,8 +6,8 @@ import * as _pi from 'pareto-core-interface'
 export type Error =
     | ['parse error', _T_Parse_Error]
     | ['primitive deserialization', string]
-    
-export type Signature = _pi.Deserializer<string, Error>
+
+export type Signature = _pi.Deserializer_With_Parameters<string, Error, { 'file': string }>
 
 //data types
 import { _T_Parse_Error } from '../../../../../interface/generated/pareto/core/parse_result'
@@ -22,16 +22,19 @@ import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/ma
 import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/manual/primitives/boolean/deserializers/true_false"
 
 import * as r_um_boekhouding from "../../../../generated/pareto/schemas/boekhouding/unmarshall"
-import * as r_bh from "../../../schemas/boekhouding_target/refiners/boekhouding_source"
+import * as r_bh from "../../../schemas/boekhouding_resolved/refiners/boekhouding_unresolved"
 
-import * as t_bh_to_aggregatie from "../../../schemas/boekhouding_source/transformers/aggregatie"
+import * as t_bh_to_aggregatie from "../../../schemas/boekhouding_resolved/transformers/aggregatie"
 
 
-export const $: Signature = ($, abort) => {
+export const $: Signature = ($, $p, abort) => {
 
     const x = ds_parse(
         $,
-        { 'tab size': 4 },
+        {
+            'tab size': 4,
+            'file': $p.file,
+        },
         ($) => abort(['parse error', $])
     )
 

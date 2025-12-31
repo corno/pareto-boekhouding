@@ -53,7 +53,8 @@ export const throw_unexpected_token = (
         },
         {
             'start': found.start,
-            'end': found.end
+            'end': found.end,
+            'file': found.file,
         },
         abort,
     )
@@ -63,7 +64,10 @@ export type ASTN_Token_Iterator = si.Token_Iterator<d_parse_result.Expected, _so
 
 export const create_astn_token_iterator = (
     $: _source._T_Tokenizer_Result.tokens, 
-    end: si.Location,
+    $p: {
+        end: si.Location,
+        file: string,
+    },
     abort: ($: My_Parse_Error) => never,
 ): ASTN_Token_Iterator => {
     let position = 0
@@ -77,8 +81,9 @@ export const create_astn_token_iterator = (
                         'cause': ['missing token', null]
                     },
                     {
-                        'start': end,
-                        'end': end,
+                        'start': $p.end,
+                        'end': $p.end,
+                        'file': $p.file,
                     },
                     abort,
                 )

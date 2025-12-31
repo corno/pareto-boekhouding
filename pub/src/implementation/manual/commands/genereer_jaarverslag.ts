@@ -19,6 +19,7 @@ import { $ as ds_genereer_jaarverslag } from "../primitives/text/deserializers/g
 import * as t_read_file from "exupery-resources/dist/implementation/transformers/schemas/read_file/fountain_pen"
 import * as s_fp from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
 import * as s_file_in_file_out from "../schemas/file_in_file_out/serializers"
+import * as s_path from "exupery-resources/dist/implementation/serializers/schemas/path"
 
 import { Parameters } from '../schemas/file_in_file_out/refiners/main'
 
@@ -74,6 +75,9 @@ export const $$: signatures.commands.genereer_jaarverslag = _pc.create_command_p
                             ).refine_without_error_transformation(
                                 ($, abort) => ds_genereer_jaarverslag(
                                     $,
+                                    {
+                                        'file': s_path.Node_Path($r.in),
+                                    },
                                     ($) => abort(['processing', $])
                                 )
                             ).transform_result(($) => {

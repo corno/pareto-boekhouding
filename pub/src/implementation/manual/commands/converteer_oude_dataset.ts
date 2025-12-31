@@ -3,10 +3,6 @@ import * as _pdev from 'pareto-core-dev'
 
 import * as signatures from "../../../interface/signatures"
 
-//data types
-import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
-import * as d_converteer_oude_dataset from "../primitives/text/deserializers/converteer_oude_dataset"
-
 //data
 const settings = {
     // 'in': "../../../pareto-rosetta/accounting_ruwe_data/out/temp/plicity/boekhouding.verbose.astn",
@@ -44,6 +40,9 @@ export const $$: signatures.commands.converteer_oude_dataset = _pc.create_comman
             ).refine_without_error_transformation(
                 ($, abort) => ds_converteer_oude_dataset(
                     $,
+                    {
+                        'file': settings['in']['file']
+                    },
                     ($) => {
                         _pdev.log_debug_message(`fout tijdens genereren jaarverslag`, () => { })
                         return abort({ 'exit code': 1 })

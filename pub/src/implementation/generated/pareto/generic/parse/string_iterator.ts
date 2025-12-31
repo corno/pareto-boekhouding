@@ -23,6 +23,7 @@ export type String_Iterator = {
     'look ahead': ($: number) => number | null
     'create offset location info': (subtract: number) => Location
     'create location info': () => Location
+    'get file': () => string
     'create location info string': () => string
     /**
      * if no non-whitespace character has been found yet on the current line,
@@ -55,6 +56,7 @@ export const create_string_iterator = (
     $: string,
     $p: {
         'tab size': number
+        'file': string
     }
 ): String_Iterator => {
     const source = $
@@ -164,6 +166,9 @@ export const create_string_iterator = (
                 ? relative_position['line indentation']
                 : relative_position['column']
         },
+        'get file': () => {
+            return $p.file
+        }
     }
 }
 

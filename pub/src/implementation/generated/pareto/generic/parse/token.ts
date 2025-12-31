@@ -41,8 +41,10 @@ export const Whitespace = (
                         throw_lexer_error(
                             ['unexpected control character', $],
                             {
+
                                 'start': string_iterator['create location info'](),
                                 'end': string_iterator['create location info'](),
+                                'file': string_iterator['get file'](),
                             },
                             abort,
                         )
@@ -79,6 +81,7 @@ export const Whitespace = (
         'range': {
             'start': start,
             'end': string_iterator['create location info'](),
+            'file': string_iterator['get file'](),
         }
     }
 }
@@ -108,7 +111,8 @@ export const Trivia = (
                                 ['dangling slash', null],
                                 {
                                     'start': start,
-                                    'end': end
+                                    'end': end,
+                                    'file': string_iterator['get file'](),
                                 },
                                 abort,
                             )
@@ -144,6 +148,7 @@ export const Trivia = (
                                     'range': {
                                         'start': start,
                                         'end': string_iterator['create location info'](),
+                                        'file': string_iterator['get file'](),
                                     },
                                     'trailing whitespace': Whitespace(string_iterator, abort)
                                 })
@@ -166,7 +171,8 @@ export const Trivia = (
                                                     ['unterminated block comment', null],
                                                     {
                                                         'start': start,
-                                                        'end': string_iterator['create location info']()
+                                                        'end': string_iterator['create location info'](),
+                                                        'file': string_iterator['get file'](),
                                                     },
                                                     abort,
                                                 )
@@ -191,6 +197,7 @@ export const Trivia = (
                                     'range': {
                                         'start': start,
                                         'end': string_iterator['create location info'](),
+                                        'file': string_iterator['get file'](),
                                     },
                                     'trailing whitespace': Whitespace(string_iterator, abort)
                                 })
@@ -201,7 +208,8 @@ export const Trivia = (
                                     ['dangling slash', null],
                                     {
                                         'start': start,
-                                        'end': string_iterator['create location info']()
+                                        'end': string_iterator['create location info'](),
+                                        'file': string_iterator['get file'](),
                                     },
                                     abort,
                                 )
@@ -226,6 +234,7 @@ export const Annotated_Token = (
             {
                 'start': st['create location info'](),
                 'end': st['create location info'](),
+                'file': st['get file'](),
             },
             abort,
         )
@@ -347,6 +356,7 @@ export const Annotated_Token = (
                                         {
                                             'start': st['create location info'](),
                                             'end': st['create location info'](),
+                                            'file': st['get file'](),
                                         },
                                         abort
                                     )
@@ -387,6 +397,7 @@ export const Annotated_Token = (
             }
         }),
         'end': st['create location info'](),
+        'file': st['get file'](),
         'trailing trivia': Trivia(st, abort),
     }
 }
@@ -430,7 +441,8 @@ export const Delimited_String = (
                     ['unterminated string', null],
                     {
                         'start': start,
-                        'end': string_iterator['create location info']()
+                        'end': string_iterator['create location info'](),
+                        'file': string_iterator['get file'](),
                     },
                     abort,
                 )
@@ -441,6 +453,7 @@ export const Delimited_String = (
                     {
                         'start': string_iterator['create location info'](),
                         'end': string_iterator['create location info'](),
+                        'file': string_iterator['get file'](),
                     },
                     abort,
                 )
@@ -458,7 +471,8 @@ export const Delimited_String = (
                             ['unexpected end of line in delimited string', null],
                             {
                                 'start': start,
-                                'end': string_iterator['create location info']()
+                                'end': string_iterator['create location info'](),
+                                'file': string_iterator['get file'](),
                             },
                             abort
                         )
@@ -475,7 +489,8 @@ export const Delimited_String = (
                                 ['missing character after escape', null],
                                 {
                                     'start': start,
-                                    'end': string_iterator['create location info']()
+                                    'end': string_iterator['create location info'](),
+                                    'file': string_iterator['get file'](),
                                 },  
                                 abort,
                             )
@@ -531,7 +546,8 @@ export const Delimited_String = (
                                                 ['unterminated unicode escape sequence', null],
                                                 {
                                                     'start': start,
-                                                    'end': string_iterator['create location info']()
+                                                    'end': string_iterator['create location info'](),
+                                                    'file': string_iterator['get file'](),
                                                 },
                                                 abort,
                                             )
@@ -541,7 +557,8 @@ export const Delimited_String = (
                                                 ['invalid unicode escape sequence', null],
                                                 {
                                                     'start': start,
-                                                    'end': string_iterator['create location info']()
+                                                    'end': string_iterator['create location info'](),
+                                                    'file': string_iterator['get file'](),
                                                 },
                                                 abort,
                                             )
@@ -560,7 +577,8 @@ export const Delimited_String = (
                                     ['unknown escape character', null],
                                     {
                                         'start': start,
-                                        'end': string_iterator['create location info']()
+                                        'end': string_iterator['create location info'](),
+                                        'file': string_iterator['get file'](),
                                     },
                                     abort,
                                 )

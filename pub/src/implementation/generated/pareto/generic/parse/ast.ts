@@ -14,7 +14,8 @@ export const Structural_Token = (token: _source._T_Annotated_Token): _target._T_
         'trailing trivia': token['trailing trivia'],
         'range': {
             'start': token['start'],
-            'end': token['end']
+            'end': token['end'],
+            'file': token['file'],
         }
     }
 }
@@ -31,7 +32,8 @@ export const String = (
     return {
         'range': {
             'start': token['start'],
-            'end': token['end']
+            'end': token['end'],
+            'file': token['file'],
         },
         'value': token.type[1].value,
         'type': token.type[1].type,

@@ -95,6 +95,7 @@ export type _T_Structural_Token = {
 
 
 export type _T_Range = {
+    readonly 'file': string
     readonly 'end': _T_Location
     readonly 'start': _T_Location
 }

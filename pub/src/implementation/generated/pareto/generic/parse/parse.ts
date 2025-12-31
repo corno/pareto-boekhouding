@@ -15,11 +15,13 @@ export const parse = (
     $: string,
     $p: {
         'tab size': number
+        'file': string
     },
     abort: ($: _target._T_Parse_Error) => never,
 ): s_ast._T_Document => {
     const string_iterator = si.create_string_iterator($, {
-        'tab size': $p['tab size']
+        'tab size': $p['tab size'],
+        'file': $p.file,
     })
     const tokenizer_result = tokenize.Tokenizer_Result(
         null,
@@ -35,7 +37,10 @@ export const parse = (
     )
     const token_iterator = pg.create_astn_token_iterator(
         tokenizer_result.tokens,
-        tokenizer_result.end,
+        {
+            end: tokenizer_result.end,
+            'file': $p.file
+        },
         ($) => {
             abort({
                 'type': ['parser', $.type],

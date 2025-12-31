@@ -1,6 +1,7 @@
 import * as _et from 'pareto-core-interface'
 
 export type _T_Annotated_Token = {
+    readonly 'file': string
     readonly 'end': _T_Location
     readonly 'start': _T_Location
     readonly 'trailing trivia': _T_Trivia
@@ -15,6 +16,7 @@ export type _T_Location = {
 }
 
 export type _T_Range = {
+    readonly 'file': string
     readonly 'end': _T_Location
     readonly 'start': _T_Location
 }

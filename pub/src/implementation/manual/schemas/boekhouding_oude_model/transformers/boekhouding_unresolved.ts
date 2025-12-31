@@ -1,14 +1,148 @@
 import * as _pt from 'pareto-core-transformer'
 import * as _pi from 'pareto-core-interface'
-import * as _psh from 'pareto-core-transformer/dist/deprecated_shorthands_for_unresolved'
 import * as _pinternals from 'pareto-core-internals'
+
+namespace _psh {
+
+    const depth = 1
+
+    export const get_location = (): d_token._T_Range => {
+        const loc = _pinternals.get_location_info(depth)
+        return {
+            'start': {
+                'absolute': -1,
+                'relative': {
+                    'column': loc.column,
+                    'line': loc.line,
+                },
+            },
+            'end': {
+                'absolute': -1,
+                'relative': {
+                    'column': loc.column,
+                    'line': loc.line,
+                },
+            },
+            'file': loc.file
+        }
+    }
+
+    export type Raw_Or_Normal_Dictionary<T> = { [key: string]: T } | _pi.Dictionary<T>
+    export type Raw_Or_Normal_List<T> = T[] | _pi.List<T>
+    export type Raw_Dictionary<T> = { [key: string]: T }
+
+    export type Reference_To_Normal_Dictionary_Entry<G_Source, T_Dictionary_Entry> = {
+        readonly 'key': string
+        readonly 'location': G_Source
+    }
+
+    export type Reference_To_Stacked_Dictionary_Entry<G_Source, T_Dictionary_Entry> = {
+        readonly 'key': string
+        readonly 'location': G_Source
+    }
+
+    export const to_raw_array = <T>($: _pi.List<T>): readonly T[] => $.__get_raw_copy()
+
+
+    export type Dictionary<G_Source, T_D> = {
+        readonly 'dictionary': _pi.Dictionary<{
+            readonly 'entry': T_D
+            readonly 'location': G_Source
+        }>
+        readonly 'location': G_Source
+    }
+
+    export type List<G_Source, T_L> = {
+        readonly 'list': _pi.List<{
+            readonly 'element': T_L
+            readonly 'location': G_Source
+        }>
+        readonly 'location': G_Source
+    }
+
+
+    export const wrap_dictionary = <T>(
+        $: Raw_Or_Normal_Dictionary<T>,
+    ): Dictionary<d_token._T_Range, T> => {
+        const location = get_location()
+        function is_normal($: Raw_Or_Normal_Dictionary<T>): $ is _pi.Dictionary<T> {
+            return $.get_number_of_entries !== undefined && typeof $.get_number_of_entries === "function"
+        }
+        if (is_normal($)) {
+            return {
+                'location': location,
+                'dictionary': $.map(($) => ({
+                    'location': location,
+                    'entry': $,
+                }))
+            }
+        } else {
+            return {
+                'location': location,
+                'dictionary': _pinternals.dictionary_literal($).map(($) => ({
+                    'location': location,
+                    'entry': $,
+                }))
+            }
+        }
+    }
+
+    // export const wrap_list = <T>(
+    //     $: Raw_Or_Normal_List<T>,
+    // ): List<_pi.Deprecated_Source_Location, T> => {
+    //     const location = _pinternals.get_location_info(depth)
+    //     const decorated: _pi.List<T> = $ instanceof Array
+    //         ? _pinternals.list_literal($)
+    //         : $
+
+    //     if (!(decorated.__for_each instanceof Function)) {
+    //         throw new Error("invalid input in 'wrap_list'")
+    //     }
+    //     return {
+    //         'location': location,
+    //         'list': decorated.map(($) => ({
+    //             'location': location,
+    //             'element': $,
+    //         }))
+    //     }
+    // }
+
+    export const wrap_state_group = <T>(
+        $: T,
+    ) => {
+        return {
+            'location': get_location(),
+            'state group': $,
+        }
+    }
+
+    export const wrap_reference = <T>(
+        $: string,
+    ): Reference_To_Normal_Dictionary_Entry<d_token._T_Range, T> => {
+        return {
+            'location': get_location(),
+            'key': $,
+        }
+    }
+
+    export const wrap_stack_reference = <T>(
+        name: string,
+    ): Reference_To_Stacked_Dictionary_Entry<d_token._T_Range, T> => {
+        return {
+            'location': get_location(),
+            'key': name,
+        }
+    }
+}
+
+import * as d_token from "../../../../../interface/generated/pareto/core/token"
 
 import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
 import * as _i_signatures from "../../../../../interface/signatures/transformers/boekhouding/oude_model"
 
 export const Beheer: _i_signatures.Beheer = ($) => ({
-    'BTW-categorieen': _psh.wrap_dictionary(_pt.cc($.Beheer['BTW-categorieen'], ($) => $.map(($): _i_out.Beheer.BTW$mi_categorieen.D<_pi.Deprecated_Source_Location> => ({
-        'BTW-heffing': _pt.cc($['BTW-heffing'], ($) => _pt.cc($, ($): _i_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing<_pi.Deprecated_Source_Location> => {
+    'BTW-categorieen': _psh.wrap_dictionary(_pt.cc($.Beheer['BTW-categorieen'], ($) => $.map(($): _i_out.Beheer.BTW$mi_categorieen.D<d_token._T_Range> => ({
+        'BTW-heffing': _pt.cc($['BTW-heffing'], ($) => _pt.cc($, ($): _i_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', ({
                     'BTW-promillage': _pt.cc($['BTW-promillage'], ($) => $),
@@ -22,11 +156,11 @@ export const Beheer: _i_signatures.Beheer = ($) => ({
         'Volledige naam': _pt.cc($['Volledige naam'], ($) => $),
         'Wachtwoord': _pt.cc($['Wachtwoord'], ($) => $),
     })))),
-    'Grootboekrekeningen': _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen<_pi.Deprecated_Source_Location> => ({
+    'Grootboekrekeningen': _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen<d_token._T_Range> => ({
         'Balans': _psh.wrap_dictionary(_pt.cc($.Beheer['Balans'].Grootboekrekeningen, ($) => $.map(($) => ({
             'Hoofdcategorie': _pt.cc($['Hoofdcategorie'], ($) => _psh.wrap_reference($)),
             'Subcategorie': _pt.cc($['Subcategorie'], ($) => _psh.wrap_reference($)),
-            'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen.Balans.D.Zijde<_pi.Deprecated_Source_Location> => {
+            'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen.Balans.D.Zijde<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Activa': return _pt.ss($, ($) => _psh.wrap_state_group(['Activa', null]))
                     case 'Passiva': return _pt.ss($, ($) => _psh.wrap_state_group(['Passiva', null]))
@@ -37,10 +171,10 @@ export const Beheer: _i_signatures.Beheer = ($) => ({
         'Resultaat': _psh.wrap_dictionary(_pt.cc($.Beheer['Resultaat'].Grootboekrekeningen, ($) => $.map(($) => ({
             'Hoofdcategorie': _pt.cc($['Hoofdcategorie'], ($) => _psh.wrap_reference($)),
             'Subcategorie': _pt.cc($['Subcategorie'], ($) => _psh.wrap_reference($)),
-            'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde<_pi.Deprecated_Source_Location> => {
+            'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Kosten': return _pt.ss($, ($) => _psh.wrap_state_group(['Kosten', ({
-                        'Correctie op vennootschapsbelasting': _pt.cc($['Correctie op vennootschapsbelasting'], ($) => _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting<_pi.Deprecated_Source_Location> => {
+                        'Correctie op vennootschapsbelasting': _pt.cc($['Correctie op vennootschapsbelasting'], ($) => _pt.cc($, ($): _i_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting<d_token._T_Range> => {
                             switch ($[0]) {
                                 case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', ({
                                     'Correctietype': _pt.cc($['Correctietype'], ($) => _psh.wrap_reference($)),
@@ -65,7 +199,7 @@ export const Beheer: _i_signatures.Beheer = ($) => ({
         'Projecten': _pt.cc($['Projecten'], ($) => _psh.wrap_dictionary($.map(($) => ({
             'Offertes': _pt.cc($['Offertes'], ($) => _psh.wrap_dictionary($.map(($) => ({
                 'Opbrengsten': _pt.cc($['Opbrengsten'], ($) => _psh.wrap_dictionary($.map(($) => ({
-                    'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type<_pi.Deprecated_Source_Location> => {
+                    'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type<d_token._T_Range> => {
                         switch ($[0]) {
                             case 'Project': return _pt.ss($, ($) => _psh.wrap_state_group(['Project', ({
                                 'Bedrag': _pt.cc($['Bedrag'], ($) => $),
@@ -85,7 +219,7 @@ export const Beheer: _i_signatures.Beheer = ($) => ({
         'Informeel': _pt.cc($['Informele rekeningen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
     })),
 })
-export const Eerste_boekjaar: _i_signatures.Eerste_boekjaar = ($) => _pt.cc($, ($): _i_out.Eerste_boekjaar<_pi.Deprecated_Source_Location> => {
+export const Eerste_boekjaar: _i_signatures.Eerste_boekjaar = ($) => _pt.cc($, ($): _i_out.Eerste_boekjaar<d_token._T_Range> => {
     switch ($[0]) {
         case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
         case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', ({
@@ -97,7 +231,7 @@ export const Eerste_boekjaar: _i_signatures.Eerste_boekjaar = ($) => _pt.cc($, (
 export const Fiscaal: _i_signatures.Fiscaal = ($) => ({
     'Balans Hoofdcategorieen': _pt.cc($.Beheer.Balans['Hoofdcategorieen fiscus'], ($) => _psh.wrap_dictionary($.map(($) => ({
         'Subcategorieen': _pt.cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
-        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde<_pi.Deprecated_Source_Location> => {
+        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Activa': return _pt.ss($, ($) => _psh.wrap_state_group(['Activa', null]))
                 case 'Passiva': return _pt.ss($, ($) => _psh.wrap_state_group(['Passiva', null]))
@@ -107,7 +241,7 @@ export const Fiscaal: _i_signatures.Fiscaal = ($) => ({
     })))),
     'Resultaat Hoofdcategorieen': _psh.wrap_dictionary(_pt.cc($.Beheer.Resultaat['Hoofdcategorieen fiscus'], ($) => $.map(($) => ({
         'Subcategorieen': _pt.cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
-        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde<_pi.Deprecated_Source_Location> => {
+        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Kosten': return _pt.ss($, ($) => _psh.wrap_state_group(['Kosten', null]))
                 case 'Opbrengsten': return _pt.ss($, ($) => _psh.wrap_state_group(['Opbrengsten', null]))
@@ -122,7 +256,7 @@ export const Grootboek_Categorieen: _i_signatures.Grootboek_Categorieen = ($) =>
             'Hoofdcategorie fiscus': _pt.cc($['Hoofdcategorie fiscus'], ($) => _psh.wrap_reference($)),
             'Subcategorie fiscus': _pt.cc($['Subcategorie fiscus'], ($) => _psh.wrap_reference($)),
         })))),
-        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Grootboek_Categorieen.Balans.D.Zijde<_pi.Deprecated_Source_Location> => {
+        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Grootboek_Categorieen.Balans.D.Zijde<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Activa': return _pt.ss($, ($) => _psh.wrap_state_group(['Activa', null]))
                 case 'Passiva': return _pt.ss($, ($) => _psh.wrap_state_group(['Passiva', null]))
@@ -138,7 +272,7 @@ export const Grootboek_Categorieen: _i_signatures.Grootboek_Categorieen = ($) =>
             'Hoofdcategorie fiscus': _pt.cc($['Hoofdcategorie fiscus'], ($) => _psh.wrap_reference($)),
             'Subcategorie fiscus': _pt.cc($['Subcategorie fiscus'], ($) => _psh.wrap_reference($)),
         })))),
-        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Grootboek_Categorieen.Resultaat.D.Zijde<_pi.Deprecated_Source_Location> => {
+        'Zijde': _pt.cc($['Zijde'], ($) => _pt.cc($, ($): _i_out.Grootboek_Categorieen.Resultaat.D.Zijde<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Kosten': return _pt.ss($, ($) => _psh.wrap_state_group(['Kosten', null]))
                 case 'Opbrengsten': return _pt.ss($, ($) => _psh.wrap_state_group(['Opbrengsten', null]))
@@ -149,7 +283,7 @@ export const Grootboek_Categorieen: _i_signatures.Grootboek_Categorieen = ($) =>
 })
 export const Grootboekrekeningen: _i_signatures.Grootboekrekeningen = ($) => ({
     'Balans': _pt.cc($['Balans grootboekrekeningen'], ($) => _psh.wrap_dictionary($.map(($) => ({
-        'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Grootboekrekeningen.Balans.D.Type<_pi.Deprecated_Source_Location> => {
+        'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Grootboekrekeningen.Balans.D.Type<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Bankrekening': return _pt.ss($, ($) => _psh.wrap_state_group(['Bankrekening', null]))
                 case 'Informele rekening': return _pt.ss($, ($) => _psh.wrap_state_group(['Informele rekening', null]))
@@ -162,7 +296,7 @@ export const Grootboekrekeningen: _i_signatures.Grootboekrekeningen = ($) => ({
 })
 export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
     'Inkopen': _pt.cc($['Inkopen'], ($) => _psh.wrap_dictionary($.map(($) => ({
-        'Afhandeling': _pt.cc($['Afhandeling'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Afhandeling<_pi.Deprecated_Source_Location> => {
+        'Afhandeling': _pt.cc($['Afhandeling'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Afhandeling<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Mutaties': return _pt.ss($, ($) => _psh.wrap_state_group(['Mutaties', null]))
                 case 'Rekening courant': return _pt.ss($, ($) => _psh.wrap_state_group(['Rekening courant', ({
@@ -171,7 +305,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 default: return _pt.au($[0])
             }
         })),
-        'BTW-regime': _pt.cc($['BTW-regime'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.BTW$mi_regime<_pi.Deprecated_Source_Location> => {
+        'BTW-regime': _pt.cc($['BTW-regime'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.BTW$mi_regime<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Binnenland: heffing verlegd': return _pt.ss($, ($) => _psh.wrap_state_group(['Binnenland: heffing verlegd', null]))
                 case 'Geen BTW van toepassing': return _pt.ss($, ($) => _psh.wrap_state_group(['Geen BTW van toepassing', null]))
@@ -183,7 +317,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 default: return _pt.au($[0])
             }
         })),
-        'Brondocument': _pt.cc($['Brondocument'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Brondocument<_pi.Deprecated_Source_Location> => {
+        'Brondocument': _pt.cc($['Brondocument'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Brondocument<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Niet van toepassing': return _pt.ss($, ($) => _psh.wrap_state_group(['Niet van toepassing', null]))
                 case 'Ontbreekt': return _pt.ss($, ($) => _psh.wrap_state_group(['Ontbreekt', null]))
@@ -196,7 +330,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
         })),
         'Datum': _pt.cc($['Datum'], ($) => $),
         'Regels': _pt.cc($['Regels'], ($) => _psh.wrap_dictionary($.map(($) => ({
-            'Bedrag': _pt.cc($['Bedrag'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag<_pi.Deprecated_Source_Location> => {
+            'Bedrag': _pt.cc($['Bedrag'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Bekend': return _pt.ss($, ($) => _psh.wrap_state_group(['Bekend', ({
                         'BTW-bedrag': _pt.cc($['BTW-bedrag'], ($) => $),
@@ -206,7 +340,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 }
             })),
             'Omschrijving': _pt.cc($['Omschrijving'], ($) => $),
-            'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Regels.D.Type<_pi.Deprecated_Source_Location> => {
+            'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Regels.D.Type<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Balans': return _pt.ss($, ($) => _psh.wrap_state_group(['Balans', ({
                         'Balans item': _pt.cc($['Balans item'], ($) => _psh.wrap_reference($)),
@@ -218,7 +352,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 }
             })),
         })))),
-        'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Type<_pi.Deprecated_Source_Location> => {
+        'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Inkopen.D.Type<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Bonnetje': return _pt.ss($, ($) => _psh.wrap_state_group(['Bonnetje', null]))
                 case 'Inkoop (met crediteur)': return _pt.ss($, ($) => _psh.wrap_state_group(['Inkoop (met crediteur)', ({
@@ -237,7 +371,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
         })),
     })))),
     'Verkopen': _pt.cc($['Verkopen'], ($) => _psh.wrap_dictionary($.map(($) => ({
-        'Afhandeling': _pt.cc($['Afhandeling'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Afhandeling<_pi.Deprecated_Source_Location> => {
+        'Afhandeling': _pt.cc($['Afhandeling'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Afhandeling<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Mutaties': return _pt.ss($, ($) => _psh.wrap_state_group(['Mutaties', null]))
                 case 'Rekening courant': return _pt.ss($, ($) => _psh.wrap_state_group(['Rekening courant', ({
@@ -248,7 +382,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
         })),
         'BTW-periode': _pt.cc($['BTW-periode'], ($) => _psh.wrap_reference($)),
         'Betalingstermijn': _pt.cc($['Betalingstermijn'], ($) => $),
-        'Brondocument': _pt.cc($['Brondocument'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Brondocument<_pi.Deprecated_Source_Location> => {
+        'Brondocument': _pt.cc($['Brondocument'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Brondocument<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Toegevoegd': return _pt.ss($, ($) => _psh.wrap_state_group(['Toegevoegd', ({
                     'Document': _pt.cc($['Document'], ($) => $),
@@ -256,7 +390,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 default: return _pt.au($[0])
             }
         })),
-        'Contracttype': _pt.cc($['Contracttype'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Contracttype<_pi.Deprecated_Source_Location> => {
+        'Contracttype': _pt.cc($['Contracttype'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Contracttype<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Licentieovereenkomst': return _pt.ss($, ($) => _psh.wrap_state_group(['Licentieovereenkomst', ({
                     'Overeenkomst': _pt.cc($['Overeenkomst'], ($) => _psh.wrap_reference($)),
@@ -271,7 +405,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
         'Datum': _pt.cc($['Datum'], ($) => $),
         'Debiteur': _pt.cc($['Debiteur'], ($) => _psh.wrap_reference($)),
         'Regels': _pt.cc($['Regels'], ($) => _psh.wrap_dictionary($.map(($) => ({
-            'BTW-regime': _pt.cc($['BTW-regime'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime<_pi.Deprecated_Source_Location> => {
+            'BTW-regime': _pt.cc($['BTW-regime'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Binnenland: heffing verlegd': return _pt.ss($, ($) => _psh.wrap_state_group(['Binnenland: heffing verlegd', null]))
                     case 'Intracommunautair': return _pt.ss($, ($) => _psh.wrap_state_group(['Intracommunautair', null]))
@@ -282,7 +416,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 }
             })),
             'Bedrag exclusief BTW': _pt.cc($['Bedrag exclusief BTW'], ($) => $),
-            'Contracttype': _pt.cc($['Contracttype'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype<_pi.Deprecated_Source_Location> => {
+            'Contracttype': _pt.cc($['Contracttype'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Licentieovereenkomst': return _pt.ss($, ($) => _psh.wrap_state_group(['Licentieovereenkomst', ({
                         'Periode': _pt.cc($['Periode'], ($) => _psh.wrap_reference($)),
@@ -295,7 +429,7 @@ export const Handelstransacties: _i_signatures.Handelstransacties = ($) => ({
                 }
             })),
             'Omschrijving': _pt.cc($['Omschrijving'], ($) => $),
-            'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Regels.D.Type<_pi.Deprecated_Source_Location> => {
+            'Type': _pt.cc($['Type'], ($) => _pt.cc($, ($): _i_out.Handelstransacties.Verkopen.D.Regels.D.Type<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Balans': return _pt.ss($, ($) => _psh.wrap_state_group(['Balans', ({
                         'Balans item': _pt.cc($['Balans item'], ($) => _psh.wrap_reference($)),
@@ -319,7 +453,7 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
                 'Datum': _pt.cc($['Datum'], ($) => $),
                 'Omschrijving': _pt.cc($['Omschrijving'], ($) => $),
             })))),
-            'Nieuw': _pt.cc($['Nieuw'], ($) => _pt.cc($, ($): _i_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw<_pi.Deprecated_Source_Location> => {
+            'Nieuw': _pt.cc($['Nieuw'], ($) => _pt.cc($, ($): _i_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
                     case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', ({
@@ -342,7 +476,7 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
         'Informele rekeningen': _pt.cc($['Informele rekeningen'], ($) => _psh.wrap_dictionary($.map(($) => ({
             'Beginsaldo': _pt.cc($['Beginsaldo'], ($) => $),
             'Grootboekrekening': _pt.cc($['Grootboekrekening'], ($) => _psh.wrap_reference($)),
-            'Nieuw': _pt.cc($['Nieuw'], ($) => _pt.cc($, ($): _i_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw<_pi.Deprecated_Source_Location> => {
+            'Nieuw': _pt.cc($['Nieuw'], ($) => _pt.cc($, ($): _i_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
                     case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', ({
@@ -368,7 +502,7 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
                 'Bestand': _pt.cc($['Bestand'], ($) => $),
             })))),
             'Omschrijving': _pt.cc($['Omschrijving'], ($) => $),
-            'Status': _pt.cc($['Status'], ($) => _pt.cc($, ($): _i_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status<_pi.Deprecated_Source_Location> => {
+            'Status': _pt.cc($['Status'], ($) => _pt.cc($, ($): _i_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Aangegeven': return _pt.ss($, ($) => _psh.wrap_state_group(['Aangegeven', ({
                         'Afronding': _pt.cc($['Afronding'], ($) => $),
@@ -385,7 +519,7 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
     })),
 })
 export const Jaren: _i_signatures.Jaren = ($, $p) => _psh.wrap_dictionary($.Jaren.map(($, key) => ({
-    'Afgesloten': _pt.cc($['Afgesloten'], ($) => _pt.cc($, ($): _i_out.Jaren.D.Afgesloten<_pi.Deprecated_Source_Location> => {
+    'Afgesloten': _pt.cc($['Afgesloten'], ($) => _pt.cc($, ($): _i_out.Jaren.D.Afgesloten<d_token._T_Range> => {
         switch ($[0]) {
             case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
             case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', null]))
@@ -417,10 +551,10 @@ export const Jaren: _i_signatures.Jaren = ($, $p) => _psh.wrap_dictionary($.Jare
     'Startdatum boekjaar': _pt.cc($['Startdatum boekjaar'], ($) => $),
 })))
 export const Mutaties: _i_signatures.Mutaties = ($, $p) => ({
-    'Bankrekening Mutatie Verwerkingen': _pt.cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary($.Mutaties.filter(($) => _pt.cc($.Status, ($): _pi.Optional_Value<_i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<_pi.Deprecated_Source_Location>> => {
+    'Bankrekening Mutatie Verwerkingen': _pt.cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary($.Mutaties.filter(($) => _pt.cc($.Status, ($): _pi.Optional_Value<_i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range>> => {
         switch ($[0]) {
             case 'Nog te verwerken': return _pt.ss($, ($) => _pt.not_set())
-            case 'Verwerkt': return _pt.ss($, ($) => _pt.set(_pt.cc($.Afhandeling, ($): _i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<_pi.Deprecated_Source_Location> => {
+            case 'Verwerkt': return _pt.ss($, ($) => _pt.set(_pt.cc($.Afhandeling, ($): _i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Informele rekening': return _pt.ss($, ($) => _psh.wrap_state_group(['Balans', _psh.wrap_state_group(['Informele rekening', ({
                         'Informele rekening': _pt.cc($['Informele rekening'], ($) => _psh.wrap_reference($)),
@@ -430,7 +564,7 @@ export const Mutaties: _i_signatures.Mutaties = ($, $p) => ({
                         'Verrekenpost': _pt.cc($['Verrekenpost'], ($) => _psh.wrap_reference($)),
                     })])]))
 
-                    case 'BTW-periode': return _pt.ss($, ($): _i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<_pi.Deprecated_Source_Location> => _psh.wrap_state_group(['Resultaat', {
+                    case 'BTW-periode': return _pt.ss($, ($): _i_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range> => _psh.wrap_state_group(['Resultaat', {
                         'Jaar': $.Jaar === $p.jaar
                             ? _pt.not_set()
                             : _pt.set(_psh.wrap_reference($.Jaar)),
@@ -461,7 +595,7 @@ export const Mutaties: _i_signatures.Mutaties = ($, $p) => ({
         'Omschrijving': _pt.cc($['Omschrijving'], ($) => $),
     })))))),
     'Verrekenpost mutaties': _pt.cc($.Verrekenposten, ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary($.Mutaties.map(($) => ({
-        'Afhandeling': _pt.cc($['Afhandeling'], ($) => _pt.cc($, ($): _i_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling<_pi.Deprecated_Source_Location> => {
+        'Afhandeling': _pt.cc($['Afhandeling'], ($) => _pt.cc($, ($): _i_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Informele rekening': return _pt.ss($, ($) => _psh.wrap_state_group(['Balans', _psh.wrap_state_group(['Informele rekening', ({
                     'Informele rekening': _pt.cc($['Informele rekening'], ($) => _psh.wrap_reference($)),
@@ -494,7 +628,7 @@ export const Mutaties: _i_signatures.Mutaties = ($, $p) => ({
 export const Overige_balans_item: _i_signatures.Overige_balans_item = ($) => ({
     'Beginsaldo': _pt.cc($, ($) => $.Beginsaldo),
     'Grootboekrekening': _pt.cc($['Grootboekrekening'], ($) => _psh.wrap_reference($)),
-    'Nieuw': _pt.cc($['Nieuw'], ($) => _pt.cc($, ($): _i_out.Overige_balans_item.Nieuw<_pi.Deprecated_Source_Location> => {
+    'Nieuw': _pt.cc($['Nieuw'], ($) => _pt.cc($, ($): _i_out.Overige_balans_item.Nieuw<d_token._T_Range> => {
         switch ($[0]) {
             case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
             case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', ({
