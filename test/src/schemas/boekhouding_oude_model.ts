@@ -1,0 +1,44 @@
+import * as _pi from 'pareto-core-interface'
+import * as _pt from 'pareto-core-transformer'
+import * as _pinternals from 'pareto-core-internals'
+
+// import * as d_static_html from "pub/dist/interface/generated/pareto/schemas/static-html/data_types/target"
+
+// import * as ds_static_html from "pub/dist/implementation/manual/schemas/static_html/deserializers"
+// import * as s_static_html from "pub/dist/implementation/manual/schemas/static_html/serializers"
+// import * as d_unmarshall from "pub/dist/interface/generated/pareto/core/unmarshall"
+
+import * as sh from "pareto-test/dist/temporary_testset_generator/shorthands"
+
+
+// export const Document_Deserialize: _pi.Deserializer<d_static_html.Document, d_unmarshall.Error> = ($, abort) => {
+//     return ds_static_html.Document(
+//         $,
+//         abort,
+//     )
+// }
+
+// export const Document_Serialize: _pi.Serializer<d_static_html.Document> = ($) => {
+//     return s_static_html.Document(
+//         $,
+//     )
+// }
+
+export const $$ = sh.schema({
+    transformers: {
+        // "boekhouding_unresolved": sh.transformer(
+        //     r_temp_static_html.Boekhouding_Oude_Model_To_Boekhouding_Unresolved_Model_Transformer,
+        //     r_temp_static_html.Boekhouding_Oude_Model_Deserialize,
+        //     s_unmarshall.Error,
+        //     r_temp_static_html.Boekhouding_Unresolved_Model_Serialize,
+        // ),
+    }
+    // 'serializers': {
+    //     "Document": sh.serializer(
+    //         `.html`,
+    //         r_temp_static_html.Document_Serialize,
+    //         r_temp_static_html.Document_Deserialize,
+    //         s_unmarshall.Error,
+    //     )
+    // }
+})
