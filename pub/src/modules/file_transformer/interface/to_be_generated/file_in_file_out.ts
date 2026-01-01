@@ -3,7 +3,7 @@ import * as d_path from "pareto-resources/dist/interface/generated/pareto/schema
 
 import * as d_read_file from "pareto-resources/dist/interface/generated/pareto/schemas/read_file/data_types/source"
 import * as d_write_file from "pareto-resources/dist/interface/generated/pareto/schemas/write_file/data_types/target"
-import * as d_deserialize_resolved_schema from "../../../../interface/to_be_generated/deserialize_resolved_model"
+import * as d_deserialize_resolved_schema from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"
 
 export type Path_Error =
     | ['missing', null]

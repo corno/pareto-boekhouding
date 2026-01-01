@@ -7,7 +7,7 @@ import * as d_file_in_file_out from "../../../../interface/to_be_generated/file_
 import * as t_read_file from "pareto-resources/dist/implementation/manual/schemas/read_file/transformers/fountain_pen"
 import * as s_fp from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
 import * as s_file_in_file_out from "./serializers"
-import * as s_deserialize_resolved_schema from "../../../../../../implementation/generated/pareto/generic/schemas/deserialize_resolved_model/serializers"
+import * as s_deserialize_resolved_schema from "astn-sealed/dist/implementation/schemas/deserialize_resolved_model/serializers"
 
 export const Path_Error = ($: d_file_in_file_out.Path_Error): string => {
     return _p.cc($, ($) => {

@@ -7,7 +7,7 @@ import * as signatures from "../../../interface/signatures"
 //data types
 import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_main"
 import * as d_transform_file from "../../../interface/to_be_generated/transform_file"
-import * as d_deserialize_resolved_model from "../../../../../interface/to_be_generated/deserialize_resolved_model"
+import * as d_deserialize_resolved_model from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"
 
 //dependencies
 import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refiners/main"

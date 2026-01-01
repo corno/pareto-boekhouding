@@ -3,7 +3,7 @@ import * as _pi from 'pareto-core-interface'
 import * as _pinternals from 'pareto-core-internals'
 
 import * as d_boekhouding_resolved from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
-import * as d_resolved_deserializers from "../../../../interface/to_be_generated/deserialize_resolved_model"
+import * as d_resolved_deserializers from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"
 
 export namespace signatures {
 

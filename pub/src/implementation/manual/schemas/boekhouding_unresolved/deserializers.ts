@@ -3,9 +3,8 @@ import * as _pi from 'pareto-core-interface'
 import * as _pinternals from 'pareto-core-internals'
 
 import * as d_boekhouding_source from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
-import * as d_parse_astn_source from "../../../../interface/generated/pareto/core/parse_astn_source"
 import * as d_token from "../../../../interface/generated/pareto/core/token"
-import * as d_xx from "../../../../interface/to_be_generated/deserialize_unresolved_model"
+import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_unresolved_model"
 export namespace signatures {
     export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_source.Root<d_token._T_Range>, d_xx.Error, d_xx.Parameters>
 
@@ -14,7 +13,7 @@ export namespace signatures {
 //data types
 
 //dependencies
-import * as ds_astn_source from "../../../generated/pareto/generic/schemas/astn_source/deserializers"
+import * as ds_astn_source from "astn-sealed/dist/implementation/schemas/astn_source/deserializers"
 import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/fractional_decimal"
 import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/decimal"
 import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/iso_udhr"
