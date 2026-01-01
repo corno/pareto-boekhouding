@@ -6,6 +6,7 @@ import * as d_boekhouding_source from "../../../../interface/generated/pareto/sc
 import * as d_token from "../../../../interface/generated/pareto/core/token"
 import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_unresolved_model"
 export namespace signatures {
+    
     export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_source.Root<d_token._T_Range>, d_xx.Error, d_xx.Parameters>
 
 }

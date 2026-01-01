@@ -11,28 +11,16 @@ export namespace signatures {
 }
 
 //dependencies
-import * as ds_unresolved from "../boekhouding_unresolved/deserializers"
+import * as ds_unresolved from "../boekhouding_unresolved/temp_astn_deserializers"
 import * as r_resolved_from_unresolved from "./refiners/boekhouding_unresolved"
 
 export const Root: signatures.Root = ($, abort, $p) => {
-    const x = ds_unresolved.Root(
-        $,
-        ($) => abort(['pre resolving', $]),
-        {
-            'uri': $p.uri
-        },
+    return r_resolved_from_unresolved.Root(
+        ds_unresolved.Root(
+            $,
+            ($) => abort(['pre resolving', $]),
+            $p,
+        ),
+        $p,
     )
-    const x2 = r_resolved_from_unresolved.Root(
-        x,
-        {
-            'location 2 string': ($) => {
-                return `${$p.uri}:${$.start.relative.line}:${$.start.relative.column}-${$.end.relative.line}:${$.end.relative.column}`
-            },
-            'parameters': {
-                'lookups': null,
-                'values': null,
-            }
-        }
-    )
-    return x2
 }

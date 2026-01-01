@@ -6,10 +6,6 @@ import * as d_unresolved_deserializers from "astn-sealed/dist/interface/to_be_ge
 
 export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_oude_model.Root, d_unresolved_deserializers.Error, d_unresolved_deserializers.Parameters>
 
-//data types
-import * as d_parse_astn_source from "../../../../interface/generated/pareto/core/parse_astn_source"
-
-
 //dependencies
 import * as ds_astn_source from "astn-sealed/dist/implementation/schemas/astn_source/deserializers"
 import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/fractional_decimal"
