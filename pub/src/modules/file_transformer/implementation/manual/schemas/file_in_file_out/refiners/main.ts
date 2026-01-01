@@ -1,4 +1,4 @@
-import * as _pr from 'pareto-core-refiner'
+import * as _p from 'pareto-core-refiner'
 import * as _pi from 'pareto-core-interface'
 
 //data types
@@ -34,7 +34,7 @@ const path: Production<string, d_path.Node_Path, d_file_in_file_out.Path_Error> 
 }
 
 export const Parameters: _pi.Refiner<d_file_in_file_out.Parameters, d_file_in_file_out.Error, d_main.Parameters> = ($, abort) => {
-    const iter = _pr.create_iterator($.arguments)
+    const iter = _p.create_iterator($.arguments)
 
     const current = iter['get current']()
 

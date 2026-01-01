@@ -1,5 +1,5 @@
 import * as _pi from 'pareto-core-interface'
-import * as _pt from 'pareto-core-transformer'
+import * as _p from 'pareto-core-transformer'
 
 
 //data types
@@ -15,8 +15,8 @@ type Possibly_Relevant_Entry<T> = {
 
 const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _pi.Dictionary<T> => {
     return $.filter(($) => $['is relevant']
-        ? _pt.set($['entry'])
-        : _pt.not_set()
+        ? _p.set($['entry'])
+        : _p.not_set()
     )
 }
 
@@ -38,11 +38,11 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> =($) => {
 
                                 const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
                                     return {
-                                        'is relevant': _pt.cc($.Type, ($) => {
+                                        'is relevant': _p.cc($.Type, ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return _pt.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
-                                                case 'Kosten': return _pt.ss($, ($) => false)
-                                                default: return _pt.au($[0])
+                                                case 'Balans': return _p.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
+                                                case 'Kosten': return _p.ss($, ($) => false)
+                                                default: return _p.au($[0])
                                             }
                                         }),
                                         'entry': {
@@ -67,11 +67,11 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> =($) => {
 
                                 const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
                                     return {
-                                        'is relevant': _pt.cc($.Type, ($) => {
+                                        'is relevant': _p.cc($.Type, ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return _pt.ss($, ($) => false)
-                                                case 'Kosten': return _pt.ss($, ($) => $.Grootboekrekening.key === key)
-                                                default: return _pt.au($[0])
+                                                case 'Balans': return _p.ss($, ($) => false)
+                                                case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening.key === key)
+                                                default: return _p.au($[0])
                                             }
                                         }),
                                         'entry': {
