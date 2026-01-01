@@ -23,7 +23,7 @@ namespace _psh {
                     'line': loc.line,
                 },
             },
-            'file': loc.file
+            'uri': loc.file
         }
     }
 
@@ -459,7 +459,6 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
                     case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', ({
                         'Rekening': _pt.cc($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
                             $,
-                            null
                         )),
                     })]))
                     default: return _pt.au($[0])
@@ -482,7 +481,6 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
                     case 'Nee': return _pt.ss($, ($) => _psh.wrap_state_group(['Nee', ({
                         'Rekening': _pt.cc($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
                             $,
-                            null
                         )),
                     })]))
                     default: return _pt.au($[0])
@@ -491,7 +489,6 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
         })))),
         'Overige balans items': _pt.cc($['Overige balans items'], ($) => _psh.wrap_dictionary($.map(($) => Overige_balans_item(
             $,
-            null
         )))),
         'Verrekenposten': _pt.cc($['Verrekenposten'], ($) => _psh.wrap_dictionary($.map(($) => null))),
     })),
@@ -518,7 +515,7 @@ export const Jaarbeheer: _i_signatures.Jaarbeheer = ($) => ({
         'Salarisrondes': _pt.cc($['Salarisrondes'], ($) => _psh.wrap_dictionary($.map(($) => null))),
     })),
 })
-export const Jaren: _i_signatures.Jaren = ($, $p) => _psh.wrap_dictionary($.Jaren.map(($, key) => ({
+export const Jaren: _i_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.map(($, key) => ({
     'Afgesloten': _pt.cc($['Afgesloten'], ($) => _pt.cc($, ($): _i_out.Jaren.D.Afgesloten<d_token._T_Range> => {
         switch ($[0]) {
             case 'Ja': return _pt.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
@@ -528,19 +525,15 @@ export const Jaren: _i_signatures.Jaren = ($, $p) => _psh.wrap_dictionary($.Jare
     })),
     'Eerste boekjaar': _pt.cc($['Eerste boekjaar'], ($) => Eerste_boekjaar(
         $,
-        null
     )),
     'Grootboekrekeningen': _pt.cc($, ($) => Grootboekrekeningen(
         $,
-        null
     )),
     'Handelstransacties': _pt.cc($, ($) => Handelstransacties(
         $,
-        null
     )),
     'Jaarbeheer': _pt.cc($, ($) => Jaarbeheer(
         $,
-        null
     )),
     'Mutaties': _pt.cc($, ($) => Mutaties(
         $,
@@ -641,19 +634,15 @@ export const Overige_balans_item: _i_signatures.Overige_balans_item = ($) => ({
 export const Root: _i_signatures.Root = ($) => ({
     'Beheer': _pt.cc($, ($) => Beheer(
         $,
-        null
     )),
     'Categorieen': _pt.cc($, ($) => Grootboek_Categorieen(
         $,
-        null
     )),
     'Fiscaal': _pt.cc($, ($) => Fiscaal(
         $,
-        null
     )),
     'Jaren': _pt.cc($, ($) => Jaren(
         $,
-        null
     )),
 })
 export const Verwijzing_naar_Bankrekening: _i_signatures.Verwijzing_naar_Bankrekening = ($) => _psh.wrap_reference($)

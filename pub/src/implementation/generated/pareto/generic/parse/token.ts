@@ -1,12 +1,13 @@
-import * as _ea from 'pareto-core-deserializer'
+import * as _pds from 'pareto-core-deserializer'
 import * as _pinternals from 'pareto-core-internals'
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
-import * as _out from "../../../../../interface/generated/pareto/core/token"
+import * as d_token from "../../../../../interface/generated/pareto/core/token"
+import * as d_parse_astn_source from "../../../../../interface/generated/pareto/core/parse_astn_source"
 
-import { String_Iterator } from "./string_iterator"
-import { My_Lexer_Error, throw_lexer_error } from "./astn_parse_generic"
-import { is_control_character } from './string_iterator'
+import { Deprecated_String_Iterator } from "../temp/string_iterator"
+import { My_Lexer_Error } from "./astn_parse_generic"
+import { is_control_character } from '../temp/string_iterator'
 
 import { $$ as op_parse_hexadecimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/hexadecimal"
 
@@ -20,31 +21,42 @@ const WhitespaceChars = {
     comma: 0x2C,                // ,
 }
 
+export const temp_throw_lexer_error = (
+    type: d_parse_astn_source.Lexical_Error,
+    range: d_token._T_Range,
+    abort: ($: My_Lexer_Error) => never
+): never => {
+    return abort({
+        'type': type,
+        'range': range,
+    })
+}
+
 
 export const Whitespace = (
-    string_iterator: String_Iterator,
+    iterator: Deprecated_String_Iterator,
     abort: ($: My_Lexer_Error) => never,
-): _out._T_Whitespace => {
+): d_token._T_Whitespace => {
 
-    const start = string_iterator['create location info']()
+    const start = iterator['create location info']()
     return {
-        'value': _ea.build_text(($i) => {
+        'value': _pds.build_text(($i) => {
             while (true) {
 
 
                 {
-                    const $ = string_iterator['get current character']()
+                    const $ = iterator['get current character']()
                     if ($ === null) {
                         return
                     }
                     if (is_control_character($)) {
-                        throw_lexer_error(
+                        return temp_throw_lexer_error(
                             ['unexpected control character', $],
                             {
 
-                                'start': string_iterator['create location info'](),
-                                'end': string_iterator['create location info'](),
-                                'file': string_iterator['get file'](),
+                                'start': iterator['create location info'](),
+                                'end': iterator['create location info'](),
+                                'uri': iterator['get uri'](),
                             },
                             abort,
                         )
@@ -52,23 +64,23 @@ export const Whitespace = (
                     }
                     switch ($) {
                         case 0x09: // \t
-                            string_iterator['consume character']()
+                            iterator['consume character']()
                             $i['add character']($)
                             break
                         case 0x0A: // \n
-                            string_iterator['consume character']()
+                            iterator['consume character']()
                             $i['add character']($)
                             break
                         case 0x0D: // \r
-                            string_iterator['consume character']()
+                            iterator['consume character']()
                             $i['add character']($)
                             break
                         case 0x20: // space
-                            string_iterator['consume character']()
+                            iterator['consume character']()
                             $i['add character']($)
                             break
                         case 0x2C: // ,
-                            string_iterator['consume character']()
+                            iterator['consume character']()
                             $i['add character']($)
                             break
                         default:
@@ -80,47 +92,47 @@ export const Whitespace = (
         }),
         'range': {
             'start': start,
-            'end': string_iterator['create location info'](),
-            'file': string_iterator['get file'](),
+            'end': iterator['create location info'](),
+            'uri': iterator['get uri'](),
         }
     }
 }
 
 export const Trivia = (
-    string_iterator: String_Iterator,
+    iterator: Deprecated_String_Iterator,
     abort: ($: My_Lexer_Error) => never,
-): _out._T_Trivia => {
+): d_token._T_Trivia => {
 
     return {
-        'leading whitespace': Whitespace(string_iterator, abort),
-        'comments': _ea.build_list(($i) => {
+        'leading whitespace': Whitespace(iterator, abort),
+        'comments': _pds.build_list(($i) => {
             while (true) {
-                const $ = string_iterator['get current character']()
+                const $ = iterator['get current character']()
                 if ($ === null) {
                     return //normal end of input
                 }
                 switch ($) {
                     case 0x2F: // /
-                        const start = string_iterator['create location info']()
-                        const next_char = string_iterator['look ahead'](1)
+                        const start = iterator['create location info']()
+                        const next_char = iterator['look ahead'](1)
                         if (next_char === null) {
-                            const start = string_iterator['create location info']()
-                            string_iterator['consume character']()
-                            const end = string_iterator['create location info']()
-                            return throw_lexer_error(
+                            const start = iterator['create location info']()
+                            iterator['consume character']()
+                            const end = iterator['create location info']()
+                            return temp_throw_lexer_error(
                                 ['dangling slash', null],
                                 {
                                     'start': start,
                                     'end': end,
-                                    'file': string_iterator['get file'](),
+                                    'uri': iterator['get uri'](),
                                 },
                                 abort,
                             )
                         }
                         switch (next_char) {
                             case 0x2F: // /
-                                string_iterator['consume character']() // consume the first /
-                                string_iterator['consume character']() // consume the second /
+                                iterator['consume character']() // consume the first /
+                                iterator['consume character']() // consume the second /
                                 const Character = {
                                     line_feed: 0x0A,            // \n
                                     carriage_return: 0x0D,      // \r
@@ -128,9 +140,9 @@ export const Trivia = (
                                 }
                                 $i['add element']({
                                     'type': ['line', null],
-                                    'content': _ea.build_text(($i) => {
+                                    'content': _pds.build_text(($i) => {
                                         while (true) {
-                                            const $ = string_iterator['get current character']()
+                                            const $ = iterator['get current character']()
                                             if ($ === null) {
                                                 return
                                             }
@@ -140,45 +152,45 @@ export const Trivia = (
                                                 case Character.carriage_return:
                                                     return
                                                 default:
-                                                    string_iterator['consume character']()
+                                                    iterator['consume character']()
                                                     $i['add character']($)
                                             }
                                         }
                                     }),
                                     'range': {
                                         'start': start,
-                                        'end': string_iterator['create location info'](),
-                                        'file': string_iterator['get file'](),
+                                        'end': iterator['create location info'](),
+                                        'uri': iterator['get uri'](),
                                     },
-                                    'trailing whitespace': Whitespace(string_iterator, abort)
+                                    'trailing whitespace': Whitespace(iterator, abort)
                                 })
                                 break
                             case 0x2A: {// *
-                                string_iterator['consume character']() // consume the first /
-                                string_iterator['consume character']() // consume the asterisk
+                                iterator['consume character']() // consume the first /
+                                iterator['consume character']() // consume the asterisk
                                 $i['add element']({
                                     'type': ['block', null],
-                                    'content': _ea.build_text(($i) => {
+                                    'content': _pds.build_text(($i) => {
                                         let found_asterisk = false
                                         const Character = {
                                             solidus: 0x2F,              // /
                                             asterisk: 0x2A,             // *
                                         }
                                         while (true) {
-                                            const $ = string_iterator['get current character']()
+                                            const $ = iterator['get current character']()
                                             if ($ === null) {
-                                                return throw_lexer_error(
+                                                return temp_throw_lexer_error(
                                                     ['unterminated block comment', null],
                                                     {
                                                         'start': start,
-                                                        'end': string_iterator['create location info'](),
-                                                        'file': string_iterator['get file'](),
+                                                        'end': iterator['create location info'](),
+                                                        'uri': iterator['get uri'](),
                                                     },
                                                     abort,
                                                 )
                                             }
                                             if ($ === Character.solidus && found_asterisk) {
-                                                string_iterator['consume character']() // consume the solidus
+                                                iterator['consume character']() // consume the solidus
                                                 //found asterisk before solidus, so this is the end of the comment
                                                 return
                                             }
@@ -191,25 +203,25 @@ export const Trivia = (
                                             } else {
                                                 $i['add character']($)
                                             }
-                                            string_iterator['consume character']()
+                                            iterator['consume character']()
                                         }
                                     }),
                                     'range': {
                                         'start': start,
-                                        'end': string_iterator['create location info'](),
-                                        'file': string_iterator['get file'](),
+                                        'end': iterator['create location info'](),
+                                        'uri': iterator['get uri'](),
                                     },
-                                    'trailing whitespace': Whitespace(string_iterator, abort)
+                                    'trailing whitespace': Whitespace(iterator, abort)
                                 })
                                 break
                             }
                             default:
-                                return throw_lexer_error(
+                                return temp_throw_lexer_error(
                                     ['dangling slash', null],
                                     {
                                         'start': start,
-                                        'end': string_iterator['create location info'](),
-                                        'file': string_iterator['get file'](),
+                                        'end': iterator['create location info'](),
+                                        'uri': iterator['get uri'](),
                                     },
                                     abort,
                                 )
@@ -224,24 +236,24 @@ export const Trivia = (
 }
 
 export const Annotated_Token = (
-    st: String_Iterator,
+    iterator: Deprecated_String_Iterator,
     abort: ($: My_Lexer_Error) => never,
-): _out._T_Annotated_Token => {
-    const $ = st['get current character']()
+): d_token._T_Annotated_Token => {
+    const $ = iterator['get current character']()
     if ($ === null) {
-        return throw_lexer_error(
+        return temp_throw_lexer_error(
             ['unexpected end of input', null],
             {
-                'start': st['create location info'](),
-                'end': st['create location info'](),
-                'file': st['get file'](),
+                'start': iterator['create location info'](),
+                'end': iterator['create location info'](),
+                'uri': iterator['get uri'](),
             },
             abort,
         )
     }
     return {
-        'start': st['create location info'](),
-        'type': _ea.block((): _out._T_Token_Type => {
+        'start': iterator['create location info'](),
+        'type': _pds.block((): d_token._T_Token_Type => {
 
             const Character = {
 
@@ -273,90 +285,111 @@ export const Annotated_Token = (
             }
             switch ($) {
                 case Character.open_brace:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['{', null]
                 case Character.open_bracket:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['[', null]
                 case Character.open_angle_bracket:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['<', null]
                 case Character.open_paren:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['(', null]
 
 
                 case Character.close_brace:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['}', null]
                 case Character.close_bracket:
-                    st['consume character']()
+                    iterator['consume character']()
                     return [']', null]
                 case Character.close_angle_bracket:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['>', null]
                 case Character.close_paren:
-                    st['consume character']()
+                    iterator['consume character']()
                     return [')', null]
 
                 //individuals
                 case Character.hash:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['#', null]
                 case Character.pipe:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['|', null]
                 case Character.tilde:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['~', null]
                 case Character.asterisk:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['*', null]
                 case Character.at:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['@', null]
                 case Character.bang:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['!', null]
                 case Character.colon:
-                    st['consume character']()
+                    iterator['consume character']()
                     return [':', null]
                 case Character.quotation_mark:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['string', {
-                        'value': Delimited_String(st, ($) => $ === Character.quotation_mark, true, abort),
+                        'value': Delimited_String(
+                            iterator,
+                            abort,
+                            {
+                                'allow_newlines': true,
+                                'is_end_character': ($) => $ === Character.quotation_mark
+                            }
+                        ),
                         'type': ['quoted', null],
                     }]
                 case Character.backtick:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['string', {
-                        'value': Delimited_String(st, ($) => $ === Character.backtick, false, abort),
+                        'value': Delimited_String(
+                            iterator,
+                            abort,
+                            {
+                                'allow_newlines': false,
+                                'is_end_character': ($) => $ === Character.backtick
+                            }
+                        ),
                         'type': ['backticked', null],
                     }]
                 case Character.apostrophe:
-                    st['consume character']()
+                    iterator['consume character']()
                     return ['string', {
-                        'value': Delimited_String(st, ($) => $ === Character.apostrophe, false, abort),
+                        'value': Delimited_String(
+                            iterator,
+                            abort,
+                            {
+                                'allow_newlines': false,
+                                'is_end_character': ($) => $ === Character.apostrophe
+                            }
+                        ),
                         'type': ['apostrophed', null],
                     }]
 
                 default:
                     return ['string', {
                         'type': ['undelimited', null],
-                        'value': _ea.build_text(($i) => {
+                        'value': _pds.build_text(($i) => {
                             while (true) {
-                                const $ = st['get current character']()
+                                const $ = iterator['get current character']()
                                 if ($ === null) {
                                     return
                                 }
 
                                 if (is_control_character($)) {
-                                    throw_lexer_error(
+                                    temp_throw_lexer_error(
                                         ['unexpected control character', $],
                                         {
-                                            'start': st['create location info'](),
-                                            'end': st['create location info'](),
-                                            'file': st['get file'](),
+                                            'start': iterator['create location info'](),
+                                            'end': iterator['create location info'](),
+                                            'uri': iterator['get uri'](),
                                         },
                                         abort
                                     )
@@ -389,25 +422,27 @@ export const Annotated_Token = (
                                 ) {
                                     return
                                 }
-                                st['consume character']()
+                                iterator['consume character']()
                                 $i['add character']($)
                             }
                         }),
                     }]
             }
         }),
-        'end': st['create location info'](),
-        'file': st['get file'](),
-        'trailing trivia': Trivia(st, abort),
+        'end': iterator['create location info'](),
+        'uri': iterator['get uri'](),
+        'trailing trivia': Trivia(iterator, abort),
     }
 }
 
 export const Delimited_String = (
-    string_iterator: String_Iterator,
-    is_end_character: (character: number) => boolean,
-    allow_newlines: boolean,
+    iterator: Deprecated_String_Iterator,
     abort: ($: My_Lexer_Error) => never,
-): _out._T_Delimited_String => {
+    $p: {
+        is_end_character: (character: number) => boolean,
+        allow_newlines: boolean,
+    }
+): d_token._T_Delimited_String => {
 
     const Character = {
         backspace: 0x08,            // \b
@@ -431,139 +466,139 @@ export const Delimited_String = (
         F: 0x46,                    // F
 
     }
-    const start = string_iterator['create location info']()
-    const txt = _ea.build_text(($i) => {
+    const start = iterator['create location info']()
+    const txt = _pds.build_text(($i) => {
         while (true) {
-            const $ = string_iterator['get current character']()
+            const $ = iterator['get current character']()
             if ($ === null) {
 
-                return throw_lexer_error(
+                return temp_throw_lexer_error(
                     ['unterminated string', null],
                     {
                         'start': start,
-                        'end': string_iterator['create location info'](),
-                        'file': string_iterator['get file'](),
+                        'end': iterator['create location info'](),
+                        'uri': iterator['get uri'](),
                     },
                     abort,
                 )
             }
             if (is_control_character($)) {
-                throw_lexer_error(
+                temp_throw_lexer_error(
                     ['unexpected control character', $],
                     {
-                        'start': string_iterator['create location info'](),
-                        'end': string_iterator['create location info'](),
-                        'file': string_iterator['get file'](),
+                        'start': iterator['create location info'](),
+                        'end': iterator['create location info'](),
+                        'uri': iterator['get uri'](),
                     },
                     abort,
                 )
 
             }
-            if (is_end_character($)) {
-                string_iterator['consume character']() // consume the end character
+            if ($p.is_end_character($)) {
+                iterator['consume character']() // consume the end character
                 return
             }
             switch ($) {
                 case Character.line_feed:
                 case Character.carriage_return:
-                    if (!allow_newlines) {
-                        return throw_lexer_error(
+                    if (!$p.allow_newlines) {
+                        return temp_throw_lexer_error(
                             ['unexpected end of line in delimited string', null],
                             {
                                 'start': start,
-                                'end': string_iterator['create location info'](),
-                                'file': string_iterator['get file'](),
+                                'end': iterator['create location info'](),
+                                'uri': iterator['get uri'](),
                             },
                             abort
                         )
                     }
-                    string_iterator['consume character']()
+                    iterator['consume character']()
                     $i['add character']($)
                     break
                 case Character.reverse_solidus: // \ (escape)
-                    string_iterator['consume character']()
+                    iterator['consume character']()
                     {
-                        const $ = string_iterator['get current character']()
+                        const $ = iterator['get current character']()
                         if ($ === null) {
-                            return throw_lexer_error(
+                            return temp_throw_lexer_error(
                                 ['missing character after escape', null],
                                 {
                                     'start': start,
-                                    'end': string_iterator['create location info'](),
-                                    'file': string_iterator['get file'](),
-                                },  
+                                    'end': iterator['create location info'](),
+                                    'uri': iterator['get uri'](),
+                                },
                                 abort,
                             )
                         }
                         switch ($) {
                             case Character.quotation_mark:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.quotation_mark)
                                 break
                             case Character.apostrophe:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.apostrophe)
                                 break
                             case Character.backtick:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.backtick)
                                 break
                             case Character.reverse_solidus:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.reverse_solidus)
                                 break
                             case Character.solidus:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.solidus)
                                 break
                             case Character.b:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.backspace)
                                 break
                             case Character.f:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.form_feed)
                                 break
                             case Character.n:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.line_feed)
                                 break
                             case Character.r:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.carriage_return)
                                 break
                             case Character.t:
-                                string_iterator['consume character']()
+                                iterator['consume character']()
                                 $i['add character'](Character.tab)
                                 break
                             case Character.u:
-                                string_iterator['consume character']()
-                                $i['add character'](op_parse_hexadecimal(_ea.build_text(($i) => {
+                                iterator['consume character']()
+                                $i['add character'](op_parse_hexadecimal(_pds.build_text(($i) => {
                                     const get_char = () => {
-                                        const char = string_iterator['get current character']()
+                                        const char = iterator['get current character']()
                                         if (char === null) {
-                                            return throw_lexer_error(
+                                            return temp_throw_lexer_error(
                                                 ['unterminated unicode escape sequence', null],
                                                 {
                                                     'start': start,
-                                                    'end': string_iterator['create location info'](),
-                                                    'file': string_iterator['get file'](),
+                                                    'end': iterator['create location info'](),
+                                                    'uri': iterator['get uri'](),
                                                 },
                                                 abort,
                                             )
                                         }
                                         if (char < Character.a || (char > Character.f && char < Character.A) || char > Character.F || char < 0x30 || char > 0x39) {
-                                            return throw_lexer_error(
+                                            return temp_throw_lexer_error(
                                                 ['invalid unicode escape sequence', null],
                                                 {
                                                     'start': start,
-                                                    'end': string_iterator['create location info'](),
-                                                    'file': string_iterator['get file'](),
+                                                    'end': iterator['create location info'](),
+                                                    'uri': iterator['get uri'](),
                                                 },
                                                 abort,
                                             )
                                         }
-                                        string_iterator['consume character']()
+                                        iterator['consume character']()
                                         return char
                                     }
                                     $i['add character'](get_char())
@@ -573,12 +608,12 @@ export const Delimited_String = (
                                 }), () => _pinternals.panic(`unreachable`)))
                                 break
                             default:
-                                return throw_lexer_error(
+                                return temp_throw_lexer_error(
                                     ['unknown escape character', null],
                                     {
                                         'start': start,
-                                        'end': string_iterator['create location info'](),
-                                        'file': string_iterator['get file'](),
+                                        'end': iterator['create location info'](),
+                                        'uri': iterator['get uri'](),
                                     },
                                     abort,
                                 )
@@ -586,7 +621,7 @@ export const Delimited_String = (
                     }
                     break
                 default:
-                    string_iterator['consume character']()
+                    iterator['consume character']()
                     $i['add character']($)
             }
         }
@@ -595,21 +630,18 @@ export const Delimited_String = (
 }
 
 export const Tokenizer_Result = (
-    $: null,
-    $p: {
-        'string iterator': String_Iterator
-    },
+    iterator: Deprecated_String_Iterator,
     abort: ($: My_Lexer_Error) => never,
-): _out._T_Tokenizer_Result => {
+): d_token._T_Tokenizer_Result => {
     return {
-        'leading trivia': Trivia($p['string iterator'], abort),
-        'tokens': _ea.build_list<_out._T_Annotated_Token>($i => {
-            while ($p['string iterator']['get current character']() !== null) {
+        'leading trivia': Trivia(iterator, abort),
+        'tokens': _pds.build_list<d_token._T_Annotated_Token>($i => {
+            while (iterator['get current character']() !== null) {
 
-                const token = Annotated_Token($p['string iterator'], abort,)
+                const token = Annotated_Token(iterator, abort,)
                 $i['add element'](token)
             }
         }),
-        'end': $p['string iterator']['create location info']()
+        'end': iterator['create location info']()
     }
 }

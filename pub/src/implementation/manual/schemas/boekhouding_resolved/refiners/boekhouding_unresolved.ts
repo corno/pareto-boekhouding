@@ -6,7 +6,7 @@ import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekh
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/resolve"
 
 
-export const r_Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie =  ($, $p) => _pa.block(() => {
+export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -75,7 +75,7 @@ export const r_Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutat
         })
     })
 })
-export const r_Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
+export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -424,7 +424,7 @@ export const r_Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const r_Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _pa.block(() => {
+export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.cc($['state group'], ($): _i_out._T_Eerste_boekjaar => {
@@ -450,7 +450,7 @@ export const r_Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _
         }
     })
 })
-export const r_Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _pa.block(() => {
+export const Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -536,7 +536,7 @@ export const r_Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const r_Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($, $p) => _pa.block(() => {
+export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -689,7 +689,7 @@ export const r_Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  
         })
     })
 })
-export const r_Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, $p) => _pa.block(() => {
+export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -739,7 +739,7 @@ export const r_Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, 
         })
     })
 })
-export const r_Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) => _pa.block(() => {
+export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -1257,7 +1257,7 @@ export const r_Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p
         })
     })
 })
-export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() => {
+export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -1434,7 +1434,7 @@ export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block((
                                         case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
                                             return _pa.block(() => {
-                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => r_Verwijzing_naar_Informele_rekening(
+                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
                                                     $,
                                                     {
                                                         'location 2 string': l2s,
@@ -1490,7 +1490,7 @@ export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block((
                                         case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
                                             return _pa.block(() => {
-                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => r_Verwijzing_naar_Bankrekening(
+                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
                                                     $,
                                                     {
                                                         'location 2 string': l2s,
@@ -1547,7 +1547,7 @@ export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block((
                     {
                         'location 2 string': l2s,
                         'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => r_Overige_balans_item(
+                            return _pa.cc($['value'], ($) => Overige_balans_item(
                                 $,
                                 {
                                     'location 2 string': l2s,
@@ -1592,7 +1592,7 @@ export const r_Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block((
         })
     })
 })
-export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
+export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -1614,7 +1614,7 @@ export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                             }
                         }))
                         const p_Startdatum_boekjaar: _i_out._T_Jaren.D.Startdatum_boekjaar = _pa.cc($['Startdatum boekjaar'], ($) => $)
-                        const p_Grootboekrekeningen: _i_out._T_Jaren.D.Grootboekrekeningen = _pa.cc($['Grootboekrekeningen'], ($) => r_Grootboekrekeningen(
+                        const p_Grootboekrekeningen: _i_out._T_Jaren.D.Grootboekrekeningen = _pa.cc($['Grootboekrekeningen'], ($) => Grootboekrekeningen(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1624,7 +1624,7 @@ export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Eerste_boekjaar: _i_out._T_Jaren.D.Eerste_boekjaar = _pa.cc($['Eerste boekjaar'], ($) => r_Eerste_boekjaar(
+                        const p_Eerste_boekjaar: _i_out._T_Jaren.D.Eerste_boekjaar = _pa.cc($['Eerste boekjaar'], ($) => Eerste_boekjaar(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1636,7 +1636,7 @@ export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Jaarbeheer: _i_out._T_Jaren.D.Jaarbeheer = _pa.cc($['Jaarbeheer'], ($) => r_Jaarbeheer(
+                        const p_Jaarbeheer: _i_out._T_Jaren.D.Jaarbeheer = _pa.cc($['Jaarbeheer'], ($) => Jaarbeheer(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1651,7 +1651,7 @@ export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Handelstransacties: _i_out._T_Jaren.D.Handelstransacties = _pa.cc($['Handelstransacties'], ($) => r_Handelstransacties(
+                        const p_Handelstransacties: _i_out._T_Jaren.D.Handelstransacties = _pa.cc($['Handelstransacties'], ($) => Handelstransacties(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1665,7 +1665,7 @@ export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Mutaties: _i_out._T_Jaren.D.Mutaties = _pa.cc($['Mutaties'], ($) => r_Mutaties(
+                        const p_Mutaties: _i_out._T_Jaren.D.Mutaties = _pa.cc($['Mutaties'], ($) => Mutaties(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1697,7 +1697,7 @@ export const r_Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
         )
     })
 })
-export const r_Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
+export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -1743,7 +1743,7 @@ export const r_Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() =>
                                                         })
                                                     })])
                                                     case 'Resultaat': return _pa.ss($, ($) => ['Resultaat', _pa.block(() => {
-                                                        return r_Balans_Resultaat_Mutatie(
+                                                        return Balans_Resultaat_Mutatie(
                                                             $,
                                                             {
                                                                 'location 2 string': l2s,
@@ -1827,7 +1827,7 @@ export const r_Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() =>
                                                     })
                                                 })])
                                                 case 'Resultaat': return _pa.ss($, ($) => ['Resultaat', _pa.block(() => {
-                                                    return r_Balans_Resultaat_Mutatie(
+                                                    return Balans_Resultaat_Mutatie(
                                                         $,
                                                         {
                                                             'location 2 string': l2s,
@@ -1898,7 +1898,7 @@ export const r_Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() =>
         })
     })
 })
-export const r_Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p) => _pa.block(() => {
+export const Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
@@ -1946,11 +1946,11 @@ export const r_Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, 
         })
     })
 })
-export const r_Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
+export const Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _pa.block(() => {
-        const p_Fiscaal: _i_out._T_Root.Fiscaal = _pa.cc($['Fiscaal'], ($) => r_Fiscaal(
+        const p_Fiscaal: _i_out._T_Root.Fiscaal = _pa.cc($['Fiscaal'], ($) => Fiscaal(
             $,
             {
                 'location 2 string': l2s,
@@ -1960,7 +1960,7 @@ export const r_Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
                 }),
             }
         ))
-        const p_Categorieen: _i_out._T_Root.Categorieen = _pa.cc($['Categorieen'], ($) => r_Grootboek_Categorieen(
+        const p_Categorieen: _i_out._T_Root.Categorieen = _pa.cc($['Categorieen'], ($) => Grootboek_Categorieen(
             $,
             {
                 'location 2 string': l2s,
@@ -1972,7 +1972,7 @@ export const r_Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
                 }),
             }
         ))
-        const p_Beheer: _i_out._T_Root.Beheer = _pa.cc($['Beheer'], ($) => r_Beheer(
+        const p_Beheer: _i_out._T_Root.Beheer = _pa.cc($['Beheer'], ($) => Beheer(
             $,
             {
                 'location 2 string': l2s,
@@ -1984,7 +1984,7 @@ export const r_Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
                 }),
             }
         ))
-        const p_Jaren: _i_out._T_Root.Jaren = _pa.cc($['Jaren'], ($) => r_Jaren(
+        const p_Jaren: _i_out._T_Root.Jaren = _pa.cc($['Jaren'], ($) => Jaren(
             $,
             {
                 'location 2 string': l2s,
@@ -2004,7 +2004,7 @@ export const r_Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const r_Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Bankrekening =  ($, $p) => _pa.block(() => {
+export const Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Bankrekening =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _i_generic.get_entry(
@@ -2018,7 +2018,7 @@ export const r_Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Ba
         }
     )
 })
-export const r_Verwijzing_naar_Informele_rekening: _i_signatures._T_Verwijzing_naar_Informele_rekening =  ($, $p) => _pa.block(() => {
+export const Verwijzing_naar_Informele_rekening: _i_signatures._T_Verwijzing_naar_Informele_rekening =  ($, $p) => _pa.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _i_generic.get_entry(

@@ -11,7 +11,7 @@ export type Location = {
     }
 }
 
-export type String_Iterator = {
+export type Deprecated_String_Iterator = { //use an iterator with Annotated_Character
 
     'consume character': () => void
     'consume string': ($: string) => void
@@ -23,7 +23,7 @@ export type String_Iterator = {
     'look ahead': ($: number) => number | null
     'create offset location info': (subtract: number) => Location
     'create location info': () => Location
-    'get file': () => string
+    'get uri': () => string
     'create location info string': () => string
     /**
      * if no non-whitespace character has been found yet on the current line,
@@ -56,9 +56,9 @@ export const create_string_iterator = (
     $: string,
     $p: {
         'tab size': number
-        'file': string
+        'uri': string
     }
-): String_Iterator => {
+): Deprecated_String_Iterator => {
     const source = $
     const characters = op_to_character_list($)
     const length = characters.get_number_of_elements()
@@ -166,8 +166,8 @@ export const create_string_iterator = (
                 ? relative_position['line indentation']
                 : relative_position['column']
         },
-        'get file': () => {
-            return $p.file
+        'get uri': () => {
+            return $p.uri
         }
     }
 }

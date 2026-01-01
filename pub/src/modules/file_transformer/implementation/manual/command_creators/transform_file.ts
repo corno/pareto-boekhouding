@@ -1,0 +1,81 @@
+import * as _pc from 'pareto-core-command'
+import * as _pinternals from 'pareto-core-internals'
+import * as _pi from 'pareto-core-interface'
+
+import * as signatures from "../../../interface/signatures"
+
+//data types
+import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_main"
+import * as d_transform_file from "../../../interface/to_be_generated/transform_file"
+import * as d_deserialize_resolved_model from "../../../../../interface/to_be_generated/deserialize_resolved_model"
+
+//dependencies
+import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refiners/main"
+import * as s_path from "pareto-resources/dist/implementation/manual/schemas/path/serializers"
+import * as s_transform_file from "../schemas/transform_file/serializers"
+
+export type Creator = <Resolved_Model>(
+    deserializer: _pi.Deserializer_With_Parameters<
+        Resolved_Model,
+        d_deserialize_resolved_model.Error,
+        d_deserialize_resolved_model.Parameters
+    >,
+    serializer: _pi.Serializer<Resolved_Model>
+) => signatures.commands.transform_file
+
+export const $$: Creator = (deserializer, serializer) => _pc.create_command_procedure(
+    ($p, $cr, $qr) => [
+        _pc.create_error_handling_context<d_main.Error, d_transform_file.Error>(
+            [
+                _pc.refine_without_error_transformation(
+                    (abort) => r_file_in_file_out_from_main.Parameters($p, ($) => abort(['file in file out', ['command line arguments', $]])),
+                    ($r) => [
+
+                        _pc.query_without_error_transformation(
+                            $qr['read file'](
+                                $r.in,
+                                ($): d_transform_file.Error => {
+                                    return ['file in file out', ['reading file', $]]
+                                }
+                            ).refine_without_error_transformation(
+                                ($, abort) => deserializer(
+                                    $,
+                                    ($) => abort(['processing', $]),
+                                    {
+                                        'uri': s_path.Node_Path($r.in),
+                                    },
+                                )
+                            ).transform_result(($) => {
+                                return {
+                                    'path': $r.out,
+                                    'data': serializer($),
+                                }
+                            }),
+                            ($v) => [
+                                $cr['write file'].execute(
+                                    $v,
+                                    ($) => {
+                                        return ['file in file out', ['writing file', $]]
+                                    },
+
+                                )
+                            ]
+                        )
+                    ]
+                ),
+            ],
+            ($) => $cr['log error'].execute(
+                {
+                    'lines': _pinternals.list_literal([s_transform_file.My_Error($)])
+                },
+                ($) => ({
+                    'exit code': 2
+                })
+            ),
+            {
+                'exit code': 1
+            },
+        ),
+    ]
+)
+

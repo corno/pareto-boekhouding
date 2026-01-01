@@ -3,11 +3,11 @@ import * as _pi from 'pareto-core-interface'
 
 //data types
 import * as d_file_in_file_out from "../../../../../interface/to_be_generated/file_in_file_out"
-import * as d_path from "exupery-resources/dist/interface/generated/pareto/schemas/path/data_types/target"
-import * as d_main from "exupery-resources/dist/interface/to_be_generated/temp_main"
+import * as d_path from "pareto-resources/dist/interface/generated/pareto/schemas/path/data_types/target"
+import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_main"
 
 //dependencies
-import * as ds_path from "exupery-resources/dist/implementation/deserializers/schemas/node_path"
+import * as ds_path from "pareto-resources/dist/implementation/manual/schemas/node_path/deserializers"
 
 type Production<Iterartor_Element, Result, Error> = (
     iterator: _pi.Iterator<Iterartor_Element>,
@@ -26,10 +26,10 @@ const path: Production<string, d_path.Node_Path, d_file_in_file_out.Path_Error> 
             },
             () => abort(['missing', null])
         ),
+        ($) => abort(['not valid', null]),
         {
             'pedantic': true,
         },
-        ($) => abort(['not valid', null]),
     )
 }
 

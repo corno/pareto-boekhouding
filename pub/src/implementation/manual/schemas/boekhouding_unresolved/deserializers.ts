@@ -3,22 +3,18 @@ import * as _pi from 'pareto-core-interface'
 import * as _pinternals from 'pareto-core-internals'
 
 import * as d_boekhouding_source from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
-import * as d_parse_result from "../../../../interface/generated/pareto/core/parse_result"
+import * as d_parse_astn_source from "../../../../interface/generated/pareto/core/parse_astn_source"
 import * as d_token from "../../../../interface/generated/pareto/core/token"
-
-export type Error =
-    | ['parse error', d_parse_result._T_Parse_Error]
-    | ['primitive deserialization', string]
-
+import * as d_xx from "../../../../interface/to_be_generated/deserialize_unresolved_model"
 export namespace signatures {
-    export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_source.Root<d_token._T_Range>, Error, { 'file': string }>
+    export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_source.Root<d_token._T_Range>, d_xx.Error, d_xx.Parameters>
 
 }
 
 //data types
 
 //dependencies
-import { parse as ds_parse } from "../../../generated/pareto/generic/parse/parse"
+import * as ds_astn_source from "../../../generated/pareto/generic/schemas/astn_source/deserializers"
 import { $$ as ds_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/fractional_decimal"
 import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/decimal"
 import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/iso_udhr"
@@ -26,15 +22,15 @@ import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation
 
 import * as r_um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
 
-export const $: signatures.Root = ($, $p, abort) => {
+export const Root: signatures.Root = ($, abort, $p) => {
 
-    const x = ds_parse(
+    const x = ds_astn_source.Document(
         $,
+        ($) => abort(['parse error', $]),
         { 
             'tab size': 4,
-            'file': $p.file
+            'uri': $p.uri
         },
-        ($) => abort(['parse error', $])
     )
 
     const abort2 = ($: string) => abort(['primitive deserialization', $])

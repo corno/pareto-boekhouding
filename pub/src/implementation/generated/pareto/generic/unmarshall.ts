@@ -111,7 +111,7 @@ export const process_unresolved_dictionary = <Mapped_Value>(
                             'location': {
                                 'start': $["{"].range.start,
                                 'end': $["}"].range.end,
-                                'file': $["{"].range.file,
+                                'uri': $["{"].range.uri,
                             },
                             'dictionary': _ea.deprecated_build_dictionary(($i) => {
                                 $.entries.__for_each(($) => {

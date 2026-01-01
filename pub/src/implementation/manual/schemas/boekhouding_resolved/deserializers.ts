@@ -3,35 +3,30 @@ import * as _pi from 'pareto-core-interface'
 import * as _pinternals from 'pareto-core-internals'
 
 import * as d_boekhouding_resolved from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
-import * as d_pre_resolving from "../boekhouding_unresolved/deserializers"
-
-export type Error =
-    | ['resolving', null]
-    | ['pre resolving', d_pre_resolving.Error]
+import * as d_resolved_deserializers from "../../../../interface/to_be_generated/deserialize_resolved_model"
 
 export namespace signatures {
 
-    export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_resolved.Root, Error, { 'file': string }>
-
+    export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_resolved.Root, d_resolved_deserializers.Error, d_resolved_deserializers.Parameters>
 }
 
 //dependencies
-import { $ as ds_unresolved } from "../boekhouding_unresolved/deserializers"
+import * as ds_unresolved from "../boekhouding_unresolved/deserializers"
 import * as r_resolved_from_unresolved from "./refiners/boekhouding_unresolved"
 
-export const $: signatures.Root = ($, $p, abort) => {
-    const x = ds_unresolved(
+export const Root: signatures.Root = ($, abort, $p) => {
+    const x = ds_unresolved.Root(
         $,
+        ($) => abort(['pre resolving', $]),
         {
-            'file': $p.file
+            'uri': $p.uri
         },
-        ($) => abort(['pre resolving', $])
     )
-    const x2 = r_resolved_from_unresolved.r_Root(
+    const x2 = r_resolved_from_unresolved.Root(
         x,
         {
             'location 2 string': ($) => {
-                return `${$p.file}:${$.start.relative.line}:${$.start.relative.column}-${$.end.relative.line}:${$.end.relative.column}`
+                return `${$p.uri}:${$.start.relative.line}:${$.start.relative.column}-${$.end.relative.line}:${$.end.relative.column}`
             },
             'parameters': {
                 'lookups': null,

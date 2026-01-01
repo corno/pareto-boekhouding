@@ -1,11 +1,11 @@
 import * as _ea from 'pareto-core-refiner'
 import * as _et from 'pareto-core-interface'
 
-import * as _target from "../../../../../interface/generated/pareto/core/astn_source"
-import * as d_parse_result from "../../../../../interface/generated/pareto/core/parse_result"
-import * as _source from "../../../../../interface/generated/pareto/core/token"
+import * as _target from "../../../../../../../interface/generated/pareto/core/astn_source"
+import * as d_parse_astn_source from "../../../../../../../interface/generated/pareto/core/parse_astn_source"
+import * as _source from "../../../../../../../interface/generated/pareto/core/token"
 
-import * as pg from "./astn_parse_generic"
+import * as pg from "../../../parse/astn_parse_generic"
 
 //this file contains the parser functionality, each function return a type from the 'ast' schema
 
@@ -15,7 +15,7 @@ export const Structural_Token = (token: _source._T_Annotated_Token): _target._T_
         'range': {
             'start': token['start'],
             'end': token['end'],
-            'file': token['file'],
+            'uri': token.uri,
         }
     }
 }
@@ -24,16 +24,16 @@ export const String = (
     token_iterator: pg.ASTN_Token_Iterator,
     abort: ($: pg.My_Parse_Error) => never,
 ): _target._T_String => {
-    const token = token_iterator['get required token'](_ea.list_literal([['a string', null]]))
+    const token = token_iterator['get required token'](_ea.list_literal([['a text value', null]]))
     if (token.type[0] !== 'string') {
-        return pg.throw_unexpected_token(token, _ea.list_literal([['a string', null]]), abort)
+        return pg.throw_unexpected_token(token, _ea.list_literal([['a text value', null]]), abort)
     }
     token_iterator['consume token']()
     return {
         'range': {
             'start': token['start'],
             'end': token['end'],
-            'file': token['file'],
+            'uri': token['uri'],
         },
         'value': token.type[1].value,
         'type': token.type[1].type,
@@ -64,7 +64,7 @@ export const Document = (
 export const Elements = (
     token_iterator: pg.ASTN_Token_Iterator,
     end_reached: ($: _source._T_Token_Type) => boolean,
-    end_token: d_parse_result.Expected,
+    end_token: d_parse_astn_source.Expected,
     abort: ($: pg.My_Parse_Error) => never,
 ): _target._T_Elements => {
     return _ea.build_list<_target._T_Elements.L>(($i): void => {
@@ -83,12 +83,12 @@ export const Elements = (
 export const Key_Value_Pairs = (
     token_iterator: pg.ASTN_Token_Iterator,
     end_reached: ($: _source._T_Token_Type) => boolean,
-    end_token: d_parse_result.Expected,
+    end_token: d_parse_astn_source.Expected,
     abort: ($: pg.My_Parse_Error) => never,
 ): _target._T_Key_Value_Pairs => {
     return _ea.build_list<_target._T_Key_Value_Pairs.L>(($i): void => {
         while (true) {
-            const current_token = token_iterator['get required token'](_ea.list_literal([end_token, ['a string', null]]))
+            const current_token = token_iterator['get required token'](_ea.list_literal([end_token, ['a text value', null]]))
             if (end_reached(current_token.type)) {
                 return
             }
@@ -96,7 +96,7 @@ export const Key_Value_Pairs = (
             $i['add element']({
                 'key': String(token_iterator, abort),
                 'value': _ea.block(() => {
-                    const candidate_colon = token_iterator['get required token'](_ea.list_literal([['a string', null], [':', null], end_token]))
+                    const candidate_colon = token_iterator['get required token'](_ea.list_literal([['a text value', null], [':', null], end_token]))
                     if (candidate_colon.type[0] !== ':') {
                         return _ea.not_set()
                     }
