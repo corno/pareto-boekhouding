@@ -21,8 +21,9 @@ export type Command_Error =
     | ['deserializing', d_deserialize_resolved_schema.Error]
     | ['writing file', d_write_file.Error]
 
-
 export type Parameters = {
-    'in': d_path.Node_Path,
-    'out': d_path.Node_Path,
+    'in': Path,
+    'out': Path,
 }
+
+export type Path = d_path.Node_Path
