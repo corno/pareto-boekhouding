@@ -1,4 +1,4 @@
-import * as _pa from 'pareto-core-refiner'
+import * as _p from 'pareto-core-refiner'
 import * as _pdev from 'pareto-core-dev'
 
 import * as _i_generic from "../../../../generated/pareto/generic/resolve"
@@ -6,11 +6,11 @@ import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekh
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/resolve"
 
 
-export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie =  ($, $p) => _pa.block(() => {
+export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Jaar: _i_out._T_Balans_Resultaat_Mutatie.Jaar = _pa.cc($['Jaar'], ($) => $.map(($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_Jaar: _i_out._T_Balans_Resultaat_Mutatie.Jaar = _p.cc($['Jaar'], ($) => $.map(($) => _p.block(() => {
             return _i_generic.get_entry(
                 params['lookups']['Jaren'],
                 {
@@ -28,9 +28,9 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
             ($) => $.entry.Handelstransacties,
             () => params.values.Handelstransacties
         )
-        const p_type: _i_out._T_Balans_Resultaat_Mutatie._type = _pa.cc($['type'], ($) => _pa.cc($['state group'], ($): _i_out._T_Balans_Resultaat_Mutatie._type => {
+        const p_type: _i_out._T_Balans_Resultaat_Mutatie._type = _p.cc($['type'], ($) => _p.cc($['state group'], ($): _i_out._T_Balans_Resultaat_Mutatie._type => {
             switch ($[0]) {
-                case 'BTW-periode': return _pa.ss($, ($) => ['BTW-periode', _pa.block(() => {
+                case 'BTW-periode': return _p.ss($, ($) => ['BTW-periode', _p.block(() => {
                     return _i_generic.get_entry(
                         _i_generic.dictionary_to_lookup(
                             temp_jaar_beheer['Resultaat']['BTW periodes'],
@@ -42,7 +42,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
                         }
                     )
                 })])
-                case 'Inkoop': return _pa.ss($, ($) => ['Inkoop', _pa.block(() => {
+                case 'Inkoop': return _p.ss($, ($) => ['Inkoop', _p.block(() => {
                     return _i_generic.get_entry(
                         _i_generic.dictionary_to_lookup(
                             temp_handelstransacties['Inkopen'],
@@ -54,7 +54,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
                         }
                     )
                 })])
-                case 'Verkoop': return _pa.ss($, ($) => ['Verkoop', _pa.block(() => {
+                case 'Verkoop': return _p.ss($, ($) => ['Verkoop', _p.block(() => {
                     return _i_generic.get_entry(
                         _i_generic.dictionary_to_lookup(
                             temp_handelstransacties['Verkopen'],
@@ -66,7 +66,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
                         }
                     )
                 })])
-                default: return _pa.au($[0])
+                default: return _p.au($[0])
             }
         }))
         return ({
@@ -75,28 +75,28 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
         })
     })
 })
-export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
+export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_BTW$mi_categorieen: _i_out._T_Beheer.BTW$mi_categorieen = _pa.cc($['BTW-categorieen'], ($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_BTW$mi_categorieen: _i_out._T_Beheer.BTW$mi_categorieen = _p.cc($['BTW-categorieen'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_BTW$mi_heffing: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing = _pa.cc($['BTW-heffing'], ($) => _pa.cc($['state group'], ($): _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_BTW$mi_heffing: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing = _p.cc($['BTW-heffing'], ($) => _p.cc($['state group'], ($): _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                 switch ($[0]) {
-                                    case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_BTW$mi_promillage: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG.Ja.BTW$mi_promillage = _pa.cc($['BTW-promillage'], ($) => $)
+                                    case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_BTW$mi_promillage: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG.Ja.BTW$mi_promillage = _p.cc($['BTW-promillage'], ($) => $)
                                             return ({
                                                 'BTW-promillage': p_BTW$mi_promillage,
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
                             return ({
@@ -107,15 +107,15 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                 }
             )
         }))
-        const p_Grootboekrekeningen: _i_out._T_Beheer.Grootboekrekeningen = _pa.cc($['Grootboekrekeningen'], ($) => _pa.block(() => {
-            const p_Balans: _i_out._T_Beheer.Grootboekrekeningen.Balans = _pa.cc($['Balans'], ($) => _pa.block(() => {
+        const p_Grootboekrekeningen: _i_out._T_Beheer.Grootboekrekeningen = _p.cc($['Grootboekrekeningen'], ($) => _p.block(() => {
+            const p_Balans: _i_out._T_Beheer.Grootboekrekeningen.Balans = _p.cc($['Balans'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Hoofdcategorie = _pa.cc($['Hoofdcategorie'], ($) => _i_generic.get_entry(
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => _p.block(() => {
+                                const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Hoofdcategorie = _p.cc($['Hoofdcategorie'], ($) => _i_generic.get_entry(
                                     _i_generic.dictionary_to_lookup(
                                         params['values']['Grootboek Categorieen']['Balans'],
                                         null
@@ -125,7 +125,7 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                         'reference': $,
                                     }
                                 ))
-                                const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Subcategorie = _pa.cc($['Subcategorie'], ($) => _i_generic.get_entry(
+                                const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Subcategorie = _p.cc($['Subcategorie'], ($) => _i_generic.get_entry(
                                     _i_generic.dictionary_to_lookup(
                                         p_Hoofdcategorie['entry']['Subcategorieen'],
                                         null
@@ -135,15 +135,15 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                         'reference': $,
                                     }
                                 ))
-                                const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde = _pa.cc($['Zijde'], ($) => _pa.cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde => {
+                                const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde = _p.cc($['Zijde'], ($) => _p.cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde => {
                                     switch ($[0]) {
-                                        case 'Activa': return _pa.ss($, ($) => ['Activa', _pa.block(() => {
+                                        case 'Activa': return _p.ss($, ($) => ['Activa', _p.block(() => {
                                             return null
                                         })])
-                                        case 'Passiva': return _pa.ss($, ($) => ['Passiva', _pa.block(() => {
+                                        case 'Passiva': return _p.ss($, ($) => ['Passiva', _p.block(() => {
                                             return null
                                         })])
-                                        default: return _pa.au($[0])
+                                        default: return _p.au($[0])
                                     }
                                 }))
                                 return ({
@@ -156,14 +156,14 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                     }
                 )
             }))
-            const p_Resultaat: _i_out._T_Beheer.Grootboekrekeningen.Resultaat = _pa.cc($['Resultaat'], ($) => _pa.block(() => {
+            const p_Resultaat: _i_out._T_Beheer.Grootboekrekeningen.Resultaat = _p.cc($['Resultaat'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Hoofdcategorie = _pa.cc($['Hoofdcategorie'], ($) => _i_generic.get_entry(
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => _p.block(() => {
+                                const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Hoofdcategorie = _p.cc($['Hoofdcategorie'], ($) => _i_generic.get_entry(
                                     _i_generic.dictionary_to_lookup(
                                         params['values']['Grootboek Categorieen']['Resultaat'],
                                         null
@@ -173,7 +173,7 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                         'reference': $,
                                     }
                                 ))
-                                const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Subcategorie = _pa.cc($['Subcategorie'], ($) => _i_generic.get_entry(
+                                const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Subcategorie = _p.cc($['Subcategorie'], ($) => _i_generic.get_entry(
                                     _i_generic.dictionary_to_lookup(
                                         p_Hoofdcategorie['entry']['Subcategorieen'],
                                         null
@@ -183,15 +183,15 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                         'reference': $,
                                     }
                                 ))
-                                const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde = _pa.cc($['Zijde'], ($) => _pa.cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
+                                const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde = _p.cc($['Zijde'], ($) => _p.cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
                                     switch ($[0]) {
-                                        case 'Kosten': return _pa.ss($, ($) => ['Kosten', _pa.block(() => {
-                                            return _pa.block(() => {
-                                                const p_Correctie_op_vennootschapsbelasting: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting = _pa.cc($['Correctie op vennootschapsbelasting'], ($) => _pa.cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting => {
+                                        case 'Kosten': return _p.ss($, ($) => ['Kosten', _p.block(() => {
+                                            return _p.block(() => {
+                                                const p_Correctie_op_vennootschapsbelasting: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting = _p.cc($['Correctie op vennootschapsbelasting'], ($) => _p.cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting => {
                                                     switch ($[0]) {
-                                                        case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_Correctietype: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG.Ja.Correctietype = _pa.cc($['Correctietype'], ($) => _i_generic.get_entry(
+                                                        case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_Correctietype: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG.Ja.Correctietype = _p.cc($['Correctietype'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         params['values']['Grootboek Categorieen']['Correctietypes vennootschapsbelasting'],
                                                                         null
@@ -206,10 +206,10 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                                                 })
                                                             })
                                                         })])
-                                                        case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
+                                                        case 'Nee': return _p.ss($, ($) => ['Nee', _p.block(() => {
                                                             return null
                                                         })])
-                                                        default: return _pa.au($[0])
+                                                        default: return _p.au($[0])
                                                     }
                                                 }))
                                                 return ({
@@ -217,10 +217,10 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                                 })
                                             })
                                         })])
-                                        case 'Opbrengsten': return _pa.ss($, ($) => ['Opbrengsten', _pa.block(() => {
+                                        case 'Opbrengsten': return _p.ss($, ($) => ['Opbrengsten', _p.block(() => {
                                             return null
                                         })])
-                                        default: return _pa.au($[0])
+                                        default: return _p.au($[0])
                                     }
                                 }))
                                 return ({
@@ -238,25 +238,25 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                 'Resultaat': p_Resultaat,
             })
         }))
-        const p_Rekeningen: _i_out._T_Beheer.Rekeningen = _pa.cc($['Rekeningen'], ($) => _pa.block(() => {
-            const p_Bank: _i_out._T_Beheer.Rekeningen.Bank = _pa.cc($['Bank'], ($) => _pa.block(() => {
+        const p_Rekeningen: _i_out._T_Beheer.Rekeningen = _p.cc($['Rekeningen'], ($) => _p.block(() => {
+            const p_Bank: _i_out._T_Beheer.Rekeningen.Bank = _p.cc($['Bank'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => null)
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => null)
                         }),
                     }
                 )
             }))
-            const p_Informeel: _i_out._T_Beheer.Rekeningen.Informeel = _pa.cc($['Informeel'], ($) => _pa.block(() => {
+            const p_Informeel: _i_out._T_Beheer.Rekeningen.Informeel = _p.cc($['Informeel'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => null)
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => null)
                         }),
                     }
                 )
@@ -266,15 +266,15 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                 'Informeel': p_Informeel,
             })
         }))
-        const p_Gebruikers: _i_out._T_Beheer.Gebruikers = _pa.cc($['Gebruikers'], ($) => _pa.block(() => {
+        const p_Gebruikers: _i_out._T_Beheer.Gebruikers = _p.cc($['Gebruikers'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Volledige_naam: _i_out._T_Beheer.Gebruikers.D.Volledige_naam = _pa.cc($['Volledige naam'], ($) => $)
-                            const p_Wachtwoord: _i_out._T_Beheer.Gebruikers.D.Wachtwoord = _pa.cc($['Wachtwoord'], ($) => $)
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Volledige_naam: _i_out._T_Beheer.Gebruikers.D.Volledige_naam = _p.cc($['Volledige naam'], ($) => $)
+                            const p_Wachtwoord: _i_out._T_Beheer.Gebruikers.D.Wachtwoord = _p.cc($['Wachtwoord'], ($) => $)
                             return ({
                                 'Volledige naam': p_Volledige_naam,
                                 'Wachtwoord': p_Wachtwoord,
@@ -284,28 +284,28 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                 }
             )
         }))
-        const p_Klanten: _i_out._T_Beheer.Klanten = _pa.cc($['Klanten'], ($) => _pa.block(() => {
+        const p_Klanten: _i_out._T_Beheer.Klanten = _p.cc($['Klanten'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Licentieovereenkomsten: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten = _pa.cc($['Licentieovereenkomsten'], ($) => _pa.block(() => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Licentieovereenkomsten: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten = _p.cc($['Licentieovereenkomsten'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                const p_Periodes: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes = _pa.cc($['Periodes'], ($) => _pa.block(() => {
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => _p.block(() => {
+                                                const p_Periodes: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes = _p.cc($['Periodes'], ($) => _p.block(() => {
                                                     return _i_generic.resolve_dictionary(
                                                         $,
                                                         {
                                                             'location 2 string': l2s,
-                                                            'map': ($, $p) => _pa.block(() => {
-                                                                return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                                    const p_Bedrag: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D.Bedrag = _pa.cc($['Bedrag'], ($) => $)
+                                                            'map': ($, $p) => _p.block(() => {
+                                                                return _p.cc($['value'], ($) => _p.block(() => {
+                                                                    const p_Bedrag: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D.Bedrag = _p.cc($['Bedrag'], ($) => $)
                                                                     return ({
                                                                         'Bedrag': p_Bedrag,
                                                                     })
@@ -322,40 +322,40 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                                     }
                                 )
                             }))
-                            const p_Projecten: _i_out._T_Beheer.Klanten.D.Projecten = _pa.cc($['Projecten'], ($) => _pa.block(() => {
+                            const p_Projecten: _i_out._T_Beheer.Klanten.D.Projecten = _p.cc($['Projecten'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                const p_Offertes: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes = _pa.cc($['Offertes'], ($) => _pa.block(() => {
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => _p.block(() => {
+                                                const p_Offertes: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes = _p.cc($['Offertes'], ($) => _p.block(() => {
                                                     return _i_generic.resolve_dictionary(
                                                         $,
                                                         {
                                                             'location 2 string': l2s,
-                                                            'map': ($, $p) => _pa.block(() => {
-                                                                return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                                    const p_Opbrengsten: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten = _pa.cc($['Opbrengsten'], ($) => _pa.block(() => {
+                                                            'map': ($, $p) => _p.block(() => {
+                                                                return _p.cc($['value'], ($) => _p.block(() => {
+                                                                    const p_Opbrengsten: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten = _p.cc($['Opbrengsten'], ($) => _p.block(() => {
                                                                         return _i_generic.resolve_dictionary(
                                                                             $,
                                                                             {
                                                                                 'location 2 string': l2s,
-                                                                                'map': ($, $p) => _pa.block(() => {
-                                                                                    return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                                                        const p_Type: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type = _pa.cc($['Type'], ($) => _pa.cc($['state group'], ($): _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
+                                                                                'map': ($, $p) => _p.block(() => {
+                                                                                    return _p.cc($['value'], ($) => _p.block(() => {
+                                                                                        const p_Type: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type = _p.cc($['Type'], ($) => _p.cc($['state group'], ($): _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                             switch ($[0]) {
-                                                                                                case 'Project': return _pa.ss($, ($) => ['Project', _pa.block(() => {
-                                                                                                    return _pa.block(() => {
-                                                                                                        const p_Bedrag: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Bedrag = _pa.cc($['Bedrag'], ($) => $)
-                                                                                                        const p_Betaaldatum: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Betaaldatum = _pa.cc($['Betaaldatum'], ($) => $)
+                                                                                                case 'Project': return _p.ss($, ($) => ['Project', _p.block(() => {
+                                                                                                    return _p.block(() => {
+                                                                                                        const p_Bedrag: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Bedrag = _p.cc($['Bedrag'], ($) => $)
+                                                                                                        const p_Betaaldatum: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Betaaldatum = _p.cc($['Betaaldatum'], ($) => $)
                                                                                                         return ({
                                                                                                             'Bedrag': p_Bedrag,
                                                                                                             'Betaaldatum': p_Betaaldatum,
                                                                                                         })
                                                                                                     })
                                                                                                 })])
-                                                                                                default: return _pa.au($[0])
+                                                                                                default: return _p.au($[0])
                                                                                             }
                                                                                         }))
                                                                                         return ({
@@ -391,24 +391,24 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
                 }
             )
         }))
-        const p_Leveranciers: _i_out._T_Beheer.Leveranciers = _pa.cc($['Leveranciers'], ($) => _pa.block(() => {
+        const p_Leveranciers: _i_out._T_Beheer.Leveranciers = _p.cc($['Leveranciers'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => null)
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => null)
                     }),
                 }
             )
         }))
-        const p_Medewerkers: _i_out._T_Beheer.Medewerkers = _pa.cc($['Medewerkers'], ($) => _pa.block(() => {
+        const p_Medewerkers: _i_out._T_Beheer.Medewerkers = _p.cc($['Medewerkers'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => null)
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => null)
                     }),
                 }
             )
@@ -424,17 +424,17 @@ export const Beheer: _i_signatures._T_Beheer =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _pa.block(() => {
+export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.cc($['state group'], ($): _i_out._T_Eerste_boekjaar => {
+    return _p.cc($['state group'], ($): _i_out._T_Eerste_boekjaar => {
         switch ($[0]) {
-            case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
+            case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
                 return null
             })])
-            case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
-                return _pa.block(() => {
-                    const p_Vorig_boekjaar: _i_out._T_Eerste_boekjaar.SG.Nee.Vorig_boekjaar = _pa.cc($['Vorig boekjaar'], ($) => _i_generic.get_entry(
+            case 'Nee': return _p.ss($, ($) => ['Nee', _p.block(() => {
+                return _p.block(() => {
+                    const p_Vorig_boekjaar: _i_out._T_Eerste_boekjaar.SG.Nee.Vorig_boekjaar = _p.cc($['Vorig boekjaar'], ($) => _i_generic.get_entry(
                         params['lookups']['Jaren'],
                         {
                             'location 2 string': l2s,
@@ -446,39 +446,39 @@ export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _pa
                     })
                 })
             })])
-            default: return _pa.au($[0])
+            default: return _p.au($[0])
         }
     })
 })
-export const Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _pa.block(() => {
+export const Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Balans_Hoofdcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen = _pa.cc($['Balans Hoofdcategorieen'], ($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_Balans_Hoofdcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen = _p.cc($['Balans Hoofdcategorieen'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Zijde: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde = _pa.cc($['Zijde'], ($) => _pa.cc($['state group'], ($): _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Zijde: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde = _p.cc($['Zijde'], ($) => _p.cc($['state group'], ($): _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
                                 switch ($[0]) {
-                                    case 'Activa': return _pa.ss($, ($) => ['Activa', _pa.block(() => {
+                                    case 'Activa': return _p.ss($, ($) => ['Activa', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Passiva': return _pa.ss($, ($) => ['Passiva', _pa.block(() => {
+                                    case 'Passiva': return _p.ss($, ($) => ['Passiva', _p.block(() => {
                                         return null
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Subcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen = _pa.cc($['Subcategorieen'], ($) => _pa.block(() => {
+                            const p_Subcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen = _p.cc($['Subcategorieen'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => null)
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => null)
                                         }),
                                     }
                                 )
@@ -492,31 +492,31 @@ export const Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _pa.block(() => {
                 }
             )
         }))
-        const p_Resultaat_Hoofdcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen = _pa.cc($['Resultaat Hoofdcategorieen'], ($) => _pa.block(() => {
+        const p_Resultaat_Hoofdcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen = _p.cc($['Resultaat Hoofdcategorieen'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Zijde: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde = _pa.cc($['Zijde'], ($) => _pa.cc($['state group'], ($): _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Zijde: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde = _p.cc($['Zijde'], ($) => _p.cc($['state group'], ($): _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
                                 switch ($[0]) {
-                                    case 'Kosten': return _pa.ss($, ($) => ['Kosten', _pa.block(() => {
+                                    case 'Kosten': return _p.ss($, ($) => ['Kosten', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Opbrengsten': return _pa.ss($, ($) => ['Opbrengsten', _pa.block(() => {
+                                    case 'Opbrengsten': return _p.ss($, ($) => ['Opbrengsten', _p.block(() => {
                                         return null
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Subcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen = _pa.cc($['Subcategorieen'], ($) => _pa.block(() => {
+                            const p_Subcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen = _p.cc($['Subcategorieen'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => null)
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => null)
                                         }),
                                     }
                                 )
@@ -536,18 +536,18 @@ export const Fiscaal: _i_signatures._T_Fiscaal =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($, $p) => _pa.block(() => {
+export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Correctietypes_vennootschapsbelasting: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting = _pa.cc($['Correctietypes vennootschapsbelasting'], ($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_Correctietypes_vennootschapsbelasting: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting = _p.cc($['Correctietypes vennootschapsbelasting'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Te_corrigeren_promillage: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D.Te_corrigeren_promillage = _pa.cc($['Te corrigeren promillage'], ($) => $)
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Te_corrigeren_promillage: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D.Te_corrigeren_promillage = _p.cc($['Te corrigeren promillage'], ($) => $)
                             return ({
                                 'Te corrigeren promillage': p_Te_corrigeren_promillage,
                             })
@@ -556,32 +556,32 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($
                 }
             )
         }))
-        const p_Balans: _i_out._T_Grootboek_Categorieen.Balans = _pa.cc($['Balans'], ($) => _pa.block(() => {
+        const p_Balans: _i_out._T_Grootboek_Categorieen.Balans = _p.cc($['Balans'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Zijde: _i_out._T_Grootboek_Categorieen.Balans.D.Zijde = _pa.cc($['Zijde'], ($) => _pa.cc($['state group'], ($): _i_out._T_Grootboek_Categorieen.Balans.D.Zijde => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Zijde: _i_out._T_Grootboek_Categorieen.Balans.D.Zijde = _p.cc($['Zijde'], ($) => _p.cc($['state group'], ($): _i_out._T_Grootboek_Categorieen.Balans.D.Zijde => {
                                 switch ($[0]) {
-                                    case 'Activa': return _pa.ss($, ($) => ['Activa', _pa.block(() => {
+                                    case 'Activa': return _p.ss($, ($) => ['Activa', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Passiva': return _pa.ss($, ($) => ['Passiva', _pa.block(() => {
+                                    case 'Passiva': return _p.ss($, ($) => ['Passiva', _p.block(() => {
                                         return null
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen = _pa.cc($['Subcategorieen'], ($) => _pa.block(() => {
+                            const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen = _p.cc($['Subcategorieen'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Hoofdcategorie_fiscus = _pa.cc($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => _p.block(() => {
+                                                const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Hoofdcategorie_fiscus = _p.cc($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
                                                     _i_generic.dictionary_to_lookup(
                                                         params['values']['Fiscaal']['Balans Hoofdcategorieen'],
                                                         null
@@ -591,7 +591,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($
                                                         'reference': $,
                                                     }
                                                 ))
-                                                const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Subcategorie_fiscus = _pa.cc($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
+                                                const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Subcategorie_fiscus = _p.cc($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
                                                     _i_generic.dictionary_to_lookup(
                                                         p_Hoofdcategorie_fiscus['entry']['Subcategorieen'],
                                                         null
@@ -619,32 +619,32 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($
                 }
             )
         }))
-        const p_Resultaat: _i_out._T_Grootboek_Categorieen.Resultaat = _pa.cc($['Resultaat'], ($) => _pa.block(() => {
+        const p_Resultaat: _i_out._T_Grootboek_Categorieen.Resultaat = _p.cc($['Resultaat'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Zijde: _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde = _pa.cc($['Zijde'], ($) => _pa.cc($['state group'], ($): _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Zijde: _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde = _p.cc($['Zijde'], ($) => _p.cc($['state group'], ($): _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde => {
                                 switch ($[0]) {
-                                    case 'Kosten': return _pa.ss($, ($) => ['Kosten', _pa.block(() => {
+                                    case 'Kosten': return _p.ss($, ($) => ['Kosten', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Opbrengsten': return _pa.ss($, ($) => ['Opbrengsten', _pa.block(() => {
+                                    case 'Opbrengsten': return _p.ss($, ($) => ['Opbrengsten', _p.block(() => {
                                         return null
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen = _pa.cc($['Subcategorieen'], ($) => _pa.block(() => {
+                            const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen = _p.cc($['Subcategorieen'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Hoofdcategorie_fiscus = _pa.cc($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => _p.block(() => {
+                                                const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Hoofdcategorie_fiscus = _p.cc($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
                                                     _i_generic.dictionary_to_lookup(
                                                         params['values']['Fiscaal']['Resultaat Hoofdcategorieen'],
                                                         null
@@ -654,7 +654,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($
                                                         'reference': $,
                                                     }
                                                 ))
-                                                const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Subcategorie_fiscus = _pa.cc($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
+                                                const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Subcategorie_fiscus = _p.cc($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
                                                     _i_generic.dictionary_to_lookup(
                                                         p_Hoofdcategorie_fiscus['entry']['Subcategorieen'],
                                                         null
@@ -689,29 +689,29 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen =  ($
         })
     })
 })
-export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, $p) => _pa.block(() => {
+export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Balans: _i_out._T_Grootboekrekeningen.Balans = _pa.cc($['Balans'], ($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_Balans: _i_out._T_Grootboekrekeningen.Balans = _p.cc($['Balans'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Type: _i_out._T_Grootboekrekeningen.Balans.D.Type = _pa.cc($['Type'], ($) => _pa.cc($['state group'], ($): _i_out._T_Grootboekrekeningen.Balans.D.Type => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Type: _i_out._T_Grootboekrekeningen.Balans.D.Type = _p.cc($['Type'], ($) => _p.cc($['state group'], ($): _i_out._T_Grootboekrekeningen.Balans.D.Type => {
                                 switch ($[0]) {
-                                    case 'Bankrekening': return _pa.ss($, ($) => ['Bankrekening', _pa.block(() => {
+                                    case 'Bankrekening': return _p.ss($, ($) => ['Bankrekening', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Informele rekening': return _pa.ss($, ($) => ['Informele rekening', _pa.block(() => {
+                                    case 'Informele rekening': return _p.ss($, ($) => ['Informele rekening', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Overig': return _pa.ss($, ($) => ['Overig', _pa.block(() => {
+                                    case 'Overig': return _p.ss($, ($) => ['Overig', _p.block(() => {
                                         return null
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
                             return ({
@@ -722,13 +722,13 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, $p
                 }
             )
         }))
-        const p_Resultaat: _i_out._T_Grootboekrekeningen.Resultaat = _pa.cc($['Resultaat'], ($) => _pa.block(() => {
+        const p_Resultaat: _i_out._T_Grootboekrekeningen.Resultaat = _p.cc($['Resultaat'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => null)
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => null)
                     }),
                 }
             )
@@ -739,25 +739,25 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen =  ($, $p
         })
     })
 })
-export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) => _pa.block(() => {
+export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Inkopen: _i_out._T_Handelstransacties.Inkopen = _pa.cc($['Inkopen'], ($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_Inkopen: _i_out._T_Handelstransacties.Inkopen = _p.cc($['Inkopen'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Afhandeling: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling = _pa.cc($['Afhandeling'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Afhandeling => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Afhandeling: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling = _p.cc($['Afhandeling'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Afhandeling => {
                                 switch ($[0]) {
-                                    case 'Mutaties': return _pa.ss($, ($) => ['Mutaties', _pa.block(() => {
+                                    case 'Mutaties': return _p.ss($, ($) => ['Mutaties', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Rekening courant': return _pa.ss($, ($) => ['Rekening courant', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Rekening_courant: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _pa.cc($['Rekening courant'], ($) => _i_generic.get_entry(
+                                    case 'Rekening courant': return _p.ss($, ($) => ['Rekening courant', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Rekening_courant: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _p.cc($['Rekening courant'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
                                                     null
@@ -772,26 +772,26 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_BTW$mi_regime: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime = _pa.cc($['BTW-regime'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime => {
+                            const p_BTW$mi_regime: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime = _p.cc($['BTW-regime'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime => {
                                 switch ($[0]) {
-                                    case 'Binnenland: heffing verlegd': return _pa.ss($, ($) => ['Binnenland: heffing verlegd', _pa.block(() => {
+                                    case 'Binnenland: heffing verlegd': return _p.ss($, ($) => ['Binnenland: heffing verlegd', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Geen BTW van toepassing': return _pa.ss($, ($) => ['Geen BTW van toepassing', _pa.block(() => {
+                                    case 'Geen BTW van toepassing': return _p.ss($, ($) => ['Geen BTW van toepassing', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Import van buiten de EU': return _pa.ss($, ($) => ['Import van buiten de EU', _pa.block(() => {
+                                    case 'Import van buiten de EU': return _p.ss($, ($) => ['Import van buiten de EU', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Intracommunautair': return _pa.ss($, ($) => ['Intracommunautair', _pa.block(() => {
+                                    case 'Intracommunautair': return _p.ss($, ($) => ['Intracommunautair', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Standaard': return _pa.ss($, ($) => ['Standaard', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_BTW$mi_periode: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime.SG.Standaard.BTW$mi_periode = _pa.cc($['BTW-periode'], ($) => _i_generic.get_entry(
+                                    case 'Standaard': return _p.ss($, ($) => ['Standaard', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_BTW$mi_periode: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime.SG.Standaard.BTW$mi_periode = _p.cc($['BTW-periode'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Jaarbeheer']['Resultaat']['BTW periodes'],
                                                     null
@@ -806,57 +806,57 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Brondocument: _i_out._T_Handelstransacties.Inkopen.D.Brondocument = _pa.cc($['Brondocument'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Brondocument => {
+                            const p_Brondocument: _i_out._T_Handelstransacties.Inkopen.D.Brondocument = _p.cc($['Brondocument'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Brondocument => {
                                 switch ($[0]) {
-                                    case 'Niet van toepassing': return _pa.ss($, ($) => ['Niet van toepassing', _pa.block(() => {
+                                    case 'Niet van toepassing': return _p.ss($, ($) => ['Niet van toepassing', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Ontbreekt': return _pa.ss($, ($) => ['Ontbreekt', _pa.block(() => {
+                                    case 'Ontbreekt': return _p.ss($, ($) => ['Ontbreekt', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Toegevoegd': return _pa.ss($, ($) => ['Toegevoegd', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Document: _i_out._T_Handelstransacties.Inkopen.D.Brondocument.SG.Toegevoegd.Document = _pa.cc($['Document'], ($) => $)
+                                    case 'Toegevoegd': return _p.ss($, ($) => ['Toegevoegd', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Document: _i_out._T_Handelstransacties.Inkopen.D.Brondocument.SG.Toegevoegd.Document = _p.cc($['Document'], ($) => $)
                                             return ({
                                                 'Document': p_Document,
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Datum: _i_out._T_Handelstransacties.Inkopen.D.Datum = _pa.cc($['Datum'], ($) => $)
-                            const p_Regels: _i_out._T_Handelstransacties.Inkopen.D.Regels = _pa.cc($['Regels'], ($) => _pa.block(() => {
+                            const p_Datum: _i_out._T_Handelstransacties.Inkopen.D.Datum = _p.cc($['Datum'], ($) => $)
+                            const p_Regels: _i_out._T_Handelstransacties.Inkopen.D.Regels = _p.cc($['Regels'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                const p_Bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag = _pa.cc($['Bedrag'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => _p.block(() => {
+                                                const p_Bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag = _p.cc($['Bedrag'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
                                                     switch ($[0]) {
-                                                        case 'Bekend': return _pa.ss($, ($) => ['Bekend', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_BTW$mi_bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.BTW$mi_bedrag = _pa.cc($['BTW-bedrag'], ($) => $)
-                                                                const p_Bedrag_inclusief_geheven_BTW: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.Bedrag_inclusief_geheven_BTW = _pa.cc($['Bedrag inclusief geheven BTW'], ($) => $)
+                                                        case 'Bekend': return _p.ss($, ($) => ['Bekend', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_BTW$mi_bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.BTW$mi_bedrag = _p.cc($['BTW-bedrag'], ($) => $)
+                                                                const p_Bedrag_inclusief_geheven_BTW: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.Bedrag_inclusief_geheven_BTW = _p.cc($['Bedrag inclusief geheven BTW'], ($) => $)
                                                                 return ({
                                                                     'BTW-bedrag': p_BTW$mi_bedrag,
                                                                     'Bedrag inclusief geheven BTW': p_Bedrag_inclusief_geheven_BTW,
                                                                 })
                                                             })
                                                         })])
-                                                        default: return _pa.au($[0])
+                                                        default: return _p.au($[0])
                                                     }
                                                 }))
-                                                const p_Omschrijving: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Omschrijving = _pa.cc($['Omschrijving'], ($) => $)
-                                                const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type = _pa.cc($['Type'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type => {
+                                                const p_Omschrijving: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Omschrijving = _p.cc($['Omschrijving'], ($) => $)
+                                                const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type = _p.cc($['Type'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type => {
                                                     switch ($[0]) {
-                                                        case 'Balans': return _pa.ss($, ($) => ['Balans', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_Balans_item: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Balans.Balans_item = _pa.cc($['Balans item'], ($) => _i_generic.get_entry(
+                                                        case 'Balans': return _p.ss($, ($) => ['Balans', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_Balans_item: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Balans.Balans_item = _p.cc($['Balans item'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         params['values']['Jaarbeheer']['Balans']['Overige balans items'],
                                                                         null
@@ -871,9 +871,9 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        case 'Kosten': return _pa.ss($, ($) => ['Kosten', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_Grootboekrekening: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Kosten.Grootboekrekening = _pa.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+                                                        case 'Kosten': return _p.ss($, ($) => ['Kosten', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_Grootboekrekening: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Kosten.Grootboekrekening = _p.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         params['values']['Grootboekrekeningen']['Resultaat'],
                                                                         null
@@ -888,7 +888,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        default: return _pa.au($[0])
+                                                        default: return _p.au($[0])
                                                     }
                                                 }))
                                                 return ({
@@ -901,14 +901,14 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                     }
                                 )
                             }))
-                            const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Type = _pa.cc($['Type'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Type => {
+                            const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Type = _p.cc($['Type'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Type => {
                                 switch ($[0]) {
-                                    case 'Bonnetje': return _pa.ss($, ($) => ['Bonnetje', _pa.block(() => {
+                                    case 'Bonnetje': return _p.ss($, ($) => ['Bonnetje', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Inkoop (met crediteur)': return _pa.ss($, ($) => ['Inkoop (met crediteur)', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Crediteur: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Crediteur = _pa.cc($['Crediteur'], ($) => _i_generic.get_entry(
+                                    case 'Inkoop (met crediteur)': return _p.ss($, ($) => ['Inkoop (met crediteur)', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Crediteur: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Crediteur = _p.cc($['Crediteur'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Beheer']['Leveranciers'],
                                                     null
@@ -918,16 +918,16 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                     'reference': $,
                                                 }
                                             ))
-                                            const p_Factuurnummer: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Factuurnummer = _pa.cc($['Factuurnummer'], ($) => $)
+                                            const p_Factuurnummer: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Factuurnummer = _p.cc($['Factuurnummer'], ($) => $)
                                             return ({
                                                 'Crediteur': p_Crediteur,
                                                 'Factuurnummer': p_Factuurnummer,
                                             })
                                         })
                                     })])
-                                    case 'Loonheffing': return _pa.ss($, ($) => ['Loonheffing', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Loonheffing.Ronde = _pa.cc($['Ronde'], ($) => _i_generic.get_entry(
+                                    case 'Loonheffing': return _p.ss($, ($) => ['Loonheffing', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Loonheffing.Ronde = _p.cc($['Ronde'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Jaarbeheer']['Resultaat']['Salarisrondes'],
                                                     null
@@ -942,9 +942,9 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    case 'Salaris': return _pa.ss($, ($) => ['Salaris', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Ronde = _pa.cc($['Ronde'], ($) => _i_generic.get_entry(
+                                    case 'Salaris': return _p.ss($, ($) => ['Salaris', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Ronde = _p.cc($['Ronde'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Jaarbeheer']['Resultaat']['Salarisrondes'],
                                                     null
@@ -954,7 +954,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                     'reference': $,
                                                 }
                                             ))
-                                            const p_Medewerker: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Medewerker = _pa.cc($['Medewerker'], ($) => _i_generic.get_entry(
+                                            const p_Medewerker: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Medewerker = _p.cc($['Medewerker'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Beheer']['Medewerkers'],
                                                     null
@@ -970,7 +970,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
                             return ({
@@ -986,16 +986,16 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                 }
             )
         }))
-        const p_Verkopen: _i_out._T_Handelstransacties.Verkopen = _pa.cc($['Verkopen'], ($) => _pa.block(() => {
+        const p_Verkopen: _i_out._T_Handelstransacties.Verkopen = _p.cc($['Verkopen'], ($) => _p.block(() => {
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                            const p_Datum: _i_out._T_Handelstransacties.Verkopen.D.Datum = _pa.cc($['Datum'], ($) => $)
-                            const p_Betalingstermijn: _i_out._T_Handelstransacties.Verkopen.D.Betalingstermijn = _pa.cc($['Betalingstermijn'], ($) => $)
-                            const p_BTW$mi_periode: _i_out._T_Handelstransacties.Verkopen.D.BTW$mi_periode = _pa.cc($['BTW-periode'], ($) => _i_generic.get_entry(
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
+                            const p_Datum: _i_out._T_Handelstransacties.Verkopen.D.Datum = _p.cc($['Datum'], ($) => $)
+                            const p_Betalingstermijn: _i_out._T_Handelstransacties.Verkopen.D.Betalingstermijn = _p.cc($['Betalingstermijn'], ($) => $)
+                            const p_BTW$mi_periode: _i_out._T_Handelstransacties.Verkopen.D.BTW$mi_periode = _p.cc($['BTW-periode'], ($) => _i_generic.get_entry(
                                 _i_generic.dictionary_to_lookup(
                                     params['values']['Jaarbeheer']['Resultaat']['BTW periodes'],
                                     null
@@ -1005,20 +1005,20 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                     'reference': $,
                                 }
                             ))
-                            const p_Brondocument: _i_out._T_Handelstransacties.Verkopen.D.Brondocument = _pa.cc($['Brondocument'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Brondocument => {
+                            const p_Brondocument: _i_out._T_Handelstransacties.Verkopen.D.Brondocument = _p.cc($['Brondocument'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Brondocument => {
                                 switch ($[0]) {
-                                    case 'Toegevoegd': return _pa.ss($, ($) => ['Toegevoegd', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Document: _i_out._T_Handelstransacties.Verkopen.D.Brondocument.SG.Toegevoegd.Document = _pa.cc($['Document'], ($) => $)
+                                    case 'Toegevoegd': return _p.ss($, ($) => ['Toegevoegd', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Document: _i_out._T_Handelstransacties.Verkopen.D.Brondocument.SG.Toegevoegd.Document = _p.cc($['Document'], ($) => $)
                                             return ({
                                                 'Document': p_Document,
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Debiteur: _i_out._T_Handelstransacties.Verkopen.D.Debiteur = _pa.cc($['Debiteur'], ($) => _i_generic.get_entry(
+                            const p_Debiteur: _i_out._T_Handelstransacties.Verkopen.D.Debiteur = _p.cc($['Debiteur'], ($) => _i_generic.get_entry(
                                 _i_generic.dictionary_to_lookup(
                                     params['values']['Beheer']['Klanten'],
                                     null
@@ -1028,11 +1028,11 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                     'reference': $,
                                 }
                             ))
-                            const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Contracttype = _pa.cc($['Contracttype'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Contracttype => {
+                            const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Contracttype = _p.cc($['Contracttype'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Contracttype => {
                                 switch ($[0]) {
-                                    case 'Licentieovereenkomst': return _pa.ss($, ($) => ['Licentieovereenkomst', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Overeenkomst: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Licentieovereenkomst.Overeenkomst = _pa.cc($['Overeenkomst'], ($) => _i_generic.get_entry(
+                                    case 'Licentieovereenkomst': return _p.ss($, ($) => ['Licentieovereenkomst', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Overeenkomst: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Licentieovereenkomst.Overeenkomst = _p.cc($['Overeenkomst'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     p_Debiteur['entry']['Licentieovereenkomsten'],
                                                     null
@@ -1047,9 +1047,9 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    case 'Project': return _pa.ss($, ($) => ['Project', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Project: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Project = _pa.cc($['Project'], ($) => _i_generic.get_entry(
+                                    case 'Project': return _p.ss($, ($) => ['Project', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Project: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Project = _p.cc($['Project'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     p_Debiteur['entry']['Projecten'],
                                                     null
@@ -1059,7 +1059,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                     'reference': $,
                                                 }
                                             ))
-                                            const p_Offerte: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Offerte = _pa.cc($['Offerte'], ($) => _i_generic.get_entry(
+                                            const p_Offerte: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Offerte = _p.cc($['Offerte'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     p_Project['entry']['Offertes'],
                                                     null
@@ -1075,18 +1075,18 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
                             const p_parent_contract_type = p_Contracttype
-                            const p_Afhandeling: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling = _pa.cc($['Afhandeling'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Afhandeling => {
+                            const p_Afhandeling: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling = _p.cc($['Afhandeling'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Afhandeling => {
                                 switch ($[0]) {
-                                    case 'Mutaties': return _pa.ss($, ($) => ['Mutaties', _pa.block(() => {
+                                    case 'Mutaties': return _p.ss($, ($) => ['Mutaties', _p.block(() => {
                                         return null
                                     })])
-                                    case 'Rekening courant': return _pa.ss($, ($) => ['Rekening courant', _pa.block(() => {
-                                        return _pa.block(() => {
-                                            const p_Rekening_courant: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _pa.cc($['Rekening courant'], ($) => _i_generic.get_entry(
+                                    case 'Rekening courant': return _p.ss($, ($) => ['Rekening courant', _p.block(() => {
+                                        return _p.block(() => {
+                                            const p_Rekening_courant: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _p.cc($['Rekening courant'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
                                                     null
@@ -1101,27 +1101,27 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                             })
                                         })
                                     })])
-                                    default: return _pa.au($[0])
+                                    default: return _p.au($[0])
                                 }
                             }))
-                            const p_Regels: _i_out._T_Handelstransacties.Verkopen.D.Regels = _pa.cc($['Regels'], ($) => _pa.block(() => {
+                            const p_Regels: _i_out._T_Handelstransacties.Verkopen.D.Regels = _p.cc($['Regels'], ($) => _p.block(() => {
                                 return _i_generic.resolve_dictionary(
                                     $,
                                     {
                                         'location 2 string': l2s,
-                                        'map': ($, $p) => _pa.block(() => {
-                                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                const p_BTW$mi_regime: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime = _pa.cc($['BTW-regime'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
+                                        'map': ($, $p) => _p.block(() => {
+                                            return _p.cc($['value'], ($) => _p.block(() => {
+                                                const p_BTW$mi_regime: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime = _p.cc($['BTW-regime'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                     switch ($[0]) {
-                                                        case 'Binnenland: heffing verlegd': return _pa.ss($, ($) => ['Binnenland: heffing verlegd', _pa.block(() => {
+                                                        case 'Binnenland: heffing verlegd': return _p.ss($, ($) => ['Binnenland: heffing verlegd', _p.block(() => {
                                                             return null
                                                         })])
-                                                        case 'Intracommunautair': return _pa.ss($, ($) => ['Intracommunautair', _pa.block(() => {
+                                                        case 'Intracommunautair': return _p.ss($, ($) => ['Intracommunautair', _p.block(() => {
                                                             return null
                                                         })])
-                                                        case 'Standaard': return _pa.ss($, ($) => ['Standaard', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_BTW$mi_categorie: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime.SG.Standaard.BTW$mi_categorie = _pa.cc($['BTW-categorie'], ($) => _i_generic.get_entry(
+                                                        case 'Standaard': return _p.ss($, ($) => ['Standaard', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_BTW$mi_categorie: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime.SG.Standaard.BTW$mi_categorie = _p.cc($['BTW-categorie'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         params['values']['Beheer']['BTW-categorieen'],
                                                                         null
@@ -1136,16 +1136,16 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        default: return _pa.au($[0])
+                                                        default: return _p.au($[0])
                                                     }
                                                 }))
-                                                const p_Bedrag_exclusief_BTW: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Bedrag_exclusief_BTW = _pa.cc($['Bedrag exclusief BTW'], ($) => $)
-                                                const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype = _pa.cc($['Contracttype'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
+                                                const p_Bedrag_exclusief_BTW: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Bedrag_exclusief_BTW = _p.cc($['Bedrag exclusief BTW'], ($) => $)
+                                                const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype = _p.cc($['Contracttype'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
                                                     switch ($[0]) {
-                                                        case 'Licentieovereenkomst': return _pa.ss($, ($) => ['Licentieovereenkomst', _pa.block(() => {
+                                                        case 'Licentieovereenkomst': return _p.ss($, ($) => ['Licentieovereenkomst', _p.block(() => {
                                                             const c_Definitie = p_parent_contract_type[0] === 'Licentieovereenkomst' ? p_parent_contract_type[1] : _pdev.implement_me("xx")
-                                                            return _pa.block(() => {
-                                                                const p_Periode: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Licentieovereenkomst.Periode = _pa.cc($['Periode'], ($) => _i_generic.get_entry(
+                                                            return _p.block(() => {
+                                                                const p_Periode: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Licentieovereenkomst.Periode = _p.cc($['Periode'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         c_Definitie['Overeenkomst']['entry']['Periodes'],
                                                                         null
@@ -1160,13 +1160,13 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        case 'Los': return _pa.ss($, ($) => ['Los', _pa.block(() => {
+                                                        case 'Los': return _p.ss($, ($) => ['Los', _p.block(() => {
                                                             return null
                                                         })])
-                                                        case 'Project': return _pa.ss($, ($) => ['Project', _pa.block(() => {
+                                                        case 'Project': return _p.ss($, ($) => ['Project', _p.block(() => {
                                                             const c_Definitie = p_parent_contract_type[0] === 'Project' ? p_parent_contract_type[1] : _pdev.implement_me("xx")
-                                                            return _pa.block(() => {
-                                                                const p_Opbrengst: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Project.Opbrengst = _pa.cc($['Opbrengst'], ($) => _i_generic.get_entry(
+                                                            return _p.block(() => {
+                                                                const p_Opbrengst: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Project.Opbrengst = _p.cc($['Opbrengst'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         c_Definitie['Offerte']['entry']['Opbrengsten'],
                                                                         null
@@ -1181,15 +1181,15 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        default: return _pa.au($[0])
+                                                        default: return _p.au($[0])
                                                     }
                                                 }))
-                                                const p_Omschrijving: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Omschrijving = _pa.cc($['Omschrijving'], ($) => $)
-                                                const p_Type: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type = _pa.cc($['Type'], ($) => _pa.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type => {
+                                                const p_Omschrijving: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Omschrijving = _p.cc($['Omschrijving'], ($) => $)
+                                                const p_Type: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type = _p.cc($['Type'], ($) => _p.cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type => {
                                                     switch ($[0]) {
-                                                        case 'Balans': return _pa.ss($, ($) => ['Balans', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_Balans_item: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Balans.Balans_item = _pa.cc($['Balans item'], ($) => _i_generic.get_entry(
+                                                        case 'Balans': return _p.ss($, ($) => ['Balans', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_Balans_item: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Balans.Balans_item = _p.cc($['Balans item'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         params['values']['Jaarbeheer']['Balans']['Overige balans items'],
                                                                         null
@@ -1204,9 +1204,9 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        case 'Opbrengsten': return _pa.ss($, ($) => ['Opbrengsten', _pa.block(() => {
-                                                            return _pa.block(() => {
-                                                                const p_Grootboekrekening: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Opbrengsten.Grootboekrekening = _pa.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+                                                        case 'Opbrengsten': return _p.ss($, ($) => ['Opbrengsten', _p.block(() => {
+                                                            return _p.block(() => {
+                                                                const p_Grootboekrekening: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Opbrengsten.Grootboekrekening = _p.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
                                                                     _i_generic.dictionary_to_lookup(
                                                                         params['values']['Grootboekrekeningen']['Resultaat'],
                                                                         null
@@ -1221,7 +1221,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
                                                                 })
                                                             })
                                                         })])
-                                                        default: return _pa.au($[0])
+                                                        default: return _p.au($[0])
                                                     }
                                                 }))
                                                 return ({
@@ -1257,12 +1257,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties =  ($, $p) 
         })
     })
 })
-export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() => {
+export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Resultaat: _i_out._T_Jaarbeheer.Resultaat = _pa.cc($['Resultaat'], ($) => _pa.block(() => {
-            const p_Grootboekrekening_voor_BTW_afrondingen: _i_out._T_Jaarbeheer.Resultaat.Grootboekrekening_voor_BTW_afrondingen = _pa.cc($['Grootboekrekening voor BTW afrondingen'], ($) => _i_generic.get_entry(
+    return _p.block(() => {
+        const p_Resultaat: _i_out._T_Jaarbeheer.Resultaat = _p.cc($['Resultaat'], ($) => _p.block(() => {
+            const p_Grootboekrekening_voor_BTW_afrondingen: _i_out._T_Jaarbeheer.Resultaat.Grootboekrekening_voor_BTW_afrondingen = _p.cc($['Grootboekrekening voor BTW afrondingen'], ($) => _i_generic.get_entry(
                 _i_generic.dictionary_to_lookup(
                     params['values']['Grootboekrekeningen']['Resultaat'],
                     null
@@ -1272,43 +1272,43 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     'reference': $,
                 }
             ))
-            const p_Salarisrondes: _i_out._T_Jaarbeheer.Resultaat.Salarisrondes = _pa.cc($['Salarisrondes'], ($) => _pa.block(() => {
+            const p_Salarisrondes: _i_out._T_Jaarbeheer.Resultaat.Salarisrondes = _p.cc($['Salarisrondes'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => null)
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => null)
                         }),
                     }
                 )
             }))
-            const p_BTW_periodes: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes = _pa.cc($['BTW periodes'], ($) => _pa.block(() => {
+            const p_BTW_periodes: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes = _p.cc($['BTW periodes'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                const p_1$pe__BTW$mi_categorieen: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen = _pa.cc($['1. BTW-categorieen'], ($) => _pa.block(() => {
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => _p.block(() => {
+                                const p_1$pe__BTW$mi_categorieen: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen = _p.cc($['1. BTW-categorieen'], ($) => _p.block(() => {
                                     return _i_generic.resolve_dictionary(
                                         $,
                                         {
                                             'location 2 string': l2s,
-                                            'map': ($, $p) => _pa.block(() => {
-                                                return _pa.cc($['value'], ($) => null)
+                                            'map': ($, $p) => _p.block(() => {
+                                                return _p.cc($['value'], ($) => null)
                                             }),
                                         }
                                     )
                                 }))
-                                const p_Documenten: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten = _pa.cc($['Documenten'], ($) => _pa.block(() => {
+                                const p_Documenten: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten = _p.cc($['Documenten'], ($) => _p.block(() => {
                                     return _i_generic.resolve_dictionary(
                                         $,
                                         {
                                             'location 2 string': l2s,
-                                            'map': ($, $p) => _pa.block(() => {
-                                                return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                    const p_Bestand: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D.Bestand = _pa.cc($['Bestand'], ($) => $)
+                                            'map': ($, $p) => _p.block(() => {
+                                                return _p.cc($['value'], ($) => _p.block(() => {
+                                                    const p_Bestand: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D.Bestand = _p.cc($['Bestand'], ($) => $)
                                                     return ({
                                                         'Bestand': p_Bestand,
                                                     })
@@ -1317,14 +1317,14 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                                         }
                                     )
                                 }))
-                                const p_Omschrijving: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Omschrijving = _pa.cc($['Omschrijving'], ($) => $)
-                                const p_Status: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status = _pa.cc($['Status'], ($) => _pa.cc($['state group'], ($): _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
+                                const p_Omschrijving: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Omschrijving = _p.cc($['Omschrijving'], ($) => $)
+                                const p_Status: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status = _p.cc($['Status'], ($) => _p.cc($['state group'], ($): _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
                                     switch ($[0]) {
-                                        case 'Aangegeven': return _pa.ss($, ($) => ['Aangegeven', _pa.block(() => {
-                                            return _pa.block(() => {
-                                                const p_Afronding: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Afronding = _pa.cc($['Afronding'], ($) => $)
-                                                const p_Bedrag: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Bedrag = _pa.cc($['Bedrag'], ($) => $)
-                                                const p_Datum: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Datum = _pa.cc($['Datum'], ($) => $)
+                                        case 'Aangegeven': return _p.ss($, ($) => ['Aangegeven', _p.block(() => {
+                                            return _p.block(() => {
+                                                const p_Afronding: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Afronding = _p.cc($['Afronding'], ($) => $)
+                                                const p_Bedrag: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Bedrag = _p.cc($['Bedrag'], ($) => $)
+                                                const p_Datum: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Datum = _p.cc($['Datum'], ($) => $)
                                                 return ({
                                                     'Afronding': p_Afronding,
                                                     'Bedrag': p_Bedrag,
@@ -1332,10 +1332,10 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                                                 })
                                             })
                                         })])
-                                        case 'Openstaand': return _pa.ss($, ($) => ['Openstaand', _pa.block(() => {
+                                        case 'Openstaand': return _p.ss($, ($) => ['Openstaand', _p.block(() => {
                                             return null
                                         })])
-                                        default: return _pa.au($[0])
+                                        default: return _p.au($[0])
                                     }
                                 }))
                                 return ({
@@ -1355,10 +1355,10 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                 'Salarisrondes': p_Salarisrondes,
             })
         }))
-        const p_Balans: _i_out._T_Jaarbeheer.Balans = _pa.cc($['Balans'], ($) => _pa.block(() => {
-            const p_Beginsaldo_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Beginsaldo_nog_aan_te_geven_BTW = _pa.cc($['Beginsaldo nog aan te geven BTW'], ($) => $)
-            const p_Beginsaldo_winstreserve: _i_out._T_Jaarbeheer.Balans.Beginsaldo_winstreserve = _pa.cc($['Beginsaldo winstreserve'], ($) => $)
-            const p_Grootboekrekening_voor_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_nog_aan_te_geven_BTW = _pa.cc($['Grootboekrekening voor nog aan te geven BTW'], ($) => _i_generic.get_entry(
+        const p_Balans: _i_out._T_Jaarbeheer.Balans = _p.cc($['Balans'], ($) => _p.block(() => {
+            const p_Beginsaldo_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Beginsaldo_nog_aan_te_geven_BTW = _p.cc($['Beginsaldo nog aan te geven BTW'], ($) => $)
+            const p_Beginsaldo_winstreserve: _i_out._T_Jaarbeheer.Balans.Beginsaldo_winstreserve = _p.cc($['Beginsaldo winstreserve'], ($) => $)
+            const p_Grootboekrekening_voor_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_nog_aan_te_geven_BTW = _p.cc($['Grootboekrekening voor nog aan te geven BTW'], ($) => _i_generic.get_entry(
                 _i_generic.dictionary_to_lookup(
                     params['values']['Grootboekrekeningen']['Balans'],
                     null
@@ -1368,7 +1368,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     'reference': $,
                 }
             ))
-            const p_Grootboekrekening_voor_resultaat_dit_jaar: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_resultaat_dit_jaar = _pa.cc($['Grootboekrekening voor resultaat dit jaar'], ($) => _i_generic.get_entry(
+            const p_Grootboekrekening_voor_resultaat_dit_jaar: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_resultaat_dit_jaar = _p.cc($['Grootboekrekening voor resultaat dit jaar'], ($) => _i_generic.get_entry(
                 _i_generic.dictionary_to_lookup(
                     params['values']['Grootboekrekeningen']['Balans'],
                     null
@@ -1378,7 +1378,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     'reference': $,
                 }
             ))
-            const p_Grootboekrekening_voor_winstreserve: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_winstreserve = _pa.cc($['Grootboekrekening voor winstreserve'], ($) => _i_generic.get_entry(
+            const p_Grootboekrekening_voor_winstreserve: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_winstreserve = _p.cc($['Grootboekrekening voor winstreserve'], ($) => _i_generic.get_entry(
                 _i_generic.dictionary_to_lookup(
                     params['values']['Grootboekrekeningen']['Balans'],
                     null
@@ -1388,7 +1388,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     'reference': $,
                 }
             ))
-            const p_Grootboekrekening_voor_Inkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Inkoop_saldo = _pa.cc($['Grootboekrekening voor Inkoop saldo'], ($) => _i_generic.get_entry(
+            const p_Grootboekrekening_voor_Inkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Inkoop_saldo = _p.cc($['Grootboekrekening voor Inkoop saldo'], ($) => _i_generic.get_entry(
                 _i_generic.dictionary_to_lookup(
                     params['values']['Grootboekrekeningen']['Balans'],
                     null
@@ -1398,7 +1398,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     'reference': $,
                 }
             ))
-            const p_Grootboekrekening_voor_Verkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Verkoop_saldo = _pa.cc($['Grootboekrekening voor Verkoop saldo'], ($) => _i_generic.get_entry(
+            const p_Grootboekrekening_voor_Verkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Verkoop_saldo = _p.cc($['Grootboekrekening voor Verkoop saldo'], ($) => _i_generic.get_entry(
                 _i_generic.dictionary_to_lookup(
                     params['values']['Grootboekrekeningen']['Balans'],
                     null
@@ -1408,15 +1408,15 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     'reference': $,
                 }
             ))
-            const p_Informele_rekeningen: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen = _pa.cc($['Informele rekeningen'], ($) => _pa.block(() => {
+            const p_Informele_rekeningen: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen = _p.cc($['Informele rekeningen'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Beginsaldo = _pa.cc($['Beginsaldo'], ($) => $)
-                                const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Grootboekrekening = _pa.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => _p.block(() => {
+                                const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Beginsaldo = _p.cc($['Beginsaldo'], ($) => $)
+                                const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Grootboekrekening = _p.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
                                     _i_generic.dictionary_to_lookup(
                                         params['values']['Grootboekrekeningen']['Balans'],
                                         null
@@ -1426,15 +1426,15 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                                         'reference': $,
                                     }
                                 ))
-                                const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw = _pa.cc($['Nieuw'], ($) => _pa.cc($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
+                                const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw = _p.cc($['Nieuw'], ($) => _p.cc($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
                                     switch ($[0]) {
-                                        case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
+                                        case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
                                             return null
                                         })])
-                                        case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
+                                        case 'Nee': return _p.ss($, ($) => ['Nee', _p.block(() => {
                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
-                                            return _pa.block(() => {
-                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
+                                            return _p.block(() => {
+                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _p.cc($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
                                                     $,
                                                     {
                                                         'location 2 string': l2s,
@@ -1451,7 +1451,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                                                 })
                                             })
                                         })])
-                                        default: return _pa.au($[0])
+                                        default: return _p.au($[0])
                                     }
                                 }))
                                 return ({
@@ -1464,15 +1464,15 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     }
                 )
             }))
-            const p_Bankrekeningen: _i_out._T_Jaarbeheer.Balans.Bankrekeningen = _pa.cc($['Bankrekeningen'], ($) => _pa.block(() => {
+            const p_Bankrekeningen: _i_out._T_Jaarbeheer.Balans.Bankrekeningen = _p.cc($['Bankrekeningen'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => _pa.block(() => {
-                                const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Beginsaldo = _pa.cc($['Beginsaldo'], ($) => $)
-                                const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Grootboekrekening = _pa.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => _p.block(() => {
+                                const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Beginsaldo = _p.cc($['Beginsaldo'], ($) => $)
+                                const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Grootboekrekening = _p.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
                                     _i_generic.dictionary_to_lookup(
                                         params['values']['Grootboekrekeningen']['Balans'],
                                         null
@@ -1482,15 +1482,15 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                                         'reference': $,
                                     }
                                 ))
-                                const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw = _pa.cc($['Nieuw'], ($) => _pa.cc($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
+                                const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw = _p.cc($['Nieuw'], ($) => _p.cc($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
                                     switch ($[0]) {
-                                        case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
+                                        case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
                                             return null
                                         })])
-                                        case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
+                                        case 'Nee': return _p.ss($, ($) => ['Nee', _p.block(() => {
                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
-                                            return _pa.block(() => {
-                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _pa.cc($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
+                                            return _p.block(() => {
+                                                const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _p.cc($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
                                                     $,
                                                     {
                                                         'location 2 string': l2s,
@@ -1507,19 +1507,19 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                                                 })
                                             })
                                         })])
-                                        default: return _pa.au($[0])
+                                        default: return _p.au($[0])
                                     }
                                 }))
-                                const p_Mutaties: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties = _pa.cc($['Mutaties'], ($) => _pa.block(() => {
+                                const p_Mutaties: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties = _p.cc($['Mutaties'], ($) => _p.block(() => {
                                     return _i_generic.resolve_dictionary(
                                         $,
                                         {
                                             'location 2 string': l2s,
-                                            'map': ($, $p) => _pa.block(() => {
-                                                return _pa.cc($['value'], ($) => _pa.block(() => {
-                                                    const p_Bedrag: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Bedrag = _pa.cc($['Bedrag'], ($) => $)
-                                                    const p_Datum: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Datum = _pa.cc($['Datum'], ($) => $)
-                                                    const p_Omschrijving: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Omschrijving = _pa.cc($['Omschrijving'], ($) => $)
+                                            'map': ($, $p) => _p.block(() => {
+                                                return _p.cc($['value'], ($) => _p.block(() => {
+                                                    const p_Bedrag: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Bedrag = _p.cc($['Bedrag'], ($) => $)
+                                                    const p_Datum: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Datum = _p.cc($['Datum'], ($) => $)
+                                                    const p_Omschrijving: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Omschrijving = _p.cc($['Omschrijving'], ($) => $)
                                                     return ({
                                                         'Bedrag': p_Bedrag,
                                                         'Datum': p_Datum,
@@ -1541,13 +1541,13 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     }
                 )
             }))
-            const p_Overige_balans_items: _i_out._T_Jaarbeheer.Balans.Overige_balans_items = _pa.cc($['Overige balans items'], ($) => _pa.block(() => {
+            const p_Overige_balans_items: _i_out._T_Jaarbeheer.Balans.Overige_balans_items = _p.cc($['Overige balans items'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => Overige_balans_item(
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => Overige_balans_item(
                                 $,
                                 {
                                     'location 2 string': l2s,
@@ -1561,13 +1561,13 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
                     }
                 )
             }))
-            const p_Verrekenposten: _i_out._T_Jaarbeheer.Balans.Verrekenposten = _pa.cc($['Verrekenposten'], ($) => _pa.block(() => {
+            const p_Verrekenposten: _i_out._T_Jaarbeheer.Balans.Verrekenposten = _p.cc($['Verrekenposten'], ($) => _p.block(() => {
                 return _i_generic.resolve_dictionary(
                     $,
                     {
                         'location 2 string': l2s,
-                        'map': ($, $p) => _pa.block(() => {
-                            return _pa.cc($['value'], ($) => null)
+                        'map': ($, $p) => _p.block(() => {
+                            return _p.cc($['value'], ($) => null)
                         }),
                     }
                 )
@@ -1592,29 +1592,29 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer =  ($, $p) => _pa.block(() 
         })
     })
 })
-export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
+export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
+    return _p.block(() => {
         return _i_generic.resolve_ordered_dictionary(
             $,
             {
                 'location 2 string': l2s,
-                'map': ($, $p) => _pa.block(() => {
-                    return _pa.cc($['value'], ($) => _pa.block(() => {
-                        const p_Afgesloten: _i_out._T_Jaren.D.Afgesloten = _pa.cc($['Afgesloten'], ($) => _pa.cc($['state group'], ($): _i_out._T_Jaren.D.Afgesloten => {
+                'map': ($, $p) => _p.block(() => {
+                    return _p.cc($['value'], ($) => _p.block(() => {
+                        const p_Afgesloten: _i_out._T_Jaren.D.Afgesloten = _p.cc($['Afgesloten'], ($) => _p.cc($['state group'], ($): _i_out._T_Jaren.D.Afgesloten => {
                             switch ($[0]) {
-                                case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
+                                case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
                                     return null
                                 })])
-                                case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
+                                case 'Nee': return _p.ss($, ($) => ['Nee', _p.block(() => {
                                     return null
                                 })])
-                                default: return _pa.au($[0])
+                                default: return _p.au($[0])
                             }
                         }))
-                        const p_Startdatum_boekjaar: _i_out._T_Jaren.D.Startdatum_boekjaar = _pa.cc($['Startdatum boekjaar'], ($) => $)
-                        const p_Grootboekrekeningen: _i_out._T_Jaren.D.Grootboekrekeningen = _pa.cc($['Grootboekrekeningen'], ($) => Grootboekrekeningen(
+                        const p_Startdatum_boekjaar: _i_out._T_Jaren.D.Startdatum_boekjaar = _p.cc($['Startdatum boekjaar'], ($) => $)
+                        const p_Grootboekrekeningen: _i_out._T_Jaren.D.Grootboekrekeningen = _p.cc($['Grootboekrekeningen'], ($) => Grootboekrekeningen(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1624,7 +1624,7 @@ export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Eerste_boekjaar: _i_out._T_Jaren.D.Eerste_boekjaar = _pa.cc($['Eerste boekjaar'], ($) => Eerste_boekjaar(
+                        const p_Eerste_boekjaar: _i_out._T_Jaren.D.Eerste_boekjaar = _p.cc($['Eerste boekjaar'], ($) => Eerste_boekjaar(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1636,7 +1636,7 @@ export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Jaarbeheer: _i_out._T_Jaren.D.Jaarbeheer = _pa.cc($['Jaarbeheer'], ($) => Jaarbeheer(
+                        const p_Jaarbeheer: _i_out._T_Jaren.D.Jaarbeheer = _p.cc($['Jaarbeheer'], ($) => Jaarbeheer(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1651,7 +1651,7 @@ export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Handelstransacties: _i_out._T_Jaren.D.Handelstransacties = _pa.cc($['Handelstransacties'], ($) => Handelstransacties(
+                        const p_Handelstransacties: _i_out._T_Jaren.D.Handelstransacties = _p.cc($['Handelstransacties'], ($) => Handelstransacties(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1665,7 +1665,7 @@ export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
                                 }),
                             }
                         ))
-                        const p_Mutaties: _i_out._T_Jaren.D.Mutaties = _pa.cc($['Mutaties'], ($) => Mutaties(
+                        const p_Mutaties: _i_out._T_Jaren.D.Mutaties = _p.cc($['Mutaties'], ($) => Mutaties(
                             $,
                             {
                                 'location 2 string': l2s,
@@ -1697,33 +1697,33 @@ export const Jaren: _i_signatures._T_Jaren =  ($, $p) => _pa.block(() => {
         )
     })
 })
-export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
+export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Verrekenpost_mutaties: _i_out._T_Mutaties.Verrekenpost_mutaties = _pa.cc($['Verrekenpost mutaties'], ($) => _pa.block(() => {
+    return _p.block(() => {
+        const p_Verrekenpost_mutaties: _i_out._T_Mutaties.Verrekenpost_mutaties = _p.cc($['Verrekenpost mutaties'], ($) => _p.block(() => {
             const benchmark = params['values']['Jaarbeheer']['Balans']['Verrekenposten']
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
                             return _i_generic.resolve_dictionary(
                                 $,
                                 {
                                     'location 2 string': l2s,
-                                    'map': ($, $p) => _pa.block(() => {
-                                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                                            const p_Bedrag: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Bedrag = _pa.cc($['Bedrag'], ($) => $)
-                                            const p_Afhandeling: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling = _pa.cc($['Afhandeling'], ($) => _pa.cc($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
+                                    'map': ($, $p) => _p.block(() => {
+                                        return _p.cc($['value'], ($) => _p.block(() => {
+                                            const p_Bedrag: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Bedrag = _p.cc($['Bedrag'], ($) => $)
+                                            const p_Afhandeling: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling = _p.cc($['Afhandeling'], ($) => _p.cc($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
                                                 switch ($[0]) {
-                                                    case 'Balans': return _pa.ss($, ($) => ['Balans', _pa.block(() => {
-                                                        return _pa.cc($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans => {
+                                                    case 'Balans': return _p.ss($, ($) => ['Balans', _p.block(() => {
+                                                        return _p.cc($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans => {
                                                             switch ($[0]) {
-                                                                case 'Informele rekening': return _pa.ss($, ($) => ['Informele rekening', _pa.block(() => {
-                                                                    return _pa.block(() => {
-                                                                        const p_Informele_rekening: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans.SG.Informele_rekening.Informele_rekening = _pa.cc($['Informele rekening'], ($) => _i_generic.get_entry(
+                                                                case 'Informele rekening': return _p.ss($, ($) => ['Informele rekening', _p.block(() => {
+                                                                    return _p.block(() => {
+                                                                        const p_Informele_rekening: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans.SG.Informele_rekening.Informele_rekening = _p.cc($['Informele rekening'], ($) => _i_generic.get_entry(
                                                                             _i_generic.dictionary_to_lookup(
                                                                                 params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
                                                                                 null
@@ -1738,11 +1738,11 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                                                                         })
                                                                     })
                                                                 })])
-                                                                default: return _pa.au($[0])
+                                                                default: return _p.au($[0])
                                                             }
                                                         })
                                                     })])
-                                                    case 'Resultaat': return _pa.ss($, ($) => ['Resultaat', _pa.block(() => {
+                                                    case 'Resultaat': return _p.ss($, ($) => ['Resultaat', _p.block(() => {
                                                         return Balans_Resultaat_Mutatie(
                                                             $,
                                                             {
@@ -1754,7 +1754,7 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                                                             }
                                                         )
                                                     })])
-                                                    default: return _pa.au($[0])
+                                                    default: return _p.au($[0])
                                                 }
                                             }))
                                             return ({
@@ -1770,27 +1770,27 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                 }
             )
         }))
-        const p_Bankrekening_Mutatie_Verwerkingen: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen = _pa.cc($['Bankrekening Mutatie Verwerkingen'], ($) => _pa.block(() => {
+        const p_Bankrekening_Mutatie_Verwerkingen: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen = _p.cc($['Bankrekening Mutatie Verwerkingen'], ($) => _p.block(() => {
             const benchmark = params['values']['Jaarbeheer']['Balans']['Bankrekeningen']
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
                             return _i_generic.resolve_dictionary(
                                 $,
                                 {
                                     'location 2 string': l2s,
-                                    'map': ($, $p) => _pa.block(() => {
-                                        return _pa.cc($['value'], ($) => _pa.cc($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
+                                    'map': ($, $p) => _p.block(() => {
+                                        return _p.cc($['value'], ($) => _p.cc($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
                                             switch ($[0]) {
-                                                case 'Balans': return _pa.ss($, ($) => ['Balans', _pa.block(() => {
-                                                    return _pa.cc($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans => {
+                                                case 'Balans': return _p.ss($, ($) => ['Balans', _p.block(() => {
+                                                    return _p.cc($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans => {
                                                         switch ($[0]) {
-                                                            case 'Informele rekening': return _pa.ss($, ($) => ['Informele rekening', _pa.block(() => {
-                                                                return _pa.block(() => {
-                                                                    const p_Informele_rekening: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Informele_rekening.Informele_rekening = _pa.cc($['Informele rekening'], ($) => _i_generic.get_entry(
+                                                            case 'Informele rekening': return _p.ss($, ($) => ['Informele rekening', _p.block(() => {
+                                                                return _p.block(() => {
+                                                                    const p_Informele_rekening: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Informele_rekening.Informele_rekening = _p.cc($['Informele rekening'], ($) => _i_generic.get_entry(
                                                                         _i_generic.dictionary_to_lookup(
                                                                             params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
                                                                             null
@@ -1805,9 +1805,9 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                                                                     })
                                                                 })
                                                             })])
-                                                            case 'Verrekenpost': return _pa.ss($, ($) => ['Verrekenpost', _pa.block(() => {
-                                                                return _pa.block(() => {
-                                                                    const p_Verrekenpost: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Verrekenpost.Verrekenpost = _pa.cc($['Verrekenpost'], ($) => _i_generic.get_entry(
+                                                            case 'Verrekenpost': return _p.ss($, ($) => ['Verrekenpost', _p.block(() => {
+                                                                return _p.block(() => {
+                                                                    const p_Verrekenpost: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Verrekenpost.Verrekenpost = _p.cc($['Verrekenpost'], ($) => _i_generic.get_entry(
                                                                         _i_generic.dictionary_to_lookup(
                                                                             params['values']['Jaarbeheer']['Balans']['Verrekenposten'],
                                                                             null
@@ -1822,11 +1822,11 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                                                                     })
                                                                 })
                                                             })])
-                                                            default: return _pa.au($[0])
+                                                            default: return _p.au($[0])
                                                         }
                                                     })
                                                 })])
-                                                case 'Resultaat': return _pa.ss($, ($) => ['Resultaat', _pa.block(() => {
+                                                case 'Resultaat': return _p.ss($, ($) => ['Resultaat', _p.block(() => {
                                                     return Balans_Resultaat_Mutatie(
                                                         $,
                                                         {
@@ -1838,7 +1838,7 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                                                         }
                                                     )
                                                 })])
-                                                default: return _pa.au($[0])
+                                                default: return _p.au($[0])
                                             }
                                         }))
                                     }),
@@ -1849,23 +1849,23 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                 }
             )
         }))
-        const p_Memoriaal_boekingen: _i_out._T_Mutaties.Memoriaal_boekingen = _pa.cc($['Memoriaal boekingen'], ($) => _pa.block(() => {
+        const p_Memoriaal_boekingen: _i_out._T_Mutaties.Memoriaal_boekingen = _p.cc($['Memoriaal boekingen'], ($) => _p.block(() => {
             const benchmark = params['values']['Jaarbeheer']['Balans']['Overige balans items']
             return _i_generic.resolve_dictionary(
                 $,
                 {
                     'location 2 string': l2s,
-                    'map': ($, $p) => _pa.block(() => {
-                        return _pa.cc($['value'], ($) => _pa.block(() => {
+                    'map': ($, $p) => _p.block(() => {
+                        return _p.cc($['value'], ($) => _p.block(() => {
                             return _i_generic.resolve_dictionary(
                                 $,
                                 {
                                     'location 2 string': l2s,
-                                    'map': ($, $p) => _pa.block(() => {
-                                        return _pa.cc($['value'], ($) => _pa.block(() => {
-                                            const p_Bedrag: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Bedrag = _pa.cc($['Bedrag'], ($) => $)
-                                            const p_Datum: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Datum = _pa.cc($['Datum'], ($) => $)
-                                            const p_Grootboekrekening: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Grootboekrekening = _pa.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+                                    'map': ($, $p) => _p.block(() => {
+                                        return _p.cc($['value'], ($) => _p.block(() => {
+                                            const p_Bedrag: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Bedrag = _p.cc($['Bedrag'], ($) => $)
+                                            const p_Datum: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Datum = _p.cc($['Datum'], ($) => $)
+                                            const p_Grootboekrekening: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Grootboekrekening = _p.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
                                                 _i_generic.dictionary_to_lookup(
                                                     params['values']['Grootboekrekeningen']['Resultaat'],
                                                     null
@@ -1875,7 +1875,7 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
                                                     'reference': $,
                                                 }
                                             ))
-                                            const p_Omschrijving: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Omschrijving = _pa.cc($['Omschrijving'], ($) => $)
+                                            const p_Omschrijving: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Omschrijving = _p.cc($['Omschrijving'], ($) => $)
                                             return ({
                                                 'Bedrag': p_Bedrag,
                                                 'Datum': p_Datum,
@@ -1898,12 +1898,12 @@ export const Mutaties: _i_signatures._T_Mutaties =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p) => _pa.block(() => {
+export const Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Beginsaldo: _i_out._T_Overige_balans_item.Beginsaldo = _pa.cc($['Beginsaldo'], ($) => $)
-        const p_Grootboekrekening: _i_out._T_Overige_balans_item.Grootboekrekening = _pa.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+    return _p.block(() => {
+        const p_Beginsaldo: _i_out._T_Overige_balans_item.Beginsaldo = _p.cc($['Beginsaldo'], ($) => $)
+        const p_Grootboekrekening: _i_out._T_Overige_balans_item.Grootboekrekening = _p.cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
             _i_generic.dictionary_to_lookup(
                 params['values']['Grootboekrekeningen']['Balans'],
                 null
@@ -1913,15 +1913,15 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p
                 'reference': $,
             }
         ))
-        const p_Nieuw: _i_out._T_Overige_balans_item.Nieuw = _pa.cc($['Nieuw'], ($) => _pa.cc($['state group'], ($): _i_out._T_Overige_balans_item.Nieuw => {
+        const p_Nieuw: _i_out._T_Overige_balans_item.Nieuw = _p.cc($['Nieuw'], ($) => _p.cc($['state group'], ($): _i_out._T_Overige_balans_item.Nieuw => {
             switch ($[0]) {
-                case 'Ja': return _pa.ss($, ($) => ['Ja', _pa.block(() => {
+                case 'Ja': return _p.ss($, ($) => ['Ja', _p.block(() => {
                     return null
                 })])
-                case 'Nee': return _pa.ss($, ($) => ['Nee', _pa.block(() => {
+                case 'Nee': return _p.ss($, ($) => ['Nee', _p.block(() => {
                     const c_Volgend_boekjaar = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
-                    return _pa.block(() => {
-                        const p_Balans_item: _i_out._T_Overige_balans_item.Nieuw.SG.Nee.Balans_item = _pa.cc($['Balans item'], ($) => _i_generic.get_entry(
+                    return _p.block(() => {
+                        const p_Balans_item: _i_out._T_Overige_balans_item.Nieuw.SG.Nee.Balans_item = _p.cc($['Balans item'], ($) => _i_generic.get_entry(
                             _i_generic.dictionary_to_lookup(
                                 c_Volgend_boekjaar['Vorig boekjaar']['entry']['Jaarbeheer']['Balans']['Overige balans items'],
                                 null
@@ -1936,7 +1936,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p
                         })
                     })
                 })])
-                default: return _pa.au($[0])
+                default: return _p.au($[0])
             }
         }))
         return ({
@@ -1946,11 +1946,11 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item =  ($, $p
         })
     })
 })
-export const Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
+export const Root: _i_signatures._T_Root =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
-    return _pa.block(() => {
-        const p_Fiscaal: _i_out._T_Root.Fiscaal = _pa.cc($['Fiscaal'], ($) => Fiscaal(
+    return _p.block(() => {
+        const p_Fiscaal: _i_out._T_Root.Fiscaal = _p.cc($['Fiscaal'], ($) => Fiscaal(
             $,
             {
                 'location 2 string': l2s,
@@ -1960,7 +1960,7 @@ export const Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
                 }),
             }
         ))
-        const p_Categorieen: _i_out._T_Root.Categorieen = _pa.cc($['Categorieen'], ($) => Grootboek_Categorieen(
+        const p_Categorieen: _i_out._T_Root.Categorieen = _p.cc($['Categorieen'], ($) => Grootboek_Categorieen(
             $,
             {
                 'location 2 string': l2s,
@@ -1972,7 +1972,7 @@ export const Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
                 }),
             }
         ))
-        const p_Beheer: _i_out._T_Root.Beheer = _pa.cc($['Beheer'], ($) => Beheer(
+        const p_Beheer: _i_out._T_Root.Beheer = _p.cc($['Beheer'], ($) => Beheer(
             $,
             {
                 'location 2 string': l2s,
@@ -1984,7 +1984,7 @@ export const Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
                 }),
             }
         ))
-        const p_Jaren: _i_out._T_Root.Jaren = _pa.cc($['Jaren'], ($) => Jaren(
+        const p_Jaren: _i_out._T_Root.Jaren = _p.cc($['Jaren'], ($) => Jaren(
             $,
             {
                 'location 2 string': l2s,
@@ -2004,7 +2004,7 @@ export const Root: _i_signatures._T_Root =  ($, $p) => _pa.block(() => {
         })
     })
 })
-export const Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Bankrekening =  ($, $p) => _pa.block(() => {
+export const Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Bankrekening =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _i_generic.get_entry(
@@ -2018,7 +2018,7 @@ export const Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Bank
         }
     )
 })
-export const Verwijzing_naar_Informele_rekening: _i_signatures._T_Verwijzing_naar_Informele_rekening =  ($, $p) => _pa.block(() => {
+export const Verwijzing_naar_Informele_rekening: _i_signatures._T_Verwijzing_naar_Informele_rekening =  ($, $p) => _p.block(() => {
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _i_generic.get_entry(
