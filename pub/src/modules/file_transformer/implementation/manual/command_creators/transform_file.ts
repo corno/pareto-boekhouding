@@ -22,7 +22,7 @@ export type Creator = (
     >,
 ) => signatures.commands.transform_file
 
-export const $$: Creator = (deserializer) => _pc.create_command_procedure(
+export const $$: Creator = (deserializer) => _pc.command_procedure(
     ($p, $cr, $qr) => [
         _pc.create_error_handling_context<d_main.Error, d_transform_file.Error>(
             [
