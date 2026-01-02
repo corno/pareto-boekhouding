@@ -14,16 +14,15 @@ import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refin
 import * as s_path from "pareto-resources/dist/implementation/manual/schemas/path/serializers"
 import * as s_transform_file from "../schemas/transform_file/serializers"
 
-export type Creator = <Resolved_Model>(
+export type Creator = (
     deserializer: _pi.Deserializer_With_Parameters<
-        Resolved_Model,
+        string,
         d_deserialize_resolved_model.Error,
         d_deserialize_resolved_model.Parameters
     >,
-    serializer: _pi.Serializer<Resolved_Model>
 ) => signatures.commands.transform_file
 
-export const $$: Creator = (deserializer, serializer) => _pc.create_command_procedure(
+export const $$: Creator = (deserializer) => _pc.create_command_procedure(
     ($p, $cr, $qr) => [
         _pc.create_error_handling_context<d_main.Error, d_transform_file.Error>(
             [
@@ -38,19 +37,17 @@ export const $$: Creator = (deserializer, serializer) => _pc.create_command_proc
                                     return ['file in file out', ['reading file', $]]
                                 }
                             ).refine_without_error_transformation(
-                                ($, abort) => deserializer(
-                                    $,
-                                    ($) => abort(['processing', $]),
-                                    {
-                                        'uri': s_path.Node_Path($r.in),
-                                    },
-                                )
-                            ).transform_result(($) => {
-                                return {
+                                ($, abort) => ({
                                     'path': $r.out,
-                                    'data': serializer($),
-                                }
-                            }),
+                                    'data': deserializer(
+                                        $,
+                                        ($) => abort(['processing', $]),
+                                        {
+                                            'uri': s_path.Node_Path($r.in),
+                                        },
+                                    ),
+                                })
+                            ),
                             ($v) => [
                                 $cr['write file'].execute(
                                     $v,

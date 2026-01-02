@@ -41,9 +41,6 @@ namespace _psh {
         readonly 'location': G_Source
     }
 
-    export const to_raw_array = <T>($: _pi.List<T>): readonly T[] => $.__get_raw_copy()
-
-
     export type Dictionary<G_Source, T_D> = {
         readonly 'dictionary': _pi.Dictionary<{
             readonly 'entry': T_D
