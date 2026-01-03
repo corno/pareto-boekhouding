@@ -30,24 +30,23 @@ export const $$: Creator = (deserializer) => _pc.command_procedure(
                     (abort) => r_file_in_file_out_from_main.Parameters($p, ($) => abort(['file in file out', ['command line arguments', $]])),
                     ($r) => [
 
-                        _pc.query_without_error_transformation(
+                        _pc.query(
                             $qr['read file'](
                                 $r.in,
                                 ($): d_transform_file.Error => {
                                     return ['file in file out', ['reading file', $]]
                                 }
-                            ).refine_without_error_transformation(
-                                ($, abort) => ({
-                                    'path': $r.out,
-                                    'data': deserializer(
-                                        $,
-                                        ($) => abort(['processing', $]),
-                                        {
-                                            'uri': s_path.Node_Path($r.in),
-                                        },
-                                    ),
-                                })
                             ),
+                            ($, abort) => ({
+                                'path': $r.out,
+                                'data': deserializer(
+                                    $,
+                                    ($) => abort(['processing', $]),
+                                    {
+                                        'uri': s_path.Node_Path($r.in),
+                                    },
+                                ),
+                            }),
                             ($v) => [
                                 $cr['write file'].execute(
                                     $v,
