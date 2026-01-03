@@ -15,8 +15,8 @@ type Possibly_Relevant_Entry<T> = {
 
 const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _pi.Dictionary<T> => {
     return $.filter(($) => $['is relevant']
-        ? _p.set($['entry'])
-        : _p.not_set()
+        ? _p.optional.set($['entry'])
+        : _p.optional.not_set()
     )
 }
 

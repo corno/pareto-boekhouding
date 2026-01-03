@@ -9,12 +9,12 @@ export const Bestandsnaam: _i_signatures._T_Bestandsnaam = ($, $p) => ['text', (
     'delimiter': ['quote', null],
     'value': $,
 })]
-export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dictionary_literal({
-    'Bankrekeningen': _pa.cc($['Bankrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dictionary.literal({
+    'Bankrekeningen': _pa.cc($['Bankrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
-    'Beheer': _pa.cc($['Beheer'], ($) => ['verbose group', _pa.dictionary_literal({
-        'Balans': _pa.cc($['Balans'], ($) => ['verbose group', _pa.dictionary_literal({
-            'Grootboekrekeningen': _pa.cc($['Grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+    'Beheer': _pa.cc($['Beheer'], ($) => ['verbose group', _pa.dictionary.literal({
+        'Balans': _pa.cc($['Balans'], ($) => ['verbose group', _pa.dictionary.literal({
+            'Grootboekrekeningen': _pa.cc($['Grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Hoofdcategorie': _pa.cc($['Hoofdcategorie'], ($) => ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -27,35 +27,35 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Activa': return _pa.ss($, ($) => ({
                             'state': "Activa",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Passiva': return _pa.ss($, ($) => ({
                             'state': "Passiva",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
                     }
                 })]),
             })])]),
-            'Hoofdcategorieen': _pa.cc($['Hoofdcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Hoofdcategorieen': _pa.cc($['Hoofdcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Zijde': _pa.cc($['Zijde'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'Activa': return _pa.ss($, ($) => ({
                             'state': "Activa",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Passiva': return _pa.ss($, ($) => ({
                             'state': "Passiva",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
                     }
                 })]),
-                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                     'Hoofdcategorie fiscus': _pa.cc($['Hoofdcategorie fiscus'], ($) => ['text', ({
                         'delimiter': ['quote', null],
                         'value': $,
@@ -66,32 +66,32 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     })]),
                 })])]),
             })])]),
-            'Hoofdcategorieen fiscus': _pa.cc($['Hoofdcategorieen fiscus'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Hoofdcategorieen fiscus': _pa.cc($['Hoofdcategorieen fiscus'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Zijde': _pa.cc($['Zijde'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'Activa': return _pa.ss($, ($) => ({
                             'state': "Activa",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Passiva': return _pa.ss($, ($) => ({
                             'state': "Passiva",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
                     }
                 })]),
-                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 })])]),
             })])]),
         })]),
-        'BTW-categorieen': _pa.cc($['BTW-categorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'BTW-categorieen': _pa.cc($['BTW-categorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'BTW-heffing': _pa.cc($['BTW-heffing'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                 switch ($[0]) {
                     case 'Ja': return _pa.ss($, ($) => ({
                         'state': "Ja",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'BTW-promillage': _pa.cc($['BTW-promillage'], ($) => ['text', ({
                                 'delimiter': ['backtick', null],
                                 'value': $p['value serializers']['custom numbers']['Promillage'](
@@ -103,14 +103,14 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Nee': return _pa.ss($, ($) => ({
                         'state': "Nee",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     default: return _pa.au($[0])
                 }
             })]),
         })])]),
-        'Gebruikers': _pa.cc($['Gebruikers'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Gebruikers': _pa.cc($['Gebruikers'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Volledige naam': _pa.cc($['Volledige naam'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
@@ -127,8 +127,8 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 null
             ),
         })]),
-        'Resultaat': _pa.cc($['Resultaat'], ($) => ['verbose group', _pa.dictionary_literal({
-            'Correctietypes vennootschapsbelasting': _pa.cc($['Correctietypes vennootschapsbelasting'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Resultaat': _pa.cc($['Resultaat'], ($) => ['verbose group', _pa.dictionary.literal({
+            'Correctietypes vennootschapsbelasting': _pa.cc($['Correctietypes vennootschapsbelasting'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Te corrigeren promillage': _pa.cc($['Te corrigeren promillage'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Promillage'](
@@ -137,7 +137,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     ),
                 })]),
             })])]),
-            'Grootboekrekeningen': _pa.cc($['Grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Grootboekrekeningen': _pa.cc($['Grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Hoofdcategorie': _pa.cc($['Hoofdcategorie'], ($) => ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -150,12 +150,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Kosten': return _pa.ss($, ($) => ({
                             'state': "Kosten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Correctie op vennootschapsbelasting': _pa.cc($['Correctie op vennootschapsbelasting'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                                     switch ($[0]) {
                                         case 'Ja': return _pa.ss($, ($) => ({
                                             'state': "Ja",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                                 'Correctietype': _pa.cc($['Correctietype'], ($) => ['text', ({
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -164,7 +164,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                                         }))
                                         case 'Nee': return _pa.ss($, ($) => ({
                                             'state': "Nee",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                             })],
                                         }))
                                         default: return _pa.au($[0])
@@ -174,30 +174,30 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Opbrengsten': return _pa.ss($, ($) => ({
                             'state': "Opbrengsten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
                     }
                 })]),
             })])]),
-            'Hoofdcategorieen': _pa.cc($['Hoofdcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Hoofdcategorieen': _pa.cc($['Hoofdcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Zijde': _pa.cc($['Zijde'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'Kosten': return _pa.ss($, ($) => ({
                             'state': "Kosten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Opbrengsten': return _pa.ss($, ($) => ({
                             'state': "Opbrengsten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
                     }
                 })]),
-                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                     'Hoofdcategorie fiscus': _pa.cc($['Hoofdcategorie fiscus'], ($) => ['text', ({
                         'delimiter': ['quote', null],
                         'value': $,
@@ -208,68 +208,68 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     })]),
                 })])]),
             })])]),
-            'Hoofdcategorieen fiscus': _pa.cc($['Hoofdcategorieen fiscus'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Hoofdcategorieen fiscus': _pa.cc($['Hoofdcategorieen fiscus'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Zijde': _pa.cc($['Zijde'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'Kosten': return _pa.ss($, ($) => ({
                             'state': "Kosten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Opbrengsten': return _pa.ss($, ($) => ({
                             'state': "Opbrengsten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
                     }
                 })]),
-                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+                'Subcategorieen': _pa.cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 })])]),
             })])]),
         })]),
     })]),
-    'Informele rekeningen': _pa.cc($['Informele rekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+    'Informele rekeningen': _pa.cc($['Informele rekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
-    'Jaren': _pa.cc($['Jaren'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+    'Jaren': _pa.cc($['Jaren'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
         'Afgesloten': _pa.cc($['Afgesloten'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Ja': return _pa.ss($, ($) => ({
                     'state': "Ja",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                     })],
                 }))
                 case 'Nee': return _pa.ss($, ($) => ({
                     'state': "Nee",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                     })],
                 }))
                 default: return _pa.au($[0])
             }
         })]),
-        'Balans grootboekrekeningen': _pa.cc($['Balans grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Balans grootboekrekeningen': _pa.cc($['Balans grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Type': _pa.cc($['Type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                 switch ($[0]) {
                     case 'Bankrekening': return _pa.ss($, ($) => ({
                         'state': "Bankrekening",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Overig': return _pa.ss($, ($) => ({
                         'state': "Overig",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Informele rekening': return _pa.ss($, ($) => ({
                         'state': "Informele rekening",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     default: return _pa.au($[0])
                 }
             })]),
         })])]),
-        'Bankrekeningen': _pa.cc($['Bankrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Bankrekeningen': _pa.cc($['Bankrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Beginsaldo': _pa.cc($['Beginsaldo'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -281,7 +281,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
-            'Mutaties': _pa.cc($['Mutaties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Mutaties': _pa.cc($['Mutaties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Bedrag': _pa.cc($['Bedrag'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -304,17 +304,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Nog te verwerken': return _pa.ss($, ($) => ({
                             'state': "Nog te verwerken",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Verwerkt': return _pa.ss($, ($) => ({
                             'state': "Verwerkt",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Afhandeling': _pa.cc($['Afhandeling'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                                     switch ($[0]) {
                                         case 'Inkoop': return _pa.ss($, ($) => ({
                                             'state': "Inkoop",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                                 'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -327,7 +327,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                                         }))
                                         case 'Verrekenpost': return _pa.ss($, ($) => ({
                                             'state': "Verrekenpost",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                                 'Verrekenpost': _pa.cc($['Verrekenpost'], ($) => ['text', ({
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -336,7 +336,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                                         }))
                                         case 'BTW-periode': return _pa.ss($, ($) => ({
                                             'state': "BTW-periode",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                                 'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -349,7 +349,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                                         }))
                                         case 'Verkoop': return _pa.ss($, ($) => ({
                                             'state': "Verkoop",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                                 'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -362,7 +362,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                                         }))
                                         case 'Informele rekening': return _pa.ss($, ($) => ({
                                             'state': "Informele rekening",
-                                            'value': ['verbose group', _pa.dictionary_literal({
+                                            'value': ['verbose group', _pa.dictionary.literal({
                                                 'Informele rekening': _pa.cc($['Informele rekening'], ($) => ['text', ({
                                                     'delimiter': ['quote', null],
                                                     'value': $,
@@ -382,12 +382,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Ja': return _pa.ss($, ($) => ({
                         'state': "Ja",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Nee': return _pa.ss($, ($) => ({
                         'state': "Nee",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -416,16 +416,16 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 null
             ),
         })]),
-        'BTW periode saldo': _pa.cc($['BTW periode saldo'], ($) => ['verbose group', _pa.dictionary_literal({
+        'BTW periode saldo': _pa.cc($['BTW periode saldo'], ($) => ['verbose group', _pa.dictionary.literal({
             'Grootboekrekening': _pa.cc($['Grootboekrekening'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
         })]),
-        'BTW periodes': _pa.cc($['BTW periodes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-            '1. BTW-categorieen': _pa.cc($['1. BTW-categorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'BTW periodes': _pa.cc($['BTW periodes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            '1. BTW-categorieen': _pa.cc($['1. BTW-categorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             })])]),
-            'Documenten': _pa.cc($['Documenten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Documenten': _pa.cc($['Documenten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Bestand': _pa.cc($['Bestand'], ($) => Bestandsnaam(
                     $,
                     {
@@ -441,7 +441,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Aangegeven': return _pa.ss($, ($) => ({
                         'state': "Aangegeven",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Afronding': _pa.cc($['Afronding'], ($) => ['text', ({
                                 'delimiter': ['backtick', null],
                                 'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -467,7 +467,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Openstaand': return _pa.ss($, ($) => ({
                         'state': "Openstaand",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     default: return _pa.au($[0])
@@ -478,12 +478,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
             switch ($[0]) {
                 case 'Ja': return _pa.ss($, ($) => ({
                     'state': "Ja",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                     })],
                 }))
                 case 'Nee': return _pa.ss($, ($) => ({
                     'state': "Nee",
-                    'value': ['verbose group', _pa.dictionary_literal({
+                    'value': ['verbose group', _pa.dictionary.literal({
                         'Vorig boekjaar': _pa.cc($['Vorig boekjaar'], ($) => ['text', ({
                             'delimiter': ['quote', null],
                             'value': $,
@@ -509,7 +509,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
             'delimiter': ['quote', null],
             'value': $,
         })]),
-        'Informele rekeningen': _pa.cc($['Informele rekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Informele rekeningen': _pa.cc($['Informele rekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Beginsaldo': _pa.cc($['Beginsaldo'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -525,12 +525,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Ja': return _pa.ss($, ($) => ({
                         'state': "Ja",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Nee': return _pa.ss($, ($) => ({
                         'state': "Nee",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -545,17 +545,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 }
             })]),
         })])]),
-        'Inkopen': _pa.cc($['Inkopen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Inkopen': _pa.cc($['Inkopen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Afhandeling': _pa.cc($['Afhandeling'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                 switch ($[0]) {
                     case 'Mutaties': return _pa.ss($, ($) => ({
                         'state': "Mutaties",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Rekening courant': return _pa.ss($, ($) => ({
                         'state': "Rekening courant",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Rekening courant': _pa.cc($['Rekening courant'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -569,12 +569,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Binnenland: heffing verlegd': return _pa.ss($, ($) => ({
                         'state': "Binnenland: heffing verlegd",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Geen BTW van toepassing': return _pa.ss($, ($) => ({
                         'state': "Geen BTW van toepassing",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'BTW-periode': _pa.cc($['BTW-periode'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -583,17 +583,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Import van buiten de EU': return _pa.ss($, ($) => ({
                         'state': "Import van buiten de EU",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Intracommunautair': return _pa.ss($, ($) => ({
                         'state': "Intracommunautair",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Standaard': return _pa.ss($, ($) => ({
                         'state': "Standaard",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'BTW-periode': _pa.cc($['BTW-periode'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -607,7 +607,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Toegevoegd': return _pa.ss($, ($) => ({
                         'state': "Toegevoegd",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Document': _pa.cc($['Document'], ($) => Bestandsnaam(
                                 $,
                                 {
@@ -618,17 +618,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Niet van toepassing': return _pa.ss($, ($) => ({
                         'state': "Niet van toepassing",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Ontbreekt': return _pa.ss($, ($) => ({
                         'state': "Ontbreekt",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Nog toevoegen': return _pa.ss($, ($) => ({
                         'state': "Nog toevoegen",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     default: return _pa.au($[0])
@@ -641,12 +641,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     null
                 ),
             })]),
-            'Regels': _pa.cc($['Regels'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Regels': _pa.cc($['Regels'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Bedrag': _pa.cc($['Bedrag'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'Bekend': return _pa.ss($, ($) => ({
                             'state': "Bekend",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'BTW-bedrag': _pa.cc($['BTW-bedrag'], ($) => ['text', ({
                                     'delimiter': ['backtick', null],
                                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -674,7 +674,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Balans': return _pa.ss($, ($) => ({
                             'state': "Balans",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Balans item': _pa.cc($['Balans item'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -683,7 +683,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Kosten': return _pa.ss($, ($) => ({
                             'state': "Kosten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Grootboekrekening': _pa.cc($['Grootboekrekening'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -698,12 +698,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Bonnetje': return _pa.ss($, ($) => ({
                         'state': "Bonnetje",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Inkoop (met crediteur)': return _pa.ss($, ($) => ({
                         'state': "Inkoop (met crediteur)",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Crediteur': _pa.cc($['Crediteur'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -716,7 +716,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Loonheffing': return _pa.ss($, ($) => ({
                         'state': "Loonheffing",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Ronde': _pa.cc($['Ronde'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -725,7 +725,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Salaris': return _pa.ss($, ($) => ({
                         'state': "Salaris",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Ronde': _pa.cc($['Ronde'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -740,13 +740,13 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 }
             })]),
         })])]),
-        'Inkoop saldo': _pa.cc($['Inkoop saldo'], ($) => ['verbose group', _pa.dictionary_literal({
+        'Inkoop saldo': _pa.cc($['Inkoop saldo'], ($) => ['verbose group', _pa.dictionary.literal({
             'Grootboekrekening': _pa.cc($['Grootboekrekening'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
         })]),
-        'Overige balans items': _pa.cc($['Overige balans items'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Overige balans items': _pa.cc($['Overige balans items'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Beginsaldo': _pa.cc($['Beginsaldo'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -758,7 +758,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
-            'Memoriaal boekingen': _pa.cc($['Memoriaal boekingen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Memoriaal boekingen': _pa.cc($['Memoriaal boekingen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Bedrag': _pa.cc($['Bedrag'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -786,12 +786,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Ja': return _pa.ss($, ($) => ({
                         'state': "Ja",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Nee': return _pa.ss($, ($) => ({
                         'state': "Nee",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -806,9 +806,9 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 }
             })]),
         })])]),
-        'Resultaat grootboekrekeningen': _pa.cc($['Resultaat grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Resultaat grootboekrekeningen': _pa.cc($['Resultaat grootboekrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
         })])]),
-        'Salarisrondes': _pa.cc($['Salarisrondes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Salarisrondes': _pa.cc($['Salarisrondes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
         })])]),
         'Startdatum boekjaar': _pa.cc($['Startdatum boekjaar'], ($) => ['text', ({
             'delimiter': ['backtick', null],
@@ -817,23 +817,23 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 null
             ),
         })]),
-        'Verkoop saldo': _pa.cc($['Verkoop saldo'], ($) => ['verbose group', _pa.dictionary_literal({
+        'Verkoop saldo': _pa.cc($['Verkoop saldo'], ($) => ['verbose group', _pa.dictionary.literal({
             'Grootboekrekening': _pa.cc($['Grootboekrekening'], ($) => ['text', ({
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
         })]),
-        'Verkopen': _pa.cc($['Verkopen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Verkopen': _pa.cc($['Verkopen'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
             'Afhandeling': _pa.cc($['Afhandeling'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                 switch ($[0]) {
                     case 'Mutaties': return _pa.ss($, ($) => ({
                         'state': "Mutaties",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                         })],
                     }))
                     case 'Rekening courant': return _pa.ss($, ($) => ({
                         'state': "Rekening courant",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Rekening courant': _pa.cc($['Rekening courant'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -858,7 +858,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Toegevoegd': return _pa.ss($, ($) => ({
                         'state': "Toegevoegd",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Document': _pa.cc($['Document'], ($) => Bestandsnaam(
                                 $,
                                 {
@@ -874,7 +874,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 switch ($[0]) {
                     case 'Project': return _pa.ss($, ($) => ({
                         'state': "Project",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Project': _pa.cc($['Project'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -887,7 +887,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     }))
                     case 'Licentieovereenkomst': return _pa.ss($, ($) => ({
                         'state': "Licentieovereenkomst",
-                        'value': ['verbose group', _pa.dictionary_literal({
+                        'value': ['verbose group', _pa.dictionary.literal({
                             'Overeenkomst': _pa.cc($['Overeenkomst'], ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -908,17 +908,17 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 'delimiter': ['quote', null],
                 'value': $,
             })]),
-            'Regels': _pa.cc($['Regels'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+            'Regels': _pa.cc($['Regels'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'BTW-regime': _pa.cc($['BTW-regime'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                     switch ($[0]) {
                         case 'Intracommunautair': return _pa.ss($, ($) => ({
                             'state': "Intracommunautair",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Standaard': return _pa.ss($, ($) => ({
                             'state': "Standaard",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'BTW-categorie': _pa.cc($['BTW-categorie'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -927,7 +927,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Binnenland: heffing verlegd': return _pa.ss($, ($) => ({
                             'state': "Binnenland: heffing verlegd",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         default: return _pa.au($[0])
@@ -944,7 +944,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Project': return _pa.ss($, ($) => ({
                             'state': "Project",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Opbrengst': _pa.cc($['Opbrengst'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -953,12 +953,12 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Los': return _pa.ss($, ($) => ({
                             'state': "Los",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                             })],
                         }))
                         case 'Licentieovereenkomst': return _pa.ss($, ($) => ({
                             'state': "Licentieovereenkomst",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Periode': _pa.cc($['Periode'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -976,7 +976,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Opbrengsten': return _pa.ss($, ($) => ({
                             'state': "Opbrengsten",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Grootboekrekening': _pa.cc($['Grootboekrekening'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -985,7 +985,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Balans': return _pa.ss($, ($) => ({
                             'state': "Balans",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Balans item': _pa.cc($['Balans item'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -997,8 +997,8 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 })]),
             })])]),
         })])]),
-        'Verrekenposten': _pa.cc($['Verrekenposten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-            'Mutaties': _pa.cc($['Mutaties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Verrekenposten': _pa.cc($['Verrekenposten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            'Mutaties': _pa.cc($['Mutaties'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Bedrag': _pa.cc($['Bedrag'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -1010,7 +1010,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                     switch ($[0]) {
                         case 'Inkoop': return _pa.ss($, ($) => ({
                             'state': "Inkoop",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -1023,7 +1023,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Informele rekening': return _pa.ss($, ($) => ({
                             'state': "Informele rekening",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Informele rekening': _pa.cc($['Informele rekening'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -1032,7 +1032,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'Verkoop': return _pa.ss($, ($) => ({
                             'state': "Verkoop",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -1045,7 +1045,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                         }))
                         case 'BTW-periode': return _pa.ss($, ($) => ({
                             'state': "BTW-periode",
-                            'value': ['verbose group', _pa.dictionary_literal({
+                            'value': ['verbose group', _pa.dictionary.literal({
                                 'Jaar': _pa.cc($['Jaar'], ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
@@ -1062,9 +1062,9 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
             })])]),
         })])]),
     })])]),
-    'Klanten': _pa.cc($['Klanten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-        'Licentieovereenkomsten': _pa.cc($['Licentieovereenkomsten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-            'Periodes': _pa.cc($['Periodes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+    'Klanten': _pa.cc($['Klanten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+        'Licentieovereenkomsten': _pa.cc($['Licentieovereenkomsten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            'Periodes': _pa.cc($['Periodes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                 'Bedrag': _pa.cc($['Bedrag'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -1074,14 +1074,14 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
                 })]),
             })])]),
         })])]),
-        'Projecten': _pa.cc($['Projecten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-            'Offertes': _pa.cc($['Offertes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
-                'Opbrengsten': _pa.cc($['Opbrengsten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+        'Projecten': _pa.cc($['Projecten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+            'Offertes': _pa.cc($['Offertes'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
+                'Opbrengsten': _pa.cc($['Opbrengsten'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
                     'Type': _pa.cc($['Type'], ($) => ['state', _pa.cc($, ($): _i_out._T_Value.SG.state => {
                         switch ($[0]) {
                             case 'Project': return _pa.ss($, ($) => ({
                                 'state': "Project",
-                                'value': ['verbose group', _pa.dictionary_literal({
+                                'value': ['verbose group', _pa.dictionary.literal({
                                     'Bedrag': _pa.cc($['Bedrag'], ($) => ['text', ({
                                         'delimiter': ['backtick', null],
                                         'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -1105,8 +1105,8 @@ export const Root: _i_signatures._T_Root = ($, $p) => ['verbose group', _pa.dict
             })])]),
         })])]),
     })])]),
-    'Leveranciers': _pa.cc($['Leveranciers'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+    'Leveranciers': _pa.cc($['Leveranciers'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
-    'Medewerkers': _pa.cc($['Medewerkers'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary_literal({
+    'Medewerkers': _pa.cc($['Medewerkers'], ($) => ['dictionary', $.map(($) => ['verbose group', _pa.dictionary.literal({
     })])]),
 })]

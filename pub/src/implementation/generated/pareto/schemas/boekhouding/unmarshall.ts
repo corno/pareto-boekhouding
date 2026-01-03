@@ -31,7 +31,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Activa': ($): _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde.SG<_i_in._T_Range> => ['Activa', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -82,7 +82,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Kosten': ($): _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde.SG<_i_in._T_Range> => ['Kosten', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -168,7 +168,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Activa': ($): _i_out._T_Grootboek_Categorieen.Balans.D.Zijde.SG<_i_in._T_Range> => ['Activa', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -240,7 +240,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Kosten': ($): _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde.SG<_i_in._T_Range> => ['Kosten', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -319,7 +319,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Ja': ($): _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG<_i_in._T_Range> => ['Ja', _i_generic.process_group(
                                                 $,
                                                 {
@@ -393,7 +393,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'Activa': ($): _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde.SG<_i_in._T_Range> => ['Activa', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -448,7 +448,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'Kosten': ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG<_i_in._T_Range> => ['Kosten', _i_generic.process_group(
                                                             $,
                                                             {
@@ -461,7 +461,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                                         $,
                                                                         {
-                                                                            'states': _pa.dictionary_literal({
+                                                                            'states': _pa.dictionary.literal({
                                                                                 'Ja': ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG<_i_in._T_Range> => ['Ja', _i_generic.process_group(
                                                                                     $,
                                                                                     {
@@ -679,7 +679,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                                                                 $,
                                                                                                 {
-                                                                                                    'states': _pa.dictionary_literal({
+                                                                                                    'states': _pa.dictionary.literal({
                                                                                                         'Project': ($): _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG<_i_in._T_Range> => ['Project', _i_generic.process_group(
                                                                                                             $,
                                                                                                             {
@@ -787,7 +787,7 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p)
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Bankrekening': ($): _i_out._T_Grootboekrekeningen.Balans.D.Type.SG<_i_in._T_Range> => ['Bankrekening', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -930,7 +930,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'Aangegeven': ($): _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG<_i_in._T_Range> => ['Aangegeven', _i_generic.process_group(
                                                             $,
                                                             {
@@ -1102,7 +1102,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'Ja': ($): _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -1173,7 +1173,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'Ja': ($): _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -1320,7 +1320,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p)
             ), ($) => _i_generic.process_unresolved_state_group(
                 $,
                 {
-                    'states': _pa.dictionary_literal({
+                    'states': _pa.dictionary.literal({
                         'Ja': ($): _i_out._T_Overige_balans_item.Nieuw.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                             $,
                             null
@@ -1379,7 +1379,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Mutaties': ($): _i_out._T_Handelstransacties.Inkopen.D.Afhandeling.SG<_i_in._T_Range> => ['Mutaties', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1411,7 +1411,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Binnenland: heffing verlegd': ($): _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime.SG<_i_in._T_Range> => ['Binnenland: heffing verlegd', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1455,7 +1455,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Toegevoegd': ($): _i_out._T_Handelstransacties.Inkopen.D.Brondocument.SG<_i_in._T_Range> => ['Toegevoegd', _i_generic.process_group(
                                                 $,
                                                 {
@@ -1514,7 +1514,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Bekend': ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG<_i_in._T_Range> => ['Bekend', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1564,7 +1564,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Balans': ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG<_i_in._T_Range> => ['Balans', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1613,7 +1613,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Bonnetje': ($): _i_out._T_Handelstransacties.Inkopen.D.Type.SG<_i_in._T_Range> => ['Bonnetje', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1712,7 +1712,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Mutaties': ($): _i_out._T_Handelstransacties.Verkopen.D.Afhandeling.SG<_i_in._T_Range> => ['Mutaties', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1764,7 +1764,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Toegevoegd': ($): _i_out._T_Handelstransacties.Verkopen.D.Brondocument.SG<_i_in._T_Range> => ['Toegevoegd', _i_generic.process_group(
                                                 $,
                                                 {
@@ -1801,7 +1801,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Project': ($): _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG<_i_in._T_Range> => ['Project', _i_generic.process_group(
                                                 $,
                                                 {
@@ -1877,7 +1877,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Intracommunautair': ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime.SG<_i_in._T_Range> => ['Intracommunautair', _i_generic.process_nothing(
                                                                     $,
                                                                     null
@@ -1924,7 +1924,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Project': ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG<_i_in._T_Range> => ['Project', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1981,7 +1981,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Opbrengsten': ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG<_i_in._T_Range> => ['Opbrengsten', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -2068,7 +2068,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                         ), ($) => _i_generic.process_unresolved_state_group(
                                             $,
                                             {
-                                                'states': _pa.dictionary_literal({
+                                                'states': _pa.dictionary.literal({
                                                     'Resultaat': ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG<_i_in._T_Range> => ['Resultaat', Balans_Resultaat_Mutatie(
                                                         $,
                                                         {
@@ -2078,7 +2078,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                                     'Balans': ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG<_i_in._T_Range> => ['Balans', _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Informele rekening': ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans.SG<_i_in._T_Range> => ['Informele rekening', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -2122,7 +2122,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                             'value': ($) => _i_generic.process_unresolved_state_group(
                                 $,
                                 {
-                                    'states': _pa.dictionary_literal({
+                                    'states': _pa.dictionary.literal({
                                         'Resultaat': ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG<_i_in._T_Range> => ['Resultaat', Balans_Resultaat_Mutatie(
                                             $,
                                             {
@@ -2132,7 +2132,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                         'Balans': ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG<_i_in._T_Range> => ['Balans', _i_generic.process_unresolved_state_group(
                                             $,
                                             {
-                                                'states': _pa.dictionary_literal({
+                                                'states': _pa.dictionary.literal({
                                                     'Informele rekening': ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG<_i_in._T_Range> => ['Informele rekening', _i_generic.process_group(
                                                         $,
                                                         {
@@ -2255,7 +2255,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                     ), ($) => _i_generic.process_unresolved_state_group(
                         $,
                         {
-                            'states': _pa.dictionary_literal({
+                            'states': _pa.dictionary.literal({
                                 'Ja': ($): _i_out._T_Jaren.D.Afgesloten.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                                     $,
                                     null
@@ -2364,7 +2364,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
             ), ($) => _i_generic.process_unresolved_state_group(
                 $,
                 {
-                    'states': _pa.dictionary_literal({
+                    'states': _pa.dictionary.literal({
                         'Inkoop': ($): _i_out._T_Balans_Resultaat_Mutatie._type.SG<_i_in._T_Range> => ['Inkoop', _i_generic.process_selected_reference(
                             $,
                             null
@@ -2386,7 +2386,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
 export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar = ($, $p) => _i_generic.process_unresolved_state_group(
     $,
     {
-        'states': _pa.dictionary_literal({
+        'states': _pa.dictionary.literal({
             'Ja': ($): _i_out._T_Eerste_boekjaar.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                 $,
                 null

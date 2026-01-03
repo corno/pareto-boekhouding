@@ -89,7 +89,7 @@ namespace _psh {
     // ): List<_pi.Deprecated_Source_Location, T> => {
     //     const location = _pinternals.get_location_info(depth)
     //     const decorated: _pi.List<T> = $ instanceof Array
-    //         ? _pinternals.list_literal($)
+    //         ? _pinternals.list.literal($)
     //         : $
 
     //     if (!(decorated.__for_each instanceof Function)) {
@@ -543,8 +543,8 @@ export const Jaren: d_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.map
 export const Mutaties: d_signatures.Mutaties = ($, $p) => ({
     'Bankrekening Mutatie Verwerkingen': _p.cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary($.Mutaties.filter(($) => _p.cc($.Status, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range>> => {
         switch ($[0]) {
-            case 'Nog te verwerken': return _p.ss($, ($) => _p.not_set())
-            case 'Verwerkt': return _p.ss($, ($) => _p.set(_p.cc($.Afhandeling, ($): d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range> => {
+            case 'Nog te verwerken': return _p.ss($, ($) => _p.optional.not_set())
+            case 'Verwerkt': return _p.ss($, ($) => _p.optional.set(_p.cc($.Afhandeling, ($): d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Informele rekening': return _p.ss($, ($) => _psh.wrap_state_group(['Balans', _psh.wrap_state_group(['Informele rekening', ({
                         'Informele rekening': _p.cc($['Informele rekening'], ($) => _psh.wrap_reference($)),
@@ -556,20 +556,20 @@ export const Mutaties: d_signatures.Mutaties = ($, $p) => ({
 
                     case 'BTW-periode': return _p.ss($, ($): d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range> => _psh.wrap_state_group(['Resultaat', {
                         'Jaar': $.Jaar === $p.jaar
-                            ? _p.not_set()
-                            : _p.set(_psh.wrap_reference($.Jaar)),
+                            ? _p.optional.not_set()
+                            : _p.optional.set(_psh.wrap_reference($.Jaar)),
                         'type': _psh.wrap_state_group(['BTW-periode', _psh.wrap_reference($['BTW-periode'])])
                     }]))
                     case 'Inkoop': return _p.ss($, ($) => _psh.wrap_state_group(['Resultaat', {
                         'Jaar': $.Jaar === $p.jaar
-                            ? _p.not_set()
-                            : _p.set(_psh.wrap_reference($.Jaar)),
+                            ? _p.optional.not_set()
+                            : _p.optional.set(_psh.wrap_reference($.Jaar)),
                         'type': _psh.wrap_state_group(['Inkoop', _psh.wrap_reference($['Inkoop'])])
                     }]))
                     case 'Verkoop': return _p.ss($, ($) => _psh.wrap_state_group(['Resultaat', {
                         'Jaar': $.Jaar === $p.jaar
-                            ? _p.not_set()
-                            : _p.set(_psh.wrap_reference($.Jaar)),
+                            ? _p.optional.not_set()
+                            : _p.optional.set(_psh.wrap_reference($.Jaar)),
                         'type': _psh.wrap_state_group(['Verkoop', _psh.wrap_reference($['Verkoop'])])
                     }]))
                     default: return _p.au($[0])
@@ -593,20 +593,20 @@ export const Mutaties: d_signatures.Mutaties = ($, $p) => ({
 
                 case 'BTW-periode': return _p.ss($, ($) => _psh.wrap_state_group(['Resultaat', {
                     'Jaar': $.Jaar === $p.jaar
-                        ? _p.not_set()
-                        : _p.set(_psh.wrap_reference($.Jaar)),
+                        ? _p.optional.not_set()
+                        : _p.optional.set(_psh.wrap_reference($.Jaar)),
                     'type': _psh.wrap_state_group(['BTW-periode', _psh.wrap_reference($['BTW-periode'])])
                 }]))
                 case 'Inkoop': return _p.ss($, ($) => _psh.wrap_state_group(['Resultaat', {
                     'Jaar': $.Jaar === $p.jaar
-                        ? _p.not_set()
-                        : _p.set(_psh.wrap_reference($.Jaar)),
+                        ? _p.optional.not_set()
+                        : _p.optional.set(_psh.wrap_reference($.Jaar)),
                     'type': _psh.wrap_state_group(['Inkoop', _psh.wrap_reference($['Inkoop'])])
                 }]))
                 case 'Verkoop': return _p.ss($, ($) => _psh.wrap_state_group(['Resultaat', {
                     'Jaar': $.Jaar === $p.jaar
-                        ? _p.not_set()
-                        : _p.set(_psh.wrap_reference($.Jaar)),
+                        ? _p.optional.not_set()
+                        : _p.optional.set(_psh.wrap_reference($.Jaar)),
                     'type': _psh.wrap_state_group(['Verkoop', _psh.wrap_reference($['Verkoop'])])
                 }]))
                 default: return _p.au($[0])

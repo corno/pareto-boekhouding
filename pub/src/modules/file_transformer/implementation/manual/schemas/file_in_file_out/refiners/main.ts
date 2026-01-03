@@ -13,19 +13,13 @@ export const Parameters: _pi.Refiner<
     d_file_in_file_out.Error,
     d_main.Parameters
 > = ($, abort) => {
-    const iter = _p.create_iterator($.arguments)
-
-    const current = iter['get current']()
-
-    const in_path = p_file_in_file_out.Path(iter, ($) => abort(['in path', $]))
-    const out_path = p_file_in_file_out.Path(iter, ($) => abort(['out path', $]))
-    iter['get current']().transform(
+    return _p.iterate_fully(
+        $.arguments,
+        (iter) => ({
+            'in': p_file_in_file_out.Path(iter, ($) => abort(['in path', $])),
+            'out': p_file_in_file_out.Path(iter, ($) => abort(['out path', $])),
+        }),
         ($) => abort(['too many arguments', null]),
-        () => { }
     )
 
-    return {
-        'in': in_path,
-        'out': out_path,
-    }
 }

@@ -87,7 +87,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                             $,
                                                             {
-                                                                'states': _pa.dictionary_literal({
+                                                                'states': _pa.dictionary.literal({
                                                                     'Activa': ($): _i_out._T_Root.Beheer.Balans.Grootboekrekeningen.D.Zijde.SG => ['Activa', _i_generic.process_group(
                                                                         $,
                                                                         {
@@ -128,7 +128,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                             $,
                                                             {
-                                                                'states': _pa.dictionary_literal({
+                                                                'states': _pa.dictionary.literal({
                                                                     'Activa': ($): _i_out._T_Root.Beheer.Balans.Hoofdcategorieen.D.Zijde.SG => ['Activa', _i_generic.process_group(
                                                                         $,
                                                                         {
@@ -204,7 +204,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                             $,
                                                             {
-                                                                'states': _pa.dictionary_literal({
+                                                                'states': _pa.dictionary.literal({
                                                                     'Activa': ($): _i_out._T_Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde.SG => ['Activa', _i_generic.process_group(
                                                                         $,
                                                                         {
@@ -264,7 +264,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             ), ($) => _i_generic.process_unconstrained_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary_literal({
+                                                    'states': _pa.dictionary.literal({
                                                         'Ja': ($): _i_out._T_Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG => ['Ja', _i_generic.process_group(
                                                             $,
                                                             {
@@ -418,7 +418,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                             $,
                                                             {
-                                                                'states': _pa.dictionary_literal({
+                                                                'states': _pa.dictionary.literal({
                                                                     'Kosten': ($): _i_out._T_Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.SG => ['Kosten', _i_generic.process_group(
                                                                         $,
                                                                         {
@@ -431,7 +431,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                                                                     $,
                                                                                     {
-                                                                                        'states': _pa.dictionary_literal({
+                                                                                        'states': _pa.dictionary.literal({
                                                                                             'Ja': ($): _i_out._T_Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG => ['Ja', _i_generic.process_group(
                                                                                                 $,
                                                                                                 {
@@ -494,7 +494,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                             $,
                                                             {
-                                                                'states': _pa.dictionary_literal({
+                                                                'states': _pa.dictionary.literal({
                                                                     'Kosten': ($): _i_out._T_Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde.SG => ['Kosten', _i_generic.process_group(
                                                                         $,
                                                                         {
@@ -570,7 +570,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                             $,
                                                             {
-                                                                'states': _pa.dictionary_literal({
+                                                                'states': _pa.dictionary.literal({
                                                                     'Kosten': ($): _i_out._T_Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde.SG => ['Kosten', _i_generic.process_group(
                                                                         $,
                                                                         {
@@ -649,7 +649,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Ja': ($): _i_out._T_Root.Jaren.D.Afgesloten.SG => ['Ja', _i_generic.process_group(
                                                 $,
                                                 {
@@ -685,7 +685,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Bankrekening': ($): _i_out._T_Root.Jaren.D.Balans_grootboekrekeningen.D.Type.SG => ['Bankrekening', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -795,7 +795,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Nog te verwerken': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG => ['Nog te verwerken', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -814,7 +814,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                                                                                     $,
                                                                                                     {
-                                                                                                        'states': _pa.dictionary_literal({
+                                                                                                        'states': _pa.dictionary.literal({
                                                                                                             'Inkoop': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.SG.Verwerkt.Afhandeling.SG => ['Inkoop', _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
@@ -944,7 +944,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Ja': ($): _i_out._T_Root.Jaren.D.Bankrekeningen.D.Nieuw.SG => ['Ja', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1100,7 +1100,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Aangegeven': ($): _i_out._T_Root.Jaren.D.BTW_periodes.D.Status.SG => ['Aangegeven', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1163,7 +1163,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                 ), ($) => _i_generic.process_unconstrained_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary_literal({
+                                        'states': _pa.dictionary.literal({
                                             'Ja': ($): _i_out._T_Root.Jaren.D.Eerste_boekjaar.SG => ['Ja', _i_generic.process_group(
                                                 $,
                                                 {
@@ -1265,7 +1265,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Ja': ($): _i_out._T_Root.Jaren.D.Informele_rekeningen.D.Nieuw.SG => ['Ja', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1325,7 +1325,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Mutaties': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Afhandeling.SG => ['Mutaties', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1359,7 +1359,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Binnenland: heffing verlegd': ($): _i_out._T_Root.Jaren.D.Inkopen.D.BTW$mi_regime.SG => ['Binnenland: heffing verlegd', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1421,7 +1421,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Toegevoegd': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Brondocument.SG => ['Toegevoegd', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1492,7 +1492,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Bekend': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Regels.D.Bedrag.SG => ['Bekend', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -1542,7 +1542,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Balans': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Regels.D.Type.SG => ['Balans', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -1591,7 +1591,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Bonnetje': ($): _i_out._T_Root.Jaren.D.Inkopen.D.Type.SG => ['Bonnetje', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1790,7 +1790,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Ja': ($): _i_out._T_Root.Jaren.D.Overige_balans_items.D.Nieuw.SG => ['Ja', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1914,7 +1914,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Mutaties': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Afhandeling.SG => ['Mutaties', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1968,7 +1968,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Toegevoegd': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Brondocument.SG => ['Toegevoegd', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -1998,7 +1998,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                     ), ($) => _i_generic.process_unconstrained_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary_literal({
+                                                            'states': _pa.dictionary.literal({
                                                                 'Project': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Contracttype.SG => ['Project', _i_generic.process_group(
                                                                     $,
                                                                     {
@@ -2083,7 +2083,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Intracommunautair': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime.SG => ['Intracommunautair', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -2134,7 +2134,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Project': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Contracttype.SG => ['Project', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -2193,7 +2193,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Opbrengsten': ($): _i_out._T_Root.Jaren.D.Verkopen.D.Regels.D.Type.SG => ['Opbrengsten', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -2282,7 +2282,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         ), ($) => _i_generic.process_unconstrained_state_group(
                                                                             $,
                                                                             {
-                                                                                'states': _pa.dictionary_literal({
+                                                                                'states': _pa.dictionary.literal({
                                                                                     'Inkoop': ($): _i_out._T_Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling.SG => ['Inkoop', _i_generic.process_group(
                                                                                         $,
                                                                                         {
@@ -2493,7 +2493,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                             ), ($) => _i_generic.process_unconstrained_state_group(
                                                                                                 $,
                                                                                                 {
-                                                                                                    'states': _pa.dictionary_literal({
+                                                                                                    'states': _pa.dictionary.literal({
                                                                                                         'Project': ($): _i_out._T_Root.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG => ['Project', _i_generic.process_group(
                                                                                                             $,
                                                                                                             {
