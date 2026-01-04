@@ -60,14 +60,16 @@ export const $$: Creator = (deserializer) => _pc.command_procedure(
                     ]
                 ),
             ],
-            ($) => $cr['log error'].execute(
-                {
-                    'lines': _pinternals.list_literal([s_transform_file.My_Error($)])
-                },
-                ($) => ({
-                    'exit code': 2
-                })
-            ),
+            ($) => [
+                $cr['log error'].execute(
+                    {
+                        'lines': _pinternals.list_literal([s_transform_file.My_Error($)])
+                    },
+                    ($) => ({
+                        'exit code': 2
+                    })
+                )
+            ],
             {
                 'exit code': 1
             },
