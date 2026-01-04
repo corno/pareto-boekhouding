@@ -6,26 +6,23 @@ namespace _psh {
 
     const depth = 1
 
-    export const get_location = (): d_token._T_Range => {
-        const loc = _pinternals.get_location_info(depth)
-        return {
-            'start': {
-                'absolute': -1,
-                'relative': {
-                    'column': loc.column,
-                    'line': loc.line,
-                },
+    export const get_location = (): d_token._T_Range => ({
+        'start': {
+            'absolute': -1,
+            'relative': {
+                'column': _pinternals.get_column(depth),
+                'line': _pinternals.get_line(depth),
             },
-            'end': {
-                'absolute': -1,
-                'relative': {
-                    'column': loc.column,
-                    'line': loc.line,
-                },
+        },
+        'end': {
+            'absolute': -1,
+            'relative': {
+                'column': _pinternals.get_column(depth),
+                'line': _pinternals.get_line(depth),
             },
-            'uri': loc.file
-        }
-    }
+        },
+        'uri': _pinternals.get_file(depth)
+    })
 
     export type Raw_Or_Normal_Dictionary<T> = { [key: string]: T } | _pi.Dictionary<T>
     export type Raw_Or_Normal_List<T> = T[] | _pi.List<T>
@@ -106,21 +103,17 @@ namespace _psh {
 
     export const wrap_state_group = <T>(
         $: T,
-    ) => {
-        return {
-            'location': get_location(),
-            'state group': $,
-        }
-    }
+    ) => ({
+        'location': get_location(),
+        'state group': $,
+    })
 
     export const wrap_reference = <T>(
         $: string,
-    ): Reference_To_Normal_Dictionary_Entry<d_token._T_Range, T> => {
-        return {
-            'location': get_location(),
-            'key': $,
-        }
-    }
+    ): Reference_To_Normal_Dictionary_Entry<d_token._T_Range, T> => ({
+        'location': get_location(),
+        'key': $,
+    })
 
     export const wrap_stack_reference = <T>(
         name: string,
