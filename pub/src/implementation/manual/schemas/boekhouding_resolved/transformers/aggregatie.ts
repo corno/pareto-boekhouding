@@ -22,75 +22,68 @@ const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _p
 
 
 
-export const Root: _pi.Transformer<d_in.Root, d_out.Root> =($) => {
-    const bron_root = $
-    return {
-        'bron': $,
-        'jaren': $.Jaren.dictionary.map(($) => {
-            const bron_jaar = $
-            return {
-                'bron': $,
-                'grootboekrekeningen': {
-                    'balans': $.Grootboekrekeningen.Balans.map(($, key): d_out.Balans_Grootboekrekening => {
-                        return {
-                            'bron': $,
-                            'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
+export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
+    'bron': $,
+    'jaren': $.Jaren.dictionary.map(($) => {
+        const bron_jaar = $
+        return {
+            'bron': $,
+            'grootboekrekeningen': {
+                'balans': $.Grootboekrekeningen.Balans.map(($, key): d_out.Balans_Grootboekrekening => {
+                    return {
+                        'bron': $,
+                        'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
 
-                                const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
-                                    return {
-                                        'is relevant': _p.cc($.Type, ($) => {
-                                            switch ($[0]) {
-                                                case 'Balans': return _p.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
-                                                case 'Kosten': return _p.ss($, ($) => false)
-                                                default: return _p.au($[0])
-                                            }
-                                        }),
-                                        'entry': {
-                                            'bron': $,
-                                        },
+                            const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => ({
+                                'is relevant': _p.cc($.Type, ($) => {
+                                    switch ($[0]) {
+                                        case 'Balans': return _p.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
+                                        case 'Kosten': return _p.ss($, ($) => false)
+                                        default: return _p.au($[0])
                                     }
-                                }))
-                                return {
-                                    'is relevant': !regels.is_empty(),
-                                    'entry': {
-                                        'bron': $,
-                                        'regels': regels
-                                    }
+                                }),
+                                'entry': {
+                                    'bron': $,
+                                },
+                            })))
+                            return {
+                                'is relevant': !regels.is_empty(),
+                                'entry': {
+                                    'bron': $,
+                                    'regels': regels
                                 }
-                            })),
-                        }
-                    }),
-                    'resultaat': $.Grootboekrekeningen.Resultaat.map(($, key) => {
-                        return {
-                            'bron': $,
-                            'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
+                            }
+                        })),
+                    }
+                }),
+                'resultaat': $.Grootboekrekeningen.Resultaat.map(($, key) => ({
+                    'bron': $,
+                    'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
 
-                                const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
-                                    return {
-                                        'is relevant': _p.cc($.Type, ($) => {
-                                            switch ($[0]) {
-                                                case 'Balans': return _p.ss($, ($) => false)
-                                                case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening.key === key)
-                                                default: return _p.au($[0])
-                                            }
-                                        }),
-                                        'entry': {
-                                            'bron': $,
-                                        },
+                        const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
+                            return {
+                                'is relevant': _p.cc($.Type, ($) => {
+                                    switch ($[0]) {
+                                        case 'Balans': return _p.ss($, ($) => false)
+                                        case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening.key === key)
+                                        default: return _p.au($[0])
                                     }
-                                }))
-                                return {
-                                    'is relevant': !regels.is_empty(),
-                                    'entry': {
-                                        'bron': $,
-                                        'regels': regels
-                                    }
-                                }
-                            })),
+                                }),
+                                'entry': {
+                                    'bron': $,
+                                },
+                            }
+                        }))
+                        return {
+                            'is relevant': !regels.is_empty(),
+                            'entry': {
+                                'bron': $,
+                                'regels': regels
+                            }
                         }
-                    }),
-                },
-            }
-        }),
-    }
-}
+                    })),
+                })),
+            },
+        }
+    }),
+})
