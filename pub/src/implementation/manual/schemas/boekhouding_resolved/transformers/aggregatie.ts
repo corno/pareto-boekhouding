@@ -35,7 +35,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                         'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
 
                             const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => ({
-                                'is relevant': _p.cc($.Type, ($) => {
+                                'is relevant': _p.sg($.Type, ($) => {
                                     switch ($[0]) {
                                         case 'Balans': return _p.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
                                         case 'Kosten': return _p.ss($, ($) => false)
@@ -62,7 +62,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
 
                         const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
                             return {
-                                'is relevant': _p.cc($.Type, ($) => {
+                                'is relevant': _p.sg($.Type, ($) => {
                                     switch ($[0]) {
                                         case 'Balans': return _p.ss($, ($) => false)
                                         case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening.key === key)

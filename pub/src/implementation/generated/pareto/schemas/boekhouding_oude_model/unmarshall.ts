@@ -15,7 +15,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'Bankrekeningen': _pa.cc(_i_generic.get_entry(
+            'Bankrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Bankrekeningen",
@@ -31,7 +31,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'Beheer': _pa.cc(_i_generic.get_entry(
+            'Beheer': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Beheer",
@@ -40,7 +40,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                 $,
                 {
                     'properties': ($) => ({
-                        'Balans': _pa.cc(_i_generic.get_entry(
+                        'Balans': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Balans",
@@ -49,7 +49,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                             $,
                             {
                                 'properties': ($) => ({
-                                    'Grootboekrekeningen': _pa.cc(_i_generic.get_entry(
+                                    'Grootboekrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Grootboekrekeningen",
@@ -61,7 +61,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Hoofdcategorie': _pa.cc(_i_generic.get_entry(
+                                                        'Hoofdcategorie': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Hoofdcategorie",
@@ -70,7 +70,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             $,
                                                             null
                                                         )),
-                                                        'Subcategorie': _pa.cc(_i_generic.get_entry(
+                                                        'Subcategorie': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Subcategorie",
@@ -79,7 +79,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             $,
                                                             null
                                                         )),
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                        'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Zijde",
@@ -108,7 +108,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             ),
                                         }
                                     )),
-                                    'Hoofdcategorieen': _pa.cc(_i_generic.get_entry(
+                                    'Hoofdcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Hoofdcategorieen",
@@ -120,7 +120,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                        'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Zijde",
@@ -144,7 +144,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 }),
                                                             }
                                                         )),
-                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
+                                                        'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Subcategorieen",
@@ -156,7 +156,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Hoofdcategorie fiscus': _pa.cc(_i_generic.get_entry(
+                                                                            'Hoofdcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Hoofdcategorie fiscus",
@@ -165,7 +165,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Subcategorie fiscus': _pa.cc(_i_generic.get_entry(
+                                                                            'Subcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Subcategorie fiscus",
@@ -184,7 +184,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             ),
                                         }
                                     )),
-                                    'Hoofdcategorieen fiscus': _pa.cc(_i_generic.get_entry(
+                                    'Hoofdcategorieen fiscus': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Hoofdcategorieen fiscus",
@@ -196,7 +196,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                        'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Zijde",
@@ -220,7 +220,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 }),
                                                             }
                                                         )),
-                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
+                                                        'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Subcategorieen",
@@ -244,7 +244,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                 }),
                             }
                         )),
-                        'BTW-categorieen': _pa.cc(_i_generic.get_entry(
+                        'BTW-categorieen': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "BTW-categorieen",
@@ -256,7 +256,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'BTW-heffing': _pa.cc(_i_generic.get_entry(
+                                            'BTW-heffing': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "BTW-heffing",
@@ -269,7 +269,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             $,
                                                             {
                                                                 'properties': ($) => ({
-                                                                    'BTW-promillage': _pa.cc(_i_generic.get_entry(
+                                                                    'BTW-promillage': _pa.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "BTW-promillage",
@@ -297,7 +297,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                 ),
                             }
                         )),
-                        'Gebruikers': _pa.cc(_i_generic.get_entry(
+                        'Gebruikers': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Gebruikers",
@@ -309,7 +309,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Volledige naam': _pa.cc(_i_generic.get_entry(
+                                            'Volledige naam': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Volledige naam",
@@ -318,7 +318,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 null
                                             )),
-                                            'Wachtwoord': _pa.cc(_i_generic.get_entry(
+                                            'Wachtwoord': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Wachtwoord",
@@ -332,7 +332,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                 ),
                             }
                         )),
-                        'Huidige datum': _pa.cc(_i_generic.get_entry(
+                        'Huidige datum': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Huidige datum",
@@ -343,7 +343,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                 'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                             }
                         )),
-                        'Resultaat': _pa.cc(_i_generic.get_entry(
+                        'Resultaat': _pa.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Resultaat",
@@ -352,7 +352,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                             $,
                             {
                                 'properties': ($) => ({
-                                    'Correctietypes vennootschapsbelasting': _pa.cc(_i_generic.get_entry(
+                                    'Correctietypes vennootschapsbelasting': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Correctietypes vennootschapsbelasting",
@@ -364,7 +364,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Te corrigeren promillage': _pa.cc(_i_generic.get_entry(
+                                                        'Te corrigeren promillage': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Te corrigeren promillage",
@@ -380,7 +380,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             ),
                                         }
                                     )),
-                                    'Grootboekrekeningen': _pa.cc(_i_generic.get_entry(
+                                    'Grootboekrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Grootboekrekeningen",
@@ -392,7 +392,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Hoofdcategorie': _pa.cc(_i_generic.get_entry(
+                                                        'Hoofdcategorie': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Hoofdcategorie",
@@ -401,7 +401,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             $,
                                                             null
                                                         )),
-                                                        'Subcategorie': _pa.cc(_i_generic.get_entry(
+                                                        'Subcategorie': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Subcategorie",
@@ -410,7 +410,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             $,
                                                             null
                                                         )),
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                        'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Zijde",
@@ -423,7 +423,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                         $,
                                                                         {
                                                                             'properties': ($) => ({
-                                                                                'Correctie op vennootschapsbelasting': _pa.cc(_i_generic.get_entry(
+                                                                                'Correctie op vennootschapsbelasting': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                     $,
                                                                                     {
                                                                                         'key': "Correctie op vennootschapsbelasting",
@@ -436,7 +436,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                 $,
                                                                                                 {
                                                                                                     'properties': ($) => ({
-                                                                                                        'Correctietype': _pa.cc(_i_generic.get_entry(
+                                                                                                        'Correctietype': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                             $,
                                                                                                             {
                                                                                                                 'key': "Correctietype",
@@ -474,7 +474,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             ),
                                         }
                                     )),
-                                    'Hoofdcategorieen': _pa.cc(_i_generic.get_entry(
+                                    'Hoofdcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Hoofdcategorieen",
@@ -486,7 +486,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                        'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Zijde",
@@ -510,7 +510,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 }),
                                                             }
                                                         )),
-                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
+                                                        'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Subcategorieen",
@@ -522,7 +522,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Hoofdcategorie fiscus': _pa.cc(_i_generic.get_entry(
+                                                                            'Hoofdcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Hoofdcategorie fiscus",
@@ -531,7 +531,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Subcategorie fiscus': _pa.cc(_i_generic.get_entry(
+                                                                            'Subcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Subcategorie fiscus",
@@ -550,7 +550,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             ),
                                         }
                                     )),
-                                    'Hoofdcategorieen fiscus': _pa.cc(_i_generic.get_entry(
+                                    'Hoofdcategorieen fiscus': _pa.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Hoofdcategorieen fiscus",
@@ -562,7 +562,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Zijde': _pa.cc(_i_generic.get_entry(
+                                                        'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Zijde",
@@ -586,7 +586,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 }),
                                                             }
                                                         )),
-                                                        'Subcategorieen': _pa.cc(_i_generic.get_entry(
+                                                        'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Subcategorieen",
@@ -613,7 +613,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     }),
                 }
             )),
-            'Informele rekeningen': _pa.cc(_i_generic.get_entry(
+            'Informele rekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Informele rekeningen",
@@ -629,7 +629,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'Jaren': _pa.cc(_i_generic.get_entry(
+            'Jaren': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Jaren",
@@ -641,7 +641,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                         $,
                         {
                             'properties': ($) => ({
-                                'Afgesloten': _pa.cc(_i_generic.get_entry(
+                                'Afgesloten': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Afgesloten",
@@ -665,7 +665,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'Balans grootboekrekeningen': _pa.cc(_i_generic.get_entry(
+                                'Balans grootboekrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Balans grootboekrekeningen",
@@ -677,7 +677,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Type': _pa.cc(_i_generic.get_entry(
+                                                    'Type': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Type",
@@ -712,7 +712,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Bankrekeningen': _pa.cc(_i_generic.get_entry(
+                                'Bankrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Bankrekeningen",
@@ -724,7 +724,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Beginsaldo': _pa.cc(_i_generic.get_entry(
+                                                    'Beginsaldo': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Beginsaldo",
@@ -735,7 +735,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                         }
                                                     )),
-                                                    'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                    'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Grootboekrekening",
@@ -744,7 +744,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         null
                                                     )),
-                                                    'Mutaties': _pa.cc(_i_generic.get_entry(
+                                                    'Mutaties': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Mutaties",
@@ -756,7 +756,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag",
@@ -767,7 +767,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                             }
                                                                         )),
-                                                                        'Datum': _pa.cc(_i_generic.get_entry(
+                                                                        'Datum': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Datum",
@@ -778,7 +778,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                                                             }
                                                                         )),
-                                                                        'Omschrijving': _pa.cc(_i_generic.get_entry(
+                                                                        'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Omschrijving",
@@ -787,7 +787,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             null
                                                                         )),
-                                                                        'Status': _pa.cc(_i_generic.get_entry(
+                                                                        'Status': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Status",
@@ -806,7 +806,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Afhandeling': _pa.cc(_i_generic.get_entry(
+                                                                                                'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Afhandeling",
@@ -819,7 +819,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Jaar",
@@ -828,7 +828,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                             $,
                                                                                                                             null
                                                                                                                         )),
-                                                                                                                        'Inkoop': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Inkoop': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Inkoop",
@@ -844,7 +844,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'Verrekenpost': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Verrekenpost': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Verrekenpost",
@@ -860,7 +860,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Jaar",
@@ -869,7 +869,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                             $,
                                                                                                                             null
                                                                                                                         )),
-                                                                                                                        'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "BTW-periode",
@@ -885,7 +885,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Jaar",
@@ -894,7 +894,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                             $,
                                                                                                                             null
                                                                                                                         )),
-                                                                                                                        'Verkoop': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Verkoop': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Verkoop",
@@ -910,7 +910,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                 $,
                                                                                                                 {
                                                                                                                     'properties': ($) => ({
-                                                                                                                        'Informele rekening': _pa.cc(_i_generic.get_entry(
+                                                                                                                        'Informele rekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                             $,
                                                                                                                             {
                                                                                                                                 'key': "Informele rekening",
@@ -936,7 +936,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             ),
                                                         }
                                                     )),
-                                                    'Nieuw': _pa.cc(_i_generic.get_entry(
+                                                    'Nieuw': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Nieuw",
@@ -955,7 +955,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                            'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Jaar",
@@ -964,7 +964,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Rekening': _pa.cc(_i_generic.get_entry(
+                                                                            'Rekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Rekening",
@@ -984,7 +984,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Beginsaldo nog aan te geven BTW': _pa.cc(_i_generic.get_entry(
+                                'Beginsaldo nog aan te geven BTW': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Beginsaldo nog aan te geven BTW",
@@ -995,7 +995,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                     }
                                 )),
-                                'Beginsaldo winstreserve': _pa.cc(_i_generic.get_entry(
+                                'Beginsaldo winstreserve': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Beginsaldo winstreserve",
@@ -1006,7 +1006,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                     }
                                 )),
-                                'BTW periode saldo': _pa.cc(_i_generic.get_entry(
+                                'BTW periode saldo': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "BTW periode saldo",
@@ -1015,7 +1015,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Grootboekrekening",
@@ -1027,7 +1027,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'BTW periodes': _pa.cc(_i_generic.get_entry(
+                                'BTW periodes': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "BTW periodes",
@@ -1039,7 +1039,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    '1. BTW-categorieen': _pa.cc(_i_generic.get_entry(
+                                                    '1. BTW-categorieen': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "1. BTW-categorieen",
@@ -1055,7 +1055,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             ),
                                                         }
                                                     )),
-                                                    'Documenten': _pa.cc(_i_generic.get_entry(
+                                                    'Documenten': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Documenten",
@@ -1067,7 +1067,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bestand': _pa.cc(_i_generic.get_entry(
+                                                                        'Bestand': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bestand",
@@ -1083,7 +1083,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             ),
                                                         }
                                                     )),
-                                                    'Omschrijving': _pa.cc(_i_generic.get_entry(
+                                                    'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Omschrijving",
@@ -1092,7 +1092,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         null
                                                     )),
-                                                    'Status': _pa.cc(_i_generic.get_entry(
+                                                    'Status': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Status",
@@ -1105,7 +1105,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Afronding': _pa.cc(_i_generic.get_entry(
+                                                                            'Afronding': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Afronding",
@@ -1116,7 +1116,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                     'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                                 }
                                                                             )),
-                                                                            'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                            'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Bedrag",
@@ -1127,7 +1127,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                     'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                                 }
                                                                             )),
-                                                                            'Datum': _pa.cc(_i_generic.get_entry(
+                                                                            'Datum': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Datum",
@@ -1155,7 +1155,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Eerste boekjaar': _pa.cc(_i_generic.get_entry(
+                                'Eerste boekjaar': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Eerste boekjaar",
@@ -1174,7 +1174,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Vorig boekjaar': _pa.cc(_i_generic.get_entry(
+                                                        'Vorig boekjaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Vorig boekjaar",
@@ -1189,7 +1189,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'Grootboekrekening voor BTW afrondingen': _pa.cc(_i_generic.get_entry(
+                                'Grootboekrekening voor BTW afrondingen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Grootboekrekening voor BTW afrondingen",
@@ -1198,7 +1198,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     null
                                 )),
-                                'Grootboekrekening voor nog aan te geven BTW': _pa.cc(_i_generic.get_entry(
+                                'Grootboekrekening voor nog aan te geven BTW': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Grootboekrekening voor nog aan te geven BTW",
@@ -1207,7 +1207,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     null
                                 )),
-                                'Grootboekrekening voor resultaat dit jaar': _pa.cc(_i_generic.get_entry(
+                                'Grootboekrekening voor resultaat dit jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Grootboekrekening voor resultaat dit jaar",
@@ -1216,7 +1216,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     null
                                 )),
-                                'Grootboekrekening voor winstreserve': _pa.cc(_i_generic.get_entry(
+                                'Grootboekrekening voor winstreserve': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Grootboekrekening voor winstreserve",
@@ -1225,7 +1225,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     null
                                 )),
-                                'Informele rekeningen': _pa.cc(_i_generic.get_entry(
+                                'Informele rekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Informele rekeningen",
@@ -1237,7 +1237,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Beginsaldo': _pa.cc(_i_generic.get_entry(
+                                                    'Beginsaldo': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Beginsaldo",
@@ -1248,7 +1248,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                         }
                                                     )),
-                                                    'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                    'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Grootboekrekening",
@@ -1257,7 +1257,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         null
                                                     )),
-                                                    'Nieuw': _pa.cc(_i_generic.get_entry(
+                                                    'Nieuw': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Nieuw",
@@ -1276,7 +1276,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                            'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Jaar",
@@ -1285,7 +1285,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Rekening': _pa.cc(_i_generic.get_entry(
+                                                                            'Rekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Rekening",
@@ -1305,7 +1305,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Inkopen': _pa.cc(_i_generic.get_entry(
+                                'Inkopen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Inkopen",
@@ -1317,7 +1317,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Afhandeling': _pa.cc(_i_generic.get_entry(
+                                                    'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Afhandeling",
@@ -1336,7 +1336,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Rekening courant': _pa.cc(_i_generic.get_entry(
+                                                                            'Rekening courant': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Rekening courant",
@@ -1351,7 +1351,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'BTW-regime': _pa.cc(_i_generic.get_entry(
+                                                    'BTW-regime': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "BTW-regime",
@@ -1370,7 +1370,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                            'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "BTW-periode",
@@ -1398,7 +1398,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                            'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "BTW-periode",
@@ -1413,7 +1413,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'Brondocument': _pa.cc(_i_generic.get_entry(
+                                                    'Brondocument': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Brondocument",
@@ -1426,7 +1426,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Document': _pa.cc(_i_generic.get_entry(
+                                                                            'Document': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Document",
@@ -1461,7 +1461,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'Datum': _pa.cc(_i_generic.get_entry(
+                                                    'Datum': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Datum",
@@ -1472,7 +1472,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                                         }
                                                     )),
-                                                    'Regels': _pa.cc(_i_generic.get_entry(
+                                                    'Regels': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Regels",
@@ -1484,7 +1484,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag",
@@ -1497,7 +1497,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'BTW-bedrag': _pa.cc(_i_generic.get_entry(
+                                                                                                'BTW-bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "BTW-bedrag",
@@ -1508,7 +1508,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                         'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                                                     }
                                                                                                 )),
-                                                                                                'Bedrag inclusief geheven BTW': _pa.cc(_i_generic.get_entry(
+                                                                                                'Bedrag inclusief geheven BTW': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Bedrag inclusief geheven BTW",
@@ -1525,7 +1525,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 }),
                                                                             }
                                                                         )),
-                                                                        'Omschrijving': _pa.cc(_i_generic.get_entry(
+                                                                        'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Omschrijving",
@@ -1534,7 +1534,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             null
                                                                         )),
-                                                                        'Type': _pa.cc(_i_generic.get_entry(
+                                                                        'Type': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Type",
@@ -1547,7 +1547,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Balans item': _pa.cc(_i_generic.get_entry(
+                                                                                                'Balans item': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Balans item",
@@ -1563,7 +1563,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                                                                'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Grootboekrekening",
@@ -1583,7 +1583,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             ),
                                                         }
                                                     )),
-                                                    'Type': _pa.cc(_i_generic.get_entry(
+                                                    'Type': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Type",
@@ -1602,7 +1602,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Crediteur': _pa.cc(_i_generic.get_entry(
+                                                                            'Crediteur': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Crediteur",
@@ -1611,7 +1611,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Factuurnummer': _pa.cc(_i_generic.get_entry(
+                                                                            'Factuurnummer': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Factuurnummer",
@@ -1627,7 +1627,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Ronde': _pa.cc(_i_generic.get_entry(
+                                                                            'Ronde': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Ronde",
@@ -1643,7 +1643,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Ronde': _pa.cc(_i_generic.get_entry(
+                                                                            'Ronde': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Ronde",
@@ -1652,7 +1652,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Medewerker': _pa.cc(_i_generic.get_entry(
+                                                                            'Medewerker': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Medewerker",
@@ -1672,7 +1672,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Inkoop saldo': _pa.cc(_i_generic.get_entry(
+                                'Inkoop saldo': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Inkoop saldo",
@@ -1681,7 +1681,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Grootboekrekening",
@@ -1693,7 +1693,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'Overige balans items': _pa.cc(_i_generic.get_entry(
+                                'Overige balans items': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Overige balans items",
@@ -1705,7 +1705,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Beginsaldo': _pa.cc(_i_generic.get_entry(
+                                                    'Beginsaldo': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Beginsaldo",
@@ -1716,7 +1716,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                         }
                                                     )),
-                                                    'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                    'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Grootboekrekening",
@@ -1725,7 +1725,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         null
                                                     )),
-                                                    'Memoriaal boekingen': _pa.cc(_i_generic.get_entry(
+                                                    'Memoriaal boekingen': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Memoriaal boekingen",
@@ -1737,7 +1737,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag",
@@ -1748,7 +1748,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                             }
                                                                         )),
-                                                                        'Datum': _pa.cc(_i_generic.get_entry(
+                                                                        'Datum': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Datum",
@@ -1759,7 +1759,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                                                             }
                                                                         )),
-                                                                        'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                                        'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Grootboekrekening",
@@ -1768,7 +1768,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             null
                                                                         )),
-                                                                        'Omschrijving': _pa.cc(_i_generic.get_entry(
+                                                                        'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Omschrijving",
@@ -1782,7 +1782,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             ),
                                                         }
                                                     )),
-                                                    'Nieuw': _pa.cc(_i_generic.get_entry(
+                                                    'Nieuw': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Nieuw",
@@ -1801,7 +1801,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                            'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Jaar",
@@ -1810,7 +1810,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Balans item': _pa.cc(_i_generic.get_entry(
+                                                                            'Balans item': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Balans item",
@@ -1830,7 +1830,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Resultaat grootboekrekeningen': _pa.cc(_i_generic.get_entry(
+                                'Resultaat grootboekrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Resultaat grootboekrekeningen",
@@ -1846,7 +1846,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Salarisrondes': _pa.cc(_i_generic.get_entry(
+                                'Salarisrondes': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Salarisrondes",
@@ -1862,7 +1862,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Startdatum boekjaar': _pa.cc(_i_generic.get_entry(
+                                'Startdatum boekjaar': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Startdatum boekjaar",
@@ -1873,7 +1873,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                     }
                                 )),
-                                'Verkoop saldo': _pa.cc(_i_generic.get_entry(
+                                'Verkoop saldo': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Verkoop saldo",
@@ -1882,7 +1882,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Grootboekrekening",
@@ -1894,7 +1894,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         }),
                                     }
                                 )),
-                                'Verkopen': _pa.cc(_i_generic.get_entry(
+                                'Verkopen': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Verkopen",
@@ -1906,7 +1906,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Afhandeling': _pa.cc(_i_generic.get_entry(
+                                                    'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Afhandeling",
@@ -1925,7 +1925,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Rekening courant': _pa.cc(_i_generic.get_entry(
+                                                                            'Rekening courant': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Rekening courant",
@@ -1940,7 +1940,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'Betalingstermijn': _pa.cc(_i_generic.get_entry(
+                                                    'Betalingstermijn': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Betalingstermijn",
@@ -1951,7 +1951,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             'deserializer': $p['value deserializers']['custom numbers']['Dagen'],
                                                         }
                                                     )),
-                                                    'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                    'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "BTW-periode",
@@ -1960,7 +1960,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         null
                                                     )),
-                                                    'Brondocument': _pa.cc(_i_generic.get_entry(
+                                                    'Brondocument': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Brondocument",
@@ -1973,7 +1973,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Document': _pa.cc(_i_generic.get_entry(
+                                                                            'Document': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Document",
@@ -1990,7 +1990,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'Contracttype': _pa.cc(_i_generic.get_entry(
+                                                    'Contracttype': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Contracttype",
@@ -2003,7 +2003,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Project': _pa.cc(_i_generic.get_entry(
+                                                                            'Project': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Project",
@@ -2012,7 +2012,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 $,
                                                                                 null
                                                                             )),
-                                                                            'Offerte': _pa.cc(_i_generic.get_entry(
+                                                                            'Offerte': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Offerte",
@@ -2028,7 +2028,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Overeenkomst': _pa.cc(_i_generic.get_entry(
+                                                                            'Overeenkomst': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Overeenkomst",
@@ -2043,7 +2043,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             }),
                                                         }
                                                     )),
-                                                    'Datum': _pa.cc(_i_generic.get_entry(
+                                                    'Datum': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Datum",
@@ -2054,7 +2054,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                             'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                                         }
                                                     )),
-                                                    'Debiteur': _pa.cc(_i_generic.get_entry(
+                                                    'Debiteur': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Debiteur",
@@ -2063,7 +2063,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                         $,
                                                         null
                                                     )),
-                                                    'Regels': _pa.cc(_i_generic.get_entry(
+                                                    'Regels': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Regels",
@@ -2075,7 +2075,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'BTW-regime': _pa.cc(_i_generic.get_entry(
+                                                                        'BTW-regime': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "BTW-regime",
@@ -2094,7 +2094,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'BTW-categorie': _pa.cc(_i_generic.get_entry(
+                                                                                                'BTW-categorie': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "BTW-categorie",
@@ -2115,7 +2115,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 }),
                                                                             }
                                                                         )),
-                                                                        'Bedrag exclusief BTW': _pa.cc(_i_generic.get_entry(
+                                                                        'Bedrag exclusief BTW': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag exclusief BTW",
@@ -2126,7 +2126,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                             }
                                                                         )),
-                                                                        'Contracttype': _pa.cc(_i_generic.get_entry(
+                                                                        'Contracttype': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Contracttype",
@@ -2139,7 +2139,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Opbrengst': _pa.cc(_i_generic.get_entry(
+                                                                                                'Opbrengst': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Opbrengst",
@@ -2161,7 +2161,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Periode': _pa.cc(_i_generic.get_entry(
+                                                                                                'Periode': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Periode",
@@ -2176,7 +2176,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 }),
                                                                             }
                                                                         )),
-                                                                        'Omschrijving': _pa.cc(_i_generic.get_entry(
+                                                                        'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Omschrijving",
@@ -2185,7 +2185,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                             $,
                                                                             null
                                                                         )),
-                                                                        'Type': _pa.cc(_i_generic.get_entry(
+                                                                        'Type': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Type",
@@ -2198,7 +2198,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Grootboekrekening': _pa.cc(_i_generic.get_entry(
+                                                                                                'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Grootboekrekening",
@@ -2214,7 +2214,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Balans item': _pa.cc(_i_generic.get_entry(
+                                                                                                'Balans item': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Balans item",
@@ -2239,7 +2239,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Verrekenposten': _pa.cc(_i_generic.get_entry(
+                                'Verrekenposten': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Verrekenposten",
@@ -2251,7 +2251,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Mutaties': _pa.cc(_i_generic.get_entry(
+                                                    'Mutaties': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Mutaties",
@@ -2263,7 +2263,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag",
@@ -2274,7 +2274,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                             }
                                                                         )),
-                                                                        'Afhandeling': _pa.cc(_i_generic.get_entry(
+                                                                        'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Afhandeling",
@@ -2287,7 +2287,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Jaar",
@@ -2296,7 +2296,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     $,
                                                                                                     null
                                                                                                 )),
-                                                                                                'Inkoop': _pa.cc(_i_generic.get_entry(
+                                                                                                'Inkoop': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Inkoop",
@@ -2312,7 +2312,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Informele rekening': _pa.cc(_i_generic.get_entry(
+                                                                                                'Informele rekening': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Informele rekening",
@@ -2328,7 +2328,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Jaar",
@@ -2337,7 +2337,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     $,
                                                                                                     null
                                                                                                 )),
-                                                                                                'Verkoop': _pa.cc(_i_generic.get_entry(
+                                                                                                'Verkoop': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Verkoop",
@@ -2353,7 +2353,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                         $,
                                                                                         {
                                                                                             'properties': ($) => ({
-                                                                                                'Jaar': _pa.cc(_i_generic.get_entry(
+                                                                                                'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "Jaar",
@@ -2362,7 +2362,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                     $,
                                                                                                     null
                                                                                                 )),
-                                                                                                'BTW-periode': _pa.cc(_i_generic.get_entry(
+                                                                                                'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                     $,
                                                                                                     {
                                                                                                         'key': "BTW-periode",
@@ -2392,7 +2392,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'Klanten': _pa.cc(_i_generic.get_entry(
+            'Klanten': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Klanten",
@@ -2404,7 +2404,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                         $,
                         {
                             'properties': ($) => ({
-                                'Licentieovereenkomsten': _pa.cc(_i_generic.get_entry(
+                                'Licentieovereenkomsten': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Licentieovereenkomsten",
@@ -2416,7 +2416,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Periodes': _pa.cc(_i_generic.get_entry(
+                                                    'Periodes': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Periodes",
@@ -2428,7 +2428,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag",
@@ -2449,7 +2449,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                         ),
                                     }
                                 )),
-                                'Projecten': _pa.cc(_i_generic.get_entry(
+                                'Projecten': _pa.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Projecten",
@@ -2461,7 +2461,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Offertes': _pa.cc(_i_generic.get_entry(
+                                                    'Offertes': _pa.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Offertes",
@@ -2473,7 +2473,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Opbrengsten': _pa.cc(_i_generic.get_entry(
+                                                                        'Opbrengsten': _pa.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Opbrengsten",
@@ -2485,7 +2485,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                     $,
                                                                                     {
                                                                                         'properties': ($) => ({
-                                                                                            'Type': _pa.cc(_i_generic.get_entry(
+                                                                                            'Type': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                 $,
                                                                                                 {
                                                                                                     'key': "Type",
@@ -2498,7 +2498,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                             $,
                                                                                                             {
                                                                                                                 'properties': ($) => ({
-                                                                                                                    'Bedrag': _pa.cc(_i_generic.get_entry(
+                                                                                                                    'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                         $,
                                                                                                                         {
                                                                                                                             'key': "Bedrag",
@@ -2509,7 +2509,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                                                                                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                                                                         }
                                                                                                                     )),
-                                                                                                                    'Betaaldatum': _pa.cc(_i_generic.get_entry(
+                                                                                                                    'Betaaldatum': _pa.deprecated_cc(_i_generic.get_entry(
                                                                                                                         $,
                                                                                                                         {
                                                                                                                             'key': "Betaaldatum",
@@ -2546,7 +2546,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'Leveranciers': _pa.cc(_i_generic.get_entry(
+            'Leveranciers': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Leveranciers",
@@ -2562,7 +2562,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     ),
                 }
             )),
-            'Medewerkers': _pa.cc(_i_generic.get_entry(
+            'Medewerkers': _pa.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Medewerkers",
