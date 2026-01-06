@@ -1,5 +1,4 @@
-import * as _pc from 'pareto-core-command'
-import * as _pinternals from 'pareto-core-internals'
+import * as _p from 'pareto-core-command'
 import * as _pi from 'pareto-core-interface'
 
 import * as signatures from "../../../interface/signatures"
@@ -22,15 +21,15 @@ export type Creator = (
     >,
 ) => signatures.commands.transform_file
 
-export const $$: Creator = (deserializer) => _pc.command_procedure(
+export const $$: Creator = (deserializer) => _p.command_procedure(
     ($p, $cr, $qr) => [
-        _pc.create_error_handling_context<d_main.Error, d_transform_file.Error>(
+        _p.create_error_handling_context<d_main.Error, d_transform_file.Error>(
             [
-                _pc.refine_without_error_transformation(
+                _p.refine_without_error_transformation(
                     (abort) => r_file_in_file_out_from_main.Parameters($p, ($) => abort(['file in file out', ['command line arguments', $]])),
                     ($r) => [
 
-                        _pc.query(
+                        _p.query(
                             $qr['read file'](
                                 $r.in,
                                 ($): d_transform_file.Error => {
@@ -63,7 +62,7 @@ export const $$: Creator = (deserializer) => _pc.command_procedure(
             ($) => [
                 $cr['log error'].execute(
                     {
-                        'lines': _pinternals.list_literal([s_transform_file.My_Error($)])
+                        'lines': _p.list.literal([s_transform_file.My_Error($)])
                     },
                     ($) => ({
                         'exit code': 2

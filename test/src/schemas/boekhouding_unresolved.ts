@@ -1,6 +1,5 @@
 import * as _pi from 'pareto-core-interface'
 import * as _pt from 'pareto-core-transformer'
-import * as _pinternals from 'pareto-core-internals'
 
 // import * as d_static_html from "pub/dist/interface/generated/pareto/schemas/static-html/data_types/target"
 
@@ -24,21 +23,11 @@ import * as sh from "pareto-test/dist/temporary_testset_generator/shorthands"
 //     )
 // }
 
-export const $$ = sh.schema({
-    transformers: {
-        // "boekhouding_unresolved": sh.transformer(
-        //     r_temp_static_html.Boekhouding_Oude_Model_To_Boekhouding_Unresolved_Model_Transformer,
-        //     r_temp_static_html.Boekhouding_Oude_Model_Deserialize,
-        //     s_unmarshall.Error,
-        //     r_temp_static_html.Boekhouding_Unresolved_Model_Serialize,
-        // ),
-    }
-    // 'serializers': {
-    //     "Document": sh.serializer(
-    //         `.html`,
-    //         r_temp_static_html.Document_Serialize,
-    //         r_temp_static_html.Document_Deserialize,
-    //         s_unmarshall.Error,
-    //     )
-    // }
-})
+export const $$ = sh.schema(
+
+    {},
+    {},
+    {},
+    {},
+    {},
+)

@@ -234,7 +234,7 @@ export const rapportage: d_static_html.Document = {
             }
         }
     `,
-    'root': _p.wrap_list([
+    'root': _p.list.literal([
         sh.f.table(
             [],
             [

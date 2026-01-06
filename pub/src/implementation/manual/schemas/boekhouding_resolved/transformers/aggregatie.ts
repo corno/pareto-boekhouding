@@ -14,9 +14,12 @@ type Possibly_Relevant_Entry<T> = {
 //dependencies
 
 const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _pi.Dictionary<T> => {
-    return $.filter(($) => $['is relevant']
-        ? _p.optional.set($['entry'])
-        : _p.optional.not_set()
+    return _p.dictionary.filter(
+        $,
+        ($) => $['is relevant']
+            ? _p.optional.set($['entry'])
+            : _p.optional.not_set()
+
     )
 }
 
@@ -47,7 +50,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                                 },
                             })))
                             return {
-                                'is relevant': !regels.is_empty(),
+                                'is relevant': !(regels.__get_number_of_entries() === 0),
                                 'entry': {
                                     'bron': $,
                                     'regels': regels
@@ -75,7 +78,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                             }
                         }))
                         return {
-                            'is relevant': !regels.is_empty(),
+                            'is relevant': !(regels.__get_number_of_entries() === 0),
                             'entry': {
                                 'bron': $,
                                 'regels': regels

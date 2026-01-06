@@ -11,6 +11,7 @@ import * as ds_path from "pareto-resources/dist/implementation/manual/schemas/no
 
 export const Path: Signature = (iterator, abort) => ds_path.Node_Path(
     iterator.consume(
+        ($) => $,
         () => abort(['missing', null])
     ),
     ($) => abort(['not valid', null]),
