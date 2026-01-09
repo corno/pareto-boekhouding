@@ -1,4 +1,4 @@
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
 import * as d_in from "./token"
 
@@ -36,7 +36,7 @@ export type Syntactical_Error = {
         readonly 'found': d_in._T_Token_Type
     }]
 
-    readonly 'expected': _et.List<Expected
+    readonly 'expected': _pi.List<Expected
     >
 }
 

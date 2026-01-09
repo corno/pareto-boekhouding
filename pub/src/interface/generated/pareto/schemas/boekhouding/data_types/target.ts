@@ -1,4 +1,4 @@
-import * as _et from 'pareto-core-interface'
+import * as _pi from 'pareto-core-interface'
 
 import * as _i_core from "../../../core/unresolved"
 
@@ -353,7 +353,7 @@ export type _T_Jaren<M_Source> = _i_core._T_Ordered_Dictionary<M_Source, {
 }>
 
 export type _T_Balans_Resultaat_Mutatie<M_Source> = {
-    readonly 'Jaar': _et.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>>
+    readonly 'Jaar': _pi.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>>
     readonly 'type': _i_core._T_State_Group<M_Source, 
         | readonly ['Inkoop', _i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Handelstransacties.Inkopen.D<M_Source>>]
         | readonly ['Verkoop', _i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Handelstransacties.Verkopen.D<M_Source>>]
@@ -2780,7 +2780,7 @@ export namespace _T_Balans_Resultaat_Mutatie {
         }
         export type O<M_Source> = _i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>
     }
-    export type Jaar<M_Source> = _et.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>>
+    export type Jaar<M_Source> = _pi.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>>
     
     export namespace _type {
         
@@ -5242,7 +5242,7 @@ export namespace Balans_Resultaat_Mutatie {
         }
         export type O<M_Source> = _i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>
     }
-    export type Jaar<M_Source> = _et.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>>
+    export type Jaar<M_Source> = _pi.Optional_Value<_i_core._T_Reference_To_Normal_Dictionary_Entry<M_Source, _T_Jaren.D<M_Source>>>
     
     export namespace _type {
         
