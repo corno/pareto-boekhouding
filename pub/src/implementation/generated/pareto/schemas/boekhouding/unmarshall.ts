@@ -1,5 +1,5 @@
-import * as _pa from 'pareto-core-refiner'
-import * as _pd from 'pareto-core-dev'
+import * as _p from 'pareto-core-refiner'
+import * as _pdev from 'pareto-core-dev'
 
 import * as _i_generic from "../../generic/unmarshall"
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding/unmarshall"
@@ -11,7 +11,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
     $,
     {
         'properties': ($) => ({
-            'Balans Hoofdcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Balans Hoofdcategorieen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Balans Hoofdcategorieen",
@@ -23,7 +23,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                         $,
                         {
                             'properties': ($) => ({
-                                'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Zijde': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Zijde",
@@ -31,7 +31,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Activa': ($): _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde.SG<_i_in._T_Range> => ['Activa', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -43,7 +43,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                                         }),
                                     }
                                 )),
-                                'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Subcategorieen': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Subcategorieen",
@@ -62,7 +62,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                     ),
                 }
             )),
-            'Resultaat Hoofdcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Resultaat Hoofdcategorieen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Resultaat Hoofdcategorieen",
@@ -74,7 +74,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                         $,
                         {
                             'properties': ($) => ({
-                                'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Zijde': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Zijde",
@@ -82,7 +82,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Kosten': ($): _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde.SG<_i_in._T_Range> => ['Kosten', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -94,7 +94,7 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => _i_generic.process_g
                                         }),
                                     }
                                 )),
-                                'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Subcategorieen': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Subcategorieen",
@@ -120,7 +120,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
     $,
     {
         'properties': ($) => ({
-            'Correctietypes vennootschapsbelasting': _pa.deprecated_cc(_i_generic.get_entry(
+            'Correctietypes vennootschapsbelasting': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Correctietypes vennootschapsbelasting",
@@ -132,7 +132,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                         $,
                         {
                             'properties': ($) => ({
-                                'Te corrigeren promillage': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Te corrigeren promillage': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Te corrigeren promillage",
@@ -148,7 +148,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                     ),
                 }
             )),
-            'Balans': _pa.deprecated_cc(_i_generic.get_entry(
+            'Balans': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Balans",
@@ -160,7 +160,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                         $,
                         {
                             'properties': ($) => ({
-                                'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Zijde': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Zijde",
@@ -168,7 +168,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Activa': ($): _i_out._T_Grootboek_Categorieen.Balans.D.Zijde.SG<_i_in._T_Range> => ['Activa', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -180,7 +180,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                         }),
                                     }
                                 )),
-                                'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Subcategorieen': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Subcategorieen",
@@ -192,7 +192,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Hoofdcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Hoofdcategorie fiscus': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Hoofdcategorie fiscus",
@@ -201,7 +201,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                                         $,
                                                         null
                                                     )),
-                                                    'Subcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Subcategorie fiscus': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Subcategorie fiscus",
@@ -220,7 +220,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                     ),
                 }
             )),
-            'Resultaat': _pa.deprecated_cc(_i_generic.get_entry(
+            'Resultaat': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Resultaat",
@@ -232,7 +232,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                         $,
                         {
                             'properties': ($) => ({
-                                'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Zijde': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Zijde",
@@ -240,7 +240,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Kosten': ($): _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde.SG<_i_in._T_Range> => ['Kosten', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -252,7 +252,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                         }),
                                     }
                                 )),
-                                'Subcategorieen': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Subcategorieen': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Subcategorieen",
@@ -264,7 +264,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Hoofdcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Hoofdcategorie fiscus': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Hoofdcategorie fiscus",
@@ -273,7 +273,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                                                         $,
                                                         null
                                                     )),
-                                                    'Subcategorie fiscus': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Subcategorie fiscus': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Subcategorie fiscus",
@@ -299,7 +299,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
     $,
     {
         'properties': ($) => ({
-            'BTW-categorieen': _pa.deprecated_cc(_i_generic.get_entry(
+            'BTW-categorieen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "BTW-categorieen",
@@ -311,7 +311,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                         $,
                         {
                             'properties': ($) => ({
-                                'BTW-heffing': _pa.deprecated_cc(_i_generic.get_entry(
+                                'BTW-heffing': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "BTW-heffing",
@@ -319,12 +319,12 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Ja': ($): _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG<_i_in._T_Range> => ['Ja', _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'BTW-promillage': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'BTW-promillage': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "BTW-promillage",
@@ -346,7 +346,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                     ),
                 }
             )),
-            'Grootboekrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Grootboekrekeningen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Grootboekrekeningen",
@@ -355,7 +355,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                 $,
                 {
                     'properties': ($) => ({
-                        'Balans': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Balans': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Balans",
@@ -367,7 +367,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Hoofdcategorie': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Hoofdcategorie': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Hoofdcategorie",
@@ -376,7 +376,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                 $,
                                                 null
                                             )),
-                                            'Subcategorie': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Subcategorie': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Subcategorie",
@@ -385,7 +385,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                 $,
                                                 null
                                             )),
-                                            'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Zijde': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Zijde",
@@ -393,7 +393,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary.literal({
+                                                    'states': _p.dictionary.literal({
                                                         'Activa': ($): _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde.SG<_i_in._T_Range> => ['Activa', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -410,7 +410,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                 ),
                             }
                         )),
-                        'Resultaat': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Resultaat': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Resultaat",
@@ -422,7 +422,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Hoofdcategorie': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Hoofdcategorie': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Hoofdcategorie",
@@ -431,7 +431,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                 $,
                                                 null
                                             )),
-                                            'Subcategorie': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Subcategorie': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Subcategorie",
@@ -440,7 +440,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                 $,
                                                 null
                                             )),
-                                            'Zijde': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Zijde': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Zijde",
@@ -448,12 +448,12 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary.literal({
+                                                    'states': _p.dictionary.literal({
                                                         'Kosten': ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG<_i_in._T_Range> => ['Kosten', _i_generic.process_group(
                                                             $,
                                                             {
                                                                 'properties': ($) => ({
-                                                                    'Correctie op vennootschapsbelasting': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                    'Correctie op vennootschapsbelasting': _p.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "Correctie op vennootschapsbelasting",
@@ -461,12 +461,12 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                                         $,
                                                                         {
-                                                                            'states': _pa.dictionary.literal({
+                                                                            'states': _p.dictionary.literal({
                                                                                 'Ja': ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG<_i_in._T_Range> => ['Ja', _i_generic.process_group(
                                                                                     $,
                                                                                     {
                                                                                         'properties': ($) => ({
-                                                                                            'Correctietype': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                                            'Correctietype': _p.deprecated_cc(_i_generic.get_entry(
                                                                                                 $,
                                                                                                 {
                                                                                                     'key': "Correctietype",
@@ -503,7 +503,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                     }),
                 }
             )),
-            'Rekeningen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Rekeningen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Rekeningen",
@@ -512,7 +512,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                 $,
                 {
                     'properties': ($) => ({
-                        'Bank': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Bank': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Bank",
@@ -526,7 +526,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                 ),
                             }
                         )),
-                        'Informeel': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Informeel': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Informeel",
@@ -543,7 +543,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                     }),
                 }
             )),
-            'Gebruikers': _pa.deprecated_cc(_i_generic.get_entry(
+            'Gebruikers': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Gebruikers",
@@ -555,7 +555,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                         $,
                         {
                             'properties': ($) => ({
-                                'Volledige naam': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Volledige naam': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Volledige naam",
@@ -564,7 +564,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                     $,
                                     null
                                 )),
-                                'Wachtwoord': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Wachtwoord': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Wachtwoord",
@@ -578,7 +578,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                     ),
                 }
             )),
-            'Klanten': _pa.deprecated_cc(_i_generic.get_entry(
+            'Klanten': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Klanten",
@@ -590,7 +590,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                         $,
                         {
                             'properties': ($) => ({
-                                'Licentieovereenkomsten': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Licentieovereenkomsten': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Licentieovereenkomsten",
@@ -602,7 +602,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Periodes': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Periodes': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Periodes",
@@ -614,7 +614,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                        'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Bedrag",
@@ -635,7 +635,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                         ),
                                     }
                                 )),
-                                'Projecten': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Projecten': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Projecten",
@@ -647,7 +647,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Offertes': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Offertes': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Offertes",
@@ -659,7 +659,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                 $,
                                                                 {
                                                                     'properties': ($) => ({
-                                                                        'Opbrengsten': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                        'Opbrengsten': _p.deprecated_cc(_i_generic.get_entry(
                                                                             $,
                                                                             {
                                                                                 'key': "Opbrengsten",
@@ -671,7 +671,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                                     $,
                                                                                     {
                                                                                         'properties': ($) => ({
-                                                                                            'Type': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                                            'Type': _p.deprecated_cc(_i_generic.get_entry(
                                                                                                 $,
                                                                                                 {
                                                                                                     'key': "Type",
@@ -679,12 +679,12 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                                                                 $,
                                                                                                 {
-                                                                                                    'states': _pa.dictionary.literal({
+                                                                                                    'states': _p.dictionary.literal({
                                                                                                         'Project': ($): _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG<_i_in._T_Range> => ['Project', _i_generic.process_group(
                                                                                                             $,
                                                                                                             {
                                                                                                                 'properties': ($) => ({
-                                                                                                                    'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                                                                    'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                                                                                                         $,
                                                                                                                         {
                                                                                                                             'key': "Bedrag",
@@ -695,7 +695,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                                                                                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                                                                         }
                                                                                                                     )),
-                                                                                                                    'Betaaldatum': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                                                                    'Betaaldatum': _p.deprecated_cc(_i_generic.get_entry(
                                                                                                                         $,
                                                                                                                         {
                                                                                                                             'key': "Betaaldatum",
@@ -732,7 +732,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                     ),
                 }
             )),
-            'Leveranciers': _pa.deprecated_cc(_i_generic.get_entry(
+            'Leveranciers': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Leveranciers",
@@ -746,7 +746,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => _i_generic.process_gro
                     ),
                 }
             )),
-            'Medewerkers': _pa.deprecated_cc(_i_generic.get_entry(
+            'Medewerkers': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Medewerkers",
@@ -767,7 +767,7 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p)
     $,
     {
         'properties': ($) => ({
-            'Balans': _pa.deprecated_cc(_i_generic.get_entry(
+            'Balans': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Balans",
@@ -779,7 +779,7 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p)
                         $,
                         {
                             'properties': ($) => ({
-                                'Type': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Type': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Type",
@@ -787,7 +787,7 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p)
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Bankrekening': ($): _i_out._T_Grootboekrekeningen.Balans.D.Type.SG<_i_in._T_Range> => ['Bankrekening', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -808,7 +808,7 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p)
                     ),
                 }
             )),
-            'Resultaat': _pa.deprecated_cc(_i_generic.get_entry(
+            'Resultaat': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Resultaat",
@@ -829,7 +829,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
     $,
     {
         'properties': ($) => ({
-            'Resultaat': _pa.deprecated_cc(_i_generic.get_entry(
+            'Resultaat': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Resultaat",
@@ -838,7 +838,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                 $,
                 {
                     'properties': ($) => ({
-                        'Grootboekrekening voor BTW afrondingen': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Grootboekrekening voor BTW afrondingen': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Grootboekrekening voor BTW afrondingen",
@@ -847,7 +847,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                             $,
                             null
                         )),
-                        'Salarisrondes': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Salarisrondes': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Salarisrondes",
@@ -861,7 +861,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                 ),
                             }
                         )),
-                        'BTW periodes': _pa.deprecated_cc(_i_generic.get_entry(
+                        'BTW periodes': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "BTW periodes",
@@ -873,7 +873,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            '1. BTW-categorieen': _pa.deprecated_cc(_i_generic.get_entry(
+                                            '1. BTW-categorieen': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "1. BTW-categorieen",
@@ -887,7 +887,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                     ),
                                                 }
                                             )),
-                                            'Documenten': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Documenten': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Documenten",
@@ -899,7 +899,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                         $,
                                                         {
                                                             'properties': ($) => ({
-                                                                'Bestand': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                'Bestand': _p.deprecated_cc(_i_generic.get_entry(
                                                                     $,
                                                                     {
                                                                         'key': "Bestand",
@@ -913,7 +913,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                     ),
                                                 }
                                             )),
-                                            'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Omschrijving': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Omschrijving",
@@ -922,7 +922,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                 $,
                                                 null
                                             )),
-                                            'Status': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Status': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Status",
@@ -930,12 +930,12 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary.literal({
+                                                    'states': _p.dictionary.literal({
                                                         'Aangegeven': ($): _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG<_i_in._T_Range> => ['Aangegeven', _i_generic.process_group(
                                                             $,
                                                             {
                                                                 'properties': ($) => ({
-                                                                    'Afronding': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                    'Afronding': _p.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "Afronding",
@@ -946,7 +946,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                         }
                                                                     )),
-                                                                    'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                    'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "Bedrag",
@@ -957,7 +957,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                         }
                                                                     )),
-                                                                    'Datum': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                    'Datum': _p.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "Datum",
@@ -986,7 +986,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                     }),
                 }
             )),
-            'Balans': _pa.deprecated_cc(_i_generic.get_entry(
+            'Balans': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Balans",
@@ -995,7 +995,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                 $,
                 {
                     'properties': ($) => ({
-                        'Grootboekrekening voor nog aan te geven BTW': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Grootboekrekening voor nog aan te geven BTW': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Grootboekrekening voor nog aan te geven BTW",
@@ -1004,7 +1004,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                             $,
                             null
                         )),
-                        'Grootboekrekening voor resultaat dit jaar': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Grootboekrekening voor resultaat dit jaar': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Grootboekrekening voor resultaat dit jaar",
@@ -1013,7 +1013,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                             $,
                             null
                         )),
-                        'Grootboekrekening voor winstreserve': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Grootboekrekening voor winstreserve': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Grootboekrekening voor winstreserve",
@@ -1022,7 +1022,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                             $,
                             null
                         )),
-                        'Grootboekrekening voor Inkoop saldo': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Grootboekrekening voor Inkoop saldo': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Grootboekrekening voor Inkoop saldo",
@@ -1031,7 +1031,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                             $,
                             null
                         )),
-                        'Grootboekrekening voor Verkoop saldo': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Grootboekrekening voor Verkoop saldo': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Grootboekrekening voor Verkoop saldo",
@@ -1040,7 +1040,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                             $,
                             null
                         )),
-                        'Beginsaldo nog aan te geven BTW': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Beginsaldo nog aan te geven BTW': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Beginsaldo nog aan te geven BTW",
@@ -1051,7 +1051,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                             }
                         )),
-                        'Beginsaldo winstreserve': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Beginsaldo winstreserve': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Beginsaldo winstreserve",
@@ -1062,7 +1062,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                             }
                         )),
-                        'Informele rekeningen': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Informele rekeningen': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Informele rekeningen",
@@ -1074,7 +1074,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Beginsaldo': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Beginsaldo': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Beginsaldo",
@@ -1085,7 +1085,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                     'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                 }
                                             )),
-                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Grootboekrekening': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Grootboekrekening",
@@ -1094,7 +1094,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                 $,
                                                 null
                                             )),
-                                            'Nieuw': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Nieuw': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Nieuw",
@@ -1102,7 +1102,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary.literal({
+                                                    'states': _p.dictionary.literal({
                                                         'Ja': ($): _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -1111,7 +1111,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                             $,
                                                             {
                                                                 'properties': ($) => ({
-                                                                    'Rekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                    'Rekening': _p.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "Rekening",
@@ -1133,7 +1133,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                 ),
                             }
                         )),
-                        'Bankrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Bankrekeningen': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Bankrekeningen",
@@ -1145,7 +1145,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                     $,
                                     {
                                         'properties': ($) => ({
-                                            'Beginsaldo': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Beginsaldo': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Beginsaldo",
@@ -1156,7 +1156,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                     'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                 }
                                             )),
-                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Grootboekrekening': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Grootboekrekening",
@@ -1165,7 +1165,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                 $,
                                                 null
                                             )),
-                                            'Nieuw': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Nieuw': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Nieuw",
@@ -1173,7 +1173,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                             ), ($) => _i_generic.process_unresolved_state_group(
                                                 $,
                                                 {
-                                                    'states': _pa.dictionary.literal({
+                                                    'states': _p.dictionary.literal({
                                                         'Ja': ($): _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                                                             $,
                                                             null
@@ -1182,7 +1182,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                             $,
                                                             {
                                                                 'properties': ($) => ({
-                                                                    'Rekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                    'Rekening': _p.deprecated_cc(_i_generic.get_entry(
                                                                         $,
                                                                         {
                                                                             'key': "Rekening",
@@ -1199,7 +1199,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                     }),
                                                 }
                                             )),
-                                            'Mutaties': _pa.deprecated_cc(_i_generic.get_entry(
+                                            'Mutaties': _p.deprecated_cc(_i_generic.get_entry(
                                                 $,
                                                 {
                                                     'key': "Mutaties",
@@ -1211,7 +1211,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                         $,
                                                         {
                                                             'properties': ($) => ({
-                                                                'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                                                     $,
                                                                     {
                                                                         'key': "Bedrag",
@@ -1222,7 +1222,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                                         'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                     }
                                                                 )),
-                                                                'Datum': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                'Datum': _p.deprecated_cc(_i_generic.get_entry(
                                                                     $,
                                                                     {
                                                                         'key': "Datum",
@@ -1233,7 +1233,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                                                         'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                                                     }
                                                                 )),
-                                                                'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                'Omschrijving': _p.deprecated_cc(_i_generic.get_entry(
                                                                     $,
                                                                     {
                                                                         'key': "Omschrijving",
@@ -1252,7 +1252,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                 ),
                             }
                         )),
-                        'Overige balans items': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Overige balans items': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Overige balans items",
@@ -1268,7 +1268,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => _i_generic.pro
                                 ),
                             }
                         )),
-                        'Verrekenposten': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Verrekenposten': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Verrekenposten",
@@ -1292,7 +1292,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p)
     $,
     {
         'properties': ($) => ({
-            'Beginsaldo': _pa.deprecated_cc(_i_generic.get_entry(
+            'Beginsaldo': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Beginsaldo",
@@ -1303,7 +1303,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p)
                     'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                 }
             )),
-            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
+            'Grootboekrekening': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Grootboekrekening",
@@ -1312,7 +1312,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p)
                 $,
                 null
             )),
-            'Nieuw': _pa.deprecated_cc(_i_generic.get_entry(
+            'Nieuw': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Nieuw",
@@ -1320,7 +1320,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p)
             ), ($) => _i_generic.process_unresolved_state_group(
                 $,
                 {
-                    'states': _pa.dictionary.literal({
+                    'states': _p.dictionary.literal({
                         'Ja': ($): _i_out._T_Overige_balans_item.Nieuw.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                             $,
                             null
@@ -1329,7 +1329,7 @@ export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p)
                             $,
                             {
                                 'properties': ($) => ({
-                                    'Balans item': _pa.deprecated_cc(_i_generic.get_entry(
+                                    'Balans item': _p.deprecated_cc(_i_generic.get_entry(
                                         $,
                                         {
                                             'key': "Balans item",
@@ -1359,7 +1359,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
     $,
     {
         'properties': ($) => ({
-            'Inkopen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Inkopen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Inkopen",
@@ -1371,7 +1371,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                         $,
                         {
                             'properties': ($) => ({
-                                'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Afhandeling': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Afhandeling",
@@ -1379,7 +1379,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Mutaties': ($): _i_out._T_Handelstransacties.Inkopen.D.Afhandeling.SG<_i_in._T_Range> => ['Mutaties', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1388,7 +1388,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Rekening courant': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Rekening courant': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Rekening courant",
@@ -1403,7 +1403,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         }),
                                     }
                                 )),
-                                'BTW-regime': _pa.deprecated_cc(_i_generic.get_entry(
+                                'BTW-regime': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "BTW-regime",
@@ -1411,7 +1411,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Binnenland: heffing verlegd': ($): _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime.SG<_i_in._T_Range> => ['Binnenland: heffing verlegd', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1432,7 +1432,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'BTW-periode': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "BTW-periode",
@@ -1447,7 +1447,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         }),
                                     }
                                 )),
-                                'Brondocument': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Brondocument': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Brondocument",
@@ -1455,12 +1455,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Toegevoegd': ($): _i_out._T_Handelstransacties.Inkopen.D.Brondocument.SG<_i_in._T_Range> => ['Toegevoegd', _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Document': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Document': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Document",
@@ -1483,7 +1483,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         }),
                                     }
                                 )),
-                                'Datum': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Datum': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Datum",
@@ -1494,7 +1494,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                     }
                                 )),
-                                'Regels': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Regels': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Regels",
@@ -1506,7 +1506,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Bedrag",
@@ -1514,12 +1514,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary.literal({
+                                                            'states': _p.dictionary.literal({
                                                                 'Bekend': ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG<_i_in._T_Range> => ['Bekend', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'BTW-bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'BTW-bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "BTW-bedrag",
@@ -1530,7 +1530,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                                                     'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                                                 }
                                                                             )),
-                                                                            'Bedrag inclusief geheven BTW': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Bedrag inclusief geheven BTW': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Bedrag inclusief geheven BTW",
@@ -1547,7 +1547,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             }),
                                                         }
                                                     )),
-                                                    'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Omschrijving': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Omschrijving",
@@ -1556,7 +1556,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                         $,
                                                         null
                                                     )),
-                                                    'Type': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Type': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Type",
@@ -1564,12 +1564,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary.literal({
+                                                            'states': _p.dictionary.literal({
                                                                 'Balans': ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG<_i_in._T_Range> => ['Balans', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Balans item': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Balans item': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Balans item",
@@ -1585,7 +1585,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Grootboekrekening': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Grootboekrekening",
@@ -1605,7 +1605,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         ),
                                     }
                                 )),
-                                'Type': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Type': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Type",
@@ -1613,7 +1613,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Bonnetje': ($): _i_out._T_Handelstransacties.Inkopen.D.Type.SG<_i_in._T_Range> => ['Bonnetje', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1622,7 +1622,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Crediteur': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Crediteur': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Crediteur",
@@ -1631,7 +1631,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             $,
                                                             null
                                                         )),
-                                                        'Factuurnummer': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Factuurnummer': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Factuurnummer",
@@ -1647,7 +1647,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Ronde': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Ronde': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Ronde",
@@ -1663,7 +1663,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Ronde': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Ronde': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Ronde",
@@ -1672,7 +1672,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             $,
                                                             null
                                                         )),
-                                                        'Medewerker': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Medewerker': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Medewerker",
@@ -1692,7 +1692,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                     ),
                 }
             )),
-            'Verkopen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Verkopen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Verkopen",
@@ -1704,7 +1704,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                         $,
                         {
                             'properties': ($) => ({
-                                'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Afhandeling': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Afhandeling",
@@ -1712,7 +1712,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Mutaties': ($): _i_out._T_Handelstransacties.Verkopen.D.Afhandeling.SG<_i_in._T_Range> => ['Mutaties', _i_generic.process_nothing(
                                                 $,
                                                 null
@@ -1721,7 +1721,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Rekening courant': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Rekening courant': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Rekening courant",
@@ -1736,7 +1736,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         }),
                                     }
                                 )),
-                                'Betalingstermijn': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Betalingstermijn': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Betalingstermijn",
@@ -1747,7 +1747,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         'deserializer': $p['value deserializers']['custom numbers']['Dagen'],
                                     }
                                 )),
-                                'BTW-periode': _pa.deprecated_cc(_i_generic.get_entry(
+                                'BTW-periode': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "BTW-periode",
@@ -1756,7 +1756,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                     $,
                                     null
                                 )),
-                                'Brondocument': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Brondocument': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Brondocument",
@@ -1764,12 +1764,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Toegevoegd': ($): _i_out._T_Handelstransacties.Verkopen.D.Brondocument.SG<_i_in._T_Range> => ['Toegevoegd', _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Document': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Document': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Document",
@@ -1784,7 +1784,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         }),
                                     }
                                 )),
-                                'Debiteur': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Debiteur': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Debiteur",
@@ -1793,7 +1793,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                     $,
                                     null
                                 )),
-                                'Contracttype': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Contracttype': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Contracttype",
@@ -1801,12 +1801,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                 ), ($) => _i_generic.process_unresolved_state_group(
                                     $,
                                     {
-                                        'states': _pa.dictionary.literal({
+                                        'states': _p.dictionary.literal({
                                             'Project': ($): _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG<_i_in._T_Range> => ['Project', _i_generic.process_group(
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Project': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Project': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Project",
@@ -1815,7 +1815,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             $,
                                                             null
                                                         )),
-                                                        'Offerte': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Offerte': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Offerte",
@@ -1831,7 +1831,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                 $,
                                                 {
                                                     'properties': ($) => ({
-                                                        'Overeenkomst': _pa.deprecated_cc(_i_generic.get_entry(
+                                                        'Overeenkomst': _p.deprecated_cc(_i_generic.get_entry(
                                                             $,
                                                             {
                                                                 'key': "Overeenkomst",
@@ -1846,7 +1846,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         }),
                                     }
                                 )),
-                                'Datum': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Datum': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Datum",
@@ -1857,7 +1857,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                         'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                     }
                                 )),
-                                'Regels': _pa.deprecated_cc(_i_generic.get_entry(
+                                'Regels': _p.deprecated_cc(_i_generic.get_entry(
                                     $,
                                     {
                                         'key': "Regels",
@@ -1869,7 +1869,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                             $,
                                             {
                                                 'properties': ($) => ({
-                                                    'BTW-regime': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'BTW-regime': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "BTW-regime",
@@ -1877,7 +1877,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary.literal({
+                                                            'states': _p.dictionary.literal({
                                                                 'Intracommunautair': ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime.SG<_i_in._T_Range> => ['Intracommunautair', _i_generic.process_nothing(
                                                                     $,
                                                                     null
@@ -1886,7 +1886,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'BTW-categorie': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'BTW-categorie': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "BTW-categorie",
@@ -1905,7 +1905,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             }),
                                                         }
                                                     )),
-                                                    'Bedrag exclusief BTW': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Bedrag exclusief BTW': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Bedrag exclusief BTW",
@@ -1916,7 +1916,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                                         }
                                                     )),
-                                                    'Contracttype': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Contracttype': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Contracttype",
@@ -1924,12 +1924,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary.literal({
+                                                            'states': _p.dictionary.literal({
                                                                 'Project': ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG<_i_in._T_Range> => ['Project', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Opbrengst': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Opbrengst': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Opbrengst",
@@ -1949,7 +1949,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Periode': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Periode': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Periode",
@@ -1964,7 +1964,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                             }),
                                                         }
                                                     )),
-                                                    'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Omschrijving': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Omschrijving",
@@ -1973,7 +1973,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                         $,
                                                         null
                                                     )),
-                                                    'Type': _pa.deprecated_cc(_i_generic.get_entry(
+                                                    'Type': _p.deprecated_cc(_i_generic.get_entry(
                                                         $,
                                                         {
                                                             'key': "Type",
@@ -1981,12 +1981,12 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                     ), ($) => _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary.literal({
+                                                            'states': _p.dictionary.literal({
                                                                 'Opbrengsten': ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG<_i_in._T_Range> => ['Opbrengsten', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Grootboekrekening': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Grootboekrekening",
@@ -2002,7 +2002,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Balans item': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Balans item': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Balans item",
@@ -2034,7 +2034,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
     $,
     {
         'properties': ($) => ({
-            'Verrekenpost mutaties': _pa.deprecated_cc(_i_generic.get_entry(
+            'Verrekenpost mutaties': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Verrekenpost mutaties",
@@ -2049,7 +2049,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                 $,
                                 {
                                     'properties': ($) => ({
-                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                        'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                             $,
                                             {
                                                 'key': "Bedrag",
@@ -2060,7 +2060,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                             }
                                         )),
-                                        'Afhandeling': _pa.deprecated_cc(_i_generic.get_entry(
+                                        'Afhandeling': _p.deprecated_cc(_i_generic.get_entry(
                                             $,
                                             {
                                                 'key': "Afhandeling",
@@ -2068,7 +2068,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                         ), ($) => _i_generic.process_unresolved_state_group(
                                             $,
                                             {
-                                                'states': _pa.dictionary.literal({
+                                                'states': _p.dictionary.literal({
                                                     'Resultaat': ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG<_i_in._T_Range> => ['Resultaat', Balans_Resultaat_Mutatie(
                                                         $,
                                                         {
@@ -2078,12 +2078,12 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                                     'Balans': ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG<_i_in._T_Range> => ['Balans', _i_generic.process_unresolved_state_group(
                                                         $,
                                                         {
-                                                            'states': _pa.dictionary.literal({
+                                                            'states': _p.dictionary.literal({
                                                                 'Informele rekening': ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans.SG<_i_in._T_Range> => ['Informele rekening', _i_generic.process_group(
                                                                     $,
                                                                     {
                                                                         'properties': ($) => ({
-                                                                            'Informele rekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                            'Informele rekening': _p.deprecated_cc(_i_generic.get_entry(
                                                                                 $,
                                                                                 {
                                                                                     'key': "Informele rekening",
@@ -2108,7 +2108,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                     ),
                 }
             )),
-            'Bankrekening Mutatie Verwerkingen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Bankrekening Mutatie Verwerkingen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Bankrekening Mutatie Verwerkingen",
@@ -2122,7 +2122,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                             'value': ($) => _i_generic.process_unresolved_state_group(
                                 $,
                                 {
-                                    'states': _pa.dictionary.literal({
+                                    'states': _p.dictionary.literal({
                                         'Resultaat': ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG<_i_in._T_Range> => ['Resultaat', Balans_Resultaat_Mutatie(
                                             $,
                                             {
@@ -2132,12 +2132,12 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                         'Balans': ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG<_i_in._T_Range> => ['Balans', _i_generic.process_unresolved_state_group(
                                             $,
                                             {
-                                                'states': _pa.dictionary.literal({
+                                                'states': _p.dictionary.literal({
                                                     'Informele rekening': ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG<_i_in._T_Range> => ['Informele rekening', _i_generic.process_group(
                                                         $,
                                                         {
                                                             'properties': ($) => ({
-                                                                'Informele rekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                'Informele rekening': _p.deprecated_cc(_i_generic.get_entry(
                                                                     $,
                                                                     {
                                                                         'key': "Informele rekening",
@@ -2153,7 +2153,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                                         $,
                                                         {
                                                             'properties': ($) => ({
-                                                                'Verrekenpost': _pa.deprecated_cc(_i_generic.get_entry(
+                                                                'Verrekenpost': _p.deprecated_cc(_i_generic.get_entry(
                                                                     $,
                                                                     {
                                                                         'key': "Verrekenpost",
@@ -2175,7 +2175,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                     ),
                 }
             )),
-            'Memoriaal boekingen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Memoriaal boekingen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Memoriaal boekingen",
@@ -2190,7 +2190,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                 $,
                                 {
                                     'properties': ($) => ({
-                                        'Bedrag': _pa.deprecated_cc(_i_generic.get_entry(
+                                        'Bedrag': _p.deprecated_cc(_i_generic.get_entry(
                                             $,
                                             {
                                                 'key': "Bedrag",
@@ -2201,7 +2201,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                                 'deserializer': $p['value deserializers']['custom numbers']['Bedrag'],
                                             }
                                         )),
-                                        'Datum': _pa.deprecated_cc(_i_generic.get_entry(
+                                        'Datum': _p.deprecated_cc(_i_generic.get_entry(
                                             $,
                                             {
                                                 'key': "Datum",
@@ -2212,7 +2212,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                                 'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                                             }
                                         )),
-                                        'Omschrijving': _pa.deprecated_cc(_i_generic.get_entry(
+                                        'Omschrijving': _p.deprecated_cc(_i_generic.get_entry(
                                             $,
                                             {
                                                 'key': "Omschrijving",
@@ -2221,7 +2221,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => _i_generic.process
                                             $,
                                             null
                                         )),
-                                        'Grootboekrekening': _pa.deprecated_cc(_i_generic.get_entry(
+                                        'Grootboekrekening': _p.deprecated_cc(_i_generic.get_entry(
                                             $,
                                             {
                                                 'key': "Grootboekrekening",
@@ -2247,7 +2247,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
             $,
             {
                 'properties': ($) => ({
-                    'Afgesloten': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Afgesloten': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Afgesloten",
@@ -2255,7 +2255,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                     ), ($) => _i_generic.process_unresolved_state_group(
                         $,
                         {
-                            'states': _pa.dictionary.literal({
+                            'states': _p.dictionary.literal({
                                 'Ja': ($): _i_out._T_Jaren.D.Afgesloten.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                                     $,
                                     null
@@ -2267,7 +2267,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                             }),
                         }
                     )),
-                    'Startdatum boekjaar': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Startdatum boekjaar': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Startdatum boekjaar",
@@ -2278,7 +2278,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                             'deserializer': $p['value deserializers']['custom numbers']['Datum'],
                         }
                     )),
-                    'Grootboekrekeningen': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Grootboekrekeningen': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Grootboekrekeningen",
@@ -2289,7 +2289,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                             'value deserializers': $p['value deserializers'],
                         }
                     )),
-                    'Eerste boekjaar': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Eerste boekjaar': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Eerste boekjaar",
@@ -2300,7 +2300,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                             'value deserializers': $p['value deserializers'],
                         }
                     )),
-                    'Jaarbeheer': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Jaarbeheer': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Jaarbeheer",
@@ -2311,7 +2311,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                             'value deserializers': $p['value deserializers'],
                         }
                     )),
-                    'Handelstransacties': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Handelstransacties': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Handelstransacties",
@@ -2322,7 +2322,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => _i_generic.process_unres
                             'value deserializers': $p['value deserializers'],
                         }
                     )),
-                    'Mutaties': _pa.deprecated_cc(_i_generic.get_entry(
+                    'Mutaties': _p.deprecated_cc(_i_generic.get_entry(
                         $,
                         {
                             'key': "Mutaties",
@@ -2342,7 +2342,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
     $,
     {
         'properties': ($) => ({
-            'Jaar': _pa.deprecated_cc(_i_generic.get_entry(
+            'Jaar': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Jaar",
@@ -2356,7 +2356,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
                     ),
                 }
             )),
-            'type': _pa.deprecated_cc(_i_generic.get_entry(
+            'type': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "type",
@@ -2364,7 +2364,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
             ), ($) => _i_generic.process_unresolved_state_group(
                 $,
                 {
-                    'states': _pa.dictionary.literal({
+                    'states': _p.dictionary.literal({
                         'Inkoop': ($): _i_out._T_Balans_Resultaat_Mutatie._type.SG<_i_in._T_Range> => ['Inkoop', _i_generic.process_selected_reference(
                             $,
                             null
@@ -2386,7 +2386,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
 export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar = ($, $p) => _i_generic.process_unresolved_state_group(
     $,
     {
-        'states': _pa.dictionary.literal({
+        'states': _p.dictionary.literal({
             'Ja': ($): _i_out._T_Eerste_boekjaar.SG<_i_in._T_Range> => ['Ja', _i_generic.process_nothing(
                 $,
                 null
@@ -2395,7 +2395,7 @@ export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar = ($, $p) => _i_g
                 $,
                 {
                     'properties': ($) => ({
-                        'Vorig boekjaar': _pa.deprecated_cc(_i_generic.get_entry(
+                        'Vorig boekjaar': _p.deprecated_cc(_i_generic.get_entry(
                             $,
                             {
                                 'key': "Vorig boekjaar",
@@ -2414,7 +2414,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
     $,
     {
         'properties': ($) => ({
-            'Fiscaal': _pa.deprecated_cc(_i_generic.get_entry(
+            'Fiscaal': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Fiscaal",
@@ -2425,7 +2425,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     'value deserializers': $p['value deserializers'],
                 }
             )),
-            'Categorieen': _pa.deprecated_cc(_i_generic.get_entry(
+            'Categorieen': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Categorieen",
@@ -2436,7 +2436,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     'value deserializers': $p['value deserializers'],
                 }
             )),
-            'Beheer': _pa.deprecated_cc(_i_generic.get_entry(
+            'Beheer': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Beheer",
@@ -2447,7 +2447,7 @@ export const Root: _i_signatures._T_Root = ($, $p) => _i_generic.process_group(
                     'value deserializers': $p['value deserializers'],
                 }
             )),
-            'Jaren': _pa.deprecated_cc(_i_generic.get_entry(
+            'Jaren': _p.deprecated_cc(_i_generic.get_entry(
                 $,
                 {
                     'key': "Jaren",

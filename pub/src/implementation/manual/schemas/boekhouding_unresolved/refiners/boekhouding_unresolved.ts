@@ -22,7 +22,7 @@ namespace _psh {
                 'line': _pds.natural.source_line(depth),
             },
         },
-        'uri': _pds.text.source_file(depth)
+        // 'uri': _pds.text.source_file(depth)
     })
 
     export type Raw_Or_Normal_Dictionary<T> = { [key: string]: T } | _pi.Dictionary<T>

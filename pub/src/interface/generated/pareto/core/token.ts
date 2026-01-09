@@ -1,7 +1,6 @@
 import * as _pi from 'pareto-core-interface'
 
 export type _T_Annotated_Token = {
-    readonly 'uri': string
     readonly 'end': _T_Location
     readonly 'start': _T_Location
     readonly 'trailing trivia': _T_Trivia
@@ -16,7 +15,6 @@ export type _T_Location = {
 }
 
 export type _T_Range = {
-    readonly 'uri': string
     readonly 'end': _T_Location
     readonly 'start': _T_Location
 }
