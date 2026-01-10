@@ -10,7 +10,7 @@ import * as dummy_jaarverslag from "../../../data/temp_static_html_rapportage"
 
 //dependencies
 import * as s_fp from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
-import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/manual/schemas/html/transformers/fountain_pen"
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/manual/schemas/static_html/transformers/fountain_pen"
 
 
 export const $$: Signature = ($) => s_fp.Group(//do nothing with the input file
