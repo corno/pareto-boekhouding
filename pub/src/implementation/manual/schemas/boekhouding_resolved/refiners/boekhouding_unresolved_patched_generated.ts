@@ -10,7 +10,7 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
     const l2s = $p['location 2 string']
     const params = $p['parameters']
     return _p.deprecated_block(() => {
-        const p_Jaar: _i_out._T_Balans_Resultaat_Mutatie.Jaar = _p.deprecated_cc($['Jaar'], ($) => $.map(($) => _p.deprecated_block(() => {
+        const p_Jaar: _i_out._T_Balans_Resultaat_Mutatie.Jaar = _p.deprecated_cc($['Jaar'], ($) => $.__o_map(($) => _p.deprecated_block(() => {
             return _i_generic.get_entry(
                 params['lookups']['Jaren'],
                 {
@@ -20,11 +20,11 @@ export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie
             )
         })))
 
-        const temp_jaar_beheer = p_Jaar.transform(
+        const temp_jaar_beheer = p_Jaar.__decide(
             ($) => $.entry.Jaarbeheer,
             () => params.values.Jaarbeheer
         )
-        const temp_handelstransacties = p_Jaar.transform(
+        const temp_handelstransacties = p_Jaar.__decide(
             ($) => $.entry.Handelstransacties,
             () => params.values.Handelstransacties
         )

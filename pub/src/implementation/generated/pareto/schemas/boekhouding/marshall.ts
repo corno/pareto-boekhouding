@@ -999,7 +999,7 @@ export const Jaren: _i_signatures._T_Jaren = ($, $p) => ['dictionary', $['dictio
     )),
 })])]
 export const Balans_Resultaat_Mutatie: _i_signatures._T_Balans_Resultaat_Mutatie = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'Jaar': _p.deprecated_cc($['Jaar'], ($) => ['optional', $.transform(
+    'Jaar': _p.deprecated_cc($['Jaar'], ($) => ['optional', $.__decide(
         ($): _i_out._T_Value.SG.optional => ['set', ['text', ({
             'delimiter': ['backtick', null],
             'value': $['key'],

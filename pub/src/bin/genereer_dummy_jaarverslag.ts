@@ -4,7 +4,7 @@ import * as _pn from 'pareto-host-nodejs'
 
 import { $$ as procedure } from "../implementation/manual/commands/genereer_dummy_jaarverslag"
 
-_pn.run_main_procedure(
+_pn.run_main_command(
     ($r) => {
         return procedure(
             {

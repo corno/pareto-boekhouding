@@ -6,7 +6,7 @@ import { $$ as procedure } from "../implementation/manual/commands/converteer_ou
 
 import * as d_resources from "../implementation/manual/commands/converteer_oude_dataset"
 
-_pn.run_main_procedure(
+_pn.run_main_command(
     ($r) => {
         return procedure(
             {
