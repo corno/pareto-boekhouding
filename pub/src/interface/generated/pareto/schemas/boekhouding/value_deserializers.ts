@@ -1,235 +1,235 @@
-import * as _pi from 'pareto-core-interface'
-
-import * as _i_out from "../../core/astn_target"
-import * as _i_in from "./data_types/source"
-
-// **** TYPES
-
-export type _T_Value_Deserializers = {
-    readonly 'default number': (
-        $$_: string,
-        $$_p: null,
-    ) => number
-    readonly 'boolean': (
-        $$_: string,
-        $$_p: null,
-    ) => boolean
-    readonly 'custom numbers': {
-        readonly 'Bedrag': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Dagen': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Datum': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Promillage': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-    }
-}
-
-// **** FRIENDLY NAMES FOR THE GLOBAL TYPES
-
-export type Value_Deserializers = _T_Value_Deserializers
-
-// **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
-
-export namespace _T_Value_Deserializers {
+import * as _pi from "pareto-core-interface"
     
-    export namespace default_number {
-        export type CONTEXT = string
-        
-        export namespace PARAMS {
-        }
-        export type RESULT = number
-    }
-    export type default_number = (
-        $$_: string,
-        $$_p: null,
-    ) => number
+    import * as _i_out from "../../core/astn_target"
+    import * as _i_in from "./data_types/source"
     
-    export namespace _boolean {
-        export type CONTEXT = string
-        
-        export namespace PARAMS {
-        }
-        export type RESULT = boolean
-    }
-    export type _boolean = (
-        $$_: string,
-        $$_p: null,
-    ) => boolean
+    // **** TYPES
     
-    export namespace custom_numbers {
-        
-        export namespace Bedrag {
-            export type CONTEXT = string
-            
-            export namespace PARAMS {
-            }
-            export type RESULT = number
-        }
-        export type Bedrag = (
+    export type _T_Value_Deserializers = {
+        readonly 'default number': (
             $$_: string,
             $$_p: null,
         ) => number
-        
-        export namespace Dagen {
-            export type CONTEXT = string
-            
-            export namespace PARAMS {
-            }
-            export type RESULT = number
-        }
-        export type Dagen = (
+        readonly 'boolean': (
             $$_: string,
             $$_p: null,
-        ) => number
-        
-        export namespace Datum {
-            export type CONTEXT = string
-            
-            export namespace PARAMS {
-            }
-            export type RESULT = number
+        ) => boolean
+        readonly 'custom numbers': {
+            readonly 'Bedrag': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Dagen': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Datum': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Promillage': (
+                $$_: string,
+                $$_p: null,
+            ) => number
         }
-        export type Datum = (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        
-        export namespace Promillage {
-            export type CONTEXT = string
-            
-            export namespace PARAMS {
-            }
-            export type RESULT = number
-        }
-        export type Promillage = (
-            $$_: string,
-            $$_p: null,
-        ) => number
     }
-    export type custom_numbers = {
-        readonly 'Bedrag': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Dagen': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Datum': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Promillage': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-    }
-}
-
-// *** ALIASES FOR NESTED TYPES
-
-export namespace Value_Deserializers {
     
-    export namespace default_number {
-        export type CONTEXT = string
-        
-        export namespace PARAMS {
-        }
-        export type RESULT = number
-    }
-    export type default_number = (
-        $$_: string,
-        $$_p: null,
-    ) => number
+    // **** FRIENDLY NAMES FOR THE GLOBAL TYPES
     
-    export namespace _boolean {
-        export type CONTEXT = string
-        
-        export namespace PARAMS {
-        }
-        export type RESULT = boolean
-    }
-    export type _boolean = (
-        $$_: string,
-        $$_p: null,
-    ) => boolean
+    export type Value_Deserializers = _T_Value_Deserializers
     
-    export namespace custom_numbers {
+    // **** ALIASES FOR NESTED TYPE WITH PREFIXED ROOT NAMES
+    
+    export namespace _T_Value_Deserializers {
         
-        export namespace Bedrag {
+        export namespace default_number {
             export type CONTEXT = string
             
             export namespace PARAMS {
             }
             export type RESULT = number
         }
-        export type Bedrag = (
+        export type default_number = (
             $$_: string,
             $$_p: null,
         ) => number
         
-        export namespace Dagen {
+        export namespace _boolean {
             export type CONTEXT = string
             
             export namespace PARAMS {
             }
-            export type RESULT = number
+            export type RESULT = boolean
         }
-        export type Dagen = (
+        export type _boolean = (
             $$_: string,
             $$_p: null,
-        ) => number
+        ) => boolean
         
-        export namespace Datum {
-            export type CONTEXT = string
+        export namespace custom_numbers {
             
-            export namespace PARAMS {
+            export namespace Bedrag {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
             }
-            export type RESULT = number
-        }
-        export type Datum = (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        
-        export namespace Promillage {
-            export type CONTEXT = string
+            export type Bedrag = (
+                $$_: string,
+                $$_p: null,
+            ) => number
             
-            export namespace PARAMS {
+            export namespace Dagen {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
             }
-            export type RESULT = number
+            export type Dagen = (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            
+            export namespace Datum {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
+            }
+            export type Datum = (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            
+            export namespace Promillage {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
+            }
+            export type Promillage = (
+                $$_: string,
+                $$_p: null,
+            ) => number
         }
-        export type Promillage = (
-            $$_: string,
-            $$_p: null,
-        ) => number
+        export type custom_numbers = {
+            readonly 'Bedrag': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Dagen': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Datum': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Promillage': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+        }
     }
-    export type custom_numbers = {
-        readonly 'Bedrag': (
+    
+    // *** ALIASES FOR NESTED TYPES
+    
+    export namespace Value_Deserializers {
+        
+        export namespace default_number {
+            export type CONTEXT = string
+            
+            export namespace PARAMS {
+            }
+            export type RESULT = number
+        }
+        export type default_number = (
             $$_: string,
             $$_p: null,
         ) => number
-        readonly 'Dagen': (
+        
+        export namespace _boolean {
+            export type CONTEXT = string
+            
+            export namespace PARAMS {
+            }
+            export type RESULT = boolean
+        }
+        export type _boolean = (
             $$_: string,
             $$_p: null,
-        ) => number
-        readonly 'Datum': (
-            $$_: string,
-            $$_p: null,
-        ) => number
-        readonly 'Promillage': (
-            $$_: string,
-            $$_p: null,
-        ) => number
+        ) => boolean
+        
+        export namespace custom_numbers {
+            
+            export namespace Bedrag {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
+            }
+            export type Bedrag = (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            
+            export namespace Dagen {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
+            }
+            export type Dagen = (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            
+            export namespace Datum {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
+            }
+            export type Datum = (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            
+            export namespace Promillage {
+                export type CONTEXT = string
+                
+                export namespace PARAMS {
+                }
+                export type RESULT = number
+            }
+            export type Promillage = (
+                $$_: string,
+                $$_p: null,
+            ) => number
+        }
+        export type custom_numbers = {
+            readonly 'Bedrag': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Dagen': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Datum': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+            readonly 'Promillage': (
+                $$_: string,
+                $$_p: null,
+            ) => number
+        }
     }
-}
