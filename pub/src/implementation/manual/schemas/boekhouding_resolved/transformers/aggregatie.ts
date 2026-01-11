@@ -27,17 +27,17 @@ const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _p
 
 export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
     'bron': $,
-    'jaren': $.Jaren.dictionary.map(($) => {
+    'jaren': $.Jaren.dictionary.__d_map(($) => {
         const bron_jaar = $
         return {
             'bron': $,
             'grootboekrekeningen': {
-                'balans': $.Grootboekrekeningen.Balans.map(($, key): d_out.Balans_Grootboekrekening => {
+                'balans': $.Grootboekrekeningen.Balans.__d_map(($, key): d_out.Balans_Grootboekrekening => {
                     return {
                         'bron': $,
-                        'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
+                        'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
 
-                            const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => ({
+                            const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.__d_map(($) => ({
                                 'is relevant': _p.sg($.Type, ($) => {
                                     switch ($[0]) {
                                         case 'Balans': return _p.ss($, ($) => $['Balans item'].entry.Grootboekrekening.key === key)
@@ -59,11 +59,11 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                         })),
                     }
                 }),
-                'resultaat': $.Grootboekrekeningen.Resultaat.map(($, key) => ({
+                'resultaat': $.Grootboekrekeningen.Resultaat.__d_map(($, key) => ({
                     'bron': $,
-                    'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.map(($) => {
+                    'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
 
-                        const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.map(($) => {
+                        const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.__d_map(($) => {
                             return {
                                 'is relevant': _p.sg($.Type, ($) => {
                                     switch ($[0]) {

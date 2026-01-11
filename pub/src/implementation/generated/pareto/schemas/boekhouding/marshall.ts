@@ -6,7 +6,7 @@ import * as _i_out from "../../../../../interface/generated/pareto/core/astn_tar
 
 
 export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'Balans Hoofdcategorieen': _p.deprecated_cc($['Balans Hoofdcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Balans Hoofdcategorieen': _p.deprecated_cc($['Balans Hoofdcategorieen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Zijde': _p.deprecated_cc($['Zijde'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Activa': return _p.ss($, ($) => ({
@@ -20,9 +20,9 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => ['verbose group', _p
                 default: return _p.au($[0])
             }
         })]),
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
     })])]),
-    'Resultaat Hoofdcategorieen': _p.deprecated_cc($['Resultaat Hoofdcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Resultaat Hoofdcategorieen': _p.deprecated_cc($['Resultaat Hoofdcategorieen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Zijde': _p.deprecated_cc($['Zijde'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Kosten': return _p.ss($, ($) => ({
@@ -36,11 +36,11 @@ export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => ['verbose group', _p
                 default: return _p.au($[0])
             }
         })]),
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
     })])]),
 })]
 export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'Correctietypes vennootschapsbelasting': _p.deprecated_cc($['Correctietypes vennootschapsbelasting'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Correctietypes vennootschapsbelasting': _p.deprecated_cc($['Correctietypes vennootschapsbelasting'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Te corrigeren promillage': _p.deprecated_cc($['Te corrigeren promillage'], ($) => ['text', ({
             'delimiter': ['backtick', null],
             'value': $p['value serializers']['custom numbers']['Promillage'](
@@ -49,7 +49,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
             ),
         })]),
     })])]),
-    'Balans': _p.deprecated_cc($['Balans'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Balans': _p.deprecated_cc($['Balans'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Zijde': _p.deprecated_cc($['Zijde'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Activa': return _p.ss($, ($) => ({
@@ -63,7 +63,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                 default: return _p.au($[0])
             }
         })]),
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Hoofdcategorie fiscus': _p.deprecated_cc($['Hoofdcategorie fiscus'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $['key'],
@@ -74,7 +74,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
             })]),
         })])]),
     })])]),
-    'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Zijde': _p.deprecated_cc($['Zijde'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Kosten': return _p.ss($, ($) => ({
@@ -88,7 +88,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
                 default: return _p.au($[0])
             }
         })]),
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Hoofdcategorie fiscus': _p.deprecated_cc($['Hoofdcategorie fiscus'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $['key'],
@@ -101,7 +101,7 @@ export const Grootboek_Categorieen: _i_signatures._T_Grootboek_Categorieen = ($,
     })])]),
 })]
 export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'BTW-categorieen': _p.deprecated_cc($['BTW-categorieen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'BTW-categorieen': _p.deprecated_cc($['BTW-categorieen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'BTW-heffing': _p.deprecated_cc($['BTW-heffing'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Ja': return _p.ss($, ($) => ({
@@ -121,7 +121,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.d
         })]),
     })])]),
     'Grootboekrekeningen': _p.deprecated_cc($['Grootboekrekeningen'], ($) => ['verbose group', _p.dictionary.literal({
-        'Balans': _p.deprecated_cc($['Balans'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Balans': _p.deprecated_cc($['Balans'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Hoofdcategorie': _p.deprecated_cc($['Hoofdcategorie'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $['key'],
@@ -144,7 +144,7 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.d
                 }
             })]),
         })])]),
-        'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Hoofdcategorie': _p.deprecated_cc($['Hoofdcategorie'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $['key'],
@@ -188,10 +188,10 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.d
         })])]),
     })]),
     'Rekeningen': _p.deprecated_cc($['Rekeningen'], ($) => ['verbose group', _p.dictionary.literal({
-        'Bank': _p.deprecated_cc($['Bank'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
-        'Informeel': _p.deprecated_cc($['Informeel'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
+        'Bank': _p.deprecated_cc($['Bank'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
+        'Informeel': _p.deprecated_cc($['Informeel'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
     })]),
-    'Gebruikers': _p.deprecated_cc($['Gebruikers'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Gebruikers': _p.deprecated_cc($['Gebruikers'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Volledige naam': _p.deprecated_cc($['Volledige naam'], ($) => ['text', ({
             'delimiter': ['quote', null],
             'value': $,
@@ -201,9 +201,9 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.d
             'value': $,
         })]),
     })])]),
-    'Klanten': _p.deprecated_cc($['Klanten'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
-        'Licentieovereenkomsten': _p.deprecated_cc($['Licentieovereenkomsten'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
-            'Periodes': _p.deprecated_cc($['Periodes'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Klanten': _p.deprecated_cc($['Klanten'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
+        'Licentieovereenkomsten': _p.deprecated_cc($['Licentieovereenkomsten'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
+            'Periodes': _p.deprecated_cc($['Periodes'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
                 'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -213,9 +213,9 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.d
                 })]),
             })])]),
         })])]),
-        'Projecten': _p.deprecated_cc($['Projecten'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
-            'Offertes': _p.deprecated_cc($['Offertes'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
-                'Opbrengsten': _p.deprecated_cc($['Opbrengsten'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Projecten': _p.deprecated_cc($['Projecten'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
+            'Offertes': _p.deprecated_cc($['Offertes'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
+                'Opbrengsten': _p.deprecated_cc($['Opbrengsten'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
                     'Type': _p.deprecated_cc($['Type'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                         switch ($[0]) {
                             case 'Project': return _p.ss($, ($) => ({
@@ -244,11 +244,11 @@ export const Beheer: _i_signatures._T_Beheer = ($, $p) => ['verbose group', _p.d
             })])]),
         })])]),
     })])]),
-    'Leveranciers': _p.deprecated_cc($['Leveranciers'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
-    'Medewerkers': _p.deprecated_cc($['Medewerkers'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
+    'Leveranciers': _p.deprecated_cc($['Leveranciers'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
+    'Medewerkers': _p.deprecated_cc($['Medewerkers'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
 })]
 export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'Balans': _p.deprecated_cc($['Balans'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Balans': _p.deprecated_cc($['Balans'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Type': _p.deprecated_cc($['Type'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Bankrekening': return _p.ss($, ($) => ({
@@ -267,7 +267,7 @@ export const Grootboekrekeningen: _i_signatures._T_Grootboekrekeningen = ($, $p)
             }
         })]),
     })])]),
-    'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
+    'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
 })]
 export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => ['verbose group', _p.dictionary.literal({
     'Resultaat': _p.deprecated_cc($['Resultaat'], ($) => ['verbose group', _p.dictionary.literal({
@@ -275,10 +275,10 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => ['verbose grou
             'delimiter': ['backtick', null],
             'value': $['key'],
         })]),
-        'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
-        'BTW periodes': _p.deprecated_cc($['BTW periodes'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
-            '1. BTW-categorieen': _p.deprecated_cc($['1. BTW-categorieen'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
-            'Documenten': _p.deprecated_cc($['Documenten'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
+        'BTW periodes': _p.deprecated_cc($['BTW periodes'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
+            '1. BTW-categorieen': _p.deprecated_cc($['1. BTW-categorieen'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
+            'Documenten': _p.deprecated_cc($['Documenten'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
                 'Bestand': _p.deprecated_cc($['Bestand'], ($) => ['text', ({
                     'delimiter': ['quote', null],
                     'value': $,
@@ -360,7 +360,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => ['verbose grou
                 null
             ),
         })]),
-        'Informele rekeningen': _p.deprecated_cc($['Informele rekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Informele rekeningen': _p.deprecated_cc($['Informele rekeningen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Beginsaldo': _p.deprecated_cc($['Beginsaldo'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -393,7 +393,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => ['verbose grou
                 }
             })]),
         })])]),
-        'Bankrekeningen': _p.deprecated_cc($['Bankrekeningen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Bankrekeningen': _p.deprecated_cc($['Bankrekeningen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Beginsaldo': _p.deprecated_cc($['Beginsaldo'], ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -425,7 +425,7 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => ['verbose grou
                     default: return _p.au($[0])
                 }
             })]),
-            'Mutaties': _p.deprecated_cc($['Mutaties'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+            'Mutaties': _p.deprecated_cc($['Mutaties'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
                 'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -446,13 +446,13 @@ export const Jaarbeheer: _i_signatures._T_Jaarbeheer = ($, $p) => ['verbose grou
                 })]),
             })])]),
         })])]),
-        'Overige balans items': _p.deprecated_cc($['Overige balans items'], ($) => ['dictionary', $.map(($) => Overige_balans_item(
+        'Overige balans items': _p.deprecated_cc($['Overige balans items'], ($) => ['dictionary', $.__d_map(($) => Overige_balans_item(
             $,
             {
                 'value serializers': $p['value serializers'],
             }
         ))]),
-        'Verrekenposten': _p.deprecated_cc($['Verrekenposten'], ($) => ['dictionary', $.map(($) => ['nothing', null])]),
+        'Verrekenposten': _p.deprecated_cc($['Verrekenposten'], ($) => ['dictionary', $.__d_map(($) => ['nothing', null])]),
     })]),
 })]
 export const Overige_balans_item: _i_signatures._T_Overige_balans_item = ($, $p) => ['verbose group', _p.dictionary.literal({
@@ -495,7 +495,7 @@ export const Verwijzing_naar_Bankrekening: _i_signatures._T_Verwijzing_naar_Bank
     'value': $['key'],
 })]
 export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'Inkopen': _p.deprecated_cc($['Inkopen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Inkopen': _p.deprecated_cc($['Inkopen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Mutaties': return _p.ss($, ($) => ({
@@ -573,7 +573,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                 null
             ),
         })]),
-        'Regels': _p.deprecated_cc($['Regels'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Regels': _p.deprecated_cc($['Regels'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                 switch ($[0]) {
                     case 'Bekend': return _p.ss($, ($) => ({
@@ -671,7 +671,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
             }
         })]),
     })])]),
-    'Verkopen': _p.deprecated_cc($['Verkopen'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Verkopen': _p.deprecated_cc($['Verkopen'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
             switch ($[0]) {
                 case 'Mutaties': return _p.ss($, ($) => ({
@@ -753,7 +753,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
                 null
             ),
         })]),
-        'Regels': _p.deprecated_cc($['Regels'], ($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+        'Regels': _p.deprecated_cc($['Regels'], ($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
             'BTW-regime': _p.deprecated_cc($['BTW-regime'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
                 switch ($[0]) {
                     case 'Intracommunautair': return _p.ss($, ($) => ({
@@ -841,7 +841,7 @@ export const Handelstransacties: _i_signatures._T_Handelstransacties = ($, $p) =
     })])]),
 })]
 export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => ['verbose group', _p.dictionary.literal({
-    'Verrekenpost mutaties': _p.deprecated_cc($['Verrekenpost mutaties'], ($) => ['dictionary', $.map(($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Verrekenpost mutaties': _p.deprecated_cc($['Verrekenpost mutaties'], ($) => ['dictionary', $.__d_map(($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => ['text', ({
             'delimiter': ['backtick', null],
             'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -881,7 +881,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => ['verbose group', 
             }
         })]),
     })])])]),
-    'Bankrekening Mutatie Verwerkingen': _p.deprecated_cc($['Bankrekening Mutatie Verwerkingen'], ($) => ['dictionary', $.map(($) => ['dictionary', $.map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
+    'Bankrekening Mutatie Verwerkingen': _p.deprecated_cc($['Bankrekening Mutatie Verwerkingen'], ($) => ['dictionary', $.__d_map(($) => ['dictionary', $.__d_map(($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
         switch ($[0]) {
             case 'Resultaat': return _p.ss($, ($) => ({
                 'state': "Resultaat",
@@ -921,7 +921,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => ['verbose group', 
             default: return _p.au($[0])
         }
     })])])]),
-    'Memoriaal boekingen': _p.deprecated_cc($['Memoriaal boekingen'], ($) => ['dictionary', $.map(($) => ['dictionary', $.map(($) => ['verbose group', _p.dictionary.literal({
+    'Memoriaal boekingen': _p.deprecated_cc($['Memoriaal boekingen'], ($) => ['dictionary', $.__d_map(($) => ['dictionary', $.__d_map(($) => ['verbose group', _p.dictionary.literal({
         'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => ['text', ({
             'delimiter': ['backtick', null],
             'value': $p['value serializers']['custom numbers']['Bedrag'](
@@ -946,7 +946,7 @@ export const Mutaties: _i_signatures._T_Mutaties = ($, $p) => ['verbose group', 
         })]),
     })])])]),
 })]
-export const Jaren: _i_signatures._T_Jaren = ($, $p) => ['dictionary', $['dictionary'].map(($) => ['verbose group', _p.dictionary.literal({
+export const Jaren: _i_signatures._T_Jaren = ($, $p) => ['dictionary', $['dictionary'].__d_map(($) => ['verbose group', _p.dictionary.literal({
     'Afgesloten': _p.deprecated_cc($['Afgesloten'], ($) => ['state', _p.deprecated_cc($, ($): _i_out._T_Value.SG.state => {
         switch ($[0]) {
             case 'Ja': return _p.ss($, ($) => ({

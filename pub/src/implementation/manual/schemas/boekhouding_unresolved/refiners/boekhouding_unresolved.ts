@@ -66,7 +66,7 @@ namespace _psh {
         if (is_normal($)) {
             return {
                 'location': location,
-                'dictionary': $.map(($) => ({
+                'dictionary': $.__d_map(($) => ({
                     'location': location,
                     'entry': $,
                 }))
@@ -74,7 +74,7 @@ namespace _psh {
         } else {
             return {
                 'location': location,
-                'dictionary': _p.dictionary.literal($).map(($) => ({
+                'dictionary': _p.dictionary.literal($).__d_map(($) => ({
                     'location': location,
                     'entry': $,
                 }))
@@ -95,7 +95,7 @@ namespace _psh {
     //     }
     //     return {
     //         'location': location,
-    //         'list': decorated.map(($) => ({
+    //         'list': decorated.__d_map(($) => ({
     //             'location': location,
     //             'element': $,
     //         }))
@@ -132,7 +132,7 @@ import * as d_out from "../../../../../interface/generated/pareto/schemas/boekho
 import * as d_signatures from "../../../../../interface/signatures/transformers/boekhouding/oude_model"
 
 export const Beheer: d_signatures.Beheer = ($) => ({
-    'BTW-categorieen': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['BTW-categorieen'], ($) => $.map(($): d_out.Beheer.BTW$mi_categorieen.D<d_token._T_Range> => ({
+    'BTW-categorieen': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['BTW-categorieen'], ($) => $.__d_map(($): d_out.Beheer.BTW$mi_categorieen.D<d_token._T_Range> => ({
         'BTW-heffing': _p.deprecated_cc($['BTW-heffing'], ($) => _p.deprecated_cc($, ($): d_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Ja': return _p.ss($, ($) => _psh.wrap_state_group(['Ja', ({
@@ -143,12 +143,12 @@ export const Beheer: d_signatures.Beheer = ($) => ({
             }
         })),
     })))),
-    'Gebruikers': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['Gebruikers'], ($) => $.map(($) => ({
+    'Gebruikers': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['Gebruikers'], ($) => $.__d_map(($) => ({
         'Volledige naam': _p.deprecated_cc($['Volledige naam'], ($) => $),
         'Wachtwoord': _p.deprecated_cc($['Wachtwoord'], ($) => $),
     })))),
     'Grootboekrekeningen': _p.deprecated_cc($, ($): d_out.Beheer.Grootboekrekeningen<d_token._T_Range> => ({
-        'Balans': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['Balans'].Grootboekrekeningen, ($) => $.map(($) => ({
+        'Balans': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['Balans'].Grootboekrekeningen, ($) => $.__d_map(($) => ({
             'Hoofdcategorie': _p.deprecated_cc($['Hoofdcategorie'], ($) => _psh.wrap_reference($)),
             'Subcategorie': _p.deprecated_cc($['Subcategorie'], ($) => _psh.wrap_reference($)),
             'Zijde': _p.deprecated_cc($['Zijde'], ($) => _p.deprecated_cc($, ($): d_out.Beheer.Grootboekrekeningen.Balans.D.Zijde<d_token._T_Range> => {
@@ -159,7 +159,7 @@ export const Beheer: d_signatures.Beheer = ($) => ({
                 }
             })),
         })))),
-        'Resultaat': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['Resultaat'].Grootboekrekeningen, ($) => $.map(($) => ({
+        'Resultaat': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer['Resultaat'].Grootboekrekeningen, ($) => $.__d_map(($) => ({
             'Hoofdcategorie': _p.deprecated_cc($['Hoofdcategorie'], ($) => _psh.wrap_reference($)),
             'Subcategorie': _p.deprecated_cc($['Subcategorie'], ($) => _psh.wrap_reference($)),
             'Zijde': _p.deprecated_cc($['Zijde'], ($) => _p.deprecated_cc($, ($): d_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde<d_token._T_Range> => {
@@ -181,15 +181,15 @@ export const Beheer: d_signatures.Beheer = ($) => ({
             })),
         })))),
     })),
-    'Klanten': _psh.wrap_dictionary(_p.deprecated_cc($['Klanten'], ($) => $.map(($) => ({
-        'Licentieovereenkomsten': _p.deprecated_cc($['Licentieovereenkomsten'], ($) => _psh.wrap_dictionary($.map(($) => ({
-            'Periodes': _p.deprecated_cc($['Periodes'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Klanten': _psh.wrap_dictionary(_p.deprecated_cc($['Klanten'], ($) => $.__d_map(($) => ({
+        'Licentieovereenkomsten': _p.deprecated_cc($['Licentieovereenkomsten'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+            'Periodes': _p.deprecated_cc($['Periodes'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
                 'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => $),
             })))),
         })))),
-        'Projecten': _p.deprecated_cc($['Projecten'], ($) => _psh.wrap_dictionary($.map(($) => ({
-            'Offertes': _p.deprecated_cc($['Offertes'], ($) => _psh.wrap_dictionary($.map(($) => ({
-                'Opbrengsten': _p.deprecated_cc($['Opbrengsten'], ($) => _psh.wrap_dictionary($.map(($) => ({
+        'Projecten': _p.deprecated_cc($['Projecten'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+            'Offertes': _p.deprecated_cc($['Offertes'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+                'Opbrengsten': _p.deprecated_cc($['Opbrengsten'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
                     'Type': _p.deprecated_cc($['Type'], ($) => _p.deprecated_cc($, ($): d_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type<d_token._T_Range> => {
                         switch ($[0]) {
                             case 'Project': return _p.ss($, ($) => _psh.wrap_state_group(['Project', ({
@@ -203,11 +203,11 @@ export const Beheer: d_signatures.Beheer = ($) => ({
             })))),
         })))),
     })))),
-    'Leveranciers': _psh.wrap_dictionary(_p.deprecated_cc($['Leveranciers'], ($) => $.map(($) => null))),
-    'Medewerkers': _psh.wrap_dictionary(_p.deprecated_cc($['Medewerkers'], ($) => $.map(($) => null))),
+    'Leveranciers': _psh.wrap_dictionary(_p.deprecated_cc($['Leveranciers'], ($) => $.__d_map(($) => null))),
+    'Medewerkers': _psh.wrap_dictionary(_p.deprecated_cc($['Medewerkers'], ($) => $.__d_map(($) => null))),
     'Rekeningen': _p.deprecated_cc($, ($) => ({
-        'Bank': _p.deprecated_cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.map(($) => null))),
-        'Informeel': _p.deprecated_cc($['Informele rekeningen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
+        'Bank': _p.deprecated_cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
+        'Informeel': _p.deprecated_cc($['Informele rekeningen'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
     })),
 })
 export const Eerste_boekjaar: d_signatures.Eerste_boekjaar = ($) => _p.deprecated_cc($, ($): d_out.Eerste_boekjaar<d_token._T_Range> => {
@@ -220,8 +220,8 @@ export const Eerste_boekjaar: d_signatures.Eerste_boekjaar = ($) => _p.deprecate
     }
 })
 export const Fiscaal: d_signatures.Fiscaal = ($) => ({
-    'Balans Hoofdcategorieen': _p.deprecated_cc($.Beheer.Balans['Hoofdcategorieen fiscus'], ($) => _psh.wrap_dictionary($.map(($) => ({
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
+    'Balans Hoofdcategorieen': _p.deprecated_cc($.Beheer.Balans['Hoofdcategorieen fiscus'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
         'Zijde': _p.deprecated_cc($['Zijde'], ($) => _p.deprecated_cc($, ($): d_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Activa': return _p.ss($, ($) => _psh.wrap_state_group(['Activa', null]))
@@ -230,8 +230,8 @@ export const Fiscaal: d_signatures.Fiscaal = ($) => ({
             }
         })),
     })))),
-    'Resultaat Hoofdcategorieen': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer.Resultaat['Hoofdcategorieen fiscus'], ($) => $.map(($) => ({
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
+    'Resultaat Hoofdcategorieen': _psh.wrap_dictionary(_p.deprecated_cc($.Beheer.Resultaat['Hoofdcategorieen fiscus'], ($) => $.__d_map(($) => ({
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
         'Zijde': _p.deprecated_cc($['Zijde'], ($) => _p.deprecated_cc($, ($): d_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Kosten': return _p.ss($, ($) => _psh.wrap_state_group(['Kosten', null]))
@@ -242,8 +242,8 @@ export const Fiscaal: d_signatures.Fiscaal = ($) => ({
     })))),
 })
 export const Grootboek_Categorieen: d_signatures.Grootboek_Categorieen = ($) => ({
-    'Balans': _p.deprecated_cc($.Beheer.Balans.Hoofdcategorieen, ($) => _psh.wrap_dictionary($.map(($) => ({
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Balans': _p.deprecated_cc($.Beheer.Balans.Hoofdcategorieen, ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
             'Hoofdcategorie fiscus': _p.deprecated_cc($['Hoofdcategorie fiscus'], ($) => _psh.wrap_reference($)),
             'Subcategorie fiscus': _p.deprecated_cc($['Subcategorie fiscus'], ($) => _psh.wrap_reference($)),
         })))),
@@ -255,11 +255,11 @@ export const Grootboek_Categorieen: d_signatures.Grootboek_Categorieen = ($) => 
             }
         })),
     })))),
-    'Correctietypes vennootschapsbelasting': _p.deprecated_cc($.Beheer.Resultaat['Correctietypes vennootschapsbelasting'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Correctietypes vennootschapsbelasting': _p.deprecated_cc($.Beheer.Resultaat['Correctietypes vennootschapsbelasting'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
         'Te corrigeren promillage': _p.deprecated_cc($['Te corrigeren promillage'], ($) => $),
     })))),
-    'Resultaat': _p.deprecated_cc($.Beheer['Resultaat'].Hoofdcategorieen, ($) => _psh.wrap_dictionary($.map(($) => ({
-        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Resultaat': _p.deprecated_cc($.Beheer['Resultaat'].Hoofdcategorieen, ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+        'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
             'Hoofdcategorie fiscus': _p.deprecated_cc($['Hoofdcategorie fiscus'], ($) => _psh.wrap_reference($)),
             'Subcategorie fiscus': _p.deprecated_cc($['Subcategorie fiscus'], ($) => _psh.wrap_reference($)),
         })))),
@@ -273,7 +273,7 @@ export const Grootboek_Categorieen: d_signatures.Grootboek_Categorieen = ($) => 
     })))),
 })
 export const Grootboekrekeningen: d_signatures.Grootboekrekeningen = ($) => ({
-    'Balans': _p.deprecated_cc($['Balans grootboekrekeningen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Balans': _p.deprecated_cc($['Balans grootboekrekeningen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
         'Type': _p.deprecated_cc($['Type'], ($) => _p.deprecated_cc($, ($): d_out.Grootboekrekeningen.Balans.D.Type<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Bankrekening': return _p.ss($, ($) => _psh.wrap_state_group(['Bankrekening', null]))
@@ -283,10 +283,10 @@ export const Grootboekrekeningen: d_signatures.Grootboekrekeningen = ($) => ({
             }
         })),
     })))),
-    'Resultaat': _p.deprecated_cc($['Resultaat grootboekrekeningen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
+    'Resultaat': _p.deprecated_cc($['Resultaat grootboekrekeningen'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
 })
 export const Handelstransacties: d_signatures.Handelstransacties = ($) => ({
-    'Inkopen': _p.deprecated_cc($['Inkopen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Inkopen': _p.deprecated_cc($['Inkopen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
         'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($) => _p.deprecated_cc($, ($): d_out.Handelstransacties.Inkopen.D.Afhandeling<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Mutaties': return _p.ss($, ($) => _psh.wrap_state_group(['Mutaties', null]))
@@ -320,7 +320,7 @@ export const Handelstransacties: d_signatures.Handelstransacties = ($) => ({
             }
         })),
         'Datum': _p.deprecated_cc($['Datum'], ($) => $),
-        'Regels': _p.deprecated_cc($['Regels'], ($) => _psh.wrap_dictionary($.map(($) => ({
+        'Regels': _p.deprecated_cc($['Regels'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
             'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => _p.deprecated_cc($, ($): d_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Bekend': return _p.ss($, ($) => _psh.wrap_state_group(['Bekend', ({
@@ -361,7 +361,7 @@ export const Handelstransacties: d_signatures.Handelstransacties = ($) => ({
             }
         })),
     })))),
-    'Verkopen': _p.deprecated_cc($['Verkopen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+    'Verkopen': _p.deprecated_cc($['Verkopen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
         'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($) => _p.deprecated_cc($, ($): d_out.Handelstransacties.Verkopen.D.Afhandeling<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Mutaties': return _p.ss($, ($) => _psh.wrap_state_group(['Mutaties', null]))
@@ -395,7 +395,7 @@ export const Handelstransacties: d_signatures.Handelstransacties = ($) => ({
         })),
         'Datum': _p.deprecated_cc($['Datum'], ($) => $),
         'Debiteur': _p.deprecated_cc($['Debiteur'], ($) => _psh.wrap_reference($)),
-        'Regels': _p.deprecated_cc($['Regels'], ($) => _psh.wrap_dictionary($.map(($) => ({
+        'Regels': _p.deprecated_cc($['Regels'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
             'BTW-regime': _p.deprecated_cc($['BTW-regime'], ($) => _p.deprecated_cc($, ($): d_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime<d_token._T_Range> => {
                 switch ($[0]) {
                     case 'Binnenland: heffing verlegd': return _p.ss($, ($) => _psh.wrap_state_group(['Binnenland: heffing verlegd', null]))
@@ -436,10 +436,10 @@ export const Handelstransacties: d_signatures.Handelstransacties = ($) => ({
 })
 export const Jaarbeheer: d_signatures.Jaarbeheer = ($) => ({
     'Balans': _p.deprecated_cc($, ($) => ({
-        'Bankrekeningen': _p.deprecated_cc($['Bankrekeningen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+        'Bankrekeningen': _p.deprecated_cc($['Bankrekeningen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
             'Beginsaldo': _p.deprecated_cc($['Beginsaldo'], ($) => $),
             'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($) => _psh.wrap_reference($)),
-            'Mutaties': _p.deprecated_cc($['Mutaties'], ($) => _psh.wrap_dictionary($.map(($) => ({
+            'Mutaties': _p.deprecated_cc($['Mutaties'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
                 'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => $),
                 'Datum': _p.deprecated_cc($['Datum'], ($) => $),
                 'Omschrijving': _p.deprecated_cc($['Omschrijving'], ($) => $),
@@ -463,7 +463,7 @@ export const Jaarbeheer: d_signatures.Jaarbeheer = ($) => ({
         'Grootboekrekening voor nog aan te geven BTW': _p.deprecated_cc($['Grootboekrekening voor nog aan te geven BTW'], ($) => _psh.wrap_reference($)),
         'Grootboekrekening voor resultaat dit jaar': _p.deprecated_cc($['Grootboekrekening voor resultaat dit jaar'], ($) => _psh.wrap_reference($)),
         'Grootboekrekening voor winstreserve': _p.deprecated_cc($['Grootboekrekening voor winstreserve'], ($) => _psh.wrap_reference($)),
-        'Informele rekeningen': _p.deprecated_cc($['Informele rekeningen'], ($) => _psh.wrap_dictionary($.map(($) => ({
+        'Informele rekeningen': _p.deprecated_cc($['Informele rekeningen'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
             'Beginsaldo': _p.deprecated_cc($['Beginsaldo'], ($) => $),
             'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($) => _psh.wrap_reference($)),
             'Nieuw': _p.deprecated_cc($['Nieuw'], ($) => _p.deprecated_cc($, ($): d_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw<d_token._T_Range> => {
@@ -478,15 +478,15 @@ export const Jaarbeheer: d_signatures.Jaarbeheer = ($) => ({
                 }
             })),
         })))),
-        'Overige balans items': _p.deprecated_cc($['Overige balans items'], ($) => _psh.wrap_dictionary($.map(($) => Overige_balans_item(
+        'Overige balans items': _p.deprecated_cc($['Overige balans items'], ($) => _psh.wrap_dictionary($.__d_map(($) => Overige_balans_item(
             $,
         )))),
-        'Verrekenposten': _p.deprecated_cc($['Verrekenposten'], ($) => _psh.wrap_dictionary($.map(($) => null))),
+        'Verrekenposten': _p.deprecated_cc($['Verrekenposten'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
     })),
     'Resultaat': _p.deprecated_cc($, ($) => ({
-        'BTW periodes': _p.deprecated_cc($['BTW periodes'], ($) => _psh.wrap_dictionary($.map(($) => ({
-            '1. BTW-categorieen': _p.deprecated_cc($['1. BTW-categorieen'], ($) => _psh.wrap_dictionary($.map(($) => null))),
-            'Documenten': _p.deprecated_cc($['Documenten'], ($) => _psh.wrap_dictionary($.map(($) => ({
+        'BTW periodes': _p.deprecated_cc($['BTW periodes'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
+            '1. BTW-categorieen': _p.deprecated_cc($['1. BTW-categorieen'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
+            'Documenten': _p.deprecated_cc($['Documenten'], ($) => _psh.wrap_dictionary($.__d_map(($) => ({
                 'Bestand': _p.deprecated_cc($['Bestand'], ($) => $),
             })))),
             'Omschrijving': _p.deprecated_cc($['Omschrijving'], ($) => $),
@@ -503,10 +503,10 @@ export const Jaarbeheer: d_signatures.Jaarbeheer = ($) => ({
             })),
         })))),
         'Grootboekrekening voor BTW afrondingen': _p.deprecated_cc($['Grootboekrekening voor BTW afrondingen'], ($) => _psh.wrap_reference($)),
-        'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($) => _psh.wrap_dictionary($.map(($) => null))),
+        'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
     })),
 })
-export const Jaren: d_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.map(($, key) => ({
+export const Jaren: d_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.__d_map(($, key) => ({
     'Afgesloten': _p.deprecated_cc($['Afgesloten'], ($) => _p.deprecated_cc($, ($): d_out.Jaren.D.Afgesloten<d_token._T_Range> => {
         switch ($[0]) {
             case 'Ja': return _p.ss($, ($) => _psh.wrap_state_group(['Ja', null]))
@@ -535,7 +535,7 @@ export const Jaren: d_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.map
     'Startdatum boekjaar': _p.deprecated_cc($['Startdatum boekjaar'], ($) => $),
 })))
 export const Mutaties: d_signatures.Mutaties = ($, $p) => ({
-    'Bankrekening Mutatie Verwerkingen': _p.deprecated_cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary(_p.dictionary.filter($.Mutaties, ($) => _p.deprecated_cc($.Status, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range>> => {
+    'Bankrekening Mutatie Verwerkingen': _p.deprecated_cc($.Bankrekeningen, ($) => _psh.wrap_dictionary($.__d_map(($) => _psh.wrap_dictionary(_p.dictionary.filter($.Mutaties, ($) => _p.deprecated_cc($.Status, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range>> => {
         switch ($[0]) {
             case 'Nog te verwerken': return _p.ss($, ($) => _p.optional.not_set())
             case 'Verwerkt': return _p.ss($, ($) => _p.optional.set(_p.deprecated_cc($.Afhandeling, ($): d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D<d_token._T_Range> => {
@@ -572,13 +572,13 @@ export const Mutaties: d_signatures.Mutaties = ($, $p) => ({
             default: return _p.au($[0])
         }
     })))))),
-    'Memoriaal boekingen': _p.deprecated_cc($['Overige balans items'], ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary($['Memoriaal boekingen'].map(($) => ({
+    'Memoriaal boekingen': _p.deprecated_cc($['Overige balans items'], ($) => _psh.wrap_dictionary($.__d_map(($) => _psh.wrap_dictionary($['Memoriaal boekingen'].__d_map(($) => ({
         'Bedrag': _p.deprecated_cc($['Bedrag'], ($) => $),
         'Datum': _p.deprecated_cc($['Datum'], ($) => $),
         'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($) => _psh.wrap_reference($)),
         'Omschrijving': _p.deprecated_cc($['Omschrijving'], ($) => $),
     })))))),
-    'Verrekenpost mutaties': _p.deprecated_cc($.Verrekenposten, ($) => _psh.wrap_dictionary($.map(($) => _psh.wrap_dictionary($.Mutaties.map(($) => ({
+    'Verrekenpost mutaties': _p.deprecated_cc($.Verrekenposten, ($) => _psh.wrap_dictionary($.__d_map(($) => _psh.wrap_dictionary($.Mutaties.__d_map(($) => ({
         'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($) => _p.deprecated_cc($, ($): d_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling<d_token._T_Range> => {
             switch ($[0]) {
                 case 'Informele rekening': return _p.ss($, ($) => _psh.wrap_state_group(['Balans', _psh.wrap_state_group(['Informele rekening', ({
