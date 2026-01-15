@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "astn-sealed": "^0.1.0",
+    "astn-core": "^0.1.0",
     "pareto-host-nodejs": "^0.1.1",
     "pareto-test": "^0.13.40",
     "pub": "file:../pub"
