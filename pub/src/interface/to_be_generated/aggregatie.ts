@@ -1,6 +1,6 @@
 import * as _pi from 'pareto-core-interface'
 
-import * as d_boekhouding from "../generated/pareto/schemas/boekhouding/data"
+import * as d_boekhouding from "../generated/pareto/schemas/boekhouding/data/resolved"
 
 export type Root = {
     'bron': d_boekhouding.Root
