@@ -1,7 +1,7 @@
 import * as _pi from 'pareto-core-interface'
 import * as _pt from 'pareto-core-transformer'
 
-// import * as d_static_html from "pub/dist/interface/generated/pareto/schemas/static-html/data_types/target"
+// import * as d_static_html from "pub/dist/interface/generated/pareto/schemas/static-html/data"
 
 // import * as ds_static_html from "pub/dist/implementation/manual/schemas/static_html/deserializers"
 // import * as s_static_html from "pub/dist/implementation/manual/schemas/static_html/serializers"

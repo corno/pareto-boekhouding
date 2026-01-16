@@ -1,6 +1,6 @@
 import * as _pi from 'pareto-core-interface'
 
-import * as d_boekhouding_resolved from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
+import * as d_boekhouding_resolved from "../../../../interface/generated/pareto/schemas/boekhouding/data"
 
 import * as s_boekhouding from "../../../generated/pareto/schemas/boekhouding/serialize"
 import { $$ as s_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/decimal"

@@ -2,7 +2,7 @@ import * as _p from 'pareto-core-refiner'
 import * as _pdev from 'pareto-core-dev'
 
 import * as _i_generic from 'pareto-core-internals/dist/algorithm_types/refiner/resolve'
-import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
+import * as _i_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
 import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/resolve"
 
 

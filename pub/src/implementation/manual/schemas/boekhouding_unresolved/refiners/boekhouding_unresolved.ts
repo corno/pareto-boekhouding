@@ -128,7 +128,7 @@ namespace _psh {
 
 import * as d_token from "../../../../../interface/generated/pareto/core/token"
 
-import * as d_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
+import * as d_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
 import * as d_signatures from "../../../../../interface/signatures/transformers/boekhouding/oude_model"
 
 export const Beheer: d_signatures.Beheer = ($) => ({

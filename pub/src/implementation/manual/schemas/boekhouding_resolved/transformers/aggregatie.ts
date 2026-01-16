@@ -3,7 +3,7 @@ import * as _p from 'pareto-core-transformer'
 
 
 //data types
-import * as d_in from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
+import * as d_in from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
 import * as d_out from "../../../../../interface/to_be_generated/aggregatie"
 
 type Possibly_Relevant_Entry<T> = {

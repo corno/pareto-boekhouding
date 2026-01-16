@@ -1,6 +1,6 @@
 import * as _p from 'pareto-core-shorthands/dist/unconstrained'
 
-import * as d_static_html from "pareto-static-html/dist/interface/generated/pareto/schemas/static-html/data_types/source"
+import * as d_static_html from "pareto-static-html/dist/interface/generated/pareto/schemas/static-html/data"
 
 import * as sh from "pareto-static-html/dist/shorthands/static_html"
 

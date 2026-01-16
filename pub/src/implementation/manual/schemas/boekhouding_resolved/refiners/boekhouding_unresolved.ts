@@ -1,6 +1,6 @@
 
-import * as d_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/source"
-import * as d_in from "../../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
+import * as d_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
+import * as d_in from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
 import * as d_token from "../../../../../interface/generated/pareto/core/token"
 
 //dependencies

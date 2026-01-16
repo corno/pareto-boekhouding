@@ -1,7 +1,7 @@
 import * as _p from 'pareto-core-deserializer'
 import * as _pi from 'pareto-core-interface'
 
-import * as d_boekhouding_source from "../../../../interface/generated/pareto/schemas/boekhouding/data_types/target"
+import * as d_boekhouding_source from "../../../../interface/generated/pareto/schemas/boekhouding/data"
 import * as d_token from "../../../../interface/generated/pareto/core/token"
 import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_unresolved_model"
 export namespace signatures {
