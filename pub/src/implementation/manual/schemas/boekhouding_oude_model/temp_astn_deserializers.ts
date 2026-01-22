@@ -1,5 +1,5 @@
-import * as _p from 'pareto-core-deserializer'
-import * as _pi from 'pareto-core-interface'
+import * as _p from 'pareto-core/dist/deserializer'
+import * as _pi from 'pareto-core/dist/interface'
 
 import * as d_boekhouding_oude_model from "../../../../interface/generated/pareto/schemas/boekhouding_oude_model/data"
 import * as d_unresolved_deserializers from "astn-sealed/dist/interface/to_be_generated/deserialize_unresolved_model"

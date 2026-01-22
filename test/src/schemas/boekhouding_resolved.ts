@@ -1,5 +1,5 @@
-import * as _pi from 'pareto-core-interface'
-import * as _pt from 'pareto-core-transformer'
+import * as _pi from 'pareto-core/dist/interface'
+import * as _pt from 'pareto-core/dist/transformer'
 
 // import * as d_static_html from "pub/dist/interface/generated/pareto/schemas/static-html/data"
 

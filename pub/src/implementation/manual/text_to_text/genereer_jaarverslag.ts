@@ -1,4 +1,4 @@
-import * as _pi from 'pareto-core-interface'
+import * as _pi from 'pareto-core/dist/interface'
 import * as _pdev from 'pareto-core-dev'
 
 import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"

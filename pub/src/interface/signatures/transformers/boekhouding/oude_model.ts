@@ -1,4 +1,4 @@
-import * as _pi from 'pareto-core-interface'
+import * as _pi from 'pareto-core/dist/interface'
 
 import * as d_in from "../../../generated/pareto/schemas/boekhouding_oude_model/data"
 import * as d_out from "../../../generated/pareto/schemas/boekhouding/data"
