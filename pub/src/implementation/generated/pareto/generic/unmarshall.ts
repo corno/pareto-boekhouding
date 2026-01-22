@@ -1,9 +1,9 @@
 import * as _pi from 'pareto-core/dist/interface'
 import * as _ea from 'pareto-core/dist/refiner'
 
-import * as t from "../../../../interface/generated/pareto/core/astn_source"
-import * as unconstrained from "../../../../interface/generated/pareto/core/unconstrained"
-import * as unresolved from "../../../../interface/generated/pareto/core/unresolved"
+import * as t from "../../../../interface/generated/liana/generic/astn_source"
+import * as unconstrained from "../../../../interface/generated/liana/generic/unconstrained"
+import * as unresolved from "../../../../interface/generated/liana/generic/unresolved"
 
 export const process_unconstrained_state_group = <Mapped_Value>(
     $: t._T_Value,

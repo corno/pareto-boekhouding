@@ -1,8 +1,8 @@
     import * as _p from 'pareto-core/dist/transformer'
     import * as _pdev from 'pareto-core-dev'
     
-    import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding/marshall"
-    import * as _i_out from "../../../../../interface/generated/pareto/core/astn_target"
+    import * as _i_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/marshall"
+    import * as _i_out from "../../../../../interface/generated/liana/generic/astn_target"
     
     
     export const Fiscaal: _i_signatures._T_Fiscaal = ($, $p) => ['verbose group', _p.dictionary.literal({

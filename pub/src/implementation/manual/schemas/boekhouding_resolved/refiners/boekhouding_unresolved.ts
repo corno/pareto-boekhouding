@@ -1,7 +1,7 @@
 
-import * as d_out from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
-import * as d_in from "../../../../../interface/generated/pareto/schemas/boekhouding/data"
-import * as d_token from "../../../../../interface/generated/pareto/core/token"
+import * as d_out from "../../../../../interface/generated/liana/schemas/boekhouding/data"
+import * as d_in from "../../../../../interface/generated/liana/schemas/boekhouding/data"
+import * as d_token from "../../../../../interface/generated/liana/generic/token"
 
 //dependencies
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "./boekhouding_unresolved_patched_generated"

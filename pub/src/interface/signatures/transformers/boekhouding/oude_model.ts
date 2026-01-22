@@ -1,9 +1,9 @@
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as d_in from "../../../generated/pareto/schemas/boekhouding_oude_model/data"
-import * as d_out from "../../../generated/pareto/schemas/boekhouding/data"
+import * as d_in from "../../../generated/liana/schemas/boekhouding_oude_model/data"
+import * as d_out from "../../../generated/liana/schemas/boekhouding/data"
 
-import * as d_token from "../../../generated/pareto/core/token"
+import * as d_token from "../../../generated/liana/generic/token"
 
 // **** TYPES
 

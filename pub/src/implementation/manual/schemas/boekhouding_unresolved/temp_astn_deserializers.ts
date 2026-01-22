@@ -1,8 +1,8 @@
 import * as _p from 'pareto-core/dist/deserializer'
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as d_boekhouding_source from "../../../../interface/generated/pareto/schemas/boekhouding/data"
-import * as d_token from "../../../../interface/generated/pareto/core/token"
+import * as d_boekhouding_source from "../../../../interface/generated/liana/schemas/boekhouding/data"
+import * as d_token from "../../../../interface/generated/liana/generic/token"
 import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_unresolved_model"
 export namespace signatures {
     
@@ -19,7 +19,7 @@ import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation
 import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/iso_udhr"
 import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/manual/primitives/boolean/deserializers/true_false"
 
-import * as r_um_boekhouding from "../../../generated/pareto/schemas/boekhouding/unmarshall"
+import * as r_um_boekhouding from "../../../generated/liana/schemas/boekhouding/unmarshall"
 
 export const Root: signatures.Root = ($, abort, $p) => {
 

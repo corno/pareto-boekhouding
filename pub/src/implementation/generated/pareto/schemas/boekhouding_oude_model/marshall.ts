@@ -1,8 +1,8 @@
     import * as _p from 'pareto-core/dist/transformer'
     import * as _pdev from 'pareto-core-dev'
     
-    import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/marshall"
-    import * as _i_out from "../../../../../interface/generated/pareto/core/astn_target"
+    import * as _i_signatures from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/marshall"
+    import * as _i_out from "../../../../../interface/generated/liana/generic/astn_target"
     
     
     export const Bestandsnaam: _i_signatures._T_Bestandsnaam = ($, $p) => ['text', ({

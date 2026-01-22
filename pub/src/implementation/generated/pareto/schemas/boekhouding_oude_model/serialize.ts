@@ -1,7 +1,7 @@
     import * as _p from 'pareto-core/dist/serializer'
     import * as _pdev from 'pareto-core-dev'
     
-    import * as _i_signatures from "../../../../../interface/generated/pareto/schemas/boekhouding_oude_model/serialize"
+    import * as _i_signatures from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/serialize"
     import * as _i_serialize from "../../generic/serialize"
     import * as _i_marshall from "./marshall"
     

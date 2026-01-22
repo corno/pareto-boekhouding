@@ -1,8 +1,8 @@
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as d_boekhouding_resolved from "../../../../interface/generated/pareto/schemas/boekhouding/data"
+import * as d_boekhouding_resolved from "../../../../interface/generated/liana/schemas/boekhouding/data"
 
-import * as s_boekhouding from "../../../generated/pareto/schemas/boekhouding/serialize"
+import * as s_boekhouding from "../../../generated/liana/schemas/boekhouding/serialize"
 import { $$ as s_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/decimal"
 import { $$ as s_fractional_decimal } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/fractional_decimal"
 import { $$ as s_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/serializers/iso_udhr"

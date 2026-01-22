@@ -1,7 +1,7 @@
 import * as _p from 'pareto-core/dist/deserializer'
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as d_boekhouding_oude_model from "../../../../interface/generated/pareto/schemas/boekhouding_oude_model/data"
+import * as d_boekhouding_oude_model from "../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 import * as d_unresolved_deserializers from "astn-sealed/dist/interface/to_be_generated/deserialize_unresolved_model"
 
 export type Root = _pi.Deserializer_With_Parameters<d_boekhouding_oude_model.Root, d_unresolved_deserializers.Error, d_unresolved_deserializers.Parameters>
@@ -13,7 +13,7 @@ import { $$ as ds_decimal } from "pareto-standard-operations/dist/implementation
 import { $$ as ds_date } from "pareto-standard-operations/dist/implementation/manual/primitives/integer/deserializers/iso_udhr"
 import { $$ as ds_boolean } from "pareto-standard-operations/dist/implementation/manual/primitives/boolean/deserializers/true_false"
 
-import * as r_unmarshall_boekhouding_oude_model from "../../../generated/pareto/schemas/boekhouding_oude_model/unmarshall"
+import * as r_unmarshall_boekhouding_oude_model from "../../../generated/liana/schemas/boekhouding_oude_model/unmarshall"
 
 export const Root: Root = ($, abort, $p,) => {
 

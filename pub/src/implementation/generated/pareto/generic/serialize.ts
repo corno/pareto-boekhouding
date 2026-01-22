@@ -1,7 +1,7 @@
 import * as _ea from 'pareto-core/dist/serializer'
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as astn_target from "../../../../interface/generated/pareto/core/astn_target"
+import * as astn_target from "../../../../interface/generated/liana/generic/astn_target"
 
 
 const indentation = `    `
