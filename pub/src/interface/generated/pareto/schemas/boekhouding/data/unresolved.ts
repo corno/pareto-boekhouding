@@ -3282,7 +3282,7 @@ export namespace Balans_Resultaat_Mutatie_ {
     
     export type Jaar = _pi.Optional_Value<Jaar.O>
     
-    export namespace _type {
+    export namespace type_ {
         
         export type location = i__location.Location
         
@@ -3336,16 +3336,16 @@ export namespace Balans_Resultaat_Mutatie_ {
         
     }
     
-    export type _type = {
-        readonly 'location': _type.location
-        readonly 'state group': _type.state_group
+    export type type_ = {
+        readonly 'location': type_.location
+        readonly 'state group': type_.state_group
     }
     
 }
 
 export type Balans_Resultaat_Mutatie_ = {
     readonly 'Jaar': Balans_Resultaat_Mutatie_.Jaar
-    readonly 'type': Balans_Resultaat_Mutatie_._type
+    readonly 'type': Balans_Resultaat_Mutatie_.type_
 }
 
 export namespace Eerste_boekjaar_ {

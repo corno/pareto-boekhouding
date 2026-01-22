@@ -1951,7 +1951,7 @@ export namespace Balans_Resultaat_Mutatie_ {
     
     export type Jaar = _pi.Optional_Value<Jaar.O>
     
-    export namespace _type {
+    export namespace type_ {
         
         export namespace Inkoop {
             
@@ -1994,16 +1994,16 @@ export namespace Balans_Resultaat_Mutatie_ {
         
     }
     
-    export type _type = 
-        | readonly ['Inkoop', _type.Inkoop]
-        | readonly ['Verkoop', _type.Verkoop]
-        | readonly ['BTW-periode', _type.BTW$mi_periode]
+    export type type_ = 
+        | readonly ['Inkoop', type_.Inkoop]
+        | readonly ['Verkoop', type_.Verkoop]
+        | readonly ['BTW-periode', type_.BTW$mi_periode]
     
 }
 
 export type Balans_Resultaat_Mutatie_ = {
     readonly 'Jaar': Balans_Resultaat_Mutatie_.Jaar
-    readonly 'type': Balans_Resultaat_Mutatie_._type
+    readonly 'type': Balans_Resultaat_Mutatie_.type_
 }
 
 export namespace Eerste_boekjaar_ {
