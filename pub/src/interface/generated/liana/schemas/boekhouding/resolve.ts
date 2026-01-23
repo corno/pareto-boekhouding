@@ -1,7 +1,7 @@
 
 import * as _pi from "pareto-core/dist/interface"
 
-import * as i_resolve from "pareto-core-internals/dist/algorithm_types/refiner/resolve"
+import * as i_generic from "../../generic/resolve"
 
 import * as i_resolved from "./data/resolved"
 
@@ -13,6 +13,8 @@ export namespace Fiscaal_ {
     
     export type O = i_resolved.Fiscaal
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
     }
@@ -20,9 +22,10 @@ export namespace Fiscaal_ {
 }
 
 export type Fiscaal_ = (
-    $$_: Fiscaal_.I,
-    $$_lookups: null,
-    $$_p: null,
+    context: Fiscaal_.I,
+    abort: _pi.Abort<Fiscaal_.E>,
+    lookups: null,
+    parameters: null,
 ) => Fiscaal_.O
 
 export namespace Grootboekrekeningen_ {
@@ -31,6 +34,8 @@ export namespace Grootboekrekeningen_ {
     
     export type O = i_resolved.Grootboekrekeningen
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
     }
@@ -38,9 +43,10 @@ export namespace Grootboekrekeningen_ {
 }
 
 export type Grootboekrekeningen_ = (
-    $$_: Grootboekrekeningen_.I,
-    $$_lookups: null,
-    $$_p: null,
+    context: Grootboekrekeningen_.I,
+    abort: _pi.Abort<Grootboekrekeningen_.E>,
+    lookups: null,
+    parameters: null,
 ) => Grootboekrekeningen_.O
 
 export namespace Grootboek_Categorieen_ {
@@ -48,6 +54,8 @@ export namespace Grootboek_Categorieen_ {
     export type I = i_unresolved.Grootboek_Categorieen
     
     export type O = i_resolved.Grootboek_Categorieen
+    
+    export type E = i_generic.Error
     
     export namespace P {
         
@@ -58,9 +66,10 @@ export namespace Grootboek_Categorieen_ {
 }
 
 export type Grootboek_Categorieen_ = (
-    $$_: Grootboek_Categorieen_.I,
-    $$_lookups: null,
-    $$_p: {
+    context: Grootboek_Categorieen_.I,
+    abort: _pi.Abort<Grootboek_Categorieen_.E>,
+    lookups: null,
+    parameters: {
         readonly 'Fiscaal': Grootboek_Categorieen_.P.Fiscaal
     },
 ) => Grootboek_Categorieen_.O
@@ -71,6 +80,8 @@ export namespace Beheer_ {
     
     export type O = i_resolved.Beheer
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
         export type Grootboek_Categorieen = i_resolved.Grootboek_Categorieen_
@@ -80,9 +91,10 @@ export namespace Beheer_ {
 }
 
 export type Beheer_ = (
-    $$_: Beheer_.I,
-    $$_lookups: null,
-    $$_p: {
+    context: Beheer_.I,
+    abort: _pi.Abort<Beheer_.E>,
+    lookups: null,
+    parameters: {
         readonly 'Grootboek Categorieen': Beheer_.P.Grootboek_Categorieen
     },
 ) => Beheer_.O
@@ -92,6 +104,8 @@ export namespace Jaarbeheer_ {
     export type I = i_unresolved.Jaarbeheer
     
     export type O = i_resolved.Jaarbeheer
+    
+    export type E = i_generic.Error
     
     export namespace L {
         
@@ -110,11 +124,12 @@ export namespace Jaarbeheer_ {
 }
 
 export type Jaarbeheer_ = (
-    $$_: Jaarbeheer_.I,
-    $$_lookups: {
+    context: Jaarbeheer_.I,
+    abort: _pi.Abort<Jaarbeheer_.E>,
+    lookups: {
         readonly 'Jaren': _pi.Acyclic_Lookup<Jaarbeheer_.L.Jaren>
     },
-    $$_p: {
+    parameters: {
         readonly 'Eerste boekjaar': Jaarbeheer_.P.Eerste_boekjaar
         readonly 'Grootboekrekeningen': Jaarbeheer_.P.Grootboekrekeningen
     },
@@ -125,6 +140,8 @@ export namespace Overige_balans_item_ {
     export type I = i_unresolved.Overige_balans_item
     
     export type O = i_resolved.Overige_balans_item
+    
+    export type E = i_generic.Error
     
     export namespace L {
         
@@ -143,11 +160,12 @@ export namespace Overige_balans_item_ {
 }
 
 export type Overige_balans_item_ = (
-    $$_: Overige_balans_item_.I,
-    $$_lookups: {
+    context: Overige_balans_item_.I,
+    abort: _pi.Abort<Overige_balans_item_.E>,
+    lookups: {
         readonly 'Jaren': _pi.Acyclic_Lookup<Overige_balans_item_.L.Jaren>
     },
-    $$_p: {
+    parameters: {
         readonly 'Eerste boekjaar': Overige_balans_item_.P.Eerste_boekjaar
         readonly 'Grootboekrekeningen': Overige_balans_item_.P.Grootboekrekeningen
     },
@@ -159,6 +177,8 @@ export namespace Verwijzing_naar_Informele_rekening_ {
     
     export type O = i_resolved.Verwijzing_naar_Informele_rekening
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
         export type Jaarbeheer = i_resolved.Jaarbeheer_
@@ -168,9 +188,10 @@ export namespace Verwijzing_naar_Informele_rekening_ {
 }
 
 export type Verwijzing_naar_Informele_rekening_ = (
-    $$_: Verwijzing_naar_Informele_rekening_.I,
-    $$_lookups: null,
-    $$_p: {
+    context: Verwijzing_naar_Informele_rekening_.I,
+    abort: _pi.Abort<Verwijzing_naar_Informele_rekening_.E>,
+    lookups: null,
+    parameters: {
         readonly 'Jaarbeheer': Verwijzing_naar_Informele_rekening_.P.Jaarbeheer
     },
 ) => Verwijzing_naar_Informele_rekening_.O
@@ -181,6 +202,8 @@ export namespace Verwijzing_naar_Bankrekening_ {
     
     export type O = i_resolved.Verwijzing_naar_Bankrekening
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
         export type Jaarbeheer = i_resolved.Jaarbeheer_
@@ -190,9 +213,10 @@ export namespace Verwijzing_naar_Bankrekening_ {
 }
 
 export type Verwijzing_naar_Bankrekening_ = (
-    $$_: Verwijzing_naar_Bankrekening_.I,
-    $$_lookups: null,
-    $$_p: {
+    context: Verwijzing_naar_Bankrekening_.I,
+    abort: _pi.Abort<Verwijzing_naar_Bankrekening_.E>,
+    lookups: null,
+    parameters: {
         readonly 'Jaarbeheer': Verwijzing_naar_Bankrekening_.P.Jaarbeheer
     },
 ) => Verwijzing_naar_Bankrekening_.O
@@ -202,6 +226,8 @@ export namespace Handelstransacties_ {
     export type I = i_unresolved.Handelstransacties
     
     export type O = i_resolved.Handelstransacties
+    
+    export type E = i_generic.Error
     
     export namespace P {
         
@@ -216,9 +242,10 @@ export namespace Handelstransacties_ {
 }
 
 export type Handelstransacties_ = (
-    $$_: Handelstransacties_.I,
-    $$_lookups: null,
-    $$_p: {
+    context: Handelstransacties_.I,
+    abort: _pi.Abort<Handelstransacties_.E>,
+    lookups: null,
+    parameters: {
         readonly 'Beheer': Handelstransacties_.P.Beheer
         readonly 'Grootboekrekeningen': Handelstransacties_.P.Grootboekrekeningen
         readonly 'Jaarbeheer': Handelstransacties_.P.Jaarbeheer
@@ -230,6 +257,8 @@ export namespace Mutaties_ {
     export type I = i_unresolved.Mutaties
     
     export type O = i_resolved.Mutaties
+    
+    export type E = i_generic.Error
     
     export namespace L {
         
@@ -252,11 +281,12 @@ export namespace Mutaties_ {
 }
 
 export type Mutaties_ = (
-    $$_: Mutaties_.I,
-    $$_lookups: {
+    context: Mutaties_.I,
+    abort: _pi.Abort<Mutaties_.E>,
+    lookups: {
         readonly 'Jaren': _pi.Acyclic_Lookup<Mutaties_.L.Jaren>
     },
-    $$_p: {
+    parameters: {
         readonly 'Beheer': Mutaties_.P.Beheer
         readonly 'Grootboekrekeningen': Mutaties_.P.Grootboekrekeningen
         readonly 'Jaarbeheer': Mutaties_.P.Jaarbeheer
@@ -269,6 +299,8 @@ export namespace Balans_Resultaat_Mutatie_ {
     export type I = i_unresolved.Balans_Resultaat_Mutatie
     
     export type O = i_resolved.Balans_Resultaat_Mutatie
+    
+    export type E = i_generic.Error
     
     export namespace L {
         
@@ -291,11 +323,12 @@ export namespace Balans_Resultaat_Mutatie_ {
 }
 
 export type Balans_Resultaat_Mutatie_ = (
-    $$_: Balans_Resultaat_Mutatie_.I,
-    $$_lookups: {
+    context: Balans_Resultaat_Mutatie_.I,
+    abort: _pi.Abort<Balans_Resultaat_Mutatie_.E>,
+    lookups: {
         readonly 'Jaren': _pi.Acyclic_Lookup<Balans_Resultaat_Mutatie_.L.Jaren>
     },
-    $$_p: {
+    parameters: {
         readonly 'Beheer': Balans_Resultaat_Mutatie_.P.Beheer
         readonly 'Grootboekrekeningen': Balans_Resultaat_Mutatie_.P.Grootboekrekeningen
         readonly 'Jaarbeheer': Balans_Resultaat_Mutatie_.P.Jaarbeheer
@@ -309,6 +342,8 @@ export namespace Jaren_ {
     
     export type O = i_resolved.Jaren
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
         export type Beheer = i_resolved.Beheer_
@@ -318,9 +353,10 @@ export namespace Jaren_ {
 }
 
 export type Jaren_ = (
-    $$_: Jaren_.I,
-    $$_lookups: null,
-    $$_p: {
+    context: Jaren_.I,
+    abort: _pi.Abort<Jaren_.E>,
+    lookups: null,
+    parameters: {
         readonly 'Beheer': Jaren_.P.Beheer
     },
 ) => Jaren_.O
@@ -331,6 +367,8 @@ export namespace Root_ {
     
     export type O = i_resolved.Root
     
+    export type E = i_generic.Error
+    
     export namespace P {
         
     }
@@ -338,9 +376,10 @@ export namespace Root_ {
 }
 
 export type Root_ = (
-    $$_: Root_.I,
-    $$_lookups: null,
-    $$_p: null,
+    context: Root_.I,
+    abort: _pi.Abort<Root_.E>,
+    lookups: null,
+    parameters: null,
 ) => Root_.O
 
 export namespace Eerste_boekjaar_ {
@@ -348,6 +387,8 @@ export namespace Eerste_boekjaar_ {
     export type I = i_unresolved.Eerste_boekjaar
     
     export type O = i_resolved.Eerste_boekjaar
+    
+    export type E = i_generic.Error
     
     export namespace L {
         
@@ -362,11 +403,12 @@ export namespace Eerste_boekjaar_ {
 }
 
 export type Eerste_boekjaar_ = (
-    $$_: Eerste_boekjaar_.I,
-    $$_lookups: {
+    context: Eerste_boekjaar_.I,
+    abort: _pi.Abort<Eerste_boekjaar_.E>,
+    lookups: {
         readonly 'Jaren': _pi.Acyclic_Lookup<Eerste_boekjaar_.L.Jaren>
     },
-    $$_p: null,
+    parameters: null,
 ) => Eerste_boekjaar_.O
 
 export { 

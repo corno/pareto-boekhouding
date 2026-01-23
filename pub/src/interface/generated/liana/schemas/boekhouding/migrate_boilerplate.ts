@@ -18,7 +18,7 @@ export namespace Fiscaal_ {
 }
 
 export type Fiscaal_ = (
-    $$_: Fiscaal_.I,
+    context: Fiscaal_.I,
 ) => Fiscaal_.O
 
 export namespace Grootboek_Categorieen_ {
@@ -34,7 +34,7 @@ export namespace Grootboek_Categorieen_ {
 }
 
 export type Grootboek_Categorieen_ = (
-    $$_: Grootboek_Categorieen_.I,
+    context: Grootboek_Categorieen_.I,
 ) => Grootboek_Categorieen_.O
 
 export namespace Beheer_ {
@@ -50,7 +50,7 @@ export namespace Beheer_ {
 }
 
 export type Beheer_ = (
-    $$_: Beheer_.I,
+    context: Beheer_.I,
 ) => Beheer_.O
 
 export namespace Grootboekrekeningen_ {
@@ -66,7 +66,7 @@ export namespace Grootboekrekeningen_ {
 }
 
 export type Grootboekrekeningen_ = (
-    $$_: Grootboekrekeningen_.I,
+    context: Grootboekrekeningen_.I,
 ) => Grootboekrekeningen_.O
 
 export namespace Jaarbeheer_ {
@@ -82,7 +82,7 @@ export namespace Jaarbeheer_ {
 }
 
 export type Jaarbeheer_ = (
-    $$_: Jaarbeheer_.I,
+    context: Jaarbeheer_.I,
 ) => Jaarbeheer_.O
 
 export namespace Overige_balans_item_ {
@@ -98,7 +98,7 @@ export namespace Overige_balans_item_ {
 }
 
 export type Overige_balans_item_ = (
-    $$_: Overige_balans_item_.I,
+    context: Overige_balans_item_.I,
 ) => Overige_balans_item_.O
 
 export namespace Verwijzing_naar_Informele_rekening_ {
@@ -114,7 +114,7 @@ export namespace Verwijzing_naar_Informele_rekening_ {
 }
 
 export type Verwijzing_naar_Informele_rekening_ = (
-    $$_: Verwijzing_naar_Informele_rekening_.I,
+    context: Verwijzing_naar_Informele_rekening_.I,
 ) => Verwijzing_naar_Informele_rekening_.O
 
 export namespace Verwijzing_naar_Bankrekening_ {
@@ -130,7 +130,7 @@ export namespace Verwijzing_naar_Bankrekening_ {
 }
 
 export type Verwijzing_naar_Bankrekening_ = (
-    $$_: Verwijzing_naar_Bankrekening_.I,
+    context: Verwijzing_naar_Bankrekening_.I,
 ) => Verwijzing_naar_Bankrekening_.O
 
 export namespace Handelstransacties_ {
@@ -146,7 +146,7 @@ export namespace Handelstransacties_ {
 }
 
 export type Handelstransacties_ = (
-    $$_: Handelstransacties_.I,
+    context: Handelstransacties_.I,
 ) => Handelstransacties_.O
 
 export namespace Mutaties_ {
@@ -162,7 +162,7 @@ export namespace Mutaties_ {
 }
 
 export type Mutaties_ = (
-    $$_: Mutaties_.I,
+    context: Mutaties_.I,
 ) => Mutaties_.O
 
 export namespace Jaren_ {
@@ -178,7 +178,7 @@ export namespace Jaren_ {
 }
 
 export type Jaren_ = (
-    $$_: Jaren_.I,
+    context: Jaren_.I,
 ) => Jaren_.O
 
 export namespace Balans_Resultaat_Mutatie_ {
@@ -194,7 +194,7 @@ export namespace Balans_Resultaat_Mutatie_ {
 }
 
 export type Balans_Resultaat_Mutatie_ = (
-    $$_: Balans_Resultaat_Mutatie_.I,
+    context: Balans_Resultaat_Mutatie_.I,
 ) => Balans_Resultaat_Mutatie_.O
 
 export namespace Eerste_boekjaar_ {
@@ -210,7 +210,7 @@ export namespace Eerste_boekjaar_ {
 }
 
 export type Eerste_boekjaar_ = (
-    $$_: Eerste_boekjaar_.I,
+    context: Eerste_boekjaar_.I,
 ) => Eerste_boekjaar_.O
 
 export namespace Root_ {
@@ -226,7 +226,7 @@ export namespace Root_ {
 }
 
 export type Root_ = (
-    $$_: Root_.I,
+    context: Root_.I,
 ) => Root_.O
 
 export { 

@@ -18,7 +18,7 @@ export namespace Bestandsnaam_ {
 }
 
 export type Bestandsnaam_ = (
-    $$_: Bestandsnaam_.I,
+    context: Bestandsnaam_.I,
 ) => Bestandsnaam_.O
 
 export namespace Root_ {
@@ -34,7 +34,7 @@ export namespace Root_ {
 }
 
 export type Root_ = (
-    $$_: Root_.I,
+    context: Root_.I,
 ) => Root_.O
 
 export { 
