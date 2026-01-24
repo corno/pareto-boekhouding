@@ -30,7 +30,7 @@
     "astn-core": "^0.5.5",
     "pareto-core-dev": "^0.12.3",
     "pareto-core-shorthands": "^0.2.5",
-    "pareto-host-nodejs": "^0.2.9",
+    "pareto-host-nodejs": "^0.2.10",
     "pareto-resources": "^0.2.13",
     "pareto-static-html": "^0.1.14"
   }
