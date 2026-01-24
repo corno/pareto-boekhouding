@@ -21,7 +21,7 @@ export namespace Fiscaal_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Activa = null
                             
@@ -29,15 +29,15 @@ export namespace Fiscaal_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Activa', state_group.Activa]
-                            | readonly ['Passiva', state_group.Passiva]
+                        export type state = 
+                            | readonly ['Activa', state.Activa]
+                            | readonly ['Passiva', state.Passiva]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state group': Zijde.state_group
+                        readonly 'state': Zijde.state
                     }
                     
                     export namespace Subcategorieen {
@@ -111,7 +111,7 @@ export namespace Fiscaal_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Kosten = null
                             
@@ -119,15 +119,15 @@ export namespace Fiscaal_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Kosten', state_group.Kosten]
-                            | readonly ['Opbrengsten', state_group.Opbrengsten]
+                        export type state = 
+                            | readonly ['Kosten', state.Kosten]
+                            | readonly ['Opbrengsten', state.Opbrengsten]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state group': Zijde.state_group
+                        readonly 'state': Zijde.state
                     }
                     
                     export namespace Subcategorieen {
@@ -248,7 +248,7 @@ export namespace Grootboek_Categorieen_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Activa = null
                             
@@ -256,15 +256,15 @@ export namespace Grootboek_Categorieen_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Activa', state_group.Activa]
-                            | readonly ['Passiva', state_group.Passiva]
+                        export type state = 
+                            | readonly ['Activa', state.Activa]
+                            | readonly ['Passiva', state.Passiva]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state group': Zijde.state_group
+                        readonly 'state': Zijde.state
                     }
                     
                     export namespace Subcategorieen {
@@ -371,7 +371,7 @@ export namespace Grootboek_Categorieen_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Kosten = null
                             
@@ -379,15 +379,15 @@ export namespace Grootboek_Categorieen_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Kosten', state_group.Kosten]
-                            | readonly ['Opbrengsten', state_group.Opbrengsten]
+                        export type state = 
+                            | readonly ['Kosten', state.Kosten]
+                            | readonly ['Opbrengsten', state.Opbrengsten]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state group': Zijde.state_group
+                        readonly 'state': Zijde.state
                     }
                     
                     export namespace Subcategorieen {
@@ -504,7 +504,7 @@ export namespace Beheer_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export namespace Ja {
                                 
@@ -518,14 +518,14 @@ export namespace Beheer_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Ja', state_group.Ja]
+                        export type state = 
+                            | readonly ['Ja', state.Ja]
                         
                     }
                     
                     export type BTW$mi_heffing = {
                         readonly 'location': BTW$mi_heffing.location
-                        readonly 'state group': BTW$mi_heffing.state_group
+                        readonly 'state': BTW$mi_heffing.state
                     }
                     
                 }
@@ -596,7 +596,7 @@ export namespace Beheer_ {
                             
                             export type location = i__location.Location
                             
-                            export namespace state_group {
+                            export namespace state {
                                 
                                 export type Activa = null
                                 
@@ -604,15 +604,15 @@ export namespace Beheer_ {
                                 
                             }
                             
-                            export type state_group = 
-                                | readonly ['Activa', state_group.Activa]
-                                | readonly ['Passiva', state_group.Passiva]
+                            export type state = 
+                                | readonly ['Activa', state.Activa]
+                                | readonly ['Passiva', state.Passiva]
                             
                         }
                         
                         export type Zijde = {
                             readonly 'location': Zijde.location
-                            readonly 'state group': Zijde.state_group
+                            readonly 'state': Zijde.state
                         }
                         
                     }
@@ -683,7 +683,7 @@ export namespace Beheer_ {
                             
                             export type location = i__location.Location
                             
-                            export namespace state_group {
+                            export namespace state {
                                 
                                 export namespace Kosten {
                                     
@@ -691,7 +691,7 @@ export namespace Beheer_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export namespace Ja {
                                                 
@@ -718,15 +718,15 @@ export namespace Beheer_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Ja', state_group.Ja]
-                                            | readonly ['Nee', state_group.Nee]
+                                        export type state = 
+                                            | readonly ['Ja', state.Ja]
+                                            | readonly ['Nee', state.Nee]
                                         
                                     }
                                     
                                     export type Correctie_op_vennootschapsbelasting = {
                                         readonly 'location': Correctie_op_vennootschapsbelasting.location
-                                        readonly 'state group': Correctie_op_vennootschapsbelasting.state_group
+                                        readonly 'state': Correctie_op_vennootschapsbelasting.state
                                     }
                                     
                                 }
@@ -739,15 +739,15 @@ export namespace Beheer_ {
                                 
                             }
                             
-                            export type state_group = 
-                                | readonly ['Kosten', state_group.Kosten]
-                                | readonly ['Opbrengsten', state_group.Opbrengsten]
+                            export type state = 
+                                | readonly ['Kosten', state.Kosten]
+                                | readonly ['Opbrengsten', state.Opbrengsten]
                             
                         }
                         
                         export type Zijde = {
                             readonly 'location': Zijde.location
-                            readonly 'state group': Zijde.state_group
+                            readonly 'state': Zijde.state
                         }
                         
                     }
@@ -1019,7 +1019,7 @@ export namespace Beheer_ {
                                                                         
                                                                         export type location = i__location.Location
                                                                         
-                                                                        export namespace state_group {
+                                                                        export namespace state {
                                                                             
                                                                             export namespace Project {
                                                                                 
@@ -1036,14 +1036,14 @@ export namespace Beheer_ {
                                                                             
                                                                         }
                                                                         
-                                                                        export type state_group = 
-                                                                            | readonly ['Project', state_group.Project]
+                                                                        export type state = 
+                                                                            | readonly ['Project', state.Project]
                                                                         
                                                                     }
                                                                     
                                                                     export type Type = {
                                                                         readonly 'location': Type.location
-                                                                        readonly 'state group': Type.state_group
+                                                                        readonly 'state': Type.state
                                                                     }
                                                                     
                                                                 }
@@ -1233,7 +1233,7 @@ export namespace Grootboekrekeningen_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Bankrekening = null
                             
@@ -1243,16 +1243,16 @@ export namespace Grootboekrekeningen_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Bankrekening', state_group.Bankrekening]
-                            | readonly ['Overig', state_group.Overig]
-                            | readonly ['Informele rekening', state_group.Informele_rekening]
+                        export type state = 
+                            | readonly ['Bankrekening', state.Bankrekening]
+                            | readonly ['Overig', state.Overig]
+                            | readonly ['Informele rekening', state.Informele_rekening]
                         
                     }
                     
                     export type Type = {
                         readonly 'location': Type.location
-                        readonly 'state group': Type.state_group
+                        readonly 'state': Type.state
                     }
                     
                 }
@@ -1449,7 +1449,7 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Location
                             
-                            export namespace state_group {
+                            export namespace state {
                                 
                                 export namespace Aangegeven {
                                     
@@ -1471,15 +1471,15 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type state_group = 
-                                | readonly ['Aangegeven', state_group.Aangegeven]
-                                | readonly ['Openstaand', state_group.Openstaand]
+                            export type state = 
+                                | readonly ['Aangegeven', state.Aangegeven]
+                                | readonly ['Openstaand', state.Openstaand]
                             
                         }
                         
                         export type Status = {
                             readonly 'location': Status.location
-                            readonly 'state group': Status.state_group
+                            readonly 'state': Status.state
                         }
                         
                     }
@@ -1619,7 +1619,7 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Location
                             
-                            export namespace state_group {
+                            export namespace state {
                                 
                                 export type Ja = null
                                 
@@ -1635,15 +1635,15 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type state_group = 
-                                | readonly ['Ja', state_group.Ja]
-                                | readonly ['Nee', state_group.Nee]
+                            export type state = 
+                                | readonly ['Ja', state.Ja]
+                                | readonly ['Nee', state.Nee]
                             
                         }
                         
                         export type Nieuw = {
                             readonly 'location': Nieuw.location
-                            readonly 'state group': Nieuw.state_group
+                            readonly 'state': Nieuw.state
                         }
                         
                     }
@@ -1703,7 +1703,7 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Location
                             
-                            export namespace state_group {
+                            export namespace state {
                                 
                                 export type Ja = null
                                 
@@ -1719,15 +1719,15 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type state_group = 
-                                | readonly ['Ja', state_group.Ja]
-                                | readonly ['Nee', state_group.Nee]
+                            export type state = 
+                                | readonly ['Ja', state.Ja]
+                                | readonly ['Nee', state.Nee]
                             
                         }
                         
                         export type Nieuw = {
                             readonly 'location': Nieuw.location
-                            readonly 'state group': Nieuw.state_group
+                            readonly 'state': Nieuw.state
                         }
                         
                         export namespace Mutaties {
@@ -1905,7 +1905,7 @@ export namespace Overige_balans_item_ {
         
         export type location = i__location.Location
         
-        export namespace state_group {
+        export namespace state {
             
             export type Ja = null
             
@@ -1932,15 +1932,15 @@ export namespace Overige_balans_item_ {
             
         }
         
-        export type state_group = 
-            | readonly ['Ja', state_group.Ja]
-            | readonly ['Nee', state_group.Nee]
+        export type state = 
+            | readonly ['Ja', state.Ja]
+            | readonly ['Nee', state.Nee]
         
     }
     
     export type Nieuw = {
         readonly 'location': Nieuw.location
-        readonly 'state group': Nieuw.state_group
+        readonly 'state': Nieuw.state
     }
     
 }
@@ -1995,7 +1995,7 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Mutaties = null
                             
@@ -2022,22 +2022,22 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Mutaties', state_group.Mutaties]
-                            | readonly ['Rekening courant', state_group.Rekening_courant]
+                        export type state = 
+                            | readonly ['Mutaties', state.Mutaties]
+                            | readonly ['Rekening courant', state.Rekening_courant]
                         
                     }
                     
                     export type Afhandeling = {
                         readonly 'location': Afhandeling.location
-                        readonly 'state group': Afhandeling.state_group
+                        readonly 'state': Afhandeling.state
                     }
                     
                     export namespace BTW$mi_regime {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Binnenland$cl__heffing_verlegd = null
                             
@@ -2070,25 +2070,25 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Binnenland: heffing verlegd', state_group.Binnenland$cl__heffing_verlegd]
-                            | readonly ['Geen BTW van toepassing', state_group.Geen_BTW_van_toepassing]
-                            | readonly ['Import van buiten de EU', state_group.Import_van_buiten_de_EU]
-                            | readonly ['Intracommunautair', state_group.Intracommunautair]
-                            | readonly ['Standaard', state_group.Standaard]
+                        export type state = 
+                            | readonly ['Binnenland: heffing verlegd', state.Binnenland$cl__heffing_verlegd]
+                            | readonly ['Geen BTW van toepassing', state.Geen_BTW_van_toepassing]
+                            | readonly ['Import van buiten de EU', state.Import_van_buiten_de_EU]
+                            | readonly ['Intracommunautair', state.Intracommunautair]
+                            | readonly ['Standaard', state.Standaard]
                         
                     }
                     
                     export type BTW$mi_regime = {
                         readonly 'location': BTW$mi_regime.location
-                        readonly 'state group': BTW$mi_regime.state_group
+                        readonly 'state': BTW$mi_regime.state
                     }
                     
                     export namespace Brondocument {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export namespace Toegevoegd {
                                 
@@ -2106,16 +2106,16 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Toegevoegd', state_group.Toegevoegd]
-                            | readonly ['Niet van toepassing', state_group.Niet_van_toepassing]
-                            | readonly ['Ontbreekt', state_group.Ontbreekt]
+                        export type state = 
+                            | readonly ['Toegevoegd', state.Toegevoegd]
+                            | readonly ['Niet van toepassing', state.Niet_van_toepassing]
+                            | readonly ['Ontbreekt', state.Ontbreekt]
                         
                     }
                     
                     export type Brondocument = {
                         readonly 'location': Brondocument.location
-                        readonly 'state group': Brondocument.state_group
+                        readonly 'state': Brondocument.state
                     }
                     
                     export type Datum = number
@@ -2136,7 +2136,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export namespace Bekend {
                                                 
@@ -2153,14 +2153,14 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Bekend', state_group.Bekend]
+                                        export type state = 
+                                            | readonly ['Bekend', state.Bekend]
                                         
                                     }
                                     
                                     export type Bedrag = {
                                         readonly 'location': Bedrag.location
-                                        readonly 'state group': Bedrag.state_group
+                                        readonly 'state': Bedrag.state
                                     }
                                     
                                     export type Omschrijving = string
@@ -2169,7 +2169,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export namespace Balans {
                                                 
@@ -2215,15 +2215,15 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Balans', state_group.Balans]
-                                            | readonly ['Kosten', state_group.Kosten]
+                                        export type state = 
+                                            | readonly ['Balans', state.Balans]
+                                            | readonly ['Kosten', state.Kosten]
                                         
                                     }
                                     
                                     export type Type = {
                                         readonly 'location': Type.location
-                                        readonly 'state group': Type.state_group
+                                        readonly 'state': Type.state
                                     }
                                     
                                 }
@@ -2256,7 +2256,7 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Bonnetje = null
                             
@@ -2342,17 +2342,17 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Bonnetje', state_group.Bonnetje]
-                            | readonly ['Inkoop (met crediteur)', state_group.Inkoop_$po_met_crediteur$pc_]
-                            | readonly ['Loonheffing', state_group.Loonheffing]
-                            | readonly ['Salaris', state_group.Salaris]
+                        export type state = 
+                            | readonly ['Bonnetje', state.Bonnetje]
+                            | readonly ['Inkoop (met crediteur)', state.Inkoop_$po_met_crediteur$pc_]
+                            | readonly ['Loonheffing', state.Loonheffing]
+                            | readonly ['Salaris', state.Salaris]
                         
                     }
                     
                     export type Type = {
                         readonly 'location': Type.location
-                        readonly 'state group': Type.state_group
+                        readonly 'state': Type.state
                     }
                     
                 }
@@ -2400,7 +2400,7 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export type Mutaties = null
                             
@@ -2427,15 +2427,15 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Mutaties', state_group.Mutaties]
-                            | readonly ['Rekening courant', state_group.Rekening_courant]
+                        export type state = 
+                            | readonly ['Mutaties', state.Mutaties]
+                            | readonly ['Rekening courant', state.Rekening_courant]
                         
                     }
                     
                     export type Afhandeling = {
                         readonly 'location': Afhandeling.location
-                        readonly 'state group': Afhandeling.state_group
+                        readonly 'state': Afhandeling.state
                     }
                     
                     export type Betalingstermijn = number
@@ -2457,7 +2457,7 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export namespace Toegevoegd {
                                 
@@ -2471,14 +2471,14 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Toegevoegd', state_group.Toegevoegd]
+                        export type state = 
+                            | readonly ['Toegevoegd', state.Toegevoegd]
                         
                     }
                     
                     export type Brondocument = {
                         readonly 'location': Brondocument.location
-                        readonly 'state group': Brondocument.state_group
+                        readonly 'state': Brondocument.state
                     }
                     
                     export namespace Debiteur {
@@ -2498,7 +2498,7 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export namespace state_group {
+                        export namespace state {
                             
                             export namespace Project {
                                 
@@ -2558,15 +2558,15 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state_group = 
-                            | readonly ['Project', state_group.Project]
-                            | readonly ['Licentieovereenkomst', state_group.Licentieovereenkomst]
+                        export type state = 
+                            | readonly ['Project', state.Project]
+                            | readonly ['Licentieovereenkomst', state.Licentieovereenkomst]
                         
                     }
                     
                     export type Contracttype = {
                         readonly 'location': Contracttype.location
-                        readonly 'state group': Contracttype.state_group
+                        readonly 'state': Contracttype.state
                     }
                     
                     export type Datum = number
@@ -2587,7 +2587,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export type Intracommunautair = null
                                             
@@ -2616,16 +2616,16 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Intracommunautair', state_group.Intracommunautair]
-                                            | readonly ['Standaard', state_group.Standaard]
-                                            | readonly ['Binnenland: heffing verlegd', state_group.Binnenland$cl__heffing_verlegd]
+                                        export type state = 
+                                            | readonly ['Intracommunautair', state.Intracommunautair]
+                                            | readonly ['Standaard', state.Standaard]
+                                            | readonly ['Binnenland: heffing verlegd', state.Binnenland$cl__heffing_verlegd]
                                         
                                     }
                                     
                                     export type BTW$mi_regime = {
                                         readonly 'location': BTW$mi_regime.location
-                                        readonly 'state group': BTW$mi_regime.state_group
+                                        readonly 'state': BTW$mi_regime.state
                                     }
                                     
                                     export type Bedrag_exclusief_BTW = number
@@ -2634,7 +2634,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export namespace Project {
                                                 
@@ -2682,16 +2682,16 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Project', state_group.Project]
-                                            | readonly ['Los', state_group.Los]
-                                            | readonly ['Licentieovereenkomst', state_group.Licentieovereenkomst]
+                                        export type state = 
+                                            | readonly ['Project', state.Project]
+                                            | readonly ['Los', state.Los]
+                                            | readonly ['Licentieovereenkomst', state.Licentieovereenkomst]
                                         
                                     }
                                     
                                     export type Contracttype = {
                                         readonly 'location': Contracttype.location
-                                        readonly 'state group': Contracttype.state_group
+                                        readonly 'state': Contracttype.state
                                     }
                                     
                                     export type Omschrijving = string
@@ -2700,7 +2700,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export namespace Opbrengsten {
                                                 
@@ -2746,15 +2746,15 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Opbrengsten', state_group.Opbrengsten]
-                                            | readonly ['Balans', state_group.Balans]
+                                        export type state = 
+                                            | readonly ['Opbrengsten', state.Opbrengsten]
+                                            | readonly ['Balans', state.Balans]
                                         
                                     }
                                     
                                     export type Type = {
                                         readonly 'location': Type.location
-                                        readonly 'state group': Type.state_group
+                                        readonly 'state': Type.state
                                     }
                                     
                                 }
@@ -2853,7 +2853,7 @@ export namespace Mutaties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export namespace state_group {
+                                    export namespace state {
                                         
                                         export type Resultaat = Balans_Resultaat_Mutatie_
                                         
@@ -2861,7 +2861,7 @@ export namespace Mutaties_ {
                                             
                                             export type location = i__location.Location
                                             
-                                            export namespace state_group {
+                                            export namespace state {
                                                 
                                                 export namespace Informele_rekening {
                                                     
@@ -2886,27 +2886,27 @@ export namespace Mutaties_ {
                                                 
                                             }
                                             
-                                            export type state_group = 
-                                                | readonly ['Informele rekening', state_group.Informele_rekening]
+                                            export type state = 
+                                                | readonly ['Informele rekening', state.Informele_rekening]
                                             
                                         }
                                         
                                         export type Balans = {
                                             readonly 'location': Balans.location
-                                            readonly 'state group': Balans.state_group
+                                            readonly 'state': Balans.state
                                         }
                                         
                                     }
                                     
-                                    export type state_group = 
-                                        | readonly ['Resultaat', state_group.Resultaat]
-                                        | readonly ['Balans', state_group.Balans]
+                                    export type state = 
+                                        | readonly ['Resultaat', state.Resultaat]
+                                        | readonly ['Balans', state.Balans]
                                     
                                 }
                                 
                                 export type Afhandeling = {
                                     readonly 'location': Afhandeling.location
-                                    readonly 'state group': Afhandeling.state_group
+                                    readonly 'state': Afhandeling.state
                                 }
                                 
                             }
@@ -2976,7 +2976,7 @@ export namespace Mutaties_ {
                                 
                                 export type location = i__location.Location
                                 
-                                export namespace state_group {
+                                export namespace state {
                                     
                                     export type Resultaat = Balans_Resultaat_Mutatie_
                                     
@@ -2984,7 +2984,7 @@ export namespace Mutaties_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export namespace state_group {
+                                        export namespace state {
                                             
                                             export namespace Informele_rekening {
                                                 
@@ -3030,28 +3030,28 @@ export namespace Mutaties_ {
                                             
                                         }
                                         
-                                        export type state_group = 
-                                            | readonly ['Informele rekening', state_group.Informele_rekening]
-                                            | readonly ['Verrekenpost', state_group.Verrekenpost]
+                                        export type state = 
+                                            | readonly ['Informele rekening', state.Informele_rekening]
+                                            | readonly ['Verrekenpost', state.Verrekenpost]
                                         
                                     }
                                     
                                     export type Balans = {
                                         readonly 'location': Balans.location
-                                        readonly 'state group': Balans.state_group
+                                        readonly 'state': Balans.state
                                     }
                                     
                                 }
                                 
-                                export type state_group = 
-                                    | readonly ['Resultaat', state_group.Resultaat]
-                                    | readonly ['Balans', state_group.Balans]
+                                export type state = 
+                                    | readonly ['Resultaat', state.Resultaat]
+                                    | readonly ['Balans', state.Balans]
                                 
                             }
                             
                             export type entry = {
                                 readonly 'location': entry.location
-                                readonly 'state group': entry.state_group
+                                readonly 'state': entry.state
                             }
                             
                         }
@@ -3200,7 +3200,7 @@ export namespace Jaren_ {
                     
                     export type location = i__location.Location
                     
-                    export namespace state_group {
+                    export namespace state {
                         
                         export type Ja = null
                         
@@ -3208,15 +3208,15 @@ export namespace Jaren_ {
                         
                     }
                     
-                    export type state_group = 
-                        | readonly ['Ja', state_group.Ja]
-                        | readonly ['Nee', state_group.Nee]
+                    export type state = 
+                        | readonly ['Ja', state.Ja]
+                        | readonly ['Nee', state.Nee]
                     
                 }
                 
                 export type Afgesloten = {
                     readonly 'location': Afgesloten.location
-                    readonly 'state group': Afgesloten.state_group
+                    readonly 'state': Afgesloten.state
                 }
                 
                 export type Startdatum_boekjaar = number
@@ -3286,7 +3286,7 @@ export namespace Balans_Resultaat_Mutatie_ {
         
         export type location = i__location.Location
         
-        export namespace state_group {
+        export namespace state {
             
             export namespace Inkoop {
                 
@@ -3329,16 +3329,16 @@ export namespace Balans_Resultaat_Mutatie_ {
             
         }
         
-        export type state_group = 
-            | readonly ['Inkoop', state_group.Inkoop]
-            | readonly ['Verkoop', state_group.Verkoop]
-            | readonly ['BTW-periode', state_group.BTW$mi_periode]
+        export type state = 
+            | readonly ['Inkoop', state.Inkoop]
+            | readonly ['Verkoop', state.Verkoop]
+            | readonly ['BTW-periode', state.BTW$mi_periode]
         
     }
     
     export type type_ = {
         readonly 'location': type_.location
-        readonly 'state group': type_.state_group
+        readonly 'state': type_.state
     }
     
 }
@@ -3352,7 +3352,7 @@ export namespace Eerste_boekjaar_ {
     
     export type location = i__location.Location
     
-    export namespace state_group {
+    export namespace state {
         
         export type Ja = null
         
@@ -3379,15 +3379,15 @@ export namespace Eerste_boekjaar_ {
         
     }
     
-    export type state_group = 
-        | readonly ['Ja', state_group.Ja]
-        | readonly ['Nee', state_group.Nee]
+    export type state = 
+        | readonly ['Ja', state.Ja]
+        | readonly ['Nee', state.Nee]
     
 }
 
 export type Eerste_boekjaar_ = {
     readonly 'location': Eerste_boekjaar_.location
-    readonly 'state group': Eerste_boekjaar_.state_group
+    readonly 'state': Eerste_boekjaar_.state
 }
 
 export namespace Root_ {
