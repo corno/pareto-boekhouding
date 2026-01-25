@@ -6,8 +6,7 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 export const Bestandsnaam: t_signatures.Bestandsnaam = ($,) => $
 export const Root: t_signatures.Root = ($,) => ({
-    'Bankrekeningen': _p.deprecated_cc($['Bankrekeningen'], ($,) => $.__d_map(($,key,) => ({
-    }))),
+    'Bankrekeningen': _p.deprecated_cc($['Bankrekeningen'], ($,) => $.__d_map(($,key,) => null)),
     'Beheer': _p.deprecated_cc($['Beheer'], ($,) => ({
         'Balans': _p.deprecated_cc($['Balans'], ($,) => ({
             'Grootboekrekeningen': _p.deprecated_cc($['Grootboekrekeningen'], ($,) => $.__d_map(($,key,) => ({
@@ -16,11 +15,9 @@ export const Root: t_signatures.Root = ($,) => ({
                 'Zijde': _p.deprecated_cc($['Zijde'], ($,) => _p.decide.state($, ($,): t_out.Root.Beheer.Balans.Grootboekrekeningen.D.Zijde => {
                     switch ($[0]) {
                         case 'Activa':
-                            return _p.ss($, ($,) => ['Activa', ({
-                            })])
+                            return _p.ss($, ($,) => ['Activa', null])
                         case 'Passiva':
-                            return _p.ss($, ($,) => ['Passiva', ({
-                            })])
+                            return _p.ss($, ($,) => ['Passiva', null])
                         default:
                             return _p.au($[0])
                     }
@@ -30,11 +27,9 @@ export const Root: t_signatures.Root = ($,) => ({
                 'Zijde': _p.deprecated_cc($['Zijde'], ($,) => _p.decide.state($, ($,): t_out.Root.Beheer.Balans.Hoofdcategorieen.D.Zijde => {
                     switch ($[0]) {
                         case 'Activa':
-                            return _p.ss($, ($,) => ['Activa', ({
-                            })])
+                            return _p.ss($, ($,) => ['Activa', null])
                         case 'Passiva':
-                            return _p.ss($, ($,) => ['Passiva', ({
-                            })])
+                            return _p.ss($, ($,) => ['Passiva', null])
                         default:
                             return _p.au($[0])
                     }
@@ -48,17 +43,14 @@ export const Root: t_signatures.Root = ($,) => ({
                 'Zijde': _p.deprecated_cc($['Zijde'], ($,) => _p.decide.state($, ($,): t_out.Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde => {
                     switch ($[0]) {
                         case 'Activa':
-                            return _p.ss($, ($,) => ['Activa', ({
-                            })])
+                            return _p.ss($, ($,) => ['Activa', null])
                         case 'Passiva':
-                            return _p.ss($, ($,) => ['Passiva', ({
-                            })])
+                            return _p.ss($, ($,) => ['Passiva', null])
                         default:
                             return _p.au($[0])
                     }
                 })),
-                'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($,) => $.__d_map(($,key,) => ({
-                }))),
+                'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($,) => $.__d_map(($,key,) => null)),
             }))),
         })),
         'BTW-categorieen': _p.deprecated_cc($['BTW-categorieen'], ($,) => $.__d_map(($,key,) => ({
@@ -69,8 +61,7 @@ export const Root: t_signatures.Root = ($,) => ({
                             'BTW-promillage': _p.deprecated_cc($['BTW-promillage'], ($,) => $),
                         })])
                     case 'Nee':
-                        return _p.ss($, ($,) => ['Nee', ({
-                        })])
+                        return _p.ss($, ($,) => ['Nee', null])
                     default:
                         return _p.au($[0])
                 }
@@ -99,16 +90,14 @@ export const Root: t_signatures.Root = ($,) => ({
                                                 'Correctietype': _p.deprecated_cc($['Correctietype'], ($,) => $),
                                             })])
                                         case 'Nee':
-                                            return _p.ss($, ($,) => ['Nee', ({
-                                            })])
+                                            return _p.ss($, ($,) => ['Nee', null])
                                         default:
                                             return _p.au($[0])
                                     }
                                 })),
                             })])
                         case 'Opbrengsten':
-                            return _p.ss($, ($,) => ['Opbrengsten', ({
-                            })])
+                            return _p.ss($, ($,) => ['Opbrengsten', null])
                         default:
                             return _p.au($[0])
                     }
@@ -118,11 +107,9 @@ export const Root: t_signatures.Root = ($,) => ({
                 'Zijde': _p.deprecated_cc($['Zijde'], ($,) => _p.decide.state($, ($,): t_out.Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde => {
                     switch ($[0]) {
                         case 'Kosten':
-                            return _p.ss($, ($,) => ['Kosten', ({
-                            })])
+                            return _p.ss($, ($,) => ['Kosten', null])
                         case 'Opbrengsten':
-                            return _p.ss($, ($,) => ['Opbrengsten', ({
-                            })])
+                            return _p.ss($, ($,) => ['Opbrengsten', null])
                         default:
                             return _p.au($[0])
                     }
@@ -136,31 +123,25 @@ export const Root: t_signatures.Root = ($,) => ({
                 'Zijde': _p.deprecated_cc($['Zijde'], ($,) => _p.decide.state($, ($,): t_out.Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde => {
                     switch ($[0]) {
                         case 'Kosten':
-                            return _p.ss($, ($,) => ['Kosten', ({
-                            })])
+                            return _p.ss($, ($,) => ['Kosten', null])
                         case 'Opbrengsten':
-                            return _p.ss($, ($,) => ['Opbrengsten', ({
-                            })])
+                            return _p.ss($, ($,) => ['Opbrengsten', null])
                         default:
                             return _p.au($[0])
                     }
                 })),
-                'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($,) => $.__d_map(($,key,) => ({
-                }))),
+                'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($,) => $.__d_map(($,key,) => null)),
             }))),
         })),
     })),
-    'Informele rekeningen': _p.deprecated_cc($['Informele rekeningen'], ($,) => $.__d_map(($,key,) => ({
-    }))),
+    'Informele rekeningen': _p.deprecated_cc($['Informele rekeningen'], ($,) => $.__d_map(($,key,) => null)),
     'Jaren': _p.deprecated_cc($['Jaren'], ($,) => $.__d_map(($,key,) => ({
         'Afgesloten': _p.deprecated_cc($['Afgesloten'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Afgesloten => {
             switch ($[0]) {
                 case 'Ja':
-                    return _p.ss($, ($,) => ['Ja', ({
-                    })])
+                    return _p.ss($, ($,) => ['Ja', null])
                 case 'Nee':
-                    return _p.ss($, ($,) => ['Nee', ({
-                    })])
+                    return _p.ss($, ($,) => ['Nee', null])
                 default:
                     return _p.au($[0])
             }
@@ -169,14 +150,11 @@ export const Root: t_signatures.Root = ($,) => ({
             'Type': _p.deprecated_cc($['Type'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Balans_grootboekrekeningen.D.Type => {
                 switch ($[0]) {
                     case 'Bankrekening':
-                        return _p.ss($, ($,) => ['Bankrekening', ({
-                        })])
+                        return _p.ss($, ($,) => ['Bankrekening', null])
                     case 'Overig':
-                        return _p.ss($, ($,) => ['Overig', ({
-                        })])
+                        return _p.ss($, ($,) => ['Overig', null])
                     case 'Informele rekening':
-                        return _p.ss($, ($,) => ['Informele rekening', ({
-                        })])
+                        return _p.ss($, ($,) => ['Informele rekening', null])
                     default:
                         return _p.au($[0])
                 }
@@ -192,8 +170,7 @@ export const Root: t_signatures.Root = ($,) => ({
                 'Status': _p.deprecated_cc($['Status'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status => {
                     switch ($[0]) {
                         case 'Nog te verwerken':
-                            return _p.ss($, ($,) => ['Nog te verwerken', ({
-                            })])
+                            return _p.ss($, ($,) => ['Nog te verwerken', null])
                         case 'Verwerkt':
                             return _p.ss($, ($,) => ['Verwerkt', ({
                                 'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.Verwerkt.Afhandeling => {
@@ -234,8 +211,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Bankrekeningen.D.Nieuw => {
                 switch ($[0]) {
                     case 'Ja':
-                        return _p.ss($, ($,) => ['Ja', ({
-                        })])
+                        return _p.ss($, ($,) => ['Ja', null])
                     case 'Nee':
                         return _p.ss($, ($,) => ['Nee', ({
                             'Jaar': _p.deprecated_cc($['Jaar'], ($,) => $),
@@ -252,8 +228,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => $),
         })),
         'BTW periodes': _p.deprecated_cc($['BTW periodes'], ($,) => $.__d_map(($,key,) => ({
-            '1. BTW-categorieen': _p.deprecated_cc($['1. BTW-categorieen'], ($,) => $.__d_map(($,key,) => ({
-            }))),
+            '1. BTW-categorieen': _p.deprecated_cc($['1. BTW-categorieen'], ($,) => $.__d_map(($,key,) => null)),
             'Documenten': _p.deprecated_cc($['Documenten'], ($,) => $.__d_map(($,key,) => ({
                 'Bestand': _p.deprecated_cc($['Bestand'], ($,) => Bestandsnaam($)),
             }))),
@@ -267,8 +242,7 @@ export const Root: t_signatures.Root = ($,) => ({
                             'Datum': _p.deprecated_cc($['Datum'], ($,) => $),
                         })])
                     case 'Openstaand':
-                        return _p.ss($, ($,) => ['Openstaand', ({
-                        })])
+                        return _p.ss($, ($,) => ['Openstaand', null])
                     default:
                         return _p.au($[0])
                 }
@@ -277,8 +251,7 @@ export const Root: t_signatures.Root = ($,) => ({
         'Eerste boekjaar': _p.deprecated_cc($['Eerste boekjaar'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Eerste_boekjaar => {
             switch ($[0]) {
                 case 'Ja':
-                    return _p.ss($, ($,) => ['Ja', ({
-                    })])
+                    return _p.ss($, ($,) => ['Ja', null])
                 case 'Nee':
                     return _p.ss($, ($,) => ['Nee', ({
                         'Vorig boekjaar': _p.deprecated_cc($['Vorig boekjaar'], ($,) => $),
@@ -297,8 +270,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Informele_rekeningen.D.Nieuw => {
                 switch ($[0]) {
                     case 'Ja':
-                        return _p.ss($, ($,) => ['Ja', ({
-                        })])
+                        return _p.ss($, ($,) => ['Ja', null])
                     case 'Nee':
                         return _p.ss($, ($,) => ['Nee', ({
                             'Jaar': _p.deprecated_cc($['Jaar'], ($,) => $),
@@ -313,8 +285,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
                 switch ($[0]) {
                     case 'Mutaties':
-                        return _p.ss($, ($,) => ['Mutaties', ({
-                        })])
+                        return _p.ss($, ($,) => ['Mutaties', null])
                     case 'Rekening courant':
                         return _p.ss($, ($,) => ['Rekening courant', ({
                             'Rekening courant': _p.deprecated_cc($['Rekening courant'], ($,) => $),
@@ -326,18 +297,15 @@ export const Root: t_signatures.Root = ($,) => ({
             'BTW-regime': _p.deprecated_cc($['BTW-regime'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Inkopen.D.BTW$mi_regime => {
                 switch ($[0]) {
                     case 'Binnenland: heffing verlegd':
-                        return _p.ss($, ($,) => ['Binnenland: heffing verlegd', ({
-                        })])
+                        return _p.ss($, ($,) => ['Binnenland: heffing verlegd', null])
                     case 'Geen BTW van toepassing':
                         return _p.ss($, ($,) => ['Geen BTW van toepassing', ({
                             'BTW-periode': _p.deprecated_cc($['BTW-periode'], ($,) => $),
                         })])
                     case 'Import van buiten de EU':
-                        return _p.ss($, ($,) => ['Import van buiten de EU', ({
-                        })])
+                        return _p.ss($, ($,) => ['Import van buiten de EU', null])
                     case 'Intracommunautair':
-                        return _p.ss($, ($,) => ['Intracommunautair', ({
-                        })])
+                        return _p.ss($, ($,) => ['Intracommunautair', null])
                     case 'Standaard':
                         return _p.ss($, ($,) => ['Standaard', ({
                             'BTW-periode': _p.deprecated_cc($['BTW-periode'], ($,) => $),
@@ -353,14 +321,11 @@ export const Root: t_signatures.Root = ($,) => ({
                             'Document': _p.deprecated_cc($['Document'], ($,) => Bestandsnaam($)),
                         })])
                     case 'Niet van toepassing':
-                        return _p.ss($, ($,) => ['Niet van toepassing', ({
-                        })])
+                        return _p.ss($, ($,) => ['Niet van toepassing', null])
                     case 'Ontbreekt':
-                        return _p.ss($, ($,) => ['Ontbreekt', ({
-                        })])
+                        return _p.ss($, ($,) => ['Ontbreekt', null])
                     case 'Nog toevoegen':
-                        return _p.ss($, ($,) => ['Nog toevoegen', ({
-                        })])
+                        return _p.ss($, ($,) => ['Nog toevoegen', null])
                     default:
                         return _p.au($[0])
                 }
@@ -397,8 +362,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Type': _p.deprecated_cc($['Type'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Inkopen.D.Type => {
                 switch ($[0]) {
                     case 'Bonnetje':
-                        return _p.ss($, ($,) => ['Bonnetje', ({
-                        })])
+                        return _p.ss($, ($,) => ['Bonnetje', null])
                     case 'Inkoop (met crediteur)':
                         return _p.ss($, ($,) => ['Inkoop (met crediteur)', ({
                             'Crediteur': _p.deprecated_cc($['Crediteur'], ($,) => $),
@@ -433,8 +397,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Overige_balans_items.D.Nieuw => {
                 switch ($[0]) {
                     case 'Ja':
-                        return _p.ss($, ($,) => ['Ja', ({
-                        })])
+                        return _p.ss($, ($,) => ['Ja', null])
                     case 'Nee':
                         return _p.ss($, ($,) => ['Nee', ({
                             'Jaar': _p.deprecated_cc($['Jaar'], ($,) => $),
@@ -445,10 +408,8 @@ export const Root: t_signatures.Root = ($,) => ({
                 }
             })),
         }))),
-        'Resultaat grootboekrekeningen': _p.deprecated_cc($['Resultaat grootboekrekeningen'], ($,) => $.__d_map(($,key,) => ({
-        }))),
-        'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($,) => $.__d_map(($,key,) => ({
-        }))),
+        'Resultaat grootboekrekeningen': _p.deprecated_cc($['Resultaat grootboekrekeningen'], ($,) => $.__d_map(($,key,) => null)),
+        'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($,) => $.__d_map(($,key,) => null)),
         'Startdatum boekjaar': _p.deprecated_cc($['Startdatum boekjaar'], ($,) => $),
         'Verkoop saldo': _p.deprecated_cc($['Verkoop saldo'], ($,) => ({
             'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => $),
@@ -457,8 +418,7 @@ export const Root: t_signatures.Root = ($,) => ({
             'Afhandeling': _p.deprecated_cc($['Afhandeling'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Verkopen.D.Afhandeling => {
                 switch ($[0]) {
                     case 'Mutaties':
-                        return _p.ss($, ($,) => ['Mutaties', ({
-                        })])
+                        return _p.ss($, ($,) => ['Mutaties', null])
                     case 'Rekening courant':
                         return _p.ss($, ($,) => ['Rekening courant', ({
                             'Rekening courant': _p.deprecated_cc($['Rekening courant'], ($,) => $),
@@ -500,15 +460,13 @@ export const Root: t_signatures.Root = ($,) => ({
                 'BTW-regime': _p.deprecated_cc($['BTW-regime'], ($,) => _p.decide.state($, ($,): t_out.Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime => {
                     switch ($[0]) {
                         case 'Intracommunautair':
-                            return _p.ss($, ($,) => ['Intracommunautair', ({
-                            })])
+                            return _p.ss($, ($,) => ['Intracommunautair', null])
                         case 'Standaard':
                             return _p.ss($, ($,) => ['Standaard', ({
                                 'BTW-categorie': _p.deprecated_cc($['BTW-categorie'], ($,) => $),
                             })])
                         case 'Binnenland: heffing verlegd':
-                            return _p.ss($, ($,) => ['Binnenland: heffing verlegd', ({
-                            })])
+                            return _p.ss($, ($,) => ['Binnenland: heffing verlegd', null])
                         default:
                             return _p.au($[0])
                     }
@@ -521,8 +479,7 @@ export const Root: t_signatures.Root = ($,) => ({
                                 'Opbrengst': _p.deprecated_cc($['Opbrengst'], ($,) => $),
                             })])
                         case 'Los':
-                            return _p.ss($, ($,) => ['Los', ({
-                            })])
+                            return _p.ss($, ($,) => ['Los', null])
                         case 'Licentieovereenkomst':
                             return _p.ss($, ($,) => ['Licentieovereenkomst', ({
                                 'Periode': _p.deprecated_cc($['Periode'], ($,) => $),
@@ -603,8 +560,6 @@ export const Root: t_signatures.Root = ($,) => ({
             }))),
         }))),
     }))),
-    'Leveranciers': _p.deprecated_cc($['Leveranciers'], ($,) => $.__d_map(($,key,) => ({
-    }))),
-    'Medewerkers': _p.deprecated_cc($['Medewerkers'], ($,) => $.__d_map(($,key,) => ({
-    }))),
+    'Leveranciers': _p.deprecated_cc($['Leveranciers'], ($,) => $.__d_map(($,key,) => null)),
+    'Medewerkers': _p.deprecated_cc($['Medewerkers'], ($,) => $.__d_map(($,key,) => null)),
 })
