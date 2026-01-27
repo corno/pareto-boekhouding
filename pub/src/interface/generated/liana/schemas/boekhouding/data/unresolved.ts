@@ -283,26 +283,26 @@ export namespace Grootboek_Categorieen_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export type key = string
+                                        export type id = string
                                         
                                     }
                                     
                                     export type Hoofdcategorie_fiscus = {
                                         readonly 'location': Hoofdcategorie_fiscus.location
-                                        readonly 'key': Hoofdcategorie_fiscus.key
+                                        readonly 'id': Hoofdcategorie_fiscus.id
                                     }
                                     
                                     export namespace Subcategorie_fiscus {
                                         
                                         export type location = i__location.Location
                                         
-                                        export type key = string
+                                        export type id = string
                                         
                                     }
                                     
                                     export type Subcategorie_fiscus = {
                                         readonly 'location': Subcategorie_fiscus.location
-                                        readonly 'key': Subcategorie_fiscus.key
+                                        readonly 'id': Subcategorie_fiscus.id
                                     }
                                     
                                 }
@@ -406,26 +406,26 @@ export namespace Grootboek_Categorieen_ {
                                         
                                         export type location = i__location.Location
                                         
-                                        export type key = string
+                                        export type id = string
                                         
                                     }
                                     
                                     export type Hoofdcategorie_fiscus = {
                                         readonly 'location': Hoofdcategorie_fiscus.location
-                                        readonly 'key': Hoofdcategorie_fiscus.key
+                                        readonly 'id': Hoofdcategorie_fiscus.id
                                     }
                                     
                                     export namespace Subcategorie_fiscus {
                                         
                                         export type location = i__location.Location
                                         
-                                        export type key = string
+                                        export type id = string
                                         
                                     }
                                     
                                     export type Subcategorie_fiscus = {
                                         readonly 'location': Subcategorie_fiscus.location
-                                        readonly 'key': Subcategorie_fiscus.key
+                                        readonly 'id': Subcategorie_fiscus.id
                                     }
                                     
                                 }
@@ -570,26 +570,26 @@ export namespace Beheer_ {
                             
                             export type location = i__location.Location
                             
-                            export type key = string
+                            export type id = string
                             
                         }
                         
                         export type Hoofdcategorie = {
                             readonly 'location': Hoofdcategorie.location
-                            readonly 'key': Hoofdcategorie.key
+                            readonly 'id': Hoofdcategorie.id
                         }
                         
                         export namespace Subcategorie {
                             
                             export type location = i__location.Location
                             
-                            export type key = string
+                            export type id = string
                             
                         }
                         
                         export type Subcategorie = {
                             readonly 'location': Subcategorie.location
-                            readonly 'key': Subcategorie.key
+                            readonly 'id': Subcategorie.id
                         }
                         
                         export namespace Zijde {
@@ -657,26 +657,26 @@ export namespace Beheer_ {
                             
                             export type location = i__location.Location
                             
-                            export type key = string
+                            export type id = string
                             
                         }
                         
                         export type Hoofdcategorie = {
                             readonly 'location': Hoofdcategorie.location
-                            readonly 'key': Hoofdcategorie.key
+                            readonly 'id': Hoofdcategorie.id
                         }
                         
                         export namespace Subcategorie {
                             
                             export type location = i__location.Location
                             
-                            export type key = string
+                            export type id = string
                             
                         }
                         
                         export type Subcategorie = {
                             readonly 'location': Subcategorie.location
-                            readonly 'key': Subcategorie.key
+                            readonly 'id': Subcategorie.id
                         }
                         
                         export namespace Zijde {
@@ -699,13 +699,13 @@ export namespace Beheer_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Correctietype = {
                                                     readonly 'location': Correctietype.location
-                                                    readonly 'key': Correctietype.key
+                                                    readonly 'id': Correctietype.id
                                                 }
                                                 
                                             }
@@ -1324,13 +1324,13 @@ export namespace Jaarbeheer_ {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type Grootboekrekening_voor_BTW_afrondingen = {
             readonly 'location': Grootboekrekening_voor_BTW_afrondingen.location
-            readonly 'key': Grootboekrekening_voor_BTW_afrondingen.key
+            readonly 'id': Grootboekrekening_voor_BTW_afrondingen.id
         }
         
         export namespace Salarisrondes {
@@ -1523,65 +1523,65 @@ export namespace Jaarbeheer_ {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type Grootboekrekening_voor_nog_aan_te_geven_BTW = {
             readonly 'location': Grootboekrekening_voor_nog_aan_te_geven_BTW.location
-            readonly 'key': Grootboekrekening_voor_nog_aan_te_geven_BTW.key
+            readonly 'id': Grootboekrekening_voor_nog_aan_te_geven_BTW.id
         }
         
         export namespace Grootboekrekening_voor_resultaat_dit_jaar {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type Grootboekrekening_voor_resultaat_dit_jaar = {
             readonly 'location': Grootboekrekening_voor_resultaat_dit_jaar.location
-            readonly 'key': Grootboekrekening_voor_resultaat_dit_jaar.key
+            readonly 'id': Grootboekrekening_voor_resultaat_dit_jaar.id
         }
         
         export namespace Grootboekrekening_voor_winstreserve {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type Grootboekrekening_voor_winstreserve = {
             readonly 'location': Grootboekrekening_voor_winstreserve.location
-            readonly 'key': Grootboekrekening_voor_winstreserve.key
+            readonly 'id': Grootboekrekening_voor_winstreserve.id
         }
         
         export namespace Grootboekrekening_voor_Inkoop_saldo {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type Grootboekrekening_voor_Inkoop_saldo = {
             readonly 'location': Grootboekrekening_voor_Inkoop_saldo.location
-            readonly 'key': Grootboekrekening_voor_Inkoop_saldo.key
+            readonly 'id': Grootboekrekening_voor_Inkoop_saldo.id
         }
         
         export namespace Grootboekrekening_voor_Verkoop_saldo {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type Grootboekrekening_voor_Verkoop_saldo = {
             readonly 'location': Grootboekrekening_voor_Verkoop_saldo.location
-            readonly 'key': Grootboekrekening_voor_Verkoop_saldo.key
+            readonly 'id': Grootboekrekening_voor_Verkoop_saldo.id
         }
         
         export type Beginsaldo_nog_aan_te_geven_BTW = number
@@ -1606,13 +1606,13 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Location
                             
-                            export type key = string
+                            export type id = string
                             
                         }
                         
                         export type Grootboekrekening = {
                             readonly 'location': Grootboekrekening.location
-                            readonly 'key': Grootboekrekening.key
+                            readonly 'id': Grootboekrekening.id
                         }
                         
                         export namespace Nieuw {
@@ -1690,13 +1690,13 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Location
                             
-                            export type key = string
+                            export type id = string
                             
                         }
                         
                         export type Grootboekrekening = {
                             readonly 'location': Grootboekrekening.location
-                            readonly 'key': Grootboekrekening.key
+                            readonly 'id': Grootboekrekening.id
                         }
                         
                         export namespace Nieuw {
@@ -1892,13 +1892,13 @@ export namespace Overige_balans_item_ {
         
         export type location = i__location.Location
         
-        export type key = string
+        export type id = string
         
     }
     
     export type Grootboekrekening = {
         readonly 'location': Grootboekrekening.location
-        readonly 'key': Grootboekrekening.key
+        readonly 'id': Grootboekrekening.id
     }
     
     export namespace Nieuw {
@@ -1915,13 +1915,13 @@ export namespace Overige_balans_item_ {
                     
                     export type location = i__location.Location
                     
-                    export type key = string
+                    export type id = string
                     
                 }
                 
                 export type Balans_item = {
                     readonly 'location': Balans_item.location
-                    readonly 'key': Balans_item.key
+                    readonly 'id': Balans_item.id
                 }
                 
             }
@@ -1955,26 +1955,26 @@ export namespace Verwijzing_naar_Informele_rekening_ {
     
     export type location = i__location.Location
     
-    export type key = string
+    export type id = string
     
 }
 
 export type Verwijzing_naar_Informele_rekening_ = {
     readonly 'location': Verwijzing_naar_Informele_rekening_.location
-    readonly 'key': Verwijzing_naar_Informele_rekening_.key
+    readonly 'id': Verwijzing_naar_Informele_rekening_.id
 }
 
 export namespace Verwijzing_naar_Bankrekening_ {
     
     export type location = i__location.Location
     
-    export type key = string
+    export type id = string
     
 }
 
 export type Verwijzing_naar_Bankrekening_ = {
     readonly 'location': Verwijzing_naar_Bankrekening_.location
-    readonly 'key': Verwijzing_naar_Bankrekening_.key
+    readonly 'id': Verwijzing_naar_Bankrekening_.id
 }
 
 export namespace Handelstransacties_ {
@@ -2005,13 +2005,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Rekening_courant = {
                                     readonly 'location': Rekening_courant.location
-                                    readonly 'key': Rekening_courant.key
+                                    readonly 'id': Rekening_courant.id
                                 }
                                 
                             }
@@ -2053,13 +2053,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type BTW$mi_periode = {
                                     readonly 'location': BTW$mi_periode.location
-                                    readonly 'key': BTW$mi_periode.key
+                                    readonly 'id': BTW$mi_periode.id
                                 }
                                 
                             }
@@ -2177,13 +2177,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Balans_item = {
                                                     readonly 'location': Balans_item.location
-                                                    readonly 'key': Balans_item.key
+                                                    readonly 'id': Balans_item.id
                                                 }
                                                 
                                             }
@@ -2198,13 +2198,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Grootboekrekening = {
                                                     readonly 'location': Grootboekrekening.location
-                                                    readonly 'key': Grootboekrekening.key
+                                                    readonly 'id': Grootboekrekening.id
                                                 }
                                                 
                                             }
@@ -2266,13 +2266,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Crediteur = {
                                     readonly 'location': Crediteur.location
-                                    readonly 'key': Crediteur.key
+                                    readonly 'id': Crediteur.id
                                 }
                                 
                                 export type Factuurnummer = string
@@ -2290,13 +2290,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Ronde = {
                                     readonly 'location': Ronde.location
-                                    readonly 'key': Ronde.key
+                                    readonly 'id': Ronde.id
                                 }
                                 
                             }
@@ -2311,26 +2311,26 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Ronde = {
                                     readonly 'location': Ronde.location
-                                    readonly 'key': Ronde.key
+                                    readonly 'id': Ronde.id
                                 }
                                 
                                 export namespace Medewerker {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Medewerker = {
                                     readonly 'location': Medewerker.location
-                                    readonly 'key': Medewerker.key
+                                    readonly 'id': Medewerker.id
                                 }
                                 
                             }
@@ -2410,13 +2410,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Rekening_courant = {
                                     readonly 'location': Rekening_courant.location
-                                    readonly 'key': Rekening_courant.key
+                                    readonly 'id': Rekening_courant.id
                                 }
                                 
                             }
@@ -2444,13 +2444,13 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export type key = string
+                        export type id = string
                         
                     }
                     
                     export type BTW$mi_periode = {
                         readonly 'location': BTW$mi_periode.location
-                        readonly 'key': BTW$mi_periode.key
+                        readonly 'id': BTW$mi_periode.id
                     }
                     
                     export namespace Brondocument {
@@ -2485,13 +2485,13 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Location
                         
-                        export type key = string
+                        export type id = string
                         
                     }
                     
                     export type Debiteur = {
                         readonly 'location': Debiteur.location
-                        readonly 'key': Debiteur.key
+                        readonly 'id': Debiteur.id
                     }
                     
                     export namespace Contracttype {
@@ -2506,26 +2506,26 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Project = {
                                     readonly 'location': Project.location
-                                    readonly 'key': Project.key
+                                    readonly 'id': Project.id
                                 }
                                 
                                 export namespace Offerte {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Offerte = {
                                     readonly 'location': Offerte.location
-                                    readonly 'key': Offerte.key
+                                    readonly 'id': Offerte.id
                                 }
                                 
                             }
@@ -2541,13 +2541,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Overeenkomst = {
                                     readonly 'location': Overeenkomst.location
-                                    readonly 'key': Overeenkomst.key
+                                    readonly 'id': Overeenkomst.id
                                 }
                                 
                             }
@@ -2597,13 +2597,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type BTW$mi_categorie = {
                                                     readonly 'location': BTW$mi_categorie.location
-                                                    readonly 'key': BTW$mi_categorie.key
+                                                    readonly 'id': BTW$mi_categorie.id
                                                 }
                                                 
                                             }
@@ -2642,13 +2642,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Opbrengst = {
                                                     readonly 'location': Opbrengst.location
-                                                    readonly 'key': Opbrengst.key
+                                                    readonly 'id': Opbrengst.id
                                                 }
                                                 
                                             }
@@ -2665,13 +2665,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Periode = {
                                                     readonly 'location': Periode.location
-                                                    readonly 'key': Periode.key
+                                                    readonly 'id': Periode.id
                                                 }
                                                 
                                             }
@@ -2708,13 +2708,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Grootboekrekening = {
                                                     readonly 'location': Grootboekrekening.location
-                                                    readonly 'key': Grootboekrekening.key
+                                                    readonly 'id': Grootboekrekening.id
                                                 }
                                                 
                                             }
@@ -2729,13 +2729,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Balans_item = {
                                                     readonly 'location': Balans_item.location
-                                                    readonly 'key': Balans_item.key
+                                                    readonly 'id': Balans_item.id
                                                 }
                                                 
                                             }
@@ -2869,13 +2869,13 @@ export namespace Mutaties_ {
                                                         
                                                         export type location = i__location.Location
                                                         
-                                                        export type key = string
+                                                        export type id = string
                                                         
                                                     }
                                                     
                                                     export type Informele_rekening = {
                                                         readonly 'location': Informele_rekening.location
-                                                        readonly 'key': Informele_rekening.key
+                                                        readonly 'id': Informele_rekening.id
                                                     }
                                                     
                                                 }
@@ -2992,13 +2992,13 @@ export namespace Mutaties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Informele_rekening = {
                                                     readonly 'location': Informele_rekening.location
-                                                    readonly 'key': Informele_rekening.key
+                                                    readonly 'id': Informele_rekening.id
                                                 }
                                                 
                                             }
@@ -3013,13 +3013,13 @@ export namespace Mutaties_ {
                                                     
                                                     export type location = i__location.Location
                                                     
-                                                    export type key = string
+                                                    export type id = string
                                                     
                                                 }
                                                 
                                                 export type Verrekenpost = {
                                                     readonly 'location': Verrekenpost.location
-                                                    readonly 'key': Verrekenpost.key
+                                                    readonly 'id': Verrekenpost.id
                                                 }
                                                 
                                             }
@@ -3122,13 +3122,13 @@ export namespace Mutaties_ {
                                     
                                     export type location = i__location.Location
                                     
-                                    export type key = string
+                                    export type id = string
                                     
                                 }
                                 
                                 export type Grootboekrekening = {
                                     readonly 'location': Grootboekrekening.location
-                                    readonly 'key': Grootboekrekening.key
+                                    readonly 'id': Grootboekrekening.id
                                 }
                                 
                             }
@@ -3269,13 +3269,13 @@ export namespace Balans_Resultaat_Mutatie_ {
             
             export type location = i__location.Location
             
-            export type key = string
+            export type id = string
             
         }
         
         export type O = {
             readonly 'location': O.location
-            readonly 'key': O.key
+            readonly 'id': O.id
         }
         
     }
@@ -3292,39 +3292,39 @@ export namespace Balans_Resultaat_Mutatie_ {
                 
                 export type location = i__location.Location
                 
-                export type key = string
+                export type id = string
                 
             }
             
             export type Inkoop = {
                 readonly 'location': Inkoop.location
-                readonly 'key': Inkoop.key
+                readonly 'id': Inkoop.id
             }
             
             export namespace Verkoop {
                 
                 export type location = i__location.Location
                 
-                export type key = string
+                export type id = string
                 
             }
             
             export type Verkoop = {
                 readonly 'location': Verkoop.location
-                readonly 'key': Verkoop.key
+                readonly 'id': Verkoop.id
             }
             
             export namespace BTW$mi_periode {
                 
                 export type location = i__location.Location
                 
-                export type key = string
+                export type id = string
                 
             }
             
             export type BTW$mi_periode = {
                 readonly 'location': BTW$mi_periode.location
-                readonly 'key': BTW$mi_periode.key
+                readonly 'id': BTW$mi_periode.id
             }
             
         }
@@ -3362,13 +3362,13 @@ export namespace Eerste_boekjaar_ {
                 
                 export type location = i__location.Location
                 
-                export type key = string
+                export type id = string
                 
             }
             
             export type Vorig_boekjaar = {
                 readonly 'location': Vorig_boekjaar.location
-                readonly 'key': Vorig_boekjaar.key
+                readonly 'id': Vorig_boekjaar.id
             }
             
         }

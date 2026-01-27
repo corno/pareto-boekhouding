@@ -159,7 +159,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($,) =>
                                     'line': 42,
                                     'column': 42,
                                 }),
-                                'key': $['key'],
+                                'id': $['id'],
                             })),
                             'Subcategorie fiscus': _p.deprecated_cc($['Subcategorie fiscus'], ($,) => ({
                                 'location': ({
@@ -167,7 +167,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($,) =>
                                     'line': 42,
                                     'column': 42,
                                 }),
-                                'key': $['key'],
+                                'id': $['id'],
                             })),
                         }),
                         'location': ({
@@ -224,7 +224,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($,) =>
                                     'line': 42,
                                     'column': 42,
                                 }),
-                                'key': $['key'],
+                                'id': $['id'],
                             })),
                             'Subcategorie fiscus': _p.deprecated_cc($['Subcategorie fiscus'], ($,) => ({
                                 'location': ({
@@ -232,7 +232,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($,) =>
                                     'line': 42,
                                     'column': 42,
                                 }),
-                                'key': $['key'],
+                                'id': $['id'],
                             })),
                         }),
                         'location': ({
@@ -300,7 +300,7 @@ export const Beheer: t_signatures.Beheer = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                     'Subcategorie': _p.deprecated_cc($['Subcategorie'], ($,) => ({
                         'location': ({
@@ -308,7 +308,7 @@ export const Beheer: t_signatures.Beheer = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                     'Zijde': _p.deprecated_cc($['Zijde'], ($,) => ({
                         'location': ({
@@ -349,7 +349,7 @@ export const Beheer: t_signatures.Beheer = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                     'Subcategorie': _p.deprecated_cc($['Subcategorie'], ($,) => ({
                         'location': ({
@@ -357,7 +357,7 @@ export const Beheer: t_signatures.Beheer = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                     'Zijde': _p.deprecated_cc($['Zijde'], ($,) => ({
                         'location': ({
@@ -385,7 +385,7 @@ export const Beheer: t_signatures.Beheer = ($,) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 }),
-                                                                'key': $['key'],
+                                                                'id': $['id'],
                                                             })),
                                                         })])
                                                     case 'Nee':
@@ -668,7 +668,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                 'line': 42,
                 'column': 42,
             }),
-            'key': $['key'],
+            'id': $['id'],
         })),
         'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($,) => ({
             'location': ({
@@ -763,7 +763,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                 'line': 42,
                 'column': 42,
             }),
-            'key': $['key'],
+            'id': $['id'],
         })),
         'Grootboekrekening voor resultaat dit jaar': _p.deprecated_cc($['Grootboekrekening voor resultaat dit jaar'], ($,) => ({
             'location': ({
@@ -771,7 +771,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                 'line': 42,
                 'column': 42,
             }),
-            'key': $['key'],
+            'id': $['id'],
         })),
         'Grootboekrekening voor winstreserve': _p.deprecated_cc($['Grootboekrekening voor winstreserve'], ($,) => ({
             'location': ({
@@ -779,7 +779,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                 'line': 42,
                 'column': 42,
             }),
-            'key': $['key'],
+            'id': $['id'],
         })),
         'Grootboekrekening voor Inkoop saldo': _p.deprecated_cc($['Grootboekrekening voor Inkoop saldo'], ($,) => ({
             'location': ({
@@ -787,7 +787,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                 'line': 42,
                 'column': 42,
             }),
-            'key': $['key'],
+            'id': $['id'],
         })),
         'Grootboekrekening voor Verkoop saldo': _p.deprecated_cc($['Grootboekrekening voor Verkoop saldo'], ($,) => ({
             'location': ({
@@ -795,7 +795,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                 'line': 42,
                 'column': 42,
             }),
-            'key': $['key'],
+            'id': $['id'],
         })),
         'Beginsaldo nog aan te geven BTW': _p.deprecated_cc($['Beginsaldo nog aan te geven BTW'], ($,) => $),
         'Beginsaldo winstreserve': _p.deprecated_cc($['Beginsaldo winstreserve'], ($,) => $),
@@ -814,7 +814,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                     'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => ({
                         'location': ({
@@ -858,7 +858,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                     'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => ({
                         'location': ({
@@ -946,7 +946,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($,) => ({
             'line': 42,
             'column': 42,
         }),
-        'key': $['key'],
+        'id': $['id'],
     })),
     'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => ({
         'location': ({
@@ -966,7 +966,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($,) => ({
                                 'line': 42,
                                 'column': 42,
                             }),
-                            'key': $['key'],
+                            'id': $['id'],
                         })),
                     })])
                 default:
@@ -981,7 +981,7 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
         'line': 42,
         'column': 42,
     }),
-    'key': $['key'],
+    'id': $['id'],
 })
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($,) => ({
     'location': ({
@@ -989,7 +989,7 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
         'line': 42,
         'column': 42,
     }),
-    'key': $['key'],
+    'id': $['id'],
 })
 export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
     'Inkopen': _p.deprecated_cc($['Inkopen'], ($,) => ({
@@ -1018,7 +1018,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             default:
@@ -1050,7 +1050,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             default:
@@ -1123,7 +1123,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         case 'Kosten':
@@ -1134,7 +1134,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         default:
@@ -1168,7 +1168,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                     'Factuurnummer': _p.deprecated_cc($['Factuurnummer'], ($,) => $),
                                 })])
@@ -1180,7 +1180,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             case 'Salaris':
@@ -1191,7 +1191,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                     'Medewerker': _p.deprecated_cc($['Medewerker'], ($,) => ({
                                         'location': ({
@@ -1199,7 +1199,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             default:
@@ -1241,7 +1241,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             default:
@@ -1256,7 +1256,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                         'line': 42,
                         'column': 42,
                     }),
-                    'key': $['key'],
+                    'id': $['id'],
                 })),
                 'Brondocument': _p.deprecated_cc($['Brondocument'], ($,) => ({
                     'location': ({
@@ -1281,7 +1281,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                         'line': 42,
                         'column': 42,
                     }),
-                    'key': $['key'],
+                    'id': $['id'],
                 })),
                 'Contracttype': _p.deprecated_cc($['Contracttype'], ($,) => ({
                     'location': ({
@@ -1299,7 +1299,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                     'Offerte': _p.deprecated_cc($['Offerte'], ($,) => ({
                                         'location': ({
@@ -1307,7 +1307,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             case 'Licentieovereenkomst':
@@ -1318,7 +1318,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                             'line': 42,
                                             'column': 42,
                                         }),
-                                        'key': $['key'],
+                                        'id': $['id'],
                                     })),
                                 })])
                             default:
@@ -1353,7 +1353,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         case 'Binnenland: heffing verlegd':
@@ -1380,7 +1380,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         case 'Los':
@@ -1393,7 +1393,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         default:
@@ -1418,7 +1418,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         case 'Balans':
@@ -1429,7 +1429,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     }),
-                                                    'key': $['key'],
+                                                    'id': $['id'],
                                                 })),
                                             })])
                                         default:
@@ -1498,7 +1498,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 }),
-                                                                'key': $['key'],
+                                                                'id': $['id'],
                                                             })),
                                                         })])
                                                     default:
@@ -1567,7 +1567,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ({
                                                                 'line': 42,
                                                                 'column': 42,
                                                             }),
-                                                            'key': $['key'],
+                                                            'id': $['id'],
                                                         })),
                                                     })])
                                                 case 'Verrekenpost':
@@ -1578,7 +1578,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ({
                                                                 'line': 42,
                                                                 'column': 42,
                                                             }),
-                                                            'key': $['key'],
+                                                            'id': $['id'],
                                                         })),
                                                     })])
                                                 default:
@@ -1629,7 +1629,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ({
                                 'line': 42,
                                 'column': 42,
                             }),
-                            'key': $['key'],
+                            'id': $['id'],
                         })),
                     }),
                     'location': ({
@@ -1693,7 +1693,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             'line': 42,
             'column': 42,
         }),
-        'key': $['key'],
+        'id': $['id'],
     }))),
     'type': _p.deprecated_cc($['type'], ($,) => ({
         'location': ({
@@ -1710,7 +1710,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })])
                 case 'Verkoop':
                     return _p.ss($, ($,) => ['Verkoop', ({
@@ -1719,7 +1719,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })])
                 case 'BTW-periode':
                     return _p.ss($, ($,) => ['BTW-periode', ({
@@ -1728,7 +1728,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })])
                 default:
                     return _p.au($[0])
@@ -1754,7 +1754,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($,) => ({
                             'line': 42,
                             'column': 42,
                         }),
-                        'key': $['key'],
+                        'id': $['id'],
                     })),
                 })])
             default:

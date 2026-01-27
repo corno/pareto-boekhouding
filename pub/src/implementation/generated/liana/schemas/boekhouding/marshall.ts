@@ -75,11 +75,11 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($,) =>
         'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
             'Hoofdcategorie fiscus': _p.deprecated_cc($['Hoofdcategorie fiscus'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Subcategorie fiscus': _p.deprecated_cc($['Subcategorie fiscus'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
         }))]])]),
     }))]])]),
@@ -103,11 +103,11 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($,) =>
         'Subcategorieen': _p.deprecated_cc($['Subcategorieen'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
             'Hoofdcategorie fiscus': _p.deprecated_cc($['Hoofdcategorie fiscus'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Subcategorie fiscus': _p.deprecated_cc($['Subcategorie fiscus'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
         }))]])]),
     }))]])]),
@@ -135,11 +135,11 @@ export const Beheer: t_signatures.Beheer = ($,) => ['group', ['verbose', _p.dict
         'Balans': _p.deprecated_cc($['Balans'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
             'Hoofdcategorie': _p.deprecated_cc($['Hoofdcategorie'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Subcategorie': _p.deprecated_cc($['Subcategorie'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Zijde': _p.deprecated_cc($['Zijde'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                 switch ($[0]) {
@@ -161,11 +161,11 @@ export const Beheer: t_signatures.Beheer = ($,) => ['group', ['verbose', _p.dict
         'Resultaat': _p.deprecated_cc($['Resultaat'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
             'Hoofdcategorie': _p.deprecated_cc($['Hoofdcategorie'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Subcategorie': _p.deprecated_cc($['Subcategorie'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Zijde': _p.deprecated_cc($['Zijde'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                 switch ($[0]) {
@@ -181,7 +181,7 @@ export const Beheer: t_signatures.Beheer = ($,) => ['group', ['verbose', _p.dict
                                                 'value': ['group', ['verbose', _p.dictionary.literal(({
                                                     'Correctietype': _p.deprecated_cc($['Correctietype'], ($,) => ['text', ({
                                                         'delimiter': ['backtick', null],
-                                                        'value': $['key'],
+                                                        'value': $['id'],
                                                     })]),
                                                 }))]],
                                             }))
@@ -290,7 +290,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ['group', ['verbose',
     'Resultaat': _p.deprecated_cc($['Resultaat'], ($,) => ['group', ['verbose', _p.dictionary.literal(({
         'Grootboekrekening voor BTW afrondingen': _p.deprecated_cc($['Grootboekrekening voor BTW afrondingen'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($,) => ['dictionary', $.__d_map(($,key,) => ['nothing', null])]),
         'BTW periodes': _p.deprecated_cc($['BTW periodes'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
@@ -339,23 +339,23 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ['group', ['verbose',
     'Balans': _p.deprecated_cc($['Balans'], ($,) => ['group', ['verbose', _p.dictionary.literal(({
         'Grootboekrekening voor nog aan te geven BTW': _p.deprecated_cc($['Grootboekrekening voor nog aan te geven BTW'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Grootboekrekening voor resultaat dit jaar': _p.deprecated_cc($['Grootboekrekening voor resultaat dit jaar'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Grootboekrekening voor winstreserve': _p.deprecated_cc($['Grootboekrekening voor winstreserve'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Grootboekrekening voor Inkoop saldo': _p.deprecated_cc($['Grootboekrekening voor Inkoop saldo'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Grootboekrekening voor Verkoop saldo': _p.deprecated_cc($['Grootboekrekening voor Verkoop saldo'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Beginsaldo nog aan te geven BTW': _p.deprecated_cc($['Beginsaldo nog aan te geven BTW'], ($,) => ['text', ({
             'delimiter': ['none', null],
@@ -372,7 +372,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ['group', ['verbose',
             })]),
             'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                 switch ($[0]) {
@@ -400,7 +400,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($,) => ['group', ['verbose',
             })]),
             'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => ['text', ({
                 'delimiter': ['backtick', null],
-                'value': $['key'],
+                'value': $['id'],
             })]),
             'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
                 switch ($[0]) {
@@ -446,7 +446,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($,) => ['g
     })]),
     'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => ['text', ({
         'delimiter': ['backtick', null],
-        'value': $['key'],
+        'value': $['id'],
     })]),
     'Nieuw': _p.deprecated_cc($['Nieuw'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
         switch ($[0]) {
@@ -461,7 +461,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($,) => ['g
                     'value': ['group', ['verbose', _p.dictionary.literal(({
                         'Balans item': _p.deprecated_cc($['Balans item'], ($,) => ['text', ({
                             'delimiter': ['backtick', null],
-                            'value': $['key'],
+                            'value': $['id'],
                         })]),
                     }))]],
                 }))
@@ -472,11 +472,11 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($,) => ['g
 }))]]
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($,) => ['text', ({
     'delimiter': ['backtick', null],
-    'value': $['key'],
+    'value': $['id'],
 })]
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($,) => ['text', ({
     'delimiter': ['backtick', null],
-    'value': $['key'],
+    'value': $['id'],
 })]
 export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['group', ['verbose', _p.dictionary.literal(({
     'Inkopen': _p.deprecated_cc($['Inkopen'], ($,) => ['dictionary', $.__d_map(($,key,) => ['group', ['verbose', _p.dictionary.literal(({
@@ -493,7 +493,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Rekening courant': _p.deprecated_cc($['Rekening courant'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -529,7 +529,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'BTW-periode': _p.deprecated_cc($['BTW-periode'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -600,7 +600,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'Balans item': _p.deprecated_cc($['Balans item'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -610,7 +610,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -632,7 +632,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Crediteur': _p.deprecated_cc($['Crediteur'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                             'Factuurnummer': _p.deprecated_cc($['Factuurnummer'], ($,) => ['text', ({
                                 'delimiter': ['quote', null],
@@ -646,7 +646,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Ronde': _p.deprecated_cc($['Ronde'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -656,11 +656,11 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Ronde': _p.deprecated_cc($['Ronde'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                             'Medewerker': _p.deprecated_cc($['Medewerker'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -683,7 +683,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Rekening courant': _p.deprecated_cc($['Rekening courant'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -697,7 +697,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
         })]),
         'BTW-periode': _p.deprecated_cc($['BTW-periode'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Brondocument': _p.deprecated_cc($['Brondocument'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
             switch ($[0]) {
@@ -717,7 +717,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
         })]),
         'Debiteur': _p.deprecated_cc($['Debiteur'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
         'Contracttype': _p.deprecated_cc($['Contracttype'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
             switch ($[0]) {
@@ -727,11 +727,11 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Project': _p.deprecated_cc($['Project'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                             'Offerte': _p.deprecated_cc($['Offerte'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -741,7 +741,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                         'value': ['group', ['verbose', _p.dictionary.literal(({
                             'Overeenkomst': _p.deprecated_cc($['Overeenkomst'], ($,) => ['text', ({
                                 'delimiter': ['backtick', null],
-                                'value': $['key'],
+                                'value': $['id'],
                             })]),
                         }))]],
                     }))
@@ -767,7 +767,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'BTW-categorie': _p.deprecated_cc($['BTW-categorie'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -792,7 +792,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'Opbrengst': _p.deprecated_cc($['Opbrengst'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -807,7 +807,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'Periode': _p.deprecated_cc($['Periode'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -827,7 +827,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -837,7 +837,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($,) => ['gro
                             'value': ['group', ['verbose', _p.dictionary.literal(({
                                 'Balans item': _p.deprecated_cc($['Balans item'], ($,) => ['text', ({
                                     'delimiter': ['backtick', null],
-                                    'value': $['key'],
+                                    'value': $['id'],
                                 })]),
                             }))]],
                         }))
@@ -872,7 +872,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ['group', ['verbose', _p.
                                         'value': ['group', ['verbose', _p.dictionary.literal(({
                                             'Informele rekening': _p.deprecated_cc($['Informele rekening'], ($,) => ['text', ({
                                                 'delimiter': ['backtick', null],
-                                                'value': $['key'],
+                                                'value': $['id'],
                                             })]),
                                         }))]],
                                     }))
@@ -904,7 +904,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ['group', ['verbose', _p.
                                     'value': ['group', ['verbose', _p.dictionary.literal(({
                                         'Informele rekening': _p.deprecated_cc($['Informele rekening'], ($,) => ['text', ({
                                             'delimiter': ['backtick', null],
-                                            'value': $['key'],
+                                            'value': $['id'],
                                         })]),
                                     }))]],
                                 }))
@@ -914,7 +914,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ['group', ['verbose', _p.
                                     'value': ['group', ['verbose', _p.dictionary.literal(({
                                         'Verrekenpost': _p.deprecated_cc($['Verrekenpost'], ($,) => ['text', ({
                                             'delimiter': ['backtick', null],
-                                            'value': $['key'],
+                                            'value': $['id'],
                                         })]),
                                     }))]],
                                 }))
@@ -942,7 +942,7 @@ export const Mutaties: t_signatures.Mutaties = ($,) => ['group', ['verbose', _p.
         })]),
         'Grootboekrekening': _p.deprecated_cc($['Grootboekrekening'], ($,) => ['text', ({
             'delimiter': ['backtick', null],
-            'value': $['key'],
+            'value': $['id'],
         })]),
     }))]])])]),
 }))]]
@@ -976,7 +976,7 @@ export const Jaren: t_signatures.Jaren = ($,) => ['dictionary', $.__d_map(($,key
 export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($,) => ['group', ['verbose', _p.dictionary.literal(({
     'Jaar': _p.deprecated_cc($['Jaar'], ($,) => ['optional', $.__decide(($,): t_out.Value.optional => ['set', ['text', ({
         'delimiter': ['backtick', null],
-        'value': $['key'],
+        'value': $['id'],
     })]], () => ['not set', null])]),
     'type': _p.deprecated_cc($['type'], ($,) => ['state', _p.decide.state($, ($,): t_out.Value.state => {
         switch ($[0]) {
@@ -985,7 +985,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     'option': 'Inkoop',
                     'value': ['text', ({
                         'delimiter': ['backtick', null],
-                        'value': $['key'],
+                        'value': $['id'],
                     })],
                 }))
             case 'Verkoop':
@@ -993,7 +993,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     'option': 'Verkoop',
                     'value': ['text', ({
                         'delimiter': ['backtick', null],
-                        'value': $['key'],
+                        'value': $['id'],
                     })],
                 }))
             case 'BTW-periode':
@@ -1001,7 +1001,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     'option': 'BTW-periode',
                     'value': ['text', ({
                         'delimiter': ['backtick', null],
-                        'value': $['key'],
+                        'value': $['id'],
                     })],
                 }))
             default:
@@ -1022,7 +1022,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($,) => ['state', _
                 'value': ['group', ['verbose', _p.dictionary.literal(({
                     'Vorig boekjaar': _p.deprecated_cc($['Vorig boekjaar'], ($,) => ['text', ({
                         'delimiter': ['backtick', null],
-                        'value': $['key'],
+                        'value': $['id'],
                     })]),
                 }))]],
             }))
