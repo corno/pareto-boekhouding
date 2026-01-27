@@ -25,9 +25,9 @@ namespace _psh {
         // 'uri': _pds.text.source_file(depth)
     })
 
-    export type Raw_Or_Normal_Dictionary<T> = { [key: string]: T } | _pi.Dictionary<T>
+    export type Raw_Or_Normal_Dictionary<T> = { [id: string]: T } | _pi.Dictionary<T>
     export type Raw_Or_Normal_List<T> = T[] | _pi.List<T>
-    export type Raw_Dictionary<T> = { [key: string]: T }
+    export type Raw_Dictionary<T> = { [id: string]: T }
 
     export type Reference_To_Normal_Dictionary_Entry<G_Source, T_Dictionary_Entry> = {
         readonly 'key': string
@@ -506,7 +506,7 @@ export const Jaarbeheer: d_signatures.Jaarbeheer = ($) => ({
         'Salarisrondes': _p.deprecated_cc($['Salarisrondes'], ($) => _psh.wrap_dictionary($.__d_map(($) => null))),
     })),
 })
-export const Jaren: d_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.__d_map(($, key) => ({
+export const Jaren: d_signatures.Jaren = ($) => _psh.wrap_dictionary($.Jaren.__d_map(($, id) => ({
     'Afgesloten': _p.deprecated_cc($['Afgesloten'], ($) => _p.deprecated_cc($, ($): d_out.Jaren.D.Afgesloten<d_token._T_Range> => {
         switch ($[0]) {
             case 'Ja': return _p.ss($, ($) => _psh.wrap_state_group(['Ja', null]))

@@ -32,7 +32,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
         return {
             'bron': $,
             'grootboekrekeningen': {
-                'balans': $.Grootboekrekeningen.Balans.__d_map(($, key): d_out.Balans_Grootboekrekening => {
+                'balans': $.Grootboekrekeningen.Balans.__d_map(($, id): d_out.Balans_Grootboekrekening => {
                     return {
                         'bron': $,
                         'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
@@ -59,7 +59,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                         })),
                     }
                 }),
-                'resultaat': $.Grootboekrekeningen.Resultaat.__d_map(($, key) => ({
+                'resultaat': $.Grootboekrekeningen.Resultaat.__d_map(($, id) => ({
                     'bron': $,
                     'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
 

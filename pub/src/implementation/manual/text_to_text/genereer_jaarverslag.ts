@@ -21,21 +21,21 @@ export const $$: Signature = ($, abort, $p) => {
     )
 
     //temp
-    x3.jaren.__d_map(($, key) => {
+    x3.jaren.__d_map(($, id) => {
         _pdev.log_debug_message(key, () => { })
         _pdev.log_debug_message(`  'balans'`, () => { })
-        $.grootboekrekeningen.balans.__d_map(($, key) => {
+        $.grootboekrekeningen.balans.__d_map(($, id) => {
             _pdev.log_debug_message(`    ${key}`, () => { })
             _pdev.log_debug_message(`      'inkopen'`, () => { })
-            $['gerelateerde inkopen'].__d_map(($, key) => {
+            $['gerelateerde inkopen'].__d_map(($, id) => {
                 _pdev.log_debug_message(`        ${key}`, () => { })
             })
         })
         _pdev.log_debug_message(`  'resultaat'`, () => { })
-        $.grootboekrekeningen.resultaat.__d_map(($, key) => {
+        $.grootboekrekeningen.resultaat.__d_map(($, id) => {
             _pdev.log_debug_message(`    ${key}`, () => { })
             _pdev.log_debug_message(`      'inkopen'`, () => { })
-            $['gerelateerde inkopen'].__d_map(($, key) => {
+            $['gerelateerde inkopen'].__d_map(($, id) => {
                 _pdev.log_debug_message(`        ${key}`, () => { })
             })
         })
