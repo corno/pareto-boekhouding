@@ -15,6 +15,10 @@ export namespace Bestandsnaam_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -22,6 +26,10 @@ export namespace Bestandsnaam_ {
 export type Bestandsnaam_ = (
     context: Bestandsnaam_.I,
     abort: _pi.Abort<Bestandsnaam_.E>,
+    parameters: {
+        readonly 'document resource identifier': Bestandsnaam_.P.document_resource_identifier
+        readonly 'indentation': Bestandsnaam_.P.indentation
+    },
 ) => Bestandsnaam_.O
 
 export namespace Root_ {
@@ -34,6 +42,10 @@ export namespace Root_ {
     
     export namespace P {
         
+        export type document_resource_identifier = string
+        
+        export type indentation = number
+        
     }
     
 }
@@ -41,6 +53,10 @@ export namespace Root_ {
 export type Root_ = (
     context: Root_.I,
     abort: _pi.Abort<Root_.E>,
+    parameters: {
+        readonly 'document resource identifier': Root_.P.document_resource_identifier
+        readonly 'indentation': Root_.P.indentation
+    },
 ) => Root_.O
 
 export { 
