@@ -11,6 +11,8 @@ import {
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/unmarshall"
 
+import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
+
 import * as v_deserialize_number from "liana-core/dist/implementation/manual/primitives/integer/deserializers/decimal"
 
 import * as v_deserialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/deserializers/true_false"
@@ -144,7 +146,50 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_unreachable_code_path(
+                                                    ($) => _p_cc(
+                                                        v_unmarshalled_from_parse_tree.State(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a state', null]
+                                                            )
+                                                        ),
+                                                        ($) => _p.decide.text(
+                                                            $['option']['value'],
+                                                            ($t): t_out.Root.Beheer.Balans.Grootboekrekeningen.D.Zijde => {
+                                                                switch ($t) {
+                                                                    case 'Activa':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Activa', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    case 'Passiva':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Passiva', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return abort(
+                                                                            ['unknown option', $['option']['value']]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
                                                     )
                                                 ),
                                             })
@@ -179,7 +224,50 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_unreachable_code_path(
+                                                    ($) => _p_cc(
+                                                        v_unmarshalled_from_parse_tree.State(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a state', null]
+                                                            )
+                                                        ),
+                                                        ($) => _p.decide.text(
+                                                            $['option']['value'],
+                                                            ($t): t_out.Root.Beheer.Balans.Hoofdcategorieen.D.Zijde => {
+                                                                switch ($t) {
+                                                                    case 'Activa':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Activa', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    case 'Passiva':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Passiva', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return abort(
+                                                                            ['unknown option', $['option']['value']]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
@@ -267,7 +355,50 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_unreachable_code_path(
+                                                    ($) => _p_cc(
+                                                        v_unmarshalled_from_parse_tree.State(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a state', null]
+                                                            )
+                                                        ),
+                                                        ($) => _p.decide.text(
+                                                            $['option']['value'],
+                                                            ($t): t_out.Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde => {
+                                                                switch ($t) {
+                                                                    case 'Activa':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Activa', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    case 'Passiva':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Passiva', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return abort(
+                                                                            ['unknown option', $['option']['value']]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
@@ -329,7 +460,70 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['no such entry', "BTW-heffing"]
                                             )
                                         ),
-                                        ($) => _p_unreachable_code_path(
+                                        ($) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.State(
+                                                $,
+                                                ($) => abort(
+                                                    ['expected a state', null]
+                                                )
+                                            ),
+                                            ($) => _p.decide.text(
+                                                $['option']['value'],
+                                                ($t): t_out.Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
+                                                    switch ($t) {
+                                                        case 'Ja':
+                                                            return _p_cc(
+                                                                $['value'],
+                                                                ($) => ['Ja', _p_cc(
+                                                                    v_unmarshalled_from_parse_tree.Group(
+                                                                        $,
+                                                                        ($) => abort(
+                                                                            ['expected a group', null]
+                                                                        )
+                                                                    ),
+                                                                    ($) => ({
+                                                                        'BTW-promillage': _p_cc(
+                                                                            $.__get_entry(
+                                                                                'BTW-promillage',
+                                                                                ($) => abort(
+                                                                                    ['no such entry', "BTW-promillage"]
+                                                                                )
+                                                                            ),
+                                                                            ($) => v_deserialize_number.deserialize(
+                                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => abort(
+                                                                                    ['not a valid number', null]
+                                                                                )
+                                                                            )
+                                                                        ),
+                                                                    })
+                                                                )]
+                                                            )
+                                                        case 'Nee':
+                                                            return _p_cc(
+                                                                $['value'],
+                                                                ($) => ['Nee', _p_cc(
+                                                                    v_unmarshalled_from_parse_tree.Group(
+                                                                        $,
+                                                                        ($) => abort(
+                                                                            ['expected a group', null]
+                                                                        )
+                                                                    ),
+                                                                    ($) => null
+                                                                )]
+                                                            )
+                                                        default:
+                                                            return abort(
+                                                                ['unknown option', $['option']['value']]
+                                                            )
+                                                    }
+                                                }
+                                            )
                                         )
                                     ),
                                 })
@@ -523,7 +717,119 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_unreachable_code_path(
+                                                    ($) => _p_cc(
+                                                        v_unmarshalled_from_parse_tree.State(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a state', null]
+                                                            )
+                                                        ),
+                                                        ($) => _p.decide.text(
+                                                            $['option']['value'],
+                                                            ($t): t_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde => {
+                                                                switch ($t) {
+                                                                    case 'Kosten':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Kosten', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => ({
+                                                                                    'Correctie op vennootschapsbelasting': _p_cc(
+                                                                                        $.__get_entry(
+                                                                                            'Correctie op vennootschapsbelasting',
+                                                                                            ($) => abort(
+                                                                                                ['no such entry', "Correctie op vennootschapsbelasting"]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => _p_cc(
+                                                                                            v_unmarshalled_from_parse_tree.State(
+                                                                                                $,
+                                                                                                ($) => abort(
+                                                                                                    ['expected a state', null]
+                                                                                                )
+                                                                                            ),
+                                                                                            ($) => _p.decide.text(
+                                                                                                $['option']['value'],
+                                                                                                ($t): t_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
+                                                                                                    switch ($t) {
+                                                                                                        case 'Ja':
+                                                                                                            return _p_cc(
+                                                                                                                $['value'],
+                                                                                                                ($) => ['Ja', _p_cc(
+                                                                                                                    v_unmarshalled_from_parse_tree.Group(
+                                                                                                                        $,
+                                                                                                                        ($) => abort(
+                                                                                                                            ['expected a group', null]
+                                                                                                                        )
+                                                                                                                    ),
+                                                                                                                    ($) => ({
+                                                                                                                        'Correctietype': _p_cc(
+                                                                                                                            $.__get_entry(
+                                                                                                                                'Correctietype',
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['no such entry', "Correctietype"]
+                                                                                                                                )
+                                                                                                                            ),
+                                                                                                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                $,
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['expected a text', null]
+                                                                                                                                )
+                                                                                                                            )
+                                                                                                                        ),
+                                                                                                                    })
+                                                                                                                )]
+                                                                                                            )
+                                                                                                        case 'Nee':
+                                                                                                            return _p_cc(
+                                                                                                                $['value'],
+                                                                                                                ($) => ['Nee', _p_cc(
+                                                                                                                    v_unmarshalled_from_parse_tree.Group(
+                                                                                                                        $,
+                                                                                                                        ($) => abort(
+                                                                                                                            ['expected a group', null]
+                                                                                                                        )
+                                                                                                                    ),
+                                                                                                                    ($) => null
+                                                                                                                )]
+                                                                                                            )
+                                                                                                        default:
+                                                                                                            return abort(
+                                                                                                                ['unknown option', $['option']['value']]
+                                                                                                            )
+                                                                                                    }
+                                                                                                }
+                                                                                            )
+                                                                                        )
+                                                                                    ),
+                                                                                })
+                                                                            )]
+                                                                        )
+                                                                    case 'Opbrengsten':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Opbrengsten', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return abort(
+                                                                            ['unknown option', $['option']['value']]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
                                                     )
                                                 ),
                                             })
@@ -558,7 +864,50 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_unreachable_code_path(
+                                                    ($) => _p_cc(
+                                                        v_unmarshalled_from_parse_tree.State(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a state', null]
+                                                            )
+                                                        ),
+                                                        ($) => _p.decide.text(
+                                                            $['option']['value'],
+                                                            ($t): t_out.Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde => {
+                                                                switch ($t) {
+                                                                    case 'Kosten':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Kosten', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    case 'Opbrengsten':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Opbrengsten', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return abort(
+                                                                            ['unknown option', $['option']['value']]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
@@ -646,7 +995,50 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_unreachable_code_path(
+                                                    ($) => _p_cc(
+                                                        v_unmarshalled_from_parse_tree.State(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a state', null]
+                                                            )
+                                                        ),
+                                                        ($) => _p.decide.text(
+                                                            $['option']['value'],
+                                                            ($t): t_out.Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde => {
+                                                                switch ($t) {
+                                                                    case 'Kosten':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Kosten', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    case 'Opbrengsten':
+                                                                        return _p_cc(
+                                                                            $['value'],
+                                                                            ($) => ['Opbrengsten', _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.Group(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a group', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => null
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return abort(
+                                                                            ['unknown option', $['option']['value']]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
@@ -735,7 +1127,50 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     ['no such entry', "Afgesloten"]
                                 )
                             ),
-                            ($) => _p_unreachable_code_path(
+                            ($) => _p_cc(
+                                v_unmarshalled_from_parse_tree.State(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a state', null]
+                                    )
+                                ),
+                                ($) => _p.decide.text(
+                                    $['option']['value'],
+                                    ($t): t_out.Root.Jaren.D.Afgesloten => {
+                                        switch ($t) {
+                                            case 'Ja':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['Ja', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => null
+                                                    )]
+                                                )
+                                            case 'Nee':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['Nee', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => null
+                                                    )]
+                                                )
+                                            default:
+                                                return abort(
+                                                    ['unknown option', $['option']['value']]
+                                                )
+                                        }
+                                    }
+                                )
                             )
                         ),
                         'Balans grootboekrekeningen': _p_cc(
@@ -766,7 +1201,63 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Type"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Balans_grootboekrekeningen.D.Type => {
+                                                        switch ($t) {
+                                                            case 'Bankrekening':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Bankrekening', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Overig':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Overig', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Informele rekening':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Informele rekening', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                     })
@@ -907,7 +1398,260 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "Status"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status => {
+                                                                        switch ($t) {
+                                                                            case 'Nog te verwerken':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Nog te verwerken', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => null
+                                                                                    )]
+                                                                                )
+                                                                            case 'Verwerkt':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Verwerkt', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Afhandeling': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Afhandeling',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Afhandeling"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => _p_cc(
+                                                                                                    v_unmarshalled_from_parse_tree.State(
+                                                                                                        $,
+                                                                                                        ($) => abort(
+                                                                                                            ['expected a state', null]
+                                                                                                        )
+                                                                                                    ),
+                                                                                                    ($) => _p.decide.text(
+                                                                                                        $['option']['value'],
+                                                                                                        ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.Verwerkt.Afhandeling => {
+                                                                                                            switch ($t) {
+                                                                                                                case 'Inkoop':
+                                                                                                                    return _p_cc(
+                                                                                                                        $['value'],
+                                                                                                                        ($) => ['Inkoop', _p_cc(
+                                                                                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                                                                                $,
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['expected a group', null]
+                                                                                                                                )
+                                                                                                                            ),
+                                                                                                                            ($) => ({
+                                                                                                                                'Jaar': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Jaar',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Jaar"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                                'Inkoop': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Inkoop',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Inkoop"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                            })
+                                                                                                                        )]
+                                                                                                                    )
+                                                                                                                case 'Verrekenpost':
+                                                                                                                    return _p_cc(
+                                                                                                                        $['value'],
+                                                                                                                        ($) => ['Verrekenpost', _p_cc(
+                                                                                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                                                                                $,
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['expected a group', null]
+                                                                                                                                )
+                                                                                                                            ),
+                                                                                                                            ($) => ({
+                                                                                                                                'Verrekenpost': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Verrekenpost',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Verrekenpost"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                            })
+                                                                                                                        )]
+                                                                                                                    )
+                                                                                                                case 'BTW-periode':
+                                                                                                                    return _p_cc(
+                                                                                                                        $['value'],
+                                                                                                                        ($) => ['BTW-periode', _p_cc(
+                                                                                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                                                                                $,
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['expected a group', null]
+                                                                                                                                )
+                                                                                                                            ),
+                                                                                                                            ($) => ({
+                                                                                                                                'Jaar': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Jaar',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Jaar"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                                'BTW-periode': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'BTW-periode',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "BTW-periode"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                            })
+                                                                                                                        )]
+                                                                                                                    )
+                                                                                                                case 'Verkoop':
+                                                                                                                    return _p_cc(
+                                                                                                                        $['value'],
+                                                                                                                        ($) => ['Verkoop', _p_cc(
+                                                                                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                                                                                $,
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['expected a group', null]
+                                                                                                                                )
+                                                                                                                            ),
+                                                                                                                            ($) => ({
+                                                                                                                                'Jaar': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Jaar',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Jaar"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                                'Verkoop': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Verkoop',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Verkoop"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                            })
+                                                                                                                        )]
+                                                                                                                    )
+                                                                                                                case 'Informele rekening':
+                                                                                                                    return _p_cc(
+                                                                                                                        $['value'],
+                                                                                                                        ($) => ['Informele rekening', _p_cc(
+                                                                                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                                                                                $,
+                                                                                                                                ($) => abort(
+                                                                                                                                    ['expected a group', null]
+                                                                                                                                )
+                                                                                                                            ),
+                                                                                                                            ($) => ({
+                                                                                                                                'Informele rekening': _p_cc(
+                                                                                                                                    $.__get_entry(
+                                                                                                                                        'Informele rekening',
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['no such entry', "Informele rekening"]
+                                                                                                                                        )
+                                                                                                                                    ),
+                                                                                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                        $,
+                                                                                                                                        ($) => abort(
+                                                                                                                                            ['expected a text', null]
+                                                                                                                                        )
+                                                                                                                                    )
+                                                                                                                                ),
+                                                                                                                            })
+                                                                                                                        )]
+                                                                                                                    )
+                                                                                                                default:
+                                                                                                                    return abort(
+                                                                                                                        ['unknown option', $['option']['value']]
+                                                                                                                    )
+                                                                                                            }
+                                                                                                        }
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                     })
@@ -921,7 +1665,79 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Nieuw"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Nieuw => {
+                                                        switch ($t) {
+                                                            case 'Ja':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Ja', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Nee':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Nee', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Jaar': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Jaar',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Jaar"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Rekening': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Rekening',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Rekening"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                     })
@@ -1103,7 +1919,108 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Status"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.BTW_periodes.D.Status => {
+                                                        switch ($t) {
+                                                            case 'Aangegeven':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Aangegeven', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Afronding': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Afronding',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Afronding"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                        $,
+                                                                                        ($) => abort(
+                                                                                            ['expected a text', null]
+                                                                                        )
+                                                                                    ),
+                                                                                    ($) => abort(
+                                                                                        ['not a valid number', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Bedrag': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Bedrag',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Bedrag"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                        $,
+                                                                                        ($) => abort(
+                                                                                            ['expected a text', null]
+                                                                                        )
+                                                                                    ),
+                                                                                    ($) => abort(
+                                                                                        ['not a valid number', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Datum': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Datum',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Datum"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                        $,
+                                                                                        ($) => abort(
+                                                                                            ['expected a text', null]
+                                                                                        )
+                                                                                    ),
+                                                                                    ($) => abort(
+                                                                                        ['not a valid number', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            case 'Openstaand':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Openstaand', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                     })
@@ -1117,7 +2034,65 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     ['no such entry', "Eerste boekjaar"]
                                 )
                             ),
-                            ($) => _p_unreachable_code_path(
+                            ($) => _p_cc(
+                                v_unmarshalled_from_parse_tree.State(
+                                    $,
+                                    ($) => abort(
+                                        ['expected a state', null]
+                                    )
+                                ),
+                                ($) => _p.decide.text(
+                                    $['option']['value'],
+                                    ($t): t_out.Root.Jaren.D.Eerste_boekjaar => {
+                                        switch ($t) {
+                                            case 'Ja':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['Ja', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => null
+                                                    )]
+                                                )
+                                            case 'Nee':
+                                                return _p_cc(
+                                                    $['value'],
+                                                    ($) => ['Nee', _p_cc(
+                                                        v_unmarshalled_from_parse_tree.Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                ['expected a group', null]
+                                                            )
+                                                        ),
+                                                        ($) => ({
+                                                            'Vorig boekjaar': _p_cc(
+                                                                $.__get_entry(
+                                                                    'Vorig boekjaar',
+                                                                    ($) => abort(
+                                                                        ['no such entry', "Vorig boekjaar"]
+                                                                    )
+                                                                ),
+                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a text', null]
+                                                                    )
+                                                                )
+                                                            ),
+                                                        })
+                                                    )]
+                                                )
+                                            default:
+                                                return abort(
+                                                    ['unknown option', $['option']['value']]
+                                                )
+                                        }
+                                    }
+                                )
                             )
                         ),
                         'Grootboekrekening voor BTW afrondingen': _p_cc(
@@ -1237,7 +2212,79 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Nieuw"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Informele_rekeningen.D.Nieuw => {
+                                                        switch ($t) {
+                                                            case 'Ja':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Ja', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Nee':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Nee', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Jaar': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Jaar',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Jaar"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Rekening': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Rekening',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Rekening"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                     })
@@ -1272,7 +2319,65 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Afhandeling"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
+                                                        switch ($t) {
+                                                            case 'Mutaties':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Mutaties', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Rekening courant':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Rekening courant', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Rekening courant': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Rekening courant',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Rekening courant"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                         'BTW-regime': _p_cc(
@@ -1282,7 +2387,119 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "BTW-regime"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.BTW$mi_regime => {
+                                                        switch ($t) {
+                                                            case 'Binnenland: heffing verlegd':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Binnenland: heffing verlegd', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Geen BTW van toepassing':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Geen BTW van toepassing', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'BTW-periode': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'BTW-periode',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "BTW-periode"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            case 'Import van buiten de EU':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Import van buiten de EU', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Intracommunautair':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Intracommunautair', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Standaard':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Standaard', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'BTW-periode': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'BTW-periode',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "BTW-periode"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                         'Brondocument': _p_cc(
@@ -1292,7 +2509,91 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Brondocument"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Brondocument => {
+                                                        switch ($t) {
+                                                            case 'Toegevoegd':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Toegevoegd', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Document': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Document',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Document"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => Bestandsnaam(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        $
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            case 'Niet van toepassing':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Niet van toepassing', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Ontbreekt':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Ontbreekt', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Nog toevoegen':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Nog toevoegen', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                         'Datum': _p_cc(
@@ -1342,7 +2643,76 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Regels.D.Bedrag => {
+                                                                        switch ($t) {
+                                                                            case 'Bekend':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Bekend', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'BTW-bedrag': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'BTW-bedrag',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "BTW-bedrag"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                                        $,
+                                                                                                        ($) => abort(
+                                                                                                            ['expected a text', null]
+                                                                                                        )
+                                                                                                    ),
+                                                                                                    ($) => abort(
+                                                                                                        ['not a valid number', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                            'Bedrag inclusief geheven BTW': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Bedrag inclusief geheven BTW',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Bedrag inclusief geheven BTW"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                                        $,
+                                                                                                        ($) => abort(
+                                                                                                            ['expected a text', null]
+                                                                                                        )
+                                                                                                    ),
+                                                                                                    ($) => abort(
+                                                                                                        ['not a valid number', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                         'Omschrijving': _p_cc(
@@ -1366,7 +2736,80 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "Type"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Regels.D.Type => {
+                                                                        switch ($t) {
+                                                                            case 'Balans':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Balans', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Balans item': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Balans item',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Balans item"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'Kosten':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Kosten', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Grootboekrekening': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Grootboekrekening',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Grootboekrekening"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                     })
@@ -1380,7 +2823,149 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Type"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Type => {
+                                                        switch ($t) {
+                                                            case 'Bonnetje':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Bonnetje', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Inkoop (met crediteur)':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Inkoop (met crediteur)', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Crediteur': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Crediteur',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Crediteur"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Factuurnummer': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Factuurnummer',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Factuurnummer"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            case 'Loonheffing':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Loonheffing', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Ronde': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Ronde',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Ronde"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            case 'Salaris':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Salaris', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Ronde': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Ronde',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Ronde"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Medewerker': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Medewerker',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Medewerker"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                     })
@@ -1571,7 +3156,79 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Nieuw"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Overige_balans_items.D.Nieuw => {
+                                                        switch ($t) {
+                                                            case 'Ja':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Ja', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Nee':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Nee', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Jaar': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Jaar',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Jaar"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Balans item': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Balans item',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Balans item"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                     })
@@ -1705,7 +3362,65 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Afhandeling"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Afhandeling => {
+                                                        switch ($t) {
+                                                            case 'Mutaties':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Mutaties', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => null
+                                                                    )]
+                                                                )
+                                                            case 'Rekening courant':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Rekening courant', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Rekening courant': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Rekening courant',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Rekening courant"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                         'Betalingstermijn': _p_cc(
@@ -1748,7 +3463,52 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Brondocument"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Brondocument => {
+                                                        switch ($t) {
+                                                            case 'Toegevoegd':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Toegevoegd', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Document': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Document',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Document"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => Bestandsnaam(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        $
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                         'Contracttype': _p_cc(
@@ -1758,7 +3518,94 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ['no such entry', "Contracttype"]
                                                 )
                                             ),
-                                            ($) => _p_unreachable_code_path(
+                                            ($) => _p_cc(
+                                                v_unmarshalled_from_parse_tree.State(
+                                                    $,
+                                                    ($) => abort(
+                                                        ['expected a state', null]
+                                                    )
+                                                ),
+                                                ($) => _p.decide.text(
+                                                    $['option']['value'],
+                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Contracttype => {
+                                                        switch ($t) {
+                                                            case 'Project':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Project', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Project': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Project',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Project"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                            'Offerte': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Offerte',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Offerte"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            case 'Licentieovereenkomst':
+                                                                return _p_cc(
+                                                                    $['value'],
+                                                                    ($) => ['Licentieovereenkomst', _p_cc(
+                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                ['expected a group', null]
+                                                                            )
+                                                                        ),
+                                                                        ($) => ({
+                                                                            'Overeenkomst': _p_cc(
+                                                                                $.__get_entry(
+                                                                                    'Overeenkomst',
+                                                                                    ($) => abort(
+                                                                                        ['no such entry', "Overeenkomst"]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a text', null]
+                                                                                    )
+                                                                                )
+                                                                            ),
+                                                                        })
+                                                                    )]
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    ['unknown option', $['option']['value']]
+                                                                )
+                                                        }
+                                                    }
+                                                )
                                             )
                                         ),
                                         'Datum': _p_cc(
@@ -1822,7 +3669,78 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "BTW-regime"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime => {
+                                                                        switch ($t) {
+                                                                            case 'Intracommunautair':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Intracommunautair', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => null
+                                                                                    )]
+                                                                                )
+                                                                            case 'Standaard':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Standaard', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'BTW-categorie': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'BTW-categorie',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "BTW-categorie"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'Binnenland: heffing verlegd':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Binnenland: heffing verlegd', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => null
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                         'Bedrag exclusief BTW': _p_cc(
@@ -1851,7 +3769,93 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "Contracttype"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.Contracttype => {
+                                                                        switch ($t) {
+                                                                            case 'Project':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Project', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Opbrengst': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Opbrengst',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Opbrengst"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'Los':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Los', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => null
+                                                                                    )]
+                                                                                )
+                                                                            case 'Licentieovereenkomst':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Licentieovereenkomst', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Periode': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Periode',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Periode"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                         'Omschrijving': _p_cc(
@@ -1875,7 +3879,80 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "Type"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.Type => {
+                                                                        switch ($t) {
+                                                                            case 'Opbrengsten':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Opbrengsten', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Grootboekrekening': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Grootboekrekening',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Grootboekrekening"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'Balans':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Balans', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Balans item': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Balans item',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Balans item"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                     })
@@ -1954,7 +4031,178 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ['no such entry', "Afhandeling"]
                                                                 )
                                                             ),
-                                                            ($) => _p_unreachable_code_path(
+                                                            ($) => _p_cc(
+                                                                v_unmarshalled_from_parse_tree.State(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        ['expected a state', null]
+                                                                    )
+                                                                ),
+                                                                ($) => _p.decide.text(
+                                                                    $['option']['value'],
+                                                                    ($t): t_out.Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling => {
+                                                                        switch ($t) {
+                                                                            case 'Inkoop':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Inkoop', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Jaar': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Jaar',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Jaar"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                            'Inkoop': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Inkoop',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Inkoop"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'Informele rekening':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Informele rekening', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Informele rekening': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Informele rekening',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Informele rekening"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'Verkoop':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['Verkoop', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Jaar': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Jaar',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Jaar"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                            'Verkoop': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Verkoop',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Verkoop"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            case 'BTW-periode':
+                                                                                return _p_cc(
+                                                                                    $['value'],
+                                                                                    ($) => ['BTW-periode', _p_cc(
+                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                ['expected a group', null]
+                                                                                            )
+                                                                                        ),
+                                                                                        ($) => ({
+                                                                                            'Jaar': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'Jaar',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "Jaar"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                            'BTW-periode': _p_cc(
+                                                                                                $.__get_entry(
+                                                                                                    'BTW-periode',
+                                                                                                    ($) => abort(
+                                                                                                        ['no such entry', "BTW-periode"]
+                                                                                                    )
+                                                                                                ),
+                                                                                                ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                    $,
+                                                                                                    ($) => abort(
+                                                                                                        ['expected a text', null]
+                                                                                                    )
+                                                                                                )
+                                                                                            ),
+                                                                                        })
+                                                                                    )]
+                                                                                )
+                                                                            default:
+                                                                                return abort(
+                                                                                    ['unknown option', $['option']['value']]
+                                                                                )
+                                                                        }
+                                                                    }
+                                                                )
                                                             )
                                                         ),
                                                     })
@@ -2129,7 +4377,76 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     ['no such entry', "Type"]
                                                                                 )
                                                                             ),
-                                                                            ($) => _p_unreachable_code_path(
+                                                                            ($) => _p_cc(
+                                                                                v_unmarshalled_from_parse_tree.State(
+                                                                                    $,
+                                                                                    ($) => abort(
+                                                                                        ['expected a state', null]
+                                                                                    )
+                                                                                ),
+                                                                                ($) => _p.decide.text(
+                                                                                    $['option']['value'],
+                                                                                    ($t): t_out.Root.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
+                                                                                        switch ($t) {
+                                                                                            case 'Project':
+                                                                                                return _p_cc(
+                                                                                                    $['value'],
+                                                                                                    ($) => ['Project', _p_cc(
+                                                                                                        v_unmarshalled_from_parse_tree.Group(
+                                                                                                            $,
+                                                                                                            ($) => abort(
+                                                                                                                ['expected a group', null]
+                                                                                                            )
+                                                                                                        ),
+                                                                                                        ($) => ({
+                                                                                                            'Bedrag': _p_cc(
+                                                                                                                $.__get_entry(
+                                                                                                                    'Bedrag',
+                                                                                                                    ($) => abort(
+                                                                                                                        ['no such entry', "Bedrag"]
+                                                                                                                    )
+                                                                                                                ),
+                                                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                                                        $,
+                                                                                                                        ($) => abort(
+                                                                                                                            ['expected a text', null]
+                                                                                                                        )
+                                                                                                                    ),
+                                                                                                                    ($) => abort(
+                                                                                                                        ['not a valid number', null]
+                                                                                                                    )
+                                                                                                                )
+                                                                                                            ),
+                                                                                                            'Betaaldatum': _p_cc(
+                                                                                                                $.__get_entry(
+                                                                                                                    'Betaaldatum',
+                                                                                                                    ($) => abort(
+                                                                                                                        ['no such entry', "Betaaldatum"]
+                                                                                                                    )
+                                                                                                                ),
+                                                                                                                ($) => v_deserialize_number.deserialize(
+                                                                                                                    v_unmarshalled_from_parse_tree.Text(
+                                                                                                                        $,
+                                                                                                                        ($) => abort(
+                                                                                                                            ['expected a text', null]
+                                                                                                                        )
+                                                                                                                    ),
+                                                                                                                    ($) => abort(
+                                                                                                                        ['not a valid number', null]
+                                                                                                                    )
+                                                                                                                )
+                                                                                                            ),
+                                                                                                        })
+                                                                                                    )]
+                                                                                                )
+                                                                                            default:
+                                                                                                return abort(
+                                                                                                    ['unknown option', $['option']['value']]
+                                                                                                )
+                                                                                        }
+                                                                                    }
+                                                                                )
                                                                             )
                                                                         ),
                                                                     })
