@@ -17,7 +17,7 @@ export namespace Fiscaal_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type Fiscaal_ = (
     abort: _pi.Abort<Fiscaal_.E>,
     parameters: {
         readonly 'document resource identifier': Fiscaal_.P.document_resource_identifier
-        readonly 'indentation': Fiscaal_.P.indentation
+        readonly 'tab size': Fiscaal_.P.tab_size
     },
 ) => Fiscaal_.O
 
@@ -44,7 +44,7 @@ export namespace Grootboek_Categorieen_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -55,7 +55,7 @@ export type Grootboek_Categorieen_ = (
     abort: _pi.Abort<Grootboek_Categorieen_.E>,
     parameters: {
         readonly 'document resource identifier': Grootboek_Categorieen_.P.document_resource_identifier
-        readonly 'indentation': Grootboek_Categorieen_.P.indentation
+        readonly 'tab size': Grootboek_Categorieen_.P.tab_size
     },
 ) => Grootboek_Categorieen_.O
 
@@ -71,7 +71,7 @@ export namespace Beheer_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -82,7 +82,7 @@ export type Beheer_ = (
     abort: _pi.Abort<Beheer_.E>,
     parameters: {
         readonly 'document resource identifier': Beheer_.P.document_resource_identifier
-        readonly 'indentation': Beheer_.P.indentation
+        readonly 'tab size': Beheer_.P.tab_size
     },
 ) => Beheer_.O
 
@@ -98,7 +98,7 @@ export namespace Grootboekrekeningen_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -109,7 +109,7 @@ export type Grootboekrekeningen_ = (
     abort: _pi.Abort<Grootboekrekeningen_.E>,
     parameters: {
         readonly 'document resource identifier': Grootboekrekeningen_.P.document_resource_identifier
-        readonly 'indentation': Grootboekrekeningen_.P.indentation
+        readonly 'tab size': Grootboekrekeningen_.P.tab_size
     },
 ) => Grootboekrekeningen_.O
 
@@ -125,7 +125,7 @@ export namespace Jaarbeheer_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -136,7 +136,7 @@ export type Jaarbeheer_ = (
     abort: _pi.Abort<Jaarbeheer_.E>,
     parameters: {
         readonly 'document resource identifier': Jaarbeheer_.P.document_resource_identifier
-        readonly 'indentation': Jaarbeheer_.P.indentation
+        readonly 'tab size': Jaarbeheer_.P.tab_size
     },
 ) => Jaarbeheer_.O
 
@@ -152,7 +152,7 @@ export namespace Overige_balans_item_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -163,7 +163,7 @@ export type Overige_balans_item_ = (
     abort: _pi.Abort<Overige_balans_item_.E>,
     parameters: {
         readonly 'document resource identifier': Overige_balans_item_.P.document_resource_identifier
-        readonly 'indentation': Overige_balans_item_.P.indentation
+        readonly 'tab size': Overige_balans_item_.P.tab_size
     },
 ) => Overige_balans_item_.O
 
@@ -179,7 +179,7 @@ export namespace Verwijzing_naar_Informele_rekening_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -190,7 +190,7 @@ export type Verwijzing_naar_Informele_rekening_ = (
     abort: _pi.Abort<Verwijzing_naar_Informele_rekening_.E>,
     parameters: {
         readonly 'document resource identifier': Verwijzing_naar_Informele_rekening_.P.document_resource_identifier
-        readonly 'indentation': Verwijzing_naar_Informele_rekening_.P.indentation
+        readonly 'tab size': Verwijzing_naar_Informele_rekening_.P.tab_size
     },
 ) => Verwijzing_naar_Informele_rekening_.O
 
@@ -206,7 +206,7 @@ export namespace Verwijzing_naar_Bankrekening_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -217,7 +217,7 @@ export type Verwijzing_naar_Bankrekening_ = (
     abort: _pi.Abort<Verwijzing_naar_Bankrekening_.E>,
     parameters: {
         readonly 'document resource identifier': Verwijzing_naar_Bankrekening_.P.document_resource_identifier
-        readonly 'indentation': Verwijzing_naar_Bankrekening_.P.indentation
+        readonly 'tab size': Verwijzing_naar_Bankrekening_.P.tab_size
     },
 ) => Verwijzing_naar_Bankrekening_.O
 
@@ -233,7 +233,7 @@ export namespace Handelstransacties_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -244,7 +244,7 @@ export type Handelstransacties_ = (
     abort: _pi.Abort<Handelstransacties_.E>,
     parameters: {
         readonly 'document resource identifier': Handelstransacties_.P.document_resource_identifier
-        readonly 'indentation': Handelstransacties_.P.indentation
+        readonly 'tab size': Handelstransacties_.P.tab_size
     },
 ) => Handelstransacties_.O
 
@@ -260,7 +260,7 @@ export namespace Mutaties_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -271,7 +271,7 @@ export type Mutaties_ = (
     abort: _pi.Abort<Mutaties_.E>,
     parameters: {
         readonly 'document resource identifier': Mutaties_.P.document_resource_identifier
-        readonly 'indentation': Mutaties_.P.indentation
+        readonly 'tab size': Mutaties_.P.tab_size
     },
 ) => Mutaties_.O
 
@@ -287,7 +287,7 @@ export namespace Jaren_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -298,7 +298,7 @@ export type Jaren_ = (
     abort: _pi.Abort<Jaren_.E>,
     parameters: {
         readonly 'document resource identifier': Jaren_.P.document_resource_identifier
-        readonly 'indentation': Jaren_.P.indentation
+        readonly 'tab size': Jaren_.P.tab_size
     },
 ) => Jaren_.O
 
@@ -314,7 +314,7 @@ export namespace Balans_Resultaat_Mutatie_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -325,7 +325,7 @@ export type Balans_Resultaat_Mutatie_ = (
     abort: _pi.Abort<Balans_Resultaat_Mutatie_.E>,
     parameters: {
         readonly 'document resource identifier': Balans_Resultaat_Mutatie_.P.document_resource_identifier
-        readonly 'indentation': Balans_Resultaat_Mutatie_.P.indentation
+        readonly 'tab size': Balans_Resultaat_Mutatie_.P.tab_size
     },
 ) => Balans_Resultaat_Mutatie_.O
 
@@ -341,7 +341,7 @@ export namespace Eerste_boekjaar_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -352,7 +352,7 @@ export type Eerste_boekjaar_ = (
     abort: _pi.Abort<Eerste_boekjaar_.E>,
     parameters: {
         readonly 'document resource identifier': Eerste_boekjaar_.P.document_resource_identifier
-        readonly 'indentation': Eerste_boekjaar_.P.indentation
+        readonly 'tab size': Eerste_boekjaar_.P.tab_size
     },
 ) => Eerste_boekjaar_.O
 
@@ -368,7 +368,7 @@ export namespace Root_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -379,7 +379,7 @@ export type Root_ = (
     abort: _pi.Abort<Root_.E>,
     parameters: {
         readonly 'document resource identifier': Root_.P.document_resource_identifier
-        readonly 'indentation': Root_.P.indentation
+        readonly 'tab size': Root_.P.tab_size
     },
 ) => Root_.O
 

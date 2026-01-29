@@ -17,7 +17,7 @@ export namespace Bestandsnaam_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -28,7 +28,7 @@ export type Bestandsnaam_ = (
     abort: _pi.Abort<Bestandsnaam_.E>,
     parameters: {
         readonly 'document resource identifier': Bestandsnaam_.P.document_resource_identifier
-        readonly 'indentation': Bestandsnaam_.P.indentation
+        readonly 'tab size': Bestandsnaam_.P.tab_size
     },
 ) => Bestandsnaam_.O
 
@@ -44,7 +44,7 @@ export namespace Root_ {
         
         export type document_resource_identifier = string
         
-        export type indentation = number
+        export type tab_size = number
         
     }
     
@@ -55,7 +55,7 @@ export type Root_ = (
     abort: _pi.Abort<Root_.E>,
     parameters: {
         readonly 'document resource identifier': Root_.P.document_resource_identifier
-        readonly 'indentation': Root_.P.indentation
+        readonly 'tab size': Root_.P.tab_size
     },
 ) => Root_.O
 
