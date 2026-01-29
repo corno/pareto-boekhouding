@@ -1,25 +1,25 @@
 
 import * as _pi from "pareto-core/dist/interface"
 
-import * as i__location from "../../../generic/location"
+import * as i__location from "astn-core/dist/interface/generated/liana/schemas/location/data"
 
 export namespace Fiscaal_ {
     
     export namespace Balans_Hoofdcategorieen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Zijde {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -42,13 +42,13 @@ export namespace Fiscaal_ {
                     
                     export namespace Subcategorieen {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export type entry = null
                                 
@@ -97,19 +97,19 @@ export namespace Fiscaal_ {
     
     export namespace Resultaat_Hoofdcategorieen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Zijde {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -132,13 +132,13 @@ export namespace Fiscaal_ {
                     
                     export namespace Subcategorieen {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export type entry = null
                                 
@@ -196,13 +196,13 @@ export namespace Grootboek_Categorieen_ {
     
     export namespace Correctietypes_vennootschapsbelasting {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
@@ -234,19 +234,19 @@ export namespace Grootboek_Categorieen_ {
     
     export namespace Balans {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Zijde {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -269,19 +269,19 @@ export namespace Grootboek_Categorieen_ {
                     
                     export namespace Subcategorieen {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace entry {
                                     
                                     export namespace Hoofdcategorie_fiscus {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export type id = string
                                         
@@ -294,7 +294,7 @@ export namespace Grootboek_Categorieen_ {
                                     
                                     export namespace Subcategorie_fiscus {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export type id = string
                                         
@@ -357,19 +357,19 @@ export namespace Grootboek_Categorieen_ {
     
     export namespace Resultaat {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Zijde {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -392,19 +392,19 @@ export namespace Grootboek_Categorieen_ {
                     
                     export namespace Subcategorieen {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace entry {
                                     
                                     export namespace Hoofdcategorie_fiscus {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export type id = string
                                         
@@ -417,7 +417,7 @@ export namespace Grootboek_Categorieen_ {
                                     
                                     export namespace Subcategorie_fiscus {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export type id = string
                                         
@@ -490,19 +490,19 @@ export namespace Beheer_ {
     
     export namespace BTW$mi_categorieen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace BTW$mi_heffing {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -556,19 +556,19 @@ export namespace Beheer_ {
         
         export namespace Balans {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace entry {
                         
                         export namespace Hoofdcategorie {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export type id = string
                             
@@ -581,7 +581,7 @@ export namespace Beheer_ {
                         
                         export namespace Subcategorie {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export type id = string
                             
@@ -594,7 +594,7 @@ export namespace Beheer_ {
                         
                         export namespace Zijde {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace state {
                                 
@@ -643,19 +643,19 @@ export namespace Beheer_ {
         
         export namespace Resultaat {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace entry {
                         
                         export namespace Hoofdcategorie {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export type id = string
                             
@@ -668,7 +668,7 @@ export namespace Beheer_ {
                         
                         export namespace Subcategorie {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export type id = string
                             
@@ -681,7 +681,7 @@ export namespace Beheer_ {
                         
                         export namespace Zijde {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace state {
                                 
@@ -689,7 +689,7 @@ export namespace Beheer_ {
                                     
                                     export namespace Correctie_op_vennootschapsbelasting {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -697,7 +697,7 @@ export namespace Beheer_ {
                                                 
                                                 export namespace Correctietype {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -787,13 +787,13 @@ export namespace Beheer_ {
         
         export namespace Bank {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export type entry = null
                     
@@ -817,13 +817,13 @@ export namespace Beheer_ {
         
         export namespace Informeel {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export type entry = null
                     
@@ -854,13 +854,13 @@ export namespace Beheer_ {
     
     export namespace Gebruikers {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
@@ -895,37 +895,37 @@ export namespace Beheer_ {
     
     export namespace Klanten {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Licentieovereenkomsten {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace entry {
                                     
                                     export namespace Periodes {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace dictionary {
                                             
                                             export namespace D {
                                                 
-                                                export type location = i__location.Location
+                                                export type location = i__location.Relative_Location
                                                 
                                                 export namespace entry {
                                                     
@@ -981,43 +981,43 @@ export namespace Beheer_ {
                     
                     export namespace Projecten {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace entry {
                                     
                                     export namespace Offertes {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace dictionary {
                                             
                                             export namespace D {
                                                 
-                                                export type location = i__location.Location
+                                                export type location = i__location.Relative_Location
                                                 
                                                 export namespace entry {
                                                     
                                                     export namespace Opbrengsten {
                                                         
-                                                        export type location = i__location.Location
+                                                        export type location = i__location.Relative_Location
                                                         
                                                         export namespace dictionary {
                                                             
                                                             export namespace D {
                                                                 
-                                                                export type location = i__location.Location
+                                                                export type location = i__location.Relative_Location
                                                                 
                                                                 export namespace entry {
                                                                     
                                                                     export namespace Type {
                                                                         
-                                                                        export type location = i__location.Location
+                                                                        export type location = i__location.Relative_Location
                                                                         
                                                                         export namespace state {
                                                                             
@@ -1145,13 +1145,13 @@ export namespace Beheer_ {
     
     export namespace Leveranciers {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type entry = null
                 
@@ -1175,13 +1175,13 @@ export namespace Beheer_ {
     
     export namespace Medewerkers {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type entry = null
                 
@@ -1219,19 +1219,19 @@ export namespace Grootboekrekeningen_ {
     
     export namespace Balans {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Type {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -1281,13 +1281,13 @@ export namespace Grootboekrekeningen_ {
     
     export namespace Resultaat {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type entry = null
                 
@@ -1322,7 +1322,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_BTW_afrondingen {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -1335,13 +1335,13 @@ export namespace Jaarbeheer_ {
         
         export namespace Salarisrondes {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export type entry = null
                     
@@ -1365,25 +1365,25 @@ export namespace Jaarbeheer_ {
         
         export namespace BTW_periodes {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace entry {
                         
                         export namespace _11$pe__BTW$mi_categorieen {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace dictionary {
                                 
                                 export namespace D {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type entry = null
                                     
@@ -1407,13 +1407,13 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Documenten {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace dictionary {
                                 
                                 export namespace D {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export namespace entry {
                                         
@@ -1447,7 +1447,7 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Status {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace state {
                                 
@@ -1521,7 +1521,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_nog_aan_te_geven_BTW {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -1534,7 +1534,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_resultaat_dit_jaar {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -1547,7 +1547,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_winstreserve {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -1560,7 +1560,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_Inkoop_saldo {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -1573,7 +1573,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_Verkoop_saldo {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -1590,13 +1590,13 @@ export namespace Jaarbeheer_ {
         
         export namespace Informele_rekeningen {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace entry {
                         
@@ -1604,7 +1604,7 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Grootboekrekening {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export type id = string
                             
@@ -1617,7 +1617,7 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Nieuw {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace state {
                                 
@@ -1674,13 +1674,13 @@ export namespace Jaarbeheer_ {
         
         export namespace Bankrekeningen {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace entry {
                         
@@ -1688,7 +1688,7 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Grootboekrekening {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export type id = string
                             
@@ -1701,7 +1701,7 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Nieuw {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace state {
                                 
@@ -1732,13 +1732,13 @@ export namespace Jaarbeheer_ {
                         
                         export namespace Mutaties {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace dictionary {
                                 
                                 export namespace D {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export namespace entry {
                                         
@@ -1803,13 +1803,13 @@ export namespace Jaarbeheer_ {
         
         export namespace Overige_balans_items {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export type entry = Overige_balans_item_
                     
@@ -1833,13 +1833,13 @@ export namespace Jaarbeheer_ {
         
         export namespace Verrekenposten {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace dictionary {
                 
                 export namespace D {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export type entry = null
                     
@@ -1890,7 +1890,7 @@ export namespace Overige_balans_item_ {
     
     export namespace Grootboekrekening {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export type id = string
         
@@ -1903,7 +1903,7 @@ export namespace Overige_balans_item_ {
     
     export namespace Nieuw {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace state {
             
@@ -1913,7 +1913,7 @@ export namespace Overige_balans_item_ {
                 
                 export namespace Balans_item {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export type id = string
                     
@@ -1953,7 +1953,7 @@ export type Overige_balans_item_ = {
 
 export namespace Verwijzing_naar_Informele_rekening_ {
     
-    export type location = i__location.Location
+    export type location = i__location.Relative_Location
     
     export type id = string
     
@@ -1966,7 +1966,7 @@ export type Verwijzing_naar_Informele_rekening_ = {
 
 export namespace Verwijzing_naar_Bankrekening_ {
     
-    export type location = i__location.Location
+    export type location = i__location.Relative_Location
     
     export type id = string
     
@@ -1981,19 +1981,19 @@ export namespace Handelstransacties_ {
     
     export namespace Inkopen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Afhandeling {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2003,7 +2003,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Rekening_courant {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2035,7 +2035,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace BTW$mi_regime {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2051,7 +2051,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace BTW$mi_periode {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2086,7 +2086,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace Brondocument {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2122,19 +2122,19 @@ export namespace Handelstransacties_ {
                     
                     export namespace Regels {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace entry {
                                     
                                     export namespace Bedrag {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -2167,7 +2167,7 @@ export namespace Handelstransacties_ {
                                     
                                     export namespace Type {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -2175,7 +2175,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace Balans_item {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2196,7 +2196,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace Grootboekrekening {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2254,7 +2254,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace Type {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2264,7 +2264,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Crediteur {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2288,7 +2288,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Ronde {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2309,7 +2309,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Ronde {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2322,7 +2322,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Medewerker {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2386,19 +2386,19 @@ export namespace Handelstransacties_ {
     
     export namespace Verkopen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
                     export namespace Afhandeling {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2408,7 +2408,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Rekening_courant {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2442,7 +2442,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace BTW$mi_periode {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export type id = string
                         
@@ -2455,7 +2455,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace Brondocument {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2483,7 +2483,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace Debiteur {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export type id = string
                         
@@ -2496,7 +2496,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace Contracttype {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace state {
                             
@@ -2504,7 +2504,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Project {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2517,7 +2517,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Offerte {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2539,7 +2539,7 @@ export namespace Handelstransacties_ {
                                 
                                 export namespace Overeenkomst {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -2573,19 +2573,19 @@ export namespace Handelstransacties_ {
                     
                     export namespace Regels {
                         
-                        export type location = i__location.Location
+                        export type location = i__location.Relative_Location
                         
                         export namespace dictionary {
                             
                             export namespace D {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace entry {
                                     
                                     export namespace BTW$mi_regime {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -2595,7 +2595,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace BTW$mi_categorie {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2632,7 +2632,7 @@ export namespace Handelstransacties_ {
                                     
                                     export namespace Contracttype {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -2640,7 +2640,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace Opbrengst {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2663,7 +2663,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace Periode {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2698,7 +2698,7 @@ export namespace Handelstransacties_ {
                                     
                                     export namespace Type {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -2706,7 +2706,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace Grootboekrekening {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2727,7 +2727,7 @@ export namespace Handelstransacties_ {
                                                 
                                                 export namespace Balans_item {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -2827,23 +2827,23 @@ export namespace Mutaties_ {
     
     export namespace Verrekenpost_mutaties {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace dictionary {
                         
                         export namespace D {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace entry {
                                 
@@ -2851,7 +2851,7 @@ export namespace Mutaties_ {
                                 
                                 export namespace Afhandeling {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export namespace state {
                                         
@@ -2859,7 +2859,7 @@ export namespace Mutaties_ {
                                         
                                         export namespace Balans {
                                             
-                                            export type location = i__location.Location
+                                            export type location = i__location.Relative_Location
                                             
                                             export namespace state {
                                                 
@@ -2867,7 +2867,7 @@ export namespace Mutaties_ {
                                                     
                                                     export namespace Informele_rekening {
                                                         
-                                                        export type location = i__location.Location
+                                                        export type location = i__location.Relative_Location
                                                         
                                                         export type id = string
                                                         
@@ -2954,27 +2954,27 @@ export namespace Mutaties_ {
     
     export namespace Bankrekening_Mutatie_Verwerkingen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace dictionary {
                         
                         export namespace D {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace entry {
                                 
-                                export type location = i__location.Location
+                                export type location = i__location.Relative_Location
                                 
                                 export namespace state {
                                     
@@ -2982,7 +2982,7 @@ export namespace Mutaties_ {
                                     
                                     export namespace Balans {
                                         
-                                        export type location = i__location.Location
+                                        export type location = i__location.Relative_Location
                                         
                                         export namespace state {
                                             
@@ -2990,7 +2990,7 @@ export namespace Mutaties_ {
                                                 
                                                 export namespace Informele_rekening {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -3011,7 +3011,7 @@ export namespace Mutaties_ {
                                                 
                                                 export namespace Verrekenpost {
                                                     
-                                                    export type location = i__location.Location
+                                                    export type location = i__location.Relative_Location
                                                     
                                                     export type id = string
                                                     
@@ -3092,23 +3092,23 @@ export namespace Mutaties_ {
     
     export namespace Memoriaal_boekingen {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace dictionary {
             
             export namespace D {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export namespace entry {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace dictionary {
                         
                         export namespace D {
                             
-                            export type location = i__location.Location
+                            export type location = i__location.Relative_Location
                             
                             export namespace entry {
                                 
@@ -3120,7 +3120,7 @@ export namespace Mutaties_ {
                                 
                                 export namespace Grootboekrekening {
                                     
-                                    export type location = i__location.Location
+                                    export type location = i__location.Relative_Location
                                     
                                     export type id = string
                                     
@@ -3186,19 +3186,19 @@ export type Mutaties_ = {
 
 export namespace Jaren_ {
     
-    export type location = i__location.Location
+    export type location = i__location.Relative_Location
     
     export namespace dictionary {
         
         export namespace D {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export namespace entry {
                 
                 export namespace Afgesloten {
                     
-                    export type location = i__location.Location
+                    export type location = i__location.Relative_Location
                     
                     export namespace state {
                         
@@ -3267,7 +3267,7 @@ export namespace Balans_Resultaat_Mutatie_ {
         
         export namespace O {
             
-            export type location = i__location.Location
+            export type location = i__location.Relative_Location
             
             export type id = string
             
@@ -3284,13 +3284,13 @@ export namespace Balans_Resultaat_Mutatie_ {
     
     export namespace type_ {
         
-        export type location = i__location.Location
+        export type location = i__location.Relative_Location
         
         export namespace state {
             
             export namespace Inkoop {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type id = string
                 
@@ -3303,7 +3303,7 @@ export namespace Balans_Resultaat_Mutatie_ {
             
             export namespace Verkoop {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type id = string
                 
@@ -3316,7 +3316,7 @@ export namespace Balans_Resultaat_Mutatie_ {
             
             export namespace BTW$mi_periode {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type id = string
                 
@@ -3350,7 +3350,7 @@ export type Balans_Resultaat_Mutatie_ = {
 
 export namespace Eerste_boekjaar_ {
     
-    export type location = i__location.Location
+    export type location = i__location.Relative_Location
     
     export namespace state {
         
@@ -3360,7 +3360,7 @@ export namespace Eerste_boekjaar_ {
             
             export namespace Vorig_boekjaar {
                 
-                export type location = i__location.Location
+                export type location = i__location.Relative_Location
                 
                 export type id = string
                 

@@ -1,12 +1,12 @@
 
 import * as _p from "pareto-core/dist/refiner"
 
-import { 
-    _p_unreachable_code_path, 
+import {
+    _p_unreachable_code_path,
 } from "pareto-core/dist/unreachable_code_path"
 
-import { 
-    _p_cc, 
+import {
+    _p_cc,
 } from "pareto-core/dist/change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/unmarshall"
@@ -15,105 +15,109 @@ import * as v_deserialize_number from "liana-core/dist/implementation/manual/pri
 
 import * as v_deserialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/deserializers/true_false"
 
-import * as v_generic from "astn-core/dist/implementation/manual/schemas/unmarshalled/refiners/parse_tree"
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($,abort) => v_generic.expect_text(
-    $, 
+import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/manual/schemas/unmarshalled/refiners/parse_tree"
+
+import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
+
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => v_unmarshalled_from_parse_tree.Text(
+    $,
     ($) => abort(
         ['expected a text', null]
     )
 )
-export const Root: t_signatures.Root = ($,abort) => _p_cc(
-    v_generic.expect_group(
-        $, 
+
+export const Root: t_signatures.Root = ($, abort) => _p_cc(
+    v_unmarshalled_from_parse_tree.Group(
+        $,
         ($) => abort(
             ['expected a group', null]
         )
-    ), 
+    ),
     ($) => ({
         'Bankrekeningen': _p_cc(
             $.__get_entry(
-                'Bankrekeningen', 
+                'Bankrekeningen',
                 ($) => abort(
                     ['no such entry', "Bankrekeningen"]
                 )
-            ), 
-            ($) => v_generic.expect_dictionary(
-                $, 
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                $,
                 ($) => abort(
                     ['expected a dictionary', null]
                 )
             ).__d_map(
-                ($,id) => _p_cc(
-                    v_generic.expect_group(
-                        $, 
+                ($, id) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
                         ($) => abort(
                             ['expected a group', null]
                         )
-                    ), 
+                    ),
                     ($) => null
                 )
             )
         ),
         'Beheer': _p_cc(
             $.__get_entry(
-                'Beheer', 
+                'Beheer',
                 ($) => abort(
                     ['no such entry', "Beheer"]
                 )
-            ), 
+            ),
             ($) => _p_cc(
-                v_generic.expect_group(
-                    $, 
+                v_unmarshalled_from_parse_tree.Group(
+                    $,
                     ($) => abort(
                         ['expected a group', null]
                     )
-                ), 
+                ),
                 ($) => ({
                     'Balans': _p_cc(
                         $.__get_entry(
-                            'Balans', 
+                            'Balans',
                             ($) => abort(
                                 ['no such entry', "Balans"]
                             )
-                        ), 
+                        ),
                         ($) => _p_cc(
-                            v_generic.expect_group(
-                                $, 
+                            v_unmarshalled_from_parse_tree.Group(
+                                $,
                                 ($) => abort(
                                     ['expected a group', null]
                                 )
-                            ), 
+                            ),
                             ($) => ({
                                 'Grootboekrekeningen': _p_cc(
                                     $.__get_entry(
-                                        'Grootboekrekeningen', 
+                                        'Grootboekrekeningen',
                                         ($) => abort(
                                             ['no such entry', "Grootboekrekeningen"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Hoofdcategorie': _p_cc(
                                                     $.__get_entry(
-                                                        'Hoofdcategorie', 
+                                                        'Hoofdcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Hoofdcategorie"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_text(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a text', null]
                                                         )
@@ -121,13 +125,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                 ),
                                                 'Subcategorie': _p_cc(
                                                     $.__get_entry(
-                                                        'Subcategorie', 
+                                                        'Subcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorie"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_text(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a text', null]
                                                         )
@@ -135,11 +139,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                 ),
                                                 'Zijde': _p_cc(
                                                     $.__get_entry(
-                                                        'Zijde', 
+                                                        'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => _p_unreachable_code_path(
                                                     )
                                                 ),
@@ -149,65 +153,65 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                 ),
                                 'Hoofdcategorieen': _p_cc(
                                     $.__get_entry(
-                                        'Hoofdcategorieen', 
+                                        'Hoofdcategorieen',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Zijde': _p_cc(
                                                     $.__get_entry(
-                                                        'Zijde', 
+                                                        'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => _p_unreachable_code_path(
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
                                                     $.__get_entry(
-                                                        'Subcategorieen', 
+                                                        'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_dictionary(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
                                                         )
                                                     ).__d_map(
-                                                        ($,id) => _p_cc(
-                                                            v_generic.expect_group(
-                                                                $, 
+                                                        ($, id) => _p_cc(
+                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a group', null]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => ({
                                                                 'Hoofdcategorie fiscus': _p_cc(
                                                                     $.__get_entry(
-                                                                        'Hoofdcategorie fiscus', 
+                                                                        'Hoofdcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Hoofdcategorie fiscus"]
                                                                         )
-                                                                    ), 
-                                                                    ($) => v_generic.expect_text(
-                                                                        $, 
+                                                                    ),
+                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                        $,
                                                                         ($) => abort(
                                                                             ['expected a text', null]
                                                                         )
@@ -215,13 +219,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                                 ),
                                                                 'Subcategorie fiscus': _p_cc(
                                                                     $.__get_entry(
-                                                                        'Subcategorie fiscus', 
+                                                                        'Subcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Subcategorie fiscus"]
                                                                         )
-                                                                    ), 
-                                                                    ($) => v_generic.expect_text(
-                                                                        $, 
+                                                                    ),
+                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                        $,
                                                                         ($) => abort(
                                                                             ['expected a text', null]
                                                                         )
@@ -237,55 +241,55 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                 ),
                                 'Hoofdcategorieen fiscus': _p_cc(
                                     $.__get_entry(
-                                        'Hoofdcategorieen fiscus', 
+                                        'Hoofdcategorieen fiscus',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen fiscus"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Zijde': _p_cc(
                                                     $.__get_entry(
-                                                        'Zijde', 
+                                                        'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => _p_unreachable_code_path(
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
                                                     $.__get_entry(
-                                                        'Subcategorieen', 
+                                                        'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_dictionary(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
                                                         )
                                                     ).__d_map(
-                                                        ($,id) => _p_cc(
-                                                            v_generic.expect_group(
-                                                                $, 
+                                                        ($, id) => _p_cc(
+                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a group', null]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => null
                                                         )
                                                     )
@@ -299,32 +303,32 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                     ),
                     'BTW-categorieen': _p_cc(
                         $.__get_entry(
-                            'BTW-categorieen', 
+                            'BTW-categorieen',
                             ($) => abort(
                                 ['no such entry', "BTW-categorieen"]
                             )
-                        ), 
-                        ($) => v_generic.expect_dictionary(
-                            $, 
+                        ),
+                        ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                            $,
                             ($) => abort(
                                 ['expected a dictionary', null]
                             )
                         ).__d_map(
-                            ($,id) => _p_cc(
-                                v_generic.expect_group(
-                                    $, 
+                            ($, id) => _p_cc(
+                                v_unmarshalled_from_parse_tree.Group(
+                                    $,
                                     ($) => abort(
                                         ['expected a group', null]
                                     )
-                                ), 
+                                ),
                                 ($) => ({
                                     'BTW-heffing': _p_cc(
                                         $.__get_entry(
-                                            'BTW-heffing', 
+                                            'BTW-heffing',
                                             ($) => abort(
                                                 ['no such entry', "BTW-heffing"]
                                             )
-                                        ), 
+                                        ),
                                         ($) => _p_unreachable_code_path(
                                         )
                                     ),
@@ -334,34 +338,34 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                     ),
                     'Gebruikers': _p_cc(
                         $.__get_entry(
-                            'Gebruikers', 
+                            'Gebruikers',
                             ($) => abort(
                                 ['no such entry', "Gebruikers"]
                             )
-                        ), 
-                        ($) => v_generic.expect_dictionary(
-                            $, 
+                        ),
+                        ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                            $,
                             ($) => abort(
                                 ['expected a dictionary', null]
                             )
                         ).__d_map(
-                            ($,id) => _p_cc(
-                                v_generic.expect_group(
-                                    $, 
+                            ($, id) => _p_cc(
+                                v_unmarshalled_from_parse_tree.Group(
+                                    $,
                                     ($) => abort(
                                         ['expected a group', null]
                                     )
-                                ), 
+                                ),
                                 ($) => ({
                                     'Volledige naam': _p_cc(
                                         $.__get_entry(
-                                            'Volledige naam', 
+                                            'Volledige naam',
                                             ($) => abort(
                                                 ['no such entry', "Volledige naam"]
                                             )
-                                        ), 
-                                        ($) => v_generic.expect_text(
-                                            $, 
+                                        ),
+                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                            $,
                                             ($) => abort(
                                                 ['expected a text', null]
                                             )
@@ -369,13 +373,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                     ),
                                     'Wachtwoord': _p_cc(
                                         $.__get_entry(
-                                            'Wachtwoord', 
+                                            'Wachtwoord',
                                             ($) => abort(
                                                 ['no such entry', "Wachtwoord"]
                                             )
-                                        ), 
-                                        ($) => v_generic.expect_text(
-                                            $, 
+                                        ),
+                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                            $,
                                             ($) => abort(
                                                 ['expected a text', null]
                                             )
@@ -387,18 +391,18 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                     ),
                     'Huidige datum': _p_cc(
                         $.__get_entry(
-                            'Huidige datum', 
+                            'Huidige datum',
                             ($) => abort(
                                 ['no such entry', "Huidige datum"]
                             )
-                        ), 
+                        ),
                         ($) => v_deserialize_number.deserialize(
-                            v_generic.expect_text(
-                                $, 
+                            v_unmarshalled_from_parse_tree.Text(
+                                $,
                                 ($) => abort(
                                     ['expected a text', null]
                                 )
-                            ), 
+                            ),
                             ($) => abort(
                                 ['not a valid number', null]
                             )
@@ -406,54 +410,54 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                     ),
                     'Resultaat': _p_cc(
                         $.__get_entry(
-                            'Resultaat', 
+                            'Resultaat',
                             ($) => abort(
                                 ['no such entry', "Resultaat"]
                             )
-                        ), 
+                        ),
                         ($) => _p_cc(
-                            v_generic.expect_group(
-                                $, 
+                            v_unmarshalled_from_parse_tree.Group(
+                                $,
                                 ($) => abort(
                                     ['expected a group', null]
                                 )
-                            ), 
+                            ),
                             ($) => ({
                                 'Correctietypes vennootschapsbelasting': _p_cc(
                                     $.__get_entry(
-                                        'Correctietypes vennootschapsbelasting', 
+                                        'Correctietypes vennootschapsbelasting',
                                         ($) => abort(
                                             ['no such entry', "Correctietypes vennootschapsbelasting"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Te corrigeren promillage': _p_cc(
                                                     $.__get_entry(
-                                                        'Te corrigeren promillage', 
+                                                        'Te corrigeren promillage',
                                                         ($) => abort(
                                                             ['no such entry', "Te corrigeren promillage"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => v_deserialize_number.deserialize(
-                                                        v_generic.expect_text(
-                                                            $, 
+                                                        v_unmarshalled_from_parse_tree.Text(
+                                                            $,
                                                             ($) => abort(
                                                                 ['expected a text', null]
                                                             )
-                                                        ), 
+                                                        ),
                                                         ($) => abort(
                                                             ['not a valid number', null]
                                                         )
@@ -465,34 +469,34 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                 ),
                                 'Grootboekrekeningen': _p_cc(
                                     $.__get_entry(
-                                        'Grootboekrekeningen', 
+                                        'Grootboekrekeningen',
                                         ($) => abort(
                                             ['no such entry', "Grootboekrekeningen"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Hoofdcategorie': _p_cc(
                                                     $.__get_entry(
-                                                        'Hoofdcategorie', 
+                                                        'Hoofdcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Hoofdcategorie"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_text(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a text', null]
                                                         )
@@ -500,13 +504,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                 ),
                                                 'Subcategorie': _p_cc(
                                                     $.__get_entry(
-                                                        'Subcategorie', 
+                                                        'Subcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorie"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_text(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a text', null]
                                                         )
@@ -514,11 +518,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                 ),
                                                 'Zijde': _p_cc(
                                                     $.__get_entry(
-                                                        'Zijde', 
+                                                        'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => _p_unreachable_code_path(
                                                     )
                                                 ),
@@ -528,65 +532,65 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                 ),
                                 'Hoofdcategorieen': _p_cc(
                                     $.__get_entry(
-                                        'Hoofdcategorieen', 
+                                        'Hoofdcategorieen',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Zijde': _p_cc(
                                                     $.__get_entry(
-                                                        'Zijde', 
+                                                        'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => _p_unreachable_code_path(
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
                                                     $.__get_entry(
-                                                        'Subcategorieen', 
+                                                        'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_dictionary(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
                                                         )
                                                     ).__d_map(
-                                                        ($,id) => _p_cc(
-                                                            v_generic.expect_group(
-                                                                $, 
+                                                        ($, id) => _p_cc(
+                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a group', null]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => ({
                                                                 'Hoofdcategorie fiscus': _p_cc(
                                                                     $.__get_entry(
-                                                                        'Hoofdcategorie fiscus', 
+                                                                        'Hoofdcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Hoofdcategorie fiscus"]
                                                                         )
-                                                                    ), 
-                                                                    ($) => v_generic.expect_text(
-                                                                        $, 
+                                                                    ),
+                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                        $,
                                                                         ($) => abort(
                                                                             ['expected a text', null]
                                                                         )
@@ -594,13 +598,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                                 ),
                                                                 'Subcategorie fiscus': _p_cc(
                                                                     $.__get_entry(
-                                                                        'Subcategorie fiscus', 
+                                                                        'Subcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Subcategorie fiscus"]
                                                                         )
-                                                                    ), 
-                                                                    ($) => v_generic.expect_text(
-                                                                        $, 
+                                                                    ),
+                                                                    ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                        $,
                                                                         ($) => abort(
                                                                             ['expected a text', null]
                                                                         )
@@ -616,55 +620,55 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                 ),
                                 'Hoofdcategorieen fiscus': _p_cc(
                                     $.__get_entry(
-                                        'Hoofdcategorieen fiscus', 
+                                        'Hoofdcategorieen fiscus',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen fiscus"]
                                         )
-                                    ), 
-                                    ($) => v_generic.expect_dictionary(
-                                        $, 
+                                    ),
+                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                        $,
                                         ($) => abort(
                                             ['expected a dictionary', null]
                                         )
                                     ).__d_map(
-                                        ($,id) => _p_cc(
-                                            v_generic.expect_group(
-                                                $, 
+                                        ($, id) => _p_cc(
+                                            v_unmarshalled_from_parse_tree.Group(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a group', null]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => ({
                                                 'Zijde': _p_cc(
                                                     $.__get_entry(
-                                                        'Zijde', 
+                                                        'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => _p_unreachable_code_path(
                                                     )
                                                 ),
                                                 'Subcategorieen': _p_cc(
                                                     $.__get_entry(
-                                                        'Subcategorieen', 
+                                                        'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"]
                                                         )
-                                                    ), 
-                                                    ($) => v_generic.expect_dictionary(
-                                                        $, 
+                                                    ),
+                                                    ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
                                                         )
                                                     ).__d_map(
-                                                        ($,id) => _p_cc(
-                                                            v_generic.expect_group(
-                                                                $, 
+                                                        ($, id) => _p_cc(
+                                                            v_unmarshalled_from_parse_tree.Group(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a group', null]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => null
                                                         )
                                                     )
@@ -681,87 +685,87 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
         ),
         'Informele rekeningen': _p_cc(
             $.__get_entry(
-                'Informele rekeningen', 
+                'Informele rekeningen',
                 ($) => abort(
                     ['no such entry', "Informele rekeningen"]
                 )
-            ), 
-            ($) => v_generic.expect_dictionary(
-                $, 
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                $,
                 ($) => abort(
                     ['expected a dictionary', null]
                 )
             ).__d_map(
-                ($,id) => _p_cc(
-                    v_generic.expect_group(
-                        $, 
+                ($, id) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
                         ($) => abort(
                             ['expected a group', null]
                         )
-                    ), 
+                    ),
                     ($) => null
                 )
             )
         ),
         'Jaren': _p_cc(
             $.__get_entry(
-                'Jaren', 
+                'Jaren',
                 ($) => abort(
                     ['no such entry', "Jaren"]
                 )
-            ), 
-            ($) => v_generic.expect_dictionary(
-                $, 
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                $,
                 ($) => abort(
                     ['expected a dictionary', null]
                 )
             ).__d_map(
-                ($,id) => _p_cc(
-                    v_generic.expect_group(
-                        $, 
+                ($, id) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
                         ($) => abort(
                             ['expected a group', null]
                         )
-                    ), 
+                    ),
                     ($) => ({
                         'Afgesloten': _p_cc(
                             $.__get_entry(
-                                'Afgesloten', 
+                                'Afgesloten',
                                 ($) => abort(
                                     ['no such entry', "Afgesloten"]
                                 )
-                            ), 
+                            ),
                             ($) => _p_unreachable_code_path(
                             )
                         ),
                         'Balans grootboekrekeningen': _p_cc(
                             $.__get_entry(
-                                'Balans grootboekrekeningen', 
+                                'Balans grootboekrekeningen',
                                 ($) => abort(
                                     ['no such entry', "Balans grootboekrekeningen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Type': _p_cc(
                                             $.__get_entry(
-                                                'Type', 
+                                                'Type',
                                                 ($) => abort(
                                                     ['no such entry', "Type"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
@@ -771,39 +775,39 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Bankrekeningen': _p_cc(
                             $.__get_entry(
-                                'Bankrekeningen', 
+                                'Bankrekeningen',
                                 ($) => abort(
                                     ['no such entry', "Bankrekeningen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Beginsaldo': _p_cc(
                                             $.__get_entry(
-                                                'Beginsaldo', 
+                                                'Beginsaldo',
                                                 ($) => abort(
                                                     ['no such entry', "Beginsaldo"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => v_deserialize_number.deserialize(
-                                                v_generic.expect_text(
-                                                    $, 
+                                                v_unmarshalled_from_parse_tree.Text(
+                                                    $,
                                                     ($) => abort(
                                                         ['expected a text', null]
                                                     )
-                                                ), 
+                                                ),
                                                 ($) => abort(
                                                     ['not a valid number', null]
                                                 )
@@ -811,13 +815,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Grootboekrekening': _p_cc(
                                             $.__get_entry(
-                                                'Grootboekrekening', 
+                                                'Grootboekrekening',
                                                 ($) => abort(
                                                     ['no such entry', "Grootboekrekening"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_text(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a text', null]
                                                 )
@@ -825,39 +829,39 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Mutaties': _p_cc(
                                             $.__get_entry(
-                                                'Mutaties', 
+                                                'Mutaties',
                                                 ($) => abort(
                                                     ['no such entry', "Mutaties"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Bedrag': _p_cc(
                                                             $.__get_entry(
-                                                                'Bedrag', 
+                                                                'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -865,18 +869,18 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Datum': _p_cc(
                                                             $.__get_entry(
-                                                                'Datum', 
+                                                                'Datum',
                                                                 ($) => abort(
                                                                     ['no such entry', "Datum"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -884,13 +888,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $.__get_entry(
-                                                                'Omschrijving', 
+                                                                'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"]
                                                                 )
-                                                            ), 
-                                                            ($) => v_generic.expect_text(
-                                                                $, 
+                                                            ),
+                                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a text', null]
                                                                 )
@@ -898,11 +902,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Status': _p_cc(
                                                             $.__get_entry(
-                                                                'Status', 
+                                                                'Status',
                                                                 ($) => abort(
                                                                     ['no such entry', "Status"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
@@ -912,11 +916,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Nieuw': _p_cc(
                                             $.__get_entry(
-                                                'Nieuw', 
+                                                'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
@@ -926,18 +930,18 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Beginsaldo nog aan te geven BTW': _p_cc(
                             $.__get_entry(
-                                'Beginsaldo nog aan te geven BTW', 
+                                'Beginsaldo nog aan te geven BTW',
                                 ($) => abort(
                                     ['no such entry', "Beginsaldo nog aan te geven BTW"]
                                 )
-                            ), 
+                            ),
                             ($) => v_deserialize_number.deserialize(
-                                v_generic.expect_text(
-                                    $, 
+                                v_unmarshalled_from_parse_tree.Text(
+                                    $,
                                     ($) => abort(
                                         ['expected a text', null]
                                     )
-                                ), 
+                                ),
                                 ($) => abort(
                                     ['not a valid number', null]
                                 )
@@ -945,18 +949,18 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Beginsaldo winstreserve': _p_cc(
                             $.__get_entry(
-                                'Beginsaldo winstreserve', 
+                                'Beginsaldo winstreserve',
                                 ($) => abort(
                                     ['no such entry', "Beginsaldo winstreserve"]
                                 )
-                            ), 
+                            ),
                             ($) => v_deserialize_number.deserialize(
-                                v_generic.expect_text(
-                                    $, 
+                                v_unmarshalled_from_parse_tree.Text(
+                                    $,
                                     ($) => abort(
                                         ['expected a text', null]
                                     )
-                                ), 
+                                ),
                                 ($) => abort(
                                     ['not a valid number', null]
                                 )
@@ -964,28 +968,28 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'BTW periode saldo': _p_cc(
                             $.__get_entry(
-                                'BTW periode saldo', 
+                                'BTW periode saldo',
                                 ($) => abort(
                                     ['no such entry', "BTW periode saldo"]
                                 )
-                            ), 
+                            ),
                             ($) => _p_cc(
-                                v_generic.expect_group(
-                                    $, 
+                                v_unmarshalled_from_parse_tree.Group(
+                                    $,
                                     ($) => abort(
                                         ['expected a group', null]
                                     )
-                                ), 
+                                ),
                                 ($) => ({
                                     'Grootboekrekening': _p_cc(
                                         $.__get_entry(
-                                            'Grootboekrekening', 
+                                            'Grootboekrekening',
                                             ($) => abort(
                                                 ['no such entry', "Grootboekrekening"]
                                             )
-                                        ), 
-                                        ($) => v_generic.expect_text(
-                                            $, 
+                                        ),
+                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                            $,
                                             ($) => abort(
                                                 ['expected a text', null]
                                             )
@@ -996,79 +1000,79 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'BTW periodes': _p_cc(
                             $.__get_entry(
-                                'BTW periodes', 
+                                'BTW periodes',
                                 ($) => abort(
                                     ['no such entry', "BTW periodes"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         '1. BTW-categorieen': _p_cc(
                                             $.__get_entry(
-                                                '1. BTW-categorieen', 
+                                                '1. BTW-categorieen',
                                                 ($) => abort(
                                                     ['no such entry', "1. BTW-categorieen"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => null
                                                 )
                                             )
                                         ),
                                         'Documenten': _p_cc(
                                             $.__get_entry(
-                                                'Documenten', 
+                                                'Documenten',
                                                 ($) => abort(
                                                     ['no such entry', "Documenten"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Bestand': _p_cc(
                                                             $.__get_entry(
-                                                                'Bestand', 
+                                                                'Bestand',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bestand"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => Bestandsnaam(
-                                                                $, 
+                                                                $,
                                                                 ($) => abort(
                                                                     $
                                                                 )
@@ -1080,13 +1084,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Omschrijving': _p_cc(
                                             $.__get_entry(
-                                                'Omschrijving', 
+                                                'Omschrijving',
                                                 ($) => abort(
                                                     ['no such entry', "Omschrijving"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_text(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a text', null]
                                                 )
@@ -1094,11 +1098,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Status': _p_cc(
                                             $.__get_entry(
-                                                'Status', 
+                                                'Status',
                                                 ($) => abort(
                                                     ['no such entry', "Status"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
@@ -1108,23 +1112,23 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Eerste boekjaar': _p_cc(
                             $.__get_entry(
-                                'Eerste boekjaar', 
+                                'Eerste boekjaar',
                                 ($) => abort(
                                     ['no such entry', "Eerste boekjaar"]
                                 )
-                            ), 
+                            ),
                             ($) => _p_unreachable_code_path(
                             )
                         ),
                         'Grootboekrekening voor BTW afrondingen': _p_cc(
                             $.__get_entry(
-                                'Grootboekrekening voor BTW afrondingen', 
+                                'Grootboekrekening voor BTW afrondingen',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor BTW afrondingen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_text(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                $,
                                 ($) => abort(
                                     ['expected a text', null]
                                 )
@@ -1132,13 +1136,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Grootboekrekening voor nog aan te geven BTW': _p_cc(
                             $.__get_entry(
-                                'Grootboekrekening voor nog aan te geven BTW', 
+                                'Grootboekrekening voor nog aan te geven BTW',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor nog aan te geven BTW"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_text(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                $,
                                 ($) => abort(
                                     ['expected a text', null]
                                 )
@@ -1146,13 +1150,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Grootboekrekening voor resultaat dit jaar': _p_cc(
                             $.__get_entry(
-                                'Grootboekrekening voor resultaat dit jaar', 
+                                'Grootboekrekening voor resultaat dit jaar',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor resultaat dit jaar"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_text(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                $,
                                 ($) => abort(
                                     ['expected a text', null]
                                 )
@@ -1160,13 +1164,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Grootboekrekening voor winstreserve': _p_cc(
                             $.__get_entry(
-                                'Grootboekrekening voor winstreserve', 
+                                'Grootboekrekening voor winstreserve',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor winstreserve"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_text(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                $,
                                 ($) => abort(
                                     ['expected a text', null]
                                 )
@@ -1174,39 +1178,39 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Informele rekeningen': _p_cc(
                             $.__get_entry(
-                                'Informele rekeningen', 
+                                'Informele rekeningen',
                                 ($) => abort(
                                     ['no such entry', "Informele rekeningen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Beginsaldo': _p_cc(
                                             $.__get_entry(
-                                                'Beginsaldo', 
+                                                'Beginsaldo',
                                                 ($) => abort(
                                                     ['no such entry', "Beginsaldo"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => v_deserialize_number.deserialize(
-                                                v_generic.expect_text(
-                                                    $, 
+                                                v_unmarshalled_from_parse_tree.Text(
+                                                    $,
                                                     ($) => abort(
                                                         ['expected a text', null]
                                                     )
-                                                ), 
+                                                ),
                                                 ($) => abort(
                                                     ['not a valid number', null]
                                                 )
@@ -1214,13 +1218,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Grootboekrekening': _p_cc(
                                             $.__get_entry(
-                                                'Grootboekrekening', 
+                                                'Grootboekrekening',
                                                 ($) => abort(
                                                     ['no such entry', "Grootboekrekening"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_text(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a text', null]
                                                 )
@@ -1228,11 +1232,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Nieuw': _p_cc(
                                             $.__get_entry(
-                                                'Nieuw', 
+                                                'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
@@ -1242,69 +1246,69 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Inkopen': _p_cc(
                             $.__get_entry(
-                                'Inkopen', 
+                                'Inkopen',
                                 ($) => abort(
                                     ['no such entry', "Inkopen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Afhandeling': _p_cc(
                                             $.__get_entry(
-                                                'Afhandeling', 
+                                                'Afhandeling',
                                                 ($) => abort(
                                                     ['no such entry', "Afhandeling"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
                                         'BTW-regime': _p_cc(
                                             $.__get_entry(
-                                                'BTW-regime', 
+                                                'BTW-regime',
                                                 ($) => abort(
                                                     ['no such entry', "BTW-regime"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
                                         'Brondocument': _p_cc(
                                             $.__get_entry(
-                                                'Brondocument', 
+                                                'Brondocument',
                                                 ($) => abort(
                                                     ['no such entry', "Brondocument"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
                                         'Datum': _p_cc(
                                             $.__get_entry(
-                                                'Datum', 
+                                                'Datum',
                                                 ($) => abort(
                                                     ['no such entry', "Datum"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => v_deserialize_number.deserialize(
-                                                v_generic.expect_text(
-                                                    $, 
+                                                v_unmarshalled_from_parse_tree.Text(
+                                                    $,
                                                     ($) => abort(
                                                         ['expected a text', null]
                                                     )
-                                                ), 
+                                                ),
                                                 ($) => abort(
                                                     ['not a valid number', null]
                                                 )
@@ -1312,44 +1316,44 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Regels': _p_cc(
                                             $.__get_entry(
-                                                'Regels', 
+                                                'Regels',
                                                 ($) => abort(
                                                     ['no such entry', "Regels"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Bedrag': _p_cc(
                                                             $.__get_entry(
-                                                                'Bedrag', 
+                                                                'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $.__get_entry(
-                                                                'Omschrijving', 
+                                                                'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"]
                                                                 )
-                                                            ), 
-                                                            ($) => v_generic.expect_text(
-                                                                $, 
+                                                            ),
+                                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a text', null]
                                                                 )
@@ -1357,11 +1361,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Type': _p_cc(
                                                             $.__get_entry(
-                                                                'Type', 
+                                                                'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
@@ -1371,11 +1375,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Type': _p_cc(
                                             $.__get_entry(
-                                                'Type', 
+                                                'Type',
                                                 ($) => abort(
                                                     ['no such entry', "Type"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
@@ -1385,28 +1389,28 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Inkoop saldo': _p_cc(
                             $.__get_entry(
-                                'Inkoop saldo', 
+                                'Inkoop saldo',
                                 ($) => abort(
                                     ['no such entry', "Inkoop saldo"]
                                 )
-                            ), 
+                            ),
                             ($) => _p_cc(
-                                v_generic.expect_group(
-                                    $, 
+                                v_unmarshalled_from_parse_tree.Group(
+                                    $,
                                     ($) => abort(
                                         ['expected a group', null]
                                     )
-                                ), 
+                                ),
                                 ($) => ({
                                     'Grootboekrekening': _p_cc(
                                         $.__get_entry(
-                                            'Grootboekrekening', 
+                                            'Grootboekrekening',
                                             ($) => abort(
                                                 ['no such entry', "Grootboekrekening"]
                                             )
-                                        ), 
-                                        ($) => v_generic.expect_text(
-                                            $, 
+                                        ),
+                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                            $,
                                             ($) => abort(
                                                 ['expected a text', null]
                                             )
@@ -1417,39 +1421,39 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Overige balans items': _p_cc(
                             $.__get_entry(
-                                'Overige balans items', 
+                                'Overige balans items',
                                 ($) => abort(
                                     ['no such entry', "Overige balans items"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Beginsaldo': _p_cc(
                                             $.__get_entry(
-                                                'Beginsaldo', 
+                                                'Beginsaldo',
                                                 ($) => abort(
                                                     ['no such entry', "Beginsaldo"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => v_deserialize_number.deserialize(
-                                                v_generic.expect_text(
-                                                    $, 
+                                                v_unmarshalled_from_parse_tree.Text(
+                                                    $,
                                                     ($) => abort(
                                                         ['expected a text', null]
                                                     )
-                                                ), 
+                                                ),
                                                 ($) => abort(
                                                     ['not a valid number', null]
                                                 )
@@ -1457,13 +1461,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Grootboekrekening': _p_cc(
                                             $.__get_entry(
-                                                'Grootboekrekening', 
+                                                'Grootboekrekening',
                                                 ($) => abort(
                                                     ['no such entry', "Grootboekrekening"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_text(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a text', null]
                                                 )
@@ -1471,39 +1475,39 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Memoriaal boekingen': _p_cc(
                                             $.__get_entry(
-                                                'Memoriaal boekingen', 
+                                                'Memoriaal boekingen',
                                                 ($) => abort(
                                                     ['no such entry', "Memoriaal boekingen"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Bedrag': _p_cc(
                                                             $.__get_entry(
-                                                                'Bedrag', 
+                                                                'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -1511,18 +1515,18 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Datum': _p_cc(
                                                             $.__get_entry(
-                                                                'Datum', 
+                                                                'Datum',
                                                                 ($) => abort(
                                                                     ['no such entry', "Datum"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -1530,13 +1534,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Grootboekrekening': _p_cc(
                                                             $.__get_entry(
-                                                                'Grootboekrekening', 
+                                                                'Grootboekrekening',
                                                                 ($) => abort(
                                                                     ['no such entry', "Grootboekrekening"]
                                                                 )
-                                                            ), 
-                                                            ($) => v_generic.expect_text(
-                                                                $, 
+                                                            ),
+                                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a text', null]
                                                                 )
@@ -1544,13 +1548,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $.__get_entry(
-                                                                'Omschrijving', 
+                                                                'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"]
                                                                 )
-                                                            ), 
-                                                            ($) => v_generic.expect_text(
-                                                                $, 
+                                                            ),
+                                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a text', null]
                                                                 )
@@ -1562,11 +1566,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Nieuw': _p_cc(
                                             $.__get_entry(
-                                                'Nieuw', 
+                                                'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
@@ -1576,66 +1580,66 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Resultaat grootboekrekeningen': _p_cc(
                             $.__get_entry(
-                                'Resultaat grootboekrekeningen', 
+                                'Resultaat grootboekrekeningen',
                                 ($) => abort(
                                     ['no such entry', "Resultaat grootboekrekeningen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => null
                                 )
                             )
                         ),
                         'Salarisrondes': _p_cc(
                             $.__get_entry(
-                                'Salarisrondes', 
+                                'Salarisrondes',
                                 ($) => abort(
                                     ['no such entry', "Salarisrondes"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => null
                                 )
                             )
                         ),
                         'Startdatum boekjaar': _p_cc(
                             $.__get_entry(
-                                'Startdatum boekjaar', 
+                                'Startdatum boekjaar',
                                 ($) => abort(
                                     ['no such entry', "Startdatum boekjaar"]
                                 )
-                            ), 
+                            ),
                             ($) => v_deserialize_number.deserialize(
-                                v_generic.expect_text(
-                                    $, 
+                                v_unmarshalled_from_parse_tree.Text(
+                                    $,
                                     ($) => abort(
                                         ['expected a text', null]
                                     )
-                                ), 
+                                ),
                                 ($) => abort(
                                     ['not a valid number', null]
                                 )
@@ -1643,28 +1647,28 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Verkoop saldo': _p_cc(
                             $.__get_entry(
-                                'Verkoop saldo', 
+                                'Verkoop saldo',
                                 ($) => abort(
                                     ['no such entry', "Verkoop saldo"]
                                 )
-                            ), 
+                            ),
                             ($) => _p_cc(
-                                v_generic.expect_group(
-                                    $, 
+                                v_unmarshalled_from_parse_tree.Group(
+                                    $,
                                     ($) => abort(
                                         ['expected a group', null]
                                     )
-                                ), 
+                                ),
                                 ($) => ({
                                     'Grootboekrekening': _p_cc(
                                         $.__get_entry(
-                                            'Grootboekrekening', 
+                                            'Grootboekrekening',
                                             ($) => abort(
                                                 ['no such entry', "Grootboekrekening"]
                                             )
-                                        ), 
-                                        ($) => v_generic.expect_text(
-                                            $, 
+                                        ),
+                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                            $,
                                             ($) => abort(
                                                 ['expected a text', null]
                                             )
@@ -1675,49 +1679,49 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Verkopen': _p_cc(
                             $.__get_entry(
-                                'Verkopen', 
+                                'Verkopen',
                                 ($) => abort(
                                     ['no such entry', "Verkopen"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Afhandeling': _p_cc(
                                             $.__get_entry(
-                                                'Afhandeling', 
+                                                'Afhandeling',
                                                 ($) => abort(
                                                     ['no such entry', "Afhandeling"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
                                         'Betalingstermijn': _p_cc(
                                             $.__get_entry(
-                                                'Betalingstermijn', 
+                                                'Betalingstermijn',
                                                 ($) => abort(
                                                     ['no such entry', "Betalingstermijn"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => v_deserialize_number.deserialize(
-                                                v_generic.expect_text(
-                                                    $, 
+                                                v_unmarshalled_from_parse_tree.Text(
+                                                    $,
                                                     ($) => abort(
                                                         ['expected a text', null]
                                                     )
-                                                ), 
+                                                ),
                                                 ($) => abort(
                                                     ['not a valid number', null]
                                                 )
@@ -1725,13 +1729,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'BTW-periode': _p_cc(
                                             $.__get_entry(
-                                                'BTW-periode', 
+                                                'BTW-periode',
                                                 ($) => abort(
                                                     ['no such entry', "BTW-periode"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_text(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a text', null]
                                                 )
@@ -1739,38 +1743,38 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Brondocument': _p_cc(
                                             $.__get_entry(
-                                                'Brondocument', 
+                                                'Brondocument',
                                                 ($) => abort(
                                                     ['no such entry', "Brondocument"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
                                         'Contracttype': _p_cc(
                                             $.__get_entry(
-                                                'Contracttype', 
+                                                'Contracttype',
                                                 ($) => abort(
                                                     ['no such entry', "Contracttype"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => _p_unreachable_code_path(
                                             )
                                         ),
                                         'Datum': _p_cc(
                                             $.__get_entry(
-                                                'Datum', 
+                                                'Datum',
                                                 ($) => abort(
                                                     ['no such entry', "Datum"]
                                                 )
-                                            ), 
+                                            ),
                                             ($) => v_deserialize_number.deserialize(
-                                                v_generic.expect_text(
-                                                    $, 
+                                                v_unmarshalled_from_parse_tree.Text(
+                                                    $,
                                                     ($) => abort(
                                                         ['expected a text', null]
                                                     )
-                                                ), 
+                                                ),
                                                 ($) => abort(
                                                     ['not a valid number', null]
                                                 )
@@ -1778,13 +1782,13 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Debiteur': _p_cc(
                                             $.__get_entry(
-                                                'Debiteur', 
+                                                'Debiteur',
                                                 ($) => abort(
                                                     ['no such entry', "Debiteur"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_text(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a text', null]
                                                 )
@@ -1792,49 +1796,49 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                         ),
                                         'Regels': _p_cc(
                                             $.__get_entry(
-                                                'Regels', 
+                                                'Regels',
                                                 ($) => abort(
                                                     ['no such entry', "Regels"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'BTW-regime': _p_cc(
                                                             $.__get_entry(
-                                                                'BTW-regime', 
+                                                                'BTW-regime',
                                                                 ($) => abort(
                                                                     ['no such entry', "BTW-regime"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
                                                         'Bedrag exclusief BTW': _p_cc(
                                                             $.__get_entry(
-                                                                'Bedrag exclusief BTW', 
+                                                                'Bedrag exclusief BTW',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag exclusief BTW"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -1842,23 +1846,23 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Contracttype': _p_cc(
                                                             $.__get_entry(
-                                                                'Contracttype', 
+                                                                'Contracttype',
                                                                 ($) => abort(
                                                                     ['no such entry', "Contracttype"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $.__get_entry(
-                                                                'Omschrijving', 
+                                                                'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"]
                                                                 )
-                                                            ), 
-                                                            ($) => v_generic.expect_text(
-                                                                $, 
+                                                            ),
+                                                            ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a text', null]
                                                                 )
@@ -1866,11 +1870,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Type': _p_cc(
                                                             $.__get_entry(
-                                                                'Type', 
+                                                                'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
@@ -1884,60 +1888,60 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Verrekenposten': _p_cc(
                             $.__get_entry(
-                                'Verrekenposten', 
+                                'Verrekenposten',
                                 ($) => abort(
                                     ['no such entry', "Verrekenposten"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Mutaties': _p_cc(
                                             $.__get_entry(
-                                                'Mutaties', 
+                                                'Mutaties',
                                                 ($) => abort(
                                                     ['no such entry', "Mutaties"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Bedrag': _p_cc(
                                                             $.__get_entry(
-                                                                'Bedrag', 
+                                                                'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -1945,11 +1949,11 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                                                         ),
                                                         'Afhandeling': _p_cc(
                                                             $.__get_entry(
-                                                                'Afhandeling', 
+                                                                'Afhandeling',
                                                                 ($) => abort(
                                                                     ['no such entry', "Afhandeling"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => _p_unreachable_code_path(
                                                             )
                                                         ),
@@ -1967,81 +1971,81 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
         ),
         'Klanten': _p_cc(
             $.__get_entry(
-                'Klanten', 
+                'Klanten',
                 ($) => abort(
                     ['no such entry', "Klanten"]
                 )
-            ), 
-            ($) => v_generic.expect_dictionary(
-                $, 
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                $,
                 ($) => abort(
                     ['expected a dictionary', null]
                 )
             ).__d_map(
-                ($,id) => _p_cc(
-                    v_generic.expect_group(
-                        $, 
+                ($, id) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
                         ($) => abort(
                             ['expected a group', null]
                         )
-                    ), 
+                    ),
                     ($) => ({
                         'Licentieovereenkomsten': _p_cc(
                             $.__get_entry(
-                                'Licentieovereenkomsten', 
+                                'Licentieovereenkomsten',
                                 ($) => abort(
                                     ['no such entry', "Licentieovereenkomsten"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Periodes': _p_cc(
                                             $.__get_entry(
-                                                'Periodes', 
+                                                'Periodes',
                                                 ($) => abort(
                                                     ['no such entry', "Periodes"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Bedrag': _p_cc(
                                                             $.__get_entry(
-                                                                'Bedrag', 
+                                                                'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
-                                                            ), 
+                                                            ),
                                                             ($) => v_deserialize_number.deserialize(
-                                                                v_generic.expect_text(
-                                                                    $, 
+                                                                v_unmarshalled_from_parse_tree.Text(
+                                                                    $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
                                                                     )
-                                                                ), 
+                                                                ),
                                                                 ($) => abort(
                                                                     ['not a valid number', null]
                                                                 )
@@ -2057,74 +2061,74 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
                         ),
                         'Projecten': _p_cc(
                             $.__get_entry(
-                                'Projecten', 
+                                'Projecten',
                                 ($) => abort(
                                     ['no such entry', "Projecten"]
                                 )
-                            ), 
-                            ($) => v_generic.expect_dictionary(
-                                $, 
+                            ),
+                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
                                 )
                             ).__d_map(
-                                ($,id) => _p_cc(
-                                    v_generic.expect_group(
-                                        $, 
+                                ($, id) => _p_cc(
+                                    v_unmarshalled_from_parse_tree.Group(
+                                        $,
                                         ($) => abort(
                                             ['expected a group', null]
                                         )
-                                    ), 
+                                    ),
                                     ($) => ({
                                         'Offertes': _p_cc(
                                             $.__get_entry(
-                                                'Offertes', 
+                                                'Offertes',
                                                 ($) => abort(
                                                     ['no such entry', "Offertes"]
                                                 )
-                                            ), 
-                                            ($) => v_generic.expect_dictionary(
-                                                $, 
+                                            ),
+                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null]
                                                 )
                                             ).__d_map(
-                                                ($,id) => _p_cc(
-                                                    v_generic.expect_group(
-                                                        $, 
+                                                ($, id) => _p_cc(
+                                                    v_unmarshalled_from_parse_tree.Group(
+                                                        $,
                                                         ($) => abort(
                                                             ['expected a group', null]
                                                         )
-                                                    ), 
+                                                    ),
                                                     ($) => ({
                                                         'Opbrengsten': _p_cc(
                                                             $.__get_entry(
-                                                                'Opbrengsten', 
+                                                                'Opbrengsten',
                                                                 ($) => abort(
                                                                     ['no such entry', "Opbrengsten"]
                                                                 )
-                                                            ), 
-                                                            ($) => v_generic.expect_dictionary(
-                                                                $, 
+                                                            ),
+                                                            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                                                                $,
                                                                 ($) => abort(
                                                                     ['expected a dictionary', null]
                                                                 )
                                                             ).__d_map(
-                                                                ($,id) => _p_cc(
-                                                                    v_generic.expect_group(
-                                                                        $, 
+                                                                ($, id) => _p_cc(
+                                                                    v_unmarshalled_from_parse_tree.Group(
+                                                                        $,
                                                                         ($) => abort(
                                                                             ['expected a group', null]
                                                                         )
-                                                                    ), 
+                                                                    ),
                                                                     ($) => ({
                                                                         'Type': _p_cc(
                                                                             $.__get_entry(
-                                                                                'Type', 
+                                                                                'Type',
                                                                                 ($) => abort(
                                                                                     ['no such entry', "Type"]
                                                                                 )
-                                                                            ), 
+                                                                            ),
                                                                             ($) => _p_unreachable_code_path(
                                                                             )
                                                                         ),
@@ -2146,48 +2150,48 @@ export const Root: t_signatures.Root = ($,abort) => _p_cc(
         ),
         'Leveranciers': _p_cc(
             $.__get_entry(
-                'Leveranciers', 
+                'Leveranciers',
                 ($) => abort(
                     ['no such entry', "Leveranciers"]
                 )
-            ), 
-            ($) => v_generic.expect_dictionary(
-                $, 
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                $,
                 ($) => abort(
                     ['expected a dictionary', null]
                 )
             ).__d_map(
-                ($,id) => _p_cc(
-                    v_generic.expect_group(
-                        $, 
+                ($, id) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
                         ($) => abort(
                             ['expected a group', null]
                         )
-                    ), 
+                    ),
                     ($) => null
                 )
             )
         ),
         'Medewerkers': _p_cc(
             $.__get_entry(
-                'Medewerkers', 
+                'Medewerkers',
                 ($) => abort(
                     ['no such entry', "Medewerkers"]
                 )
-            ), 
-            ($) => v_generic.expect_dictionary(
-                $, 
+            ),
+            ($) => v_unmarshalled_from_parse_tree.Dictionary(
+                $,
                 ($) => abort(
                     ['expected a dictionary', null]
                 )
             ).__d_map(
-                ($,id) => _p_cc(
-                    v_generic.expect_group(
-                        $, 
+                ($, id) => _p_cc(
+                    v_unmarshalled_from_parse_tree.Group(
+                        $,
                         ($) => abort(
                             ['expected a group', null]
                         )
-                    ), 
+                    ),
                     ($) => null
                 )
             )

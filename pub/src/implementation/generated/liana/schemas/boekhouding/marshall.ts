@@ -1,12 +1,12 @@
 
 import * as _p from "pareto-core/dist/transformer"
 
-import { 
-    _p_unreachable_code_path, 
+import {
+    _p_unreachable_code_path,
 } from "pareto-core/dist/unreachable_code_path"
 
-import { 
-    _p_cc, 
+import {
+    _p_cc,
 } from "pareto-core/dist/change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/marshall"
@@ -16,22 +16,23 @@ import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_
 import * as v_serialize_number from "liana-core/dist/implementation/manual/primitives/integer/serializers/decimal"
 
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
+
 export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Balans Hoofdcategorieen': _p_cc(
-            $['Balans Hoofdcategorieen'], 
+            $['Balans Hoofdcategorieen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Zijde': _p_cc(
-                            $['Zijde'], 
+                            $['Zijde'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Activa':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Activa',
                                                     'value': ['nothing', null],
@@ -39,7 +40,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
                                             )
                                         case 'Passiva':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Passiva',
                                                     'value': ['nothing', null],
@@ -54,9 +55,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
                             )]
                         ),
                         'Subcategorieen': _p_cc(
-                            $['Subcategorieen'], 
+                            $['Subcategorieen'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['nothing', null]
+                                ($, id) => ['nothing', null]
                             )]
                         ),
                     })
@@ -64,19 +65,19 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
             )]
         ),
         'Resultaat Hoofdcategorieen': _p_cc(
-            $['Resultaat Hoofdcategorieen'], 
+            $['Resultaat Hoofdcategorieen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Zijde': _p_cc(
-                            $['Zijde'], 
+                            $['Zijde'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Kosten':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Kosten',
                                                     'value': ['nothing', null],
@@ -84,7 +85,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
                                             )
                                         case 'Opbrengsten':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Opbrengsten',
                                                     'value': ['nothing', null],
@@ -99,9 +100,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
                             )]
                         ),
                         'Subcategorieen': _p_cc(
-                            $['Subcategorieen'], 
+                            $['Subcategorieen'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['nothing', null]
+                                ($, id) => ['nothing', null]
                             )]
                         ),
                     })
@@ -110,15 +111,16 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
         ),
     })
 )]]
+
 export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Correctietypes vennootschapsbelasting': _p_cc(
-            $['Correctietypes vennootschapsbelasting'], 
+            $['Correctietypes vennootschapsbelasting'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Te corrigeren promillage': _p_cc(
-                            $['Te corrigeren promillage'], 
+                            $['Te corrigeren promillage'],
                             ($) => ['text', ({
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
@@ -131,19 +133,19 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
             )]
         ),
         'Balans': _p_cc(
-            $['Balans'], 
+            $['Balans'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Zijde': _p_cc(
-                            $['Zijde'], 
+                            $['Zijde'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Activa':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Activa',
                                                     'value': ['nothing', null],
@@ -151,7 +153,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             )
                                         case 'Passiva':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Passiva',
                                                     'value': ['nothing', null],
@@ -166,19 +168,19 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             )]
                         ),
                         'Subcategorieen': _p_cc(
-                            $['Subcategorieen'], 
+                            $['Subcategorieen'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     ({
                                         'Hoofdcategorie fiscus': _p_cc(
-                                            $['Hoofdcategorie fiscus'], 
+                                            $['Hoofdcategorie fiscus'],
                                             ($) => ['text', ({
                                                 'delimiter': ['backtick', null],
                                                 'value': $['id'],
                                             })]
                                         ),
                                         'Subcategorie fiscus': _p_cc(
-                                            $['Subcategorie fiscus'], 
+                                            $['Subcategorie fiscus'],
                                             ($) => ['text', ({
                                                 'delimiter': ['backtick', null],
                                                 'value': $['id'],
@@ -193,19 +195,19 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
             )]
         ),
         'Resultaat': _p_cc(
-            $['Resultaat'], 
+            $['Resultaat'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Zijde': _p_cc(
-                            $['Zijde'], 
+                            $['Zijde'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Kosten':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Kosten',
                                                     'value': ['nothing', null],
@@ -213,7 +215,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             )
                                         case 'Opbrengsten':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Opbrengsten',
                                                     'value': ['nothing', null],
@@ -228,19 +230,19 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             )]
                         ),
                         'Subcategorieen': _p_cc(
-                            $['Subcategorieen'], 
+                            $['Subcategorieen'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     ({
                                         'Hoofdcategorie fiscus': _p_cc(
-                                            $['Hoofdcategorie fiscus'], 
+                                            $['Hoofdcategorie fiscus'],
                                             ($) => ['text', ({
                                                 'delimiter': ['backtick', null],
                                                 'value': $['id'],
                                             })]
                                         ),
                                         'Subcategorie fiscus': _p_cc(
-                                            $['Subcategorie fiscus'], 
+                                            $['Subcategorie fiscus'],
                                             ($) => ['text', ({
                                                 'delimiter': ['backtick', null],
                                                 'value': $['id'],
@@ -256,28 +258,29 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
         ),
     })
 )]]
+
 export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'BTW-categorieen': _p_cc(
-            $['BTW-categorieen'], 
+            $['BTW-categorieen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'BTW-heffing': _p_cc(
-                            $['BTW-heffing'], 
+                            $['BTW-heffing'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Ja',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'BTW-promillage': _p_cc(
-                                                                $['BTW-promillage'], 
+                                                                $['BTW-promillage'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['none', null],
                                                                     'value': v_serialize_number.serialize(
@@ -302,37 +305,37 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
             )]
         ),
         'Grootboekrekeningen': _p_cc(
-            $['Grootboekrekeningen'], 
+            $['Grootboekrekeningen'],
             ($) => ['group', ['verbose', _p.dictionary.literal(
                 ({
                     'Balans': _p_cc(
-                        $['Balans'], 
+                        $['Balans'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 ({
                                     'Hoofdcategorie': _p_cc(
-                                        $['Hoofdcategorie'], 
+                                        $['Hoofdcategorie'],
                                         ($) => ['text', ({
                                             'delimiter': ['backtick', null],
                                             'value': $['id'],
                                         })]
                                     ),
                                     'Subcategorie': _p_cc(
-                                        $['Subcategorie'], 
+                                        $['Subcategorie'],
                                         ($) => ['text', ({
                                             'delimiter': ['backtick', null],
                                             'value': $['id'],
                                         })]
                                     ),
                                     'Zijde': _p_cc(
-                                        $['Zijde'], 
+                                        $['Zijde'],
                                         ($) => ['state', _p.decide.state(
-                                            $, 
+                                            $,
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Activa':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Activa',
                                                                 'value': ['nothing', null],
@@ -340,7 +343,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                         )
                                                     case 'Passiva':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Passiva',
                                                                 'value': ['nothing', null],
@@ -359,52 +362,52 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                         )]
                     ),
                     'Resultaat': _p_cc(
-                        $['Resultaat'], 
+                        $['Resultaat'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 ({
                                     'Hoofdcategorie': _p_cc(
-                                        $['Hoofdcategorie'], 
+                                        $['Hoofdcategorie'],
                                         ($) => ['text', ({
                                             'delimiter': ['backtick', null],
                                             'value': $['id'],
                                         })]
                                     ),
                                     'Subcategorie': _p_cc(
-                                        $['Subcategorie'], 
+                                        $['Subcategorie'],
                                         ($) => ['text', ({
                                             'delimiter': ['backtick', null],
                                             'value': $['id'],
                                         })]
                                     ),
                                     'Zijde': _p_cc(
-                                        $['Zijde'], 
+                                        $['Zijde'],
                                         ($) => ['state', _p.decide.state(
-                                            $, 
+                                            $,
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Kosten':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Kosten',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                                                     ({
                                                                         'Correctie op vennootschapsbelasting': _p_cc(
-                                                                            $['Correctie op vennootschapsbelasting'], 
+                                                                            $['Correctie op vennootschapsbelasting'],
                                                                             ($) => ['state', _p.decide.state(
-                                                                                $, 
+                                                                                $,
                                                                                 ($): t_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Ja':
                                                                                             return _p.ss(
-                                                                                                $, 
+                                                                                                $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Ja',
                                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                         ({
                                                                                                             'Correctietype': _p_cc(
-                                                                                                                $['Correctietype'], 
+                                                                                                                $['Correctietype'],
                                                                                                                 ($) => ['text', ({
                                                                                                                     'delimiter': ['backtick', null],
                                                                                                                     'value': $['id'],
@@ -416,7 +419,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                             )
                                                                                         case 'Nee':
                                                                                             return _p.ss(
-                                                                                                $, 
+                                                                                                $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Nee',
                                                                                                     'value': ['nothing', null],
@@ -436,7 +439,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                         )
                                                     case 'Opbrengsten':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Opbrengsten',
                                                                 'value': ['nothing', null],
@@ -458,38 +461,38 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
             )]]
         ),
         'Rekeningen': _p_cc(
-            $['Rekeningen'], 
+            $['Rekeningen'],
             ($) => ['group', ['verbose', _p.dictionary.literal(
                 ({
                     'Bank': _p_cc(
-                        $['Bank'], 
+                        $['Bank'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['nothing', null]
+                            ($, id) => ['nothing', null]
                         )]
                     ),
                     'Informeel': _p_cc(
-                        $['Informeel'], 
+                        $['Informeel'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['nothing', null]
+                            ($, id) => ['nothing', null]
                         )]
                     ),
                 })
             )]]
         ),
         'Gebruikers': _p_cc(
-            $['Gebruikers'], 
+            $['Gebruikers'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Volledige naam': _p_cc(
-                            $['Volledige naam'], 
+                            $['Volledige naam'],
                             ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
                             })]
                         ),
                         'Wachtwoord': _p_cc(
-                            $['Wachtwoord'], 
+                            $['Wachtwoord'],
                             ($) => ['text', ({
                                 'delimiter': ['quote', null],
                                 'value': $,
@@ -500,22 +503,22 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
             )]
         ),
         'Klanten': _p_cc(
-            $['Klanten'], 
+            $['Klanten'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Licentieovereenkomsten': _p_cc(
-                            $['Licentieovereenkomsten'], 
+                            $['Licentieovereenkomsten'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     ({
                                         'Periodes': _p_cc(
-                                            $['Periodes'], 
+                                            $['Periodes'],
                                             ($) => ['dictionary', $.__d_map(
-                                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                     ({
                                                         'Bedrag': _p_cc(
-                                                            $['Bedrag'], 
+                                                            $['Bedrag'],
                                                             ($) => ['text', ({
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
@@ -532,35 +535,35 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                             )]
                         ),
                         'Projecten': _p_cc(
-                            $['Projecten'], 
+                            $['Projecten'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     ({
                                         'Offertes': _p_cc(
-                                            $['Offertes'], 
+                                            $['Offertes'],
                                             ($) => ['dictionary', $.__d_map(
-                                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                     ({
                                                         'Opbrengsten': _p_cc(
-                                                            $['Opbrengsten'], 
+                                                            $['Opbrengsten'],
                                                             ($) => ['dictionary', $.__d_map(
-                                                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                                     ({
                                                                         'Type': _p_cc(
-                                                                            $['Type'], 
+                                                                            $['Type'],
                                                                             ($) => ['state', _p.decide.state(
-                                                                                $, 
+                                                                                $,
                                                                                 ($): t_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Project':
                                                                                             return _p.ss(
-                                                                                                $, 
+                                                                                                $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',
                                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                         ({
                                                                                                             'Bedrag': _p_cc(
-                                                                                                                $['Bedrag'], 
+                                                                                                                $['Bedrag'],
                                                                                                                 ($) => ['text', ({
                                                                                                                     'delimiter': ['none', null],
                                                                                                                     'value': v_serialize_number.serialize(
@@ -569,7 +572,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                                 })]
                                                                                                             ),
                                                                                                             'Betaaldatum': _p_cc(
-                                                                                                                $['Betaaldatum'], 
+                                                                                                                $['Betaaldatum'],
                                                                                                                 ($) => ['text', ({
                                                                                                                     'delimiter': ['none', null],
                                                                                                                     'value': v_serialize_number.serialize(
@@ -606,35 +609,36 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
             )]
         ),
         'Leveranciers': _p_cc(
-            $['Leveranciers'], 
+            $['Leveranciers'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['nothing', null]
+                ($, id) => ['nothing', null]
             )]
         ),
         'Medewerkers': _p_cc(
-            $['Medewerkers'], 
+            $['Medewerkers'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['nothing', null]
+                ($, id) => ['nothing', null]
             )]
         ),
     })
 )]]
+
 export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Balans': _p_cc(
-            $['Balans'], 
+            $['Balans'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Type': _p_cc(
-                            $['Type'], 
+                            $['Type'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Bankrekening':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Bankrekening',
                                                     'value': ['nothing', null],
@@ -642,7 +646,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
                                             )
                                         case 'Overig':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Overig',
                                                     'value': ['nothing', null],
@@ -650,7 +654,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
                                             )
                                         case 'Informele rekening':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Informele rekening',
                                                     'value': ['nothing', null],
@@ -669,50 +673,51 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
             )]
         ),
         'Resultaat': _p_cc(
-            $['Resultaat'], 
+            $['Resultaat'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['nothing', null]
+                ($, id) => ['nothing', null]
             )]
         ),
     })
 )]]
+
 export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Resultaat': _p_cc(
-            $['Resultaat'], 
+            $['Resultaat'],
             ($) => ['group', ['verbose', _p.dictionary.literal(
                 ({
                     'Grootboekrekening voor BTW afrondingen': _p_cc(
-                        $['Grootboekrekening voor BTW afrondingen'], 
+                        $['Grootboekrekening voor BTW afrondingen'],
                         ($) => ['text', ({
                             'delimiter': ['backtick', null],
                             'value': $['id'],
                         })]
                     ),
                     'Salarisrondes': _p_cc(
-                        $['Salarisrondes'], 
+                        $['Salarisrondes'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['nothing', null]
+                            ($, id) => ['nothing', null]
                         )]
                     ),
                     'BTW periodes': _p_cc(
-                        $['BTW periodes'], 
+                        $['BTW periodes'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 ({
                                     '1. BTW-categorieen': _p_cc(
-                                        $['1. BTW-categorieen'], 
+                                        $['1. BTW-categorieen'],
                                         ($) => ['dictionary', $.__d_map(
-                                            ($,id) => ['nothing', null]
+                                            ($, id) => ['nothing', null]
                                         )]
                                     ),
                                     'Documenten': _p_cc(
-                                        $['Documenten'], 
+                                        $['Documenten'],
                                         ($) => ['dictionary', $.__d_map(
-                                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 ({
                                                     'Bestand': _p_cc(
-                                                        $['Bestand'], 
+                                                        $['Bestand'],
                                                         ($) => ['text', ({
                                                             'delimiter': ['quote', null],
                                                             'value': $,
@@ -723,27 +728,27 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         )]
                                     ),
                                     'Omschrijving': _p_cc(
-                                        $['Omschrijving'], 
+                                        $['Omschrijving'],
                                         ($) => ['text', ({
                                             'delimiter': ['quote', null],
                                             'value': $,
                                         })]
                                     ),
                                     'Status': _p_cc(
-                                        $['Status'], 
+                                        $['Status'],
                                         ($) => ['state', _p.decide.state(
-                                            $, 
+                                            $,
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Aangegeven':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Aangegeven',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                                                     ({
                                                                         'Afronding': _p_cc(
-                                                                            $['Afronding'], 
+                                                                            $['Afronding'],
                                                                             ($) => ['text', ({
                                                                                 'delimiter': ['none', null],
                                                                                 'value': v_serialize_number.serialize(
@@ -752,7 +757,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             })]
                                                                         ),
                                                                         'Bedrag': _p_cc(
-                                                                            $['Bedrag'], 
+                                                                            $['Bedrag'],
                                                                             ($) => ['text', ({
                                                                                 'delimiter': ['none', null],
                                                                                 'value': v_serialize_number.serialize(
@@ -761,7 +766,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             })]
                                                                         ),
                                                                         'Datum': _p_cc(
-                                                                            $['Datum'], 
+                                                                            $['Datum'],
                                                                             ($) => ['text', ({
                                                                                 'delimiter': ['none', null],
                                                                                 'value': v_serialize_number.serialize(
@@ -775,7 +780,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         )
                                                     case 'Openstaand':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Openstaand',
                                                                 'value': ['nothing', null],
@@ -797,46 +802,46 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
             )]]
         ),
         'Balans': _p_cc(
-            $['Balans'], 
+            $['Balans'],
             ($) => ['group', ['verbose', _p.dictionary.literal(
                 ({
                     'Grootboekrekening voor nog aan te geven BTW': _p_cc(
-                        $['Grootboekrekening voor nog aan te geven BTW'], 
+                        $['Grootboekrekening voor nog aan te geven BTW'],
                         ($) => ['text', ({
                             'delimiter': ['backtick', null],
                             'value': $['id'],
                         })]
                     ),
                     'Grootboekrekening voor resultaat dit jaar': _p_cc(
-                        $['Grootboekrekening voor resultaat dit jaar'], 
+                        $['Grootboekrekening voor resultaat dit jaar'],
                         ($) => ['text', ({
                             'delimiter': ['backtick', null],
                             'value': $['id'],
                         })]
                     ),
                     'Grootboekrekening voor winstreserve': _p_cc(
-                        $['Grootboekrekening voor winstreserve'], 
+                        $['Grootboekrekening voor winstreserve'],
                         ($) => ['text', ({
                             'delimiter': ['backtick', null],
                             'value': $['id'],
                         })]
                     ),
                     'Grootboekrekening voor Inkoop saldo': _p_cc(
-                        $['Grootboekrekening voor Inkoop saldo'], 
+                        $['Grootboekrekening voor Inkoop saldo'],
                         ($) => ['text', ({
                             'delimiter': ['backtick', null],
                             'value': $['id'],
                         })]
                     ),
                     'Grootboekrekening voor Verkoop saldo': _p_cc(
-                        $['Grootboekrekening voor Verkoop saldo'], 
+                        $['Grootboekrekening voor Verkoop saldo'],
                         ($) => ['text', ({
                             'delimiter': ['backtick', null],
                             'value': $['id'],
                         })]
                     ),
                     'Beginsaldo nog aan te geven BTW': _p_cc(
-                        $['Beginsaldo nog aan te geven BTW'], 
+                        $['Beginsaldo nog aan te geven BTW'],
                         ($) => ['text', ({
                             'delimiter': ['none', null],
                             'value': v_serialize_number.serialize(
@@ -845,7 +850,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         })]
                     ),
                     'Beginsaldo winstreserve': _p_cc(
-                        $['Beginsaldo winstreserve'], 
+                        $['Beginsaldo winstreserve'],
                         ($) => ['text', ({
                             'delimiter': ['none', null],
                             'value': v_serialize_number.serialize(
@@ -854,12 +859,12 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         })]
                     ),
                     'Informele rekeningen': _p_cc(
-                        $['Informele rekeningen'], 
+                        $['Informele rekeningen'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 ({
                                     'Beginsaldo': _p_cc(
-                                        $['Beginsaldo'], 
+                                        $['Beginsaldo'],
                                         ($) => ['text', ({
                                             'delimiter': ['none', null],
                                             'value': v_serialize_number.serialize(
@@ -868,21 +873,21 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         })]
                                     ),
                                     'Grootboekrekening': _p_cc(
-                                        $['Grootboekrekening'], 
+                                        $['Grootboekrekening'],
                                         ($) => ['text', ({
                                             'delimiter': ['backtick', null],
                                             'value': $['id'],
                                         })]
                                     ),
                                     'Nieuw': _p_cc(
-                                        $['Nieuw'], 
+                                        $['Nieuw'],
                                         ($) => ['state', _p.decide.state(
-                                            $, 
+                                            $,
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Ja',
                                                                 'value': ['nothing', null],
@@ -890,13 +895,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         )
                                                     case 'Nee':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Nee',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                                                     ({
                                                                         'Rekening': _p_cc(
-                                                                            $['Rekening'], 
+                                                                            $['Rekening'],
                                                                             ($) => Verwijzing_naar_Informele_rekening(
                                                                                 $
                                                                             )
@@ -918,12 +923,12 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         )]
                     ),
                     'Bankrekeningen': _p_cc(
-                        $['Bankrekeningen'], 
+                        $['Bankrekeningen'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 ({
                                     'Beginsaldo': _p_cc(
-                                        $['Beginsaldo'], 
+                                        $['Beginsaldo'],
                                         ($) => ['text', ({
                                             'delimiter': ['none', null],
                                             'value': v_serialize_number.serialize(
@@ -932,21 +937,21 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         })]
                                     ),
                                     'Grootboekrekening': _p_cc(
-                                        $['Grootboekrekening'], 
+                                        $['Grootboekrekening'],
                                         ($) => ['text', ({
                                             'delimiter': ['backtick', null],
                                             'value': $['id'],
                                         })]
                                     ),
                                     'Nieuw': _p_cc(
-                                        $['Nieuw'], 
+                                        $['Nieuw'],
                                         ($) => ['state', _p.decide.state(
-                                            $, 
+                                            $,
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Ja',
                                                                 'value': ['nothing', null],
@@ -954,13 +959,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         )
                                                     case 'Nee':
                                                         return _p.ss(
-                                                            $, 
+                                                            $,
                                                             ($) => ({
                                                                 'option': 'Nee',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                                                     ({
                                                                         'Rekening': _p_cc(
-                                                                            $['Rekening'], 
+                                                                            $['Rekening'],
                                                                             ($) => Verwijzing_naar_Bankrekening(
                                                                                 $
                                                                             )
@@ -978,12 +983,12 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         )]
                                     ),
                                     'Mutaties': _p_cc(
-                                        $['Mutaties'], 
+                                        $['Mutaties'],
                                         ($) => ['dictionary', $.__d_map(
-                                            ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 ({
                                                     'Bedrag': _p_cc(
-                                                        $['Bedrag'], 
+                                                        $['Bedrag'],
                                                         ($) => ['text', ({
                                                             'delimiter': ['none', null],
                                                             'value': v_serialize_number.serialize(
@@ -992,7 +997,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         })]
                                                     ),
                                                     'Datum': _p_cc(
-                                                        $['Datum'], 
+                                                        $['Datum'],
                                                         ($) => ['text', ({
                                                             'delimiter': ['none', null],
                                                             'value': v_serialize_number.serialize(
@@ -1001,7 +1006,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         })]
                                                     ),
                                                     'Omschrijving': _p_cc(
-                                                        $['Omschrijving'], 
+                                                        $['Omschrijving'],
                                                         ($) => ['text', ({
                                                             'delimiter': ['quote', null],
                                                             'value': $,
@@ -1016,17 +1021,17 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         )]
                     ),
                     'Overige balans items': _p_cc(
-                        $['Overige balans items'], 
+                        $['Overige balans items'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => Overige_balans_item(
+                            ($, id) => Overige_balans_item(
                                 $
                             )
                         )]
                     ),
                     'Verrekenposten': _p_cc(
-                        $['Verrekenposten'], 
+                        $['Verrekenposten'],
                         ($) => ['dictionary', $.__d_map(
-                            ($,id) => ['nothing', null]
+                            ($, id) => ['nothing', null]
                         )]
                     ),
                 })
@@ -1034,10 +1039,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
         ),
     })
 )]]
+
 export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Beginsaldo': _p_cc(
-            $['Beginsaldo'], 
+            $['Beginsaldo'],
             ($) => ['text', ({
                 'delimiter': ['none', null],
                 'value': v_serialize_number.serialize(
@@ -1046,21 +1052,21 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
             })]
         ),
         'Grootboekrekening': _p_cc(
-            $['Grootboekrekening'], 
+            $['Grootboekrekening'],
             ($) => ['text', ({
                 'delimiter': ['backtick', null],
                 'value': $['id'],
             })]
         ),
         'Nieuw': _p_cc(
-            $['Nieuw'], 
+            $['Nieuw'],
             ($) => ['state', _p.decide.state(
-                $, 
+                $,
                 ($): t_out.Value.state => {
                     switch ($[0]) {
                         case 'Ja':
                             return _p.ss(
-                                $, 
+                                $,
                                 ($) => ({
                                     'option': 'Ja',
                                     'value': ['nothing', null],
@@ -1068,13 +1074,13 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                             )
                         case 'Nee':
                             return _p.ss(
-                                $, 
+                                $,
                                 ($) => ({
                                     'option': 'Nee',
                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                         ({
                                             'Balans item': _p_cc(
-                                                $['Balans item'], 
+                                                $['Balans item'],
                                                 ($) => ['text', ({
                                                     'delimiter': ['backtick', null],
                                                     'value': $['id'],
@@ -1094,30 +1100,33 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
         ),
     })
 )]]
+
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($) => ['text', ({
     'delimiter': ['backtick', null],
     'value': $['id'],
 })]
+
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($) => ['text', ({
     'delimiter': ['backtick', null],
     'value': $['id'],
 })]
+
 export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Inkopen': _p_cc(
-            $['Inkopen'], 
+            $['Inkopen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Afhandeling': _p_cc(
-                            $['Afhandeling'], 
+                            $['Afhandeling'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Mutaties':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Mutaties',
                                                     'value': ['nothing', null],
@@ -1125,13 +1134,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Rekening courant':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Rekening courant': _p_cc(
-                                                                $['Rekening courant'], 
+                                                                $['Rekening courant'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1150,14 +1159,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'BTW-regime': _p_cc(
-                            $['BTW-regime'], 
+                            $['BTW-regime'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Binnenland: heffing verlegd':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Binnenland: heffing verlegd',
                                                     'value': ['nothing', null],
@@ -1165,7 +1174,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Geen BTW van toepassing':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Geen BTW van toepassing',
                                                     'value': ['nothing', null],
@@ -1173,7 +1182,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Import van buiten de EU':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Import van buiten de EU',
                                                     'value': ['nothing', null],
@@ -1181,7 +1190,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Intracommunautair':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Intracommunautair',
                                                     'value': ['nothing', null],
@@ -1189,13 +1198,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Standaard':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Standaard',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'BTW-periode': _p_cc(
-                                                                $['BTW-periode'], 
+                                                                $['BTW-periode'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1214,20 +1223,20 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'Brondocument': _p_cc(
-                            $['Brondocument'], 
+                            $['Brondocument'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Toegevoegd':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Document': _p_cc(
-                                                                $['Document'], 
+                                                                $['Document'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
@@ -1239,7 +1248,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Niet van toepassing':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Niet van toepassing',
                                                     'value': ['nothing', null],
@@ -1247,7 +1256,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Ontbreekt':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Ontbreekt',
                                                     'value': ['nothing', null],
@@ -1262,7 +1271,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'Datum': _p_cc(
-                            $['Datum'], 
+                            $['Datum'],
                             ($) => ['text', ({
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
@@ -1271,25 +1280,25 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             })]
                         ),
                         'Regels': _p_cc(
-                            $['Regels'], 
+                            $['Regels'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     ({
                                         'Bedrag': _p_cc(
-                                            $['Bedrag'], 
+                                            $['Bedrag'],
                                             ($) => ['state', _p.decide.state(
-                                                $, 
+                                                $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bekend':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Bekend',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'BTW-bedrag': _p_cc(
-                                                                                $['BTW-bedrag'], 
+                                                                                $['BTW-bedrag'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['none', null],
                                                                                     'value': v_serialize_number.serialize(
@@ -1298,7 +1307,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 })]
                                                                             ),
                                                                             'Bedrag inclusief geheven BTW': _p_cc(
-                                                                                $['Bedrag inclusief geheven BTW'], 
+                                                                                $['Bedrag inclusief geheven BTW'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['none', null],
                                                                                     'value': v_serialize_number.serialize(
@@ -1319,27 +1328,27 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )]
                                         ),
                                         'Omschrijving': _p_cc(
-                                            $['Omschrijving'], 
+                                            $['Omschrijving'],
                                             ($) => ['text', ({
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             })]
                                         ),
                                         'Type': _p_cc(
-                                            $['Type'], 
+                                            $['Type'],
                                             ($) => ['state', _p.decide.state(
-                                                $, 
+                                                $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Balans':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Balans item': _p_cc(
-                                                                                $['Balans item'], 
+                                                                                $['Balans item'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1351,13 +1360,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                             )
                                                         case 'Kosten':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Kosten',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Grootboekrekening': _p_cc(
-                                                                                $['Grootboekrekening'], 
+                                                                                $['Grootboekrekening'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1380,14 +1389,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'Type': _p_cc(
-                            $['Type'], 
+                            $['Type'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Bonnetje':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Bonnetje',
                                                     'value': ['nothing', null],
@@ -1395,20 +1404,20 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Inkoop (met crediteur)':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Inkoop (met crediteur)',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Crediteur': _p_cc(
-                                                                $['Crediteur'], 
+                                                                $['Crediteur'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
                                                                 })]
                                                             ),
                                                             'Factuurnummer': _p_cc(
-                                                                $['Factuurnummer'], 
+                                                                $['Factuurnummer'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
@@ -1420,13 +1429,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Loonheffing':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Loonheffing',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Ronde': _p_cc(
-                                                                $['Ronde'], 
+                                                                $['Ronde'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1438,20 +1447,20 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Salaris':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Salaris',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Ronde': _p_cc(
-                                                                $['Ronde'], 
+                                                                $['Ronde'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
                                                                 })]
                                                             ),
                                                             'Medewerker': _p_cc(
-                                                                $['Medewerker'], 
+                                                                $['Medewerker'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1474,19 +1483,19 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
             )]
         ),
         'Verkopen': _p_cc(
-            $['Verkopen'], 
+            $['Verkopen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     ({
                         'Afhandeling': _p_cc(
-                            $['Afhandeling'], 
+                            $['Afhandeling'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Mutaties':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Mutaties',
                                                     'value': ['nothing', null],
@@ -1494,13 +1503,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Rekening courant':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Rekening courant': _p_cc(
-                                                                $['Rekening courant'], 
+                                                                $['Rekening courant'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1519,7 +1528,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'Betalingstermijn': _p_cc(
-                            $['Betalingstermijn'], 
+                            $['Betalingstermijn'],
                             ($) => ['text', ({
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
@@ -1528,27 +1537,27 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             })]
                         ),
                         'BTW-periode': _p_cc(
-                            $['BTW-periode'], 
+                            $['BTW-periode'],
                             ($) => ['text', ({
                                 'delimiter': ['backtick', null],
                                 'value': $['id'],
                             })]
                         ),
                         'Brondocument': _p_cc(
-                            $['Brondocument'], 
+                            $['Brondocument'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Toegevoegd':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Document': _p_cc(
-                                                                $['Document'], 
+                                                                $['Document'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
@@ -1567,34 +1576,34 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'Debiteur': _p_cc(
-                            $['Debiteur'], 
+                            $['Debiteur'],
                             ($) => ['text', ({
                                 'delimiter': ['backtick', null],
                                 'value': $['id'],
                             })]
                         ),
                         'Contracttype': _p_cc(
-                            $['Contracttype'], 
+                            $['Contracttype'],
                             ($) => ['state', _p.decide.state(
-                                $, 
+                                $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Project':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Project',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Project': _p_cc(
-                                                                $['Project'], 
+                                                                $['Project'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
                                                                 })]
                                                             ),
                                                             'Offerte': _p_cc(
-                                                                $['Offerte'], 
+                                                                $['Offerte'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1606,13 +1615,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )
                                         case 'Licentieovereenkomst':
                                             return _p.ss(
-                                                $, 
+                                                $,
                                                 ($) => ({
                                                     'option': 'Licentieovereenkomst',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                         ({
                                                             'Overeenkomst': _p_cc(
-                                                                $['Overeenkomst'], 
+                                                                $['Overeenkomst'],
                                                                 ($) => ['text', ({
                                                                     'delimiter': ['backtick', null],
                                                                     'value': $['id'],
@@ -1631,7 +1640,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             )]
                         ),
                         'Datum': _p_cc(
-                            $['Datum'], 
+                            $['Datum'],
                             ($) => ['text', ({
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
@@ -1640,19 +1649,19 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             })]
                         ),
                         'Regels': _p_cc(
-                            $['Regels'], 
+                            $['Regels'],
                             ($) => ['dictionary', $.__d_map(
-                                ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     ({
                                         'BTW-regime': _p_cc(
-                                            $['BTW-regime'], 
+                                            $['BTW-regime'],
                                             ($) => ['state', _p.decide.state(
-                                                $, 
+                                                $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Intracommunautair':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
                                                                     'value': ['nothing', null],
@@ -1660,13 +1669,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                             )
                                                         case 'Standaard':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Standaard',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'BTW-categorie': _p_cc(
-                                                                                $['BTW-categorie'], 
+                                                                                $['BTW-categorie'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1678,7 +1687,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                             )
                                                         case 'Binnenland: heffing verlegd':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
                                                                     'value': ['nothing', null],
@@ -1693,7 +1702,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )]
                                         ),
                                         'Bedrag exclusief BTW': _p_cc(
-                                            $['Bedrag exclusief BTW'], 
+                                            $['Bedrag exclusief BTW'],
                                             ($) => ['text', ({
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
@@ -1702,20 +1711,20 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             })]
                                         ),
                                         'Contracttype': _p_cc(
-                                            $['Contracttype'], 
+                                            $['Contracttype'],
                                             ($) => ['state', _p.decide.state(
-                                                $, 
+                                                $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Project':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Project',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Opbrengst': _p_cc(
-                                                                                $['Opbrengst'], 
+                                                                                $['Opbrengst'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1727,7 +1736,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                             )
                                                         case 'Los':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Los',
                                                                     'value': ['nothing', null],
@@ -1735,13 +1744,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                             )
                                                         case 'Licentieovereenkomst':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Periode': _p_cc(
-                                                                                $['Periode'], 
+                                                                                $['Periode'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1760,27 +1769,27 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             )]
                                         ),
                                         'Omschrijving': _p_cc(
-                                            $['Omschrijving'], 
+                                            $['Omschrijving'],
                                             ($) => ['text', ({
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             })]
                                         ),
                                         'Type': _p_cc(
-                                            $['Type'], 
+                                            $['Type'],
                                             ($) => ['state', _p.decide.state(
-                                                $, 
+                                                $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Opbrengsten':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Opbrengsten',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Grootboekrekening': _p_cc(
-                                                                                $['Grootboekrekening'], 
+                                                                                $['Grootboekrekening'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1792,13 +1801,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                             )
                                                         case 'Balans':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Balans item': _p_cc(
-                                                                                $['Balans item'], 
+                                                                                $['Balans item'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1826,16 +1835,17 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
         ),
     })
 )]]
+
 export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Verrekenpost mutaties': _p_cc(
-            $['Verrekenpost mutaties'], 
+            $['Verrekenpost mutaties'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['dictionary', $.__d_map(
-                    ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['dictionary', $.__d_map(
+                    ($, id) => ['group', ['verbose', _p.dictionary.literal(
                         ({
                             'Bedrag': _p_cc(
-                                $['Bedrag'], 
+                                $['Bedrag'],
                                 ($) => ['text', ({
                                     'delimiter': ['none', null],
                                     'value': v_serialize_number.serialize(
@@ -1844,14 +1854,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 })]
                             ),
                             'Afhandeling': _p_cc(
-                                $['Afhandeling'], 
+                                $['Afhandeling'],
                                 ($) => ['state', _p.decide.state(
-                                    $, 
+                                    $,
                                     ($): t_out.Value.state => {
                                         switch ($[0]) {
                                             case 'Resultaat':
                                                 return _p.ss(
-                                                    $, 
+                                                    $,
                                                     ($) => ({
                                                         'option': 'Resultaat',
                                                         'value': Balans_Resultaat_Mutatie(
@@ -1861,22 +1871,22 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                 )
                                             case 'Balans':
                                                 return _p.ss(
-                                                    $, 
+                                                    $,
                                                     ($) => ({
                                                         'option': 'Balans',
                                                         'value': ['state', _p.decide.state(
-                                                            $, 
+                                                            $,
                                                             ($): t_out.Value.state => {
                                                                 switch ($[0]) {
                                                                     case 'Informele rekening':
                                                                         return _p.ss(
-                                                                            $, 
+                                                                            $,
                                                                             ($) => ({
                                                                                 'option': 'Informele rekening',
                                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                     ({
                                                                                         'Informele rekening': _p_cc(
-                                                                                            $['Informele rekening'], 
+                                                                                            $['Informele rekening'],
                                                                                             ($) => ['text', ({
                                                                                                 'delimiter': ['backtick', null],
                                                                                                 'value': $['id'],
@@ -1909,16 +1919,16 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
             )]
         ),
         'Bankrekening Mutatie Verwerkingen': _p_cc(
-            $['Bankrekening Mutatie Verwerkingen'], 
+            $['Bankrekening Mutatie Verwerkingen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['dictionary', $.__d_map(
-                    ($,id) => ['state', _p.decide.state(
-                        $, 
+                ($, id) => ['dictionary', $.__d_map(
+                    ($, id) => ['state', _p.decide.state(
+                        $,
                         ($): t_out.Value.state => {
                             switch ($[0]) {
                                 case 'Resultaat':
                                     return _p.ss(
-                                        $, 
+                                        $,
                                         ($) => ({
                                             'option': 'Resultaat',
                                             'value': Balans_Resultaat_Mutatie(
@@ -1928,22 +1938,22 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                     )
                                 case 'Balans':
                                     return _p.ss(
-                                        $, 
+                                        $,
                                         ($) => ({
                                             'option': 'Balans',
                                             'value': ['state', _p.decide.state(
-                                                $, 
+                                                $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Informele rekening':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Informele rekening',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Informele rekening': _p_cc(
-                                                                                $['Informele rekening'], 
+                                                                                $['Informele rekening'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1955,13 +1965,13 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                             )
                                                         case 'Verrekenpost':
                                                             return _p.ss(
-                                                                $, 
+                                                                $,
                                                                 ($) => ({
                                                                     'option': 'Verrekenpost',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         ({
                                                                             'Verrekenpost': _p_cc(
-                                                                                $['Verrekenpost'], 
+                                                                                $['Verrekenpost'],
                                                                                 ($) => ['text', ({
                                                                                     'delimiter': ['backtick', null],
                                                                                     'value': $['id'],
@@ -1991,13 +2001,13 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
             )]
         ),
         'Memoriaal boekingen': _p_cc(
-            $['Memoriaal boekingen'], 
+            $['Memoriaal boekingen'],
             ($) => ['dictionary', $.__d_map(
-                ($,id) => ['dictionary', $.__d_map(
-                    ($,id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['dictionary', $.__d_map(
+                    ($, id) => ['group', ['verbose', _p.dictionary.literal(
                         ({
                             'Bedrag': _p_cc(
-                                $['Bedrag'], 
+                                $['Bedrag'],
                                 ($) => ['text', ({
                                     'delimiter': ['none', null],
                                     'value': v_serialize_number.serialize(
@@ -2006,7 +2016,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 })]
                             ),
                             'Datum': _p_cc(
-                                $['Datum'], 
+                                $['Datum'],
                                 ($) => ['text', ({
                                     'delimiter': ['none', null],
                                     'value': v_serialize_number.serialize(
@@ -2015,14 +2025,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 })]
                             ),
                             'Omschrijving': _p_cc(
-                                $['Omschrijving'], 
+                                $['Omschrijving'],
                                 ($) => ['text', ({
                                     'delimiter': ['quote', null],
                                     'value': $,
                                 })]
                             ),
                             'Grootboekrekening': _p_cc(
-                                $['Grootboekrekening'], 
+                                $['Grootboekrekening'],
                                 ($) => ['text', ({
                                     'delimiter': ['backtick', null],
                                     'value': $['id'],
@@ -2035,18 +2045,19 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
         ),
     })
 )]]
+
 export const Jaren: t_signatures.Jaren = ($) => ['dictionary', $.__d_map(
-    ($,id) => ['group', ['verbose', _p.dictionary.literal(
+    ($, id) => ['group', ['verbose', _p.dictionary.literal(
         ({
             'Afgesloten': _p_cc(
-                $['Afgesloten'], 
+                $['Afgesloten'],
                 ($) => ['state', _p.decide.state(
-                    $, 
+                    $,
                     ($): t_out.Value.state => {
                         switch ($[0]) {
                             case 'Ja':
                                 return _p.ss(
-                                    $, 
+                                    $,
                                     ($) => ({
                                         'option': 'Ja',
                                         'value': ['nothing', null],
@@ -2054,7 +2065,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', $.__d_map(
                                 )
                             case 'Nee':
                                 return _p.ss(
-                                    $, 
+                                    $,
                                     ($) => ({
                                         'option': 'Nee',
                                         'value': ['nothing', null],
@@ -2069,7 +2080,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', $.__d_map(
                 )]
             ),
             'Startdatum boekjaar': _p_cc(
-                $['Startdatum boekjaar'], 
+                $['Startdatum boekjaar'],
                 ($) => ['text', ({
                     'delimiter': ['none', null],
                     'value': v_serialize_number.serialize(
@@ -2078,31 +2089,31 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', $.__d_map(
                 })]
             ),
             'Grootboekrekeningen': _p_cc(
-                $['Grootboekrekeningen'], 
+                $['Grootboekrekeningen'],
                 ($) => Grootboekrekeningen(
                     $
                 )
             ),
             'Eerste boekjaar': _p_cc(
-                $['Eerste boekjaar'], 
+                $['Eerste boekjaar'],
                 ($) => Eerste_boekjaar(
                     $
                 )
             ),
             'Jaarbeheer': _p_cc(
-                $['Jaarbeheer'], 
+                $['Jaarbeheer'],
                 ($) => Jaarbeheer(
                     $
                 )
             ),
             'Handelstransacties': _p_cc(
-                $['Handelstransacties'], 
+                $['Handelstransacties'],
                 ($) => Handelstransacties(
                     $
                 )
             ),
             'Mutaties': _p_cc(
-                $['Mutaties'], 
+                $['Mutaties'],
                 ($) => Mutaties(
                     $
                 )
@@ -2110,27 +2121,28 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', $.__d_map(
         })
     )]]
 )]
+
 export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Jaar': _p_cc(
-            $['Jaar'], 
+            $['Jaar'],
             ($) => ['optional', $.__decide(
                 ($): t_out.Value.optional => ['set', ['text', ({
                     'delimiter': ['backtick', null],
                     'value': $['id'],
-                })]], 
+                })]],
                 () => ['not set', null]
             )]
         ),
         'type': _p_cc(
-            $['type'], 
+            $['type'],
             ($) => ['state', _p.decide.state(
-                $, 
+                $,
                 ($): t_out.Value.state => {
                     switch ($[0]) {
                         case 'Inkoop':
                             return _p.ss(
-                                $, 
+                                $,
                                 ($) => ({
                                     'option': 'Inkoop',
                                     'value': ['text', ({
@@ -2141,7 +2153,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             )
                         case 'Verkoop':
                             return _p.ss(
-                                $, 
+                                $,
                                 ($) => ({
                                     'option': 'Verkoop',
                                     'value': ['text', ({
@@ -2152,7 +2164,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             )
                         case 'BTW-periode':
                             return _p.ss(
-                                $, 
+                                $,
                                 ($) => ({
                                     'option': 'BTW-periode',
                                     'value': ['text', ({
@@ -2171,13 +2183,14 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         ),
     })
 )]]
+
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', _p.decide.state(
-    $, 
+    $,
     ($): t_out.Value.state => {
         switch ($[0]) {
             case 'Ja':
                 return _p.ss(
-                    $, 
+                    $,
                     ($) => ({
                         'option': 'Ja',
                         'value': ['nothing', null],
@@ -2185,13 +2198,13 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', _p
                 )
             case 'Nee':
                 return _p.ss(
-                    $, 
+                    $,
                     ($) => ({
                         'option': 'Nee',
                         'value': ['group', ['verbose', _p.dictionary.literal(
                             ({
                                 'Vorig boekjaar': _p_cc(
-                                    $['Vorig boekjaar'], 
+                                    $['Vorig boekjaar'],
                                     ($) => ['text', ({
                                         'delimiter': ['backtick', null],
                                         'value': $['id'],
@@ -2208,28 +2221,29 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', _p
         }
     }
 )]
+
 export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
     ({
         'Fiscaal': _p_cc(
-            $['Fiscaal'], 
+            $['Fiscaal'],
             ($) => Fiscaal(
                 $
             )
         ),
         'Categorieen': _p_cc(
-            $['Categorieen'], 
+            $['Categorieen'],
             ($) => Grootboek_Categorieen(
                 $
             )
         ),
         'Beheer': _p_cc(
-            $['Beheer'], 
+            $['Beheer'],
             ($) => Beheer(
                 $
             )
         ),
         'Jaren': _p_cc(
-            $['Jaren'], 
+            $['Jaren'],
             ($) => Jaren(
                 $
             )
