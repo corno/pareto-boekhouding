@@ -4455,7 +4455,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': ({
+                        'entry': {
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
@@ -4608,7 +4608,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     ),
                                 })
                             ),
-                        }),
+                        },
                     })
                 ),
             })
@@ -4634,7 +4634,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': ({
+                        'entry': {
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
@@ -4788,7 +4788,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     ),
                                 })
                             ),
-                        }),
+                        },
                     })
                 ),
             })
@@ -4814,7 +4814,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': ({
+                        'entry': {
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
@@ -4911,7 +4911,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     ),
                                 })
                             ),
-                        }),
+                        },
                     })
                 ),
             })
@@ -5152,7 +5152,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['Inkoop', ({
+                                        'state': ['Inkoop', {
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
@@ -5162,7 +5162,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                                     ['expected a text', null]
                                                 )
                                             ),
-                                        })],
+                                        }],
                                     })
                                 )
                             case 'Verkoop':
@@ -5172,7 +5172,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['Verkoop', ({
+                                        'state': ['Verkoop', {
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
@@ -5182,7 +5182,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                                     ['expected a text', null]
                                                 )
                                             ),
-                                        })],
+                                        }],
                                     })
                                 )
                             case 'BTW-periode':
@@ -5192,7 +5192,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['BTW-periode', ({
+                                        'state': ['BTW-periode', {
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
@@ -5202,7 +5202,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                                     ['expected a text', null]
                                                 )
                                             ),
-                                        })],
+                                        }],
                                     })
                                 )
                             default:

@@ -161,12 +161,12 @@ export const Root: t_signatures.Root = ($) => ({
                                         case 'Ja':
                                             return _p.ss(
                                                 $,
-                                                ($) => ['Ja', ({
+                                                ($) => ['Ja', {
                                                     'BTW-promillage': _p_cc(
                                                         $['BTW-promillage'],
                                                         ($) => $
                                                     ),
-                                                })]
+                                                }]
                                             )
                                         case 'Nee':
                                             return _p.ss(
@@ -238,7 +238,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Kosten':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Kosten', ({
+                                                        ($) => ['Kosten', {
                                                             'Correctie op vennootschapsbelasting': _p_cc(
                                                                 $['Correctie op vennootschapsbelasting'],
                                                                 ($) => _p.decide.state(
@@ -248,12 +248,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                                             case 'Ja':
                                                                                 return _p.ss(
                                                                                     $,
-                                                                                    ($) => ['Ja', ({
+                                                                                    ($) => ['Ja', {
                                                                                         'Correctietype': _p_cc(
                                                                                             $['Correctietype'],
                                                                                             ($) => $
                                                                                         ),
-                                                                                    })]
+                                                                                    }]
                                                                                 )
                                                                             case 'Nee':
                                                                                 return _p.ss(
@@ -268,7 +268,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                     }
                                                                 )
                                                             ),
-                                                        })]
+                                                        }]
                                                     )
                                                 case 'Opbrengsten':
                                                     return _p.ss(
@@ -485,7 +485,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Verwerkt':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Verwerkt', ({
+                                                                ($) => ['Verwerkt', {
                                                                     'Afhandeling': _p_cc(
                                                                         $['Afhandeling'],
                                                                         ($) => _p.decide.state(
@@ -495,7 +495,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                     case 'Inkoop':
                                                                                         return _p.ss(
                                                                                             $,
-                                                                                            ($) => ['Inkoop', ({
+                                                                                            ($) => ['Inkoop', {
                                                                                                 'Jaar': _p_cc(
                                                                                                     $['Jaar'],
                                                                                                     ($) => $
@@ -504,22 +504,22 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                                     $['Inkoop'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                            })]
+                                                                                            }]
                                                                                         )
                                                                                     case 'Verrekenpost':
                                                                                         return _p.ss(
                                                                                             $,
-                                                                                            ($) => ['Verrekenpost', ({
+                                                                                            ($) => ['Verrekenpost', {
                                                                                                 'Verrekenpost': _p_cc(
                                                                                                     $['Verrekenpost'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                            })]
+                                                                                            }]
                                                                                         )
                                                                                     case 'BTW-periode':
                                                                                         return _p.ss(
                                                                                             $,
-                                                                                            ($) => ['BTW-periode', ({
+                                                                                            ($) => ['BTW-periode', {
                                                                                                 'Jaar': _p_cc(
                                                                                                     $['Jaar'],
                                                                                                     ($) => $
@@ -528,12 +528,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                                     $['BTW-periode'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                            })]
+                                                                                            }]
                                                                                         )
                                                                                     case 'Verkoop':
                                                                                         return _p.ss(
                                                                                             $,
-                                                                                            ($) => ['Verkoop', ({
+                                                                                            ($) => ['Verkoop', {
                                                                                                 'Jaar': _p_cc(
                                                                                                     $['Jaar'],
                                                                                                     ($) => $
@@ -542,17 +542,17 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                                     $['Verkoop'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                            })]
+                                                                                            }]
                                                                                         )
                                                                                     case 'Informele rekening':
                                                                                         return _p.ss(
                                                                                             $,
-                                                                                            ($) => ['Informele rekening', ({
+                                                                                            ($) => ['Informele rekening', {
                                                                                                 'Informele rekening': _p_cc(
                                                                                                     $['Informele rekening'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                            })]
+                                                                                            }]
                                                                                         )
                                                                                     default:
                                                                                         return _p.au(
@@ -562,7 +562,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                             }
                                                                         )
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         default:
                                                             return _p.au(
@@ -589,7 +589,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Nee':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Nee', ({
+                                                    ($) => ['Nee', {
                                                         'Jaar': _p_cc(
                                                             $['Jaar'],
                                                             ($) => $
@@ -598,7 +598,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Rekening'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -664,7 +664,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Aangegeven':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Aangegeven', ({
+                                                    ($) => ['Aangegeven', {
                                                         'Afronding': _p_cc(
                                                             $['Afronding'],
                                                             ($) => $
@@ -677,7 +677,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Datum'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             case 'Openstaand':
                                                 return _p.ss(
@@ -709,12 +709,12 @@ export const Root: t_signatures.Root = ($) => ({
                                 case 'Nee':
                                     return _p.ss(
                                         $,
-                                        ($) => ['Nee', ({
+                                        ($) => ['Nee', {
                                             'Vorig boekjaar': _p_cc(
                                                 $['Vorig boekjaar'],
                                                 ($) => $
                                             ),
-                                        })]
+                                        }]
                                     )
                                 default:
                                     return _p.au(
@@ -766,7 +766,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Nee':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Nee', ({
+                                                    ($) => ['Nee', {
                                                         'Jaar': _p_cc(
                                                             $['Jaar'],
                                                             ($) => $
@@ -775,7 +775,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Rekening'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -806,12 +806,12 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Rekening courant':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Rekening courant', ({
+                                                    ($) => ['Rekening courant', {
                                                         'Rekening courant': _p_cc(
                                                             $['Rekening courant'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -835,12 +835,12 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Geen BTW van toepassing':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Geen BTW van toepassing', ({
+                                                    ($) => ['Geen BTW van toepassing', {
                                                         'BTW-periode': _p_cc(
                                                             $['BTW-periode'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             case 'Import van buiten de EU':
                                                 return _p.ss(
@@ -855,12 +855,12 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Standaard':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Standaard', ({
+                                                    ($) => ['Standaard', {
                                                         'BTW-periode': _p_cc(
                                                             $['BTW-periode'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -879,14 +879,14 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Toegevoegd':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Toegevoegd', ({
+                                                    ($) => ['Toegevoegd', {
                                                         'Document': _p_cc(
                                                             $['Document'],
                                                             ($) => Bestandsnaam(
                                                                 $
                                                             )
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             case 'Niet van toepassing':
                                                 return _p.ss(
@@ -928,7 +928,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Bekend':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Bekend', ({
+                                                                ($) => ['Bekend', {
                                                                     'BTW-bedrag': _p_cc(
                                                                         $['BTW-bedrag'],
                                                                         ($) => $
@@ -937,7 +937,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                         $['Bedrag inclusief geheven BTW'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         default:
                                                             return _p.au(
@@ -960,22 +960,22 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Balans':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Balans', ({
+                                                                ($) => ['Balans', {
                                                                     'Balans item': _p_cc(
                                                                         $['Balans item'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'Kosten':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Kosten', ({
+                                                                ($) => ['Kosten', {
                                                                     'Grootboekrekening': _p_cc(
                                                                         $['Grootboekrekening'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         default:
                                                             return _p.au(
@@ -1002,7 +1002,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Inkoop (met crediteur)':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Inkoop (met crediteur)', ({
+                                                    ($) => ['Inkoop (met crediteur)', {
                                                         'Crediteur': _p_cc(
                                                             $['Crediteur'],
                                                             ($) => $
@@ -1011,22 +1011,22 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Factuurnummer'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             case 'Loonheffing':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Loonheffing', ({
+                                                    ($) => ['Loonheffing', {
                                                         'Ronde': _p_cc(
                                                             $['Ronde'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             case 'Salaris':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Salaris', ({
+                                                    ($) => ['Salaris', {
                                                         'Ronde': _p_cc(
                                                             $['Ronde'],
                                                             ($) => $
@@ -1035,7 +1035,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Medewerker'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -1106,7 +1106,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Nee':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Nee', ({
+                                                    ($) => ['Nee', {
                                                         'Jaar': _p_cc(
                                                             $['Jaar'],
                                                             ($) => $
@@ -1115,7 +1115,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Balans item'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -1171,12 +1171,12 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Rekening courant':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Rekening courant', ({
+                                                    ($) => ['Rekening courant', {
                                                         'Rekening courant': _p_cc(
                                                             $['Rekening courant'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -1203,14 +1203,14 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Toegevoegd':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Toegevoegd', ({
+                                                    ($) => ['Toegevoegd', {
                                                         'Document': _p_cc(
                                                             $['Document'],
                                                             ($) => Bestandsnaam(
                                                                 $
                                                             )
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -1229,7 +1229,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Project':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Project', ({
+                                                    ($) => ['Project', {
                                                         'Project': _p_cc(
                                                             $['Project'],
                                                             ($) => $
@@ -1238,17 +1238,17 @@ export const Root: t_signatures.Root = ($) => ({
                                                             $['Offerte'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             case 'Licentieovereenkomst':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Licentieovereenkomst', ({
+                                                    ($) => ['Licentieovereenkomst', {
                                                         'Overeenkomst': _p_cc(
                                                             $['Overeenkomst'],
                                                             ($) => $
                                                         ),
-                                                    })]
+                                                    }]
                                                 )
                                             default:
                                                 return _p.au(
@@ -1284,12 +1284,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Standaard':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Standaard', ({
+                                                                ($) => ['Standaard', {
                                                                     'BTW-categorie': _p_cc(
                                                                         $['BTW-categorie'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'Binnenland: heffing verlegd':
                                                             return _p.ss(
@@ -1317,12 +1317,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Project':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Project', ({
+                                                                ($) => ['Project', {
                                                                     'Opbrengst': _p_cc(
                                                                         $['Opbrengst'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'Los':
                                                             return _p.ss(
@@ -1332,12 +1332,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Licentieovereenkomst':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Licentieovereenkomst', ({
+                                                                ($) => ['Licentieovereenkomst', {
                                                                     'Periode': _p_cc(
                                                                         $['Periode'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         default:
                                                             return _p.au(
@@ -1360,22 +1360,22 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Opbrengsten':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Opbrengsten', ({
+                                                                ($) => ['Opbrengsten', {
                                                                     'Grootboekrekening': _p_cc(
                                                                         $['Grootboekrekening'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'Balans':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Balans', ({
+                                                                ($) => ['Balans', {
                                                                     'Balans item': _p_cc(
                                                                         $['Balans item'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         default:
                                                             return _p.au(
@@ -1412,7 +1412,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Inkoop':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Inkoop', ({
+                                                                ($) => ['Inkoop', {
                                                                     'Jaar': _p_cc(
                                                                         $['Jaar'],
                                                                         ($) => $
@@ -1421,22 +1421,22 @@ export const Root: t_signatures.Root = ($) => ({
                                                                         $['Inkoop'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'Informele rekening':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Informele rekening', ({
+                                                                ($) => ['Informele rekening', {
                                                                     'Informele rekening': _p_cc(
                                                                         $['Informele rekening'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'Verkoop':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Verkoop', ({
+                                                                ($) => ['Verkoop', {
                                                                     'Jaar': _p_cc(
                                                                         $['Jaar'],
                                                                         ($) => $
@@ -1445,12 +1445,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                                         $['Verkoop'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         case 'BTW-periode':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['BTW-periode', ({
+                                                                ($) => ['BTW-periode', {
                                                                     'Jaar': _p_cc(
                                                                         $['Jaar'],
                                                                         ($) => $
@@ -1459,7 +1459,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                         $['BTW-periode'],
                                                                         ($) => $
                                                                     ),
-                                                                })]
+                                                                }]
                                                             )
                                                         default:
                                                             return _p.au(
@@ -1521,7 +1521,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                     case 'Project':
                                                                         return _p.ss(
                                                                             $,
-                                                                            ($) => ['Project', ({
+                                                                            ($) => ['Project', {
                                                                                 'Bedrag': _p_cc(
                                                                                     $['Bedrag'],
                                                                                     ($) => $
@@ -1530,7 +1530,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                     $['Betaaldatum'],
                                                                                     ($) => $
                                                                                 ),
-                                                                            })]
+                                                                            }]
                                                                         )
                                                                     default:
                                                                         return _p.au(

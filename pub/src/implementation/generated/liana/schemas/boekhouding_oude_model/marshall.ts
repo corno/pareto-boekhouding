@@ -13,48 +13,48 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['text', ({
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['text', {
     'delimiter': ['quote', null],
     'value': $,
-})]
+}]
 
 export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
-    ({
+    {
         'Bankrekeningen': _p_cc(
             $['Bankrekeningen'],
             ($) => ['dictionary', $.__d_map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
-                    })
+                    {
+                    }
                 )]]
             )]
         ),
         'Beheer': _p_cc(
             $['Beheer'],
             ($) => ['group', ['verbose', _p.dictionary.literal(
-                ({
+                {
                     'Balans': _p_cc(
                         $['Balans'],
                         ($) => ['group', ['verbose', _p.dictionary.literal(
-                            ({
+                            {
                                 'Grootboekrekeningen': _p_cc(
                                     $['Grootboekrekeningen'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Hoofdcategorie': _p_cc(
                                                     $['Hoofdcategorie'],
-                                                    ($) => ['text', ({
+                                                    ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
-                                                    })]
+                                                    }]
                                                 ),
                                                 'Subcategorie': _p_cc(
                                                     $['Subcategorie'],
-                                                    ($) => ['text', ({
+                                                    ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
-                                                    })]
+                                                    }]
                                                 ),
                                                 'Zijde': _p_cc(
                                                     $['Zijde'],
@@ -68,8 +68,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Activa',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -79,8 +79,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Passiva',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -92,7 +92,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         }
                                                     )]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
@@ -100,7 +100,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                     $['Hoofdcategorieen'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Zijde': _p_cc(
                                                     $['Zijde'],
                                                     ($) => ['state', _p.decide.state(
@@ -113,8 +113,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Activa',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -124,8 +124,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Passiva',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -141,26 +141,26 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', $.__d_map(
                                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                            ({
+                                                            {
                                                                 'Hoofdcategorie fiscus': _p_cc(
                                                                     $['Hoofdcategorie fiscus'],
-                                                                    ($) => ['text', ({
+                                                                    ($) => ['text', {
                                                                         'delimiter': ['quote', null],
                                                                         'value': $,
-                                                                    })]
+                                                                    }]
                                                                 ),
                                                                 'Subcategorie fiscus': _p_cc(
                                                                     $['Subcategorie fiscus'],
-                                                                    ($) => ['text', ({
+                                                                    ($) => ['text', {
                                                                         'delimiter': ['quote', null],
                                                                         'value': $,
-                                                                    })]
+                                                                    }]
                                                                 ),
-                                                            })
+                                                            }
                                                         )]]
                                                     )]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
@@ -168,7 +168,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                     $['Hoofdcategorieen fiscus'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Zijde': _p_cc(
                                                     $['Zijde'],
                                                     ($) => ['state', _p.decide.state(
@@ -181,8 +181,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Activa',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -192,8 +192,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Passiva',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -209,23 +209,23 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', $.__d_map(
                                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                            ({
-                                                            })
+                                                            {
+                                                            }
                                                         )]]
                                                     )]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
-                            })
+                            }
                         )]]
                     ),
                     'BTW-categorieen': _p_cc(
                         $['BTW-categorieen'],
                         ($) => ['dictionary', $.__d_map(
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'BTW-heffing': _p_cc(
                                         $['BTW-heffing'],
                                         ($) => ['state', _p.decide.state(
@@ -238,17 +238,17 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             ($) => ({
                                                                 'option': 'Ja',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                    ({
+                                                                    {
                                                                         'BTW-promillage': _p_cc(
                                                                             $['BTW-promillage'],
-                                                                            ($) => ['text', ({
+                                                                            ($) => ['text', {
                                                                                 'delimiter': ['none', null],
                                                                                 'value': v_serialize_number.serialize(
                                                                                     $
                                                                                 ),
-                                                                            })]
+                                                                            }]
                                                                         ),
-                                                                    })
+                                                                    }
                                                                 )]],
                                                             })
                                                         )
@@ -258,8 +258,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             ($) => ({
                                                                 'option': 'Nee',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                    ({
-                                                                    })
+                                                                    {
+                                                                    }
                                                                 )]],
                                                             })
                                                         )
@@ -271,7 +271,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             }
                                         )]
                                     ),
-                                })
+                                }
                             )]]
                         )]
                     ),
@@ -279,53 +279,53 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                         $['Gebruikers'],
                         ($) => ['dictionary', $.__d_map(
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'Volledige naam': _p_cc(
                                         $['Volledige naam'],
-                                        ($) => ['text', ({
+                                        ($) => ['text', {
                                             'delimiter': ['quote', null],
                                             'value': $,
-                                        })]
+                                        }]
                                     ),
                                     'Wachtwoord': _p_cc(
                                         $['Wachtwoord'],
-                                        ($) => ['text', ({
+                                        ($) => ['text', {
                                             'delimiter': ['quote', null],
                                             'value': $,
-                                        })]
+                                        }]
                                     ),
-                                })
+                                }
                             )]]
                         )]
                     ),
                     'Huidige datum': _p_cc(
                         $['Huidige datum'],
-                        ($) => ['text', ({
+                        ($) => ['text', {
                             'delimiter': ['none', null],
                             'value': v_serialize_number.serialize(
                                 $
                             ),
-                        })]
+                        }]
                     ),
                     'Resultaat': _p_cc(
                         $['Resultaat'],
                         ($) => ['group', ['verbose', _p.dictionary.literal(
-                            ({
+                            {
                                 'Correctietypes vennootschapsbelasting': _p_cc(
                                     $['Correctietypes vennootschapsbelasting'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Te corrigeren promillage': _p_cc(
                                                     $['Te corrigeren promillage'],
-                                                    ($) => ['text', ({
+                                                    ($) => ['text', {
                                                         'delimiter': ['none', null],
                                                         'value': v_serialize_number.serialize(
                                                             $
                                                         ),
-                                                    })]
+                                                    }]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
@@ -333,20 +333,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                     $['Grootboekrekeningen'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Hoofdcategorie': _p_cc(
                                                     $['Hoofdcategorie'],
-                                                    ($) => ['text', ({
+                                                    ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
-                                                    })]
+                                                    }]
                                                 ),
                                                 'Subcategorie': _p_cc(
                                                     $['Subcategorie'],
-                                                    ($) => ['text', ({
+                                                    ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
-                                                    })]
+                                                    }]
                                                 ),
                                                 'Zijde': _p_cc(
                                                     $['Zijde'],
@@ -360,7 +360,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Kosten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
+                                                                                {
                                                                                     'Correctie op vennootschapsbelasting': _p_cc(
                                                                                         $['Correctie op vennootschapsbelasting'],
                                                                                         ($) => ['state', _p.decide.state(
@@ -373,15 +373,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                             ($) => ({
                                                                                                                 'option': 'Ja',
                                                                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                    ({
+                                                                                                                    {
                                                                                                                         'Correctietype': _p_cc(
                                                                                                                             $['Correctietype'],
-                                                                                                                            ($) => ['text', ({
+                                                                                                                            ($) => ['text', {
                                                                                                                                 'delimiter': ['quote', null],
                                                                                                                                 'value': $,
-                                                                                                                            })]
+                                                                                                                            }]
                                                                                                                         ),
-                                                                                                                    })
+                                                                                                                    }
                                                                                                                 )]],
                                                                                                             })
                                                                                                         )
@@ -391,8 +391,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                             ($) => ({
                                                                                                                 'option': 'Nee',
                                                                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                    ({
-                                                                                                                    })
+                                                                                                                    {
+                                                                                                                    }
                                                                                                                 )]],
                                                                                                             })
                                                                                                         )
@@ -404,7 +404,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                             }
                                                                                         )]
                                                                                     ),
-                                                                                })
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -414,8 +414,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -427,7 +427,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         }
                                                     )]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
@@ -435,7 +435,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                     $['Hoofdcategorieen'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Zijde': _p_cc(
                                                     $['Zijde'],
                                                     ($) => ['state', _p.decide.state(
@@ -448,8 +448,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Kosten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -459,8 +459,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -476,26 +476,26 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', $.__d_map(
                                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                            ({
+                                                            {
                                                                 'Hoofdcategorie fiscus': _p_cc(
                                                                     $['Hoofdcategorie fiscus'],
-                                                                    ($) => ['text', ({
+                                                                    ($) => ['text', {
                                                                         'delimiter': ['quote', null],
                                                                         'value': $,
-                                                                    })]
+                                                                    }]
                                                                 ),
                                                                 'Subcategorie fiscus': _p_cc(
                                                                     $['Subcategorie fiscus'],
-                                                                    ($) => ['text', ({
+                                                                    ($) => ['text', {
                                                                         'delimiter': ['quote', null],
                                                                         'value': $,
-                                                                    })]
+                                                                    }]
                                                                 ),
-                                                            })
+                                                            }
                                                         )]]
                                                     )]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
@@ -503,7 +503,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                     $['Hoofdcategorieen fiscus'],
                                     ($) => ['dictionary', $.__d_map(
                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                            ({
+                                            {
                                                 'Zijde': _p_cc(
                                                     $['Zijde'],
                                                     ($) => ['state', _p.decide.state(
@@ -516,8 +516,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Kosten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -527,8 +527,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                ({
-                                                                                })
+                                                                                {
+                                                                                }
                                                                             )]],
                                                                         })
                                                                     )
@@ -544,27 +544,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', $.__d_map(
                                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                            ({
-                                                            })
+                                                            {
+                                                            }
                                                         )]]
                                                     )]
                                                 ),
-                                            })
+                                            }
                                         )]]
                                     )]
                                 ),
-                            })
+                            }
                         )]]
                     ),
-                })
+                }
             )]]
         ),
         'Informele rekeningen': _p_cc(
             $['Informele rekeningen'],
             ($) => ['dictionary', $.__d_map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
-                    })
+                    {
+                    }
                 )]]
             )]
         ),
@@ -572,7 +572,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
             $['Jaren'],
             ($) => ['dictionary', $.__d_map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
+                    {
                         'Afgesloten': _p_cc(
                             $['Afgesloten'],
                             ($) => ['state', _p.decide.state(
@@ -585,8 +585,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Ja',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        ({
-                                                        })
+                                                        {
+                                                        }
                                                     )]],
                                                 })
                                             )
@@ -596,8 +596,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Nee',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        ({
-                                                        })
+                                                        {
+                                                        }
                                                     )]],
                                                 })
                                             )
@@ -613,7 +613,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Balans grootboekrekeningen'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Type': _p_cc(
                                             $['Type'],
                                             ($) => ['state', _p.decide.state(
@@ -626,8 +626,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Bankrekening',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -637,8 +637,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Overig',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -648,8 +648,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Informele rekening',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -661,7 +661,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 }
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -669,52 +669,52 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Bankrekeningen'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Beginsaldo': _p_cc(
                                             $['Beginsaldo'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
                                                     $
                                                 ),
-                                            })]
+                                            }]
                                         ),
                                         'Grootboekrekening': _p_cc(
                                             $['Grootboekrekening'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'Mutaties': _p_cc(
                                             $['Mutaties'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Bedrag': _p_cc(
                                                             $['Bedrag'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Datum': _p_cc(
                                                             $['Datum'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $['Omschrijving'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Status': _p_cc(
                                                             $['Status'],
@@ -728,8 +728,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Nog te verwerken',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
-                                                                                        })
+                                                                                        {
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -739,7 +739,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Verwerkt',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Afhandeling': _p_cc(
                                                                                                 $['Afhandeling'],
                                                                                                 ($) => ['state', _p.decide.state(
@@ -752,22 +752,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Inkoop',
                                                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                            ({
+                                                                                                                            {
                                                                                                                                 'Jaar': _p_cc(
                                                                                                                                     $['Jaar'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
                                                                                                                                 'Inkoop': _p_cc(
                                                                                                                                     $['Inkoop'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
-                                                                                                                            })
+                                                                                                                            }
                                                                                                                         )]],
                                                                                                                     })
                                                                                                                 )
@@ -777,15 +777,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Verrekenpost',
                                                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                            ({
+                                                                                                                            {
                                                                                                                                 'Verrekenpost': _p_cc(
                                                                                                                                     $['Verrekenpost'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
-                                                                                                                            })
+                                                                                                                            }
                                                                                                                         )]],
                                                                                                                     })
                                                                                                                 )
@@ -795,22 +795,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                     ($) => ({
                                                                                                                         'option': 'BTW-periode',
                                                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                            ({
+                                                                                                                            {
                                                                                                                                 'Jaar': _p_cc(
                                                                                                                                     $['Jaar'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
                                                                                                                                 'BTW-periode': _p_cc(
                                                                                                                                     $['BTW-periode'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
-                                                                                                                            })
+                                                                                                                            }
                                                                                                                         )]],
                                                                                                                     })
                                                                                                                 )
@@ -820,22 +820,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Verkoop',
                                                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                            ({
+                                                                                                                            {
                                                                                                                                 'Jaar': _p_cc(
                                                                                                                                     $['Jaar'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
                                                                                                                                 'Verkoop': _p_cc(
                                                                                                                                     $['Verkoop'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
-                                                                                                                            })
+                                                                                                                            }
                                                                                                                         )]],
                                                                                                                     })
                                                                                                                 )
@@ -845,15 +845,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Informele rekening',
                                                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                            ({
+                                                                                                                            {
                                                                                                                                 'Informele rekening': _p_cc(
                                                                                                                                     $['Informele rekening'],
-                                                                                                                                    ($) => ['text', ({
+                                                                                                                                    ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
-                                                                                                                                    })]
+                                                                                                                                    }]
                                                                                                                                 ),
-                                                                                                                            })
+                                                                                                                            }
                                                                                                                         )]],
                                                                                                                     })
                                                                                                                 )
@@ -865,7 +865,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                     }
                                                                                                 )]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -877,7 +877,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 }
                                                             )]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
@@ -893,8 +893,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -904,22 +904,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Nee',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Jaar': _p_cc(
                                                                                 $['Jaar'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Rekening': _p_cc(
                                                                                 $['Rekening'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -931,53 +931,53 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 }
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
                         'Beginsaldo nog aan te geven BTW': _p_cc(
                             $['Beginsaldo nog aan te geven BTW'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })]
+                            }]
                         ),
                         'Beginsaldo winstreserve': _p_cc(
                             $['Beginsaldo winstreserve'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })]
+                            }]
                         ),
                         'BTW periode saldo': _p_cc(
                             $['BTW periode saldo'],
                             ($) => ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'Grootboekrekening': _p_cc(
                                         $['Grootboekrekening'],
-                                        ($) => ['text', ({
+                                        ($) => ['text', {
                                             'delimiter': ['quote', null],
                                             'value': $,
-                                        })]
+                                        }]
                                     ),
-                                })
+                                }
                             )]]
                         ),
                         'BTW periodes': _p_cc(
                             $['BTW periodes'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         '1. BTW-categorieen': _p_cc(
                                             $['1. BTW-categorieen'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
-                                                    })
+                                                    {
+                                                    }
                                                 )]]
                                             )]
                                         ),
@@ -985,23 +985,23 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Documenten'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Bestand': _p_cc(
                                                             $['Bestand'],
                                                             ($) => Bestandsnaam(
                                                                 $
                                                             )
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
                                         'Omschrijving': _p_cc(
                                             $['Omschrijving'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'Status': _p_cc(
                                             $['Status'],
@@ -1015,35 +1015,35 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Aangegeven',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Afronding': _p_cc(
                                                                                 $['Afronding'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['none', null],
                                                                                     'value': v_serialize_number.serialize(
                                                                                         $
                                                                                     ),
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Bedrag': _p_cc(
                                                                                 $['Bedrag'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['none', null],
                                                                                     'value': v_serialize_number.serialize(
                                                                                         $
                                                                                     ),
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Datum': _p_cc(
                                                                                 $['Datum'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['none', null],
                                                                                     'value': v_serialize_number.serialize(
                                                                                         $
                                                                                     ),
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1053,8 +1053,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Openstaand',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1066,7 +1066,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 }
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -1082,8 +1082,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Ja',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        ({
-                                                        })
+                                                        {
+                                                        }
                                                     )]],
                                                 })
                                             )
@@ -1093,15 +1093,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Nee',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        ({
+                                                        {
                                                             'Vorig boekjaar': _p_cc(
                                                                 $['Vorig boekjaar'],
-                                                                ($) => ['text', ({
+                                                                ($) => ['text', {
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
-                                                                })]
+                                                                }]
                                                             ),
-                                                        })
+                                                        }
                                                     )]],
                                                 })
                                             )
@@ -1115,52 +1115,52 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                         ),
                         'Grootboekrekening voor BTW afrondingen': _p_cc(
                             $['Grootboekrekening voor BTW afrondingen'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'Grootboekrekening voor nog aan te geven BTW': _p_cc(
                             $['Grootboekrekening voor nog aan te geven BTW'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'Grootboekrekening voor resultaat dit jaar': _p_cc(
                             $['Grootboekrekening voor resultaat dit jaar'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'Grootboekrekening voor winstreserve': _p_cc(
                             $['Grootboekrekening voor winstreserve'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
-                            })]
+                            }]
                         ),
                         'Informele rekeningen': _p_cc(
                             $['Informele rekeningen'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Beginsaldo': _p_cc(
                                             $['Beginsaldo'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
                                                     $
                                                 ),
-                                            })]
+                                            }]
                                         ),
                                         'Grootboekrekening': _p_cc(
                                             $['Grootboekrekening'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'Nieuw': _p_cc(
                                             $['Nieuw'],
@@ -1174,8 +1174,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1185,22 +1185,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Nee',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Jaar': _p_cc(
                                                                                 $['Jaar'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Rekening': _p_cc(
                                                                                 $['Rekening'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1212,7 +1212,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 }
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -1220,7 +1220,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Inkopen'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Afhandeling': _p_cc(
                                             $['Afhandeling'],
                                             ($) => ['state', _p.decide.state(
@@ -1233,8 +1233,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1244,15 +1244,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Rekening courant',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Rekening courant': _p_cc(
                                                                                 $['Rekening courant'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1276,8 +1276,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1287,15 +1287,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Geen BTW van toepassing',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'BTW-periode': _p_cc(
                                                                                 $['BTW-periode'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1305,8 +1305,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Import van buiten de EU',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1316,8 +1316,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1327,15 +1327,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Standaard',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'BTW-periode': _p_cc(
                                                                                 $['BTW-periode'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1359,14 +1359,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Toegevoegd',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Document': _p_cc(
                                                                                 $['Document'],
                                                                                 ($) => Bestandsnaam(
                                                                                     $
                                                                                 )
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1376,8 +1376,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Niet van toepassing',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1387,8 +1387,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ontbreekt',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1398,8 +1398,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Nog toevoegen',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1413,18 +1413,18 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                         ),
                                         'Datum': _p_cc(
                                             $['Datum'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
                                                     $
                                                 ),
-                                            })]
+                                            }]
                                         ),
                                         'Regels': _p_cc(
                                             $['Regels'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Bedrag': _p_cc(
                                                             $['Bedrag'],
                                                             ($) => ['state', _p.decide.state(
@@ -1437,26 +1437,26 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Bekend',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'BTW-bedrag': _p_cc(
                                                                                                 $['BTW-bedrag'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['none', null],
                                                                                                     'value': v_serialize_number.serialize(
                                                                                                         $
                                                                                                     ),
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
                                                                                             'Bedrag inclusief geheven BTW': _p_cc(
                                                                                                 $['Bedrag inclusief geheven BTW'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['none', null],
                                                                                                     'value': v_serialize_number.serialize(
                                                                                                         $
                                                                                                     ),
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -1470,10 +1470,10 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $['Omschrijving'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Type': _p_cc(
                                                             $['Type'],
@@ -1487,15 +1487,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Balans',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Balans item': _p_cc(
                                                                                                 $['Balans item'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -1505,15 +1505,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Kosten',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Grootboekrekening': _p_cc(
                                                                                                 $['Grootboekrekening'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -1525,7 +1525,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 }
                                                             )]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
@@ -1541,8 +1541,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Bonnetje',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1552,22 +1552,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Inkoop (met crediteur)',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Crediteur': _p_cc(
                                                                                 $['Crediteur'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Factuurnummer': _p_cc(
                                                                                 $['Factuurnummer'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1577,15 +1577,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Loonheffing',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Ronde': _p_cc(
                                                                                 $['Ronde'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1595,22 +1595,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Salaris',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Ronde': _p_cc(
                                                                                 $['Ronde'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Medewerker': _p_cc(
                                                                                 $['Medewerker'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1622,83 +1622,83 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 }
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
                         'Inkoop saldo': _p_cc(
                             $['Inkoop saldo'],
                             ($) => ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'Grootboekrekening': _p_cc(
                                         $['Grootboekrekening'],
-                                        ($) => ['text', ({
+                                        ($) => ['text', {
                                             'delimiter': ['quote', null],
                                             'value': $,
-                                        })]
+                                        }]
                                     ),
-                                })
+                                }
                             )]]
                         ),
                         'Overige balans items': _p_cc(
                             $['Overige balans items'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Beginsaldo': _p_cc(
                                             $['Beginsaldo'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
                                                     $
                                                 ),
-                                            })]
+                                            }]
                                         ),
                                         'Grootboekrekening': _p_cc(
                                             $['Grootboekrekening'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'Memoriaal boekingen': _p_cc(
                                             $['Memoriaal boekingen'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Bedrag': _p_cc(
                                                             $['Bedrag'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Datum': _p_cc(
                                                             $['Datum'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Grootboekrekening': _p_cc(
                                                             $['Grootboekrekening'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $['Omschrijving'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
@@ -1714,8 +1714,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1725,22 +1725,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Nee',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Jaar': _p_cc(
                                                                                 $['Jaar'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Balans item': _p_cc(
                                                                                 $['Balans item'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1752,7 +1752,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 }
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -1760,8 +1760,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Resultaat grootboekrekeningen'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
-                                    })
+                                    {
+                                    }
                                 )]]
                             )]
                         ),
@@ -1769,39 +1769,39 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Salarisrondes'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
-                                    })
+                                    {
+                                    }
                                 )]]
                             )]
                         ),
                         'Startdatum boekjaar': _p_cc(
                             $['Startdatum boekjaar'],
-                            ($) => ['text', ({
+                            ($) => ['text', {
                                 'delimiter': ['none', null],
                                 'value': v_serialize_number.serialize(
                                     $
                                 ),
-                            })]
+                            }]
                         ),
                         'Verkoop saldo': _p_cc(
                             $['Verkoop saldo'],
                             ($) => ['group', ['verbose', _p.dictionary.literal(
-                                ({
+                                {
                                     'Grootboekrekening': _p_cc(
                                         $['Grootboekrekening'],
-                                        ($) => ['text', ({
+                                        ($) => ['text', {
                                             'delimiter': ['quote', null],
                                             'value': $,
-                                        })]
+                                        }]
                                     ),
-                                })
+                                }
                             )]]
                         ),
                         'Verkopen': _p_cc(
                             $['Verkopen'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Afhandeling': _p_cc(
                                             $['Afhandeling'],
                                             ($) => ['state', _p.decide.state(
@@ -1814,8 +1814,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
-                                                                        })
+                                                                        {
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1825,15 +1825,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Rekening courant',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Rekening courant': _p_cc(
                                                                                 $['Rekening courant'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1847,19 +1847,19 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                         ),
                                         'Betalingstermijn': _p_cc(
                                             $['Betalingstermijn'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
                                                     $
                                                 ),
-                                            })]
+                                            }]
                                         ),
                                         'BTW-periode': _p_cc(
                                             $['BTW-periode'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'Brondocument': _p_cc(
                                             $['Brondocument'],
@@ -1873,14 +1873,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Toegevoegd',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Document': _p_cc(
                                                                                 $['Document'],
                                                                                 ($) => Bestandsnaam(
                                                                                     $
                                                                                 )
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1904,22 +1904,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Project',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Project': _p_cc(
                                                                                 $['Project'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
                                                                             'Offerte': _p_cc(
                                                                                 $['Offerte'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1929,15 +1929,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        ({
+                                                                        {
                                                                             'Overeenkomst': _p_cc(
                                                                                 $['Overeenkomst'],
-                                                                                ($) => ['text', ({
+                                                                                ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
-                                                                                })]
+                                                                                }]
                                                                             ),
-                                                                        })
+                                                                        }
                                                                     )]],
                                                                 })
                                                             )
@@ -1951,25 +1951,25 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                         ),
                                         'Datum': _p_cc(
                                             $['Datum'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['none', null],
                                                 'value': v_serialize_number.serialize(
                                                     $
                                                 ),
-                                            })]
+                                            }]
                                         ),
                                         'Debiteur': _p_cc(
                                             $['Debiteur'],
-                                            ($) => ['text', ({
+                                            ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
-                                            })]
+                                            }]
                                         ),
                                         'Regels': _p_cc(
                                             $['Regels'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'BTW-regime': _p_cc(
                                                             $['BTW-regime'],
                                                             ($) => ['state', _p.decide.state(
@@ -1982,8 +1982,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Intracommunautair',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
-                                                                                        })
+                                                                                        {
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -1993,15 +1993,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Standaard',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'BTW-categorie': _p_cc(
                                                                                                 $['BTW-categorie'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2011,8 +2011,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Binnenland: heffing verlegd',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
-                                                                                        })
+                                                                                        {
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2026,12 +2026,12 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         ),
                                                         'Bedrag exclusief BTW': _p_cc(
                                                             $['Bedrag exclusief BTW'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Contracttype': _p_cc(
                                                             $['Contracttype'],
@@ -2045,15 +2045,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Project',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Opbrengst': _p_cc(
                                                                                                 $['Opbrengst'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2063,8 +2063,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Los',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
-                                                                                        })
+                                                                                        {
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2074,15 +2074,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Licentieovereenkomst',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Periode': _p_cc(
                                                                                                 $['Periode'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2096,10 +2096,10 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         ),
                                                         'Omschrijving': _p_cc(
                                                             $['Omschrijving'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Type': _p_cc(
                                                             $['Type'],
@@ -2113,15 +2113,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Opbrengsten',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Grootboekrekening': _p_cc(
                                                                                                 $['Grootboekrekening'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2131,15 +2131,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Balans',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Balans item': _p_cc(
                                                                                                 $['Balans item'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2151,11 +2151,11 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 }
                                                             )]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -2163,20 +2163,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Verrekenposten'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Mutaties': _p_cc(
                                             $['Mutaties'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Bedrag': _p_cc(
                                                             $['Bedrag'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
                                                         'Afhandeling': _p_cc(
                                                             $['Afhandeling'],
@@ -2190,22 +2190,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Inkoop',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Jaar': _p_cc(
                                                                                                 $['Jaar'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
                                                                                             'Inkoop': _p_cc(
                                                                                                 $['Inkoop'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2215,15 +2215,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Informele rekening',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Informele rekening': _p_cc(
                                                                                                 $['Informele rekening'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2233,22 +2233,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Verkoop',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Jaar': _p_cc(
                                                                                                 $['Jaar'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
                                                                                             'Verkoop': _p_cc(
                                                                                                 $['Verkoop'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2258,22 +2258,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'BTW-periode',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        ({
+                                                                                        {
                                                                                             'Jaar': _p_cc(
                                                                                                 $['Jaar'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
                                                                                             'BTW-periode': _p_cc(
                                                                                                 $['BTW-periode'],
-                                                                                                ($) => ['text', ({
+                                                                                                ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
-                                                                                                })]
+                                                                                                }]
                                                                                             ),
-                                                                                        })
+                                                                                        }
                                                                                     )]],
                                                                                 })
                                                                             )
@@ -2285,15 +2285,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 }
                                                             )]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
-                    })
+                    }
                 )]]
             )]
         ),
@@ -2301,31 +2301,31 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
             $['Klanten'],
             ($) => ['dictionary', $.__d_map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
+                    {
                         'Licentieovereenkomsten': _p_cc(
                             $['Licentieovereenkomsten'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Periodes': _p_cc(
                                             $['Periodes'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Bedrag': _p_cc(
                                                             $['Bedrag'],
-                                                            ($) => ['text', ({
+                                                            ($) => ['text', {
                                                                 'delimiter': ['none', null],
                                                                 'value': v_serialize_number.serialize(
                                                                     $
                                                                 ),
-                                                            })]
+                                                            }]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
@@ -2333,17 +2333,17 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Projecten'],
                             ($) => ['dictionary', $.__d_map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    ({
+                                    {
                                         'Offertes': _p_cc(
                                             $['Offertes'],
                                             ($) => ['dictionary', $.__d_map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    ({
+                                                    {
                                                         'Opbrengsten': _p_cc(
                                                             $['Opbrengsten'],
                                                             ($) => ['dictionary', $.__d_map(
                                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                                    ({
+                                                                    {
                                                                         'Type': _p_cc(
                                                                             $['Type'],
                                                                             ($) => ['state', _p.decide.state(
@@ -2356,26 +2356,26 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',
                                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                        ({
+                                                                                                        {
                                                                                                             'Bedrag': _p_cc(
                                                                                                                 $['Bedrag'],
-                                                                                                                ($) => ['text', ({
+                                                                                                                ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
                                                                                                                     'value': v_serialize_number.serialize(
                                                                                                                         $
                                                                                                                     ),
-                                                                                                                })]
+                                                                                                                }]
                                                                                                             ),
                                                                                                             'Betaaldatum': _p_cc(
                                                                                                                 $['Betaaldatum'],
-                                                                                                                ($) => ['text', ({
+                                                                                                                ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
                                                                                                                     'value': v_serialize_number.serialize(
                                                                                                                         $
                                                                                                                     ),
-                                                                                                                })]
+                                                                                                                }]
                                                                                                             ),
-                                                                                                        })
+                                                                                                        }
                                                                                                     )]],
                                                                                                 })
                                                                                             )
@@ -2387,19 +2387,19 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 }
                                                                             )]
                                                                         ),
-                                                                    })
+                                                                    }
                                                                 )]]
                                                             )]
                                                         ),
-                                                    })
+                                                    }
                                                 )]]
                                             )]
                                         ),
-                                    })
+                                    }
                                 )]]
                             )]
                         ),
-                    })
+                    }
                 )]]
             )]
         ),
@@ -2407,8 +2407,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
             $['Leveranciers'],
             ($) => ['dictionary', $.__d_map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
-                    })
+                    {
+                    }
                 )]]
             )]
         ),
@@ -2416,10 +2416,10 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
             $['Medewerkers'],
             ($) => ['dictionary', $.__d_map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    ({
-                    })
+                    {
+                    }
                 )]]
             )]
         ),
-    })
+    }
 )]]
