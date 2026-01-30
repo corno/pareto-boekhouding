@@ -172,14 +172,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             $['Hoofdcategorie fiscus'],
                                             ($) => ['text', {
                                                 'delimiter': ['backtick', null],
-                                                'value': $[' '],
+                                                'value': $['l id'],
                                             }]
                                         ),
                                         'Subcategorie fiscus': _p_cc(
                                             $['Subcategorie fiscus'],
                                             ($) => ['text', {
                                                 'delimiter': ['backtick', null],
-                                                'value': $[' '],
+                                                'value': $['l id'],
                                             }]
                                         ),
                                     }
@@ -234,14 +234,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             $['Hoofdcategorie fiscus'],
                                             ($) => ['text', {
                                                 'delimiter': ['backtick', null],
-                                                'value': $[' '],
+                                                'value': $['l id'],
                                             }]
                                         ),
                                         'Subcategorie fiscus': _p_cc(
                                             $['Subcategorie fiscus'],
                                             ($) => ['text', {
                                                 'delimiter': ['backtick', null],
-                                                'value': $[' '],
+                                                'value': $['l id'],
                                             }]
                                         ),
                                     }
@@ -313,14 +313,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                         $['Hoofdcategorie'],
                                         ($) => ['text', {
                                             'delimiter': ['backtick', null],
-                                            'value': $[' '],
+                                            'value': $['l id'],
                                         }]
                                     ),
                                     'Subcategorie': _p_cc(
                                         $['Subcategorie'],
                                         ($) => ['text', {
                                             'delimiter': ['backtick', null],
-                                            'value': $[' '],
+                                            'value': $['l id'],
                                         }]
                                     ),
                                     'Zijde': _p_cc(
@@ -366,14 +366,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                         $['Hoofdcategorie'],
                                         ($) => ['text', {
                                             'delimiter': ['backtick', null],
-                                            'value': $[' '],
+                                            'value': $['l id'],
                                         }]
                                     ),
                                     'Subcategorie': _p_cc(
                                         $['Subcategorie'],
                                         ($) => ['text', {
                                             'delimiter': ['backtick', null],
-                                            'value': $[' '],
+                                            'value': $['l id'],
                                         }]
                                     ),
                                     'Zijde': _p_cc(
@@ -406,7 +406,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                                 $['Correctietype'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['backtick', null],
-                                                                                                                    'value': $[' '],
+                                                                                                                    'value': $['l id'],
                                                                                                                 }]
                                                                                                             ),
                                                                                                         }
@@ -687,7 +687,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         $['Grootboekrekening voor BTW afrondingen'],
                         ($) => ['text', {
                             'delimiter': ['backtick', null],
-                            'value': $[' '],
+                            'value': $['l id'],
                         }]
                     ),
                     'Salarisrondes': _p_cc(
@@ -805,35 +805,35 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         $['Grootboekrekening voor nog aan te geven BTW'],
                         ($) => ['text', {
                             'delimiter': ['backtick', null],
-                            'value': $[' '],
+                            'value': $['l id'],
                         }]
                     ),
                     'Grootboekrekening voor resultaat dit jaar': _p_cc(
                         $['Grootboekrekening voor resultaat dit jaar'],
                         ($) => ['text', {
                             'delimiter': ['backtick', null],
-                            'value': $[' '],
+                            'value': $['l id'],
                         }]
                     ),
                     'Grootboekrekening voor winstreserve': _p_cc(
                         $['Grootboekrekening voor winstreserve'],
                         ($) => ['text', {
                             'delimiter': ['backtick', null],
-                            'value': $[' '],
+                            'value': $['l id'],
                         }]
                     ),
                     'Grootboekrekening voor Inkoop saldo': _p_cc(
                         $['Grootboekrekening voor Inkoop saldo'],
                         ($) => ['text', {
                             'delimiter': ['backtick', null],
-                            'value': $[' '],
+                            'value': $['l id'],
                         }]
                     ),
                     'Grootboekrekening voor Verkoop saldo': _p_cc(
                         $['Grootboekrekening voor Verkoop saldo'],
                         ($) => ['text', {
                             'delimiter': ['backtick', null],
-                            'value': $[' '],
+                            'value': $['l id'],
                         }]
                     ),
                     'Beginsaldo nog aan te geven BTW': _p_cc(
@@ -872,7 +872,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         $['Grootboekrekening'],
                                         ($) => ['text', {
                                             'delimiter': ['backtick', null],
-                                            'value': $[' '],
+                                            'value': $['l id'],
                                         }]
                                     ),
                                     'Nieuw': _p_cc(
@@ -936,7 +936,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         $['Grootboekrekening'],
                                         ($) => ['text', {
                                             'delimiter': ['backtick', null],
-                                            'value': $[' '],
+                                            'value': $['l id'],
                                         }]
                                     ),
                                     'Nieuw': _p_cc(
@@ -1051,7 +1051,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
             $['Grootboekrekening'],
             ($) => ['text', {
                 'delimiter': ['backtick', null],
-                'value': $[' '],
+                'value': $['l id'],
             }]
         ),
         'Nieuw': _p_cc(
@@ -1079,7 +1079,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                                                 $['Balans item'],
                                                 ($) => ['text', {
                                                     'delimiter': ['backtick', null],
-                                                    'value': $[' '],
+                                                    'value': $['l id'],
                                                 }]
                                             ),
                                         }
@@ -1099,12 +1099,12 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
 
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($) => ['text', {
     'delimiter': ['backtick', null],
-    'value': $[' '],
+    'value': $['l id'],
 }]
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($) => ['text', {
     'delimiter': ['backtick', null],
-    'value': $[' '],
+    'value': $['l id'],
 }]
 
 export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['group', ['verbose', _p.dictionary.literal(
@@ -1139,7 +1139,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Rekening courant'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1203,7 +1203,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['BTW-periode'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1347,7 +1347,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Balans item'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1365,7 +1365,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1409,7 +1409,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Crediteur'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                             'Factuurnummer': _p_cc(
@@ -1434,7 +1434,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Ronde'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1452,14 +1452,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Ronde'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                             'Medewerker': _p_cc(
                                                                 $['Medewerker'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1508,7 +1508,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Rekening courant'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1536,7 +1536,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['BTW-periode'],
                             ($) => ['text', {
                                 'delimiter': ['backtick', null],
-                                'value': $[' '],
+                                'value': $['l id'],
                             }]
                         ),
                         'Brondocument': _p_cc(
@@ -1575,7 +1575,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['Debiteur'],
                             ($) => ['text', {
                                 'delimiter': ['backtick', null],
-                                'value': $[' '],
+                                'value': $['l id'],
                             }]
                         ),
                         'Contracttype': _p_cc(
@@ -1595,14 +1595,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Project'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                             'Offerte': _p_cc(
                                                                 $['Offerte'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1620,7 +1620,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $['Overeenkomst'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['backtick', null],
-                                                                    'value': $[' '],
+                                                                    'value': $['l id'],
                                                                 }]
                                                             ),
                                                         }
@@ -1674,7 +1674,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['BTW-categorie'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1723,7 +1723,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Opbrengst'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1749,7 +1749,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Periode'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1788,7 +1788,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1806,7 +1806,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Balans item'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1885,7 +1885,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                                             $['Informele rekening'],
                                                                                             ($) => ['text', {
                                                                                                 'delimiter': ['backtick', null],
-                                                                                                'value': $[' '],
+                                                                                                'value': $['l id'],
                                                                                             }]
                                                                                         ),
                                                                                     }
@@ -1952,7 +1952,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                                 $['Informele rekening'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -1970,7 +1970,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                                 $['Verrekenpost'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['backtick', null],
-                                                                                    'value': $[' '],
+                                                                                    'value': $['l id'],
                                                                                 }]
                                                                             ),
                                                                         }
@@ -2031,7 +2031,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Grootboekrekening'],
                                 ($) => ['text', {
                                     'delimiter': ['backtick', null],
-                                    'value': $[' '],
+                                    'value': $['l id'],
                                 }]
                             ),
                         }
@@ -2125,7 +2125,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             ($) => ['optional', $.__decide(
                 ($): t_out.Value.optional => ['set', ['text', {
                     'delimiter': ['backtick', null],
-                    'value': $[' '],
+                    'value': $['l id'],
                 }]],
                 () => ['not set', null]
             )]
@@ -2143,7 +2143,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'option': 'Inkoop',
                                     'value': ['text', {
                                         'delimiter': ['backtick', null],
-                                        'value': $[' '],
+                                        'value': $['l id'],
                                     }],
                                 })
                             )
@@ -2154,7 +2154,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'option': 'Verkoop',
                                     'value': ['text', {
                                         'delimiter': ['backtick', null],
-                                        'value': $[' '],
+                                        'value': $['l id'],
                                     }],
                                 })
                             )
@@ -2165,7 +2165,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'option': 'BTW-periode',
                                     'value': ['text', {
                                         'delimiter': ['backtick', null],
-                                        'value': $[' '],
+                                        'value': $['l id'],
                                     }],
                                 })
                             )
@@ -2203,7 +2203,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', _p
                                     $['Vorig boekjaar'],
                                     ($) => ['text', {
                                         'delimiter': ['backtick', null],
-                                        'value': $[' '],
+                                        'value': $['l id'],
                                     }]
                                 ),
                             }

@@ -13,25 +13,25 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
     'Balans Hoofdcategorieen': _p_cc(
         $['Balans Hoofdcategorieen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Fiscaal.Balans_Hoofdcategorieen._.D._.Zijde._ => {
+                                    ($): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Activa':
                                                 return _p.ss(
@@ -55,15 +55,15 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': null,
-                                        'location': {
+                                        'l entry': null,
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -73,7 +73,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -85,25 +85,25 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
     'Resultaat Hoofdcategorieen': _p_cc(
         $['Resultaat Hoofdcategorieen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen._.D._.Zijde._ => {
+                                    ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Kosten':
                                                 return _p.ss(
@@ -127,15 +127,15 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': null,
-                                        'location': {
+                                        'l entry': null,
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -145,7 +145,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -160,20 +160,20 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     'Correctietypes vennootschapsbelasting': _p_cc(
         $['Correctietypes vennootschapsbelasting'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Te corrigeren promillage': _p_cc(
                             $['Te corrigeren promillage'],
                             ($) => $
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -185,25 +185,25 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     'Balans': _p_cc(
         $['Balans'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Grootboek_Categorieen.Balans._.D._.Zijde._ => {
+                                    ($): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Activa':
                                                 return _p.ss(
@@ -227,38 +227,38 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': {
+                                        'l entry': {
                                             'Hoofdcategorie fiscus': _p_cc(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': $[' '],
+                                                    'l id': $['l id'],
                                                 })
                                             ),
                                             'Subcategorie fiscus': _p_cc(
                                                 $['Subcategorie fiscus'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': $[' '],
+                                                    'l id': $['l id'],
                                                 })
                                             ),
                                         },
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -268,7 +268,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -280,25 +280,25 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     'Resultaat': _p_cc(
         $['Resultaat'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Grootboek_Categorieen.Resultaat._.D._.Zijde._ => {
+                                    ($): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Kosten':
                                                 return _p.ss(
@@ -322,38 +322,38 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': {
+                                        'l entry': {
                                             'Hoofdcategorie fiscus': _p_cc(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': $[' '],
+                                                    'l id': $['l id'],
                                                 })
                                             ),
                                             'Subcategorie fiscus': _p_cc(
                                                 $['Subcategorie fiscus'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': $[' '],
+                                                    'l id': $['l id'],
                                                 })
                                             ),
                                         },
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -363,7 +363,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -378,25 +378,25 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'BTW-categorieen': _p_cc(
         $['BTW-categorieen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'BTW-heffing': _p_cc(
                             $['BTW-heffing'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Beheer.BTW$mi_categorieen._.D._.BTW$mi_heffing._ => {
+                                    ($): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing.l_state => {
                                         switch ($[0]) {
                                             case 'Ja':
                                                 return _p.ss(
@@ -418,7 +418,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -433,47 +433,47 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Balans': _p_cc(
                 $['Balans'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': {
+                            'l entry': {
                                 'Hoofdcategorie': _p_cc(
                                     $['Hoofdcategorie'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $[' '],
+                                        'l id': $['l id'],
                                     })
                                 ),
                                 'Subcategorie': _p_cc(
                                     $['Subcategorie'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $[' '],
+                                        'l id': $['l id'],
                                     })
                                 ),
                                 'Zijde': _p_cc(
                                     $['Zijde'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': _p.decide.state(
+                                        'l state': _p.decide.state(
                                             $,
-                                            ($): t_out.Beheer.Grootboekrekeningen.Balans._.D._.Zijde._ => {
+                                            ($): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
                                                 switch ($[0]) {
                                                     case 'Activa':
                                                         return _p.ss(
@@ -495,7 +495,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     })
                                 ),
                             },
-                            'location': {
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -507,47 +507,47 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Resultaat': _p_cc(
                 $['Resultaat'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': {
+                            'l entry': {
                                 'Hoofdcategorie': _p_cc(
                                     $['Hoofdcategorie'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $[' '],
+                                        'l id': $['l id'],
                                     })
                                 ),
                                 'Subcategorie': _p_cc(
                                     $['Subcategorie'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $[' '],
+                                        'l id': $['l id'],
                                     })
                                 ),
                                 'Zijde': _p_cc(
                                     $['Zijde'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': _p.decide.state(
+                                        'l state': _p.decide.state(
                                             $,
-                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat._.D._.Zijde._ => {
+                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
                                                 switch ($[0]) {
                                                     case 'Kosten':
                                                         return _p.ss(
@@ -556,14 +556,14 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 'Correctie op vennootschapsbelasting': _p_cc(
                                                                     $['Correctie op vennootschapsbelasting'],
                                                                     ($) => ({
-                                                                        'location': {
+                                                                        'l location': {
                                                                             'document resource identifier': "implement me",
                                                                             'line': 42,
                                                                             'column': 42,
                                                                         },
-                                                                        ' ': _p.decide.state(
+                                                                        'l state': _p.decide.state(
                                                                             $,
-                                                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat._.D._.Zijde._.Kosten.Correctie_op_vennootschapsbelasting._ => {
+                                                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting.l_state => {
                                                                                 switch ($[0]) {
                                                                                     case 'Ja':
                                                                                         return _p.ss(
@@ -572,12 +572,12 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                 'Correctietype': _p_cc(
                                                                                                     $['Correctietype'],
                                                                                                     ($) => ({
-                                                                                                        'location': {
+                                                                                                        'l location': {
                                                                                                             'document resource identifier': "implement me",
                                                                                                             'line': 42,
                                                                                                             'column': 42,
                                                                                                         },
-                                                                                                        ' ': $[' '],
+                                                                                                        'l id': $['l id'],
                                                                                                     })
                                                                                                 ),
                                                                                             }]
@@ -613,7 +613,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     })
                                 ),
                             },
-                            'location': {
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -630,15 +630,15 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Bank': _p_cc(
                 $['Bank'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': null,
-                            'location': {
+                            'l entry': null,
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -650,15 +650,15 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Informeel': _p_cc(
                 $['Informeel'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': null,
-                            'location': {
+                            'l entry': null,
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -672,14 +672,14 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Gebruikers': _p_cc(
         $['Gebruikers'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Volledige naam': _p_cc(
                             $['Volledige naam'],
                             ($) => $
@@ -689,7 +689,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             ($) => $
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -701,42 +701,42 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Klanten': _p_cc(
         $['Klanten'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Licentieovereenkomsten': _p_cc(
                             $['Licentieovereenkomsten'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': {
+                                        'l entry': {
                                             'Periodes': _p_cc(
                                                 $['Periodes'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': $.__d_map(
+                                                    'l dictionary': $.__d_map(
                                                         ($, id) => ({
-                                                            ' ': {
+                                                            'l entry': {
                                                                 'Bedrag': _p_cc(
                                                                     $['Bedrag'],
                                                                     ($) => $
                                                                 ),
                                                             },
-                                                            'location': {
+                                                            'l location': {
                                                                 'document resource identifier': "implement me",
                                                                 'line': 42,
                                                                 'column': 42,
@@ -746,7 +746,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                 })
                                             ),
                                         },
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -758,47 +758,47 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'Projecten': _p_cc(
                             $['Projecten'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': {
+                                        'l entry': {
                                             'Offertes': _p_cc(
                                                 $['Offertes'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': $.__d_map(
+                                                    'l dictionary': $.__d_map(
                                                         ($, id) => ({
-                                                            ' ': {
+                                                            'l entry': {
                                                                 'Opbrengsten': _p_cc(
                                                                     $['Opbrengsten'],
                                                                     ($) => ({
-                                                                        'location': {
+                                                                        'l location': {
                                                                             'document resource identifier': "implement me",
                                                                             'line': 42,
                                                                             'column': 42,
                                                                         },
-                                                                        ' ': $.__d_map(
+                                                                        'l dictionary': $.__d_map(
                                                                             ($, id) => ({
-                                                                                ' ': {
+                                                                                'l entry': {
                                                                                     'Type': _p_cc(
                                                                                         $['Type'],
                                                                                         ($) => ({
-                                                                                            'location': {
+                                                                                            'l location': {
                                                                                                 'document resource identifier': "implement me",
                                                                                                 'line': 42,
                                                                                                 'column': 42,
                                                                                             },
-                                                                                            ' ': _p.decide.state(
+                                                                                            'l state': _p.decide.state(
                                                                                                 $,
-                                                                                                ($): t_out.Beheer.Klanten._.D._.Projecten._.D._.Offertes._.D._.Opbrengsten._.D._.Type._ => {
+                                                                                                ($): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type.l_state => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Project':
                                                                                                             return _p.ss(
@@ -824,7 +824,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                         })
                                                                                     ),
                                                                                 },
-                                                                                'location': {
+                                                                                'l location': {
                                                                                     'document resource identifier': "implement me",
                                                                                     'line': 42,
                                                                                     'column': 42,
@@ -834,7 +834,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                     })
                                                                 ),
                                                             },
-                                                            'location': {
+                                                            'l location': {
                                                                 'document resource identifier': "implement me",
                                                                 'line': 42,
                                                                 'column': 42,
@@ -844,7 +844,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                 })
                                             ),
                                         },
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -854,7 +854,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -866,15 +866,15 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Leveranciers': _p_cc(
         $['Leveranciers'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': null,
-                    'location': {
+                    'l entry': null,
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -886,15 +886,15 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Medewerkers': _p_cc(
         $['Medewerkers'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': null,
-                    'location': {
+                    'l entry': null,
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -909,25 +909,25 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
     'Balans': _p_cc(
         $['Balans'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Type': _p_cc(
                             $['Type'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Grootboekrekeningen.Balans._.D._.Type._ => {
+                                    ($): t_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type.l_state => {
                                         switch ($[0]) {
                                             case 'Bankrekening':
                                                 return _p.ss(
@@ -954,7 +954,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -966,15 +966,15 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
     'Resultaat': _p_cc(
         $['Resultaat'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': null,
-                    'location': {
+                    'l entry': null,
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -992,26 +992,26 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Grootboekrekening voor BTW afrondingen': _p_cc(
                 $['Grootboekrekening voor BTW afrondingen'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $[' '],
+                    'l id': $['l id'],
                 })
             ),
             'Salarisrondes': _p_cc(
                 $['Salarisrondes'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': null,
-                            'location': {
+                            'l entry': null,
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -1023,26 +1023,26 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'BTW periodes': _p_cc(
                 $['BTW periodes'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': {
+                            'l entry': {
                                 '1. BTW-categorieen': _p_cc(
                                     $['1. BTW-categorieen'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $.__d_map(
+                                        'l dictionary': $.__d_map(
                                             ($, id) => ({
-                                                ' ': null,
-                                                'location': {
+                                                'l entry': null,
+                                                'l location': {
                                                     'document resource identifier': "implement me",
                                                     'line': 42,
                                                     'column': 42,
@@ -1054,20 +1054,20 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Documenten': _p_cc(
                                     $['Documenten'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $.__d_map(
+                                        'l dictionary': $.__d_map(
                                             ($, id) => ({
-                                                ' ': {
+                                                'l entry': {
                                                     'Bestand': _p_cc(
                                                         $['Bestand'],
                                                         ($) => $
                                                     ),
                                                 },
-                                                'location': {
+                                                'l location': {
                                                     'document resource identifier': "implement me",
                                                     'line': 42,
                                                     'column': 42,
@@ -1083,14 +1083,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Status': _p_cc(
                                     $['Status'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': _p.decide.state(
+                                        'l state': _p.decide.state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Resultaat.BTW_periodes._.D._.Status._ => {
+                                            ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status.l_state => {
                                                 switch ($[0]) {
                                                     case 'Aangegeven':
                                                         return _p.ss(
@@ -1125,7 +1125,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     })
                                 ),
                             },
-                            'location': {
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -1142,56 +1142,56 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Grootboekrekening voor nog aan te geven BTW': _p_cc(
                 $['Grootboekrekening voor nog aan te geven BTW'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $[' '],
+                    'l id': $['l id'],
                 })
             ),
             'Grootboekrekening voor resultaat dit jaar': _p_cc(
                 $['Grootboekrekening voor resultaat dit jaar'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $[' '],
+                    'l id': $['l id'],
                 })
             ),
             'Grootboekrekening voor winstreserve': _p_cc(
                 $['Grootboekrekening voor winstreserve'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $[' '],
+                    'l id': $['l id'],
                 })
             ),
             'Grootboekrekening voor Inkoop saldo': _p_cc(
                 $['Grootboekrekening voor Inkoop saldo'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $[' '],
+                    'l id': $['l id'],
                 })
             ),
             'Grootboekrekening voor Verkoop saldo': _p_cc(
                 $['Grootboekrekening voor Verkoop saldo'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $[' '],
+                    'l id': $['l id'],
                 })
             ),
             'Beginsaldo nog aan te geven BTW': _p_cc(
@@ -1205,14 +1205,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Informele rekeningen': _p_cc(
                 $['Informele rekeningen'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': {
+                            'l entry': {
                                 'Beginsaldo': _p_cc(
                                     $['Beginsaldo'],
                                     ($) => $
@@ -1220,25 +1220,25 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Grootboekrekening': _p_cc(
                                     $['Grootboekrekening'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $[' '],
+                                        'l id': $['l id'],
                                     })
                                 ),
                                 'Nieuw': _p_cc(
                                     $['Nieuw'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': _p.decide.state(
+                                        'l state': _p.decide.state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen._.D._.Nieuw._ => {
+                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return _p.ss(
@@ -1267,7 +1267,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     })
                                 ),
                             },
-                            'location': {
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -1279,14 +1279,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Bankrekeningen': _p_cc(
                 $['Bankrekeningen'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': {
+                            'l entry': {
                                 'Beginsaldo': _p_cc(
                                     $['Beginsaldo'],
                                     ($) => $
@@ -1294,25 +1294,25 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Grootboekrekening': _p_cc(
                                     $['Grootboekrekening'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $[' '],
+                                        'l id': $['l id'],
                                     })
                                 ),
                                 'Nieuw': _p_cc(
                                     $['Nieuw'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': _p.decide.state(
+                                        'l state': _p.decide.state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Balans.Bankrekeningen._.D._.Nieuw._ => {
+                                            ($): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return _p.ss(
@@ -1343,14 +1343,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Mutaties': _p_cc(
                                     $['Mutaties'],
                                     ($) => ({
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        ' ': $.__d_map(
+                                        'l dictionary': $.__d_map(
                                             ($, id) => ({
-                                                ' ': {
+                                                'l entry': {
                                                     'Bedrag': _p_cc(
                                                         $['Bedrag'],
                                                         ($) => $
@@ -1364,7 +1364,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                         ($) => $
                                                     ),
                                                 },
-                                                'location': {
+                                                'l location': {
                                                     'document resource identifier': "implement me",
                                                     'line': 42,
                                                     'column': 42,
@@ -1374,7 +1374,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     })
                                 ),
                             },
-                            'location': {
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -1386,17 +1386,17 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Overige balans items': _p_cc(
                 $['Overige balans items'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': Overige_balans_item(
+                            'l entry': Overige_balans_item(
                                 $
                             ),
-                            'location': {
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -1408,15 +1408,15 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Verrekenposten': _p_cc(
                 $['Verrekenposten'],
                 ($) => ({
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
                     },
-                    ' ': $.__d_map(
+                    'l dictionary': $.__d_map(
                         ($, id) => ({
-                            ' ': null,
-                            'location': {
+                            'l entry': null,
+                            'l location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
                                 'column': 42,
@@ -1437,25 +1437,25 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
     'Grootboekrekening': _p_cc(
         $['Grootboekrekening'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $[' '],
+            'l id': $['l id'],
         })
     ),
     'Nieuw': _p_cc(
         $['Nieuw'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': _p.decide.state(
+            'l state': _p.decide.state(
                 $,
-                ($): t_out.Overige_balans_item.Nieuw._ => {
+                ($): t_out.Overige_balans_item.Nieuw.l_state => {
                     switch ($[0]) {
                         case 'Ja':
                             return _p.ss(
@@ -1469,12 +1469,12 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                                     'Balans item': _p_cc(
                                         $['Balans item'],
                                         ($) => ({
-                                            'location': {
+                                            'l location': {
                                                 'document resource identifier': "implement me",
                                                 'line': 42,
                                                 'column': 42,
                                             },
-                                            ' ': $[' '],
+                                            'l id': $['l id'],
                                         })
                                     ),
                                 }]
@@ -1491,46 +1491,46 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
 })
 
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($) => ({
-    'location': {
+    'l location': {
         'document resource identifier': "implement me",
         'line': 42,
         'column': 42,
     },
-    ' ': $[' '],
+    'l id': $['l id'],
 })
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($) => ({
-    'location': {
+    'l location': {
         'document resource identifier': "implement me",
         'line': 42,
         'column': 42,
     },
-    ' ': $[' '],
+    'l id': $['l id'],
 })
 
 export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
     'Inkopen': _p_cc(
         $['Inkopen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Afhandeling': _p_cc(
                             $['Afhandeling'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen._.D._.Afhandeling._ => {
+                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                         switch ($[0]) {
                                             case 'Mutaties':
                                                 return _p.ss(
@@ -1544,12 +1544,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Rekening courant': _p_cc(
                                                             $['Rekening courant'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -1566,14 +1566,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'BTW-regime': _p_cc(
                             $['BTW-regime'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen._.D._.BTW$mi_regime._ => {
+                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
                                         switch ($[0]) {
                                             case 'Binnenland: heffing verlegd':
                                                 return _p.ss(
@@ -1602,12 +1602,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'BTW-periode': _p_cc(
                                                             $['BTW-periode'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -1624,14 +1624,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Brondocument': _p_cc(
                             $['Brondocument'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen._.D._.Brondocument._ => {
+                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
                                                 return _p.ss(
@@ -1669,25 +1669,25 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Regels': _p_cc(
                             $['Regels'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': {
+                                        'l entry': {
                                             'Bedrag': _p_cc(
                                                 $['Bedrag'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': _p.decide.state(
+                                                    'l state': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Inkopen._.D._.Regels._.D._.Bedrag._ => {
+                                                        ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Bekend':
                                                                     return _p.ss(
@@ -1719,14 +1719,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Type': _p_cc(
                                                 $['Type'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': _p.decide.state(
+                                                    'l state': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Inkopen._.D._.Regels._.D._.Type._ => {
+                                                        ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Balans':
                                                                     return _p.ss(
@@ -1735,12 +1735,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Balans item': _p_cc(
                                                                                 $['Balans item'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -1752,12 +1752,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Grootboekrekening': _p_cc(
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -1772,7 +1772,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 })
                                             ),
                                         },
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -1784,14 +1784,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Type': _p_cc(
                             $['Type'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen._.D._.Type._ => {
+                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type.l_state => {
                                         switch ($[0]) {
                                             case 'Bonnetje':
                                                 return _p.ss(
@@ -1805,12 +1805,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Crediteur': _p_cc(
                                                             $['Crediteur'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                         'Factuurnummer': _p_cc(
@@ -1826,12 +1826,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Ronde': _p_cc(
                                                             $['Ronde'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -1843,23 +1843,23 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Ronde': _p_cc(
                                                             $['Ronde'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                         'Medewerker': _p_cc(
                                                             $['Medewerker'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -1874,7 +1874,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -1886,25 +1886,25 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
     'Verkopen': _p_cc(
         $['Verkopen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
+                    'l entry': {
                         'Afhandeling': _p_cc(
                             $['Afhandeling'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen._.D._.Afhandeling._ => {
+                                    ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                         switch ($[0]) {
                                             case 'Mutaties':
                                                 return _p.ss(
@@ -1918,12 +1918,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Rekening courant': _p_cc(
                                                             $['Rekening courant'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -1944,25 +1944,25 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'BTW-periode': _p_cc(
                             $['BTW-periode'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $[' '],
+                                'l id': $['l id'],
                             })
                         ),
                         'Brondocument': _p_cc(
                             $['Brondocument'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen._.D._.Brondocument._ => {
+                                    ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
                                                 return _p.ss(
@@ -1986,25 +1986,25 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Debiteur': _p_cc(
                             $['Debiteur'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $[' '],
+                                'l id': $['l id'],
                             })
                         ),
                         'Contracttype': _p_cc(
                             $['Contracttype'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': _p.decide.state(
+                                'l state': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen._.D._.Contracttype._ => {
+                                    ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype.l_state => {
                                         switch ($[0]) {
                                             case 'Project':
                                                 return _p.ss(
@@ -2013,23 +2013,23 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Project': _p_cc(
                                                             $['Project'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                         'Offerte': _p_cc(
                                                             $['Offerte'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -2041,12 +2041,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Overeenkomst': _p_cc(
                                                             $['Overeenkomst'],
                                                             ($) => ({
-                                                                'location': {
+                                                                'l location': {
                                                                     'document resource identifier': "implement me",
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                ' ': $[' '],
+                                                                'l id': $['l id'],
                                                             })
                                                         ),
                                                     }]
@@ -2067,25 +2067,25 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Regels': _p_cc(
                             $['Regels'],
                             ($) => ({
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
                                 },
-                                ' ': $.__d_map(
+                                'l dictionary': $.__d_map(
                                     ($, id) => ({
-                                        ' ': {
+                                        'l entry': {
                                             'BTW-regime': _p_cc(
                                                 $['BTW-regime'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': _p.decide.state(
+                                                    'l state': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.BTW$mi_regime._ => {
+                                                        ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Intracommunautair':
                                                                     return _p.ss(
@@ -2099,12 +2099,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'BTW-categorie': _p_cc(
                                                                                 $['BTW-categorie'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2130,14 +2130,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Contracttype': _p_cc(
                                                 $['Contracttype'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': _p.decide.state(
+                                                    'l state': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.Contracttype._ => {
+                                                        ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Project':
                                                                     return _p.ss(
@@ -2146,12 +2146,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Opbrengst': _p_cc(
                                                                                 $['Opbrengst'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2168,12 +2168,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Periode': _p_cc(
                                                                                 $['Periode'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2194,14 +2194,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Type': _p_cc(
                                                 $['Type'],
                                                 ($) => ({
-                                                    'location': {
+                                                    'l location': {
                                                         'document resource identifier': "implement me",
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    ' ': _p.decide.state(
+                                                    'l state': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.Type._ => {
+                                                        ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Opbrengsten':
                                                                     return _p.ss(
@@ -2210,12 +2210,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Grootboekrekening': _p_cc(
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2227,12 +2227,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Balans item': _p_cc(
                                                                                 $['Balans item'],
                                                                                 ($) => ({
-                                                                                    'location': {
+                                                                                    'l location': {
                                                                                         'document resource identifier': "implement me",
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    ' ': $[' '],
+                                                                                    'l id': $['l id'],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2247,7 +2247,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 })
                                             ),
                                         },
-                                        'location': {
+                                        'l location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
                                             'column': 42,
@@ -2257,7 +2257,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -2272,22 +2272,22 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
     'Verrekenpost mutaties': _p_cc(
         $['Verrekenpost mutaties'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
-                        'location': {
+                    'l entry': {
+                        'l location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        ' ': $.__d_map(
+                        'l dictionary': $.__d_map(
                             ($, id) => ({
-                                ' ': {
+                                'l entry': {
                                     'Bedrag': _p_cc(
                                         $['Bedrag'],
                                         ($) => $
@@ -2295,14 +2295,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'Afhandeling': _p_cc(
                                         $['Afhandeling'],
                                         ($) => ({
-                                            'location': {
+                                            'l location': {
                                                 'document resource identifier': "implement me",
                                                 'line': 42,
                                                 'column': 42,
                                             },
-                                            ' ': _p.decide.state(
+                                            'l state': _p.decide.state(
                                                 $,
-                                                ($): t_out.Mutaties.Verrekenpost_mutaties._.D._._.D._.Afhandeling._ => {
+                                                ($): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                                     switch ($[0]) {
                                                         case 'Resultaat':
                                                             return _p.ss(
@@ -2315,14 +2315,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Balans', {
-                                                                    'location': {
+                                                                    'l location': {
                                                                         'document resource identifier': "implement me",
                                                                         'line': 42,
                                                                         'column': 42,
                                                                     },
-                                                                    ' ': _p.decide.state(
+                                                                    'l state': _p.decide.state(
                                                                         $,
-                                                                        ($): t_out.Mutaties.Verrekenpost_mutaties._.D._._.D._.Afhandeling._.Balans._ => {
+                                                                        ($): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling.l_state.Balans.l_state => {
                                                                             switch ($[0]) {
                                                                                 case 'Informele rekening':
                                                                                     return _p.ss(
@@ -2331,12 +2331,12 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                             'Informele rekening': _p_cc(
                                                                                                 $['Informele rekening'],
                                                                                                 ($) => ({
-                                                                                                    'location': {
+                                                                                                    'l location': {
                                                                                                         'document resource identifier': "implement me",
                                                                                                         'line': 42,
                                                                                                         'column': 42,
                                                                                                     },
-                                                                                                    ' ': $[' '],
+                                                                                                    'l id': $['l id'],
                                                                                                 })
                                                                                             ),
                                                                                         }]
@@ -2360,7 +2360,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         })
                                     ),
                                 },
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
@@ -2368,7 +2368,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -2380,30 +2380,30 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
     'Bankrekening Mutatie Verwerkingen': _p_cc(
         $['Bankrekening Mutatie Verwerkingen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
-                        'location': {
+                    'l entry': {
+                        'l location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        ' ': $.__d_map(
+                        'l dictionary': $.__d_map(
                             ($, id) => ({
-                                ' ': {
-                                    'location': {
+                                'l entry': {
+                                    'l location': {
                                         'document resource identifier': "implement me",
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    ' ': _p.decide.state(
+                                    'l state': _p.decide.state(
                                         $,
-                                        ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen._.D._._.D._._ => {
+                                        ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state => {
                                             switch ($[0]) {
                                                 case 'Resultaat':
                                                     return _p.ss(
@@ -2416,14 +2416,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                     return _p.ss(
                                                         $,
                                                         ($) => ['Balans', {
-                                                            'location': {
+                                                            'l location': {
                                                                 'document resource identifier': "implement me",
                                                                 'line': 42,
                                                                 'column': 42,
                                                             },
-                                                            ' ': _p.decide.state(
+                                                            'l state': _p.decide.state(
                                                                 $,
-                                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen._.D._._.D._._.Balans._ => {
+                                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state.Balans.l_state => {
                                                                     switch ($[0]) {
                                                                         case 'Informele rekening':
                                                                             return _p.ss(
@@ -2432,12 +2432,12 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                     'Informele rekening': _p_cc(
                                                                                         $['Informele rekening'],
                                                                                         ($) => ({
-                                                                                            'location': {
+                                                                                            'l location': {
                                                                                                 'document resource identifier': "implement me",
                                                                                                 'line': 42,
                                                                                                 'column': 42,
                                                                                             },
-                                                                                            ' ': $[' '],
+                                                                                            'l id': $['l id'],
                                                                                         })
                                                                                     ),
                                                                                 }]
@@ -2449,12 +2449,12 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                     'Verrekenpost': _p_cc(
                                                                                         $['Verrekenpost'],
                                                                                         ($) => ({
-                                                                                            'location': {
+                                                                                            'l location': {
                                                                                                 'document resource identifier': "implement me",
                                                                                                 'line': 42,
                                                                                                 'column': 42,
                                                                                             },
-                                                                                            ' ': $[' '],
+                                                                                            'l id': $['l id'],
                                                                                         })
                                                                                     ),
                                                                                 }]
@@ -2476,7 +2476,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         }
                                     ),
                                 },
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
@@ -2484,7 +2484,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -2496,22 +2496,22 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
     'Memoriaal boekingen': _p_cc(
         $['Memoriaal boekingen'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': $.__d_map(
+            'l dictionary': $.__d_map(
                 ($, id) => ({
-                    ' ': {
-                        'location': {
+                    'l entry': {
+                        'l location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        ' ': $.__d_map(
+                        'l dictionary': $.__d_map(
                             ($, id) => ({
-                                ' ': {
+                                'l entry': {
                                     'Bedrag': _p_cc(
                                         $['Bedrag'],
                                         ($) => $
@@ -2527,16 +2527,16 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'Grootboekrekening': _p_cc(
                                         $['Grootboekrekening'],
                                         ($) => ({
-                                            'location': {
+                                            'l location': {
                                                 'document resource identifier': "implement me",
                                                 'line': 42,
                                                 'column': 42,
                                             },
-                                            ' ': $[' '],
+                                            'l id': $['l id'],
                                         })
                                     ),
                                 },
-                                'location': {
+                                'l location': {
                                     'document resource identifier': "implement me",
                                     'line': 42,
                                     'column': 42,
@@ -2544,7 +2544,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             })
                         ),
                     },
-                    'location': {
+                    'l location': {
                         'document resource identifier': "implement me",
                         'line': 42,
                         'column': 42,
@@ -2556,25 +2556,25 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
 })
 
 export const Jaren: t_signatures.Jaren = ($) => ({
-    'location': {
+    'l location': {
         'document resource identifier': "implement me",
         'line': 42,
         'column': 42,
     },
-    ' ': $.__d_map(
+    'l dictionary': $.__d_map(
         ($, id) => ({
-            ' ': {
+            'l entry': {
                 'Afgesloten': _p_cc(
                     $['Afgesloten'],
                     ($) => ({
-                        'location': {
+                        'l location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        ' ': _p.decide.state(
+                        'l state': _p.decide.state(
                             $,
-                            ($): t_out.Jaren._.D._.Afgesloten._ => {
+                            ($): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten.l_state => {
                                 switch ($[0]) {
                                     case 'Ja':
                                         return _p.ss(
@@ -2630,7 +2630,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                     )
                 ),
             },
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
@@ -2644,61 +2644,61 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         $['Jaar'],
         ($) => $.__o_map(
             ($) => ({
-                'location': {
+                'l location': {
                     'document resource identifier': "implement me",
                     'line': 42,
                     'column': 42,
                 },
-                ' ': $[' '],
+                'l id': $['l id'],
             })
         )
     ),
     'type': _p_cc(
         $['type'],
         ($) => ({
-            'location': {
+            'l location': {
                 'document resource identifier': "implement me",
                 'line': 42,
                 'column': 42,
             },
-            ' ': _p.decide.state(
+            'l state': _p.decide.state(
                 $,
-                ($): t_out.Balans_Resultaat_Mutatie.type_._ => {
+                ($): t_out.Balans_Resultaat_Mutatie.type_.l_state => {
                     switch ($[0]) {
                         case 'Inkoop':
                             return _p.ss(
                                 $,
                                 ($) => ['Inkoop', {
-                                    'location': {
+                                    'l location': {
                                         'document resource identifier': "implement me",
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    ' ': $[' '],
+                                    'l id': $['l id'],
                                 }]
                             )
                         case 'Verkoop':
                             return _p.ss(
                                 $,
                                 ($) => ['Verkoop', {
-                                    'location': {
+                                    'l location': {
                                         'document resource identifier': "implement me",
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    ' ': $[' '],
+                                    'l id': $['l id'],
                                 }]
                             )
                         case 'BTW-periode':
                             return _p.ss(
                                 $,
                                 ($) => ['BTW-periode', {
-                                    'location': {
+                                    'l location': {
                                         'document resource identifier': "implement me",
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    ' ': $[' '],
+                                    'l id': $['l id'],
                                 }]
                             )
                         default:
@@ -2713,14 +2713,14 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
 })
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
-    'location': {
+    'l location': {
         'document resource identifier': "implement me",
         'line': 42,
         'column': 42,
     },
-    ' ': _p.decide.state(
+    'l state': _p.decide.state(
         $,
-        ($): t_out.Eerste_boekjaar._ => {
+        ($): t_out.Eerste_boekjaar.l_state => {
             switch ($[0]) {
                 case 'Ja':
                     return _p.ss(
@@ -2734,12 +2734,12 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                             'Vorig boekjaar': _p_cc(
                                 $['Vorig boekjaar'],
                                 ($) => ({
-                                    'location': {
+                                    'l location': {
                                         'document resource identifier': "implement me",
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    ' ': $[' '],
+                                    'l id': $['l id'],
                                 })
                             ),
                         }]

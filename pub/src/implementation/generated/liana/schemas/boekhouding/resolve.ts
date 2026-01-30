@@ -9,6 +9,8 @@ import {
     _p_cc,
 } from "pareto-core/dist/change_context"
 
+import * as _pdev from "pareto-core-dev"
+
 import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/resolve"
@@ -414,25 +416,61 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
         
         const prop_Fiscaal = _p_cc(
             $['Fiscaal'],
-            ($) => _p_unreachable_code_path(
+            ($) => Fiscaal(
+                $,
+                ($) => abort(
+                    $
+                ),
+                null,
+                null
             )
         )
         
         const prop_Categorieen = _p_cc(
             $['Categorieen'],
-            ($) => _p_unreachable_code_path(
+            ($) => Grootboek_Categorieen(
+                $,
+                ($) => abort(
+                    $
+                ),
+                null,
+                {
+                    'Fiscaal': _pdev.implement_me(
+                        "required"
+                    ),
+                }
             )
         )
         
         const prop_Beheer = _p_cc(
             $['Beheer'],
-            ($) => _p_unreachable_code_path(
+            ($) => Beheer(
+                $,
+                ($) => abort(
+                    $
+                ),
+                null,
+                {
+                    'Grootboek Categorieen': _pdev.implement_me(
+                        "required"
+                    ),
+                }
             )
         )
         
         const prop_Jaren = _p_cc(
             $['Jaren'],
-            ($) => _p_unreachable_code_path(
+            ($) => Jaren(
+                $,
+                ($) => abort(
+                    $
+                ),
+                null,
+                {
+                    'Beheer': _pdev.implement_me(
+                        "required"
+                    ),
+                }
             )
         )
         return {
