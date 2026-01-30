@@ -18,7 +18,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Zijde': _p_cc(
@@ -60,7 +61,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': null,
                                         'l location': {
@@ -90,7 +92,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Zijde': _p_cc(
@@ -132,7 +135,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': null,
                                         'l location': {
@@ -165,7 +169,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Te corrigeren promillage': _p_cc(
@@ -190,7 +195,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Zijde': _p_cc(
@@ -232,7 +238,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': {
                                             'Hoofdcategorie fiscus': _p_cc(
@@ -285,7 +292,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Zijde': _p_cc(
@@ -327,7 +335,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': {
                                             'Hoofdcategorie fiscus': _p_cc(
@@ -383,7 +392,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'BTW-heffing': _p_cc(
@@ -438,7 +448,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': {
                                 'Hoofdcategorie': _p_cc(
@@ -512,7 +523,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': {
                                 'Hoofdcategorie': _p_cc(
@@ -635,7 +647,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
@@ -655,7 +668,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
@@ -677,7 +691,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Volledige naam': _p_cc(
@@ -706,7 +721,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Licentieovereenkomsten': _p_cc(
@@ -717,7 +733,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': {
                                             'Periodes': _p_cc(
@@ -728,7 +745,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'l dictionary': $.__d_map(
+                                                    'l dictionary': _p.dictionary.map(
+                                                        $,
                                                         ($, id) => ({
                                                             'l entry': {
                                                                 'Bedrag': _p_cc(
@@ -763,7 +781,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': {
                                             'Offertes': _p_cc(
@@ -774,7 +793,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'l dictionary': $.__d_map(
+                                                    'l dictionary': _p.dictionary.map(
+                                                        $,
                                                         ($, id) => ({
                                                             'l entry': {
                                                                 'Opbrengsten': _p_cc(
@@ -785,7 +805,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                             'line': 42,
                                                                             'column': 42,
                                                                         },
-                                                                        'l dictionary': $.__d_map(
+                                                                        'l dictionary': _p.dictionary.map(
+                                                                            $,
                                                                             ($, id) => ({
                                                                                 'l entry': {
                                                                                     'Type': _p_cc(
@@ -871,7 +892,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': null,
                     'l location': {
@@ -891,7 +913,8 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': null,
                     'l location': {
@@ -914,7 +937,8 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Type': _p_cc(
@@ -971,7 +995,8 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': null,
                     'l location': {
@@ -1008,7 +1033,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
@@ -1028,7 +1054,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': {
                                 '1. BTW-categorieen': _p_cc(
@@ -1039,7 +1066,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'l dictionary': $.__d_map(
+                                        'l dictionary': _p.dictionary.map(
+                                            $,
                                             ($, id) => ({
                                                 'l entry': null,
                                                 'l location': {
@@ -1059,7 +1087,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'l dictionary': $.__d_map(
+                                        'l dictionary': _p.dictionary.map(
+                                            $,
                                             ($, id) => ({
                                                 'l entry': {
                                                     'Bestand': _p_cc(
@@ -1210,7 +1239,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': {
                                 'Beginsaldo': _p_cc(
@@ -1284,7 +1314,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': {
                                 'Beginsaldo': _p_cc(
@@ -1348,7 +1379,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'l dictionary': $.__d_map(
+                                        'l dictionary': _p.dictionary.map(
+                                            $,
                                             ($, id) => ({
                                                 'l entry': {
                                                     'Bedrag': _p_cc(
@@ -1391,7 +1423,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': Overige_balans_item(
                                 $
@@ -1413,7 +1446,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'l dictionary': $.__d_map(
+                    'l dictionary': _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
@@ -1517,7 +1551,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Afhandeling': _p_cc(
@@ -1674,7 +1709,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': {
                                             'Bedrag': _p_cc(
@@ -1891,7 +1927,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'Afhandeling': _p_cc(
@@ -2072,7 +2109,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'l dictionary': $.__d_map(
+                                'l dictionary': _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'l entry': {
                                             'BTW-regime': _p_cc(
@@ -2277,7 +2315,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'l location': {
@@ -2285,7 +2324,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             'line': 42,
                             'column': 42,
                         },
-                        'l dictionary': $.__d_map(
+                        'l dictionary': _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'l entry': {
                                     'Bedrag': _p_cc(
@@ -2385,7 +2425,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'l location': {
@@ -2393,7 +2434,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             'line': 42,
                             'column': 42,
                         },
-                        'l dictionary': $.__d_map(
+                        'l dictionary': _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'l entry': {
                                     'l location': {
@@ -2501,7 +2543,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'l dictionary': $.__d_map(
+            'l dictionary': _p.dictionary.map(
+                $,
                 ($, id) => ({
                     'l entry': {
                         'l location': {
@@ -2509,7 +2552,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             'line': 42,
                             'column': 42,
                         },
-                        'l dictionary': $.__d_map(
+                        'l dictionary': _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'l entry': {
                                     'Bedrag': _p_cc(
@@ -2561,7 +2605,8 @@ export const Jaren: t_signatures.Jaren = ($) => ({
         'line': 42,
         'column': 42,
     },
-    'l dictionary': $.__d_map(
+    'l dictionary': _p.dictionary.map(
+        $,
         ($, id) => ({
             'l entry': {
                 'Afgesloten': _p_cc(
@@ -2642,7 +2687,8 @@ export const Jaren: t_signatures.Jaren = ($) => ({
 export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($) => ({
     'Jaar': _p_cc(
         $['Jaar'],
-        ($) => $.__o_map(
+        ($) => _p.optional.map(
+            $,
             ($) => ({
                 'l location': {
                     'document resource identifier': "implement me",

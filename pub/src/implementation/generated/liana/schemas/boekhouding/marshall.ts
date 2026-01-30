@@ -17,7 +17,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
     {
         'Balans Hoofdcategorieen': _p_cc(
             $['Balans Hoofdcategorieen'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Zijde': _p_cc(
@@ -52,7 +53,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
                         ),
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['nothing', null]
                             )]
                         ),
@@ -62,7 +64,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
         ),
         'Resultaat Hoofdcategorieen': _p_cc(
             $['Resultaat Hoofdcategorieen'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Zijde': _p_cc(
@@ -97,7 +100,8 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
                         ),
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['nothing', null]
                             )]
                         ),
@@ -112,7 +116,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     {
         'Correctietypes vennootschapsbelasting': _p_cc(
             $['Correctietypes vennootschapsbelasting'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Te corrigeren promillage': _p_cc(
@@ -130,7 +135,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
         ),
         'Balans': _p_cc(
             $['Balans'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Zijde': _p_cc(
@@ -165,7 +171,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         ),
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         'Hoofdcategorie fiscus': _p_cc(
@@ -192,7 +199,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
         ),
         'Resultaat': _p_cc(
             $['Resultaat'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Zijde': _p_cc(
@@ -227,7 +235,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         ),
                         'Subcategorieen': _p_cc(
                             $['Subcategorieen'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         'Hoofdcategorie fiscus': _p_cc(
@@ -259,7 +268,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
     {
         'BTW-categorieen': _p_cc(
             $['BTW-categorieen'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'BTW-heffing': _p_cc(
@@ -306,7 +316,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                 {
                     'Balans': _p_cc(
                         $['Balans'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 {
                                     'Hoofdcategorie': _p_cc(
@@ -359,7 +370,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                     ),
                     'Resultaat': _p_cc(
                         $['Resultaat'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 {
                                     'Hoofdcategorie': _p_cc(
@@ -462,13 +474,15 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                 {
                     'Bank': _p_cc(
                         $['Bank'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['nothing', null]
                         )]
                     ),
                     'Informeel': _p_cc(
                         $['Informeel'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['nothing', null]
                         )]
                     ),
@@ -477,7 +491,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
         ),
         'Gebruikers': _p_cc(
             $['Gebruikers'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Volledige naam': _p_cc(
@@ -500,17 +515,20 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
         ),
         'Klanten': _p_cc(
             $['Klanten'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Licentieovereenkomsten': _p_cc(
                             $['Licentieovereenkomsten'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         'Periodes': _p_cc(
                                             $['Periodes'],
-                                            ($) => ['dictionary', $.__d_map(
+                                            ($) => ['dictionary', _p.dictionary.map(
+                                                $,
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                     {
                                                         'Bedrag': _p_cc(
@@ -532,17 +550,20 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                         ),
                         'Projecten': _p_cc(
                             $['Projecten'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         'Offertes': _p_cc(
                                             $['Offertes'],
-                                            ($) => ['dictionary', $.__d_map(
+                                            ($) => ['dictionary', _p.dictionary.map(
+                                                $,
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                     {
                                                         'Opbrengsten': _p_cc(
                                                             $['Opbrengsten'],
-                                                            ($) => ['dictionary', $.__d_map(
+                                                            ($) => ['dictionary', _p.dictionary.map(
+                                                                $,
                                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                                     {
                                                                         'Type': _p_cc(
@@ -606,13 +627,15 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
         ),
         'Leveranciers': _p_cc(
             $['Leveranciers'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['nothing', null]
             )]
         ),
         'Medewerkers': _p_cc(
             $['Medewerkers'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['nothing', null]
             )]
         ),
@@ -623,7 +646,8 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
     {
         'Balans': _p_cc(
             $['Balans'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Type': _p_cc(
@@ -670,7 +694,8 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
         ),
         'Resultaat': _p_cc(
             $['Resultaat'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['nothing', null]
             )]
         ),
@@ -692,24 +717,28 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                     ),
                     'Salarisrondes': _p_cc(
                         $['Salarisrondes'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['nothing', null]
                         )]
                     ),
                     'BTW periodes': _p_cc(
                         $['BTW periodes'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 {
                                     '1. BTW-categorieen': _p_cc(
                                         $['1. BTW-categorieen'],
-                                        ($) => ['dictionary', $.__d_map(
+                                        ($) => ['dictionary', _p.dictionary.map(
+                                            $,
                                             ($, id) => ['nothing', null]
                                         )]
                                     ),
                                     'Documenten': _p_cc(
                                         $['Documenten'],
-                                        ($) => ['dictionary', $.__d_map(
+                                        ($) => ['dictionary', _p.dictionary.map(
+                                            $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
                                                     'Bestand': _p_cc(
@@ -856,7 +885,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                     ),
                     'Informele rekeningen': _p_cc(
                         $['Informele rekeningen'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 {
                                     'Beginsaldo': _p_cc(
@@ -920,7 +950,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                     ),
                     'Bankrekeningen': _p_cc(
                         $['Bankrekeningen'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                 {
                                     'Beginsaldo': _p_cc(
@@ -980,7 +1011,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                     ),
                                     'Mutaties': _p_cc(
                                         $['Mutaties'],
-                                        ($) => ['dictionary', $.__d_map(
+                                        ($) => ['dictionary', _p.dictionary.map(
+                                            $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
                                                     'Bedrag': _p_cc(
@@ -1018,7 +1050,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                     ),
                     'Overige balans items': _p_cc(
                         $['Overige balans items'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => Overige_balans_item(
                                 $
                             )
@@ -1026,7 +1059,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                     ),
                     'Verrekenposten': _p_cc(
                         $['Verrekenposten'],
-                        ($) => ['dictionary', $.__d_map(
+                        ($) => ['dictionary', _p.dictionary.map(
+                            $,
                             ($, id) => ['nothing', null]
                         )]
                     ),
@@ -1111,7 +1145,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
     {
         'Inkopen': _p_cc(
             $['Inkopen'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Afhandeling': _p_cc(
@@ -1277,7 +1312,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                         ),
                         'Regels': _p_cc(
                             $['Regels'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         'Bedrag': _p_cc(
@@ -1480,7 +1516,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
         ),
         'Verkopen': _p_cc(
             $['Verkopen'],
-            ($) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
                         'Afhandeling': _p_cc(
@@ -1646,7 +1683,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                         ),
                         'Regels': _p_cc(
                             $['Regels'],
-                            ($) => ['dictionary', $.__d_map(
+                            ($) => ['dictionary', _p.dictionary.map(
+                                $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
                                         'BTW-regime': _p_cc(
@@ -1836,8 +1874,10 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
     {
         'Verrekenpost mutaties': _p_cc(
             $['Verrekenpost mutaties'],
-            ($) => ['dictionary', $.__d_map(
-                ($, id) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
+                ($, id) => ['dictionary', _p.dictionary.map(
+                    $,
                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                         {
                             'Bedrag': _p_cc(
@@ -1916,8 +1956,10 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
         ),
         'Bankrekening Mutatie Verwerkingen': _p_cc(
             $['Bankrekening Mutatie Verwerkingen'],
-            ($) => ['dictionary', $.__d_map(
-                ($, id) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
+                ($, id) => ['dictionary', _p.dictionary.map(
+                    $,
                     ($, id) => ['state', _p.decide.state(
                         $,
                         ($): t_out.Value.state => {
@@ -1998,8 +2040,10 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
         ),
         'Memoriaal boekingen': _p_cc(
             $['Memoriaal boekingen'],
-            ($) => ['dictionary', $.__d_map(
-                ($, id) => ['dictionary', $.__d_map(
+            ($) => ['dictionary', _p.dictionary.map(
+                $,
+                ($, id) => ['dictionary', _p.dictionary.map(
+                    $,
                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                         {
                             'Bedrag': _p_cc(
@@ -2042,7 +2086,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
     }
 )]]
 
-export const Jaren: t_signatures.Jaren = ($) => ['dictionary', $.__d_map(
+export const Jaren: t_signatures.Jaren = ($) => ['dictionary', _p.dictionary.map(
+    $,
     ($, id) => ['group', ['verbose', _p.dictionary.literal(
         {
             'Afgesloten': _p_cc(
@@ -2122,7 +2167,8 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
     {
         'Jaar': _p_cc(
             $['Jaar'],
-            ($) => ['optional', $.__decide(
+            ($) => ['optional', _p.decide.optional(
+                $,
                 ($): t_out.Value.optional => ['set', ['text', {
                     'delimiter': ['backtick', null],
                     'value': $['l id'],

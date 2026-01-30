@@ -14,7 +14,8 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => $
 export const Root: t_signatures.Root = ($) => ({
     'Bankrekeningen': _p_cc(
         $['Bankrekeningen'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => null
         )
     ),
@@ -26,7 +27,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ($) => ({
                     'Grootboekrekeningen': _p_cc(
                         $['Grootboekrekeningen'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Hoofdcategorie': _p_cc(
                                     $['Hoofdcategorie'],
@@ -65,7 +67,8 @@ export const Root: t_signatures.Root = ($) => ({
                     ),
                     'Hoofdcategorieen': _p_cc(
                         $['Hoofdcategorieen'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Zijde': _p_cc(
                                     $['Zijde'],
@@ -93,7 +96,8 @@ export const Root: t_signatures.Root = ($) => ({
                                 ),
                                 'Subcategorieen': _p_cc(
                                     $['Subcategorieen'],
-                                    ($) => $.__d_map(
+                                    ($) => _p.dictionary.map(
+                                        $,
                                         ($, id) => ({
                                             'Hoofdcategorie fiscus': _p_cc(
                                                 $['Hoofdcategorie fiscus'],
@@ -111,7 +115,8 @@ export const Root: t_signatures.Root = ($) => ({
                     ),
                     'Hoofdcategorieen fiscus': _p_cc(
                         $['Hoofdcategorieen fiscus'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Zijde': _p_cc(
                                     $['Zijde'],
@@ -139,7 +144,8 @@ export const Root: t_signatures.Root = ($) => ({
                                 ),
                                 'Subcategorieen': _p_cc(
                                     $['Subcategorieen'],
-                                    ($) => $.__d_map(
+                                    ($) => _p.dictionary.map(
+                                        $,
                                         ($, id) => null
                                     )
                                 ),
@@ -150,7 +156,8 @@ export const Root: t_signatures.Root = ($) => ({
             ),
             'BTW-categorieen': _p_cc(
                 $['BTW-categorieen'],
-                ($) => $.__d_map(
+                ($) => _p.dictionary.map(
+                    $,
                     ($, id) => ({
                         'BTW-heffing': _p_cc(
                             $['BTW-heffing'],
@@ -186,7 +193,8 @@ export const Root: t_signatures.Root = ($) => ({
             ),
             'Gebruikers': _p_cc(
                 $['Gebruikers'],
-                ($) => $.__d_map(
+                ($) => _p.dictionary.map(
+                    $,
                     ($, id) => ({
                         'Volledige naam': _p_cc(
                             $['Volledige naam'],
@@ -208,7 +216,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ($) => ({
                     'Correctietypes vennootschapsbelasting': _p_cc(
                         $['Correctietypes vennootschapsbelasting'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Te corrigeren promillage': _p_cc(
                                     $['Te corrigeren promillage'],
@@ -219,7 +228,8 @@ export const Root: t_signatures.Root = ($) => ({
                     ),
                     'Grootboekrekeningen': _p_cc(
                         $['Grootboekrekeningen'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Hoofdcategorie': _p_cc(
                                     $['Hoofdcategorie'],
@@ -288,7 +298,8 @@ export const Root: t_signatures.Root = ($) => ({
                     ),
                     'Hoofdcategorieen': _p_cc(
                         $['Hoofdcategorieen'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Zijde': _p_cc(
                                     $['Zijde'],
@@ -316,7 +327,8 @@ export const Root: t_signatures.Root = ($) => ({
                                 ),
                                 'Subcategorieen': _p_cc(
                                     $['Subcategorieen'],
-                                    ($) => $.__d_map(
+                                    ($) => _p.dictionary.map(
+                                        $,
                                         ($, id) => ({
                                             'Hoofdcategorie fiscus': _p_cc(
                                                 $['Hoofdcategorie fiscus'],
@@ -334,7 +346,8 @@ export const Root: t_signatures.Root = ($) => ({
                     ),
                     'Hoofdcategorieen fiscus': _p_cc(
                         $['Hoofdcategorieen fiscus'],
-                        ($) => $.__d_map(
+                        ($) => _p.dictionary.map(
+                            $,
                             ($, id) => ({
                                 'Zijde': _p_cc(
                                     $['Zijde'],
@@ -362,7 +375,8 @@ export const Root: t_signatures.Root = ($) => ({
                                 ),
                                 'Subcategorieen': _p_cc(
                                     $['Subcategorieen'],
-                                    ($) => $.__d_map(
+                                    ($) => _p.dictionary.map(
+                                        $,
                                         ($, id) => null
                                     )
                                 ),
@@ -375,13 +389,15 @@ export const Root: t_signatures.Root = ($) => ({
     ),
     'Informele rekeningen': _p_cc(
         $['Informele rekeningen'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => null
         )
     ),
     'Jaren': _p_cc(
         $['Jaren'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => ({
                 'Afgesloten': _p_cc(
                     $['Afgesloten'],
@@ -409,7 +425,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Balans grootboekrekeningen': _p_cc(
                     $['Balans grootboekrekeningen'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Type': _p_cc(
                                 $['Type'],
@@ -445,7 +462,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Bankrekeningen': _p_cc(
                     $['Bankrekeningen'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Beginsaldo': _p_cc(
                                 $['Beginsaldo'],
@@ -457,7 +475,8 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Mutaties': _p_cc(
                                 $['Mutaties'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Bedrag': _p_cc(
                                             $['Bedrag'],
@@ -630,17 +649,20 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'BTW periodes': _p_cc(
                     $['BTW periodes'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             '1. BTW-categorieen': _p_cc(
                                 $['1. BTW-categorieen'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => null
                                 )
                             ),
                             'Documenten': _p_cc(
                                 $['Documenten'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Bestand': _p_cc(
                                             $['Bestand'],
@@ -742,7 +764,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Informele rekeningen': _p_cc(
                     $['Informele rekeningen'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Beginsaldo': _p_cc(
                                 $['Beginsaldo'],
@@ -790,7 +813,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Inkopen': _p_cc(
                     $['Inkopen'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Afhandeling': _p_cc(
                                 $['Afhandeling'],
@@ -917,7 +941,8 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Regels': _p_cc(
                                 $['Regels'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Bedrag': _p_cc(
                                             $['Bedrag'],
@@ -1059,7 +1084,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Overige balans items': _p_cc(
                     $['Overige balans items'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Beginsaldo': _p_cc(
                                 $['Beginsaldo'],
@@ -1071,7 +1097,8 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Memoriaal boekingen': _p_cc(
                                 $['Memoriaal boekingen'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Bedrag': _p_cc(
                                             $['Bedrag'],
@@ -1130,13 +1157,15 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Resultaat grootboekrekeningen': _p_cc(
                     $['Resultaat grootboekrekeningen'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => null
                     )
                 ),
                 'Salarisrondes': _p_cc(
                     $['Salarisrondes'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => null
                     )
                 ),
@@ -1155,7 +1184,8 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Verkopen': _p_cc(
                     $['Verkopen'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Afhandeling': _p_cc(
                                 $['Afhandeling'],
@@ -1268,7 +1298,8 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Regels': _p_cc(
                                 $['Regels'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'BTW-regime': _p_cc(
                                             $['BTW-regime'],
@@ -1393,11 +1424,13 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Verrekenposten': _p_cc(
                     $['Verrekenposten'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Mutaties': _p_cc(
                                 $['Mutaties'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Bedrag': _p_cc(
                                             $['Bedrag'],
@@ -1480,15 +1513,18 @@ export const Root: t_signatures.Root = ($) => ({
     ),
     'Klanten': _p_cc(
         $['Klanten'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => ({
                 'Licentieovereenkomsten': _p_cc(
                     $['Licentieovereenkomsten'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Periodes': _p_cc(
                                 $['Periodes'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Bedrag': _p_cc(
                                             $['Bedrag'],
@@ -1502,15 +1538,18 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Projecten': _p_cc(
                     $['Projecten'],
-                    ($) => $.__d_map(
+                    ($) => _p.dictionary.map(
+                        $,
                         ($, id) => ({
                             'Offertes': _p_cc(
                                 $['Offertes'],
-                                ($) => $.__d_map(
+                                ($) => _p.dictionary.map(
+                                    $,
                                     ($, id) => ({
                                         'Opbrengsten': _p_cc(
                                             $['Opbrengsten'],
-                                            ($) => $.__d_map(
+                                            ($) => _p.dictionary.map(
+                                                $,
                                                 ($, id) => ({
                                                     'Type': _p_cc(
                                                         $['Type'],
@@ -1554,13 +1593,15 @@ export const Root: t_signatures.Root = ($) => ({
     ),
     'Leveranciers': _p_cc(
         $['Leveranciers'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => null
         )
     ),
     'Medewerkers': _p_cc(
         $['Medewerkers'],
-        ($) => $.__d_map(
+        ($) => _p.dictionary.map(
+            $,
             ($, id) => null
         )
     ),

@@ -20,13 +20,59 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
         
         const prop_Balans_Hoofdcategorieen = _p_cc(
             $['Balans Hoofdcategorieen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Zijde = _p_cc(
+                            $['Zijde'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Subcategorieen = _p_cc(
+                            $['Subcategorieen'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => null
+                            )
+                        )
+                        return {
+                            'Zijde': prop_Zijde,
+                            'Subcategorieen': prop_Subcategorieen,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Resultaat_Hoofdcategorieen = _p_cc(
             $['Resultaat Hoofdcategorieen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Zijde = _p_cc(
+                            $['Zijde'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Subcategorieen = _p_cc(
+                            $['Subcategorieen'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => null
+                            )
+                        )
+                        return {
+                            'Zijde': prop_Zijde,
+                            'Subcategorieen': prop_Subcategorieen,
+                        }
+                    }
+                )
             )
         )
         return {
@@ -41,19 +87,116 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         
         const prop_Correctietypes_vennootschapsbelasting = _p_cc(
             $['Correctietypes vennootschapsbelasting'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Te_corrigeren_promillage = _p_cc(
+                            $['Te corrigeren promillage'],
+                            ($) => $
+                        )
+                        return {
+                            'Te corrigeren promillage': prop_Te_corrigeren_promillage,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Balans = _p_cc(
             $['Balans'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Zijde = _p_cc(
+                            $['Zijde'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Subcategorieen = _p_cc(
+                            $['Subcategorieen'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => _p.group.resolve(
+                                    () => {
+                                        
+                                        const prop_Hoofdcategorie_fiscus = _p_cc(
+                                            $['Hoofdcategorie fiscus'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        
+                                        const prop_Subcategorie_fiscus = _p_cc(
+                                            $['Subcategorie fiscus'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        return {
+                                            'Hoofdcategorie fiscus': prop_Hoofdcategorie_fiscus,
+                                            'Subcategorie fiscus': prop_Subcategorie_fiscus,
+                                        }
+                                    }
+                                )
+                            )
+                        )
+                        return {
+                            'Zijde': prop_Zijde,
+                            'Subcategorieen': prop_Subcategorieen,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Resultaat = _p_cc(
             $['Resultaat'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Zijde = _p_cc(
+                            $['Zijde'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Subcategorieen = _p_cc(
+                            $['Subcategorieen'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => _p.group.resolve(
+                                    () => {
+                                        
+                                        const prop_Hoofdcategorie_fiscus = _p_cc(
+                                            $['Hoofdcategorie fiscus'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        
+                                        const prop_Subcategorie_fiscus = _p_cc(
+                                            $['Subcategorie fiscus'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        return {
+                                            'Hoofdcategorie fiscus': prop_Hoofdcategorie_fiscus,
+                                            'Subcategorie fiscus': prop_Subcategorie_fiscus,
+                                        }
+                                    }
+                                )
+                            )
+                        )
+                        return {
+                            'Zijde': prop_Zijde,
+                            'Subcategorieen': prop_Subcategorieen,
+                        }
+                    }
+                )
             )
         )
         return {
@@ -69,7 +212,21 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         
         const prop_BTW$mi_categorieen = _p_cc(
             $['BTW-categorieen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_BTW$mi_heffing = _p_cc(
+                            $['BTW-heffing'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        return {
+                            'BTW-heffing': prop_BTW$mi_heffing,
+                        }
+                    }
+                )
             )
         )
         
@@ -80,13 +237,69 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     
                     const prop_Balans = _p_cc(
                         $['Balans'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => _p.group.resolve(
+                                () => {
+                                    
+                                    const prop_Hoofdcategorie = _p_cc(
+                                        $['Hoofdcategorie'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Subcategorie = _p_cc(
+                                        $['Subcategorie'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Zijde = _p_cc(
+                                        $['Zijde'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    return {
+                                        'Hoofdcategorie': prop_Hoofdcategorie,
+                                        'Subcategorie': prop_Subcategorie,
+                                        'Zijde': prop_Zijde,
+                                    }
+                                }
+                            )
                         )
                     )
                     
                     const prop_Resultaat = _p_cc(
                         $['Resultaat'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => _p.group.resolve(
+                                () => {
+                                    
+                                    const prop_Hoofdcategorie = _p_cc(
+                                        $['Hoofdcategorie'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Subcategorie = _p_cc(
+                                        $['Subcategorie'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Zijde = _p_cc(
+                                        $['Zijde'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    return {
+                                        'Hoofdcategorie': prop_Hoofdcategorie,
+                                        'Subcategorie': prop_Subcategorie,
+                                        'Zijde': prop_Zijde,
+                                    }
+                                }
+                            )
                         )
                     )
                     return {
@@ -104,13 +317,17 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     
                     const prop_Bank = _p_cc(
                         $['Bank'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => null
                         )
                     )
                     
                     const prop_Informeel = _p_cc(
                         $['Informeel'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => null
                         )
                     )
                     return {
@@ -123,25 +340,138 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         
         const prop_Gebruikers = _p_cc(
             $['Gebruikers'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Volledige_naam = _p_cc(
+                            $['Volledige naam'],
+                            ($) => $
+                        )
+                        
+                        const prop_Wachtwoord = _p_cc(
+                            $['Wachtwoord'],
+                            ($) => $
+                        )
+                        return {
+                            'Volledige naam': prop_Volledige_naam,
+                            'Wachtwoord': prop_Wachtwoord,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Klanten = _p_cc(
             $['Klanten'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Licentieovereenkomsten = _p_cc(
+                            $['Licentieovereenkomsten'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => _p.group.resolve(
+                                    () => {
+                                        
+                                        const prop_Periodes = _p_cc(
+                                            $['Periodes'],
+                                            ($) => _p.dictionary.resolve(
+                                                $,
+                                                ($, id, $a, $c) => _p.group.resolve(
+                                                    () => {
+                                                        
+                                                        const prop_Bedrag = _p_cc(
+                                                            $['Bedrag'],
+                                                            ($) => $
+                                                        )
+                                                        return {
+                                                            'Bedrag': prop_Bedrag,
+                                                        }
+                                                    }
+                                                )
+                                            )
+                                        )
+                                        return {
+                                            'Periodes': prop_Periodes,
+                                        }
+                                    }
+                                )
+                            )
+                        )
+                        
+                        const prop_Projecten = _p_cc(
+                            $['Projecten'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => _p.group.resolve(
+                                    () => {
+                                        
+                                        const prop_Offertes = _p_cc(
+                                            $['Offertes'],
+                                            ($) => _p.dictionary.resolve(
+                                                $,
+                                                ($, id, $a, $c) => _p.group.resolve(
+                                                    () => {
+                                                        
+                                                        const prop_Opbrengsten = _p_cc(
+                                                            $['Opbrengsten'],
+                                                            ($) => _p.dictionary.resolve(
+                                                                $,
+                                                                ($, id, $a, $c) => _p.group.resolve(
+                                                                    () => {
+                                                                        
+                                                                        const prop_Type = _p_cc(
+                                                                            $['Type'],
+                                                                            ($) => _p_unreachable_code_path(
+                                                                            )
+                                                                        )
+                                                                        return {
+                                                                            'Type': prop_Type,
+                                                                        }
+                                                                    }
+                                                                )
+                                                            )
+                                                        )
+                                                        return {
+                                                            'Opbrengsten': prop_Opbrengsten,
+                                                        }
+                                                    }
+                                                )
+                                            )
+                                        )
+                                        return {
+                                            'Offertes': prop_Offertes,
+                                        }
+                                    }
+                                )
+                            )
+                        )
+                        return {
+                            'Licentieovereenkomsten': prop_Licentieovereenkomsten,
+                            'Projecten': prop_Projecten,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Leveranciers = _p_cc(
             $['Leveranciers'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => null
             )
         )
         
         const prop_Medewerkers = _p_cc(
             $['Medewerkers'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => null
             )
         )
         return {
@@ -161,13 +491,29 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
         
         const prop_Balans = _p_cc(
             $['Balans'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Type = _p_cc(
+                            $['Type'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        return {
+                            'Type': prop_Type,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Resultaat = _p_cc(
             $['Resultaat'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => null
             )
         )
         return {
@@ -193,13 +539,64 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     
                     const prop_Salarisrondes = _p_cc(
                         $['Salarisrondes'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => null
                         )
                     )
                     
                     const prop_BTW_periodes = _p_cc(
                         $['BTW periodes'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => _p.group.resolve(
+                                () => {
+                                    
+                                    const prop_1$pe__BTW$mi_categorieen = _p_cc(
+                                        $['1. BTW-categorieen'],
+                                        ($) => _p.dictionary.resolve(
+                                            $,
+                                            ($, id, $a, $c) => null
+                                        )
+                                    )
+                                    
+                                    const prop_Documenten = _p_cc(
+                                        $['Documenten'],
+                                        ($) => _p.dictionary.resolve(
+                                            $,
+                                            ($, id, $a, $c) => _p.group.resolve(
+                                                () => {
+                                                    
+                                                    const prop_Bestand = _p_cc(
+                                                        $['Bestand'],
+                                                        ($) => $
+                                                    )
+                                                    return {
+                                                        'Bestand': prop_Bestand,
+                                                    }
+                                                }
+                                            )
+                                        )
+                                    )
+                                    
+                                    const prop_Omschrijving = _p_cc(
+                                        $['Omschrijving'],
+                                        ($) => $
+                                    )
+                                    
+                                    const prop_Status = _p_cc(
+                                        $['Status'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    return {
+                                        '1. BTW-categorieen': prop_1$pe__BTW$mi_categorieen,
+                                        'Documenten': prop_Documenten,
+                                        'Omschrijving': prop_Omschrijving,
+                                        'Status': prop_Status,
+                                    }
+                                }
+                            )
                         )
                     )
                     return {
@@ -258,25 +655,122 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     
                     const prop_Informele_rekeningen = _p_cc(
                         $['Informele rekeningen'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => _p.group.resolve(
+                                () => {
+                                    
+                                    const prop_Beginsaldo = _p_cc(
+                                        $['Beginsaldo'],
+                                        ($) => $
+                                    )
+                                    
+                                    const prop_Grootboekrekening = _p_cc(
+                                        $['Grootboekrekening'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Nieuw = _p_cc(
+                                        $['Nieuw'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    return {
+                                        'Beginsaldo': prop_Beginsaldo,
+                                        'Grootboekrekening': prop_Grootboekrekening,
+                                        'Nieuw': prop_Nieuw,
+                                    }
+                                }
+                            )
                         )
                     )
                     
                     const prop_Bankrekeningen = _p_cc(
                         $['Bankrekeningen'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => _p.group.resolve(
+                                () => {
+                                    
+                                    const prop_Beginsaldo = _p_cc(
+                                        $['Beginsaldo'],
+                                        ($) => $
+                                    )
+                                    
+                                    const prop_Grootboekrekening = _p_cc(
+                                        $['Grootboekrekening'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Nieuw = _p_cc(
+                                        $['Nieuw'],
+                                        ($) => _p_unreachable_code_path(
+                                        )
+                                    )
+                                    
+                                    const prop_Mutaties = _p_cc(
+                                        $['Mutaties'],
+                                        ($) => _p.dictionary.resolve(
+                                            $,
+                                            ($, id, $a, $c) => _p.group.resolve(
+                                                () => {
+                                                    
+                                                    const prop_Bedrag = _p_cc(
+                                                        $['Bedrag'],
+                                                        ($) => $
+                                                    )
+                                                    
+                                                    const prop_Datum = _p_cc(
+                                                        $['Datum'],
+                                                        ($) => $
+                                                    )
+                                                    
+                                                    const prop_Omschrijving = _p_cc(
+                                                        $['Omschrijving'],
+                                                        ($) => $
+                                                    )
+                                                    return {
+                                                        'Bedrag': prop_Bedrag,
+                                                        'Datum': prop_Datum,
+                                                        'Omschrijving': prop_Omschrijving,
+                                                    }
+                                                }
+                                            )
+                                        )
+                                    )
+                                    return {
+                                        'Beginsaldo': prop_Beginsaldo,
+                                        'Grootboekrekening': prop_Grootboekrekening,
+                                        'Nieuw': prop_Nieuw,
+                                        'Mutaties': prop_Mutaties,
+                                    }
+                                }
+                            )
                         )
                     )
                     
                     const prop_Overige_balans_items = _p_cc(
                         $['Overige balans items'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => Overige_balans_item(
+                                $,
+                                ($) => abort(
+                                    $
+                                ),
+                                $l,
+                                $p
+                            )
                         )
                     )
                     
                     const prop_Verrekenposten = _p_cc(
                         $['Verrekenposten'],
-                        ($) => _p_unreachable_code_path(
+                        ($) => _p.dictionary.resolve(
+                            $,
+                            ($, id, $a, $c) => null
                         )
                     )
                     return {
@@ -340,13 +834,189 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
         
         const prop_Inkopen = _p_cc(
             $['Inkopen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Afhandeling = _p_cc(
+                            $['Afhandeling'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_BTW$mi_regime = _p_cc(
+                            $['BTW-regime'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Brondocument = _p_cc(
+                            $['Brondocument'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Datum = _p_cc(
+                            $['Datum'],
+                            ($) => $
+                        )
+                        
+                        const prop_Regels = _p_cc(
+                            $['Regels'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => _p.group.resolve(
+                                    () => {
+                                        
+                                        const prop_Bedrag = _p_cc(
+                                            $['Bedrag'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        
+                                        const prop_Omschrijving = _p_cc(
+                                            $['Omschrijving'],
+                                            ($) => $
+                                        )
+                                        
+                                        const prop_Type = _p_cc(
+                                            $['Type'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        return {
+                                            'Bedrag': prop_Bedrag,
+                                            'Omschrijving': prop_Omschrijving,
+                                            'Type': prop_Type,
+                                        }
+                                    }
+                                )
+                            )
+                        )
+                        
+                        const prop_Type = _p_cc(
+                            $['Type'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        return {
+                            'Afhandeling': prop_Afhandeling,
+                            'BTW-regime': prop_BTW$mi_regime,
+                            'Brondocument': prop_Brondocument,
+                            'Datum': prop_Datum,
+                            'Regels': prop_Regels,
+                            'Type': prop_Type,
+                        }
+                    }
+                )
             )
         )
         
         const prop_Verkopen = _p_cc(
             $['Verkopen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.group.resolve(
+                    () => {
+                        
+                        const prop_Datum = _p_cc(
+                            $['Datum'],
+                            ($) => $
+                        )
+                        
+                        const prop_Betalingstermijn = _p_cc(
+                            $['Betalingstermijn'],
+                            ($) => $
+                        )
+                        
+                        const prop_BTW$mi_periode = _p_cc(
+                            $['BTW-periode'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Brondocument = _p_cc(
+                            $['Brondocument'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Debiteur = _p_cc(
+                            $['Debiteur'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Contracttype = _p_cc(
+                            $['Contracttype'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Afhandeling = _p_cc(
+                            $['Afhandeling'],
+                            ($) => _p_unreachable_code_path(
+                            )
+                        )
+                        
+                        const prop_Regels = _p_cc(
+                            $['Regels'],
+                            ($) => _p.dictionary.resolve(
+                                $,
+                                ($, id, $a, $c) => _p.group.resolve(
+                                    () => {
+                                        
+                                        const prop_BTW$mi_regime = _p_cc(
+                                            $['BTW-regime'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        
+                                        const prop_Bedrag_exclusief_BTW = _p_cc(
+                                            $['Bedrag exclusief BTW'],
+                                            ($) => $
+                                        )
+                                        
+                                        const prop_Contracttype = _p_cc(
+                                            $['Contracttype'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        
+                                        const prop_Omschrijving = _p_cc(
+                                            $['Omschrijving'],
+                                            ($) => $
+                                        )
+                                        
+                                        const prop_Type = _p_cc(
+                                            $['Type'],
+                                            ($) => _p_unreachable_code_path(
+                                            )
+                                        )
+                                        return {
+                                            'BTW-regime': prop_BTW$mi_regime,
+                                            'Bedrag exclusief BTW': prop_Bedrag_exclusief_BTW,
+                                            'Contracttype': prop_Contracttype,
+                                            'Omschrijving': prop_Omschrijving,
+                                            'Type': prop_Type,
+                                        }
+                                    }
+                                )
+                            )
+                        )
+                        return {
+                            'Datum': prop_Datum,
+                            'Betalingstermijn': prop_Betalingstermijn,
+                            'BTW-periode': prop_BTW$mi_periode,
+                            'Brondocument': prop_Brondocument,
+                            'Debiteur': prop_Debiteur,
+                            'Contracttype': prop_Contracttype,
+                            'Afhandeling': prop_Afhandeling,
+                            'Regels': prop_Regels,
+                        }
+                    }
+                )
             )
         )
         return {
@@ -382,19 +1052,83 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
         
         const prop_Verrekenpost_mutaties = _p_cc(
             $['Verrekenpost mutaties'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.dictionary.resolve(
+                    $,
+                    ($, id, $a, $c) => _p.group.resolve(
+                        () => {
+                            
+                            const prop_Bedrag = _p_cc(
+                                $['Bedrag'],
+                                ($) => $
+                            )
+                            
+                            const prop_Afhandeling = _p_cc(
+                                $['Afhandeling'],
+                                ($) => _p_unreachable_code_path(
+                                )
+                            )
+                            return {
+                                'Bedrag': prop_Bedrag,
+                                'Afhandeling': prop_Afhandeling,
+                            }
+                        }
+                    )
+                )
             )
         )
         
         const prop_Bankrekening_Mutatie_Verwerkingen = _p_cc(
             $['Bankrekening Mutatie Verwerkingen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.dictionary.resolve(
+                    $,
+                    ($, id, $a, $c) => _p_unreachable_code_path(
+                    )
+                )
             )
         )
         
         const prop_Memoriaal_boekingen = _p_cc(
             $['Memoriaal boekingen'],
-            ($) => _p_unreachable_code_path(
+            ($) => _p.dictionary.resolve(
+                $,
+                ($, id, $a, $c) => _p.dictionary.resolve(
+                    $,
+                    ($, id, $a, $c) => _p.group.resolve(
+                        () => {
+                            
+                            const prop_Bedrag = _p_cc(
+                                $['Bedrag'],
+                                ($) => $
+                            )
+                            
+                            const prop_Datum = _p_cc(
+                                $['Datum'],
+                                ($) => $
+                            )
+                            
+                            const prop_Grootboekrekening = _p_cc(
+                                $['Grootboekrekening'],
+                                ($) => _p_unreachable_code_path(
+                                )
+                            )
+                            
+                            const prop_Omschrijving = _p_cc(
+                                $['Omschrijving'],
+                                ($) => $
+                            )
+                            return {
+                                'Bedrag': prop_Bedrag,
+                                'Datum': prop_Datum,
+                                'Grootboekrekening': prop_Grootboekrekening,
+                                'Omschrijving': prop_Omschrijving,
+                            }
+                        }
+                    )
+                )
             )
         )
         return {
@@ -408,7 +1142,130 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p_unreachable_code_path(
 )
 
-export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p_unreachable_code_path(
+export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.resolve(
+    $,
+    ($, id, $a, $c) => _p.group.resolve(
+        () => {
+            
+            const prop_Afgesloten = _p_cc(
+                $['Afgesloten'],
+                ($) => _p_unreachable_code_path(
+                )
+            )
+            
+            const prop_Startdatum_boekjaar = _p_cc(
+                $['Startdatum boekjaar'],
+                ($) => $
+            )
+            
+            const prop_Grootboekrekeningen = _p_cc(
+                $['Grootboekrekeningen'],
+                ($) => Grootboekrekeningen(
+                    $,
+                    ($) => abort(
+                        $
+                    ),
+                    null,
+                    null
+                )
+            )
+            
+            const prop_Eerste_boekjaar = _p_cc(
+                $['Eerste boekjaar'],
+                ($) => Eerste_boekjaar(
+                    $,
+                    ($) => abort(
+                        $
+                    ),
+                    {
+                        'Jaren': _pdev.implement_me(
+                            'selection'
+                        ),
+                    },
+                    null
+                )
+            )
+            
+            const prop_Jaarbeheer = _p_cc(
+                $['Jaarbeheer'],
+                ($) => Jaarbeheer(
+                    $,
+                    ($) => abort(
+                        $
+                    ),
+                    {
+                        'Jaren': _pdev.implement_me(
+                            'selection'
+                        ),
+                    },
+                    {
+                        'Grootboekrekeningen': _pdev.implement_me(
+                            "required"
+                        ),
+                        'Eerste boekjaar': _pdev.implement_me(
+                            "required"
+                        ),
+                    }
+                )
+            )
+            
+            const prop_Handelstransacties = _p_cc(
+                $['Handelstransacties'],
+                ($) => Handelstransacties(
+                    $,
+                    ($) => abort(
+                        $
+                    ),
+                    null,
+                    {
+                        'Beheer': $p['Beheer'],
+                        'Grootboekrekeningen': _pdev.implement_me(
+                            "required"
+                        ),
+                        'Jaarbeheer': _pdev.implement_me(
+                            "required"
+                        ),
+                    }
+                )
+            )
+            
+            const prop_Mutaties = _p_cc(
+                $['Mutaties'],
+                ($) => Mutaties(
+                    $,
+                    ($) => abort(
+                        $
+                    ),
+                    {
+                        'Jaren': _pdev.implement_me(
+                            'selection'
+                        ),
+                    },
+                    {
+                        'Beheer': $p['Beheer'],
+                        'Grootboekrekeningen': _pdev.implement_me(
+                            "required"
+                        ),
+                        'Jaarbeheer': _pdev.implement_me(
+                            "required"
+                        ),
+                        'Handelstransacties': _pdev.implement_me(
+                            "required"
+                        ),
+                    }
+                )
+            )
+            return {
+                'Afgesloten': prop_Afgesloten,
+                'Startdatum boekjaar': prop_Startdatum_boekjaar,
+                'Grootboekrekeningen': prop_Grootboekrekeningen,
+                'Eerste boekjaar': prop_Eerste_boekjaar,
+                'Jaarbeheer': prop_Jaarbeheer,
+                'Handelstransacties': prop_Handelstransacties,
+                'Mutaties': prop_Mutaties,
+            }
+        }
+    )
 )
 
 export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
