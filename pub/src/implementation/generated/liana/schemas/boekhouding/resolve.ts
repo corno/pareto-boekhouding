@@ -202,14 +202,26 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 
                                                 const prop_Hoofdcategorie_fiscus = _p_cc(
                                                     $['Hoofdcategorie fiscus'],
-                                                    ($) => _p_unreachable_code_path(
-                                                    )
+                                                    ($) => ({
+                                                        'l entry': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                        'l id': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                    })
                                                 )
                                                 
                                                 const prop_Subcategorie_fiscus = _p_cc(
                                                     $['Subcategorie fiscus'],
-                                                    ($) => _p_unreachable_code_path(
-                                                    )
+                                                    ($) => ({
+                                                        'l entry': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                        'l id': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                    })
                                                 )
                                                 return {
                                                     'Hoofdcategorie fiscus': prop_Hoofdcategorie_fiscus,
@@ -275,14 +287,26 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 
                                                 const prop_Hoofdcategorie_fiscus = _p_cc(
                                                     $['Hoofdcategorie fiscus'],
-                                                    ($) => _p_unreachable_code_path(
-                                                    )
+                                                    ($) => ({
+                                                        'l entry': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                        'l id': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                    })
                                                 )
                                                 
                                                 const prop_Subcategorie_fiscus = _p_cc(
                                                     $['Subcategorie fiscus'],
-                                                    ($) => _p_unreachable_code_path(
-                                                    )
+                                                    ($) => ({
+                                                        'l entry': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                        'l id': _pdev.implement_me(
+                                                            "sss"
+                                                        ),
+                                                    })
                                                 )
                                                 return {
                                                     'Hoofdcategorie fiscus': prop_Hoofdcategorie_fiscus,
@@ -377,14 +401,26 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         
                                         const prop_Hoofdcategorie = _p_cc(
                                             $['Hoofdcategorie'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         
                                         const prop_Subcategorie = _p_cc(
                                             $['Subcategorie'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         
                                         const prop_Zijde = _p_cc(
@@ -433,14 +469,26 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         
                                         const prop_Hoofdcategorie = _p_cc(
                                             $['Hoofdcategorie'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         
                                         const prop_Subcategorie = _p_cc(
                                             $['Subcategorie'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         
                                         const prop_Zijde = _p_cc(
@@ -469,8 +517,14 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                                         
                                                                                                         const prop_Correctietype = _p_cc(
                                                                                                             $['Correctietype'],
-                                                                                                            ($) => _p_unreachable_code_path(
-                                                                                                            )
+                                                                                                            ($) => ({
+                                                                                                                'l entry': _pdev.implement_me(
+                                                                                                                    "sss"
+                                                                                                                ),
+                                                                                                                'l id': _pdev.implement_me(
+                                                                                                                    "sss"
+                                                                                                                ),
+                                                                                                            })
                                                                                                         )
                                                                                                         return {
                                                                                                             'Correctietype': prop_Correctietype,
@@ -845,8 +899,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     
                     const prop_Grootboekrekening_voor_BTW_afrondingen = _p_cc(
                         $['Grootboekrekening voor BTW afrondingen'],
-                        ($) => _p_unreachable_code_path(
-                        )
+                        ($) => ({
+                            'l entry': _pdev.implement_me(
+                                "sss"
+                            ),
+                            'l id': _pdev.implement_me(
+                                "sss"
+                            ),
+                        })
                     )
                     
                     const prop_Salarisrondes = _p_cc(
@@ -991,32 +1051,62 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     
                     const prop_Grootboekrekening_voor_nog_aan_te_geven_BTW = _p_cc(
                         $['Grootboekrekening voor nog aan te geven BTW'],
-                        ($) => _p_unreachable_code_path(
-                        )
+                        ($) => ({
+                            'l entry': _pdev.implement_me(
+                                "sss"
+                            ),
+                            'l id': _pdev.implement_me(
+                                "sss"
+                            ),
+                        })
                     )
                     
                     const prop_Grootboekrekening_voor_resultaat_dit_jaar = _p_cc(
                         $['Grootboekrekening voor resultaat dit jaar'],
-                        ($) => _p_unreachable_code_path(
-                        )
+                        ($) => ({
+                            'l entry': _pdev.implement_me(
+                                "sss"
+                            ),
+                            'l id': _pdev.implement_me(
+                                "sss"
+                            ),
+                        })
                     )
                     
                     const prop_Grootboekrekening_voor_winstreserve = _p_cc(
                         $['Grootboekrekening voor winstreserve'],
-                        ($) => _p_unreachable_code_path(
-                        )
+                        ($) => ({
+                            'l entry': _pdev.implement_me(
+                                "sss"
+                            ),
+                            'l id': _pdev.implement_me(
+                                "sss"
+                            ),
+                        })
                     )
                     
                     const prop_Grootboekrekening_voor_Inkoop_saldo = _p_cc(
                         $['Grootboekrekening voor Inkoop saldo'],
-                        ($) => _p_unreachable_code_path(
-                        )
+                        ($) => ({
+                            'l entry': _pdev.implement_me(
+                                "sss"
+                            ),
+                            'l id': _pdev.implement_me(
+                                "sss"
+                            ),
+                        })
                     )
                     
                     const prop_Grootboekrekening_voor_Verkoop_saldo = _p_cc(
                         $['Grootboekrekening voor Verkoop saldo'],
-                        ($) => _p_unreachable_code_path(
-                        )
+                        ($) => ({
+                            'l entry': _pdev.implement_me(
+                                "sss"
+                            ),
+                            'l id': _pdev.implement_me(
+                                "sss"
+                            ),
+                        })
                     )
                     
                     const prop_Informele_rekeningen = _p_cc(
@@ -1035,8 +1125,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         
                                         const prop_Grootboekrekening = _p_cc(
                                             $['Grootboekrekening'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         
                                         const prop_Nieuw = _p_cc(
@@ -1112,8 +1208,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         
                                         const prop_Grootboekrekening = _p_cc(
                                             $['Grootboekrekening'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         
                                         const prop_Nieuw = _p_cc(
@@ -1269,8 +1371,14 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
         
         const prop_Grootboekrekening = _p_cc(
             $['Grootboekrekening'],
-            ($) => _p_unreachable_code_path(
-            )
+            ($) => ({
+                'l entry': _pdev.implement_me(
+                    "sss"
+                ),
+                'l id': _pdev.implement_me(
+                    "sss"
+                ),
+            })
         )
         
         const prop_Nieuw = _p_cc(
@@ -1292,8 +1400,14 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                                         
                                         const prop_Balans_item = _p_cc(
                                             $['Balans item'],
-                                            ($) => _p_unreachable_code_path(
-                                            )
+                                            ($) => ({
+                                                'l entry': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                                'l id': _pdev.implement_me(
+                                                    "sss"
+                                                ),
+                                            })
                                         )
                                         return {
                                             'Balans item': prop_Balans_item,
@@ -1317,11 +1431,23 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
     }
 )
 
-export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($, abort, $l, $p) => _p_unreachable_code_path(
-)
+export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($, abort, $l, $p) => ({
+    'l entry': _pdev.implement_me(
+        "sss"
+    ),
+    'l id': _pdev.implement_me(
+        "sss"
+    ),
+})
 
-export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($, abort, $l, $p) => _p_unreachable_code_path(
-)
+export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($, abort, $l, $p) => ({
+    'l entry': _pdev.implement_me(
+        "sss"
+    ),
+    'l id': _pdev.implement_me(
+        "sss"
+    ),
+})
 
 export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l, $p) => _p.group.resolve(
     () => {
@@ -1354,8 +1480,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Rekening_courant = _p_cc(
                                                                 $['Rekening courant'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'Rekening courant': prop_Rekening_courant,
@@ -1406,8 +1538,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_BTW$mi_periode = _p_cc(
                                                                 $['BTW-periode'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'BTW-periode': prop_BTW$mi_periode,
@@ -1535,8 +1673,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_Balans_item = _p_cc(
                                                                                     $['Balans item'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'Balans item': prop_Balans_item,
@@ -1552,8 +1696,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_Grootboekrekening = _p_cc(
                                                                                     $['Grootboekrekening'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'Grootboekrekening': prop_Grootboekrekening,
@@ -1599,8 +1749,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Crediteur = _p_cc(
                                                                 $['Crediteur'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             
                                                             const prop_Factuurnummer = _p_cc(
@@ -1622,8 +1778,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Ronde = _p_cc(
                                                                 $['Ronde'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'Ronde': prop_Ronde,
@@ -1639,14 +1801,26 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Ronde = _p_cc(
                                                                 $['Ronde'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             
                                                             const prop_Medewerker = _p_cc(
                                                                 $['Medewerker'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'Ronde': prop_Ronde,
@@ -1698,8 +1872,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             
                             const prop_BTW$mi_periode = _p_cc(
                                 $['BTW-periode'],
-                                ($) => _p_unreachable_code_path(
-                                )
+                                ($) => ({
+                                    'l entry': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                    'l id': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                })
                             )
                             
                             const prop_Brondocument = _p_cc(
@@ -1735,8 +1915,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             
                             const prop_Debiteur = _p_cc(
                                 $['Debiteur'],
-                                ($) => _p_unreachable_code_path(
-                                )
+                                ($) => ({
+                                    'l entry': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                    'l id': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                })
                             )
                             
                             const prop_Contracttype = _p_cc(
@@ -1753,14 +1939,26 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Project = _p_cc(
                                                                 $['Project'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             
                                                             const prop_Offerte = _p_cc(
                                                                 $['Offerte'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'Project': prop_Project,
@@ -1777,8 +1975,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Overeenkomst = _p_cc(
                                                                 $['Overeenkomst'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'Overeenkomst': prop_Overeenkomst,
@@ -1814,8 +2018,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             
                                                             const prop_Rekening_courant = _p_cc(
                                                                 $['Rekening courant'],
-                                                                ($) => _p_unreachable_code_path(
-                                                                )
+                                                                ($) => ({
+                                                                    'l entry': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                    'l id': _pdev.implement_me(
+                                                                        "sss"
+                                                                    ),
+                                                                })
                                                             )
                                                             return {
                                                                 'Rekening courant': prop_Rekening_courant,
@@ -1860,8 +2070,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_BTW$mi_categorie = _p_cc(
                                                                                     $['BTW-categorie'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'BTW-categorie': prop_BTW$mi_categorie,
@@ -1902,8 +2118,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_Opbrengst = _p_cc(
                                                                                     $['Opbrengst'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'Opbrengst': prop_Opbrengst,
@@ -1924,8 +2146,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_Periode = _p_cc(
                                                                                     $['Periode'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'Periode': prop_Periode,
@@ -1961,8 +2189,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_Grootboekrekening = _p_cc(
                                                                                     $['Grootboekrekening'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'Grootboekrekening': prop_Grootboekrekening,
@@ -1978,8 +2212,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 
                                                                                 const prop_Balans_item = _p_cc(
                                                                                     $['Balans item'],
-                                                                                    ($) => _p_unreachable_code_path(
-                                                                                    )
+                                                                                    ($) => ({
+                                                                                        'l entry': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                        'l id': _pdev.implement_me(
+                                                                                            "sss"
+                                                                                        ),
+                                                                                    })
                                                                                 )
                                                                                 return {
                                                                                     'Balans item': prop_Balans_item,
@@ -2036,8 +2276,14 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             $['Jaar'],
             ($) => _p.optional.map(
                 $,
-                ($) => _p_unreachable_code_path(
-                )
+                ($) => ({
+                    'l entry': _pdev.implement_me(
+                        "sss"
+                    ),
+                    'l id': _pdev.implement_me(
+                        "sss"
+                    ),
+                })
             )
         )
         
@@ -2050,20 +2296,38 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                         case 'Inkoop':
                             return _p.ss(
                                 $,
-                                ($) => ['Inkoop', _p_unreachable_code_path(
-                                )]
+                                ($) => ['Inkoop', {
+                                    'l entry': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                    'l id': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                }]
                             )
                         case 'Verkoop':
                             return _p.ss(
                                 $,
-                                ($) => ['Verkoop', _p_unreachable_code_path(
-                                )]
+                                ($) => ['Verkoop', {
+                                    'l entry': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                    'l id': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                }]
                             )
                         case 'BTW-periode':
                             return _p.ss(
                                 $,
-                                ($) => ['BTW-periode', _p_unreachable_code_path(
-                                )]
+                                ($) => ['BTW-periode', {
+                                    'l entry': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                    'l id': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                }]
                             )
                         default:
                             return _p.au(
@@ -2134,8 +2398,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                                         
                                                                                         const prop_Informele_rekening = _p_cc(
                                                                                             $['Informele rekening'],
-                                                                                            ($) => _p_unreachable_code_path(
-                                                                                            )
+                                                                                            ($) => ({
+                                                                                                'l entry': _pdev.implement_me(
+                                                                                                    "sss"
+                                                                                                ),
+                                                                                                'l id': _pdev.implement_me(
+                                                                                                    "sss"
+                                                                                                ),
+                                                                                            })
                                                                                         )
                                                                                         return {
                                                                                             'Informele rekening': prop_Informele_rekening,
@@ -2212,8 +2482,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                             
                                                                             const prop_Verrekenpost = _p_cc(
                                                                                 $['Verrekenpost'],
-                                                                                ($) => _p_unreachable_code_path(
-                                                                                )
+                                                                                ($) => ({
+                                                                                    'l entry': _pdev.implement_me(
+                                                                                        "sss"
+                                                                                    ),
+                                                                                    'l id': _pdev.implement_me(
+                                                                                        "sss"
+                                                                                    ),
+                                                                                })
                                                                             )
                                                                             return {
                                                                                 'Verrekenpost': prop_Verrekenpost,
@@ -2229,8 +2505,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                             
                                                                             const prop_Informele_rekening = _p_cc(
                                                                                 $['Informele rekening'],
-                                                                                ($) => _p_unreachable_code_path(
-                                                                                )
+                                                                                ($) => ({
+                                                                                    'l entry': _pdev.implement_me(
+                                                                                        "sss"
+                                                                                    ),
+                                                                                    'l id': _pdev.implement_me(
+                                                                                        "sss"
+                                                                                    ),
+                                                                                })
                                                                             )
                                                                             return {
                                                                                 'Informele rekening': prop_Informele_rekening,
@@ -2284,8 +2566,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                     
                                     const prop_Grootboekrekening = _p_cc(
                                         $['Grootboekrekening'],
-                                        ($) => _p_unreachable_code_path(
-                                        )
+                                        ($) => ({
+                                            'l entry': _pdev.implement_me(
+                                                "sss"
+                                            ),
+                                            'l id': _pdev.implement_me(
+                                                "sss"
+                                            ),
+                                        })
                                     )
                                     
                                     const prop_Omschrijving = _p_cc(
@@ -2330,8 +2618,14 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
                             
                             const prop_Vorig_boekjaar = _p_cc(
                                 $['Vorig boekjaar'],
-                                ($) => _p_unreachable_code_path(
-                                )
+                                ($) => ({
+                                    'l entry': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                    'l id': _pdev.implement_me(
+                                        "sss"
+                                    ),
+                                })
                             )
                             return {
                                 'Vorig boekjaar': prop_Vorig_boekjaar,
