@@ -18,9 +18,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
@@ -29,9 +29,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Fiscaal.Balans_Hoofdcategorieen.dictionary.D.entry.Zijde.state => {
+                                    ($): t_out.Fiscaal.Balans_Hoofdcategorieen._.D._.Zijde._ => {
                                         switch ($[0]) {
                                             case 'Activa':
                                                 return _p.ss(
@@ -60,9 +60,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': null,
+                                        ' ': null,
                                         'location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
@@ -90,9 +90,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
@@ -101,9 +101,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.dictionary.D.entry.Zijde.state => {
+                                    ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen._.D._.Zijde._ => {
                                         switch ($[0]) {
                                             case 'Kosten':
                                                 return _p.ss(
@@ -132,9 +132,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': null,
+                                        ' ': null,
                                         'location': {
                                             'document resource identifier': "implement me",
                                             'line': 42,
@@ -165,9 +165,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Te corrigeren promillage': _p_cc(
                             $['Te corrigeren promillage'],
                             ($) => $
@@ -190,9 +190,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
@@ -201,9 +201,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Grootboek_Categorieen.Balans.dictionary.D.entry.Zijde.state => {
+                                    ($): t_out.Grootboek_Categorieen.Balans._.D._.Zijde._ => {
                                         switch ($[0]) {
                                             case 'Activa':
                                                 return _p.ss(
@@ -232,9 +232,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': {
+                                        ' ': {
                                             'Hoofdcategorie fiscus': _p_cc(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
@@ -243,7 +243,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'id': $['id'],
+                                                    ' ': $[' '],
                                                 })
                                             ),
                                             'Subcategorie fiscus': _p_cc(
@@ -254,7 +254,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'id': $['id'],
+                                                    ' ': $[' '],
                                                 })
                                             ),
                                         },
@@ -285,9 +285,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Zijde': _p_cc(
                             $['Zijde'],
                             ($) => ({
@@ -296,9 +296,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Grootboek_Categorieen.Resultaat.dictionary.D.entry.Zijde.state => {
+                                    ($): t_out.Grootboek_Categorieen.Resultaat._.D._.Zijde._ => {
                                         switch ($[0]) {
                                             case 'Kosten':
                                                 return _p.ss(
@@ -327,9 +327,9 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': {
+                                        ' ': {
                                             'Hoofdcategorie fiscus': _p_cc(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
@@ -338,7 +338,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'id': $['id'],
+                                                    ' ': $[' '],
                                                 })
                                             ),
                                             'Subcategorie fiscus': _p_cc(
@@ -349,7 +349,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'id': $['id'],
+                                                    ' ': $[' '],
                                                 })
                                             ),
                                         },
@@ -383,9 +383,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'BTW-heffing': _p_cc(
                             $['BTW-heffing'],
                             ($) => ({
@@ -394,9 +394,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Beheer.BTW$mi_categorieen.dictionary.D.entry.BTW$mi_heffing.state => {
+                                    ($): t_out.Beheer.BTW$mi_categorieen._.D._.BTW$mi_heffing._ => {
                                         switch ($[0]) {
                                             case 'Ja':
                                                 return _p.ss(
@@ -438,9 +438,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': {
+                            ' ': {
                                 'Hoofdcategorie': _p_cc(
                                     $['Hoofdcategorie'],
                                     ($) => ({
@@ -449,7 +449,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'id': $['id'],
+                                        ' ': $[' '],
                                     })
                                 ),
                                 'Subcategorie': _p_cc(
@@ -460,7 +460,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'id': $['id'],
+                                        ' ': $[' '],
                                     })
                                 ),
                                 'Zijde': _p_cc(
@@ -471,9 +471,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'state': _p.decide.state(
+                                        ' ': _p.decide.state(
                                             $,
-                                            ($): t_out.Beheer.Grootboekrekeningen.Balans.dictionary.D.entry.Zijde.state => {
+                                            ($): t_out.Beheer.Grootboekrekeningen.Balans._.D._.Zijde._ => {
                                                 switch ($[0]) {
                                                     case 'Activa':
                                                         return _p.ss(
@@ -512,9 +512,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': {
+                            ' ': {
                                 'Hoofdcategorie': _p_cc(
                                     $['Hoofdcategorie'],
                                     ($) => ({
@@ -523,7 +523,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'id': $['id'],
+                                        ' ': $[' '],
                                     })
                                 ),
                                 'Subcategorie': _p_cc(
@@ -534,7 +534,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'id': $['id'],
+                                        ' ': $[' '],
                                     })
                                 ),
                                 'Zijde': _p_cc(
@@ -545,9 +545,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'state': _p.decide.state(
+                                        ' ': _p.decide.state(
                                             $,
-                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat.dictionary.D.entry.Zijde.state => {
+                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat._.D._.Zijde._ => {
                                                 switch ($[0]) {
                                                     case 'Kosten':
                                                         return _p.ss(
@@ -561,9 +561,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                             'line': 42,
                                                                             'column': 42,
                                                                         },
-                                                                        'state': _p.decide.state(
+                                                                        ' ': _p.decide.state(
                                                                             $,
-                                                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat.dictionary.D.entry.Zijde.state.Kosten.Correctie_op_vennootschapsbelasting.state => {
+                                                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat._.D._.Zijde._.Kosten.Correctie_op_vennootschapsbelasting._ => {
                                                                                 switch ($[0]) {
                                                                                     case 'Ja':
                                                                                         return _p.ss(
@@ -577,7 +577,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                             'line': 42,
                                                                                                             'column': 42,
                                                                                                         },
-                                                                                                        'id': $['id'],
+                                                                                                        ' ': $[' '],
                                                                                                     })
                                                                                                 ),
                                                                                             }]
@@ -635,9 +635,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': null,
+                            ' ': null,
                             'location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
@@ -655,9 +655,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': null,
+                            ' ': null,
                             'location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
@@ -677,9 +677,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Volledige naam': _p_cc(
                             $['Volledige naam'],
                             ($) => $
@@ -706,9 +706,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Licentieovereenkomsten': _p_cc(
                             $['Licentieovereenkomsten'],
                             ($) => ({
@@ -717,9 +717,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': {
+                                        ' ': {
                                             'Periodes': _p_cc(
                                                 $['Periodes'],
                                                 ($) => ({
@@ -728,9 +728,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'dictionary': $.__d_map(
+                                                    ' ': $.__d_map(
                                                         ($, id) => ({
-                                                            'entry': {
+                                                            ' ': {
                                                                 'Bedrag': _p_cc(
                                                                     $['Bedrag'],
                                                                     ($) => $
@@ -763,9 +763,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': {
+                                        ' ': {
                                             'Offertes': _p_cc(
                                                 $['Offertes'],
                                                 ($) => ({
@@ -774,9 +774,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'dictionary': $.__d_map(
+                                                    ' ': $.__d_map(
                                                         ($, id) => ({
-                                                            'entry': {
+                                                            ' ': {
                                                                 'Opbrengsten': _p_cc(
                                                                     $['Opbrengsten'],
                                                                     ($) => ({
@@ -785,9 +785,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                             'line': 42,
                                                                             'column': 42,
                                                                         },
-                                                                        'dictionary': $.__d_map(
+                                                                        ' ': $.__d_map(
                                                                             ($, id) => ({
-                                                                                'entry': {
+                                                                                ' ': {
                                                                                     'Type': _p_cc(
                                                                                         $['Type'],
                                                                                         ($) => ({
@@ -796,9 +796,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                 'line': 42,
                                                                                                 'column': 42,
                                                                                             },
-                                                                                            'state': _p.decide.state(
+                                                                                            ' ': _p.decide.state(
                                                                                                 $,
-                                                                                                ($): t_out.Beheer.Klanten.dictionary.D.entry.Projecten.dictionary.D.entry.Offertes.dictionary.D.entry.Opbrengsten.dictionary.D.entry.Type.state => {
+                                                                                                ($): t_out.Beheer.Klanten._.D._.Projecten._.D._.Offertes._.D._.Opbrengsten._.D._.Type._ => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Project':
                                                                                                             return _p.ss(
@@ -871,9 +871,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': null,
+                    ' ': null,
                     'location': {
                         'document resource identifier': "implement me",
                         'line': 42,
@@ -891,9 +891,9 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': null,
+                    ' ': null,
                     'location': {
                         'document resource identifier': "implement me",
                         'line': 42,
@@ -914,9 +914,9 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Type': _p_cc(
                             $['Type'],
                             ($) => ({
@@ -925,9 +925,9 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Grootboekrekeningen.Balans.dictionary.D.entry.Type.state => {
+                                    ($): t_out.Grootboekrekeningen.Balans._.D._.Type._ => {
                                         switch ($[0]) {
                                             case 'Bankrekening':
                                                 return _p.ss(
@@ -971,9 +971,9 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': null,
+                    ' ': null,
                     'location': {
                         'document resource identifier': "implement me",
                         'line': 42,
@@ -997,7 +997,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'id': $['id'],
+                    ' ': $[' '],
                 })
             ),
             'Salarisrondes': _p_cc(
@@ -1008,9 +1008,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': null,
+                            ' ': null,
                             'location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
@@ -1028,9 +1028,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': {
+                            ' ': {
                                 '1. BTW-categorieen': _p_cc(
                                     $['1. BTW-categorieen'],
                                     ($) => ({
@@ -1039,9 +1039,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'dictionary': $.__d_map(
+                                        ' ': $.__d_map(
                                             ($, id) => ({
-                                                'entry': null,
+                                                ' ': null,
                                                 'location': {
                                                     'document resource identifier': "implement me",
                                                     'line': 42,
@@ -1059,9 +1059,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'dictionary': $.__d_map(
+                                        ' ': $.__d_map(
                                             ($, id) => ({
-                                                'entry': {
+                                                ' ': {
                                                     'Bestand': _p_cc(
                                                         $['Bestand'],
                                                         ($) => $
@@ -1088,9 +1088,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'state': _p.decide.state(
+                                        ' ': _p.decide.state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.dictionary.D.entry.Status.state => {
+                                            ($): t_out.Jaarbeheer.Resultaat.BTW_periodes._.D._.Status._ => {
                                                 switch ($[0]) {
                                                     case 'Aangegeven':
                                                         return _p.ss(
@@ -1147,7 +1147,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'id': $['id'],
+                    ' ': $[' '],
                 })
             ),
             'Grootboekrekening voor resultaat dit jaar': _p_cc(
@@ -1158,7 +1158,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'id': $['id'],
+                    ' ': $[' '],
                 })
             ),
             'Grootboekrekening voor winstreserve': _p_cc(
@@ -1169,7 +1169,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'id': $['id'],
+                    ' ': $[' '],
                 })
             ),
             'Grootboekrekening voor Inkoop saldo': _p_cc(
@@ -1180,7 +1180,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'id': $['id'],
+                    ' ': $[' '],
                 })
             ),
             'Grootboekrekening voor Verkoop saldo': _p_cc(
@@ -1191,7 +1191,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'id': $['id'],
+                    ' ': $[' '],
                 })
             ),
             'Beginsaldo nog aan te geven BTW': _p_cc(
@@ -1210,9 +1210,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': {
+                            ' ': {
                                 'Beginsaldo': _p_cc(
                                     $['Beginsaldo'],
                                     ($) => $
@@ -1225,7 +1225,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'id': $['id'],
+                                        ' ': $[' '],
                                     })
                                 ),
                                 'Nieuw': _p_cc(
@@ -1236,9 +1236,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'state': _p.decide.state(
+                                        ' ': _p.decide.state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.dictionary.D.entry.Nieuw.state => {
+                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen._.D._.Nieuw._ => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return _p.ss(
@@ -1284,9 +1284,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': {
+                            ' ': {
                                 'Beginsaldo': _p_cc(
                                     $['Beginsaldo'],
                                     ($) => $
@@ -1299,7 +1299,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'id': $['id'],
+                                        ' ': $[' '],
                                     })
                                 ),
                                 'Nieuw': _p_cc(
@@ -1310,9 +1310,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'state': _p.decide.state(
+                                        ' ': _p.decide.state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Balans.Bankrekeningen.dictionary.D.entry.Nieuw.state => {
+                                            ($): t_out.Jaarbeheer.Balans.Bankrekeningen._.D._.Nieuw._ => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return _p.ss(
@@ -1348,9 +1348,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             'line': 42,
                                             'column': 42,
                                         },
-                                        'dictionary': $.__d_map(
+                                        ' ': $.__d_map(
                                             ($, id) => ({
-                                                'entry': {
+                                                ' ': {
                                                     'Bedrag': _p_cc(
                                                         $['Bedrag'],
                                                         ($) => $
@@ -1391,9 +1391,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': Overige_balans_item(
+                            ' ': Overige_balans_item(
                                 $
                             ),
                             'location': {
@@ -1413,9 +1413,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         'line': 42,
                         'column': 42,
                     },
-                    'dictionary': $.__d_map(
+                    ' ': $.__d_map(
                         ($, id) => ({
-                            'entry': null,
+                            ' ': null,
                             'location': {
                                 'document resource identifier': "implement me",
                                 'line': 42,
@@ -1442,7 +1442,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'id': $['id'],
+            ' ': $[' '],
         })
     ),
     'Nieuw': _p_cc(
@@ -1453,9 +1453,9 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'state': _p.decide.state(
+            ' ': _p.decide.state(
                 $,
-                ($): t_out.Overige_balans_item.Nieuw.state => {
+                ($): t_out.Overige_balans_item.Nieuw._ => {
                     switch ($[0]) {
                         case 'Ja':
                             return _p.ss(
@@ -1474,7 +1474,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                                                 'line': 42,
                                                 'column': 42,
                                             },
-                                            'id': $['id'],
+                                            ' ': $[' '],
                                         })
                                     ),
                                 }]
@@ -1496,7 +1496,7 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
         'line': 42,
         'column': 42,
     },
-    'id': $['id'],
+    ' ': $[' '],
 })
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($) => ({
@@ -1505,7 +1505,7 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
         'line': 42,
         'column': 42,
     },
-    'id': $['id'],
+    ' ': $[' '],
 })
 
 export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
@@ -1517,9 +1517,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Afhandeling': _p_cc(
                             $['Afhandeling'],
                             ($) => ({
@@ -1528,9 +1528,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Afhandeling.state => {
+                                    ($): t_out.Handelstransacties.Inkopen._.D._.Afhandeling._ => {
                                         switch ($[0]) {
                                             case 'Mutaties':
                                                 return _p.ss(
@@ -1549,7 +1549,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -1571,9 +1571,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.dictionary.D.entry.BTW$mi_regime.state => {
+                                    ($): t_out.Handelstransacties.Inkopen._.D._.BTW$mi_regime._ => {
                                         switch ($[0]) {
                                             case 'Binnenland: heffing verlegd':
                                                 return _p.ss(
@@ -1607,7 +1607,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -1629,9 +1629,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Brondocument.state => {
+                                    ($): t_out.Handelstransacties.Inkopen._.D._.Brondocument._ => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
                                                 return _p.ss(
@@ -1674,9 +1674,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': {
+                                        ' ': {
                                             'Bedrag': _p_cc(
                                                 $['Bedrag'],
                                                 ($) => ({
@@ -1685,9 +1685,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'state': _p.decide.state(
+                                                    ' ': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Regels.dictionary.D.entry.Bedrag.state => {
+                                                        ($): t_out.Handelstransacties.Inkopen._.D._.Regels._.D._.Bedrag._ => {
                                                             switch ($[0]) {
                                                                 case 'Bekend':
                                                                     return _p.ss(
@@ -1724,9 +1724,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'state': _p.decide.state(
+                                                    ' ': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Regels.dictionary.D.entry.Type.state => {
+                                                        ($): t_out.Handelstransacties.Inkopen._.D._.Regels._.D._.Type._ => {
                                                             switch ($[0]) {
                                                                 case 'Balans':
                                                                     return _p.ss(
@@ -1740,7 +1740,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -1757,7 +1757,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -1789,9 +1789,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Type.state => {
+                                    ($): t_out.Handelstransacties.Inkopen._.D._.Type._ => {
                                         switch ($[0]) {
                                             case 'Bonnetje':
                                                 return _p.ss(
@@ -1810,7 +1810,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                         'Factuurnummer': _p_cc(
@@ -1831,7 +1831,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -1848,7 +1848,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                         'Medewerker': _p_cc(
@@ -1859,7 +1859,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -1891,9 +1891,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'Afhandeling': _p_cc(
                             $['Afhandeling'],
                             ($) => ({
@@ -1902,9 +1902,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Afhandeling.state => {
+                                    ($): t_out.Handelstransacties.Verkopen._.D._.Afhandeling._ => {
                                         switch ($[0]) {
                                             case 'Mutaties':
                                                 return _p.ss(
@@ -1923,7 +1923,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -1949,7 +1949,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'id': $['id'],
+                                ' ': $[' '],
                             })
                         ),
                         'Brondocument': _p_cc(
@@ -1960,9 +1960,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Brondocument.state => {
+                                    ($): t_out.Handelstransacties.Verkopen._.D._.Brondocument._ => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
                                                 return _p.ss(
@@ -1991,7 +1991,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'id': $['id'],
+                                ' ': $[' '],
                             })
                         ),
                         'Contracttype': _p_cc(
@@ -2002,9 +2002,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'state': _p.decide.state(
+                                ' ': _p.decide.state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Contracttype.state => {
+                                    ($): t_out.Handelstransacties.Verkopen._.D._.Contracttype._ => {
                                         switch ($[0]) {
                                             case 'Project':
                                                 return _p.ss(
@@ -2018,7 +2018,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                         'Offerte': _p_cc(
@@ -2029,7 +2029,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -2046,7 +2046,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                     'line': 42,
                                                                     'column': 42,
                                                                 },
-                                                                'id': $['id'],
+                                                                ' ': $[' '],
                                                             })
                                                         ),
                                                     }]
@@ -2072,9 +2072,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     'line': 42,
                                     'column': 42,
                                 },
-                                'dictionary': $.__d_map(
+                                ' ': $.__d_map(
                                     ($, id) => ({
-                                        'entry': {
+                                        ' ': {
                                             'BTW-regime': _p_cc(
                                                 $['BTW-regime'],
                                                 ($) => ({
@@ -2083,9 +2083,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'state': _p.decide.state(
+                                                    ' ': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Regels.dictionary.D.entry.BTW$mi_regime.state => {
+                                                        ($): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.BTW$mi_regime._ => {
                                                             switch ($[0]) {
                                                                 case 'Intracommunautair':
                                                                     return _p.ss(
@@ -2104,7 +2104,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2135,9 +2135,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'state': _p.decide.state(
+                                                    ' ': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Regels.dictionary.D.entry.Contracttype.state => {
+                                                        ($): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.Contracttype._ => {
                                                             switch ($[0]) {
                                                                 case 'Project':
                                                                     return _p.ss(
@@ -2151,7 +2151,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2173,7 +2173,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2199,9 +2199,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'line': 42,
                                                         'column': 42,
                                                     },
-                                                    'state': _p.decide.state(
+                                                    ' ': _p.decide.state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Regels.dictionary.D.entry.Type.state => {
+                                                        ($): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.Type._ => {
                                                             switch ($[0]) {
                                                                 case 'Opbrengsten':
                                                                     return _p.ss(
@@ -2215,7 +2215,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2232,7 +2232,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                         'line': 42,
                                                                                         'column': 42,
                                                                                     },
-                                                                                    'id': $['id'],
+                                                                                    ' ': $[' '],
                                                                                 })
                                                                             ),
                                                                         }]
@@ -2277,17 +2277,17 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        'dictionary': $.__d_map(
+                        ' ': $.__d_map(
                             ($, id) => ({
-                                'entry': {
+                                ' ': {
                                     'Bedrag': _p_cc(
                                         $['Bedrag'],
                                         ($) => $
@@ -2300,9 +2300,9 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                 'line': 42,
                                                 'column': 42,
                                             },
-                                            'state': _p.decide.state(
+                                            ' ': _p.decide.state(
                                                 $,
-                                                ($): t_out.Mutaties.Verrekenpost_mutaties.dictionary.D.entry.dictionary.D.entry.Afhandeling.state => {
+                                                ($): t_out.Mutaties.Verrekenpost_mutaties._.D._._.D._.Afhandeling._ => {
                                                     switch ($[0]) {
                                                         case 'Resultaat':
                                                             return _p.ss(
@@ -2320,9 +2320,9 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                         'line': 42,
                                                                         'column': 42,
                                                                     },
-                                                                    'state': _p.decide.state(
+                                                                    ' ': _p.decide.state(
                                                                         $,
-                                                                        ($): t_out.Mutaties.Verrekenpost_mutaties.dictionary.D.entry.dictionary.D.entry.Afhandeling.state.Balans.state => {
+                                                                        ($): t_out.Mutaties.Verrekenpost_mutaties._.D._._.D._.Afhandeling._.Balans._ => {
                                                                             switch ($[0]) {
                                                                                 case 'Informele rekening':
                                                                                     return _p.ss(
@@ -2336,7 +2336,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                         'line': 42,
                                                                                                         'column': 42,
                                                                                                     },
-                                                                                                    'id': $['id'],
+                                                                                                    ' ': $[' '],
                                                                                                 })
                                                                                             ),
                                                                                         }]
@@ -2385,25 +2385,25 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        'dictionary': $.__d_map(
+                        ' ': $.__d_map(
                             ($, id) => ({
-                                'entry': {
+                                ' ': {
                                     'location': {
                                         'document resource identifier': "implement me",
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    'state': _p.decide.state(
+                                    ' ': _p.decide.state(
                                         $,
-                                        ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.dictionary.D.entry.dictionary.D.entry.state => {
+                                        ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen._.D._._.D._._ => {
                                             switch ($[0]) {
                                                 case 'Resultaat':
                                                     return _p.ss(
@@ -2421,9 +2421,9 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                 'line': 42,
                                                                 'column': 42,
                                                             },
-                                                            'state': _p.decide.state(
+                                                            ' ': _p.decide.state(
                                                                 $,
-                                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.dictionary.D.entry.dictionary.D.entry.state.Balans.state => {
+                                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen._.D._._.D._._.Balans._ => {
                                                                     switch ($[0]) {
                                                                         case 'Informele rekening':
                                                                             return _p.ss(
@@ -2437,7 +2437,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                 'line': 42,
                                                                                                 'column': 42,
                                                                                             },
-                                                                                            'id': $['id'],
+                                                                                            ' ': $[' '],
                                                                                         })
                                                                                     ),
                                                                                 }]
@@ -2454,7 +2454,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                 'line': 42,
                                                                                                 'column': 42,
                                                                                             },
-                                                                                            'id': $['id'],
+                                                                                            ' ': $[' '],
                                                                                         })
                                                                                     ),
                                                                                 }]
@@ -2501,17 +2501,17 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 'line': 42,
                 'column': 42,
             },
-            'dictionary': $.__d_map(
+            ' ': $.__d_map(
                 ($, id) => ({
-                    'entry': {
+                    ' ': {
                         'location': {
                             'document resource identifier': "implement me",
                             'line': 42,
                             'column': 42,
                         },
-                        'dictionary': $.__d_map(
+                        ' ': $.__d_map(
                             ($, id) => ({
-                                'entry': {
+                                ' ': {
                                     'Bedrag': _p_cc(
                                         $['Bedrag'],
                                         ($) => $
@@ -2532,7 +2532,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                 'line': 42,
                                                 'column': 42,
                                             },
-                                            'id': $['id'],
+                                            ' ': $[' '],
                                         })
                                     ),
                                 },
@@ -2561,9 +2561,9 @@ export const Jaren: t_signatures.Jaren = ($) => ({
         'line': 42,
         'column': 42,
     },
-    'dictionary': $.__d_map(
+    ' ': $.__d_map(
         ($, id) => ({
-            'entry': {
+            ' ': {
                 'Afgesloten': _p_cc(
                     $['Afgesloten'],
                     ($) => ({
@@ -2572,9 +2572,9 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                             'line': 42,
                             'column': 42,
                         },
-                        'state': _p.decide.state(
+                        ' ': _p.decide.state(
                             $,
-                            ($): t_out.Jaren.dictionary.D.entry.Afgesloten.state => {
+                            ($): t_out.Jaren._.D._.Afgesloten._ => {
                                 switch ($[0]) {
                                     case 'Ja':
                                         return _p.ss(
@@ -2649,7 +2649,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     'line': 42,
                     'column': 42,
                 },
-                'id': $['id'],
+                ' ': $[' '],
             })
         )
     ),
@@ -2661,9 +2661,9 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                 'line': 42,
                 'column': 42,
             },
-            'state': _p.decide.state(
+            ' ': _p.decide.state(
                 $,
-                ($): t_out.Balans_Resultaat_Mutatie.type_.state => {
+                ($): t_out.Balans_Resultaat_Mutatie.type_._ => {
                     switch ($[0]) {
                         case 'Inkoop':
                             return _p.ss(
@@ -2674,7 +2674,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    'id': $['id'],
+                                    ' ': $[' '],
                                 }]
                             )
                         case 'Verkoop':
@@ -2686,7 +2686,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    'id': $['id'],
+                                    ' ': $[' '],
                                 }]
                             )
                         case 'BTW-periode':
@@ -2698,7 +2698,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    'id': $['id'],
+                                    ' ': $[' '],
                                 }]
                             )
                         default:
@@ -2718,9 +2718,9 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
         'line': 42,
         'column': 42,
     },
-    'state': _p.decide.state(
+    ' ': _p.decide.state(
         $,
-        ($): t_out.Eerste_boekjaar.state => {
+        ($): t_out.Eerste_boekjaar._ => {
             switch ($[0]) {
                 case 'Ja':
                     return _p.ss(
@@ -2739,7 +2739,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                                         'line': 42,
                                         'column': 42,
                                     },
-                                    'id': $['id'],
+                                    ' ': $[' '],
                                 })
                             ),
                         }]

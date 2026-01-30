@@ -120,28 +120,28 @@ export namespace Grootboek_Categorieen_ {
                     
                     export namespace Hoofdcategorie_fiscus {
                         
-                        export type entry = Fiscaal_.Balans_Hoofdcategorieen.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Fiscaal_.Balans_Hoofdcategorieen.D
                         
                     }
                     
                     export type Hoofdcategorie_fiscus = {
+                        readonly ' ': Hoofdcategorie_fiscus._
                         readonly 'entry': Hoofdcategorie_fiscus.entry
-                        readonly 'id': Hoofdcategorie_fiscus.id
                     }
                     
                     export namespace Subcategorie_fiscus {
                         
-                        export type entry = Fiscaal_.Balans_Hoofdcategorieen.D.Subcategorieen.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Fiscaal_.Balans_Hoofdcategorieen.D.Subcategorieen.D
                         
                     }
                     
                     export type Subcategorie_fiscus = {
+                        readonly ' ': Subcategorie_fiscus._
                         readonly 'entry': Subcategorie_fiscus.entry
-                        readonly 'id': Subcategorie_fiscus.id
                     }
                     
                 }
@@ -188,28 +188,28 @@ export namespace Grootboek_Categorieen_ {
                     
                     export namespace Hoofdcategorie_fiscus {
                         
-                        export type entry = Fiscaal_.Resultaat_Hoofdcategorieen.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Fiscaal_.Resultaat_Hoofdcategorieen.D
                         
                     }
                     
                     export type Hoofdcategorie_fiscus = {
+                        readonly ' ': Hoofdcategorie_fiscus._
                         readonly 'entry': Hoofdcategorie_fiscus.entry
-                        readonly 'id': Hoofdcategorie_fiscus.id
                     }
                     
                     export namespace Subcategorie_fiscus {
                         
-                        export type entry = Fiscaal_.Resultaat_Hoofdcategorieen.D.Subcategorieen.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Fiscaal_.Resultaat_Hoofdcategorieen.D.Subcategorieen.D
                         
                     }
                     
                     export type Subcategorie_fiscus = {
+                        readonly ' ': Subcategorie_fiscus._
                         readonly 'entry': Subcategorie_fiscus.entry
-                        readonly 'id': Subcategorie_fiscus.id
                     }
                     
                 }
@@ -283,28 +283,28 @@ export namespace Beheer_ {
                 
                 export namespace Hoofdcategorie {
                     
-                    export type entry = Grootboek_Categorieen_.Balans.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboek_Categorieen_.Balans.D
                     
                 }
                 
                 export type Hoofdcategorie = {
+                    readonly ' ': Hoofdcategorie._
                     readonly 'entry': Hoofdcategorie.entry
-                    readonly 'id': Hoofdcategorie.id
                 }
                 
                 export namespace Subcategorie {
                     
-                    export type entry = Grootboek_Categorieen_.Balans.D.Subcategorieen.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboek_Categorieen_.Balans.D.Subcategorieen.D
                     
                 }
                 
                 export type Subcategorie = {
+                    readonly ' ': Subcategorie._
                     readonly 'entry': Subcategorie.entry
-                    readonly 'id': Subcategorie.id
                 }
                 
                 export namespace Zijde {
@@ -337,28 +337,28 @@ export namespace Beheer_ {
                 
                 export namespace Hoofdcategorie {
                     
-                    export type entry = Grootboek_Categorieen_.Resultaat.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboek_Categorieen_.Resultaat.D
                     
                 }
                 
                 export type Hoofdcategorie = {
+                    readonly ' ': Hoofdcategorie._
                     readonly 'entry': Hoofdcategorie.entry
-                    readonly 'id': Hoofdcategorie.id
                 }
                 
                 export namespace Subcategorie {
                     
-                    export type entry = Grootboek_Categorieen_.Resultaat.D.Subcategorieen.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboek_Categorieen_.Resultaat.D.Subcategorieen.D
                     
                 }
                 
                 export type Subcategorie = {
+                    readonly ' ': Subcategorie._
                     readonly 'entry': Subcategorie.entry
-                    readonly 'id': Subcategorie.id
                 }
                 
                 export namespace Zijde {
@@ -371,15 +371,15 @@ export namespace Beheer_ {
                                 
                                 export namespace Correctietype {
                                     
-                                    export type entry = Grootboek_Categorieen_.Correctietypes_vennootschapsbelasting.D
+                                    export type _ = string
                                     
-                                    export type id = string
+                                    export type entry = Grootboek_Categorieen_.Correctietypes_vennootschapsbelasting.D
                                     
                                 }
                                 
                                 export type Correctietype = {
+                                    readonly ' ': Correctietype._
                                     readonly 'entry': Correctietype.entry
-                                    readonly 'id': Correctietype.id
                                 }
                                 
                             }
@@ -660,15 +660,15 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_BTW_afrondingen {
             
-            export type entry = Grootboekrekeningen_.Resultaat.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Grootboekrekeningen_.Resultaat.D
             
         }
         
         export type Grootboekrekening_voor_BTW_afrondingen = {
+            readonly ' ': Grootboekrekening_voor_BTW_afrondingen._
             readonly 'entry': Grootboekrekening_voor_BTW_afrondingen.entry
-            readonly 'id': Grootboekrekening_voor_BTW_afrondingen.id
         }
         
         export namespace Salarisrondes {
@@ -760,67 +760,67 @@ export namespace Jaarbeheer_ {
         
         export namespace Grootboekrekening_voor_nog_aan_te_geven_BTW {
             
-            export type entry = Grootboekrekeningen_.Balans.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Grootboekrekeningen_.Balans.D
             
         }
         
         export type Grootboekrekening_voor_nog_aan_te_geven_BTW = {
+            readonly ' ': Grootboekrekening_voor_nog_aan_te_geven_BTW._
             readonly 'entry': Grootboekrekening_voor_nog_aan_te_geven_BTW.entry
-            readonly 'id': Grootboekrekening_voor_nog_aan_te_geven_BTW.id
         }
         
         export namespace Grootboekrekening_voor_resultaat_dit_jaar {
             
-            export type entry = Grootboekrekeningen_.Balans.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Grootboekrekeningen_.Balans.D
             
         }
         
         export type Grootboekrekening_voor_resultaat_dit_jaar = {
+            readonly ' ': Grootboekrekening_voor_resultaat_dit_jaar._
             readonly 'entry': Grootboekrekening_voor_resultaat_dit_jaar.entry
-            readonly 'id': Grootboekrekening_voor_resultaat_dit_jaar.id
         }
         
         export namespace Grootboekrekening_voor_winstreserve {
             
-            export type entry = Grootboekrekeningen_.Balans.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Grootboekrekeningen_.Balans.D
             
         }
         
         export type Grootboekrekening_voor_winstreserve = {
+            readonly ' ': Grootboekrekening_voor_winstreserve._
             readonly 'entry': Grootboekrekening_voor_winstreserve.entry
-            readonly 'id': Grootboekrekening_voor_winstreserve.id
         }
         
         export namespace Grootboekrekening_voor_Inkoop_saldo {
             
-            export type entry = Grootboekrekeningen_.Balans.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Grootboekrekeningen_.Balans.D
             
         }
         
         export type Grootboekrekening_voor_Inkoop_saldo = {
+            readonly ' ': Grootboekrekening_voor_Inkoop_saldo._
             readonly 'entry': Grootboekrekening_voor_Inkoop_saldo.entry
-            readonly 'id': Grootboekrekening_voor_Inkoop_saldo.id
         }
         
         export namespace Grootboekrekening_voor_Verkoop_saldo {
             
-            export type entry = Grootboekrekeningen_.Balans.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Grootboekrekeningen_.Balans.D
             
         }
         
         export type Grootboekrekening_voor_Verkoop_saldo = {
+            readonly ' ': Grootboekrekening_voor_Verkoop_saldo._
             readonly 'entry': Grootboekrekening_voor_Verkoop_saldo.entry
-            readonly 'id': Grootboekrekening_voor_Verkoop_saldo.id
         }
         
         export type Beginsaldo_nog_aan_te_geven_BTW = number
@@ -835,15 +835,15 @@ export namespace Jaarbeheer_ {
                 
                 export namespace Grootboekrekening {
                     
-                    export type entry = Grootboekrekeningen_.Balans.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboekrekeningen_.Balans.D
                     
                 }
                 
                 export type Grootboekrekening = {
+                    readonly ' ': Grootboekrekening._
                     readonly 'entry': Grootboekrekening.entry
-                    readonly 'id': Grootboekrekening.id
                 }
                 
                 export namespace Nieuw {
@@ -886,15 +886,15 @@ export namespace Jaarbeheer_ {
                 
                 export namespace Grootboekrekening {
                     
-                    export type entry = Grootboekrekeningen_.Balans.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboekrekeningen_.Balans.D
                     
                 }
                 
                 export type Grootboekrekening = {
+                    readonly ' ': Grootboekrekening._
                     readonly 'entry': Grootboekrekening.entry
-                    readonly 'id': Grootboekrekening.id
                 }
                 
                 export namespace Nieuw {
@@ -997,15 +997,15 @@ export namespace Overige_balans_item_ {
     
     export namespace Grootboekrekening {
         
-        export type entry = Grootboekrekeningen_.Balans.D
+        export type _ = string
         
-        export type id = string
+        export type entry = Grootboekrekeningen_.Balans.D
         
     }
     
     export type Grootboekrekening = {
+        readonly ' ': Grootboekrekening._
         readonly 'entry': Grootboekrekening.entry
-        readonly 'id': Grootboekrekening.id
     }
     
     export namespace Nieuw {
@@ -1016,15 +1016,15 @@ export namespace Overige_balans_item_ {
             
             export namespace Balans_item {
                 
-                export type entry = Jaarbeheer_.Balans.Overige_balans_items.D
+                export type _ = string
                 
-                export type id = string
+                export type entry = Jaarbeheer_.Balans.Overige_balans_items.D
                 
             }
             
             export type Balans_item = {
+                readonly ' ': Balans_item._
                 readonly 'entry': Balans_item.entry
-                readonly 'id': Balans_item.id
             }
             
         }
@@ -1049,28 +1049,28 @@ export type Overige_balans_item_ = {
 
 export namespace Verwijzing_naar_Informele_rekening_ {
     
-    export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+    export type _ = string
     
-    export type id = string
+    export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
     
 }
 
 export type Verwijzing_naar_Informele_rekening_ = {
+    readonly ' ': Verwijzing_naar_Informele_rekening_._
     readonly 'entry': Verwijzing_naar_Informele_rekening_.entry
-    readonly 'id': Verwijzing_naar_Informele_rekening_.id
 }
 
 export namespace Verwijzing_naar_Bankrekening_ {
     
-    export type entry = Jaarbeheer_.Balans.Bankrekeningen.D
+    export type _ = string
     
-    export type id = string
+    export type entry = Jaarbeheer_.Balans.Bankrekeningen.D
     
 }
 
 export type Verwijzing_naar_Bankrekening_ = {
+    readonly ' ': Verwijzing_naar_Bankrekening_._
     readonly 'entry': Verwijzing_naar_Bankrekening_.entry
-    readonly 'id': Verwijzing_naar_Bankrekening_.id
 }
 
 export namespace Handelstransacties_ {
@@ -1087,15 +1087,15 @@ export namespace Handelstransacties_ {
                     
                     export namespace Rekening_courant {
                         
-                        export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
                         
                     }
                     
                     export type Rekening_courant = {
+                        readonly ' ': Rekening_courant._
                         readonly 'entry': Rekening_courant.entry
-                        readonly 'id': Rekening_courant.id
                     }
                     
                 }
@@ -1124,15 +1124,15 @@ export namespace Handelstransacties_ {
                     
                     export namespace BTW$mi_periode {
                         
-                        export type entry = Jaarbeheer_.Resultaat.BTW_periodes.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Jaarbeheer_.Resultaat.BTW_periodes.D
                         
                     }
                     
                     export type BTW$mi_periode = {
+                        readonly ' ': BTW$mi_periode._
                         readonly 'entry': BTW$mi_periode.entry
-                        readonly 'id': BTW$mi_periode.id
                     }
                     
                 }
@@ -1207,15 +1207,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace Balans_item {
                                 
-                                export type entry = Jaarbeheer_.Balans.Overige_balans_items.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Jaarbeheer_.Balans.Overige_balans_items.D
                                 
                             }
                             
                             export type Balans_item = {
+                                readonly ' ': Balans_item._
                                 readonly 'entry': Balans_item.entry
-                                readonly 'id': Balans_item.id
                             }
                             
                         }
@@ -1228,15 +1228,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace Grootboekrekening {
                                 
-                                export type entry = Grootboekrekeningen_.Resultaat.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Grootboekrekeningen_.Resultaat.D
                                 
                             }
                             
                             export type Grootboekrekening = {
+                                readonly ' ': Grootboekrekening._
                                 readonly 'entry': Grootboekrekening.entry
-                                readonly 'id': Grootboekrekening.id
                             }
                             
                         }
@@ -1271,15 +1271,15 @@ export namespace Handelstransacties_ {
                     
                     export namespace Crediteur {
                         
-                        export type entry = Beheer_.Leveranciers.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Beheer_.Leveranciers.D
                         
                     }
                     
                     export type Crediteur = {
+                        readonly ' ': Crediteur._
                         readonly 'entry': Crediteur.entry
-                        readonly 'id': Crediteur.id
                     }
                     
                     export type Factuurnummer = string
@@ -1295,15 +1295,15 @@ export namespace Handelstransacties_ {
                     
                     export namespace Ronde {
                         
-                        export type entry = Jaarbeheer_.Resultaat.Salarisrondes.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Jaarbeheer_.Resultaat.Salarisrondes.D
                         
                     }
                     
                     export type Ronde = {
+                        readonly ' ': Ronde._
                         readonly 'entry': Ronde.entry
-                        readonly 'id': Ronde.id
                     }
                     
                 }
@@ -1316,28 +1316,28 @@ export namespace Handelstransacties_ {
                     
                     export namespace Ronde {
                         
-                        export type entry = Jaarbeheer_.Resultaat.Salarisrondes.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Jaarbeheer_.Resultaat.Salarisrondes.D
                         
                     }
                     
                     export type Ronde = {
+                        readonly ' ': Ronde._
                         readonly 'entry': Ronde.entry
-                        readonly 'id': Ronde.id
                     }
                     
                     export namespace Medewerker {
                         
-                        export type entry = Beheer_.Medewerkers.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Beheer_.Medewerkers.D
                         
                     }
                     
                     export type Medewerker = {
+                        readonly ' ': Medewerker._
                         readonly 'entry': Medewerker.entry
-                        readonly 'id': Medewerker.id
                     }
                     
                 }
@@ -1382,15 +1382,15 @@ export namespace Handelstransacties_ {
                     
                     export namespace Rekening_courant {
                         
-                        export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
                         
                     }
                     
                     export type Rekening_courant = {
+                        readonly ' ': Rekening_courant._
                         readonly 'entry': Rekening_courant.entry
-                        readonly 'id': Rekening_courant.id
                     }
                     
                 }
@@ -1409,15 +1409,15 @@ export namespace Handelstransacties_ {
             
             export namespace BTW$mi_periode {
                 
-                export type entry = Jaarbeheer_.Resultaat.BTW_periodes.D
+                export type _ = string
                 
-                export type id = string
+                export type entry = Jaarbeheer_.Resultaat.BTW_periodes.D
                 
             }
             
             export type BTW$mi_periode = {
+                readonly ' ': BTW$mi_periode._
                 readonly 'entry': BTW$mi_periode.entry
-                readonly 'id': BTW$mi_periode.id
             }
             
             export namespace Brondocument {
@@ -1439,15 +1439,15 @@ export namespace Handelstransacties_ {
             
             export namespace Debiteur {
                 
-                export type entry = Beheer_.Klanten.D
+                export type _ = string
                 
-                export type id = string
+                export type entry = Beheer_.Klanten.D
                 
             }
             
             export type Debiteur = {
+                readonly ' ': Debiteur._
                 readonly 'entry': Debiteur.entry
-                readonly 'id': Debiteur.id
             }
             
             export namespace Contracttype {
@@ -1456,28 +1456,28 @@ export namespace Handelstransacties_ {
                     
                     export namespace Project {
                         
-                        export type entry = Beheer_.Klanten.D.Projecten.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Beheer_.Klanten.D.Projecten.D
                         
                     }
                     
                     export type Project = {
+                        readonly ' ': Project._
                         readonly 'entry': Project.entry
-                        readonly 'id': Project.id
                     }
                     
                     export namespace Offerte {
                         
-                        export type entry = Beheer_.Klanten.D.Projecten.D.Offertes.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Beheer_.Klanten.D.Projecten.D.Offertes.D
                         
                     }
                     
                     export type Offerte = {
+                        readonly ' ': Offerte._
                         readonly 'entry': Offerte.entry
-                        readonly 'id': Offerte.id
                     }
                     
                 }
@@ -1491,15 +1491,15 @@ export namespace Handelstransacties_ {
                     
                     export namespace Overeenkomst {
                         
-                        export type entry = Beheer_.Klanten.D.Licentieovereenkomsten.D
+                        export type _ = string
                         
-                        export type id = string
+                        export type entry = Beheer_.Klanten.D.Licentieovereenkomsten.D
                         
                     }
                     
                     export type Overeenkomst = {
+                        readonly ' ': Overeenkomst._
                         readonly 'entry': Overeenkomst.entry
-                        readonly 'id': Overeenkomst.id
                     }
                     
                 }
@@ -1528,15 +1528,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace BTW$mi_categorie {
                                 
-                                export type entry = Beheer_.BTW$mi_categorieen.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Beheer_.BTW$mi_categorieen.D
                                 
                             }
                             
                             export type BTW$mi_categorie = {
+                                readonly ' ': BTW$mi_categorie._
                                 readonly 'entry': BTW$mi_categorie.entry
-                                readonly 'id': BTW$mi_categorie.id
                             }
                             
                         }
@@ -1562,15 +1562,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace Opbrengst {
                                 
-                                export type entry = Beheer_.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Beheer_.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D
                                 
                             }
                             
                             export type Opbrengst = {
+                                readonly ' ': Opbrengst._
                                 readonly 'entry': Opbrengst.entry
-                                readonly 'id': Opbrengst.id
                             }
                             
                         }
@@ -1585,15 +1585,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace Periode {
                                 
-                                export type entry = Beheer_.Klanten.D.Licentieovereenkomsten.D.Periodes.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Beheer_.Klanten.D.Licentieovereenkomsten.D.Periodes.D
                                 
                             }
                             
                             export type Periode = {
+                                readonly ' ': Periode._
                                 readonly 'entry': Periode.entry
-                                readonly 'id': Periode.id
                             }
                             
                         }
@@ -1617,15 +1617,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace Grootboekrekening {
                                 
-                                export type entry = Grootboekrekeningen_.Resultaat.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Grootboekrekeningen_.Resultaat.D
                                 
                             }
                             
                             export type Grootboekrekening = {
+                                readonly ' ': Grootboekrekening._
                                 readonly 'entry': Grootboekrekening.entry
-                                readonly 'id': Grootboekrekening.id
                             }
                             
                         }
@@ -1638,15 +1638,15 @@ export namespace Handelstransacties_ {
                             
                             export namespace Balans_item {
                                 
-                                export type entry = Jaarbeheer_.Balans.Overige_balans_items.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Jaarbeheer_.Balans.Overige_balans_items.D
                                 
                             }
                             
                             export type Balans_item = {
+                                readonly ' ': Balans_item._
                                 readonly 'entry': Balans_item.entry
-                                readonly 'id': Balans_item.id
                             }
                             
                         }
@@ -1719,15 +1719,15 @@ export namespace Mutaties_ {
                             
                             export namespace Informele_rekening {
                                 
-                                export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                                export type _ = string
                                 
-                                export type id = string
+                                export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
                                 
                             }
                             
                             export type Informele_rekening = {
+                                readonly ' ': Informele_rekening._
                                 readonly 'entry': Informele_rekening.entry
-                                readonly 'id': Informele_rekening.id
                             }
                             
                         }
@@ -1776,15 +1776,15 @@ export namespace Mutaties_ {
                         
                         export namespace Informele_rekening {
                             
-                            export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                            export type _ = string
                             
-                            export type id = string
+                            export type entry = Jaarbeheer_.Balans.Informele_rekeningen.D
                             
                         }
                         
                         export type Informele_rekening = {
+                            readonly ' ': Informele_rekening._
                             readonly 'entry': Informele_rekening.entry
-                            readonly 'id': Informele_rekening.id
                         }
                         
                     }
@@ -1797,15 +1797,15 @@ export namespace Mutaties_ {
                         
                         export namespace Verrekenpost {
                             
-                            export type entry = Jaarbeheer_.Balans.Verrekenposten.D
+                            export type _ = string
                             
-                            export type id = string
+                            export type entry = Jaarbeheer_.Balans.Verrekenposten.D
                             
                         }
                         
                         export type Verrekenpost = {
+                            readonly ' ': Verrekenpost._
                             readonly 'entry': Verrekenpost.entry
-                            readonly 'id': Verrekenpost.id
                         }
                         
                     }
@@ -1848,15 +1848,15 @@ export namespace Mutaties_ {
                 
                 export namespace Grootboekrekening {
                     
-                    export type entry = Grootboekrekeningen_.Resultaat.D
+                    export type _ = string
                     
-                    export type id = string
+                    export type entry = Grootboekrekeningen_.Resultaat.D
                     
                 }
                 
                 export type Grootboekrekening = {
+                    readonly ' ': Grootboekrekening._
                     readonly 'entry': Grootboekrekening.entry
-                    readonly 'id': Grootboekrekening.id
                 }
                 
             }
@@ -1934,15 +1934,15 @@ export namespace Balans_Resultaat_Mutatie_ {
         
         export namespace O {
             
-            export type entry = Jaren_.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Jaren_.D
             
         }
         
         export type O = {
+            readonly ' ': O._
             readonly 'entry': O.entry
-            readonly 'id': O.id
         }
         
     }
@@ -1953,41 +1953,41 @@ export namespace Balans_Resultaat_Mutatie_ {
         
         export namespace Inkoop {
             
-            export type entry = Handelstransacties_.Inkopen.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Handelstransacties_.Inkopen.D
             
         }
         
         export type Inkoop = {
+            readonly ' ': Inkoop._
             readonly 'entry': Inkoop.entry
-            readonly 'id': Inkoop.id
         }
         
         export namespace Verkoop {
             
-            export type entry = Handelstransacties_.Verkopen.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Handelstransacties_.Verkopen.D
             
         }
         
         export type Verkoop = {
+            readonly ' ': Verkoop._
             readonly 'entry': Verkoop.entry
-            readonly 'id': Verkoop.id
         }
         
         export namespace BTW$mi_periode {
             
-            export type entry = Jaarbeheer_.Resultaat.BTW_periodes.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Jaarbeheer_.Resultaat.BTW_periodes.D
             
         }
         
         export type BTW$mi_periode = {
+            readonly ' ': BTW$mi_periode._
             readonly 'entry': BTW$mi_periode.entry
-            readonly 'id': BTW$mi_periode.id
         }
         
     }
@@ -2012,15 +2012,15 @@ export namespace Eerste_boekjaar_ {
         
         export namespace Vorig_boekjaar {
             
-            export type entry = Jaren_.D
+            export type _ = string
             
-            export type id = string
+            export type entry = Jaren_.D
             
         }
         
         export type Vorig_boekjaar = {
+            readonly ' ': Vorig_boekjaar._
             readonly 'entry': Vorig_boekjaar.entry
-            readonly 'id': Vorig_boekjaar.id
         }
         
     }

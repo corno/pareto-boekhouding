@@ -9,19 +9,19 @@ export namespace Fiscaal_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Zijde {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Activa = null
                             
@@ -29,89 +29,89 @@ export namespace Fiscaal_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Activa', state.Activa]
-                            | readonly ['Passiva', state.Passiva]
+                        export type _ = 
+                            | readonly ['Activa', _.Activa]
+                            | readonly ['Passiva', _.Passiva]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state': Zijde.state
+                        readonly ' ': Zijde._
                     }
                     
                     export namespace Subcategorieen {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export type entry = null
+                                export type _ = null
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Subcategorieen = {
                         readonly 'location': Subcategorieen.location
-                        readonly 'dictionary': Subcategorieen.dictionary
+                        readonly ' ': Subcategorieen._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Zijde': entry.Zijde
-                    readonly 'Subcategorieen': entry.Subcategorieen
+                export type _ = {
+                    readonly 'Zijde': _.Zijde
+                    readonly 'Subcategorieen': _.Subcategorieen
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Balans_Hoofdcategorieen = {
         readonly 'location': Balans_Hoofdcategorieen.location
-        readonly 'dictionary': Balans_Hoofdcategorieen.dictionary
+        readonly ' ': Balans_Hoofdcategorieen._
     }
     
     export namespace Resultaat_Hoofdcategorieen {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Zijde {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Kosten = null
                             
@@ -119,70 +119,70 @@ export namespace Fiscaal_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Kosten', state.Kosten]
-                            | readonly ['Opbrengsten', state.Opbrengsten]
+                        export type _ = 
+                            | readonly ['Kosten', _.Kosten]
+                            | readonly ['Opbrengsten', _.Opbrengsten]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state': Zijde.state
+                        readonly ' ': Zijde._
                     }
                     
                     export namespace Subcategorieen {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export type entry = null
+                                export type _ = null
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Subcategorieen = {
                         readonly 'location': Subcategorieen.location
-                        readonly 'dictionary': Subcategorieen.dictionary
+                        readonly ' ': Subcategorieen._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Zijde': entry.Zijde
-                    readonly 'Subcategorieen': entry.Subcategorieen
+                export type _ = {
+                    readonly 'Zijde': _.Zijde
+                    readonly 'Subcategorieen': _.Subcategorieen
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Resultaat_Hoofdcategorieen = {
         readonly 'location': Resultaat_Hoofdcategorieen.location
-        readonly 'dictionary': Resultaat_Hoofdcategorieen.dictionary
+        readonly ' ': Resultaat_Hoofdcategorieen._
     }
     
 }
@@ -198,57 +198,57 @@ export namespace Grootboek_Categorieen_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export type Te_corrigeren_promillage = number
                     
                 }
                 
-                export type entry = {
-                    readonly 'Te corrigeren promillage': entry.Te_corrigeren_promillage
+                export type _ = {
+                    readonly 'Te corrigeren promillage': _.Te_corrigeren_promillage
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Correctietypes_vennootschapsbelasting = {
         readonly 'location': Correctietypes_vennootschapsbelasting.location
-        readonly 'dictionary': Correctietypes_vennootschapsbelasting.dictionary
+        readonly ' ': Correctietypes_vennootschapsbelasting._
     }
     
     export namespace Balans {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Zijde {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Activa = null
                             
@@ -256,122 +256,122 @@ export namespace Grootboek_Categorieen_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Activa', state.Activa]
-                            | readonly ['Passiva', state.Passiva]
+                        export type _ = 
+                            | readonly ['Activa', _.Activa]
+                            | readonly ['Passiva', _.Passiva]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state': Zijde.state
+                        readonly ' ': Zijde._
                     }
                     
                     export namespace Subcategorieen {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace entry {
+                                export namespace _ {
                                     
                                     export namespace Hoofdcategorie_fiscus {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export type id = string
+                                        export type _ = string
                                         
                                     }
                                     
                                     export type Hoofdcategorie_fiscus = {
                                         readonly 'location': Hoofdcategorie_fiscus.location
-                                        readonly 'id': Hoofdcategorie_fiscus.id
+                                        readonly ' ': Hoofdcategorie_fiscus._
                                     }
                                     
                                     export namespace Subcategorie_fiscus {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export type id = string
+                                        export type _ = string
                                         
                                     }
                                     
                                     export type Subcategorie_fiscus = {
                                         readonly 'location': Subcategorie_fiscus.location
-                                        readonly 'id': Subcategorie_fiscus.id
+                                        readonly ' ': Subcategorie_fiscus._
                                     }
                                     
                                 }
                                 
-                                export type entry = {
-                                    readonly 'Hoofdcategorie fiscus': entry.Hoofdcategorie_fiscus
-                                    readonly 'Subcategorie fiscus': entry.Subcategorie_fiscus
+                                export type _ = {
+                                    readonly 'Hoofdcategorie fiscus': _.Hoofdcategorie_fiscus
+                                    readonly 'Subcategorie fiscus': _.Subcategorie_fiscus
                                 }
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Subcategorieen = {
                         readonly 'location': Subcategorieen.location
-                        readonly 'dictionary': Subcategorieen.dictionary
+                        readonly ' ': Subcategorieen._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Zijde': entry.Zijde
-                    readonly 'Subcategorieen': entry.Subcategorieen
+                export type _ = {
+                    readonly 'Zijde': _.Zijde
+                    readonly 'Subcategorieen': _.Subcategorieen
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Balans = {
         readonly 'location': Balans.location
-        readonly 'dictionary': Balans.dictionary
+        readonly ' ': Balans._
     }
     
     export namespace Resultaat {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Zijde {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Kosten = null
                             
@@ -379,103 +379,103 @@ export namespace Grootboek_Categorieen_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Kosten', state.Kosten]
-                            | readonly ['Opbrengsten', state.Opbrengsten]
+                        export type _ = 
+                            | readonly ['Kosten', _.Kosten]
+                            | readonly ['Opbrengsten', _.Opbrengsten]
                         
                     }
                     
                     export type Zijde = {
                         readonly 'location': Zijde.location
-                        readonly 'state': Zijde.state
+                        readonly ' ': Zijde._
                     }
                     
                     export namespace Subcategorieen {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace entry {
+                                export namespace _ {
                                     
                                     export namespace Hoofdcategorie_fiscus {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export type id = string
+                                        export type _ = string
                                         
                                     }
                                     
                                     export type Hoofdcategorie_fiscus = {
                                         readonly 'location': Hoofdcategorie_fiscus.location
-                                        readonly 'id': Hoofdcategorie_fiscus.id
+                                        readonly ' ': Hoofdcategorie_fiscus._
                                     }
                                     
                                     export namespace Subcategorie_fiscus {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export type id = string
+                                        export type _ = string
                                         
                                     }
                                     
                                     export type Subcategorie_fiscus = {
                                         readonly 'location': Subcategorie_fiscus.location
-                                        readonly 'id': Subcategorie_fiscus.id
+                                        readonly ' ': Subcategorie_fiscus._
                                     }
                                     
                                 }
                                 
-                                export type entry = {
-                                    readonly 'Hoofdcategorie fiscus': entry.Hoofdcategorie_fiscus
-                                    readonly 'Subcategorie fiscus': entry.Subcategorie_fiscus
+                                export type _ = {
+                                    readonly 'Hoofdcategorie fiscus': _.Hoofdcategorie_fiscus
+                                    readonly 'Subcategorie fiscus': _.Subcategorie_fiscus
                                 }
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Subcategorieen = {
                         readonly 'location': Subcategorieen.location
-                        readonly 'dictionary': Subcategorieen.dictionary
+                        readonly ' ': Subcategorieen._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Zijde': entry.Zijde
-                    readonly 'Subcategorieen': entry.Subcategorieen
+                export type _ = {
+                    readonly 'Zijde': _.Zijde
+                    readonly 'Subcategorieen': _.Subcategorieen
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Resultaat = {
         readonly 'location': Resultaat.location
-        readonly 'dictionary': Resultaat.dictionary
+        readonly ' ': Resultaat._
     }
     
 }
@@ -492,19 +492,19 @@ export namespace Beheer_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace BTW$mi_heffing {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export namespace Ja {
                                 
@@ -518,38 +518,38 @@ export namespace Beheer_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Ja', state.Ja]
+                        export type _ = 
+                            | readonly ['Ja', _.Ja]
                         
                     }
                     
                     export type BTW$mi_heffing = {
                         readonly 'location': BTW$mi_heffing.location
-                        readonly 'state': BTW$mi_heffing.state
+                        readonly ' ': BTW$mi_heffing._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'BTW-heffing': entry.BTW$mi_heffing
+                export type _ = {
+                    readonly 'BTW-heffing': _.BTW$mi_heffing
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type BTW$mi_categorieen = {
         readonly 'location': BTW$mi_categorieen.location
-        readonly 'dictionary': BTW$mi_categorieen.dictionary
+        readonly ' ': BTW$mi_categorieen._
     }
     
     export namespace Grootboekrekeningen {
@@ -558,45 +558,45 @@ export namespace Beheer_ {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace entry {
+                    export namespace _ {
                         
                         export namespace Hoofdcategorie {
                             
                             export type location = i__location.Relative_Location
                             
-                            export type id = string
+                            export type _ = string
                             
                         }
                         
                         export type Hoofdcategorie = {
                             readonly 'location': Hoofdcategorie.location
-                            readonly 'id': Hoofdcategorie.id
+                            readonly ' ': Hoofdcategorie._
                         }
                         
                         export namespace Subcategorie {
                             
                             export type location = i__location.Relative_Location
                             
-                            export type id = string
+                            export type _ = string
                             
                         }
                         
                         export type Subcategorie = {
                             readonly 'location': Subcategorie.location
-                            readonly 'id': Subcategorie.id
+                            readonly ' ': Subcategorie._
                         }
                         
                         export namespace Zijde {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace state {
+                            export namespace _ {
                                 
                                 export type Activa = null
                                 
@@ -604,86 +604,86 @@ export namespace Beheer_ {
                                 
                             }
                             
-                            export type state = 
-                                | readonly ['Activa', state.Activa]
-                                | readonly ['Passiva', state.Passiva]
+                            export type _ = 
+                                | readonly ['Activa', _.Activa]
+                                | readonly ['Passiva', _.Passiva]
                             
                         }
                         
                         export type Zijde = {
                             readonly 'location': Zijde.location
-                            readonly 'state': Zijde.state
+                            readonly ' ': Zijde._
                         }
                         
                     }
                     
-                    export type entry = {
-                        readonly 'Hoofdcategorie': entry.Hoofdcategorie
-                        readonly 'Subcategorie': entry.Subcategorie
-                        readonly 'Zijde': entry.Zijde
+                    export type _ = {
+                        readonly 'Hoofdcategorie': _.Hoofdcategorie
+                        readonly 'Subcategorie': _.Subcategorie
+                        readonly 'Zijde': _.Zijde
                     }
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Balans = {
             readonly 'location': Balans.location
-            readonly 'dictionary': Balans.dictionary
+            readonly ' ': Balans._
         }
         
         export namespace Resultaat {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace entry {
+                    export namespace _ {
                         
                         export namespace Hoofdcategorie {
                             
                             export type location = i__location.Relative_Location
                             
-                            export type id = string
+                            export type _ = string
                             
                         }
                         
                         export type Hoofdcategorie = {
                             readonly 'location': Hoofdcategorie.location
-                            readonly 'id': Hoofdcategorie.id
+                            readonly ' ': Hoofdcategorie._
                         }
                         
                         export namespace Subcategorie {
                             
                             export type location = i__location.Relative_Location
                             
-                            export type id = string
+                            export type _ = string
                             
                         }
                         
                         export type Subcategorie = {
                             readonly 'location': Subcategorie.location
-                            readonly 'id': Subcategorie.id
+                            readonly ' ': Subcategorie._
                         }
                         
                         export namespace Zijde {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace state {
+                            export namespace _ {
                                 
                                 export namespace Kosten {
                                     
@@ -691,7 +691,7 @@ export namespace Beheer_ {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export namespace Ja {
                                                 
@@ -699,13 +699,13 @@ export namespace Beheer_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Correctietype = {
                                                     readonly 'location': Correctietype.location
-                                                    readonly 'id': Correctietype.id
+                                                    readonly ' ': Correctietype._
                                                 }
                                                 
                                             }
@@ -718,15 +718,15 @@ export namespace Beheer_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Ja', state.Ja]
-                                            | readonly ['Nee', state.Nee]
+                                        export type _ = 
+                                            | readonly ['Ja', _.Ja]
+                                            | readonly ['Nee', _.Nee]
                                         
                                     }
                                     
                                     export type Correctie_op_vennootschapsbelasting = {
                                         readonly 'location': Correctie_op_vennootschapsbelasting.location
-                                        readonly 'state': Correctie_op_vennootschapsbelasting.state
+                                        readonly ' ': Correctie_op_vennootschapsbelasting._
                                     }
                                     
                                 }
@@ -739,41 +739,41 @@ export namespace Beheer_ {
                                 
                             }
                             
-                            export type state = 
-                                | readonly ['Kosten', state.Kosten]
-                                | readonly ['Opbrengsten', state.Opbrengsten]
+                            export type _ = 
+                                | readonly ['Kosten', _.Kosten]
+                                | readonly ['Opbrengsten', _.Opbrengsten]
                             
                         }
                         
                         export type Zijde = {
                             readonly 'location': Zijde.location
-                            readonly 'state': Zijde.state
+                            readonly ' ': Zijde._
                         }
                         
                     }
                     
-                    export type entry = {
-                        readonly 'Hoofdcategorie': entry.Hoofdcategorie
-                        readonly 'Subcategorie': entry.Subcategorie
-                        readonly 'Zijde': entry.Zijde
+                    export type _ = {
+                        readonly 'Hoofdcategorie': _.Hoofdcategorie
+                        readonly 'Subcategorie': _.Subcategorie
+                        readonly 'Zijde': _.Zijde
                     }
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Resultaat = {
             readonly 'location': Resultaat.location
-            readonly 'dictionary': Resultaat.dictionary
+            readonly ' ': Resultaat._
         }
         
     }
@@ -789,60 +789,60 @@ export namespace Beheer_ {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export type entry = null
+                    export type _ = null
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Bank = {
             readonly 'location': Bank.location
-            readonly 'dictionary': Bank.dictionary
+            readonly ' ': Bank._
         }
         
         export namespace Informeel {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export type entry = null
+                    export type _ = null
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Informeel = {
             readonly 'location': Informeel.location
-            readonly 'dictionary': Informeel.dictionary
+            readonly ' ': Informeel._
         }
         
     }
@@ -856,13 +856,13 @@ export namespace Beheer_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export type Volledige_naam = string
                     
@@ -870,156 +870,156 @@ export namespace Beheer_ {
                     
                 }
                 
-                export type entry = {
-                    readonly 'Volledige naam': entry.Volledige_naam
-                    readonly 'Wachtwoord': entry.Wachtwoord
+                export type _ = {
+                    readonly 'Volledige naam': _.Volledige_naam
+                    readonly 'Wachtwoord': _.Wachtwoord
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Gebruikers = {
         readonly 'location': Gebruikers.location
-        readonly 'dictionary': Gebruikers.dictionary
+        readonly ' ': Gebruikers._
     }
     
     export namespace Klanten {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Licentieovereenkomsten {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace entry {
+                                export namespace _ {
                                     
                                     export namespace Periodes {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace dictionary {
+                                        export namespace _ {
                                             
                                             export namespace D {
                                                 
                                                 export type location = i__location.Relative_Location
                                                 
-                                                export namespace entry {
+                                                export namespace _ {
                                                     
                                                     export type Bedrag = number
                                                     
                                                 }
                                                 
-                                                export type entry = {
-                                                    readonly 'Bedrag': entry.Bedrag
+                                                export type _ = {
+                                                    readonly 'Bedrag': _.Bedrag
                                                 }
                                                 
                                             }
                                             
                                             export type D = {
                                                 readonly 'location': D.location
-                                                readonly 'entry': D.entry
+                                                readonly ' ': D._
                                             }
                                             
                                         }
                                         
-                                        export type dictionary = _pi.Dictionary<dictionary.D>
+                                        export type _ = _pi.Dictionary<_.D>
                                         
                                     }
                                     
                                     export type Periodes = {
                                         readonly 'location': Periodes.location
-                                        readonly 'dictionary': Periodes.dictionary
+                                        readonly ' ': Periodes._
                                     }
                                     
                                 }
                                 
-                                export type entry = {
-                                    readonly 'Periodes': entry.Periodes
+                                export type _ = {
+                                    readonly 'Periodes': _.Periodes
                                 }
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Licentieovereenkomsten = {
                         readonly 'location': Licentieovereenkomsten.location
-                        readonly 'dictionary': Licentieovereenkomsten.dictionary
+                        readonly ' ': Licentieovereenkomsten._
                     }
                     
                     export namespace Projecten {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace entry {
+                                export namespace _ {
                                     
                                     export namespace Offertes {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace dictionary {
+                                        export namespace _ {
                                             
                                             export namespace D {
                                                 
                                                 export type location = i__location.Relative_Location
                                                 
-                                                export namespace entry {
+                                                export namespace _ {
                                                     
                                                     export namespace Opbrengsten {
                                                         
                                                         export type location = i__location.Relative_Location
                                                         
-                                                        export namespace dictionary {
+                                                        export namespace _ {
                                                             
                                                             export namespace D {
                                                                 
                                                                 export type location = i__location.Relative_Location
                                                                 
-                                                                export namespace entry {
+                                                                export namespace _ {
                                                                     
                                                                     export namespace Type {
                                                                         
                                                                         export type location = i__location.Relative_Location
                                                                         
-                                                                        export namespace state {
+                                                                        export namespace _ {
                                                                             
                                                                             export namespace Project {
                                                                                 
@@ -1036,171 +1036,171 @@ export namespace Beheer_ {
                                                                             
                                                                         }
                                                                         
-                                                                        export type state = 
-                                                                            | readonly ['Project', state.Project]
+                                                                        export type _ = 
+                                                                            | readonly ['Project', _.Project]
                                                                         
                                                                     }
                                                                     
                                                                     export type Type = {
                                                                         readonly 'location': Type.location
-                                                                        readonly 'state': Type.state
+                                                                        readonly ' ': Type._
                                                                     }
                                                                     
                                                                 }
                                                                 
-                                                                export type entry = {
-                                                                    readonly 'Type': entry.Type
+                                                                export type _ = {
+                                                                    readonly 'Type': _.Type
                                                                 }
                                                                 
                                                             }
                                                             
                                                             export type D = {
                                                                 readonly 'location': D.location
-                                                                readonly 'entry': D.entry
+                                                                readonly ' ': D._
                                                             }
                                                             
                                                         }
                                                         
-                                                        export type dictionary = _pi.Dictionary<dictionary.D>
+                                                        export type _ = _pi.Dictionary<_.D>
                                                         
                                                     }
                                                     
                                                     export type Opbrengsten = {
                                                         readonly 'location': Opbrengsten.location
-                                                        readonly 'dictionary': Opbrengsten.dictionary
+                                                        readonly ' ': Opbrengsten._
                                                     }
                                                     
                                                 }
                                                 
-                                                export type entry = {
-                                                    readonly 'Opbrengsten': entry.Opbrengsten
+                                                export type _ = {
+                                                    readonly 'Opbrengsten': _.Opbrengsten
                                                 }
                                                 
                                             }
                                             
                                             export type D = {
                                                 readonly 'location': D.location
-                                                readonly 'entry': D.entry
+                                                readonly ' ': D._
                                             }
                                             
                                         }
                                         
-                                        export type dictionary = _pi.Dictionary<dictionary.D>
+                                        export type _ = _pi.Dictionary<_.D>
                                         
                                     }
                                     
                                     export type Offertes = {
                                         readonly 'location': Offertes.location
-                                        readonly 'dictionary': Offertes.dictionary
+                                        readonly ' ': Offertes._
                                     }
                                     
                                 }
                                 
-                                export type entry = {
-                                    readonly 'Offertes': entry.Offertes
+                                export type _ = {
+                                    readonly 'Offertes': _.Offertes
                                 }
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Projecten = {
                         readonly 'location': Projecten.location
-                        readonly 'dictionary': Projecten.dictionary
+                        readonly ' ': Projecten._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Licentieovereenkomsten': entry.Licentieovereenkomsten
-                    readonly 'Projecten': entry.Projecten
+                export type _ = {
+                    readonly 'Licentieovereenkomsten': _.Licentieovereenkomsten
+                    readonly 'Projecten': _.Projecten
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Klanten = {
         readonly 'location': Klanten.location
-        readonly 'dictionary': Klanten.dictionary
+        readonly ' ': Klanten._
     }
     
     export namespace Leveranciers {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export type entry = null
+                export type _ = null
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Leveranciers = {
         readonly 'location': Leveranciers.location
-        readonly 'dictionary': Leveranciers.dictionary
+        readonly ' ': Leveranciers._
     }
     
     export namespace Medewerkers {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export type entry = null
+                export type _ = null
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Medewerkers = {
         readonly 'location': Medewerkers.location
-        readonly 'dictionary': Medewerkers.dictionary
+        readonly ' ': Medewerkers._
     }
     
 }
@@ -1221,19 +1221,19 @@ export namespace Grootboekrekeningen_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Type {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Bankrekening = null
                             
@@ -1243,70 +1243,70 @@ export namespace Grootboekrekeningen_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Bankrekening', state.Bankrekening]
-                            | readonly ['Overig', state.Overig]
-                            | readonly ['Informele rekening', state.Informele_rekening]
+                        export type _ = 
+                            | readonly ['Bankrekening', _.Bankrekening]
+                            | readonly ['Overig', _.Overig]
+                            | readonly ['Informele rekening', _.Informele_rekening]
                         
                     }
                     
                     export type Type = {
                         readonly 'location': Type.location
-                        readonly 'state': Type.state
+                        readonly ' ': Type._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Type': entry.Type
+                export type _ = {
+                    readonly 'Type': _.Type
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Balans = {
         readonly 'location': Balans.location
-        readonly 'dictionary': Balans.dictionary
+        readonly ' ': Balans._
     }
     
     export namespace Resultaat {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export type entry = null
+                export type _ = null
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Resultaat = {
         readonly 'location': Resultaat.location
-        readonly 'dictionary': Resultaat.dictionary
+        readonly ' ': Resultaat._
     }
     
 }
@@ -1324,123 +1324,123 @@ export namespace Jaarbeheer_ {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type Grootboekrekening_voor_BTW_afrondingen = {
             readonly 'location': Grootboekrekening_voor_BTW_afrondingen.location
-            readonly 'id': Grootboekrekening_voor_BTW_afrondingen.id
+            readonly ' ': Grootboekrekening_voor_BTW_afrondingen._
         }
         
         export namespace Salarisrondes {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export type entry = null
+                    export type _ = null
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Salarisrondes = {
             readonly 'location': Salarisrondes.location
-            readonly 'dictionary': Salarisrondes.dictionary
+            readonly ' ': Salarisrondes._
         }
         
         export namespace BTW_periodes {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace entry {
+                    export namespace _ {
                         
                         export namespace _11$pe__BTW$mi_categorieen {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace dictionary {
+                            export namespace _ {
                                 
                                 export namespace D {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type entry = null
+                                    export type _ = null
                                     
                                 }
                                 
                                 export type D = {
                                     readonly 'location': D.location
-                                    readonly 'entry': D.entry
+                                    readonly ' ': D._
                                 }
                                 
                             }
                             
-                            export type dictionary = _pi.Dictionary<dictionary.D>
+                            export type _ = _pi.Dictionary<_.D>
                             
                         }
                         
                         export type _11$pe__BTW$mi_categorieen = {
                             readonly 'location': _11$pe__BTW$mi_categorieen.location
-                            readonly 'dictionary': _11$pe__BTW$mi_categorieen.dictionary
+                            readonly ' ': _11$pe__BTW$mi_categorieen._
                         }
                         
                         export namespace Documenten {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace dictionary {
+                            export namespace _ {
                                 
                                 export namespace D {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export namespace entry {
+                                    export namespace _ {
                                         
                                         export type Bestand = string
                                         
                                     }
                                     
-                                    export type entry = {
-                                        readonly 'Bestand': entry.Bestand
+                                    export type _ = {
+                                        readonly 'Bestand': _.Bestand
                                     }
                                     
                                 }
                                 
                                 export type D = {
                                     readonly 'location': D.location
-                                    readonly 'entry': D.entry
+                                    readonly ' ': D._
                                 }
                                 
                             }
                             
-                            export type dictionary = _pi.Dictionary<dictionary.D>
+                            export type _ = _pi.Dictionary<_.D>
                             
                         }
                         
                         export type Documenten = {
                             readonly 'location': Documenten.location
-                            readonly 'dictionary': Documenten.dictionary
+                            readonly ' ': Documenten._
                         }
                         
                         export type Omschrijving = string
@@ -1449,7 +1449,7 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace state {
+                            export namespace _ {
                                 
                                 export namespace Aangegeven {
                                     
@@ -1471,42 +1471,42 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type state = 
-                                | readonly ['Aangegeven', state.Aangegeven]
-                                | readonly ['Openstaand', state.Openstaand]
+                            export type _ = 
+                                | readonly ['Aangegeven', _.Aangegeven]
+                                | readonly ['Openstaand', _.Openstaand]
                             
                         }
                         
                         export type Status = {
                             readonly 'location': Status.location
-                            readonly 'state': Status.state
+                            readonly ' ': Status._
                         }
                         
                     }
                     
-                    export type entry = {
-                        readonly '1. BTW-categorieen': entry._11$pe__BTW$mi_categorieen
-                        readonly 'Documenten': entry.Documenten
-                        readonly 'Omschrijving': entry.Omschrijving
-                        readonly 'Status': entry.Status
+                    export type _ = {
+                        readonly '1. BTW-categorieen': _._11$pe__BTW$mi_categorieen
+                        readonly 'Documenten': _.Documenten
+                        readonly 'Omschrijving': _.Omschrijving
+                        readonly 'Status': _.Status
                     }
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type BTW_periodes = {
             readonly 'location': BTW_periodes.location
-            readonly 'dictionary': BTW_periodes.dictionary
+            readonly ' ': BTW_periodes._
         }
         
     }
@@ -1523,65 +1523,65 @@ export namespace Jaarbeheer_ {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type Grootboekrekening_voor_nog_aan_te_geven_BTW = {
             readonly 'location': Grootboekrekening_voor_nog_aan_te_geven_BTW.location
-            readonly 'id': Grootboekrekening_voor_nog_aan_te_geven_BTW.id
+            readonly ' ': Grootboekrekening_voor_nog_aan_te_geven_BTW._
         }
         
         export namespace Grootboekrekening_voor_resultaat_dit_jaar {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type Grootboekrekening_voor_resultaat_dit_jaar = {
             readonly 'location': Grootboekrekening_voor_resultaat_dit_jaar.location
-            readonly 'id': Grootboekrekening_voor_resultaat_dit_jaar.id
+            readonly ' ': Grootboekrekening_voor_resultaat_dit_jaar._
         }
         
         export namespace Grootboekrekening_voor_winstreserve {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type Grootboekrekening_voor_winstreserve = {
             readonly 'location': Grootboekrekening_voor_winstreserve.location
-            readonly 'id': Grootboekrekening_voor_winstreserve.id
+            readonly ' ': Grootboekrekening_voor_winstreserve._
         }
         
         export namespace Grootboekrekening_voor_Inkoop_saldo {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type Grootboekrekening_voor_Inkoop_saldo = {
             readonly 'location': Grootboekrekening_voor_Inkoop_saldo.location
-            readonly 'id': Grootboekrekening_voor_Inkoop_saldo.id
+            readonly ' ': Grootboekrekening_voor_Inkoop_saldo._
         }
         
         export namespace Grootboekrekening_voor_Verkoop_saldo {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type Grootboekrekening_voor_Verkoop_saldo = {
             readonly 'location': Grootboekrekening_voor_Verkoop_saldo.location
-            readonly 'id': Grootboekrekening_voor_Verkoop_saldo.id
+            readonly ' ': Grootboekrekening_voor_Verkoop_saldo._
         }
         
         export type Beginsaldo_nog_aan_te_geven_BTW = number
@@ -1592,13 +1592,13 @@ export namespace Jaarbeheer_ {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace entry {
+                    export namespace _ {
                         
                         export type Beginsaldo = number
                         
@@ -1606,20 +1606,20 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Relative_Location
                             
-                            export type id = string
+                            export type _ = string
                             
                         }
                         
                         export type Grootboekrekening = {
                             readonly 'location': Grootboekrekening.location
-                            readonly 'id': Grootboekrekening.id
+                            readonly ' ': Grootboekrekening._
                         }
                         
                         export namespace Nieuw {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace state {
+                            export namespace _ {
                                 
                                 export type Ja = null
                                 
@@ -1635,54 +1635,54 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type state = 
-                                | readonly ['Ja', state.Ja]
-                                | readonly ['Nee', state.Nee]
+                            export type _ = 
+                                | readonly ['Ja', _.Ja]
+                                | readonly ['Nee', _.Nee]
                             
                         }
                         
                         export type Nieuw = {
                             readonly 'location': Nieuw.location
-                            readonly 'state': Nieuw.state
+                            readonly ' ': Nieuw._
                         }
                         
                     }
                     
-                    export type entry = {
-                        readonly 'Beginsaldo': entry.Beginsaldo
-                        readonly 'Grootboekrekening': entry.Grootboekrekening
-                        readonly 'Nieuw': entry.Nieuw
+                    export type _ = {
+                        readonly 'Beginsaldo': _.Beginsaldo
+                        readonly 'Grootboekrekening': _.Grootboekrekening
+                        readonly 'Nieuw': _.Nieuw
                     }
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Informele_rekeningen = {
             readonly 'location': Informele_rekeningen.location
-            readonly 'dictionary': Informele_rekeningen.dictionary
+            readonly ' ': Informele_rekeningen._
         }
         
         export namespace Bankrekeningen {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace entry {
+                    export namespace _ {
                         
                         export type Beginsaldo = number
                         
@@ -1690,20 +1690,20 @@ export namespace Jaarbeheer_ {
                             
                             export type location = i__location.Relative_Location
                             
-                            export type id = string
+                            export type _ = string
                             
                         }
                         
                         export type Grootboekrekening = {
                             readonly 'location': Grootboekrekening.location
-                            readonly 'id': Grootboekrekening.id
+                            readonly ' ': Grootboekrekening._
                         }
                         
                         export namespace Nieuw {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace state {
+                            export namespace _ {
                                 
                                 export type Ja = null
                                 
@@ -1719,28 +1719,28 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type state = 
-                                | readonly ['Ja', state.Ja]
-                                | readonly ['Nee', state.Nee]
+                            export type _ = 
+                                | readonly ['Ja', _.Ja]
+                                | readonly ['Nee', _.Nee]
                             
                         }
                         
                         export type Nieuw = {
                             readonly 'location': Nieuw.location
-                            readonly 'state': Nieuw.state
+                            readonly ' ': Nieuw._
                         }
                         
                         export namespace Mutaties {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace dictionary {
+                            export namespace _ {
                                 
                                 export namespace D {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export namespace entry {
+                                    export namespace _ {
                                         
                                         export type Bedrag = number
                                         
@@ -1750,115 +1750,115 @@ export namespace Jaarbeheer_ {
                                         
                                     }
                                     
-                                    export type entry = {
-                                        readonly 'Bedrag': entry.Bedrag
-                                        readonly 'Datum': entry.Datum
-                                        readonly 'Omschrijving': entry.Omschrijving
+                                    export type _ = {
+                                        readonly 'Bedrag': _.Bedrag
+                                        readonly 'Datum': _.Datum
+                                        readonly 'Omschrijving': _.Omschrijving
                                     }
                                     
                                 }
                                 
                                 export type D = {
                                     readonly 'location': D.location
-                                    readonly 'entry': D.entry
+                                    readonly ' ': D._
                                 }
                                 
                             }
                             
-                            export type dictionary = _pi.Dictionary<dictionary.D>
+                            export type _ = _pi.Dictionary<_.D>
                             
                         }
                         
                         export type Mutaties = {
                             readonly 'location': Mutaties.location
-                            readonly 'dictionary': Mutaties.dictionary
+                            readonly ' ': Mutaties._
                         }
                         
                     }
                     
-                    export type entry = {
-                        readonly 'Beginsaldo': entry.Beginsaldo
-                        readonly 'Grootboekrekening': entry.Grootboekrekening
-                        readonly 'Nieuw': entry.Nieuw
-                        readonly 'Mutaties': entry.Mutaties
+                    export type _ = {
+                        readonly 'Beginsaldo': _.Beginsaldo
+                        readonly 'Grootboekrekening': _.Grootboekrekening
+                        readonly 'Nieuw': _.Nieuw
+                        readonly 'Mutaties': _.Mutaties
                     }
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Bankrekeningen = {
             readonly 'location': Bankrekeningen.location
-            readonly 'dictionary': Bankrekeningen.dictionary
+            readonly ' ': Bankrekeningen._
         }
         
         export namespace Overige_balans_items {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export type entry = Overige_balans_item_
+                    export type _ = Overige_balans_item_
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Overige_balans_items = {
             readonly 'location': Overige_balans_items.location
-            readonly 'dictionary': Overige_balans_items.dictionary
+            readonly ' ': Overige_balans_items._
         }
         
         export namespace Verrekenposten {
             
             export type location = i__location.Relative_Location
             
-            export namespace dictionary {
+            export namespace _ {
                 
                 export namespace D {
                     
                     export type location = i__location.Relative_Location
                     
-                    export type entry = null
+                    export type _ = null
                     
                 }
                 
                 export type D = {
                     readonly 'location': D.location
-                    readonly 'entry': D.entry
+                    readonly ' ': D._
                 }
                 
             }
             
-            export type dictionary = _pi.Dictionary<dictionary.D>
+            export type _ = _pi.Dictionary<_.D>
             
         }
         
         export type Verrekenposten = {
             readonly 'location': Verrekenposten.location
-            readonly 'dictionary': Verrekenposten.dictionary
+            readonly ' ': Verrekenposten._
         }
         
     }
@@ -1892,20 +1892,20 @@ export namespace Overige_balans_item_ {
         
         export type location = i__location.Relative_Location
         
-        export type id = string
+        export type _ = string
         
     }
     
     export type Grootboekrekening = {
         readonly 'location': Grootboekrekening.location
-        readonly 'id': Grootboekrekening.id
+        readonly ' ': Grootboekrekening._
     }
     
     export namespace Nieuw {
         
         export type location = i__location.Relative_Location
         
-        export namespace state {
+        export namespace _ {
             
             export type Ja = null
             
@@ -1915,13 +1915,13 @@ export namespace Overige_balans_item_ {
                     
                     export type location = i__location.Relative_Location
                     
-                    export type id = string
+                    export type _ = string
                     
                 }
                 
                 export type Balans_item = {
                     readonly 'location': Balans_item.location
-                    readonly 'id': Balans_item.id
+                    readonly ' ': Balans_item._
                 }
                 
             }
@@ -1932,15 +1932,15 @@ export namespace Overige_balans_item_ {
             
         }
         
-        export type state = 
-            | readonly ['Ja', state.Ja]
-            | readonly ['Nee', state.Nee]
+        export type _ = 
+            | readonly ['Ja', _.Ja]
+            | readonly ['Nee', _.Nee]
         
     }
     
     export type Nieuw = {
         readonly 'location': Nieuw.location
-        readonly 'state': Nieuw.state
+        readonly ' ': Nieuw._
     }
     
 }
@@ -1955,26 +1955,26 @@ export namespace Verwijzing_naar_Informele_rekening_ {
     
     export type location = i__location.Relative_Location
     
-    export type id = string
+    export type _ = string
     
 }
 
 export type Verwijzing_naar_Informele_rekening_ = {
     readonly 'location': Verwijzing_naar_Informele_rekening_.location
-    readonly 'id': Verwijzing_naar_Informele_rekening_.id
+    readonly ' ': Verwijzing_naar_Informele_rekening_._
 }
 
 export namespace Verwijzing_naar_Bankrekening_ {
     
     export type location = i__location.Relative_Location
     
-    export type id = string
+    export type _ = string
     
 }
 
 export type Verwijzing_naar_Bankrekening_ = {
     readonly 'location': Verwijzing_naar_Bankrekening_.location
-    readonly 'id': Verwijzing_naar_Bankrekening_.id
+    readonly ' ': Verwijzing_naar_Bankrekening_._
 }
 
 export namespace Handelstransacties_ {
@@ -1983,19 +1983,19 @@ export namespace Handelstransacties_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Afhandeling {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Mutaties = null
                             
@@ -2005,13 +2005,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Rekening_courant = {
                                     readonly 'location': Rekening_courant.location
-                                    readonly 'id': Rekening_courant.id
+                                    readonly ' ': Rekening_courant._
                                 }
                                 
                             }
@@ -2022,22 +2022,22 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Mutaties', state.Mutaties]
-                            | readonly ['Rekening courant', state.Rekening_courant]
+                        export type _ = 
+                            | readonly ['Mutaties', _.Mutaties]
+                            | readonly ['Rekening courant', _.Rekening_courant]
                         
                     }
                     
                     export type Afhandeling = {
                         readonly 'location': Afhandeling.location
-                        readonly 'state': Afhandeling.state
+                        readonly ' ': Afhandeling._
                     }
                     
                     export namespace BTW$mi_regime {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Binnenland$cl__heffing_verlegd = null
                             
@@ -2053,13 +2053,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type BTW$mi_periode = {
                                     readonly 'location': BTW$mi_periode.location
-                                    readonly 'id': BTW$mi_periode.id
+                                    readonly ' ': BTW$mi_periode._
                                 }
                                 
                             }
@@ -2070,25 +2070,25 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Binnenland: heffing verlegd', state.Binnenland$cl__heffing_verlegd]
-                            | readonly ['Geen BTW van toepassing', state.Geen_BTW_van_toepassing]
-                            | readonly ['Import van buiten de EU', state.Import_van_buiten_de_EU]
-                            | readonly ['Intracommunautair', state.Intracommunautair]
-                            | readonly ['Standaard', state.Standaard]
+                        export type _ = 
+                            | readonly ['Binnenland: heffing verlegd', _.Binnenland$cl__heffing_verlegd]
+                            | readonly ['Geen BTW van toepassing', _.Geen_BTW_van_toepassing]
+                            | readonly ['Import van buiten de EU', _.Import_van_buiten_de_EU]
+                            | readonly ['Intracommunautair', _.Intracommunautair]
+                            | readonly ['Standaard', _.Standaard]
                         
                     }
                     
                     export type BTW$mi_regime = {
                         readonly 'location': BTW$mi_regime.location
-                        readonly 'state': BTW$mi_regime.state
+                        readonly ' ': BTW$mi_regime._
                     }
                     
                     export namespace Brondocument {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export namespace Toegevoegd {
                                 
@@ -2106,16 +2106,16 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Toegevoegd', state.Toegevoegd]
-                            | readonly ['Niet van toepassing', state.Niet_van_toepassing]
-                            | readonly ['Ontbreekt', state.Ontbreekt]
+                        export type _ = 
+                            | readonly ['Toegevoegd', _.Toegevoegd]
+                            | readonly ['Niet van toepassing', _.Niet_van_toepassing]
+                            | readonly ['Ontbreekt', _.Ontbreekt]
                         
                     }
                     
                     export type Brondocument = {
                         readonly 'location': Brondocument.location
-                        readonly 'state': Brondocument.state
+                        readonly ' ': Brondocument._
                     }
                     
                     export type Datum = number
@@ -2124,19 +2124,19 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace entry {
+                                export namespace _ {
                                     
                                     export namespace Bedrag {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export namespace Bekend {
                                                 
@@ -2153,14 +2153,14 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Bekend', state.Bekend]
+                                        export type _ = 
+                                            | readonly ['Bekend', _.Bekend]
                                         
                                     }
                                     
                                     export type Bedrag = {
                                         readonly 'location': Bedrag.location
-                                        readonly 'state': Bedrag.state
+                                        readonly ' ': Bedrag._
                                     }
                                     
                                     export type Omschrijving = string
@@ -2169,7 +2169,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export namespace Balans {
                                                 
@@ -2177,13 +2177,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Balans_item = {
                                                     readonly 'location': Balans_item.location
-                                                    readonly 'id': Balans_item.id
+                                                    readonly ' ': Balans_item._
                                                 }
                                                 
                                             }
@@ -2198,13 +2198,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Grootboekrekening = {
                                                     readonly 'location': Grootboekrekening.location
-                                                    readonly 'id': Grootboekrekening.id
+                                                    readonly ' ': Grootboekrekening._
                                                 }
                                                 
                                             }
@@ -2215,48 +2215,48 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Balans', state.Balans]
-                                            | readonly ['Kosten', state.Kosten]
+                                        export type _ = 
+                                            | readonly ['Balans', _.Balans]
+                                            | readonly ['Kosten', _.Kosten]
                                         
                                     }
                                     
                                     export type Type = {
                                         readonly 'location': Type.location
-                                        readonly 'state': Type.state
+                                        readonly ' ': Type._
                                     }
                                     
                                 }
                                 
-                                export type entry = {
-                                    readonly 'Bedrag': entry.Bedrag
-                                    readonly 'Omschrijving': entry.Omschrijving
-                                    readonly 'Type': entry.Type
+                                export type _ = {
+                                    readonly 'Bedrag': _.Bedrag
+                                    readonly 'Omschrijving': _.Omschrijving
+                                    readonly 'Type': _.Type
                                 }
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Regels = {
                         readonly 'location': Regels.location
-                        readonly 'dictionary': Regels.dictionary
+                        readonly ' ': Regels._
                     }
                     
                     export namespace Type {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Bonnetje = null
                             
@@ -2266,13 +2266,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Crediteur = {
                                     readonly 'location': Crediteur.location
-                                    readonly 'id': Crediteur.id
+                                    readonly ' ': Crediteur._
                                 }
                                 
                                 export type Factuurnummer = string
@@ -2290,13 +2290,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Ronde = {
                                     readonly 'location': Ronde.location
-                                    readonly 'id': Ronde.id
+                                    readonly ' ': Ronde._
                                 }
                                 
                             }
@@ -2311,26 +2311,26 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Ronde = {
                                     readonly 'location': Ronde.location
-                                    readonly 'id': Ronde.id
+                                    readonly ' ': Ronde._
                                 }
                                 
                                 export namespace Medewerker {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Medewerker = {
                                     readonly 'location': Medewerker.location
-                                    readonly 'id': Medewerker.id
+                                    readonly ' ': Medewerker._
                                 }
                                 
                             }
@@ -2342,65 +2342,65 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Bonnetje', state.Bonnetje]
-                            | readonly ['Inkoop (met crediteur)', state.Inkoop_$po_met_crediteur$pc_]
-                            | readonly ['Loonheffing', state.Loonheffing]
-                            | readonly ['Salaris', state.Salaris]
+                        export type _ = 
+                            | readonly ['Bonnetje', _.Bonnetje]
+                            | readonly ['Inkoop (met crediteur)', _.Inkoop_$po_met_crediteur$pc_]
+                            | readonly ['Loonheffing', _.Loonheffing]
+                            | readonly ['Salaris', _.Salaris]
                         
                     }
                     
                     export type Type = {
                         readonly 'location': Type.location
-                        readonly 'state': Type.state
+                        readonly ' ': Type._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Afhandeling': entry.Afhandeling
-                    readonly 'BTW-regime': entry.BTW$mi_regime
-                    readonly 'Brondocument': entry.Brondocument
-                    readonly 'Datum': entry.Datum
-                    readonly 'Regels': entry.Regels
-                    readonly 'Type': entry.Type
+                export type _ = {
+                    readonly 'Afhandeling': _.Afhandeling
+                    readonly 'BTW-regime': _.BTW$mi_regime
+                    readonly 'Brondocument': _.Brondocument
+                    readonly 'Datum': _.Datum
+                    readonly 'Regels': _.Regels
+                    readonly 'Type': _.Type
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Inkopen = {
         readonly 'location': Inkopen.location
-        readonly 'dictionary': Inkopen.dictionary
+        readonly ' ': Inkopen._
     }
     
     export namespace Verkopen {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export namespace Afhandeling {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export type Mutaties = null
                             
@@ -2410,13 +2410,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Rekening_courant = {
                                     readonly 'location': Rekening_courant.location
-                                    readonly 'id': Rekening_courant.id
+                                    readonly ' ': Rekening_courant._
                                 }
                                 
                             }
@@ -2427,15 +2427,15 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Mutaties', state.Mutaties]
-                            | readonly ['Rekening courant', state.Rekening_courant]
+                        export type _ = 
+                            | readonly ['Mutaties', _.Mutaties]
+                            | readonly ['Rekening courant', _.Rekening_courant]
                         
                     }
                     
                     export type Afhandeling = {
                         readonly 'location': Afhandeling.location
-                        readonly 'state': Afhandeling.state
+                        readonly ' ': Afhandeling._
                     }
                     
                     export type Betalingstermijn = number
@@ -2444,20 +2444,20 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Relative_Location
                         
-                        export type id = string
+                        export type _ = string
                         
                     }
                     
                     export type BTW$mi_periode = {
                         readonly 'location': BTW$mi_periode.location
-                        readonly 'id': BTW$mi_periode.id
+                        readonly ' ': BTW$mi_periode._
                     }
                     
                     export namespace Brondocument {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export namespace Toegevoegd {
                                 
@@ -2471,34 +2471,34 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Toegevoegd', state.Toegevoegd]
+                        export type _ = 
+                            | readonly ['Toegevoegd', _.Toegevoegd]
                         
                     }
                     
                     export type Brondocument = {
                         readonly 'location': Brondocument.location
-                        readonly 'state': Brondocument.state
+                        readonly ' ': Brondocument._
                     }
                     
                     export namespace Debiteur {
                         
                         export type location = i__location.Relative_Location
                         
-                        export type id = string
+                        export type _ = string
                         
                     }
                     
                     export type Debiteur = {
                         readonly 'location': Debiteur.location
-                        readonly 'id': Debiteur.id
+                        readonly ' ': Debiteur._
                     }
                     
                     export namespace Contracttype {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace state {
+                        export namespace _ {
                             
                             export namespace Project {
                                 
@@ -2506,26 +2506,26 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Project = {
                                     readonly 'location': Project.location
-                                    readonly 'id': Project.id
+                                    readonly ' ': Project._
                                 }
                                 
                                 export namespace Offerte {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Offerte = {
                                     readonly 'location': Offerte.location
-                                    readonly 'id': Offerte.id
+                                    readonly ' ': Offerte._
                                 }
                                 
                             }
@@ -2541,13 +2541,13 @@ export namespace Handelstransacties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Overeenkomst = {
                                     readonly 'location': Overeenkomst.location
-                                    readonly 'id': Overeenkomst.id
+                                    readonly ' ': Overeenkomst._
                                 }
                                 
                             }
@@ -2558,15 +2558,15 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type state = 
-                            | readonly ['Project', state.Project]
-                            | readonly ['Licentieovereenkomst', state.Licentieovereenkomst]
+                        export type _ = 
+                            | readonly ['Project', _.Project]
+                            | readonly ['Licentieovereenkomst', _.Licentieovereenkomst]
                         
                     }
                     
                     export type Contracttype = {
                         readonly 'location': Contracttype.location
-                        readonly 'state': Contracttype.state
+                        readonly ' ': Contracttype._
                     }
                     
                     export type Datum = number
@@ -2575,19 +2575,19 @@ export namespace Handelstransacties_ {
                         
                         export type location = i__location.Relative_Location
                         
-                        export namespace dictionary {
+                        export namespace _ {
                             
                             export namespace D {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace entry {
+                                export namespace _ {
                                     
                                     export namespace BTW$mi_regime {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export type Intracommunautair = null
                                             
@@ -2597,13 +2597,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type BTW$mi_categorie = {
                                                     readonly 'location': BTW$mi_categorie.location
-                                                    readonly 'id': BTW$mi_categorie.id
+                                                    readonly ' ': BTW$mi_categorie._
                                                 }
                                                 
                                             }
@@ -2616,16 +2616,16 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Intracommunautair', state.Intracommunautair]
-                                            | readonly ['Standaard', state.Standaard]
-                                            | readonly ['Binnenland: heffing verlegd', state.Binnenland$cl__heffing_verlegd]
+                                        export type _ = 
+                                            | readonly ['Intracommunautair', _.Intracommunautair]
+                                            | readonly ['Standaard', _.Standaard]
+                                            | readonly ['Binnenland: heffing verlegd', _.Binnenland$cl__heffing_verlegd]
                                         
                                     }
                                     
                                     export type BTW$mi_regime = {
                                         readonly 'location': BTW$mi_regime.location
-                                        readonly 'state': BTW$mi_regime.state
+                                        readonly ' ': BTW$mi_regime._
                                     }
                                     
                                     export type Bedrag_exclusief_BTW = number
@@ -2634,7 +2634,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export namespace Project {
                                                 
@@ -2642,13 +2642,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Opbrengst = {
                                                     readonly 'location': Opbrengst.location
-                                                    readonly 'id': Opbrengst.id
+                                                    readonly ' ': Opbrengst._
                                                 }
                                                 
                                             }
@@ -2665,13 +2665,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Periode = {
                                                     readonly 'location': Periode.location
-                                                    readonly 'id': Periode.id
+                                                    readonly ' ': Periode._
                                                 }
                                                 
                                             }
@@ -2682,16 +2682,16 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Project', state.Project]
-                                            | readonly ['Los', state.Los]
-                                            | readonly ['Licentieovereenkomst', state.Licentieovereenkomst]
+                                        export type _ = 
+                                            | readonly ['Project', _.Project]
+                                            | readonly ['Los', _.Los]
+                                            | readonly ['Licentieovereenkomst', _.Licentieovereenkomst]
                                         
                                     }
                                     
                                     export type Contracttype = {
                                         readonly 'location': Contracttype.location
-                                        readonly 'state': Contracttype.state
+                                        readonly ' ': Contracttype._
                                     }
                                     
                                     export type Omschrijving = string
@@ -2700,7 +2700,7 @@ export namespace Handelstransacties_ {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export namespace Opbrengsten {
                                                 
@@ -2708,13 +2708,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Grootboekrekening = {
                                                     readonly 'location': Grootboekrekening.location
-                                                    readonly 'id': Grootboekrekening.id
+                                                    readonly ' ': Grootboekrekening._
                                                 }
                                                 
                                             }
@@ -2729,13 +2729,13 @@ export namespace Handelstransacties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Balans_item = {
                                                     readonly 'location': Balans_item.location
-                                                    readonly 'id': Balans_item.id
+                                                    readonly ' ': Balans_item._
                                                 }
                                                 
                                             }
@@ -2746,74 +2746,74 @@ export namespace Handelstransacties_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Opbrengsten', state.Opbrengsten]
-                                            | readonly ['Balans', state.Balans]
+                                        export type _ = 
+                                            | readonly ['Opbrengsten', _.Opbrengsten]
+                                            | readonly ['Balans', _.Balans]
                                         
                                     }
                                     
                                     export type Type = {
                                         readonly 'location': Type.location
-                                        readonly 'state': Type.state
+                                        readonly ' ': Type._
                                     }
                                     
                                 }
                                 
-                                export type entry = {
-                                    readonly 'BTW-regime': entry.BTW$mi_regime
-                                    readonly 'Bedrag exclusief BTW': entry.Bedrag_exclusief_BTW
-                                    readonly 'Contracttype': entry.Contracttype
-                                    readonly 'Omschrijving': entry.Omschrijving
-                                    readonly 'Type': entry.Type
+                                export type _ = {
+                                    readonly 'BTW-regime': _.BTW$mi_regime
+                                    readonly 'Bedrag exclusief BTW': _.Bedrag_exclusief_BTW
+                                    readonly 'Contracttype': _.Contracttype
+                                    readonly 'Omschrijving': _.Omschrijving
+                                    readonly 'Type': _.Type
                                 }
                                 
                             }
                             
                             export type D = {
                                 readonly 'location': D.location
-                                readonly 'entry': D.entry
+                                readonly ' ': D._
                             }
                             
                         }
                         
-                        export type dictionary = _pi.Dictionary<dictionary.D>
+                        export type _ = _pi.Dictionary<_.D>
                         
                     }
                     
                     export type Regels = {
                         readonly 'location': Regels.location
-                        readonly 'dictionary': Regels.dictionary
+                        readonly ' ': Regels._
                     }
                     
                 }
                 
-                export type entry = {
-                    readonly 'Afhandeling': entry.Afhandeling
-                    readonly 'Betalingstermijn': entry.Betalingstermijn
-                    readonly 'BTW-periode': entry.BTW$mi_periode
-                    readonly 'Brondocument': entry.Brondocument
-                    readonly 'Debiteur': entry.Debiteur
-                    readonly 'Contracttype': entry.Contracttype
-                    readonly 'Datum': entry.Datum
-                    readonly 'Regels': entry.Regels
+                export type _ = {
+                    readonly 'Afhandeling': _.Afhandeling
+                    readonly 'Betalingstermijn': _.Betalingstermijn
+                    readonly 'BTW-periode': _.BTW$mi_periode
+                    readonly 'Brondocument': _.Brondocument
+                    readonly 'Debiteur': _.Debiteur
+                    readonly 'Contracttype': _.Contracttype
+                    readonly 'Datum': _.Datum
+                    readonly 'Regels': _.Regels
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Verkopen = {
         readonly 'location': Verkopen.location
-        readonly 'dictionary': Verkopen.dictionary
+        readonly ' ': Verkopen._
     }
     
 }
@@ -2829,23 +2829,23 @@ export namespace Mutaties_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace dictionary {
+                    export namespace _ {
                         
                         export namespace D {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace entry {
+                            export namespace _ {
                                 
                                 export type Bedrag = number
                                 
@@ -2853,7 +2853,7 @@ export namespace Mutaties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export namespace state {
+                                    export namespace _ {
                                         
                                         export type Resultaat = Balans_Resultaat_Mutatie_
                                         
@@ -2861,7 +2861,7 @@ export namespace Mutaties_ {
                                             
                                             export type location = i__location.Relative_Location
                                             
-                                            export namespace state {
+                                            export namespace _ {
                                                 
                                                 export namespace Informele_rekening {
                                                     
@@ -2869,13 +2869,13 @@ export namespace Mutaties_ {
                                                         
                                                         export type location = i__location.Relative_Location
                                                         
-                                                        export type id = string
+                                                        export type _ = string
                                                         
                                                     }
                                                     
                                                     export type Informele_rekening = {
                                                         readonly 'location': Informele_rekening.location
-                                                        readonly 'id': Informele_rekening.id
+                                                        readonly ' ': Informele_rekening._
                                                     }
                                                     
                                                 }
@@ -2886,97 +2886,97 @@ export namespace Mutaties_ {
                                                 
                                             }
                                             
-                                            export type state = 
-                                                | readonly ['Informele rekening', state.Informele_rekening]
+                                            export type _ = 
+                                                | readonly ['Informele rekening', _.Informele_rekening]
                                             
                                         }
                                         
                                         export type Balans = {
                                             readonly 'location': Balans.location
-                                            readonly 'state': Balans.state
+                                            readonly ' ': Balans._
                                         }
                                         
                                     }
                                     
-                                    export type state = 
-                                        | readonly ['Resultaat', state.Resultaat]
-                                        | readonly ['Balans', state.Balans]
+                                    export type _ = 
+                                        | readonly ['Resultaat', _.Resultaat]
+                                        | readonly ['Balans', _.Balans]
                                     
                                 }
                                 
                                 export type Afhandeling = {
                                     readonly 'location': Afhandeling.location
-                                    readonly 'state': Afhandeling.state
+                                    readonly ' ': Afhandeling._
                                 }
                                 
                             }
                             
-                            export type entry = {
-                                readonly 'Bedrag': entry.Bedrag
-                                readonly 'Afhandeling': entry.Afhandeling
+                            export type _ = {
+                                readonly 'Bedrag': _.Bedrag
+                                readonly 'Afhandeling': _.Afhandeling
                             }
                             
                         }
                         
                         export type D = {
                             readonly 'location': D.location
-                            readonly 'entry': D.entry
+                            readonly ' ': D._
                         }
                         
                     }
                     
-                    export type dictionary = _pi.Dictionary<dictionary.D>
+                    export type _ = _pi.Dictionary<_.D>
                     
                 }
                 
-                export type entry = {
-                    readonly 'location': entry.location
-                    readonly 'dictionary': entry.dictionary
+                export type _ = {
+                    readonly 'location': _.location
+                    readonly ' ': _._
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Verrekenpost_mutaties = {
         readonly 'location': Verrekenpost_mutaties.location
-        readonly 'dictionary': Verrekenpost_mutaties.dictionary
+        readonly ' ': Verrekenpost_mutaties._
     }
     
     export namespace Bankrekening_Mutatie_Verwerkingen {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace dictionary {
+                    export namespace _ {
                         
                         export namespace D {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace entry {
+                            export namespace _ {
                                 
                                 export type location = i__location.Relative_Location
                                 
-                                export namespace state {
+                                export namespace _ {
                                     
                                     export type Resultaat = Balans_Resultaat_Mutatie_
                                     
@@ -2984,7 +2984,7 @@ export namespace Mutaties_ {
                                         
                                         export type location = i__location.Relative_Location
                                         
-                                        export namespace state {
+                                        export namespace _ {
                                             
                                             export namespace Informele_rekening {
                                                 
@@ -2992,13 +2992,13 @@ export namespace Mutaties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Informele_rekening = {
                                                     readonly 'location': Informele_rekening.location
-                                                    readonly 'id': Informele_rekening.id
+                                                    readonly ' ': Informele_rekening._
                                                 }
                                                 
                                             }
@@ -3013,13 +3013,13 @@ export namespace Mutaties_ {
                                                     
                                                     export type location = i__location.Relative_Location
                                                     
-                                                    export type id = string
+                                                    export type _ = string
                                                     
                                                 }
                                                 
                                                 export type Verrekenpost = {
                                                     readonly 'location': Verrekenpost.location
-                                                    readonly 'id': Verrekenpost.id
+                                                    readonly ' ': Verrekenpost._
                                                 }
                                                 
                                             }
@@ -3030,87 +3030,87 @@ export namespace Mutaties_ {
                                             
                                         }
                                         
-                                        export type state = 
-                                            | readonly ['Informele rekening', state.Informele_rekening]
-                                            | readonly ['Verrekenpost', state.Verrekenpost]
+                                        export type _ = 
+                                            | readonly ['Informele rekening', _.Informele_rekening]
+                                            | readonly ['Verrekenpost', _.Verrekenpost]
                                         
                                     }
                                     
                                     export type Balans = {
                                         readonly 'location': Balans.location
-                                        readonly 'state': Balans.state
+                                        readonly ' ': Balans._
                                     }
                                     
                                 }
                                 
-                                export type state = 
-                                    | readonly ['Resultaat', state.Resultaat]
-                                    | readonly ['Balans', state.Balans]
+                                export type _ = 
+                                    | readonly ['Resultaat', _.Resultaat]
+                                    | readonly ['Balans', _.Balans]
                                 
                             }
                             
-                            export type entry = {
-                                readonly 'location': entry.location
-                                readonly 'state': entry.state
+                            export type _ = {
+                                readonly 'location': _.location
+                                readonly ' ': _._
                             }
                             
                         }
                         
                         export type D = {
                             readonly 'location': D.location
-                            readonly 'entry': D.entry
+                            readonly ' ': D._
                         }
                         
                     }
                     
-                    export type dictionary = _pi.Dictionary<dictionary.D>
+                    export type _ = _pi.Dictionary<_.D>
                     
                 }
                 
-                export type entry = {
-                    readonly 'location': entry.location
-                    readonly 'dictionary': entry.dictionary
+                export type _ = {
+                    readonly 'location': _.location
+                    readonly ' ': _._
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Bankrekening_Mutatie_Verwerkingen = {
         readonly 'location': Bankrekening_Mutatie_Verwerkingen.location
-        readonly 'dictionary': Bankrekening_Mutatie_Verwerkingen.dictionary
+        readonly ' ': Bankrekening_Mutatie_Verwerkingen._
     }
     
     export namespace Memoriaal_boekingen {
         
         export type location = i__location.Relative_Location
         
-        export namespace dictionary {
+        export namespace _ {
             
             export namespace D {
                 
                 export type location = i__location.Relative_Location
                 
-                export namespace entry {
+                export namespace _ {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace dictionary {
+                    export namespace _ {
                         
                         export namespace D {
                             
                             export type location = i__location.Relative_Location
                             
-                            export namespace entry {
+                            export namespace _ {
                                 
                                 export type Bedrag = number
                                 
@@ -3122,58 +3122,58 @@ export namespace Mutaties_ {
                                     
                                     export type location = i__location.Relative_Location
                                     
-                                    export type id = string
+                                    export type _ = string
                                     
                                 }
                                 
                                 export type Grootboekrekening = {
                                     readonly 'location': Grootboekrekening.location
-                                    readonly 'id': Grootboekrekening.id
+                                    readonly ' ': Grootboekrekening._
                                 }
                                 
                             }
                             
-                            export type entry = {
-                                readonly 'Bedrag': entry.Bedrag
-                                readonly 'Datum': entry.Datum
-                                readonly 'Omschrijving': entry.Omschrijving
-                                readonly 'Grootboekrekening': entry.Grootboekrekening
+                            export type _ = {
+                                readonly 'Bedrag': _.Bedrag
+                                readonly 'Datum': _.Datum
+                                readonly 'Omschrijving': _.Omschrijving
+                                readonly 'Grootboekrekening': _.Grootboekrekening
                             }
                             
                         }
                         
                         export type D = {
                             readonly 'location': D.location
-                            readonly 'entry': D.entry
+                            readonly ' ': D._
                         }
                         
                     }
                     
-                    export type dictionary = _pi.Dictionary<dictionary.D>
+                    export type _ = _pi.Dictionary<_.D>
                     
                 }
                 
-                export type entry = {
-                    readonly 'location': entry.location
-                    readonly 'dictionary': entry.dictionary
+                export type _ = {
+                    readonly 'location': _.location
+                    readonly ' ': _._
                 }
                 
             }
             
             export type D = {
                 readonly 'location': D.location
-                readonly 'entry': D.entry
+                readonly ' ': D._
             }
             
         }
         
-        export type dictionary = _pi.Dictionary<dictionary.D>
+        export type _ = _pi.Dictionary<_.D>
         
     }
     
     export type Memoriaal_boekingen = {
         readonly 'location': Memoriaal_boekingen.location
-        readonly 'dictionary': Memoriaal_boekingen.dictionary
+        readonly ' ': Memoriaal_boekingen._
     }
     
 }
@@ -3188,19 +3188,19 @@ export namespace Jaren_ {
     
     export type location = i__location.Relative_Location
     
-    export namespace dictionary {
+    export namespace _ {
         
         export namespace D {
             
             export type location = i__location.Relative_Location
             
-            export namespace entry {
+            export namespace _ {
                 
                 export namespace Afgesloten {
                     
                     export type location = i__location.Relative_Location
                     
-                    export namespace state {
+                    export namespace _ {
                         
                         export type Ja = null
                         
@@ -3208,15 +3208,15 @@ export namespace Jaren_ {
                         
                     }
                     
-                    export type state = 
-                        | readonly ['Ja', state.Ja]
-                        | readonly ['Nee', state.Nee]
+                    export type _ = 
+                        | readonly ['Ja', _.Ja]
+                        | readonly ['Nee', _.Nee]
                     
                 }
                 
                 export type Afgesloten = {
                     readonly 'location': Afgesloten.location
-                    readonly 'state': Afgesloten.state
+                    readonly ' ': Afgesloten._
                 }
                 
                 export type Startdatum_boekjaar = number
@@ -3233,32 +3233,32 @@ export namespace Jaren_ {
                 
             }
             
-            export type entry = {
-                readonly 'Afgesloten': entry.Afgesloten
-                readonly 'Startdatum boekjaar': entry.Startdatum_boekjaar
-                readonly 'Grootboekrekeningen': entry.Grootboekrekeningen
-                readonly 'Eerste boekjaar': entry.Eerste_boekjaar
-                readonly 'Jaarbeheer': entry.Jaarbeheer
-                readonly 'Handelstransacties': entry.Handelstransacties
-                readonly 'Mutaties': entry.Mutaties
+            export type _ = {
+                readonly 'Afgesloten': _.Afgesloten
+                readonly 'Startdatum boekjaar': _.Startdatum_boekjaar
+                readonly 'Grootboekrekeningen': _.Grootboekrekeningen
+                readonly 'Eerste boekjaar': _.Eerste_boekjaar
+                readonly 'Jaarbeheer': _.Jaarbeheer
+                readonly 'Handelstransacties': _.Handelstransacties
+                readonly 'Mutaties': _.Mutaties
             }
             
         }
         
         export type D = {
             readonly 'location': D.location
-            readonly 'entry': D.entry
+            readonly ' ': D._
         }
         
     }
     
-    export type dictionary = _pi.Dictionary<dictionary.D>
+    export type _ = _pi.Dictionary<_.D>
     
 }
 
 export type Jaren_ = {
     readonly 'location': Jaren_.location
-    readonly 'dictionary': Jaren_.dictionary
+    readonly ' ': Jaren_._
 }
 
 export namespace Balans_Resultaat_Mutatie_ {
@@ -3269,13 +3269,13 @@ export namespace Balans_Resultaat_Mutatie_ {
             
             export type location = i__location.Relative_Location
             
-            export type id = string
+            export type _ = string
             
         }
         
         export type O = {
             readonly 'location': O.location
-            readonly 'id': O.id
+            readonly ' ': O._
         }
         
     }
@@ -3286,59 +3286,59 @@ export namespace Balans_Resultaat_Mutatie_ {
         
         export type location = i__location.Relative_Location
         
-        export namespace state {
+        export namespace _ {
             
             export namespace Inkoop {
                 
                 export type location = i__location.Relative_Location
                 
-                export type id = string
+                export type _ = string
                 
             }
             
             export type Inkoop = {
                 readonly 'location': Inkoop.location
-                readonly 'id': Inkoop.id
+                readonly ' ': Inkoop._
             }
             
             export namespace Verkoop {
                 
                 export type location = i__location.Relative_Location
                 
-                export type id = string
+                export type _ = string
                 
             }
             
             export type Verkoop = {
                 readonly 'location': Verkoop.location
-                readonly 'id': Verkoop.id
+                readonly ' ': Verkoop._
             }
             
             export namespace BTW$mi_periode {
                 
                 export type location = i__location.Relative_Location
                 
-                export type id = string
+                export type _ = string
                 
             }
             
             export type BTW$mi_periode = {
                 readonly 'location': BTW$mi_periode.location
-                readonly 'id': BTW$mi_periode.id
+                readonly ' ': BTW$mi_periode._
             }
             
         }
         
-        export type state = 
-            | readonly ['Inkoop', state.Inkoop]
-            | readonly ['Verkoop', state.Verkoop]
-            | readonly ['BTW-periode', state.BTW$mi_periode]
+        export type _ = 
+            | readonly ['Inkoop', _.Inkoop]
+            | readonly ['Verkoop', _.Verkoop]
+            | readonly ['BTW-periode', _.BTW$mi_periode]
         
     }
     
     export type type_ = {
         readonly 'location': type_.location
-        readonly 'state': type_.state
+        readonly ' ': type_._
     }
     
 }
@@ -3352,7 +3352,7 @@ export namespace Eerste_boekjaar_ {
     
     export type location = i__location.Relative_Location
     
-    export namespace state {
+    export namespace _ {
         
         export type Ja = null
         
@@ -3362,13 +3362,13 @@ export namespace Eerste_boekjaar_ {
                 
                 export type location = i__location.Relative_Location
                 
-                export type id = string
+                export type _ = string
                 
             }
             
             export type Vorig_boekjaar = {
                 readonly 'location': Vorig_boekjaar.location
-                readonly 'id': Vorig_boekjaar.id
+                readonly ' ': Vorig_boekjaar._
             }
             
         }
@@ -3379,15 +3379,15 @@ export namespace Eerste_boekjaar_ {
         
     }
     
-    export type state = 
-        | readonly ['Ja', state.Ja]
-        | readonly ['Nee', state.Nee]
+    export type _ = 
+        | readonly ['Ja', _.Ja]
+        | readonly ['Nee', _.Nee]
     
 }
 
 export type Eerste_boekjaar_ = {
     readonly 'location': Eerste_boekjaar_.location
-    readonly 'state': Eerste_boekjaar_.state
+    readonly ' ': Eerste_boekjaar_._
 }
 
 export namespace Root_ {

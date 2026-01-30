@@ -36,7 +36,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -46,7 +46,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -70,7 +70,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Fiscaal.Balans_Hoofdcategorieen.dictionary.D.entry.Zijde => {
+                                            ($t): t_out.Fiscaal.Balans_Hoofdcategorieen._.D._.Zijde => {
                                                 switch ($t) {
                                                     case 'Activa':
                                                         return _p_cc(
@@ -79,7 +79,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Activa', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Activa', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -94,7 +94,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Passiva', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Passiva', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -122,7 +122,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -132,7 +132,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                                ' ': v_unmarshalled_from_parse_tree.Nothing(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a nothing', null]
@@ -159,7 +159,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -169,7 +169,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -193,7 +193,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Fiscaal.Resultaat_Hoofdcategorieen.dictionary.D.entry.Zijde => {
+                                            ($t): t_out.Fiscaal.Resultaat_Hoofdcategorieen._.D._.Zijde => {
                                                 switch ($t) {
                                                     case 'Kosten':
                                                         return _p_cc(
@@ -202,7 +202,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Kosten', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Kosten', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -217,7 +217,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Opbrengsten', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Opbrengsten', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -245,7 +245,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -255,7 +255,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                                ' ': v_unmarshalled_from_parse_tree.Nothing(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a nothing', null]
@@ -293,7 +293,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -303,7 +303,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -347,7 +347,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -357,7 +357,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -381,7 +381,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Grootboek_Categorieen.Balans.dictionary.D.entry.Zijde => {
+                                            ($t): t_out.Grootboek_Categorieen.Balans._.D._.Zijde => {
                                                 switch ($t) {
                                                     case 'Activa':
                                                         return _p_cc(
@@ -390,7 +390,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Activa', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Activa', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -405,7 +405,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Passiva', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Passiva', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -433,7 +433,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -443,7 +443,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': _p_cc(
+                                                ' ': _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -462,7 +462,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
@@ -481,7 +481,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
@@ -512,7 +512,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -522,7 +522,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -546,7 +546,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Grootboek_Categorieen.Resultaat.dictionary.D.entry.Zijde => {
+                                            ($t): t_out.Grootboek_Categorieen.Resultaat._.D._.Zijde => {
                                                 switch ($t) {
                                                     case 'Kosten':
                                                         return _p_cc(
@@ -555,7 +555,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Kosten', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Kosten', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -570,7 +570,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Opbrengsten', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Opbrengsten', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -598,7 +598,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -608,7 +608,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': _p_cc(
+                                                ' ': _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -627,7 +627,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
@@ -646,7 +646,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a text', null]
@@ -688,7 +688,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -698,7 +698,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -722,7 +722,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Beheer.BTW$mi_categorieen.dictionary.D.entry.BTW$mi_heffing => {
+                                            ($t): t_out.Beheer.BTW$mi_categorieen._.D._.BTW$mi_heffing => {
                                                 switch ($t) {
                                                     case 'Ja':
                                                         return _p_cc(
@@ -731,7 +731,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Ja', _p_cc(
+                                                                ' ': ['Ja', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -803,7 +803,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -813,7 +813,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -832,7 +832,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -851,7 +851,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -875,7 +875,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     ),
                                                     ($) => _p.decide.text(
                                                         $['option']['value'],
-                                                        ($t): t_out.Beheer.Grootboekrekeningen.Balans.dictionary.D.entry.Zijde => {
+                                                        ($t): t_out.Beheer.Grootboekrekeningen.Balans._.D._.Zijde => {
                                                             switch ($t) {
                                                                 case 'Activa':
                                                                     return _p_cc(
@@ -884,7 +884,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Activa', v_unmarshalled_from_parse_tree.Nothing(
+                                                                            ' ': ['Activa', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     ['expected a nothing', null]
@@ -899,7 +899,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Passiva', v_unmarshalled_from_parse_tree.Nothing(
+                                                                            ' ': ['Passiva', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     ['expected a nothing', null]
@@ -933,7 +933,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -943,7 +943,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -962,7 +962,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -981,7 +981,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -1005,7 +1005,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     ),
                                                     ($) => _p.decide.text(
                                                         $['option']['value'],
-                                                        ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.dictionary.D.entry.Zijde => {
+                                                        ($t): t_out.Beheer.Grootboekrekeningen.Resultaat._.D._.Zijde => {
                                                             switch ($t) {
                                                                 case 'Kosten':
                                                                     return _p_cc(
@@ -1014,7 +1014,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Kosten', _p_cc(
+                                                                            ' ': ['Kosten', _p_cc(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -1038,7 +1038,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                             ),
                                                                                             ($) => _p.decide.text(
                                                                                                 $['option']['value'],
-                                                                                                ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.dictionary.D.entry.Zijde.state.Kosten.Correctie_op_vennootschapsbelasting => {
+                                                                                                ($t): t_out.Beheer.Grootboekrekeningen.Resultaat._.D._.Zijde._.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                     switch ($t) {
                                                                                                         case 'Ja':
                                                                                                             return _p_cc(
@@ -1047,7 +1047,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                     'location': v_parse_tree_to_location.Value(
                                                                                                                         $
                                                                                                                     )['start']['relative'],
-                                                                                                                    'state': ['Ja', _p_cc(
+                                                                                                                    ' ': ['Ja', _p_cc(
                                                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                                                             $,
                                                                                                                             ($) => abort(
@@ -1066,7 +1066,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                                     'location': v_parse_tree_to_location.Value(
                                                                                                                                         $
                                                                                                                                     )['start']['relative'],
-                                                                                                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                                                         $,
                                                                                                                                         ($) => abort(
                                                                                                                                             ['expected a text', null]
@@ -1085,7 +1085,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                     'location': v_parse_tree_to_location.Value(
                                                                                                                         $
                                                                                                                     )['start']['relative'],
-                                                                                                                    'state': ['Nee', v_unmarshalled_from_parse_tree.Nothing(
+                                                                                                                    ' ': ['Nee', v_unmarshalled_from_parse_tree.Nothing(
                                                                                                                         $,
                                                                                                                         ($) => abort(
                                                                                                                             ['expected a nothing', null]
@@ -1113,7 +1113,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Opbrengsten', v_unmarshalled_from_parse_tree.Nothing(
+                                                                            ' ': ['Opbrengsten', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     ['expected a nothing', null]
@@ -1165,7 +1165,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -1175,7 +1175,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                    ' ': v_unmarshalled_from_parse_tree.Nothing(
                                         $,
                                         ($) => abort(
                                             ['expected a nothing', null]
@@ -1196,7 +1196,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -1206,7 +1206,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                    ' ': v_unmarshalled_from_parse_tree.Nothing(
                                         $,
                                         ($) => abort(
                                             ['expected a nothing', null]
@@ -1230,7 +1230,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -1240,7 +1240,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -1293,7 +1293,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -1303,7 +1303,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -1322,7 +1322,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -1332,7 +1332,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': _p_cc(
+                                                ' ': _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1351,7 +1351,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                                                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a dictionary', null]
@@ -1361,7 +1361,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         'location': v_parse_tree_to_location.Value(
                                                                             $
                                                                         )['start']['relative'],
-                                                                        'entry': _p_cc(
+                                                                        ' ': _p_cc(
                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                 $,
                                                                                 ($) => abort(
@@ -1411,7 +1411,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -1421,7 +1421,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': _p_cc(
+                                                ' ': _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1440,7 +1440,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                                                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a dictionary', null]
@@ -1450,7 +1450,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         'location': v_parse_tree_to_location.Value(
                                                                             $
                                                                         )['start']['relative'],
-                                                                        'entry': _p_cc(
+                                                                        ' ': _p_cc(
                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                 $,
                                                                                 ($) => abort(
@@ -1469,7 +1469,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                                                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                                                                             $,
                                                                                             ($) => abort(
                                                                                                 ['expected a dictionary', null]
@@ -1479,7 +1479,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                                     $
                                                                                                 )['start']['relative'],
-                                                                                                'entry': _p_cc(
+                                                                                                ' ': _p_cc(
                                                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                                                         $,
                                                                                                         ($) => abort(
@@ -1503,7 +1503,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                 ),
                                                                                                                 ($) => _p.decide.text(
                                                                                                                     $['option']['value'],
-                                                                                                                    ($t): t_out.Beheer.Klanten.dictionary.D.entry.Projecten.dictionary.D.entry.Offertes.dictionary.D.entry.Opbrengsten.dictionary.D.entry.Type => {
+                                                                                                                    ($t): t_out.Beheer.Klanten._.D._.Projecten._.D._.Offertes._.D._.Opbrengsten._.D._.Type => {
                                                                                                                         switch ($t) {
                                                                                                                             case 'Project':
                                                                                                                                 return _p_cc(
@@ -1512,7 +1512,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                                                             $
                                                                                                                                         )['start']['relative'],
-                                                                                                                                        'state': ['Project', _p_cc(
+                                                                                                                                        ' ': ['Project', _p_cc(
                                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                                 $,
                                                                                                                                                 ($) => abort(
@@ -1606,7 +1606,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -1616,7 +1616,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': v_unmarshalled_from_parse_tree.Nothing(
+                        ' ': v_unmarshalled_from_parse_tree.Nothing(
                             $,
                             ($) => abort(
                                 ['expected a nothing', null]
@@ -1637,7 +1637,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -1647,7 +1647,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': v_unmarshalled_from_parse_tree.Nothing(
+                        ' ': v_unmarshalled_from_parse_tree.Nothing(
                             $,
                             ($) => abort(
                                 ['expected a nothing', null]
@@ -1679,7 +1679,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -1689,7 +1689,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -1713,7 +1713,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Grootboekrekeningen.Balans.dictionary.D.entry.Type => {
+                                            ($t): t_out.Grootboekrekeningen.Balans._.D._.Type => {
                                                 switch ($t) {
                                                     case 'Bankrekening':
                                                         return _p_cc(
@@ -1722,7 +1722,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Bankrekening', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Bankrekening', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -1737,7 +1737,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Overig', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Overig', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -1752,7 +1752,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Informele rekening', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Informele rekening', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -1786,7 +1786,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -1796,7 +1796,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': v_unmarshalled_from_parse_tree.Nothing(
+                        ' ': v_unmarshalled_from_parse_tree.Nothing(
                             $,
                             ($) => abort(
                                 ['expected a nothing', null]
@@ -1843,7 +1843,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'id': v_unmarshalled_from_parse_tree.Text(
+                            ' ': v_unmarshalled_from_parse_tree.Text(
                                 $,
                                 ($) => abort(
                                     ['expected a text', null]
@@ -1862,7 +1862,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -1872,7 +1872,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                    ' ': v_unmarshalled_from_parse_tree.Nothing(
                                         $,
                                         ($) => abort(
                                             ['expected a nothing', null]
@@ -1893,7 +1893,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -1903,7 +1903,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -1922,7 +1922,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                                    ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
@@ -1932,7 +1932,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                             'location': v_parse_tree_to_location.Value(
                                                                 $
                                                             )['start']['relative'],
-                                                            'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                                            ' ': v_unmarshalled_from_parse_tree.Nothing(
                                                                 $,
                                                                 ($) => abort(
                                                                     ['expected a nothing', null]
@@ -1953,7 +1953,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                                    ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
@@ -1963,7 +1963,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                             'location': v_parse_tree_to_location.Value(
                                                                 $
                                                             )['start']['relative'],
-                                                            'entry': _p_cc(
+                                                            ' ': _p_cc(
                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                     $,
                                                                     ($) => abort(
@@ -2021,7 +2021,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                     ($) => _p.decide.text(
                                                         $['option']['value'],
-                                                        ($t): t_out.Jaarbeheer.Resultaat.BTW_periodes.dictionary.D.entry.Status => {
+                                                        ($t): t_out.Jaarbeheer.Resultaat.BTW_periodes._.D._.Status => {
                                                             switch ($t) {
                                                                 case 'Aangegeven':
                                                                     return _p_cc(
@@ -2030,7 +2030,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Aangegeven', _p_cc(
+                                                                            ' ': ['Aangegeven', _p_cc(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -2106,7 +2106,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Openstaand', v_unmarshalled_from_parse_tree.Nothing(
+                                                                            ' ': ['Openstaand', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     ['expected a nothing', null]
@@ -2158,7 +2158,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'id': v_unmarshalled_from_parse_tree.Text(
+                            ' ': v_unmarshalled_from_parse_tree.Text(
                                 $,
                                 ($) => abort(
                                     ['expected a text', null]
@@ -2177,7 +2177,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'id': v_unmarshalled_from_parse_tree.Text(
+                            ' ': v_unmarshalled_from_parse_tree.Text(
                                 $,
                                 ($) => abort(
                                     ['expected a text', null]
@@ -2196,7 +2196,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'id': v_unmarshalled_from_parse_tree.Text(
+                            ' ': v_unmarshalled_from_parse_tree.Text(
                                 $,
                                 ($) => abort(
                                     ['expected a text', null]
@@ -2215,7 +2215,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'id': v_unmarshalled_from_parse_tree.Text(
+                            ' ': v_unmarshalled_from_parse_tree.Text(
                                 $,
                                 ($) => abort(
                                     ['expected a text', null]
@@ -2234,7 +2234,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'id': v_unmarshalled_from_parse_tree.Text(
+                            ' ': v_unmarshalled_from_parse_tree.Text(
                                 $,
                                 ($) => abort(
                                     ['expected a text', null]
@@ -2291,7 +2291,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -2301,7 +2301,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -2339,7 +2339,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -2363,7 +2363,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                     ($) => _p.decide.text(
                                                         $['option']['value'],
-                                                        ($t): t_out.Jaarbeheer.Balans.Informele_rekeningen.dictionary.D.entry.Nieuw => {
+                                                        ($t): t_out.Jaarbeheer.Balans.Informele_rekeningen._.D._.Nieuw => {
                                                             switch ($t) {
                                                                 case 'Ja':
                                                                     return _p_cc(
@@ -2372,7 +2372,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
+                                                                            ' ': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     ['expected a nothing', null]
@@ -2387,7 +2387,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Nee', _p_cc(
+                                                                            ' ': ['Nee', _p_cc(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -2439,7 +2439,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -2449,7 +2449,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -2487,7 +2487,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -2511,7 +2511,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                     ($) => _p.decide.text(
                                                         $['option']['value'],
-                                                        ($t): t_out.Jaarbeheer.Balans.Bankrekeningen.dictionary.D.entry.Nieuw => {
+                                                        ($t): t_out.Jaarbeheer.Balans.Bankrekeningen._.D._.Nieuw => {
                                                             switch ($t) {
                                                                 case 'Ja':
                                                                     return _p_cc(
@@ -2520,7 +2520,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
+                                                                            ' ': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     ['expected a nothing', null]
@@ -2535,7 +2535,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Nee', _p_cc(
+                                                                            ' ': ['Nee', _p_cc(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -2581,7 +2581,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                                    ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a dictionary', null]
@@ -2591,7 +2591,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                             'location': v_parse_tree_to_location.Value(
                                                                 $
                                                             )['start']['relative'],
-                                                            'entry': _p_cc(
+                                                            ' ': _p_cc(
                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                     $,
                                                                     ($) => abort(
@@ -2674,7 +2674,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -2684,7 +2684,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': Overige_balans_item(
+                                    ' ': Overige_balans_item(
                                         $,
                                         ($) => abort(
                                             $
@@ -2705,7 +2705,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -2715,7 +2715,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': v_unmarshalled_from_parse_tree.Nothing(
+                                    ' ': v_unmarshalled_from_parse_tree.Nothing(
                                         $,
                                         ($) => abort(
                                             ['expected a nothing', null]
@@ -2769,7 +2769,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'id': v_unmarshalled_from_parse_tree.Text(
+                ' ': v_unmarshalled_from_parse_tree.Text(
                     $,
                     ($) => abort(
                         ['expected a text', null]
@@ -2802,7 +2802,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
+                                        ' ': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
                                             $,
                                             ($) => abort(
                                                 ['expected a nothing', null]
@@ -2817,7 +2817,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['Nee', _p_cc(
+                                        ' ': ['Nee', _p_cc(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -2836,7 +2836,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                                                         'location': v_parse_tree_to_location.Value(
                                                             $
                                                         )['start']['relative'],
-                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a text', null]
@@ -2864,7 +2864,7 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
     'location': v_parse_tree_to_location.Value(
         $
     )['start']['relative'],
-    'id': v_unmarshalled_from_parse_tree.Text(
+    ' ': v_unmarshalled_from_parse_tree.Text(
         $,
         ($) => abort(
             ['expected a text', null]
@@ -2876,7 +2876,7 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
     'location': v_parse_tree_to_location.Value(
         $
     )['start']['relative'],
-    'id': v_unmarshalled_from_parse_tree.Text(
+    ' ': v_unmarshalled_from_parse_tree.Text(
         $,
         ($) => abort(
             ['expected a text', null]
@@ -2903,7 +2903,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -2913,7 +2913,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -2937,7 +2937,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Afhandeling => {
+                                            ($t): t_out.Handelstransacties.Inkopen._.D._.Afhandeling => {
                                                 switch ($t) {
                                                     case 'Mutaties':
                                                         return _p_cc(
@@ -2946,7 +2946,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Mutaties', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Mutaties', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -2961,7 +2961,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Rekening courant', _p_cc(
+                                                                ' ': ['Rekening courant', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -2980,7 +2980,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3017,7 +3017,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Inkopen.dictionary.D.entry.BTW$mi_regime => {
+                                            ($t): t_out.Handelstransacties.Inkopen._.D._.BTW$mi_regime => {
                                                 switch ($t) {
                                                     case 'Binnenland: heffing verlegd':
                                                         return _p_cc(
@@ -3026,7 +3026,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Binnenland: heffing verlegd', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Binnenland: heffing verlegd', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3041,7 +3041,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Geen BTW van toepassing', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Geen BTW van toepassing', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3056,7 +3056,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Import van buiten de EU', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Import van buiten de EU', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3071,7 +3071,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Intracommunautair', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Intracommunautair', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3086,7 +3086,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Standaard', _p_cc(
+                                                                ' ': ['Standaard', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3105,7 +3105,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3142,7 +3142,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Brondocument => {
+                                            ($t): t_out.Handelstransacties.Inkopen._.D._.Brondocument => {
                                                 switch ($t) {
                                                     case 'Toegevoegd':
                                                         return _p_cc(
@@ -3151,7 +3151,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Toegevoegd', _p_cc(
+                                                                ' ': ['Toegevoegd', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3184,7 +3184,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Niet van toepassing', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Niet van toepassing', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3199,7 +3199,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Ontbreekt', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Ontbreekt', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3246,7 +3246,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -3256,7 +3256,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': _p_cc(
+                                                ' ': _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -3280,7 +3280,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                                 ($) => _p.decide.text(
                                                                     $['option']['value'],
-                                                                    ($t): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Regels.dictionary.D.entry.Bedrag => {
+                                                                    ($t): t_out.Handelstransacties.Inkopen._.D._.Regels._.D._.Bedrag => {
                                                                         switch ($t) {
                                                                             case 'Bekend':
                                                                                 return _p_cc(
@@ -3289,7 +3289,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Bekend', _p_cc(
+                                                                                        ' ': ['Bekend', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -3378,7 +3378,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                                 ($) => _p.decide.text(
                                                                     $['option']['value'],
-                                                                    ($t): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Regels.dictionary.D.entry.Type => {
+                                                                    ($t): t_out.Handelstransacties.Inkopen._.D._.Regels._.D._.Type => {
                                                                         switch ($t) {
                                                                             case 'Balans':
                                                                                 return _p_cc(
@@ -3387,7 +3387,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Balans', _p_cc(
+                                                                                        ' ': ['Balans', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -3406,7 +3406,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -3425,7 +3425,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Kosten', _p_cc(
+                                                                                        ' ': ['Kosten', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -3444,7 +3444,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -3487,7 +3487,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Inkopen.dictionary.D.entry.Type => {
+                                            ($t): t_out.Handelstransacties.Inkopen._.D._.Type => {
                                                 switch ($t) {
                                                     case 'Bonnetje':
                                                         return _p_cc(
@@ -3496,7 +3496,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Bonnetje', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Bonnetje', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3511,7 +3511,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Inkoop (met crediteur)', _p_cc(
+                                                                ' ': ['Inkoop (met crediteur)', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3530,7 +3530,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3563,7 +3563,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Loonheffing', _p_cc(
+                                                                ' ': ['Loonheffing', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3582,7 +3582,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3601,7 +3601,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Salaris', _p_cc(
+                                                                ' ': ['Salaris', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3620,7 +3620,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3639,7 +3639,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3677,7 +3677,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -3687,7 +3687,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': _p_cc(
+                        ' ': _p_cc(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -3711,7 +3711,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Afhandeling => {
+                                            ($t): t_out.Handelstransacties.Verkopen._.D._.Afhandeling => {
                                                 switch ($t) {
                                                     case 'Mutaties':
                                                         return _p_cc(
@@ -3720,7 +3720,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Mutaties', v_unmarshalled_from_parse_tree.Nothing(
+                                                                ' ': ['Mutaties', v_unmarshalled_from_parse_tree.Nothing(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a nothing', null]
@@ -3735,7 +3735,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Rekening courant', _p_cc(
+                                                                ' ': ['Rekening courant', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3754,7 +3754,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3805,7 +3805,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                             $,
                                             ($) => abort(
                                                 ['expected a text', null]
@@ -3829,7 +3829,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Brondocument => {
+                                            ($t): t_out.Handelstransacties.Verkopen._.D._.Brondocument => {
                                                 switch ($t) {
                                                     case 'Toegevoegd':
                                                         return _p_cc(
@@ -3838,7 +3838,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Toegevoegd', _p_cc(
+                                                                ' ': ['Toegevoegd', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3884,7 +3884,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                             $,
                                             ($) => abort(
                                                 ['expected a text', null]
@@ -3908,7 +3908,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Contracttype => {
+                                            ($t): t_out.Handelstransacties.Verkopen._.D._.Contracttype => {
                                                 switch ($t) {
                                                     case 'Project':
                                                         return _p_cc(
@@ -3917,7 +3917,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Project', _p_cc(
+                                                                ' ': ['Project', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3936,7 +3936,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3955,7 +3955,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -3974,7 +3974,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Licentieovereenkomst', _p_cc(
+                                                                ' ': ['Licentieovereenkomst', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3993,7 +3993,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 'location': v_parse_tree_to_location.Value(
                                                                                     $
                                                                                 )['start']['relative'],
-                                                                                'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         ['expected a text', null]
@@ -4044,7 +4044,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                                        ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null]
@@ -4054,7 +4054,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                 'location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'entry': _p_cc(
+                                                ' ': _p_cc(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -4078,7 +4078,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                                 ($) => _p.decide.text(
                                                                     $['option']['value'],
-                                                                    ($t): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Regels.dictionary.D.entry.BTW$mi_regime => {
+                                                                    ($t): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.BTW$mi_regime => {
                                                                         switch ($t) {
                                                                             case 'Intracommunautair':
                                                                                 return _p_cc(
@@ -4087,7 +4087,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Intracommunautair', v_unmarshalled_from_parse_tree.Nothing(
+                                                                                        ' ': ['Intracommunautair', v_unmarshalled_from_parse_tree.Nothing(
                                                                                             $,
                                                                                             ($) => abort(
                                                                                                 ['expected a nothing', null]
@@ -4102,7 +4102,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Standaard', _p_cc(
+                                                                                        ' ': ['Standaard', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4121,7 +4121,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -4140,7 +4140,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Binnenland: heffing verlegd', v_unmarshalled_from_parse_tree.Nothing(
+                                                                                        ' ': ['Binnenland: heffing verlegd', v_unmarshalled_from_parse_tree.Nothing(
                                                                                             $,
                                                                                             ($) => abort(
                                                                                                 ['expected a nothing', null]
@@ -4192,7 +4192,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                                 ($) => _p.decide.text(
                                                                     $['option']['value'],
-                                                                    ($t): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Regels.dictionary.D.entry.Contracttype => {
+                                                                    ($t): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.Contracttype => {
                                                                         switch ($t) {
                                                                             case 'Project':
                                                                                 return _p_cc(
@@ -4201,7 +4201,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Project', _p_cc(
+                                                                                        ' ': ['Project', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4220,7 +4220,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -4239,7 +4239,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Los', v_unmarshalled_from_parse_tree.Nothing(
+                                                                                        ' ': ['Los', v_unmarshalled_from_parse_tree.Nothing(
                                                                                             $,
                                                                                             ($) => abort(
                                                                                                 ['expected a nothing', null]
@@ -4254,7 +4254,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Licentieovereenkomst', _p_cc(
+                                                                                        ' ': ['Licentieovereenkomst', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4273,7 +4273,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -4324,7 +4324,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                                 ($) => _p.decide.text(
                                                                     $['option']['value'],
-                                                                    ($t): t_out.Handelstransacties.Verkopen.dictionary.D.entry.Regels.dictionary.D.entry.Type => {
+                                                                    ($t): t_out.Handelstransacties.Verkopen._.D._.Regels._.D._.Type => {
                                                                         switch ($t) {
                                                                             case 'Opbrengsten':
                                                                                 return _p_cc(
@@ -4333,7 +4333,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Opbrengsten', _p_cc(
+                                                                                        ' ': ['Opbrengsten', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4352,7 +4352,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -4371,7 +4371,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'state': ['Balans', _p_cc(
+                                                                                        ' ': ['Balans', _p_cc(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4390,7 +4390,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                             $,
                                                                                                             ($) => abort(
                                                                                                                 ['expected a text', null]
@@ -4445,7 +4445,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -4455,11 +4455,11 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': {
+                        ' ': {
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -4469,7 +4469,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -4512,7 +4512,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                     ),
                                                     ($) => _p.decide.text(
                                                         $['option']['value'],
-                                                        ($t): t_out.Mutaties.Verrekenpost_mutaties.dictionary.D.entry.dictionary.D.entry.Afhandeling => {
+                                                        ($t): t_out.Mutaties.Verrekenpost_mutaties._.D._._.D._.Afhandeling => {
                                                             switch ($t) {
                                                                 case 'Resultaat':
                                                                     return _p_cc(
@@ -4521,7 +4521,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                            ' ': ['Resultaat', Balans_Resultaat_Mutatie(
                                                                                 $,
                                                                                 ($) => abort(
                                                                                     $
@@ -4536,7 +4536,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                             'location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'state': ['Balans', _p_cc(
+                                                                            ' ': ['Balans', _p_cc(
                                                                                 v_unmarshalled_from_parse_tree.State(
                                                                                     $,
                                                                                     ($) => abort(
@@ -4545,7 +4545,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                 ),
                                                                                 ($) => _p.decide.text(
                                                                                     $['option']['value'],
-                                                                                    ($t): t_out.Mutaties.Verrekenpost_mutaties.dictionary.D.entry.dictionary.D.entry.Afhandeling.state.Balans => {
+                                                                                    ($t): t_out.Mutaties.Verrekenpost_mutaties._.D._._.D._.Afhandeling._.Balans => {
                                                                                         switch ($t) {
                                                                                             case 'Informele rekening':
                                                                                                 return _p_cc(
@@ -4554,7 +4554,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'state': ['Informele rekening', _p_cc(
+                                                                                                        ' ': ['Informele rekening', _p_cc(
                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                 $,
                                                                                                                 ($) => abort(
@@ -4573,7 +4573,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                                         'location': v_parse_tree_to_location.Value(
                                                                                                                             $
                                                                                                                         )['start']['relative'],
-                                                                                                                        'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                                        ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                                             $,
                                                                                                                             ($) => abort(
                                                                                                                                 ['expected a text', null]
@@ -4624,7 +4624,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -4634,11 +4634,11 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': {
+                        ' ': {
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -4648,7 +4648,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -4657,7 +4657,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                         ),
                                         ($) => _p.decide.text(
                                             $['option']['value'],
-                                            ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.dictionary.D.entry.dictionary.D.entry => {
+                                            ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen._.D._._.D._ => {
                                                 switch ($t) {
                                                     case 'Resultaat':
                                                         return _p_cc(
@@ -4666,7 +4666,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                ' ': ['Resultaat', Balans_Resultaat_Mutatie(
                                                                     $,
                                                                     ($) => abort(
                                                                         $
@@ -4681,7 +4681,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                 'location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'state': ['Balans', _p_cc(
+                                                                ' ': ['Balans', _p_cc(
                                                                     v_unmarshalled_from_parse_tree.State(
                                                                         $,
                                                                         ($) => abort(
@@ -4690,7 +4690,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                     ),
                                                                     ($) => _p.decide.text(
                                                                         $['option']['value'],
-                                                                        ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.dictionary.D.entry.dictionary.D.entry.state.Balans => {
+                                                                        ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen._.D._._.D._._.Balans => {
                                                                             switch ($t) {
                                                                                 case 'Informele rekening':
                                                                                     return _p_cc(
@@ -4699,7 +4699,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                             'location': v_parse_tree_to_location.Value(
                                                                                                 $
                                                                                             )['start']['relative'],
-                                                                                            'state': ['Informele rekening', _p_cc(
+                                                                                            ' ': ['Informele rekening', _p_cc(
                                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                                     $,
                                                                                                     ($) => abort(
@@ -4718,7 +4718,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                             'location': v_parse_tree_to_location.Value(
                                                                                                                 $
                                                                                                             )['start']['relative'],
-                                                                                                            'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                            ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                                 $,
                                                                                                                 ($) => abort(
                                                                                                                     ['expected a text', null]
@@ -4737,7 +4737,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                             'location': v_parse_tree_to_location.Value(
                                                                                                 $
                                                                                             )['start']['relative'],
-                                                                                            'state': ['Verrekenpost', _p_cc(
+                                                                                            ' ': ['Verrekenpost', _p_cc(
                                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                                     $,
                                                                                                     ($) => abort(
@@ -4756,7 +4756,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                             'location': v_parse_tree_to_location.Value(
                                                                                                                 $
                                                                                                             )['start']['relative'],
-                                                                                                            'id': v_unmarshalled_from_parse_tree.Text(
+                                                                                                            ' ': v_unmarshalled_from_parse_tree.Text(
                                                                                                                 $,
                                                                                                                 ($) => abort(
                                                                                                                     ['expected a text', null]
@@ -4804,7 +4804,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                 'location': v_parse_tree_to_location.Value(
                     $
                 )['start']['relative'],
-                'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                ' ': v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null]
@@ -4814,11 +4814,11 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                         'location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'entry': {
+                        ' ': {
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+                            ' ': v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null]
@@ -4828,7 +4828,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     'location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'entry': _p_cc(
+                                    ' ': _p_cc(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -4899,7 +4899,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'id': v_unmarshalled_from_parse_tree.Text(
+                                                    ' ': v_unmarshalled_from_parse_tree.Text(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a text', null]
@@ -4923,7 +4923,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
     'location': v_parse_tree_to_location.Value(
         $
     )['start']['relative'],
-    'dictionary': v_unmarshalled_from_parse_tree.Dictionary(
+    ' ': v_unmarshalled_from_parse_tree.Dictionary(
         $,
         ($) => abort(
             ['expected a dictionary', null]
@@ -4933,7 +4933,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
             'location': v_parse_tree_to_location.Value(
                 $
             )['start']['relative'],
-            'entry': _p_cc(
+            ' ': _p_cc(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -4957,7 +4957,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             ),
                             ($) => _p.decide.text(
                                 $['option']['value'],
-                                ($t): t_out.Jaren.dictionary.D.entry.Afgesloten => {
+                                ($t): t_out.Jaren._.D._.Afgesloten => {
                                     switch ($t) {
                                         case 'Ja':
                                             return _p_cc(
@@ -4966,7 +4966,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'state': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
+                                                    ' ': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a nothing', null]
@@ -4981,7 +4981,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                                                     'location': v_parse_tree_to_location.Value(
                                                         $
                                                     )['start']['relative'],
-                                                    'state': ['Nee', v_unmarshalled_from_parse_tree.Nothing(
+                                                    ' ': ['Nee', v_unmarshalled_from_parse_tree.Nothing(
                                                         $,
                                                         ($) => abort(
                                                             ['expected a nothing', null]
@@ -5118,7 +5118,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     'location': v_parse_tree_to_location.Value(
                         $
                     )['start']['relative'],
-                    'id': v_unmarshalled_from_parse_tree.Text(
+                    ' ': v_unmarshalled_from_parse_tree.Text(
                         $,
                         ($) => abort(
                             ['expected a text', null]
@@ -5152,11 +5152,11 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['Inkoop', {
+                                        ' ': ['Inkoop', {
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
-                                            'id': v_unmarshalled_from_parse_tree.Text(
+                                            ' ': v_unmarshalled_from_parse_tree.Text(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a text', null]
@@ -5172,11 +5172,11 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['Verkoop', {
+                                        ' ': ['Verkoop', {
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
-                                            'id': v_unmarshalled_from_parse_tree.Text(
+                                            ' ': v_unmarshalled_from_parse_tree.Text(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a text', null]
@@ -5192,11 +5192,11 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                         'location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'state': ['BTW-periode', {
+                                        ' ': ['BTW-periode', {
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
-                                            'id': v_unmarshalled_from_parse_tree.Text(
+                                            ' ': v_unmarshalled_from_parse_tree.Text(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a text', null]
@@ -5235,7 +5235,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'state': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
+                            ' ': ['Ja', v_unmarshalled_from_parse_tree.Nothing(
                                 $,
                                 ($) => abort(
                                     ['expected a nothing', null]
@@ -5250,7 +5250,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
                             'location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'state': ['Nee', _p_cc(
+                            ' ': ['Nee', _p_cc(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -5269,7 +5269,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
                                             'location': v_parse_tree_to_location.Value(
                                                 $
                                             )['start']['relative'],
-                                            'id': v_unmarshalled_from_parse_tree.Text(
+                                            ' ': v_unmarshalled_from_parse_tree.Text(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a text', null]
