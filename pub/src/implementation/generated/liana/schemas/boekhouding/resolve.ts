@@ -15,18 +15,18 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
     () => {
         
         const prop_Balans_Hoofdcategorieen = _p_cc(
-            $['l value']['Balans Hoofdcategorieen'],
+            $['Balans Hoofdcategorieen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Zijde = _p_cc(
-                                $['l value']['Zijde'],
+                                $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Activa':
@@ -49,9 +49,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             )
                             
                             const prop_Subcategorieen = _p_cc(
-                                $['l value']['Subcategorieen'],
+                                $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => null
@@ -69,18 +69,18 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
         )
         
         const prop_Resultaat_Hoofdcategorieen = _p_cc(
-            $['l value']['Resultaat Hoofdcategorieen'],
+            $['Resultaat Hoofdcategorieen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Zijde = _p_cc(
-                                $['l value']['Zijde'],
+                                $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Kosten':
@@ -103,9 +103,9 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             )
                             
                             const prop_Subcategorieen = _p_cc(
-                                $['l value']['Subcategorieen'],
+                                $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => null
@@ -132,17 +132,17 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
     () => {
         
         const prop_Correctietypes_vennootschapsbelasting = _p_cc(
-            $['l value']['Correctietypes vennootschapsbelasting'],
+            $['Correctietypes vennootschapsbelasting'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Te_corrigeren_promillage = _p_cc(
-                                $['l value']['Te corrigeren promillage'],
-                                ($) => $['l value']
+                                $['Te corrigeren promillage'],
+                                ($) => $
                             )
                             return {
                                 'Te corrigeren promillage': prop_Te_corrigeren_promillage,
@@ -154,18 +154,18 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         )
         
         const prop_Balans = _p_cc(
-            $['l value']['Balans'],
+            $['Balans'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Zijde = _p_cc(
-                                $['l value']['Zijde'],
+                                $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Grootboek_Categorieen.Balans.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Activa':
@@ -188,31 +188,31 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             )
                             
                             const prop_Subcategorieen = _p_cc(
-                                $['l value']['Subcategorieen'],
+                                $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
                                             () => {
                                                 
                                                 const prop_Hoofdcategorie_fiscus = _p_cc(
-                                                    $['l value']['Hoofdcategorie fiscus'],
+                                                    $['Hoofdcategorie fiscus'],
                                                     ($) => ({
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l value'],
+                                                        'l id': $['l reference'],
                                                     })
                                                 )
                                                 
                                                 const prop_Subcategorie_fiscus = _p_cc(
-                                                    $['l value']['Subcategorie fiscus'],
+                                                    $['Subcategorie fiscus'],
                                                     ($) => ({
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l value'],
+                                                        'l id': $['l reference'],
                                                     })
                                                 )
                                                 return {
@@ -235,18 +235,18 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         )
         
         const prop_Resultaat = _p_cc(
-            $['l value']['Resultaat'],
+            $['Resultaat'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Zijde = _p_cc(
-                                $['l value']['Zijde'],
+                                $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Grootboek_Categorieen.Resultaat.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Kosten':
@@ -269,31 +269,31 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             )
                             
                             const prop_Subcategorieen = _p_cc(
-                                $['l value']['Subcategorieen'],
+                                $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
                                             () => {
                                                 
                                                 const prop_Hoofdcategorie_fiscus = _p_cc(
-                                                    $['l value']['Hoofdcategorie fiscus'],
+                                                    $['Hoofdcategorie fiscus'],
                                                     ($) => ({
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l value'],
+                                                        'l id': $['l reference'],
                                                     })
                                                 )
                                                 
                                                 const prop_Subcategorie_fiscus = _p_cc(
-                                                    $['l value']['Subcategorie fiscus'],
+                                                    $['Subcategorie fiscus'],
                                                     ($) => ({
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l value'],
+                                                        'l id': $['l reference'],
                                                     })
                                                 )
                                                 return {
@@ -326,18 +326,18 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
     () => {
         
         const prop_BTW$mi_categorieen = _p_cc(
-            $['l value']['BTW-categorieen'],
+            $['BTW-categorieen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Beheer.BTW$mi_categorieen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_BTW$mi_heffing = _p_cc(
-                                $['l value']['BTW-heffing'],
+                                $['BTW-heffing'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                         switch ($[0]) {
                                             case 'Ja':
@@ -347,8 +347,8 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                         () => {
                                                             
                                                             const prop_BTW$mi_promillage = _p_cc(
-                                                                $['l value']['BTW-promillage'],
-                                                                ($) => $['l value']
+                                                                $['BTW-promillage'],
+                                                                ($) => $
                                                             )
                                                             return {
                                                                 'BTW-promillage': prop_BTW$mi_promillage,
@@ -374,43 +374,43 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         )
         
         const prop_Grootboekrekeningen = _p_cc(
-            $['l value']['Grootboekrekeningen'],
+            $['Grootboekrekeningen'],
             ($) => _p.group.resolve(
                 () => {
                     
                     const prop_Balans = _p_cc(
-                        $['l value']['Balans'],
+                        $['Balans'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Balans.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
                                     () => {
                                         
                                         const prop_Hoofdcategorie = _p_cc(
-                                            $['l value']['Hoofdcategorie'],
+                                            $['Hoofdcategorie'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         
                                         const prop_Subcategorie = _p_cc(
-                                            $['l value']['Subcategorie'],
+                                            $['Subcategorie'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         
                                         const prop_Zijde = _p_cc(
-                                            $['l value']['Zijde'],
+                                            $['Zijde'],
                                             ($) => _p.decide.state(
-                                                $['l value'],
+                                                $['l state'],
                                                 ($): t_out.Beheer.Grootboekrekeningen.Balans.D.Zijde => {
                                                     switch ($[0]) {
                                                         case 'Activa':
@@ -443,38 +443,38 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     )
                     
                     const prop_Resultaat = _p_cc(
-                        $['l value']['Resultaat'],
+                        $['Resultaat'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Resultaat.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
                                     () => {
                                         
                                         const prop_Hoofdcategorie = _p_cc(
-                                            $['l value']['Hoofdcategorie'],
+                                            $['Hoofdcategorie'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         
                                         const prop_Subcategorie = _p_cc(
-                                            $['l value']['Subcategorie'],
+                                            $['Subcategorie'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         
                                         const prop_Zijde = _p_cc(
-                                            $['l value']['Zijde'],
+                                            $['Zijde'],
                                             ($) => _p.decide.state(
-                                                $['l value'],
+                                                $['l state'],
                                                 ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
                                                     switch ($[0]) {
                                                         case 'Kosten':
@@ -484,9 +484,9 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                     () => {
                                                                         
                                                                         const prop_Correctie_op_vennootschapsbelasting = _p_cc(
-                                                                            $['l value']['Correctie op vennootschapsbelasting'],
+                                                                            $['Correctie op vennootschapsbelasting'],
                                                                             ($) => _p.decide.state(
-                                                                                $['l value'],
+                                                                                $['l state'],
                                                                                 ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                     switch ($[0]) {
                                                                                         case 'Ja':
@@ -496,12 +496,12 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                                     () => {
                                                                                                         
                                                                                                         const prop_Correctietype = _p_cc(
-                                                                                                            $['l value']['Correctietype'],
+                                                                                                            $['Correctietype'],
                                                                                                             ($) => ({
                                                                                                                 'l entry': _pdev.implement_me(
                                                                                                                     "IM: FIXME ACYCLIC ENTRY"
                                                                                                                 ),
-                                                                                                                'l id': $['l value'],
+                                                                                                                'l id': $['l reference'],
                                                                                                             })
                                                                                                         )
                                                                                                         return {
@@ -561,14 +561,14 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         )
         
         const prop_Rekeningen = _p_cc(
-            $['l value']['Rekeningen'],
+            $['Rekeningen'],
             ($) => _p.group.resolve(
                 () => {
                     
                     const prop_Bank = _p_cc(
-                        $['l value']['Bank'],
+                        $['Bank'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Bank.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -577,9 +577,9 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     )
                     
                     const prop_Informeel = _p_cc(
-                        $['l value']['Informeel'],
+                        $['Informeel'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Informeel.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -595,22 +595,22 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         )
         
         const prop_Gebruikers = _p_cc(
-            $['l value']['Gebruikers'],
+            $['Gebruikers'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Beheer.Gebruikers.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Volledige_naam = _p_cc(
-                                $['l value']['Volledige naam'],
-                                ($) => $['l value']
+                                $['Volledige naam'],
+                                ($) => $
                             )
                             
                             const prop_Wachtwoord = _p_cc(
-                                $['l value']['Wachtwoord'],
-                                ($) => $['l value']
+                                $['Wachtwoord'],
+                                ($) => $
                             )
                             return {
                                 'Volledige naam': prop_Volledige_naam,
@@ -623,35 +623,35 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         )
         
         const prop_Klanten = _p_cc(
-            $['l value']['Klanten'],
+            $['Klanten'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Beheer.Klanten.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Licentieovereenkomsten = _p_cc(
-                                $['l value']['Licentieovereenkomsten'],
+                                $['Licentieovereenkomsten'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
                                             () => {
                                                 
                                                 const prop_Periodes = _p_cc(
-                                                    $['l value']['Periodes'],
+                                                    $['Periodes'],
                                                     ($) => _p.dictionary.resolve(
-                                                        $['l value'],
+                                                        $['l dictionary'],
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D => _p_cc(
                                                             $['l entry'],
                                                             ($) => _p.group.resolve(
                                                                 () => {
                                                                     
                                                                     const prop_Bedrag = _p_cc(
-                                                                        $['l value']['Bedrag'],
-                                                                        ($) => $['l value']
+                                                                        $['Bedrag'],
+                                                                        ($) => $
                                                                     )
                                                                     return {
                                                                         'Bedrag': prop_Bedrag,
@@ -671,36 +671,36 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                             )
                             
                             const prop_Projecten = _p_cc(
-                                $['l value']['Projecten'],
+                                $['Projecten'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
                                             () => {
                                                 
                                                 const prop_Offertes = _p_cc(
-                                                    $['l value']['Offertes'],
+                                                    $['Offertes'],
                                                     ($) => _p.dictionary.resolve(
-                                                        $['l value'],
+                                                        $['l dictionary'],
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D => _p_cc(
                                                             $['l entry'],
                                                             ($) => _p.group.resolve(
                                                                 () => {
                                                                     
                                                                     const prop_Opbrengsten = _p_cc(
-                                                                        $['l value']['Opbrengsten'],
+                                                                        $['Opbrengsten'],
                                                                         ($) => _p.dictionary.resolve(
-                                                                            $['l value'],
+                                                                            $['l dictionary'],
                                                                             ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D => _p_cc(
                                                                                 $['l entry'],
                                                                                 ($) => _p.group.resolve(
                                                                                     () => {
                                                                                         
                                                                                         const prop_Type = _p_cc(
-                                                                                            $['l value']['Type'],
+                                                                                            $['Type'],
                                                                                             ($) => _p.decide.state(
-                                                                                                $['l value'],
+                                                                                                $['l state'],
                                                                                                 ($): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Project':
@@ -710,13 +710,13 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                                                     () => {
                                                                                                                         
                                                                                                                         const prop_Bedrag = _p_cc(
-                                                                                                                            $['l value']['Bedrag'],
-                                                                                                                            ($) => $['l value']
+                                                                                                                            $['Bedrag'],
+                                                                                                                            ($) => $
                                                                                                                         )
                                                                                                                         
                                                                                                                         const prop_Betaaldatum = _p_cc(
-                                                                                                                            $['l value']['Betaaldatum'],
-                                                                                                                            ($) => $['l value']
+                                                                                                                            $['Betaaldatum'],
+                                                                                                                            ($) => $
                                                                                                                         )
                                                                                                                         return {
                                                                                                                             'Bedrag': prop_Bedrag,
@@ -768,9 +768,9 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         )
         
         const prop_Leveranciers = _p_cc(
-            $['l value']['Leveranciers'],
+            $['Leveranciers'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Beheer.Leveranciers.D => _p_cc(
                     $['l entry'],
                     ($) => null
@@ -779,9 +779,9 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         )
         
         const prop_Medewerkers = _p_cc(
-            $['l value']['Medewerkers'],
+            $['Medewerkers'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Beheer.Medewerkers.D => _p_cc(
                     $['l entry'],
                     ($) => null
@@ -804,18 +804,18 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
     () => {
         
         const prop_Balans = _p_cc(
-            $['l value']['Balans'],
+            $['Balans'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Balans.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Type = _p_cc(
-                                $['l value']['Type'],
+                                $['Type'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Grootboekrekeningen.Balans.D.Type => {
                                         switch ($[0]) {
                                             case 'Bankrekening':
@@ -851,9 +851,9 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
         )
         
         const prop_Resultaat = _p_cc(
-            $['l value']['Resultaat'],
+            $['Resultaat'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Resultaat.D => _p_cc(
                     $['l entry'],
                     ($) => null
@@ -871,24 +871,24 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
     () => {
         
         const prop_Resultaat = _p_cc(
-            $['l value']['Resultaat'],
+            $['Resultaat'],
             ($) => _p.group.resolve(
                 () => {
                     
                     const prop_Grootboekrekening_voor_BTW_afrondingen = _p_cc(
-                        $['l value']['Grootboekrekening voor BTW afrondingen'],
+                        $['Grootboekrekening voor BTW afrondingen'],
                         ($) => ({
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l value'],
+                            'l id': $['l reference'],
                         })
                     )
                     
                     const prop_Salarisrondes = _p_cc(
-                        $['l value']['Salarisrondes'],
+                        $['Salarisrondes'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.Salarisrondes.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -897,18 +897,18 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     )
                     
                     const prop_BTW_periodes = _p_cc(
-                        $['l value']['BTW periodes'],
+                        $['BTW periodes'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
                                     () => {
                                         
                                         const prop_1$pe__BTW$mi_categorieen = _p_cc(
-                                            $['l value']['1. BTW-categorieen'],
+                                            $['1. BTW-categorieen'],
                                             ($) => _p.dictionary.resolve(
-                                                $['l value'],
+                                                $['l dictionary'],
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen.D => _p_cc(
                                                     $['l entry'],
                                                     ($) => null
@@ -917,17 +917,17 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         )
                                         
                                         const prop_Documenten = _p_cc(
-                                            $['l value']['Documenten'],
+                                            $['Documenten'],
                                             ($) => _p.dictionary.resolve(
-                                                $['l value'],
+                                                $['l dictionary'],
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D => _p_cc(
                                                     $['l entry'],
                                                     ($) => _p.group.resolve(
                                                         () => {
                                                             
                                                             const prop_Bestand = _p_cc(
-                                                                $['l value']['Bestand'],
-                                                                ($) => $['l value']
+                                                                $['Bestand'],
+                                                                ($) => $
                                                             )
                                                             return {
                                                                 'Bestand': prop_Bestand,
@@ -939,14 +939,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         )
                                         
                                         const prop_Omschrijving = _p_cc(
-                                            $['l value']['Omschrijving'],
-                                            ($) => $['l value']
+                                            $['Omschrijving'],
+                                            ($) => $
                                         )
                                         
                                         const prop_Status = _p_cc(
-                                            $['l value']['Status'],
+                                            $['Status'],
                                             ($) => _p.decide.state(
-                                                $['l value'],
+                                                $['l state'],
                                                 ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
                                                     switch ($[0]) {
                                                         case 'Aangegeven':
@@ -956,18 +956,18 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                     () => {
                                                                         
                                                                         const prop_Afronding = _p_cc(
-                                                                            $['l value']['Afronding'],
-                                                                            ($) => $['l value']
+                                                                            $['Afronding'],
+                                                                            ($) => $
                                                                         )
                                                                         
                                                                         const prop_Bedrag = _p_cc(
-                                                                            $['l value']['Bedrag'],
-                                                                            ($) => $['l value']
+                                                                            $['Bedrag'],
+                                                                            ($) => $
                                                                         )
                                                                         
                                                                         const prop_Datum = _p_cc(
-                                                                            $['l value']['Datum'],
-                                                                            ($) => $['l value']
+                                                                            $['Datum'],
+                                                                            ($) => $
                                                                         )
                                                                         return {
                                                                             'Afronding': prop_Afronding,
@@ -1011,98 +1011,98 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
         )
         
         const prop_Balans = _p_cc(
-            $['l value']['Balans'],
+            $['Balans'],
             ($) => _p.group.resolve(
                 () => {
                     
                     const prop_Beginsaldo_nog_aan_te_geven_BTW = _p_cc(
-                        $['l value']['Beginsaldo nog aan te geven BTW'],
-                        ($) => $['l value']
+                        $['Beginsaldo nog aan te geven BTW'],
+                        ($) => $
                     )
                     
                     const prop_Beginsaldo_winstreserve = _p_cc(
-                        $['l value']['Beginsaldo winstreserve'],
-                        ($) => $['l value']
+                        $['Beginsaldo winstreserve'],
+                        ($) => $
                     )
                     
                     const prop_Grootboekrekening_voor_nog_aan_te_geven_BTW = _p_cc(
-                        $['l value']['Grootboekrekening voor nog aan te geven BTW'],
+                        $['Grootboekrekening voor nog aan te geven BTW'],
                         ($) => ({
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l value'],
+                            'l id': $['l reference'],
                         })
                     )
                     
                     const prop_Grootboekrekening_voor_resultaat_dit_jaar = _p_cc(
-                        $['l value']['Grootboekrekening voor resultaat dit jaar'],
+                        $['Grootboekrekening voor resultaat dit jaar'],
                         ($) => ({
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l value'],
+                            'l id': $['l reference'],
                         })
                     )
                     
                     const prop_Grootboekrekening_voor_winstreserve = _p_cc(
-                        $['l value']['Grootboekrekening voor winstreserve'],
+                        $['Grootboekrekening voor winstreserve'],
                         ($) => ({
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l value'],
+                            'l id': $['l reference'],
                         })
                     )
                     
                     const prop_Grootboekrekening_voor_Inkoop_saldo = _p_cc(
-                        $['l value']['Grootboekrekening voor Inkoop saldo'],
+                        $['Grootboekrekening voor Inkoop saldo'],
                         ($) => ({
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l value'],
+                            'l id': $['l reference'],
                         })
                     )
                     
                     const prop_Grootboekrekening_voor_Verkoop_saldo = _p_cc(
-                        $['l value']['Grootboekrekening voor Verkoop saldo'],
+                        $['Grootboekrekening voor Verkoop saldo'],
                         ($) => ({
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l value'],
+                            'l id': $['l reference'],
                         })
                     )
                     
                     const prop_Informele_rekeningen = _p_cc(
-                        $['l value']['Informele rekeningen'],
+                        $['Informele rekeningen'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Informele_rekeningen.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
                                     () => {
                                         
                                         const prop_Beginsaldo = _p_cc(
-                                            $['l value']['Beginsaldo'],
-                                            ($) => $['l value']
+                                            $['Beginsaldo'],
+                                            ($) => $
                                         )
                                         
                                         const prop_Grootboekrekening = _p_cc(
-                                            $['l value']['Grootboekrekening'],
+                                            $['Grootboekrekening'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         
                                         const prop_Nieuw = _p_cc(
-                                            $['l value']['Nieuw'],
+                                            $['Nieuw'],
                                             ($) => _p.decide.state(
-                                                $['l value'],
+                                                $['l state'],
                                                 ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
                                                     switch ($[0]) {
                                                         case 'Ja':
@@ -1117,9 +1117,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                     () => {
                                                                         
                                                                         const prop_Rekening = _p_cc(
-                                                                            $['l value']['Rekening'],
+                                                                            $['Rekening'],
                                                                             ($) => Verwijzing_naar_Informele_rekening(
-                                                                                $['l value'],
+                                                                                $,
                                                                                 ($) => abort(
                                                                                     $
                                                                                 ),
@@ -1157,33 +1157,33 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     )
                     
                     const prop_Bankrekeningen = _p_cc(
-                        $['l value']['Bankrekeningen'],
+                        $['Bankrekeningen'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
                                     () => {
                                         
                                         const prop_Beginsaldo = _p_cc(
-                                            $['l value']['Beginsaldo'],
-                                            ($) => $['l value']
+                                            $['Beginsaldo'],
+                                            ($) => $
                                         )
                                         
                                         const prop_Grootboekrekening = _p_cc(
-                                            $['l value']['Grootboekrekening'],
+                                            $['Grootboekrekening'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         
                                         const prop_Nieuw = _p_cc(
-                                            $['l value']['Nieuw'],
+                                            $['Nieuw'],
                                             ($) => _p.decide.state(
-                                                $['l value'],
+                                                $['l state'],
                                                 ($): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
                                                     switch ($[0]) {
                                                         case 'Ja':
@@ -1198,9 +1198,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                     () => {
                                                                         
                                                                         const prop_Rekening = _p_cc(
-                                                                            $['l value']['Rekening'],
+                                                                            $['Rekening'],
                                                                             ($) => Verwijzing_naar_Bankrekening(
-                                                                                $['l value'],
+                                                                                $,
                                                                                 ($) => abort(
                                                                                     $
                                                                                 ),
@@ -1228,27 +1228,27 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         )
                                         
                                         const prop_Mutaties = _p_cc(
-                                            $['l value']['Mutaties'],
+                                            $['Mutaties'],
                                             ($) => _p.dictionary.resolve(
-                                                $['l value'],
+                                                $['l dictionary'],
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D => _p_cc(
                                                     $['l entry'],
                                                     ($) => _p.group.resolve(
                                                         () => {
                                                             
                                                             const prop_Bedrag = _p_cc(
-                                                                $['l value']['Bedrag'],
-                                                                ($) => $['l value']
+                                                                $['Bedrag'],
+                                                                ($) => $
                                                             )
                                                             
                                                             const prop_Datum = _p_cc(
-                                                                $['l value']['Datum'],
-                                                                ($) => $['l value']
+                                                                $['Datum'],
+                                                                ($) => $
                                                             )
                                                             
                                                             const prop_Omschrijving = _p_cc(
-                                                                $['l value']['Omschrijving'],
-                                                                ($) => $['l value']
+                                                                $['Omschrijving'],
+                                                                ($) => $
                                                             )
                                                             return {
                                                                 'Bedrag': prop_Bedrag,
@@ -1273,13 +1273,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     )
                     
                     const prop_Overige_balans_items = _p_cc(
-                        $['l value']['Overige balans items'],
+                        $['Overige balans items'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Overige_balans_items.D => _p_cc(
                                 $['l entry'],
                                 ($) => Overige_balans_item(
-                                    $['l value'],
+                                    $,
                                     ($) => abort(
                                         $
                                     ),
@@ -1291,9 +1291,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     )
                     
                     const prop_Verrekenposten = _p_cc(
-                        $['l value']['Verrekenposten'],
+                        $['Verrekenposten'],
                         ($) => _p.dictionary.resolve(
-                            $['l value'],
+                            $['l dictionary'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Verrekenposten.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -1327,24 +1327,24 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
     () => {
         
         const prop_Beginsaldo = _p_cc(
-            $['l value']['Beginsaldo'],
-            ($) => $['l value']
+            $['Beginsaldo'],
+            ($) => $
         )
         
         const prop_Grootboekrekening = _p_cc(
-            $['l value']['Grootboekrekening'],
+            $['Grootboekrekening'],
             ($) => ({
                 'l entry': _pdev.implement_me(
                     "IM: FIXME ACYCLIC ENTRY"
                 ),
-                'l id': $['l value'],
+                'l id': $['l reference'],
             })
         )
         
         const prop_Nieuw = _p_cc(
-            $['l value']['Nieuw'],
+            $['Nieuw'],
             ($) => _p.decide.state(
-                $['l value'],
+                $['l state'],
                 ($): t_out.Overige_balans_item.Nieuw => {
                     switch ($[0]) {
                         case 'Ja':
@@ -1359,12 +1359,12 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                                     () => {
                                         
                                         const prop_Balans_item = _p_cc(
-                                            $['l value']['Balans item'],
+                                            $['Balans item'],
                                             ($) => ({
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l value'],
+                                                'l id': $['l reference'],
                                             })
                                         )
                                         return {
@@ -1393,32 +1393,32 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
     'l entry': _pdev.implement_me(
         "IM: FIXME ACYCLIC ENTRY"
     ),
-    'l id': $['l value'],
+    'l id': $['l reference'],
 })
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($, abort, $l, $p) => ({
     'l entry': _pdev.implement_me(
         "IM: FIXME ACYCLIC ENTRY"
     ),
-    'l id': $['l value'],
+    'l id': $['l reference'],
 })
 
 export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l, $p) => _p.group.resolve(
     () => {
         
         const prop_Inkopen = _p_cc(
-            $['l value']['Inkopen'],
+            $['Inkopen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Afhandeling = _p_cc(
-                                $['l value']['Afhandeling'],
+                                $['Afhandeling'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Inkopen.D.Afhandeling => {
                                         switch ($[0]) {
                                             case 'Mutaties':
@@ -1433,12 +1433,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Rekening_courant = _p_cc(
-                                                                $['l value']['Rekening courant'],
+                                                                $['Rekening courant'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1457,9 +1457,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_BTW$mi_regime = _p_cc(
-                                $['l value']['BTW-regime'],
+                                $['BTW-regime'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
                                         switch ($[0]) {
                                             case 'Binnenland: heffing verlegd':
@@ -1489,12 +1489,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_BTW$mi_periode = _p_cc(
-                                                                $['l value']['BTW-periode'],
+                                                                $['BTW-periode'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1513,9 +1513,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_Brondocument = _p_cc(
-                                $['l value']['Brondocument'],
+                                $['Brondocument'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Inkopen.D.Brondocument => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
@@ -1525,8 +1525,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Document = _p_cc(
-                                                                $['l value']['Document'],
-                                                                ($) => $['l value']
+                                                                $['Document'],
+                                                                ($) => $
                                                             )
                                                             return {
                                                                 'Document': prop_Document,
@@ -1554,23 +1554,23 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_Datum = _p_cc(
-                                $['l value']['Datum'],
-                                ($) => $['l value']
+                                $['Datum'],
+                                ($) => $
                             )
                             
                             const prop_Regels = _p_cc(
-                                $['l value']['Regels'],
+                                $['Regels'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D.Regels.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
                                             () => {
                                                 
                                                 const prop_Bedrag = _p_cc(
-                                                    $['l value']['Bedrag'],
+                                                    $['Bedrag'],
                                                     ($) => _p.decide.state(
-                                                        $['l value'],
+                                                        $['l state'],
                                                         ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
                                                             switch ($[0]) {
                                                                 case 'Bekend':
@@ -1580,13 +1580,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_BTW$mi_bedrag = _p_cc(
-                                                                                    $['l value']['BTW-bedrag'],
-                                                                                    ($) => $['l value']
+                                                                                    $['BTW-bedrag'],
+                                                                                    ($) => $
                                                                                 )
                                                                                 
                                                                                 const prop_Bedrag_inclusief_geheven_BTW = _p_cc(
-                                                                                    $['l value']['Bedrag inclusief geheven BTW'],
-                                                                                    ($) => $['l value']
+                                                                                    $['Bedrag inclusief geheven BTW'],
+                                                                                    ($) => $
                                                                                 )
                                                                                 return {
                                                                                     'BTW-bedrag': prop_BTW$mi_bedrag,
@@ -1605,14 +1605,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 )
                                                 
                                                 const prop_Omschrijving = _p_cc(
-                                                    $['l value']['Omschrijving'],
-                                                    ($) => $['l value']
+                                                    $['Omschrijving'],
+                                                    ($) => $
                                                 )
                                                 
                                                 const prop_Type = _p_cc(
-                                                    $['l value']['Type'],
+                                                    $['Type'],
                                                     ($) => _p.decide.state(
-                                                        $['l value'],
+                                                        $['l state'],
                                                         ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Type => {
                                                             switch ($[0]) {
                                                                 case 'Balans':
@@ -1622,12 +1622,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_Balans_item = _p_cc(
-                                                                                    $['l value']['Balans item'],
+                                                                                    $['Balans item'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -1643,12 +1643,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_Grootboekrekening = _p_cc(
-                                                                                    $['l value']['Grootboekrekening'],
+                                                                                    $['Grootboekrekening'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -1677,9 +1677,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_Type = _p_cc(
-                                $['l value']['Type'],
+                                $['Type'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Inkopen.D.Type => {
                                         switch ($[0]) {
                                             case 'Bonnetje':
@@ -1694,18 +1694,18 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Crediteur = _p_cc(
-                                                                $['l value']['Crediteur'],
+                                                                $['Crediteur'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             
                                                             const prop_Factuurnummer = _p_cc(
-                                                                $['l value']['Factuurnummer'],
-                                                                ($) => $['l value']
+                                                                $['Factuurnummer'],
+                                                                ($) => $
                                                             )
                                                             return {
                                                                 'Crediteur': prop_Crediteur,
@@ -1721,12 +1721,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Ronde = _p_cc(
-                                                                $['l value']['Ronde'],
+                                                                $['Ronde'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1742,22 +1742,22 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Ronde = _p_cc(
-                                                                $['l value']['Ronde'],
+                                                                $['Ronde'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             
                                                             const prop_Medewerker = _p_cc(
-                                                                $['l value']['Medewerker'],
+                                                                $['Medewerker'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1790,38 +1790,38 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
         )
         
         const prop_Verkopen = _p_cc(
-            $['l value']['Verkopen'],
+            $['Verkopen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
                         () => {
                             
                             const prop_Datum = _p_cc(
-                                $['l value']['Datum'],
-                                ($) => $['l value']
+                                $['Datum'],
+                                ($) => $
                             )
                             
                             const prop_Betalingstermijn = _p_cc(
-                                $['l value']['Betalingstermijn'],
-                                ($) => $['l value']
+                                $['Betalingstermijn'],
+                                ($) => $
                             )
                             
                             const prop_BTW$mi_periode = _p_cc(
-                                $['l value']['BTW-periode'],
+                                $['BTW-periode'],
                                 ($) => ({
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l value'],
+                                    'l id': $['l reference'],
                                 })
                             )
                             
                             const prop_Brondocument = _p_cc(
-                                $['l value']['Brondocument'],
+                                $['Brondocument'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Verkopen.D.Brondocument => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
@@ -1831,8 +1831,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Document = _p_cc(
-                                                                $['l value']['Document'],
-                                                                ($) => $['l value']
+                                                                $['Document'],
+                                                                ($) => $
                                                             )
                                                             return {
                                                                 'Document': prop_Document,
@@ -1850,19 +1850,19 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_Debiteur = _p_cc(
-                                $['l value']['Debiteur'],
+                                $['Debiteur'],
                                 ($) => ({
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l value'],
+                                    'l id': $['l reference'],
                                 })
                             )
                             
                             const prop_Contracttype = _p_cc(
-                                $['l value']['Contracttype'],
+                                $['Contracttype'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Verkopen.D.Contracttype => {
                                         switch ($[0]) {
                                             case 'Project':
@@ -1872,22 +1872,22 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Project = _p_cc(
-                                                                $['l value']['Project'],
+                                                                $['Project'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             
                                                             const prop_Offerte = _p_cc(
-                                                                $['l value']['Offerte'],
+                                                                $['Offerte'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1904,12 +1904,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Overeenkomst = _p_cc(
-                                                                $['l value']['Overeenkomst'],
+                                                                $['Overeenkomst'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1928,9 +1928,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_Afhandeling = _p_cc(
-                                $['l value']['Afhandeling'],
+                                $['Afhandeling'],
                                 ($) => _p.decide.state(
-                                    $['l value'],
+                                    $['l state'],
                                     ($): t_out.Handelstransacties.Verkopen.D.Afhandeling => {
                                         switch ($[0]) {
                                             case 'Mutaties':
@@ -1945,12 +1945,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         () => {
                                                             
                                                             const prop_Rekening_courant = _p_cc(
-                                                                $['l value']['Rekening courant'],
+                                                                $['Rekening courant'],
                                                                 ($) => ({
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l value'],
+                                                                    'l id': $['l reference'],
                                                                 })
                                                             )
                                                             return {
@@ -1969,18 +1969,18 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             
                             const prop_Regels = _p_cc(
-                                $['l value']['Regels'],
+                                $['Regels'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l value'],
+                                    $['l dictionary'],
                                     ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D.Regels.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
                                             () => {
                                                 
                                                 const prop_BTW$mi_regime = _p_cc(
-                                                    $['l value']['BTW-regime'],
+                                                    $['BTW-regime'],
                                                     ($) => _p.decide.state(
-                                                        $['l value'],
+                                                        $['l state'],
                                                         ($): t_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                             switch ($[0]) {
                                                                 case 'Intracommunautair':
@@ -1995,12 +1995,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_BTW$mi_categorie = _p_cc(
-                                                                                    $['l value']['BTW-categorie'],
+                                                                                    $['BTW-categorie'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2024,14 +2024,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 )
                                                 
                                                 const prop_Bedrag_exclusief_BTW = _p_cc(
-                                                    $['l value']['Bedrag exclusief BTW'],
-                                                    ($) => $['l value']
+                                                    $['Bedrag exclusief BTW'],
+                                                    ($) => $
                                                 )
                                                 
                                                 const prop_Contracttype = _p_cc(
-                                                    $['l value']['Contracttype'],
+                                                    $['Contracttype'],
                                                     ($) => _p.decide.state(
-                                                        $['l value'],
+                                                        $['l state'],
                                                         ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
                                                             switch ($[0]) {
                                                                 case 'Project':
@@ -2041,12 +2041,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_Opbrengst = _p_cc(
-                                                                                    $['l value']['Opbrengst'],
+                                                                                    $['Opbrengst'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2067,12 +2067,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_Periode = _p_cc(
-                                                                                    $['l value']['Periode'],
+                                                                                    $['Periode'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2091,14 +2091,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 )
                                                 
                                                 const prop_Omschrijving = _p_cc(
-                                                    $['l value']['Omschrijving'],
-                                                    ($) => $['l value']
+                                                    $['Omschrijving'],
+                                                    ($) => $
                                                 )
                                                 
                                                 const prop_Type = _p_cc(
-                                                    $['l value']['Type'],
+                                                    $['Type'],
                                                     ($) => _p.decide.state(
-                                                        $['l value'],
+                                                        $['l state'],
                                                         ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Type => {
                                                             switch ($[0]) {
                                                                 case 'Opbrengsten':
@@ -2108,12 +2108,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_Grootboekrekening = _p_cc(
-                                                                                    $['l value']['Grootboekrekening'],
+                                                                                    $['Grootboekrekening'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2129,12 +2129,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                             () => {
                                                                                 
                                                                                 const prop_Balans_item = _p_cc(
-                                                                                    $['l value']['Balans item'],
+                                                                                    $['Balans item'],
                                                                                     ($) => ({
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l value'],
+                                                                                        'l id': $['l reference'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2189,22 +2189,22 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
     () => {
         
         const prop_Jaar = _p_cc(
-            $['l value']['Jaar'],
+            $['Jaar'],
             ($) => _p.optional.map(
-                $['l value'],
+                $,
                 ($) => ({
                     'l entry': _pdev.implement_me(
                         "IM: FIXME ACYCLIC ENTRY"
                     ),
-                    'l id': $['l value'],
+                    'l id': $['l reference'],
                 })
             )
         )
         
         const prop_type = _p_cc(
-            $['l value']['type'],
+            $['type'],
             ($) => _p.decide.state(
-                $['l value'],
+                $['l state'],
                 ($): t_out.Balans_Resultaat_Mutatie.type_ => {
                     switch ($[0]) {
                         case 'Inkoop':
@@ -2214,7 +2214,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l value'],
+                                    'l id': $['l reference'],
                                 }]
                             )
                         case 'Verkoop':
@@ -2224,7 +2224,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l value'],
+                                    'l id': $['l reference'],
                                 }]
                             )
                         case 'BTW-periode':
@@ -2234,7 +2234,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l value'],
+                                    'l id': $['l reference'],
                                 }]
                             )
                         default:
@@ -2256,34 +2256,34 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
     () => {
         
         const prop_Verrekenpost_mutaties = _p_cc(
-            $['l value']['Verrekenpost mutaties'],
+            $['Verrekenpost mutaties'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D => _p_cc(
                     $['l entry'],
                     ($) => _p.dictionary.resolve(
-                        $['l value'],
+                        $['l dictionary'],
                         ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D.D => _p_cc(
                             $['l entry'],
                             ($) => _p.group.resolve(
                                 () => {
                                     
                                     const prop_Bedrag = _p_cc(
-                                        $['l value']['Bedrag'],
-                                        ($) => $['l value']
+                                        $['Bedrag'],
+                                        ($) => $
                                     )
                                     
                                     const prop_Afhandeling = _p_cc(
-                                        $['l value']['Afhandeling'],
+                                        $['Afhandeling'],
                                         ($) => _p.decide.state(
-                                            $['l value'],
+                                            $['l state'],
                                             ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
                                                 switch ($[0]) {
                                                     case 'Resultaat':
                                                         return _p.ss(
                                                             $,
                                                             ($) => ['Resultaat', Balans_Resultaat_Mutatie(
-                                                                $['l value'],
+                                                                $,
                                                                 ($) => abort(
                                                                     $
                                                                 ),
@@ -2295,7 +2295,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                         return _p.ss(
                                                             $,
                                                             ($) => ['Balans', _p.decide.state(
-                                                                $['l value'],
+                                                                $['l state'],
                                                                 ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.Balans => {
                                                                     switch ($[0]) {
                                                                         case 'Informele rekening':
@@ -2305,12 +2305,12 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                                     () => {
                                                                                         
                                                                                         const prop_Informele_rekening = _p_cc(
-                                                                                            $['l value']['Informele rekening'],
+                                                                                            $['Informele rekening'],
                                                                                             ($) => ({
                                                                                                 'l entry': _pdev.implement_me(
                                                                                                     "IM: FIXME ACYCLIC ENTRY"
                                                                                                 ),
-                                                                                                'l id': $['l value'],
+                                                                                                'l id': $['l reference'],
                                                                                             })
                                                                                         )
                                                                                         return {
@@ -2348,24 +2348,24 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
         )
         
         const prop_Bankrekening_Mutatie_Verwerkingen = _p_cc(
-            $['l value']['Bankrekening Mutatie Verwerkingen'],
+            $['Bankrekening Mutatie Verwerkingen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.dictionary.resolve(
-                        $['l value'],
+                        $['l dictionary'],
                         ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_cc(
                             $['l entry'],
                             ($) => _p.decide.state(
-                                $['l value'],
+                                $['l state'],
                                 ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
                                     switch ($[0]) {
                                         case 'Resultaat':
                                             return _p.ss(
                                                 $,
                                                 ($) => ['Resultaat', Balans_Resultaat_Mutatie(
-                                                    $['l value'],
+                                                    $,
                                                     ($) => abort(
                                                         $
                                                     ),
@@ -2377,7 +2377,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                             return _p.ss(
                                                 $,
                                                 ($) => ['Balans', _p.decide.state(
-                                                    $['l value'],
+                                                    $['l state'],
                                                     ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.Balans => {
                                                         switch ($[0]) {
                                                             case 'Verrekenpost':
@@ -2387,12 +2387,12 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                         () => {
                                                                             
                                                                             const prop_Verrekenpost = _p_cc(
-                                                                                $['l value']['Verrekenpost'],
+                                                                                $['Verrekenpost'],
                                                                                 ($) => ({
                                                                                     'l entry': _pdev.implement_me(
                                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                                     ),
-                                                                                    'l id': $['l value'],
+                                                                                    'l id': $['l reference'],
                                                                                 })
                                                                             )
                                                                             return {
@@ -2408,12 +2408,12 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                         () => {
                                                                             
                                                                             const prop_Informele_rekening = _p_cc(
-                                                                                $['l value']['Informele rekening'],
+                                                                                $['Informele rekening'],
                                                                                 ($) => ({
                                                                                     'l entry': _pdev.implement_me(
                                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                                     ),
-                                                                                    'l id': $['l value'],
+                                                                                    'l id': $['l reference'],
                                                                                 })
                                                                             )
                                                                             return {
@@ -2444,41 +2444,41 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
         )
         
         const prop_Memoriaal_boekingen = _p_cc(
-            $['l value']['Memoriaal boekingen'],
+            $['Memoriaal boekingen'],
             ($) => _p.dictionary.resolve(
-                $['l value'],
+                $['l dictionary'],
                 ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.dictionary.resolve(
-                        $['l value'],
+                        $['l dictionary'],
                         ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D.D => _p_cc(
                             $['l entry'],
                             ($) => _p.group.resolve(
                                 () => {
                                     
                                     const prop_Bedrag = _p_cc(
-                                        $['l value']['Bedrag'],
-                                        ($) => $['l value']
+                                        $['Bedrag'],
+                                        ($) => $
                                     )
                                     
                                     const prop_Datum = _p_cc(
-                                        $['l value']['Datum'],
-                                        ($) => $['l value']
+                                        $['Datum'],
+                                        ($) => $
                                     )
                                     
                                     const prop_Grootboekrekening = _p_cc(
-                                        $['l value']['Grootboekrekening'],
+                                        $['Grootboekrekening'],
                                         ($) => ({
                                             'l entry': _pdev.implement_me(
                                                 "IM: FIXME ACYCLIC ENTRY"
                                             ),
-                                            'l id': $['l value'],
+                                            'l id': $['l reference'],
                                         })
                                     )
                                     
                                     const prop_Omschrijving = _p_cc(
-                                        $['l value']['Omschrijving'],
-                                        ($) => $['l value']
+                                        $['Omschrijving'],
+                                        ($) => $
                                     )
                                     return {
                                         'Bedrag': prop_Bedrag,
@@ -2502,7 +2502,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
 )
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p.decide.state(
-    $['l value'],
+    $['l state'],
     ($): t_out.Eerste_boekjaar => {
         switch ($[0]) {
             case 'Ja':
@@ -2517,12 +2517,12 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
                         () => {
                             
                             const prop_Vorig_boekjaar = _p_cc(
-                                $['l value']['Vorig boekjaar'],
+                                $['Vorig boekjaar'],
                                 ($) => ({
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l value'],
+                                    'l id': $['l reference'],
                                 })
                             )
                             return {
@@ -2540,16 +2540,16 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
 )
 
 export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.resolve(
-    $['l value'],
+    $['l dictionary'],
     ($, id, $a, $c): t_out.Jaren.D => _p_cc(
         $['l entry'],
         ($) => _p.group.resolve(
             () => {
                 
                 const prop_Afgesloten = _p_cc(
-                    $['l value']['Afgesloten'],
+                    $['Afgesloten'],
                     ($) => _p.decide.state(
-                        $['l value'],
+                        $['l state'],
                         ($): t_out.Jaren.D.Afgesloten => {
                             switch ($[0]) {
                                 case 'Ja':
@@ -2572,14 +2572,14 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 )
                 
                 const prop_Startdatum_boekjaar = _p_cc(
-                    $['l value']['Startdatum boekjaar'],
-                    ($) => $['l value']
+                    $['Startdatum boekjaar'],
+                    ($) => $
                 )
                 
                 const prop_Grootboekrekeningen = _p_cc(
-                    $['l value']['Grootboekrekeningen'],
+                    $['Grootboekrekeningen'],
                     ($) => Grootboekrekeningen(
-                        $['l value'],
+                        $,
                         ($) => abort(
                             $
                         ),
@@ -2589,9 +2589,9 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 )
                 
                 const prop_Eerste_boekjaar = _p_cc(
-                    $['l value']['Eerste boekjaar'],
+                    $['Eerste boekjaar'],
                     ($) => Eerste_boekjaar(
-                        $['l value'],
+                        $,
                         ($) => abort(
                             $
                         ),
@@ -2605,9 +2605,9 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 )
                 
                 const prop_Jaarbeheer = _p_cc(
-                    $['l value']['Jaarbeheer'],
+                    $['Jaarbeheer'],
                     ($) => Jaarbeheer(
-                        $['l value'],
+                        $,
                         ($) => abort(
                             $
                         ),
@@ -2628,9 +2628,9 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 )
                 
                 const prop_Handelstransacties = _p_cc(
-                    $['l value']['Handelstransacties'],
+                    $['Handelstransacties'],
                     ($) => Handelstransacties(
-                        $['l value'],
+                        $,
                         ($) => abort(
                             $
                         ),
@@ -2648,9 +2648,9 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 )
                 
                 const prop_Mutaties = _p_cc(
-                    $['l value']['Mutaties'],
+                    $['Mutaties'],
                     ($) => Mutaties(
-                        $['l value'],
+                        $,
                         ($) => abort(
                             $
                         ),
@@ -2691,9 +2691,9 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
     () => {
         
         const prop_Fiscaal = _p_cc(
-            $['l value']['Fiscaal'],
+            $['Fiscaal'],
             ($) => Fiscaal(
-                $['l value'],
+                $,
                 ($) => abort(
                     $
                 ),
@@ -2703,9 +2703,9 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
         )
         
         const prop_Categorieen = _p_cc(
-            $['l value']['Categorieen'],
+            $['Categorieen'],
             ($) => Grootboek_Categorieen(
-                $['l value'],
+                $,
                 ($) => abort(
                     $
                 ),
@@ -2719,9 +2719,9 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
         )
         
         const prop_Beheer = _p_cc(
-            $['l value']['Beheer'],
+            $['Beheer'],
             ($) => Beheer(
-                $['l value'],
+                $,
                 ($) => abort(
                     $
                 ),
@@ -2735,9 +2735,9 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
         )
         
         const prop_Jaren = _p_cc(
-            $['l value']['Jaren'],
+            $['Jaren'],
             ($) => Jaren(
-                $['l value'],
+                $,
                 ($) => abort(
                     $
                 ),
