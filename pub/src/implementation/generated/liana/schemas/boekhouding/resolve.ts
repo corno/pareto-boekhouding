@@ -17,7 +17,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
         const prop_Balans_Hoofdcategorieen = _p_cc(
             $['Balans Hoofdcategorieen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -26,7 +26,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Activa':
@@ -51,7 +51,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             const prop_Subcategorieen = _p_cc(
                                 $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => null
@@ -71,7 +71,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
         const prop_Resultaat_Hoofdcategorieen = _p_cc(
             $['Resultaat Hoofdcategorieen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -80,7 +80,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Kosten':
@@ -105,7 +105,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             const prop_Subcategorieen = _p_cc(
                                 $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => null
@@ -134,7 +134,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         const prop_Correctietypes_vennootschapsbelasting = _p_cc(
             $['Correctietypes vennootschapsbelasting'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -156,7 +156,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         const prop_Balans = _p_cc(
             $['Balans'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -165,7 +165,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Grootboek_Categorieen.Balans.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Activa':
@@ -190,7 +190,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             const prop_Subcategorieen = _p_cc(
                                 $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
@@ -202,7 +202,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l id'],
+                                                        'l id': $['l value'],
                                                     })
                                                 )
                                                 
@@ -212,7 +212,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l id'],
+                                                        'l id': $['l value'],
                                                     })
                                                 )
                                                 return {
@@ -237,7 +237,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         const prop_Resultaat = _p_cc(
             $['Resultaat'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -246,7 +246,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Grootboek_Categorieen.Resultaat.D.Zijde => {
                                         switch ($[0]) {
                                             case 'Kosten':
@@ -271,7 +271,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             const prop_Subcategorieen = _p_cc(
                                 $['Subcategorieen'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D.Subcategorieen.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
@@ -283,7 +283,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l id'],
+                                                        'l id': $['l value'],
                                                     })
                                                 )
                                                 
@@ -293,7 +293,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                         'l entry': _pdev.implement_me(
                                                             "IM: FIXME ACYCLIC ENTRY"
                                                         ),
-                                                        'l id': $['l id'],
+                                                        'l id': $['l value'],
                                                     })
                                                 )
                                                 return {
@@ -328,7 +328,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         const prop_BTW$mi_categorieen = _p_cc(
             $['BTW-categorieen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Beheer.BTW$mi_categorieen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -337,7 +337,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                             const prop_BTW$mi_heffing = _p_cc(
                                 $['BTW-heffing'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                         switch ($[0]) {
                                             case 'Ja':
@@ -381,7 +381,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     const prop_Balans = _p_cc(
                         $['Balans'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Balans.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
@@ -393,7 +393,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         
@@ -403,14 +403,14 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         
                                         const prop_Zijde = _p_cc(
                                             $['Zijde'],
                                             ($) => _p.decide.state(
-                                                $['l state'],
+                                                $['l value'],
                                                 ($): t_out.Beheer.Grootboekrekeningen.Balans.D.Zijde => {
                                                     switch ($[0]) {
                                                         case 'Activa':
@@ -445,7 +445,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     const prop_Resultaat = _p_cc(
                         $['Resultaat'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Resultaat.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
@@ -457,7 +457,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         
@@ -467,14 +467,14 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         
                                         const prop_Zijde = _p_cc(
                                             $['Zijde'],
                                             ($) => _p.decide.state(
-                                                $['l state'],
+                                                $['l value'],
                                                 ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
                                                     switch ($[0]) {
                                                         case 'Kosten':
@@ -486,7 +486,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                         const prop_Correctie_op_vennootschapsbelasting = _p_cc(
                                                                             $['Correctie op vennootschapsbelasting'],
                                                                             ($) => _p.decide.state(
-                                                                                $['l state'],
+                                                                                $['l value'],
                                                                                 ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                     switch ($[0]) {
                                                                                         case 'Ja':
@@ -501,7 +501,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                                                 'l entry': _pdev.implement_me(
                                                                                                                     "IM: FIXME ACYCLIC ENTRY"
                                                                                                                 ),
-                                                                                                                'l id': $['l id'],
+                                                                                                                'l id': $['l value'],
                                                                                                             })
                                                                                                         )
                                                                                                         return {
@@ -568,7 +568,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     const prop_Bank = _p_cc(
                         $['Bank'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Bank.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -579,7 +579,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                     const prop_Informeel = _p_cc(
                         $['Informeel'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Informeel.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -597,7 +597,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         const prop_Gebruikers = _p_cc(
             $['Gebruikers'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Beheer.Gebruikers.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -625,7 +625,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         const prop_Klanten = _p_cc(
             $['Klanten'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Beheer.Klanten.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -634,7 +634,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                             const prop_Licentieovereenkomsten = _p_cc(
                                 $['Licentieovereenkomsten'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
@@ -643,7 +643,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                 const prop_Periodes = _p_cc(
                                                     $['Periodes'],
                                                     ($) => _p.dictionary.resolve(
-                                                        $['l dictionary'],
+                                                        $['l value'],
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D => _p_cc(
                                                             $['l entry'],
                                                             ($) => _p.group.resolve(
@@ -673,7 +673,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                             const prop_Projecten = _p_cc(
                                 $['Projecten'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
@@ -682,7 +682,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                 const prop_Offertes = _p_cc(
                                                     $['Offertes'],
                                                     ($) => _p.dictionary.resolve(
-                                                        $['l dictionary'],
+                                                        $['l value'],
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D => _p_cc(
                                                             $['l entry'],
                                                             ($) => _p.group.resolve(
@@ -691,7 +691,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                     const prop_Opbrengsten = _p_cc(
                                                                         $['Opbrengsten'],
                                                                         ($) => _p.dictionary.resolve(
-                                                                            $['l dictionary'],
+                                                                            $['l value'],
                                                                             ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D => _p_cc(
                                                                                 $['l entry'],
                                                                                 ($) => _p.group.resolve(
@@ -700,7 +700,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                         const prop_Type = _p_cc(
                                                                                             $['Type'],
                                                                                             ($) => _p.decide.state(
-                                                                                                $['l state'],
+                                                                                                $['l value'],
                                                                                                 ($): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Project':
@@ -770,7 +770,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         const prop_Leveranciers = _p_cc(
             $['Leveranciers'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Beheer.Leveranciers.D => _p_cc(
                     $['l entry'],
                     ($) => null
@@ -781,7 +781,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
         const prop_Medewerkers = _p_cc(
             $['Medewerkers'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Beheer.Medewerkers.D => _p_cc(
                     $['l entry'],
                     ($) => null
@@ -806,7 +806,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
         const prop_Balans = _p_cc(
             $['Balans'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Balans.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -815,7 +815,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                             const prop_Type = _p_cc(
                                 $['Type'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Grootboekrekeningen.Balans.D.Type => {
                                         switch ($[0]) {
                                             case 'Bankrekening':
@@ -853,7 +853,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
         const prop_Resultaat = _p_cc(
             $['Resultaat'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Resultaat.D => _p_cc(
                     $['l entry'],
                     ($) => null
@@ -881,14 +881,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l id'],
+                            'l id': $['l value'],
                         })
                     )
                     
                     const prop_Salarisrondes = _p_cc(
                         $['Salarisrondes'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.Salarisrondes.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -899,7 +899,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_BTW_periodes = _p_cc(
                         $['BTW periodes'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
@@ -908,7 +908,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         const prop_1$pe__BTW$mi_categorieen = _p_cc(
                                             $['1. BTW-categorieen'],
                                             ($) => _p.dictionary.resolve(
-                                                $['l dictionary'],
+                                                $['l value'],
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen.D => _p_cc(
                                                     $['l entry'],
                                                     ($) => null
@@ -919,7 +919,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         const prop_Documenten = _p_cc(
                                             $['Documenten'],
                                             ($) => _p.dictionary.resolve(
-                                                $['l dictionary'],
+                                                $['l value'],
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D => _p_cc(
                                                     $['l entry'],
                                                     ($) => _p.group.resolve(
@@ -946,7 +946,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         const prop_Status = _p_cc(
                                             $['Status'],
                                             ($) => _p.decide.state(
-                                                $['l state'],
+                                                $['l value'],
                                                 ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
                                                     switch ($[0]) {
                                                         case 'Aangegeven':
@@ -1031,7 +1031,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l id'],
+                            'l id': $['l value'],
                         })
                     )
                     
@@ -1041,7 +1041,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l id'],
+                            'l id': $['l value'],
                         })
                     )
                     
@@ -1051,7 +1051,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l id'],
+                            'l id': $['l value'],
                         })
                     )
                     
@@ -1061,7 +1061,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l id'],
+                            'l id': $['l value'],
                         })
                     )
                     
@@ -1071,14 +1071,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                             'l entry': _pdev.implement_me(
                                 "IM: FIXME ACYCLIC ENTRY"
                             ),
-                            'l id': $['l id'],
+                            'l id': $['l value'],
                         })
                     )
                     
                     const prop_Informele_rekeningen = _p_cc(
                         $['Informele rekeningen'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Informele_rekeningen.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
@@ -1095,14 +1095,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         
                                         const prop_Nieuw = _p_cc(
                                             $['Nieuw'],
                                             ($) => _p.decide.state(
-                                                $['l state'],
+                                                $['l value'],
                                                 ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
                                                     switch ($[0]) {
                                                         case 'Ja':
@@ -1159,7 +1159,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Bankrekeningen = _p_cc(
                         $['Bankrekeningen'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D => _p_cc(
                                 $['l entry'],
                                 ($) => _p.group.resolve(
@@ -1176,14 +1176,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         
                                         const prop_Nieuw = _p_cc(
                                             $['Nieuw'],
                                             ($) => _p.decide.state(
-                                                $['l state'],
+                                                $['l value'],
                                                 ($): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
                                                     switch ($[0]) {
                                                         case 'Ja':
@@ -1230,7 +1230,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         const prop_Mutaties = _p_cc(
                                             $['Mutaties'],
                                             ($) => _p.dictionary.resolve(
-                                                $['l dictionary'],
+                                                $['l value'],
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D => _p_cc(
                                                     $['l entry'],
                                                     ($) => _p.group.resolve(
@@ -1275,7 +1275,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Overige_balans_items = _p_cc(
                         $['Overige balans items'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Overige_balans_items.D => _p_cc(
                                 $['l entry'],
                                 ($) => Overige_balans_item(
@@ -1293,7 +1293,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Verrekenposten = _p_cc(
                         $['Verrekenposten'],
                         ($) => _p.dictionary.resolve(
-                            $['l dictionary'],
+                            $['l value'],
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Verrekenposten.D => _p_cc(
                                 $['l entry'],
                                 ($) => null
@@ -1337,14 +1337,14 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                 'l entry': _pdev.implement_me(
                     "IM: FIXME ACYCLIC ENTRY"
                 ),
-                'l id': $['l id'],
+                'l id': $['l value'],
             })
         )
         
         const prop_Nieuw = _p_cc(
             $['Nieuw'],
             ($) => _p.decide.state(
-                $['l state'],
+                $['l value'],
                 ($): t_out.Overige_balans_item.Nieuw => {
                     switch ($[0]) {
                         case 'Ja':
@@ -1364,7 +1364,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                                                 'l entry': _pdev.implement_me(
                                                     "IM: FIXME ACYCLIC ENTRY"
                                                 ),
-                                                'l id': $['l id'],
+                                                'l id': $['l value'],
                                             })
                                         )
                                         return {
@@ -1393,14 +1393,14 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
     'l entry': _pdev.implement_me(
         "IM: FIXME ACYCLIC ENTRY"
     ),
-    'l id': $['l id'],
+    'l id': $['l value'],
 })
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($, abort, $l, $p) => ({
     'l entry': _pdev.implement_me(
         "IM: FIXME ACYCLIC ENTRY"
     ),
-    'l id': $['l id'],
+    'l id': $['l value'],
 })
 
 export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l, $p) => _p.group.resolve(
@@ -1409,7 +1409,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
         const prop_Inkopen = _p_cc(
             $['Inkopen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -1418,7 +1418,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Afhandeling = _p_cc(
                                 $['Afhandeling'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Inkopen.D.Afhandeling => {
                                         switch ($[0]) {
                                             case 'Mutaties':
@@ -1438,7 +1438,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1459,7 +1459,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_BTW$mi_regime = _p_cc(
                                 $['BTW-regime'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
                                         switch ($[0]) {
                                             case 'Binnenland: heffing verlegd':
@@ -1494,7 +1494,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1515,7 +1515,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Brondocument = _p_cc(
                                 $['Brondocument'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Inkopen.D.Brondocument => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
@@ -1561,7 +1561,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Regels = _p_cc(
                                 $['Regels'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D.Regels.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
@@ -1570,7 +1570,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 const prop_Bedrag = _p_cc(
                                                     $['Bedrag'],
                                                     ($) => _p.decide.state(
-                                                        $['l state'],
+                                                        $['l value'],
                                                         ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
                                                             switch ($[0]) {
                                                                 case 'Bekend':
@@ -1612,7 +1612,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 const prop_Type = _p_cc(
                                                     $['Type'],
                                                     ($) => _p.decide.state(
-                                                        $['l state'],
+                                                        $['l value'],
                                                         ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Type => {
                                                             switch ($[0]) {
                                                                 case 'Balans':
@@ -1627,7 +1627,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -1648,7 +1648,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -1679,7 +1679,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Type = _p_cc(
                                 $['Type'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Inkopen.D.Type => {
                                         switch ($[0]) {
                                             case 'Bonnetje':
@@ -1699,7 +1699,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             
@@ -1726,7 +1726,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1747,7 +1747,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             
@@ -1757,7 +1757,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1792,7 +1792,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
         const prop_Verkopen = _p_cc(
             $['Verkopen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.group.resolve(
@@ -1814,14 +1814,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l id'],
+                                    'l id': $['l value'],
                                 })
                             )
                             
                             const prop_Brondocument = _p_cc(
                                 $['Brondocument'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Verkopen.D.Brondocument => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
@@ -1855,14 +1855,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l id'],
+                                    'l id': $['l value'],
                                 })
                             )
                             
                             const prop_Contracttype = _p_cc(
                                 $['Contracttype'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Verkopen.D.Contracttype => {
                                         switch ($[0]) {
                                             case 'Project':
@@ -1877,7 +1877,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             
@@ -1887,7 +1887,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1909,7 +1909,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1930,7 +1930,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Afhandeling = _p_cc(
                                 $['Afhandeling'],
                                 ($) => _p.decide.state(
-                                    $['l state'],
+                                    $['l value'],
                                     ($): t_out.Handelstransacties.Verkopen.D.Afhandeling => {
                                         switch ($[0]) {
                                             case 'Mutaties':
@@ -1950,7 +1950,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                     'l entry': _pdev.implement_me(
                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                     ),
-                                                                    'l id': $['l id'],
+                                                                    'l id': $['l value'],
                                                                 })
                                                             )
                                                             return {
@@ -1971,7 +1971,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Regels = _p_cc(
                                 $['Regels'],
                                 ($) => _p.dictionary.resolve(
-                                    $['l dictionary'],
+                                    $['l value'],
                                     ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D.Regels.D => _p_cc(
                                         $['l entry'],
                                         ($) => _p.group.resolve(
@@ -1980,7 +1980,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 const prop_BTW$mi_regime = _p_cc(
                                                     $['BTW-regime'],
                                                     ($) => _p.decide.state(
-                                                        $['l state'],
+                                                        $['l value'],
                                                         ($): t_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                             switch ($[0]) {
                                                                 case 'Intracommunautair':
@@ -2000,7 +2000,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2031,7 +2031,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 const prop_Contracttype = _p_cc(
                                                     $['Contracttype'],
                                                     ($) => _p.decide.state(
-                                                        $['l state'],
+                                                        $['l value'],
                                                         ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
                                                             switch ($[0]) {
                                                                 case 'Project':
@@ -2046,7 +2046,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2072,7 +2072,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2098,7 +2098,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 const prop_Type = _p_cc(
                                                     $['Type'],
                                                     ($) => _p.decide.state(
-                                                        $['l state'],
+                                                        $['l value'],
                                                         ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Type => {
                                                             switch ($[0]) {
                                                                 case 'Opbrengsten':
@@ -2113,7 +2113,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2134,7 +2134,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                         'l entry': _pdev.implement_me(
                                                                                             "IM: FIXME ACYCLIC ENTRY"
                                                                                         ),
-                                                                                        'l id': $['l id'],
+                                                                                        'l id': $['l value'],
                                                                                     })
                                                                                 )
                                                                                 return {
@@ -2196,7 +2196,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     'l entry': _pdev.implement_me(
                         "IM: FIXME ACYCLIC ENTRY"
                     ),
-                    'l id': $['l id'],
+                    'l id': $['l value'],
                 })
             )
         )
@@ -2204,7 +2204,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         const prop_type = _p_cc(
             $['type'],
             ($) => _p.decide.state(
-                $['l state'],
+                $['l value'],
                 ($): t_out.Balans_Resultaat_Mutatie.type_ => {
                     switch ($[0]) {
                         case 'Inkoop':
@@ -2214,7 +2214,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l id'],
+                                    'l id': $['l value'],
                                 }]
                             )
                         case 'Verkoop':
@@ -2224,7 +2224,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l id'],
+                                    'l id': $['l value'],
                                 }]
                             )
                         case 'BTW-periode':
@@ -2234,7 +2234,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l id'],
+                                    'l id': $['l value'],
                                 }]
                             )
                         default:
@@ -2258,11 +2258,11 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
         const prop_Verrekenpost_mutaties = _p_cc(
             $['Verrekenpost mutaties'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D => _p_cc(
                     $['l entry'],
                     ($) => _p.dictionary.resolve(
-                        $['l dictionary'],
+                        $['l value'],
                         ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D.D => _p_cc(
                             $['l entry'],
                             ($) => _p.group.resolve(
@@ -2276,7 +2276,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                     const prop_Afhandeling = _p_cc(
                                         $['Afhandeling'],
                                         ($) => _p.decide.state(
-                                            $['l state'],
+                                            $['l value'],
                                             ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
                                                 switch ($[0]) {
                                                     case 'Resultaat':
@@ -2295,7 +2295,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                         return _p.ss(
                                                             $,
                                                             ($) => ['Balans', _p.decide.state(
-                                                                $['l state'],
+                                                                $['l value'],
                                                                 ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.Balans => {
                                                                     switch ($[0]) {
                                                                         case 'Informele rekening':
@@ -2310,7 +2310,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                                                 'l entry': _pdev.implement_me(
                                                                                                     "IM: FIXME ACYCLIC ENTRY"
                                                                                                 ),
-                                                                                                'l id': $['l id'],
+                                                                                                'l id': $['l value'],
                                                                                             })
                                                                                         )
                                                                                         return {
@@ -2350,15 +2350,15 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
         const prop_Bankrekening_Mutatie_Verwerkingen = _p_cc(
             $['Bankrekening Mutatie Verwerkingen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.dictionary.resolve(
-                        $['l dictionary'],
+                        $['l value'],
                         ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_cc(
                             $['l entry'],
                             ($) => _p.decide.state(
-                                $['l state'],
+                                $['l value'],
                                 ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
                                     switch ($[0]) {
                                         case 'Resultaat':
@@ -2377,7 +2377,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                             return _p.ss(
                                                 $,
                                                 ($) => ['Balans', _p.decide.state(
-                                                    $['l state'],
+                                                    $['l value'],
                                                     ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.Balans => {
                                                         switch ($[0]) {
                                                             case 'Verrekenpost':
@@ -2392,7 +2392,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                                     'l entry': _pdev.implement_me(
                                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                                     ),
-                                                                                    'l id': $['l id'],
+                                                                                    'l id': $['l value'],
                                                                                 })
                                                                             )
                                                                             return {
@@ -2413,7 +2413,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                                     'l entry': _pdev.implement_me(
                                                                                         "IM: FIXME ACYCLIC ENTRY"
                                                                                     ),
-                                                                                    'l id': $['l id'],
+                                                                                    'l id': $['l value'],
                                                                                 })
                                                                             )
                                                                             return {
@@ -2446,11 +2446,11 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
         const prop_Memoriaal_boekingen = _p_cc(
             $['Memoriaal boekingen'],
             ($) => _p.dictionary.resolve(
-                $['l dictionary'],
+                $['l value'],
                 ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D => _p_cc(
                     $['l entry'],
                     ($) => _p.dictionary.resolve(
-                        $['l dictionary'],
+                        $['l value'],
                         ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D.D => _p_cc(
                             $['l entry'],
                             ($) => _p.group.resolve(
@@ -2472,7 +2472,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                             'l entry': _pdev.implement_me(
                                                 "IM: FIXME ACYCLIC ENTRY"
                                             ),
-                                            'l id': $['l id'],
+                                            'l id': $['l value'],
                                         })
                                     )
                                     
@@ -2502,7 +2502,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
 )
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p.decide.state(
-    $['l state'],
+    $['l value'],
     ($): t_out.Eerste_boekjaar => {
         switch ($[0]) {
             case 'Ja':
@@ -2522,7 +2522,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
                                     'l entry': _pdev.implement_me(
                                         "IM: FIXME ACYCLIC ENTRY"
                                     ),
-                                    'l id': $['l id'],
+                                    'l id': $['l value'],
                                 })
                             )
                             return {
@@ -2540,7 +2540,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
 )
 
 export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.resolve(
-    $['l dictionary'],
+    $['l value'],
     ($, id, $a, $c): t_out.Jaren.D => _p_cc(
         $['l entry'],
         ($) => _p.group.resolve(
@@ -2549,7 +2549,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 const prop_Afgesloten = _p_cc(
                     $['Afgesloten'],
                     ($) => _p.decide.state(
-                        $['l state'],
+                        $['l value'],
                         ($): t_out.Jaren.D.Afgesloten => {
                             switch ($[0]) {
                                 case 'Ja':
