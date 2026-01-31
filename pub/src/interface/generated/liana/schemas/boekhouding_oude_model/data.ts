@@ -1,8 +1,6 @@
 
 import * as _pi from "pareto-core/dist/interface"
 
-export type Bestandsnaam_ = string
-
 export namespace Root_ {
     
     export namespace Bankrekeningen {
@@ -1693,7 +1691,9 @@ export type Root_ = {
     readonly 'Medewerkers': Root_.Medewerkers
 }
 
+export type Bestandsnaam_ = string
+
 export { 
-    Bestandsnaam_ as Bestandsnaam, 
     Root_ as Root, 
+    Bestandsnaam_ as Bestandsnaam, 
 }

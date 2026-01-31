@@ -17,13 +17,6 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => v_unmarshalled_from_parse_tree.Text(
-    $,
-    ($) => abort(
-        ['expected a text', null]
-    )
-)
-
 export const Root: t_signatures.Root = ($, abort) => _p_cc(
     v_unmarshalled_from_parse_tree.Group(
         $,
@@ -4551,4 +4544,11 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
             )
         ),
     })
+)
+
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => v_unmarshalled_from_parse_tree.Text(
+    $,
+    ($) => abort(
+        ['expected a text', null]
+    )
 )

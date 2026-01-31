@@ -7,7 +7,7 @@ import * as v_deserialize from "astn-core/dist/implementation/manual/schemas/par
 
 import * as v_unmarshall from "./unmarshall"
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort, $p) => v_unmarshall.Bestandsnaam(
+export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
     v_deserialize.Document(
         $,
         ($) => abort(
@@ -23,7 +23,7 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort, $p) => v_unmar
     )
 )
 
-export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort, $p) => v_unmarshall.Bestandsnaam(
     v_deserialize.Document(
         $,
         ($) => abort(

@@ -13,11 +13,6 @@ import * as v_serialize_number from "liana-core/dist/implementation/manual/primi
 
 import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['text', {
-    'delimiter': ['quote', null],
-    'value': $,
-}]
-
 export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
         'Bankrekeningen': _p_cc(
@@ -2464,3 +2459,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
         ),
     }
 )]]
+
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['text', {
+    'delimiter': ['quote', null],
+    'value': $,
+}]

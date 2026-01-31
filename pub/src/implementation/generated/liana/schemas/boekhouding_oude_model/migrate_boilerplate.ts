@@ -9,8 +9,6 @@ import * as t_signatures from "../../../../../interface/generated/liana/schemas/
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => $
-
 export const Root: t_signatures.Root = ($) => ({
     'Bankrekeningen': _p_cc(
         $['Bankrekeningen'],
@@ -1606,3 +1604,5 @@ export const Root: t_signatures.Root = ($) => ({
         )
     ),
 })
+
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => $
