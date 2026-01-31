@@ -9,6 +9,10 @@ import * as _pdev from "pareto-core-dev"
 
 import * as _p_ls from "pareto-core/dist/lookup_selection"
 
+import {
+    _p_deprecated_block,
+} from "pareto-core/dist/deprecated_block"
+
 import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/resolve"
@@ -27,25 +31,31 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
-                                        switch ($[0]) {
-                                            case 'Activa':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Activa', null]
-                                                )
-                                            case 'Passiva':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Passiva', null]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
+                                                switch ($[0]) {
+                                                    case 'Activa':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Activa', null]
+                                                        )
+                                                    case 'Passiva':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Passiva', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -81,25 +91,31 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.reso
                             
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
-                                        switch ($[0]) {
-                                            case 'Kosten':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Kosten', null]
-                                                )
-                                            case 'Opbrengsten':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Opbrengsten', null]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
+                                                switch ($[0]) {
+                                                    case 'Kosten':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Kosten', null]
+                                                        )
+                                                    case 'Opbrengsten':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Opbrengsten', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -166,25 +182,31 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Grootboek_Categorieen.Balans.D.Zijde => {
-                                        switch ($[0]) {
-                                            case 'Activa':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Activa', null]
-                                                )
-                                            case 'Passiva':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Passiva', null]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Grootboek_Categorieen.Balans.D.Zijde => {
+                                                switch ($[0]) {
+                                                    case 'Activa':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Activa', null]
+                                                        )
+                                                    case 'Passiva':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Passiva', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -234,7 +256,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                     $['Subcategorie fiscus'],
                                                     ($) => ({
                                                         'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                            prop_Hoofdcategorie_fiscus['entry']['Subcategorieen']
+                                                            prop_Hoofdcategorie_fiscus['l entry']['Subcategorieen']
                                                         ).get_entry(
                                                             $['l reference'],
                                                             {
@@ -291,25 +313,31 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                             
                             const prop_Zijde = _p_cc(
                                 $['Zijde'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Grootboek_Categorieen.Resultaat.D.Zijde => {
-                                        switch ($[0]) {
-                                            case 'Kosten':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Kosten', null]
-                                                )
-                                            case 'Opbrengsten':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Opbrengsten', null]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Grootboek_Categorieen.Resultaat.D.Zijde => {
+                                                switch ($[0]) {
+                                                    case 'Kosten':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Kosten', null]
+                                                        )
+                                                    case 'Opbrengsten':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Opbrengsten', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -359,7 +387,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                     $['Subcategorie fiscus'],
                                                     ($) => ({
                                                         'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                            prop_Hoofdcategorie_fiscus['entry']['Subcategorieen']
+                                                            prop_Hoofdcategorie_fiscus['l entry']['Subcategorieen']
                                                         ).get_entry(
                                                             $['l reference'],
                                                             {
@@ -426,31 +454,37 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                             
                             const prop_BTW$mi_heffing = _p_cc(
                                 $['BTW-heffing'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
-                                        switch ($[0]) {
-                                            case 'Ja':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Ja', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_BTW$mi_promillage = _p_cc(
-                                                                $['BTW-promillage'],
-                                                                ($) => $
-                                                            )
-                                                            return {
-                                                                'BTW-promillage': prop_BTW$mi_promillage,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
+                                                switch ($[0]) {
+                                                    case 'Ja':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Ja', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_BTW$mi_promillage = _p_cc(
+                                                                        $['BTW-promillage'],
+                                                                        ($) => $
+                                                                    )
+                                                                    return {
+                                                                        'BTW-promillage': prop_BTW$mi_promillage,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -513,7 +547,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                             $['Subcategorie'],
                                             ($) => ({
                                                 'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                    prop_Hoofdcategorie['entry']['Subcategorieen']
+                                                    prop_Hoofdcategorie['l entry']['Subcategorieen']
                                                 ).get_entry(
                                                     $['l reference'],
                                                     {
@@ -543,25 +577,31 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         
                                         const prop_Zijde = _p_cc(
                                             $['Zijde'],
-                                            ($) => _p.decide.state(
-                                                $['l state'],
-                                                ($): t_out.Beheer.Grootboekrekeningen.Balans.D.Zijde => {
-                                                    switch ($[0]) {
-                                                        case 'Activa':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Activa', null]
-                                                            )
-                                                        case 'Passiva':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Passiva', null]
-                                                            )
-                                                        default:
-                                                            return _p.au(
-                                                                $[0]
-                                                            )
-                                                    }
+                                            ($) => _p_deprecated_block(
+                                                () => {
+                                                    
+                                                    const var_location = $['l location']
+                                                    return _p.decide.state(
+                                                        $['l state'],
+                                                        ($): t_out.Beheer.Grootboekrekeningen.Balans.D.Zijde => {
+                                                            switch ($[0]) {
+                                                                case 'Activa':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Activa', null]
+                                                                    )
+                                                                case 'Passiva':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Passiva', null]
+                                                                    )
+                                                                default:
+                                                                    return _p.au(
+                                                                        $[0]
+                                                                    )
+                                                            }
+                                                        }
+                                                    )
                                                 }
                                             )
                                         )
@@ -621,7 +661,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                             $['Subcategorie'],
                                             ($) => ({
                                                 'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                    prop_Hoofdcategorie['entry']['Subcategorieen']
+                                                    prop_Hoofdcategorie['l entry']['Subcategorieen']
                                                 ).get_entry(
                                                     $['l reference'],
                                                     {
@@ -651,94 +691,106 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         
                                         const prop_Zijde = _p_cc(
                                             $['Zijde'],
-                                            ($) => _p.decide.state(
-                                                $['l state'],
-                                                ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
-                                                    switch ($[0]) {
-                                                        case 'Kosten':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Kosten', _p.group.resolve(
-                                                                    () => {
-                                                                        
-                                                                        const prop_Correctie_op_vennootschapsbelasting = _p_cc(
-                                                                            $['Correctie op vennootschapsbelasting'],
-                                                                            ($) => _p.decide.state(
-                                                                                $['l state'],
-                                                                                ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
-                                                                                    switch ($[0]) {
-                                                                                        case 'Ja':
-                                                                                            return _p.ss(
-                                                                                                $,
-                                                                                                ($) => ['Ja', _p.group.resolve(
-                                                                                                    () => {
-                                                                                                        
-                                                                                                        const prop_Correctietype = _p_cc(
-                                                                                                            $['Correctietype'],
-                                                                                                            ($) => ({
-                                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                                                    $p['Grootboek Categorieen']
-                                                                                                                ).get_entry(
-                                                                                                                    $['l reference'],
-                                                                                                                    {
-                                                                                                                        'no_such_entry': () => abort(
-                                                                                                                            {
-                                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                                                'location': $['l location'],
-                                                                                                                            }
-                                                                                                                        ),
-                                                                                                                        'no_context_lookup': () => abort(
-                                                                                                                            {
-                                                                                                                                'type': ['lookup', ['no context lookup', null]],
-                                                                                                                                'location': $['l location'],
-                                                                                                                            }
-                                                                                                                        ),
-                                                                                                                        'cycle_detected': () => abort(
-                                                                                                                            {
-                                                                                                                                'type': ['lookup', ['cycle detected', null]],
-                                                                                                                                'location': $['l location'],
-                                                                                                                            }
-                                                                                                                        ),
+                                            ($) => _p_deprecated_block(
+                                                () => {
+                                                    
+                                                    const var_location = $['l location']
+                                                    return _p.decide.state(
+                                                        $['l state'],
+                                                        ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
+                                                            switch ($[0]) {
+                                                                case 'Kosten':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Kosten', _p.group.resolve(
+                                                                            () => {
+                                                                                
+                                                                                const prop_Correctie_op_vennootschapsbelasting = _p_cc(
+                                                                                    $['Correctie op vennootschapsbelasting'],
+                                                                                    ($) => _p_deprecated_block(
+                                                                                        () => {
+                                                                                            
+                                                                                            const var_location = $['l location']
+                                                                                            return _p.decide.state(
+                                                                                                $['l state'],
+                                                                                                ($): t_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
+                                                                                                    switch ($[0]) {
+                                                                                                        case 'Ja':
+                                                                                                            return _p.ss(
+                                                                                                                $,
+                                                                                                                ($) => ['Ja', _p.group.resolve(
+                                                                                                                    () => {
+                                                                                                                        
+                                                                                                                        const prop_Correctietype = _p_cc(
+                                                                                                                            $['Correctietype'],
+                                                                                                                            ($) => ({
+                                                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                                    $p['Grootboek Categorieen']
+                                                                                                                                ).get_entry(
+                                                                                                                                    $['l reference'],
+                                                                                                                                    {
+                                                                                                                                        'no_such_entry': () => abort(
+                                                                                                                                            {
+                                                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                                                'location': $['l location'],
+                                                                                                                                            }
+                                                                                                                                        ),
+                                                                                                                                        'no_context_lookup': () => abort(
+                                                                                                                                            {
+                                                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                                                'location': $['l location'],
+                                                                                                                                            }
+                                                                                                                                        ),
+                                                                                                                                        'cycle_detected': () => abort(
+                                                                                                                                            {
+                                                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                                                'location': $['l location'],
+                                                                                                                                            }
+                                                                                                                                        ),
+                                                                                                                                    }
+                                                                                                                                ),
+                                                                                                                                'l id': $['l reference'],
+                                                                                                                            })
+                                                                                                                        )
+                                                                                                                        return {
+                                                                                                                            'Correctietype': prop_Correctietype,
+                                                                                                                        }
                                                                                                                     }
-                                                                                                                ),
-                                                                                                                'l id': $['l reference'],
-                                                                                                            })
-                                                                                                        )
-                                                                                                        return {
-                                                                                                            'Correctietype': prop_Correctietype,
-                                                                                                        }
+                                                                                                                )]
+                                                                                                            )
+                                                                                                        case 'Nee':
+                                                                                                            return _p.ss(
+                                                                                                                $,
+                                                                                                                ($) => ['Nee', null]
+                                                                                                            )
+                                                                                                        default:
+                                                                                                            return _p.au(
+                                                                                                                $[0]
+                                                                                                            )
                                                                                                     }
-                                                                                                )]
+                                                                                                }
                                                                                             )
-                                                                                        case 'Nee':
-                                                                                            return _p.ss(
-                                                                                                $,
-                                                                                                ($) => ['Nee', null]
-                                                                                            )
-                                                                                        default:
-                                                                                            return _p.au(
-                                                                                                $[0]
-                                                                                            )
-                                                                                    }
+                                                                                        }
+                                                                                    )
+                                                                                )
+                                                                                return {
+                                                                                    'Correctie op vennootschapsbelasting': prop_Correctie_op_vennootschapsbelasting,
                                                                                 }
-                                                                            )
-                                                                        )
-                                                                        return {
-                                                                            'Correctie op vennootschapsbelasting': prop_Correctie_op_vennootschapsbelasting,
-                                                                        }
-                                                                    }
-                                                                )]
-                                                            )
-                                                        case 'Opbrengsten':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Opbrengsten', null]
-                                                            )
-                                                        default:
-                                                            return _p.au(
-                                                                $[0]
-                                                            )
-                                                    }
+                                                                            }
+                                                                        )]
+                                                                    )
+                                                                case 'Opbrengsten':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Opbrengsten', null]
+                                                                    )
+                                                                default:
+                                                                    return _p.au(
+                                                                        $[0]
+                                                                    )
+                                                            }
+                                                        }
+                                                    )
                                                 }
                                             )
                                         )
@@ -899,37 +951,43 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                         
                                                                                         const prop_Type = _p_cc(
                                                                                             $['Type'],
-                                                                                            ($) => _p.decide.state(
-                                                                                                $['l state'],
-                                                                                                ($): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
-                                                                                                    switch ($[0]) {
-                                                                                                        case 'Project':
-                                                                                                            return _p.ss(
-                                                                                                                $,
-                                                                                                                ($) => ['Project', _p.group.resolve(
-                                                                                                                    () => {
-                                                                                                                        
-                                                                                                                        const prop_Bedrag = _p_cc(
-                                                                                                                            $['Bedrag'],
-                                                                                                                            ($) => $
-                                                                                                                        )
-                                                                                                                        
-                                                                                                                        const prop_Betaaldatum = _p_cc(
-                                                                                                                            $['Betaaldatum'],
-                                                                                                                            ($) => $
-                                                                                                                        )
-                                                                                                                        return {
-                                                                                                                            'Bedrag': prop_Bedrag,
-                                                                                                                            'Betaaldatum': prop_Betaaldatum,
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                )]
-                                                                                                            )
-                                                                                                        default:
-                                                                                                            return _p.au(
-                                                                                                                $[0]
-                                                                                                            )
-                                                                                                    }
+                                                                                            ($) => _p_deprecated_block(
+                                                                                                () => {
+                                                                                                    
+                                                                                                    const var_location = $['l location']
+                                                                                                    return _p.decide.state(
+                                                                                                        $['l state'],
+                                                                                                        ($): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
+                                                                                                            switch ($[0]) {
+                                                                                                                case 'Project':
+                                                                                                                    return _p.ss(
+                                                                                                                        $,
+                                                                                                                        ($) => ['Project', _p.group.resolve(
+                                                                                                                            () => {
+                                                                                                                                
+                                                                                                                                const prop_Bedrag = _p_cc(
+                                                                                                                                    $['Bedrag'],
+                                                                                                                                    ($) => $
+                                                                                                                                )
+                                                                                                                                
+                                                                                                                                const prop_Betaaldatum = _p_cc(
+                                                                                                                                    $['Betaaldatum'],
+                                                                                                                                    ($) => $
+                                                                                                                                )
+                                                                                                                                return {
+                                                                                                                                    'Bedrag': prop_Bedrag,
+                                                                                                                                    'Betaaldatum': prop_Betaaldatum,
+                                                                                                                                }
+                                                                                                                            }
+                                                                                                                        )]
+                                                                                                                    )
+                                                                                                                default:
+                                                                                                                    return _p.au(
+                                                                                                                        $[0]
+                                                                                                                    )
+                                                                                                            }
+                                                                                                        }
+                                                                                                    )
                                                                                                 }
                                                                                             )
                                                                                         )
@@ -1014,30 +1072,36 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                             
                             const prop_Type = _p_cc(
                                 $['Type'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Grootboekrekeningen.Balans.D.Type => {
-                                        switch ($[0]) {
-                                            case 'Bankrekening':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Bankrekening', null]
-                                                )
-                                            case 'Overig':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Overig', null]
-                                                )
-                                            case 'Informele rekening':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Informele rekening', null]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Grootboekrekeningen.Balans.D.Type => {
+                                                switch ($[0]) {
+                                                    case 'Bankrekening':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Bankrekening', null]
+                                                        )
+                                                    case 'Overig':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Overig', null]
+                                                        )
+                                                    case 'Informele rekening':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Informele rekening', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -1167,48 +1231,54 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         
                                         const prop_Status = _p_cc(
                                             $['Status'],
-                                            ($) => _p.decide.state(
-                                                $['l state'],
-                                                ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
-                                                    switch ($[0]) {
-                                                        case 'Aangegeven':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Aangegeven', _p.group.resolve(
-                                                                    () => {
-                                                                        
-                                                                        const prop_Afronding = _p_cc(
-                                                                            $['Afronding'],
-                                                                            ($) => $
-                                                                        )
-                                                                        
-                                                                        const prop_Bedrag = _p_cc(
-                                                                            $['Bedrag'],
-                                                                            ($) => $
-                                                                        )
-                                                                        
-                                                                        const prop_Datum = _p_cc(
-                                                                            $['Datum'],
-                                                                            ($) => $
-                                                                        )
-                                                                        return {
-                                                                            'Afronding': prop_Afronding,
-                                                                            'Bedrag': prop_Bedrag,
-                                                                            'Datum': prop_Datum,
-                                                                        }
-                                                                    }
-                                                                )]
-                                                            )
-                                                        case 'Openstaand':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Openstaand', null]
-                                                            )
-                                                        default:
-                                                            return _p.au(
-                                                                $[0]
-                                                            )
-                                                    }
+                                            ($) => _p_deprecated_block(
+                                                () => {
+                                                    
+                                                    const var_location = $['l location']
+                                                    return _p.decide.state(
+                                                        $['l state'],
+                                                        ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
+                                                            switch ($[0]) {
+                                                                case 'Aangegeven':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Aangegeven', _p.group.resolve(
+                                                                            () => {
+                                                                                
+                                                                                const prop_Afronding = _p_cc(
+                                                                                    $['Afronding'],
+                                                                                    ($) => $
+                                                                                )
+                                                                                
+                                                                                const prop_Bedrag = _p_cc(
+                                                                                    $['Bedrag'],
+                                                                                    ($) => $
+                                                                                )
+                                                                                
+                                                                                const prop_Datum = _p_cc(
+                                                                                    $['Datum'],
+                                                                                    ($) => $
+                                                                                )
+                                                                                return {
+                                                                                    'Afronding': prop_Afronding,
+                                                                                    'Bedrag': prop_Bedrag,
+                                                                                    'Datum': prop_Datum,
+                                                                                }
+                                                                            }
+                                                                        )]
+                                                                    )
+                                                                case 'Openstaand':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Openstaand', null]
+                                                                    )
+                                                                default:
+                                                                    return _p.au(
+                                                                        $[0]
+                                                                    )
+                                                            }
+                                                        }
+                                                    )
                                                 }
                                             )
                                         )
@@ -1455,47 +1525,75 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         
                                         const prop_Nieuw = _p_cc(
                                             $['Nieuw'],
-                                            ($) => _p.decide.state(
-                                                $['l state'],
-                                                ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
-                                                    switch ($[0]) {
-                                                        case 'Ja':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Ja', null]
-                                                            )
-                                                        case 'Nee':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Nee', _p.group.resolve(
-                                                                    () => {
-                                                                        
-                                                                        const prop_Rekening = _p_cc(
-                                                                            $['Rekening'],
-                                                                            ($) => Verwijzing_naar_Informele_rekening(
-                                                                                $,
-                                                                                ($) => abort(
-                                                                                    $
-                                                                                ),
-                                                                                null,
-                                                                                {
-                                                                                    'Jaarbeheer': _pdev.implement_me(
-                                                                                        "IM: required"
-                                                                                    ),
-                                                                                }
-                                                                            )
-                                                                        )
-                                                                        return {
-                                                                            'Rekening': prop_Rekening,
-                                                                        }
-                                                                    }
-                                                                )]
-                                                            )
-                                                        default:
-                                                            return _p.au(
-                                                                $[0]
-                                                            )
-                                                    }
+                                            ($) => _p_deprecated_block(
+                                                () => {
+                                                    
+                                                    const var_location = $['l location']
+                                                    return _p.decide.state(
+                                                        $['l state'],
+                                                        ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
+                                                            switch ($[0]) {
+                                                                case 'Ja':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Ja', null]
+                                                                    )
+                                                                case 'Nee':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Nee', _p_deprecated_block(
+                                                                            () => {
+                                                                                
+                                                                                const var_constraint_Niet_Nieuw = _p.decide.state(
+                                                                                    $,
+                                                                                    ($) => {
+                                                                                        switch ($[0]) {
+                                                                                            case 'Nee':
+                                                                                                return _p.ss(
+                                                                                                    $,
+                                                                                                    ($) => $
+                                                                                                )
+                                                                                            default:
+                                                                                                return abort(
+                                                                                                    {
+                                                                                                        'type': ['option constraint', ['no such option', "Nee"]],
+                                                                                                        'location': var_location,
+                                                                                                    }
+                                                                                                )
+                                                                                        }
+                                                                                    }
+                                                                                )
+                                                                                return _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_Rekening = _p_cc(
+                                                                                            $['Rekening'],
+                                                                                            ($) => Verwijzing_naar_Informele_rekening(
+                                                                                                $,
+                                                                                                ($) => abort(
+                                                                                                    $
+                                                                                                ),
+                                                                                                null,
+                                                                                                {
+                                                                                                    'Jaarbeheer': var_constraint_Niet_Nieuw['Vorig boekjaar']['l entry']['Jaarbeheer'],
+                                                                                                }
+                                                                                            )
+                                                                                        )
+                                                                                        return {
+                                                                                            'Rekening': prop_Rekening,
+                                                                                        }
+                                                                                    }
+                                                                                )
+                                                                            }
+                                                                        )]
+                                                                    )
+                                                                default:
+                                                                    return _p.au(
+                                                                        $[0]
+                                                                    )
+                                                            }
+                                                        }
+                                                    )
                                                 }
                                             )
                                         )
@@ -1558,47 +1656,75 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         
                                         const prop_Nieuw = _p_cc(
                                             $['Nieuw'],
-                                            ($) => _p.decide.state(
-                                                $['l state'],
-                                                ($): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
-                                                    switch ($[0]) {
-                                                        case 'Ja':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Ja', null]
-                                                            )
-                                                        case 'Nee':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Nee', _p.group.resolve(
-                                                                    () => {
-                                                                        
-                                                                        const prop_Rekening = _p_cc(
-                                                                            $['Rekening'],
-                                                                            ($) => Verwijzing_naar_Bankrekening(
-                                                                                $,
-                                                                                ($) => abort(
-                                                                                    $
-                                                                                ),
-                                                                                null,
-                                                                                {
-                                                                                    'Jaarbeheer': _pdev.implement_me(
-                                                                                        "IM: required"
-                                                                                    ),
-                                                                                }
-                                                                            )
-                                                                        )
-                                                                        return {
-                                                                            'Rekening': prop_Rekening,
-                                                                        }
-                                                                    }
-                                                                )]
-                                                            )
-                                                        default:
-                                                            return _p.au(
-                                                                $[0]
-                                                            )
-                                                    }
+                                            ($) => _p_deprecated_block(
+                                                () => {
+                                                    
+                                                    const var_location = $['l location']
+                                                    return _p.decide.state(
+                                                        $['l state'],
+                                                        ($): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
+                                                            switch ($[0]) {
+                                                                case 'Ja':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Ja', null]
+                                                                    )
+                                                                case 'Nee':
+                                                                    return _p.ss(
+                                                                        $,
+                                                                        ($) => ['Nee', _p_deprecated_block(
+                                                                            () => {
+                                                                                
+                                                                                const var_constraint_Niet_Nieuw = _p.decide.state(
+                                                                                    $,
+                                                                                    ($) => {
+                                                                                        switch ($[0]) {
+                                                                                            case 'Nee':
+                                                                                                return _p.ss(
+                                                                                                    $,
+                                                                                                    ($) => $
+                                                                                                )
+                                                                                            default:
+                                                                                                return abort(
+                                                                                                    {
+                                                                                                        'type': ['option constraint', ['no such option', "Nee"]],
+                                                                                                        'location': var_location,
+                                                                                                    }
+                                                                                                )
+                                                                                        }
+                                                                                    }
+                                                                                )
+                                                                                return _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_Rekening = _p_cc(
+                                                                                            $['Rekening'],
+                                                                                            ($) => Verwijzing_naar_Bankrekening(
+                                                                                                $,
+                                                                                                ($) => abort(
+                                                                                                    $
+                                                                                                ),
+                                                                                                null,
+                                                                                                {
+                                                                                                    'Jaarbeheer': var_constraint_Niet_Nieuw['Vorig boekjaar']['l entry']['Jaarbeheer'],
+                                                                                                }
+                                                                                            )
+                                                                                        )
+                                                                                        return {
+                                                                                            'Rekening': prop_Rekening,
+                                                                                        }
+                                                                                    }
+                                                                                )
+                                                                            }
+                                                                        )]
+                                                                    )
+                                                                default:
+                                                                    return _p.au(
+                                                                        $[0]
+                                                                    )
+                                                            }
+                                                        }
+                                                    )
                                                 }
                                             )
                                         )
@@ -1741,65 +1867,93 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
         
         const prop_Nieuw = _p_cc(
             $['Nieuw'],
-            ($) => _p.decide.state(
-                $['l state'],
-                ($): t_out.Overige_balans_item.Nieuw => {
-                    switch ($[0]) {
-                        case 'Ja':
-                            return _p.ss(
-                                $,
-                                ($) => ['Ja', null]
-                            )
-                        case 'Nee':
-                            return _p.ss(
-                                $,
-                                ($) => ['Nee', _p.group.resolve(
-                                    () => {
-                                        
-                                        const prop_Balans_item = _p_cc(
-                                            $['Balans item'],
-                                            ($) => ({
-                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                    _pdev.implement_me(
-                                                        "IM: OPTION CONSTRAINT"
-                                                    )
-                                                ).get_entry(
-                                                    $['l reference'],
-                                                    {
-                                                        'no_such_entry': () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                'location': $['l location'],
-                                                            }
-                                                        ),
-                                                        'no_context_lookup': () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no context lookup', null]],
-                                                                'location': $['l location'],
-                                                            }
-                                                        ),
-                                                        'cycle_detected': () => abort(
-                                                            {
-                                                                'type': ['lookup', ['cycle detected', null]],
-                                                                'location': $['l location'],
-                                                            }
-                                                        ),
+            ($) => _p_deprecated_block(
+                () => {
+                    
+                    const var_location = $['l location']
+                    return _p.decide.state(
+                        $['l state'],
+                        ($): t_out.Overige_balans_item.Nieuw => {
+                            switch ($[0]) {
+                                case 'Ja':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['Ja', null]
+                                    )
+                                case 'Nee':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['Nee', _p_deprecated_block(
+                                            () => {
+                                                
+                                                const var_constraint_Volgend_boekjaar = _p.decide.state(
+                                                    $,
+                                                    ($) => {
+                                                        switch ($[0]) {
+                                                            case 'Nee':
+                                                                return _p.ss(
+                                                                    $,
+                                                                    ($) => $
+                                                                )
+                                                            default:
+                                                                return abort(
+                                                                    {
+                                                                        'type': ['option constraint', ['no such option', "Nee"]],
+                                                                        'location': var_location,
+                                                                    }
+                                                                )
+                                                        }
                                                     }
-                                                ),
-                                                'l id': $['l reference'],
-                                            })
-                                        )
-                                        return {
-                                            'Balans item': prop_Balans_item,
-                                        }
-                                    }
-                                )]
-                            )
-                        default:
-                            return _p.au(
-                                $[0]
-                            )
-                    }
+                                                )
+                                                return _p.group.resolve(
+                                                    () => {
+                                                        
+                                                        const prop_Balans_item = _p_cc(
+                                                            $['Balans item'],
+                                                            ($) => ({
+                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                    var_constraint_Volgend_boekjaar['Vorig boekjaar']['l entry']['Jaarbeheer']['Balans']['Overige balans items']
+                                                                ).get_entry(
+                                                                    $['l reference'],
+                                                                    {
+                                                                        'no_such_entry': () => abort(
+                                                                            {
+                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                'location': $['l location'],
+                                                                            }
+                                                                        ),
+                                                                        'no_context_lookup': () => abort(
+                                                                            {
+                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                'location': $['l location'],
+                                                                            }
+                                                                        ),
+                                                                        'cycle_detected': () => abort(
+                                                                            {
+                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                'location': $['l location'],
+                                                                            }
+                                                                        ),
+                                                                    }
+                                                                ),
+                                                                'l id': $['l reference'],
+                                                            })
+                                                        )
+                                                        return {
+                                                            'Balans item': prop_Balans_item,
+                                                        }
+                                                    }
+                                                )
+                                            }
+                                        )]
+                                    )
+                                default:
+                                    return _p.au(
+                                        $[0]
+                                    )
+                            }
+                        }
+                    )
                 }
             )
         )
@@ -1883,182 +2037,200 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             
                             const prop_Afhandeling = _p_cc(
                                 $['Afhandeling'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Inkopen.D.Afhandeling => {
-                                        switch ($[0]) {
-                                            case 'Mutaties':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Mutaties', null]
-                                                )
-                                            case 'Rekening courant':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Rekening courant', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Rekening_courant = _p_cc(
-                                                                $['Rekening courant'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Jaarbeheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Inkopen.D.Afhandeling => {
+                                                switch ($[0]) {
+                                                    case 'Mutaties':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Mutaties', null]
+                                                        )
+                                                    case 'Rekening courant':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Rekening courant', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Rekening_courant = _p_cc(
+                                                                        $['Rekening courant'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Jaarbeheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'Rekening courant': prop_Rekening_courant,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'Rekening courant': prop_Rekening_courant,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
                             
                             const prop_BTW$mi_regime = _p_cc(
                                 $['BTW-regime'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
-                                        switch ($[0]) {
-                                            case 'Binnenland: heffing verlegd':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Binnenland: heffing verlegd', null]
-                                                )
-                                            case 'Geen BTW van toepassing':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Geen BTW van toepassing', null]
-                                                )
-                                            case 'Import van buiten de EU':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Import van buiten de EU', null]
-                                                )
-                                            case 'Intracommunautair':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Intracommunautair', null]
-                                                )
-                                            case 'Standaard':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Standaard', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_BTW$mi_periode = _p_cc(
-                                                                $['BTW-periode'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Jaarbeheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
+                                                switch ($[0]) {
+                                                    case 'Binnenland: heffing verlegd':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Binnenland: heffing verlegd', null]
+                                                        )
+                                                    case 'Geen BTW van toepassing':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Geen BTW van toepassing', null]
+                                                        )
+                                                    case 'Import van buiten de EU':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Import van buiten de EU', null]
+                                                        )
+                                                    case 'Intracommunautair':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Intracommunautair', null]
+                                                        )
+                                                    case 'Standaard':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Standaard', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_BTW$mi_periode = _p_cc(
+                                                                        $['BTW-periode'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Jaarbeheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'BTW-periode': prop_BTW$mi_periode,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'BTW-periode': prop_BTW$mi_periode,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
                             
                             const prop_Brondocument = _p_cc(
                                 $['Brondocument'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Inkopen.D.Brondocument => {
-                                        switch ($[0]) {
-                                            case 'Toegevoegd':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Toegevoegd', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Document = _p_cc(
-                                                                $['Document'],
-                                                                ($) => $
-                                                            )
-                                                            return {
-                                                                'Document': prop_Document,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            case 'Niet van toepassing':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Niet van toepassing', null]
-                                                )
-                                            case 'Ontbreekt':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Ontbreekt', null]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Inkopen.D.Brondocument => {
+                                                switch ($[0]) {
+                                                    case 'Toegevoegd':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Toegevoegd', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Document = _p_cc(
+                                                                        $['Document'],
+                                                                        ($) => $
+                                                                    )
+                                                                    return {
+                                                                        'Document': prop_Document,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    case 'Niet van toepassing':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Niet van toepassing', null]
+                                                        )
+                                                    case 'Ontbreekt':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Ontbreekt', null]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -2079,37 +2251,43 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 
                                                 const prop_Bedrag = _p_cc(
                                                     $['Bedrag'],
-                                                    ($) => _p.decide.state(
-                                                        $['l state'],
-                                                        ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
-                                                            switch ($[0]) {
-                                                                case 'Bekend':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Bekend', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_BTW$mi_bedrag = _p_cc(
-                                                                                    $['BTW-bedrag'],
-                                                                                    ($) => $
-                                                                                )
-                                                                                
-                                                                                const prop_Bedrag_inclusief_geheven_BTW = _p_cc(
-                                                                                    $['Bedrag inclusief geheven BTW'],
-                                                                                    ($) => $
-                                                                                )
-                                                                                return {
-                                                                                    'BTW-bedrag': prop_BTW$mi_bedrag,
-                                                                                    'Bedrag inclusief geheven BTW': prop_Bedrag_inclusief_geheven_BTW,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                default:
-                                                                    return _p.au(
-                                                                        $[0]
-                                                                    )
-                                                            }
+                                                    ($) => _p_deprecated_block(
+                                                        () => {
+                                                            
+                                                            const var_location = $['l location']
+                                                            return _p.decide.state(
+                                                                $['l state'],
+                                                                ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
+                                                                    switch ($[0]) {
+                                                                        case 'Bekend':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Bekend', _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_BTW$mi_bedrag = _p_cc(
+                                                                                            $['BTW-bedrag'],
+                                                                                            ($) => $
+                                                                                        )
+                                                                                        
+                                                                                        const prop_Bedrag_inclusief_geheven_BTW = _p_cc(
+                                                                                            $['Bedrag inclusief geheven BTW'],
+                                                                                            ($) => $
+                                                                                        )
+                                                                                        return {
+                                                                                            'BTW-bedrag': prop_BTW$mi_bedrag,
+                                                                                            'Bedrag inclusief geheven BTW': prop_Bedrag_inclusief_geheven_BTW,
+                                                                                        }
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        default:
+                                                                            return _p.au(
+                                                                                $[0]
+                                                                            )
+                                                                    }
+                                                                }
+                                                            )
                                                         }
                                                     )
                                                 )
@@ -2121,101 +2299,107 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 
                                                 const prop_Type = _p_cc(
                                                     $['Type'],
-                                                    ($) => _p.decide.state(
-                                                        $['l state'],
-                                                        ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Type => {
-                                                            switch ($[0]) {
-                                                                case 'Balans':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Balans', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_Balans_item = _p_cc(
-                                                                                    $['Balans item'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            $p['Jaarbeheer']
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
+                                                    ($) => _p_deprecated_block(
+                                                        () => {
+                                                            
+                                                            const var_location = $['l location']
+                                                            return _p.decide.state(
+                                                                $['l state'],
+                                                                ($): t_out.Handelstransacties.Inkopen.D.Regels.D.Type => {
+                                                                    switch ($[0]) {
+                                                                        case 'Balans':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Balans', _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_Balans_item = _p_cc(
+                                                                                            $['Balans item'],
+                                                                                            ($) => ({
+                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    $p['Jaarbeheer']
+                                                                                                ).get_entry(
+                                                                                                    $['l reference'],
                                                                                                     {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
+                                                                                                        'no_such_entry': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'no_context_lookup': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'cycle_detected': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
                                                                                                     }
                                                                                                 ),
-                                                                                                'no_context_lookup': () => abort(
+                                                                                                'l id': $['l reference'],
+                                                                                            })
+                                                                                        )
+                                                                                        return {
+                                                                                            'Balans item': prop_Balans_item,
+                                                                                        }
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        case 'Kosten':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Kosten', _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_Grootboekrekening = _p_cc(
+                                                                                            $['Grootboekrekening'],
+                                                                                            ($) => ({
+                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    $p['Grootboekrekeningen']
+                                                                                                ).get_entry(
+                                                                                                    $['l reference'],
                                                                                                     {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
+                                                                                                        'no_such_entry': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'no_context_lookup': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'cycle_detected': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
                                                                                                     }
                                                                                                 ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                            }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'Balans item': prop_Balans_item,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                case 'Kosten':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Kosten', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_Grootboekrekening = _p_cc(
-                                                                                    $['Grootboekrekening'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            $p['Grootboekrekeningen']
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'no_context_lookup': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                            }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'Grootboekrekening': prop_Grootboekrekening,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                default:
-                                                                    return _p.au(
-                                                                        $[0]
-                                                                    )
-                                                            }
+                                                                                                'l id': $['l reference'],
+                                                                                            })
+                                                                                        )
+                                                                                        return {
+                                                                                            'Grootboekrekening': prop_Grootboekrekening,
+                                                                                        }
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        default:
+                                                                            return _p.au(
+                                                                                $[0]
+                                                                            )
+                                                                    }
+                                                                }
+                                                            )
                                                         }
                                                     )
                                                 )
@@ -2232,188 +2416,194 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             
                             const prop_Type = _p_cc(
                                 $['Type'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Inkopen.D.Type => {
-                                        switch ($[0]) {
-                                            case 'Bonnetje':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Bonnetje', null]
-                                                )
-                                            case 'Inkoop (met crediteur)':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Inkoop (met crediteur)', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Crediteur = _p_cc(
-                                                                $['Crediteur'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Beheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Inkopen.D.Type => {
+                                                switch ($[0]) {
+                                                    case 'Bonnetje':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Bonnetje', null]
+                                                        )
+                                                    case 'Inkoop (met crediteur)':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Inkoop (met crediteur)', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Crediteur = _p_cc(
+                                                                        $['Crediteur'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Beheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    
+                                                                    const prop_Factuurnummer = _p_cc(
+                                                                        $['Factuurnummer'],
+                                                                        ($) => $
+                                                                    )
+                                                                    return {
+                                                                        'Crediteur': prop_Crediteur,
+                                                                        'Factuurnummer': prop_Factuurnummer,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    case 'Loonheffing':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Loonheffing', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Ronde = _p_cc(
+                                                                        $['Ronde'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Jaarbeheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'cycle_detected': () => abort(
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'Ronde': prop_Ronde,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    case 'Salaris':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Salaris', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Ronde = _p_cc(
+                                                                        $['Ronde'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Jaarbeheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            
-                                                            const prop_Factuurnummer = _p_cc(
-                                                                $['Factuurnummer'],
-                                                                ($) => $
-                                                            )
-                                                            return {
-                                                                'Crediteur': prop_Crediteur,
-                                                                'Factuurnummer': prop_Factuurnummer,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            case 'Loonheffing':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Loonheffing', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Ronde = _p_cc(
-                                                                $['Ronde'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Jaarbeheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    
+                                                                    const prop_Medewerker = _p_cc(
+                                                                        $['Medewerker'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Beheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'Ronde': prop_Ronde,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            case 'Salaris':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Salaris', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Ronde = _p_cc(
-                                                                $['Ronde'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Jaarbeheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            
-                                                            const prop_Medewerker = _p_cc(
-                                                                $['Medewerker'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Beheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'Ronde': prop_Ronde,
-                                                                'Medewerker': prop_Medewerker,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'Ronde': prop_Ronde,
+                                                                        'Medewerker': prop_Medewerker,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -2484,31 +2674,37 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             
                             const prop_Brondocument = _p_cc(
                                 $['Brondocument'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Verkopen.D.Brondocument => {
-                                        switch ($[0]) {
-                                            case 'Toegevoegd':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Toegevoegd', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Document = _p_cc(
-                                                                $['Document'],
-                                                                ($) => $
-                                                            )
-                                                            return {
-                                                                'Document': prop_Document,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Verkopen.D.Brondocument => {
+                                                switch ($[0]) {
+                                                    case 'Toegevoegd':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Toegevoegd', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Document = _p_cc(
+                                                                        $['Document'],
+                                                                        ($) => $
+                                                                    )
+                                                                    return {
+                                                                        'Document': prop_Document,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -2547,201 +2743,213 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             
                             const prop_Contracttype = _p_cc(
                                 $['Contracttype'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Verkopen.D.Contracttype => {
-                                        switch ($[0]) {
-                                            case 'Project':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Project', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Project = _p_cc(
-                                                                $['Project'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        _pdev.implement_me(
-                                                                            "IM: PARENT SIBLING"
-                                                                        )
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Verkopen.D.Contracttype => {
+                                                switch ($[0]) {
+                                                    case 'Project':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Project', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Project = _p_cc(
+                                                                        $['Project'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                _pdev.implement_me(
+                                                                                    "IM: PARENT SIBLING"
+                                                                                )
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    
+                                                                    const prop_Offerte = _p_cc(
+                                                                        $['Offerte'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                prop_Project['l entry']['Offertes']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'cycle_detected': () => abort(
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'Project': prop_Project,
+                                                                        'Offerte': prop_Offerte,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    case 'Licentieovereenkomst':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Licentieovereenkomst', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Overeenkomst = _p_cc(
+                                                                        $['Overeenkomst'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                _pdev.implement_me(
+                                                                                    "IM: PARENT SIBLING"
+                                                                                )
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            
-                                                            const prop_Offerte = _p_cc(
-                                                                $['Offerte'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        prop_Project['entry']['Offertes']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'Project': prop_Project,
-                                                                'Offerte': prop_Offerte,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            case 'Licentieovereenkomst':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Licentieovereenkomst', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Overeenkomst = _p_cc(
-                                                                $['Overeenkomst'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        _pdev.implement_me(
-                                                                            "IM: PARENT SIBLING"
-                                                                        )
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'Overeenkomst': prop_Overeenkomst,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'Overeenkomst': prop_Overeenkomst,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
                             
                             const prop_Afhandeling = _p_cc(
                                 $['Afhandeling'],
-                                ($) => _p.decide.state(
-                                    $['l state'],
-                                    ($): t_out.Handelstransacties.Verkopen.D.Afhandeling => {
-                                        switch ($[0]) {
-                                            case 'Mutaties':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Mutaties', null]
-                                                )
-                                            case 'Rekening courant':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Rekening courant', _p.group.resolve(
-                                                        () => {
-                                                            
-                                                            const prop_Rekening_courant = _p_cc(
-                                                                $['Rekening courant'],
-                                                                ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                        $p['Jaarbeheer']
-                                                                    ).get_entry(
-                                                                        $['l reference'],
-                                                                        {
-                                                                            'no_such_entry': () => abort(
+                                ($) => _p_deprecated_block(
+                                    () => {
+                                        
+                                        const var_location = $['l location']
+                                        return _p.decide.state(
+                                            $['l state'],
+                                            ($): t_out.Handelstransacties.Verkopen.D.Afhandeling => {
+                                                switch ($[0]) {
+                                                    case 'Mutaties':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Mutaties', null]
+                                                        )
+                                                    case 'Rekening courant':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Rekening courant', _p.group.resolve(
+                                                                () => {
+                                                                    
+                                                                    const prop_Rekening_courant = _p_cc(
+                                                                        $['Rekening courant'],
+                                                                        ($) => ({
+                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                $p['Jaarbeheer']
+                                                                            ).get_entry(
+                                                                                $['l reference'],
                                                                                 {
-                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                    'location': $['l location'],
+                                                                                    'no_such_entry': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'no_context_lookup': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
+                                                                                    'cycle_detected': () => abort(
+                                                                                        {
+                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                            'location': $['l location'],
+                                                                                        }
+                                                                                    ),
                                                                                 }
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                            'cycle_detected': () => abort(
-                                                                                {
-                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                    'location': $['l location'],
-                                                                                }
-                                                                            ),
-                                                                        }
-                                                                    ),
-                                                                    'l id': $['l reference'],
-                                                                })
-                                                            )
-                                                            return {
-                                                                'Rekening courant': prop_Rekening_courant,
-                                                            }
-                                                        }
-                                                    )]
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0]
-                                                )
-                                        }
+                                                                            'l id': $['l reference'],
+                                                                        })
+                                                                    )
+                                                                    return {
+                                                                        'Rekening courant': prop_Rekening_courant,
+                                                                    }
+                                                                }
+                                                            )]
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0]
+                                                        )
+                                                }
+                                            }
+                                        )
                                     }
                                 )
                             )
@@ -2757,68 +2965,74 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 
                                                 const prop_BTW$mi_regime = _p_cc(
                                                     $['BTW-regime'],
-                                                    ($) => _p.decide.state(
-                                                        $['l state'],
-                                                        ($): t_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
-                                                            switch ($[0]) {
-                                                                case 'Intracommunautair':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Intracommunautair', null]
-                                                                    )
-                                                                case 'Standaard':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Standaard', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_BTW$mi_categorie = _p_cc(
-                                                                                    $['BTW-categorie'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            $p['Beheer']
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
+                                                    ($) => _p_deprecated_block(
+                                                        () => {
+                                                            
+                                                            const var_location = $['l location']
+                                                            return _p.decide.state(
+                                                                $['l state'],
+                                                                ($): t_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
+                                                                    switch ($[0]) {
+                                                                        case 'Intracommunautair':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Intracommunautair', null]
+                                                                            )
+                                                                        case 'Standaard':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Standaard', _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_BTW$mi_categorie = _p_cc(
+                                                                                            $['BTW-categorie'],
+                                                                                            ($) => ({
+                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    $p['Beheer']
+                                                                                                ).get_entry(
+                                                                                                    $['l reference'],
                                                                                                     {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
+                                                                                                        'no_such_entry': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'no_context_lookup': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'cycle_detected': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
                                                                                                     }
                                                                                                 ),
-                                                                                                'no_context_lookup': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                            }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'BTW-categorie': prop_BTW$mi_categorie,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                case 'Binnenland: heffing verlegd':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Binnenland: heffing verlegd', null]
-                                                                    )
-                                                                default:
-                                                                    return _p.au(
-                                                                        $[0]
-                                                                    )
-                                                            }
+                                                                                                'l id': $['l reference'],
+                                                                                            })
+                                                                                        )
+                                                                                        return {
+                                                                                            'BTW-categorie': prop_BTW$mi_categorie,
+                                                                                        }
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        case 'Binnenland: heffing verlegd':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Binnenland: heffing verlegd', null]
+                                                                            )
+                                                                        default:
+                                                                            return _p.au(
+                                                                                $[0]
+                                                                            )
+                                                                    }
+                                                                }
+                                                            )
                                                         }
                                                     )
                                                 )
@@ -2830,110 +3044,160 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 
                                                 const prop_Contracttype = _p_cc(
                                                     $['Contracttype'],
-                                                    ($) => _p.decide.state(
-                                                        $['l state'],
-                                                        ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
-                                                            switch ($[0]) {
-                                                                case 'Project':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Project', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_Opbrengst = _p_cc(
-                                                                                    $['Opbrengst'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            _pdev.implement_me(
-                                                                                                "IM: OPTION CONSTRAINT"
-                                                                                            )
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'no_context_lookup': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
+                                                    ($) => _p_deprecated_block(
+                                                        () => {
+                                                            
+                                                            const var_location = $['l location']
+                                                            return _p.decide.state(
+                                                                $['l state'],
+                                                                ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
+                                                                    switch ($[0]) {
+                                                                        case 'Project':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Project', _p_deprecated_block(
+                                                                                    () => {
+                                                                                        
+                                                                                        const var_constraint_Definitie = _p.decide.state(
+                                                                                            $,
+                                                                                            ($) => {
+                                                                                                switch ($[0]) {
+                                                                                                    case 'Project':
+                                                                                                        return _p.ss(
+                                                                                                            $,
+                                                                                                            ($) => $
+                                                                                                        )
+                                                                                                    default:
+                                                                                                        return abort(
+                                                                                                            {
+                                                                                                                'type': ['option constraint', ['no such option', "Project"]],
+                                                                                                                'location': var_location,
+                                                                                                            }
+                                                                                                        )
+                                                                                                }
                                                                                             }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'Opbrengst': prop_Opbrengst,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                case 'Los':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Los', null]
-                                                                    )
-                                                                case 'Licentieovereenkomst':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Licentieovereenkomst', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_Periode = _p_cc(
-                                                                                    $['Periode'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            _pdev.implement_me(
-                                                                                                "IM: OPTION CONSTRAINT"
-                                                                                            )
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'no_context_lookup': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
+                                                                                        )
+                                                                                        return _p.group.resolve(
+                                                                                            () => {
+                                                                                                
+                                                                                                const prop_Opbrengst = _p_cc(
+                                                                                                    $['Opbrengst'],
+                                                                                                    ($) => ({
+                                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                            var_constraint_Definitie['Offerte']['l entry']['Opbrengsten']
+                                                                                                        ).get_entry(
+                                                                                                            $['l reference'],
+                                                                                                            {
+                                                                                                                'no_such_entry': () => abort(
+                                                                                                                    {
+                                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                        'location': $['l location'],
+                                                                                                                    }
+                                                                                                                ),
+                                                                                                                'no_context_lookup': () => abort(
+                                                                                                                    {
+                                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                                        'location': $['l location'],
+                                                                                                                    }
+                                                                                                                ),
+                                                                                                                'cycle_detected': () => abort(
+                                                                                                                    {
+                                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                                        'location': $['l location'],
+                                                                                                                    }
+                                                                                                                ),
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'l id': $['l reference'],
+                                                                                                    })
+                                                                                                )
+                                                                                                return {
+                                                                                                    'Opbrengst': prop_Opbrengst,
+                                                                                                }
                                                                                             }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'Periode': prop_Periode,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                default:
-                                                                    return _p.au(
-                                                                        $[0]
-                                                                    )
-                                                            }
+                                                                                        )
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        case 'Los':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Los', null]
+                                                                            )
+                                                                        case 'Licentieovereenkomst':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Licentieovereenkomst', _p_deprecated_block(
+                                                                                    () => {
+                                                                                        
+                                                                                        const var_constraint_Definitie = _p.decide.state(
+                                                                                            $,
+                                                                                            ($) => {
+                                                                                                switch ($[0]) {
+                                                                                                    case 'Licentieovereenkomst':
+                                                                                                        return _p.ss(
+                                                                                                            $,
+                                                                                                            ($) => $
+                                                                                                        )
+                                                                                                    default:
+                                                                                                        return abort(
+                                                                                                            {
+                                                                                                                'type': ['option constraint', ['no such option', "Licentieovereenkomst"]],
+                                                                                                                'location': var_location,
+                                                                                                            }
+                                                                                                        )
+                                                                                                }
+                                                                                            }
+                                                                                        )
+                                                                                        return _p.group.resolve(
+                                                                                            () => {
+                                                                                                
+                                                                                                const prop_Periode = _p_cc(
+                                                                                                    $['Periode'],
+                                                                                                    ($) => ({
+                                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                            var_constraint_Definitie['Overeenkomst']['l entry']['Periodes']
+                                                                                                        ).get_entry(
+                                                                                                            $['l reference'],
+                                                                                                            {
+                                                                                                                'no_such_entry': () => abort(
+                                                                                                                    {
+                                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                        'location': $['l location'],
+                                                                                                                    }
+                                                                                                                ),
+                                                                                                                'no_context_lookup': () => abort(
+                                                                                                                    {
+                                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                                        'location': $['l location'],
+                                                                                                                    }
+                                                                                                                ),
+                                                                                                                'cycle_detected': () => abort(
+                                                                                                                    {
+                                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                                        'location': $['l location'],
+                                                                                                                    }
+                                                                                                                ),
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'l id': $['l reference'],
+                                                                                                    })
+                                                                                                )
+                                                                                                return {
+                                                                                                    'Periode': prop_Periode,
+                                                                                                }
+                                                                                            }
+                                                                                        )
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        default:
+                                                                            return _p.au(
+                                                                                $[0]
+                                                                            )
+                                                                    }
+                                                                }
+                                                            )
                                                         }
                                                     )
                                                 )
@@ -2945,101 +3209,107 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                 
                                                 const prop_Type = _p_cc(
                                                     $['Type'],
-                                                    ($) => _p.decide.state(
-                                                        $['l state'],
-                                                        ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Type => {
-                                                            switch ($[0]) {
-                                                                case 'Opbrengsten':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Opbrengsten', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_Grootboekrekening = _p_cc(
-                                                                                    $['Grootboekrekening'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            $p['Grootboekrekeningen']
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
+                                                    ($) => _p_deprecated_block(
+                                                        () => {
+                                                            
+                                                            const var_location = $['l location']
+                                                            return _p.decide.state(
+                                                                $['l state'],
+                                                                ($): t_out.Handelstransacties.Verkopen.D.Regels.D.Type => {
+                                                                    switch ($[0]) {
+                                                                        case 'Opbrengsten':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Opbrengsten', _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_Grootboekrekening = _p_cc(
+                                                                                            $['Grootboekrekening'],
+                                                                                            ($) => ({
+                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    $p['Grootboekrekeningen']
+                                                                                                ).get_entry(
+                                                                                                    $['l reference'],
                                                                                                     {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
+                                                                                                        'no_such_entry': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'no_context_lookup': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'cycle_detected': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
                                                                                                     }
                                                                                                 ),
-                                                                                                'no_context_lookup': () => abort(
+                                                                                                'l id': $['l reference'],
+                                                                                            })
+                                                                                        )
+                                                                                        return {
+                                                                                            'Grootboekrekening': prop_Grootboekrekening,
+                                                                                        }
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        case 'Balans':
+                                                                            return _p.ss(
+                                                                                $,
+                                                                                ($) => ['Balans', _p.group.resolve(
+                                                                                    () => {
+                                                                                        
+                                                                                        const prop_Balans_item = _p_cc(
+                                                                                            $['Balans item'],
+                                                                                            ($) => ({
+                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    $p['Jaarbeheer']
+                                                                                                ).get_entry(
+                                                                                                    $['l reference'],
                                                                                                     {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
+                                                                                                        'no_such_entry': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'no_context_lookup': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'cycle_detected': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
                                                                                                     }
                                                                                                 ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                            }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'Grootboekrekening': prop_Grootboekrekening,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                case 'Balans':
-                                                                    return _p.ss(
-                                                                        $,
-                                                                        ($) => ['Balans', _p.group.resolve(
-                                                                            () => {
-                                                                                
-                                                                                const prop_Balans_item = _p_cc(
-                                                                                    $['Balans item'],
-                                                                                    ($) => ({
-                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                            $p['Jaarbeheer']
-                                                                                        ).get_entry(
-                                                                                            $['l reference'],
-                                                                                            {
-                                                                                                'no_such_entry': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'no_context_lookup': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['no context lookup', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                                'cycle_detected': () => abort(
-                                                                                                    {
-                                                                                                        'type': ['lookup', ['cycle detected', null]],
-                                                                                                        'location': $['l location'],
-                                                                                                    }
-                                                                                                ),
-                                                                                            }
-                                                                                        ),
-                                                                                        'l id': $['l reference'],
-                                                                                    })
-                                                                                )
-                                                                                return {
-                                                                                    'Balans item': prop_Balans_item,
-                                                                                }
-                                                                            }
-                                                                        )]
-                                                                    )
-                                                                default:
-                                                                    return _p.au(
-                                                                        $[0]
-                                                                    )
-                                                            }
+                                                                                                'l id': $['l reference'],
+                                                                                            })
+                                                                                        )
+                                                                                        return {
+                                                                                            'Balans item': prop_Balans_item,
+                                                                                        }
+                                                                                    }
+                                                                                )]
+                                                                            )
+                                                                        default:
+                                                                            return _p.au(
+                                                                                $[0]
+                                                                            )
+                                                                    }
+                                                                }
+                                                            )
                                                         }
                                                     )
                                                 )
@@ -3115,111 +3385,117 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         
         const prop_type = _p_cc(
             $['type'],
-            ($) => _p.decide.state(
-                $['l state'],
-                ($): t_out.Balans_Resultaat_Mutatie.type_ => {
-                    switch ($[0]) {
-                        case 'Inkoop':
-                            return _p.ss(
-                                $,
-                                ($) => ['Inkoop', {
-                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                        $p['Handelstransacties']
-                                    ).get_entry(
-                                        $['l reference'],
-                                        {
-                                            'no_such_entry': () => abort(
+            ($) => _p_deprecated_block(
+                () => {
+                    
+                    const var_location = $['l location']
+                    return _p.decide.state(
+                        $['l state'],
+                        ($): t_out.Balans_Resultaat_Mutatie.type_ => {
+                            switch ($[0]) {
+                                case 'Inkoop':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['Inkoop', {
+                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                $p['Handelstransacties']
+                                            ).get_entry(
+                                                $['l reference'],
                                                 {
-                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                    'location': $['l location'],
+                                                    'no_such_entry': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'no_context_lookup': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'cycle_detected': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
                                                 }
                                             ),
-                                            'no_context_lookup': () => abort(
+                                            'l id': $['l reference'],
+                                        }]
+                                    )
+                                case 'Verkoop':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['Verkoop', {
+                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                $p['Handelstransacties']
+                                            ).get_entry(
+                                                $['l reference'],
                                                 {
-                                                    'type': ['lookup', ['no context lookup', null]],
-                                                    'location': $['l location'],
+                                                    'no_such_entry': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'no_context_lookup': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'cycle_detected': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
                                                 }
                                             ),
-                                            'cycle_detected': () => abort(
+                                            'l id': $['l reference'],
+                                        }]
+                                    )
+                                case 'BTW-periode':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['BTW-periode', {
+                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                $p['Jaarbeheer']
+                                            ).get_entry(
+                                                $['l reference'],
                                                 {
-                                                    'type': ['lookup', ['cycle detected', null]],
-                                                    'location': $['l location'],
+                                                    'no_such_entry': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'no_context_lookup': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'cycle_detected': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
                                                 }
                                             ),
-                                        }
-                                    ),
-                                    'l id': $['l reference'],
-                                }]
-                            )
-                        case 'Verkoop':
-                            return _p.ss(
-                                $,
-                                ($) => ['Verkoop', {
-                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                        $p['Handelstransacties']
-                                    ).get_entry(
-                                        $['l reference'],
-                                        {
-                                            'no_such_entry': () => abort(
-                                                {
-                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                            'no_context_lookup': () => abort(
-                                                {
-                                                    'type': ['lookup', ['no context lookup', null]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                            'cycle_detected': () => abort(
-                                                {
-                                                    'type': ['lookup', ['cycle detected', null]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                        }
-                                    ),
-                                    'l id': $['l reference'],
-                                }]
-                            )
-                        case 'BTW-periode':
-                            return _p.ss(
-                                $,
-                                ($) => ['BTW-periode', {
-                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                        $p['Jaarbeheer']
-                                    ).get_entry(
-                                        $['l reference'],
-                                        {
-                                            'no_such_entry': () => abort(
-                                                {
-                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                            'no_context_lookup': () => abort(
-                                                {
-                                                    'type': ['lookup', ['no context lookup', null]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                            'cycle_detected': () => abort(
-                                                {
-                                                    'type': ['lookup', ['cycle detected', null]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                        }
-                                    ),
-                                    'l id': $['l reference'],
-                                }]
-                            )
-                        default:
-                            return _p.au(
-                                $[0]
-                            )
-                    }
+                                            'l id': $['l reference'],
+                                        }]
+                                    )
+                                default:
+                                    return _p.au(
+                                        $[0]
+                                    )
+                            }
+                        }
+                    )
                 }
             )
         )
@@ -3239,109 +3515,129 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                 $['l dictionary'],
                 ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D => _p_cc(
                     $['l entry'],
-                    ($) => _p.dictionary.resolve(
-                        $['l dictionary'],
-                        ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D.D => _p_cc(
-                            $['l entry'],
-                            ($) => _p.group.resolve(
-                                () => {
-                                    
-                                    const prop_Bedrag = _p_cc(
-                                        $['Bedrag'],
-                                        ($) => $
-                                    )
-                                    
-                                    const prop_Afhandeling = _p_cc(
-                                        $['Afhandeling'],
-                                        ($) => _p.decide.state(
-                                            $['l state'],
-                                            ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
-                                                switch ($[0]) {
-                                                    case 'Resultaat':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Resultaat', Balans_Resultaat_Mutatie(
-                                                                $,
-                                                                ($) => abort(
-                                                                    $
-                                                                ),
-                                                                $l,
-                                                                $p
-                                                            )]
-                                                        )
-                                                    case 'Balans':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Balans', _p.decide.state(
-                                                                $['l state'],
-                                                                ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.Balans => {
-                                                                    switch ($[0]) {
-                                                                        case 'Informele rekening':
-                                                                            return _p.ss(
-                                                                                $,
-                                                                                ($) => ['Informele rekening', _p.group.resolve(
-                                                                                    () => {
-                                                                                        
-                                                                                        const prop_Informele_rekening = _p_cc(
-                                                                                            $['Informele rekening'],
-                                                                                            ($) => ({
-                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                                    $p['Jaarbeheer']
-                                                                                                ).get_entry(
-                                                                                                    $['l reference'],
-                                                                                                    {
-                                                                                                        'no_such_entry': () => abort(
-                                                                                                            {
-                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                                'location': $['l location'],
-                                                                                                            }
-                                                                                                        ),
-                                                                                                        'no_context_lookup': () => abort(
-                                                                                                            {
-                                                                                                                'type': ['lookup', ['no context lookup', null]],
-                                                                                                                'location': $['l location'],
-                                                                                                            }
-                                                                                                        ),
-                                                                                                        'cycle_detected': () => abort(
-                                                                                                            {
-                                                                                                                'type': ['lookup', ['cycle detected', null]],
-                                                                                                                'location': $['l location'],
-                                                                                                            }
-                                                                                                        ),
-                                                                                                    }
-                                                                                                ),
-                                                                                                'l id': $['l reference'],
-                                                                                            })
-                                                                                        )
-                                                                                        return {
-                                                                                            'Informele rekening': prop_Informele_rekening,
-                                                                                        }
-                                                                                    }
-                                                                                )]
-                                                                            )
-                                                                        default:
-                                                                            return _p.au(
-                                                                                $[0]
-                                                                            )
-                                                                    }
-                                                                }
-                                                            )]
-                                                        )
-                                                    default:
-                                                        return _p.au(
-                                                            $[0]
-                                                        )
-                                                }
-                                            }
-                                        )
-                                    )
-                                    return {
-                                        'Bedrag': prop_Bedrag,
-                                        'Afhandeling': prop_Afhandeling,
-                                    }
-                                }
+                    ($) => _p_deprecated_block(
+                        () => {
+                            
+                            const var_referenced_entry = _pdev.implement_me(
+                                "IM: referenced entry"
                             )
-                        )
+                            return _p.dictionary.resolve(
+                                $['l dictionary'],
+                                ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D.D => _p_cc(
+                                    $['l entry'],
+                                    ($) => _p.group.resolve(
+                                        () => {
+                                            
+                                            const prop_Bedrag = _p_cc(
+                                                $['Bedrag'],
+                                                ($) => $
+                                            )
+                                            
+                                            const prop_Afhandeling = _p_cc(
+                                                $['Afhandeling'],
+                                                ($) => _p_deprecated_block(
+                                                    () => {
+                                                        
+                                                        const var_location = $['l location']
+                                                        return _p.decide.state(
+                                                            $['l state'],
+                                                            ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
+                                                                switch ($[0]) {
+                                                                    case 'Resultaat':
+                                                                        return _p.ss(
+                                                                            $,
+                                                                            ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                                $,
+                                                                                ($) => abort(
+                                                                                    $
+                                                                                ),
+                                                                                $l,
+                                                                                $p
+                                                                            )]
+                                                                        )
+                                                                    case 'Balans':
+                                                                        return _p.ss(
+                                                                            $,
+                                                                            ($) => ['Balans', _p_deprecated_block(
+                                                                                () => {
+                                                                                    
+                                                                                    const var_location = $['l location']
+                                                                                    return _p.decide.state(
+                                                                                        $['l state'],
+                                                                                        ($): t_out.Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.Balans => {
+                                                                                            switch ($[0]) {
+                                                                                                case 'Informele rekening':
+                                                                                                    return _p.ss(
+                                                                                                        $,
+                                                                                                        ($) => ['Informele rekening', _p.group.resolve(
+                                                                                                            () => {
+                                                                                                                
+                                                                                                                const prop_Informele_rekening = _p_cc(
+                                                                                                                    $['Informele rekening'],
+                                                                                                                    ($) => ({
+                                                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                            $p['Jaarbeheer']
+                                                                                                                        ).get_entry(
+                                                                                                                            $['l reference'],
+                                                                                                                            {
+                                                                                                                                'no_such_entry': () => abort(
+                                                                                                                                    {
+                                                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                                        'location': $['l location'],
+                                                                                                                                    }
+                                                                                                                                ),
+                                                                                                                                'no_context_lookup': () => abort(
+                                                                                                                                    {
+                                                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                                                        'location': $['l location'],
+                                                                                                                                    }
+                                                                                                                                ),
+                                                                                                                                'cycle_detected': () => abort(
+                                                                                                                                    {
+                                                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                                                        'location': $['l location'],
+                                                                                                                                    }
+                                                                                                                                ),
+                                                                                                                            }
+                                                                                                                        ),
+                                                                                                                        'l id': $['l reference'],
+                                                                                                                    })
+                                                                                                                )
+                                                                                                                return {
+                                                                                                                    'Informele rekening': prop_Informele_rekening,
+                                                                                                                }
+                                                                                                            }
+                                                                                                        )]
+                                                                                                    )
+                                                                                                default:
+                                                                                                    return _p.au(
+                                                                                                        $[0]
+                                                                                                    )
+                                                                                            }
+                                                                                        }
+                                                                                    )
+                                                                                }
+                                                                            )]
+                                                                        )
+                                                                    default:
+                                                                        return _p.au(
+                                                                            $[0]
+                                                                        )
+                                                                }
+                                                            }
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                            return {
+                                                'Bedrag': prop_Bedrag,
+                                                'Afhandeling': prop_Afhandeling,
+                                            }
+                                        }
+                                    )
+                                )
+                            )
+                        }
                     )
                 )
             )
@@ -3353,135 +3649,155 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                 $['l dictionary'],
                 ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D => _p_cc(
                     $['l entry'],
-                    ($) => _p.dictionary.resolve(
-                        $['l dictionary'],
-                        ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_cc(
-                            $['l entry'],
-                            ($) => _p.decide.state(
-                                $['l state'],
-                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
-                                    switch ($[0]) {
-                                        case 'Resultaat':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ['Resultaat', Balans_Resultaat_Mutatie(
-                                                    $,
-                                                    ($) => abort(
-                                                        $
-                                                    ),
-                                                    $l,
-                                                    $p
-                                                )]
-                                            )
-                                        case 'Balans':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ['Balans', _p.decide.state(
-                                                    $['l state'],
-                                                    ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.Balans => {
-                                                        switch ($[0]) {
-                                                            case 'Verrekenpost':
-                                                                return _p.ss(
-                                                                    $,
-                                                                    ($) => ['Verrekenpost', _p.group.resolve(
-                                                                        () => {
-                                                                            
-                                                                            const prop_Verrekenpost = _p_cc(
-                                                                                $['Verrekenpost'],
-                                                                                ($) => ({
-                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                        $p['Jaarbeheer']
-                                                                                    ).get_entry(
-                                                                                        $['l reference'],
-                                                                                        {
-                                                                                            'no_such_entry': () => abort(
-                                                                                                {
-                                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                    'location': $['l location'],
-                                                                                                }
-                                                                                            ),
-                                                                                            'no_context_lookup': () => abort(
-                                                                                                {
-                                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                                    'location': $['l location'],
-                                                                                                }
-                                                                                            ),
-                                                                                            'cycle_detected': () => abort(
-                                                                                                {
-                                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                                    'location': $['l location'],
-                                                                                                }
-                                                                                            ),
-                                                                                        }
-                                                                                    ),
-                                                                                    'l id': $['l reference'],
-                                                                                })
-                                                                            )
-                                                                            return {
-                                                                                'Verrekenpost': prop_Verrekenpost,
-                                                                            }
-                                                                        }
-                                                                    )]
-                                                                )
-                                                            case 'Informele rekening':
-                                                                return _p.ss(
-                                                                    $,
-                                                                    ($) => ['Informele rekening', _p.group.resolve(
-                                                                        () => {
-                                                                            
-                                                                            const prop_Informele_rekening = _p_cc(
-                                                                                $['Informele rekening'],
-                                                                                ($) => ({
-                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                                                        $p['Jaarbeheer']
-                                                                                    ).get_entry(
-                                                                                        $['l reference'],
-                                                                                        {
-                                                                                            'no_such_entry': () => abort(
-                                                                                                {
-                                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                    'location': $['l location'],
-                                                                                                }
-                                                                                            ),
-                                                                                            'no_context_lookup': () => abort(
-                                                                                                {
-                                                                                                    'type': ['lookup', ['no context lookup', null]],
-                                                                                                    'location': $['l location'],
-                                                                                                }
-                                                                                            ),
-                                                                                            'cycle_detected': () => abort(
-                                                                                                {
-                                                                                                    'type': ['lookup', ['cycle detected', null]],
-                                                                                                    'location': $['l location'],
-                                                                                                }
-                                                                                            ),
-                                                                                        }
-                                                                                    ),
-                                                                                    'l id': $['l reference'],
-                                                                                })
-                                                                            )
-                                                                            return {
-                                                                                'Informele rekening': prop_Informele_rekening,
-                                                                            }
-                                                                        }
-                                                                    )]
-                                                                )
-                                                            default:
-                                                                return _p.au(
-                                                                    $[0]
-                                                                )
-                                                        }
-                                                    }
-                                                )]
-                                            )
-                                        default:
-                                            return _p.au(
-                                                $[0]
-                                            )
-                                    }
-                                }
+                    ($) => _p_deprecated_block(
+                        () => {
+                            
+                            const var_referenced_entry = _pdev.implement_me(
+                                "IM: referenced entry"
                             )
-                        )
+                            return _p.dictionary.resolve(
+                                $['l dictionary'],
+                                ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_cc(
+                                    $['l entry'],
+                                    ($) => _p_deprecated_block(
+                                        () => {
+                                            
+                                            const var_location = $['l location']
+                                            return _p.decide.state(
+                                                $['l state'],
+                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                    $,
+                                                                    ($) => abort(
+                                                                        $
+                                                                    ),
+                                                                    $l,
+                                                                    $p
+                                                                )]
+                                                            )
+                                                        case 'Balans':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ['Balans', _p_deprecated_block(
+                                                                    () => {
+                                                                        
+                                                                        const var_location = $['l location']
+                                                                        return _p.decide.state(
+                                                                            $['l state'],
+                                                                            ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.Balans => {
+                                                                                switch ($[0]) {
+                                                                                    case 'Verrekenpost':
+                                                                                        return _p.ss(
+                                                                                            $,
+                                                                                            ($) => ['Verrekenpost', _p.group.resolve(
+                                                                                                () => {
+                                                                                                    
+                                                                                                    const prop_Verrekenpost = _p_cc(
+                                                                                                        $['Verrekenpost'],
+                                                                                                        ($) => ({
+                                                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                $p['Jaarbeheer']
+                                                                                                            ).get_entry(
+                                                                                                                $['l reference'],
+                                                                                                                {
+                                                                                                                    'no_such_entry': () => abort(
+                                                                                                                        {
+                                                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                            'location': $['l location'],
+                                                                                                                        }
+                                                                                                                    ),
+                                                                                                                    'no_context_lookup': () => abort(
+                                                                                                                        {
+                                                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                                                            'location': $['l location'],
+                                                                                                                        }
+                                                                                                                    ),
+                                                                                                                    'cycle_detected': () => abort(
+                                                                                                                        {
+                                                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                                                            'location': $['l location'],
+                                                                                                                        }
+                                                                                                                    ),
+                                                                                                                }
+                                                                                                            ),
+                                                                                                            'l id': $['l reference'],
+                                                                                                        })
+                                                                                                    )
+                                                                                                    return {
+                                                                                                        'Verrekenpost': prop_Verrekenpost,
+                                                                                                    }
+                                                                                                }
+                                                                                            )]
+                                                                                        )
+                                                                                    case 'Informele rekening':
+                                                                                        return _p.ss(
+                                                                                            $,
+                                                                                            ($) => ['Informele rekening', _p.group.resolve(
+                                                                                                () => {
+                                                                                                    
+                                                                                                    const prop_Informele_rekening = _p_cc(
+                                                                                                        $['Informele rekening'],
+                                                                                                        ($) => ({
+                                                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                $p['Jaarbeheer']
+                                                                                                            ).get_entry(
+                                                                                                                $['l reference'],
+                                                                                                                {
+                                                                                                                    'no_such_entry': () => abort(
+                                                                                                                        {
+                                                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                            'location': $['l location'],
+                                                                                                                        }
+                                                                                                                    ),
+                                                                                                                    'no_context_lookup': () => abort(
+                                                                                                                        {
+                                                                                                                            'type': ['lookup', ['no context lookup', null]],
+                                                                                                                            'location': $['l location'],
+                                                                                                                        }
+                                                                                                                    ),
+                                                                                                                    'cycle_detected': () => abort(
+                                                                                                                        {
+                                                                                                                            'type': ['lookup', ['cycle detected', null]],
+                                                                                                                            'location': $['l location'],
+                                                                                                                        }
+                                                                                                                    ),
+                                                                                                                }
+                                                                                                            ),
+                                                                                                            'l id': $['l reference'],
+                                                                                                        })
+                                                                                                    )
+                                                                                                    return {
+                                                                                                        'Informele rekening': prop_Informele_rekening,
+                                                                                                    }
+                                                                                                }
+                                                                                            )]
+                                                                                        )
+                                                                                    default:
+                                                                                        return _p.au(
+                                                                                            $[0]
+                                                                                        )
+                                                                                }
+                                                                            }
+                                                                        )
+                                                                    }
+                                                                )]
+                                                            )
+                                                        default:
+                                                            return _p.au(
+                                                                $[0]
+                                                            )
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    )
+                                )
+                            )
+                        }
                     )
                 )
             )
@@ -3493,29 +3809,111 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                 $['l dictionary'],
                 ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D => _p_cc(
                     $['l entry'],
-                    ($) => _p.dictionary.resolve(
-                        $['l dictionary'],
-                        ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D.D => _p_cc(
-                            $['l entry'],
-                            ($) => _p.group.resolve(
+                    ($) => _p_deprecated_block(
+                        () => {
+                            
+                            const var_referenced_entry = _pdev.implement_me(
+                                "IM: referenced entry"
+                            )
+                            return _p.dictionary.resolve(
+                                $['l dictionary'],
+                                ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D.D => _p_cc(
+                                    $['l entry'],
+                                    ($) => _p.group.resolve(
+                                        () => {
+                                            
+                                            const prop_Bedrag = _p_cc(
+                                                $['Bedrag'],
+                                                ($) => $
+                                            )
+                                            
+                                            const prop_Datum = _p_cc(
+                                                $['Datum'],
+                                                ($) => $
+                                            )
+                                            
+                                            const prop_Grootboekrekening = _p_cc(
+                                                $['Grootboekrekening'],
+                                                ($) => ({
+                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                        $p['Grootboekrekeningen']
+                                                    ).get_entry(
+                                                        $['l reference'],
+                                                        {
+                                                            'no_such_entry': () => abort(
+                                                                {
+                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                    'location': $['l location'],
+                                                                }
+                                                            ),
+                                                            'no_context_lookup': () => abort(
+                                                                {
+                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                    'location': $['l location'],
+                                                                }
+                                                            ),
+                                                            'cycle_detected': () => abort(
+                                                                {
+                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                    'location': $['l location'],
+                                                                }
+                                                            ),
+                                                        }
+                                                    ),
+                                                    'l id': $['l reference'],
+                                                })
+                                            )
+                                            
+                                            const prop_Omschrijving = _p_cc(
+                                                $['Omschrijving'],
+                                                ($) => $
+                                            )
+                                            return {
+                                                'Bedrag': prop_Bedrag,
+                                                'Datum': prop_Datum,
+                                                'Grootboekrekening': prop_Grootboekrekening,
+                                                'Omschrijving': prop_Omschrijving,
+                                            }
+                                        }
+                                    )
+                                )
+                            )
+                        }
+                    )
+                )
+            )
+        )
+        return {
+            'Verrekenpost mutaties': prop_Verrekenpost_mutaties,
+            'Bankrekening Mutatie Verwerkingen': prop_Bankrekening_Mutatie_Verwerkingen,
+            'Memoriaal boekingen': prop_Memoriaal_boekingen,
+        }
+    }
+)
+
+export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p_deprecated_block(
+    () => {
+        
+        const var_location = $['l location']
+        return _p.decide.state(
+            $['l state'],
+            ($): t_out.Eerste_boekjaar => {
+                switch ($[0]) {
+                    case 'Ja':
+                        return _p.ss(
+                            $,
+                            ($) => ['Ja', null]
+                        )
+                    case 'Nee':
+                        return _p.ss(
+                            $,
+                            ($) => ['Nee', _p.group.resolve(
                                 () => {
                                     
-                                    const prop_Bedrag = _p_cc(
-                                        $['Bedrag'],
-                                        ($) => $
-                                    )
-                                    
-                                    const prop_Datum = _p_cc(
-                                        $['Datum'],
-                                        ($) => $
-                                    )
-                                    
-                                    const prop_Grootboekrekening = _p_cc(
-                                        $['Grootboekrekening'],
+                                    const prop_Vorig_boekjaar = _p_cc(
+                                        $['Vorig boekjaar'],
                                         ($) => ({
-                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
-                                                $p['Grootboekrekeningen']
-                                            ).get_entry(
+                                            'l entry': $l['Jaren'].get_entry(
                                                 $['l reference'],
                                                 {
                                                     'no_such_entry': () => abort(
@@ -3541,87 +3939,19 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                             'l id': $['l reference'],
                                         })
                                     )
-                                    
-                                    const prop_Omschrijving = _p_cc(
-                                        $['Omschrijving'],
-                                        ($) => $
-                                    )
                                     return {
-                                        'Bedrag': prop_Bedrag,
-                                        'Datum': prop_Datum,
-                                        'Grootboekrekening': prop_Grootboekrekening,
-                                        'Omschrijving': prop_Omschrijving,
+                                        'Vorig boekjaar': prop_Vorig_boekjaar,
                                     }
                                 }
-                            )
+                            )]
                         )
-                    )
-                )
-            )
+                    default:
+                        return _p.au(
+                            $[0]
+                        )
+                }
+            }
         )
-        return {
-            'Verrekenpost mutaties': prop_Verrekenpost_mutaties,
-            'Bankrekening Mutatie Verwerkingen': prop_Bankrekening_Mutatie_Verwerkingen,
-            'Memoriaal boekingen': prop_Memoriaal_boekingen,
-        }
-    }
-)
-
-export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p.decide.state(
-    $['l state'],
-    ($): t_out.Eerste_boekjaar => {
-        switch ($[0]) {
-            case 'Ja':
-                return _p.ss(
-                    $,
-                    ($) => ['Ja', null]
-                )
-            case 'Nee':
-                return _p.ss(
-                    $,
-                    ($) => ['Nee', _p.group.resolve(
-                        () => {
-                            
-                            const prop_Vorig_boekjaar = _p_cc(
-                                $['Vorig boekjaar'],
-                                ($) => ({
-                                    'l entry': $l['Jaren'].get_entry(
-                                        $['l reference'],
-                                        {
-                                            'no_such_entry': () => abort(
-                                                {
-                                                    'type': ['lookup', ['no such entry', $['l reference']]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                            'no_context_lookup': () => abort(
-                                                {
-                                                    'type': ['lookup', ['no context lookup', null]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                            'cycle_detected': () => abort(
-                                                {
-                                                    'type': ['lookup', ['cycle detected', null]],
-                                                    'location': $['l location'],
-                                                }
-                                            ),
-                                        }
-                                    ),
-                                    'l id': $['l reference'],
-                                })
-                            )
-                            return {
-                                'Vorig boekjaar': prop_Vorig_boekjaar,
-                            }
-                        }
-                    )]
-                )
-            default:
-                return _p.au(
-                    $[0]
-                )
-        }
     }
 )
 
@@ -3634,25 +3964,31 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                 
                 const prop_Afgesloten = _p_cc(
                     $['Afgesloten'],
-                    ($) => _p.decide.state(
-                        $['l state'],
-                        ($): t_out.Jaren.D.Afgesloten => {
-                            switch ($[0]) {
-                                case 'Ja':
-                                    return _p.ss(
-                                        $,
-                                        ($) => ['Ja', null]
-                                    )
-                                case 'Nee':
-                                    return _p.ss(
-                                        $,
-                                        ($) => ['Nee', null]
-                                    )
-                                default:
-                                    return _p.au(
-                                        $[0]
-                                    )
-                            }
+                    ($) => _p_deprecated_block(
+                        () => {
+                            
+                            const var_location = $['l location']
+                            return _p.decide.state(
+                                $['l state'],
+                                ($): t_out.Jaren.D.Afgesloten => {
+                                    switch ($[0]) {
+                                        case 'Ja':
+                                            return _p.ss(
+                                                $,
+                                                ($) => ['Ja', null]
+                                            )
+                                        case 'Nee':
+                                            return _p.ss(
+                                                $,
+                                                ($) => ['Nee', null]
+                                            )
+                                        default:
+                                            return _p.au(
+                                                $[0]
+                                            )
+                                    }
+                                }
+                            )
                         }
                     )
                 )
@@ -3699,12 +4035,8 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                             'Jaren': $a,
                         },
                         {
-                            'Grootboekrekeningen': _pdev.implement_me(
-                                "IM: required"
-                            ),
-                            'Eerste boekjaar': _pdev.implement_me(
-                                "IM: required"
-                            ),
+                            'Grootboekrekeningen': prop_Grootboekrekeningen,
+                            'Eerste boekjaar': prop_Eerste_boekjaar,
                         }
                     )
                 )
@@ -3719,12 +4051,8 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                         null,
                         {
                             'Beheer': $p['Beheer'],
-                            'Grootboekrekeningen': _pdev.implement_me(
-                                "IM: required"
-                            ),
-                            'Jaarbeheer': _pdev.implement_me(
-                                "IM: required"
-                            ),
+                            'Grootboekrekeningen': prop_Grootboekrekeningen,
+                            'Jaarbeheer': prop_Jaarbeheer,
                         }
                     )
                 )
@@ -3741,15 +4069,9 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                         },
                         {
                             'Beheer': $p['Beheer'],
-                            'Grootboekrekeningen': _pdev.implement_me(
-                                "IM: required"
-                            ),
-                            'Jaarbeheer': _pdev.implement_me(
-                                "IM: required"
-                            ),
-                            'Handelstransacties': _pdev.implement_me(
-                                "IM: required"
-                            ),
+                            'Grootboekrekeningen': prop_Grootboekrekeningen,
+                            'Jaarbeheer': prop_Jaarbeheer,
+                            'Handelstransacties': prop_Handelstransacties,
                         }
                     )
                 )
@@ -3791,9 +4113,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
                 ),
                 null,
                 {
-                    'Fiscaal': _pdev.implement_me(
-                        "IM: required"
-                    ),
+                    'Fiscaal': prop_Fiscaal,
                 }
             )
         )
@@ -3807,9 +4127,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
                 ),
                 null,
                 {
-                    'Grootboek Categorieen': _pdev.implement_me(
-                        "IM: required"
-                    ),
+                    'Grootboek Categorieen': prop_Categorieen,
                 }
             )
         )
@@ -3823,9 +4141,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.resolve(
                 ),
                 null,
                 {
-                    'Beheer': _pdev.implement_me(
-                        "IM: required"
-                    ),
+                    'Beheer': prop_Beheer,
                 }
             )
         )
