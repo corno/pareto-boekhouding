@@ -201,8 +201,30 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 const prop_Hoofdcategorie_fiscus = _p_cc(
                                                     $['Hoofdcategorie fiscus'],
                                                     ($) => ({
-                                                        'l entry': _pdev.implement_me(
-                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            $p['Fiscaal']
+                                                        ).get_entry(
+                                                            $['l reference'],
+                                                            {
+                                                                'no_such_entry': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'no_context_lookup': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'cycle_detected': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                            }
                                                         ),
                                                         'l id': $['l reference'],
                                                     })
@@ -211,8 +233,30 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 const prop_Subcategorie_fiscus = _p_cc(
                                                     $['Subcategorie fiscus'],
                                                     ($) => ({
-                                                        'l entry': _pdev.implement_me(
-                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            prop_Hoofdcategorie_fiscus['entry']['Subcategorieen']
+                                                        ).get_entry(
+                                                            $['l reference'],
+                                                            {
+                                                                'no_such_entry': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'no_context_lookup': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'cycle_detected': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                            }
                                                         ),
                                                         'l id': $['l reference'],
                                                     })
@@ -282,8 +326,30 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 const prop_Hoofdcategorie_fiscus = _p_cc(
                                                     $['Hoofdcategorie fiscus'],
                                                     ($) => ({
-                                                        'l entry': _pdev.implement_me(
-                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            $p['Fiscaal']
+                                                        ).get_entry(
+                                                            $['l reference'],
+                                                            {
+                                                                'no_such_entry': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'no_context_lookup': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'cycle_detected': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                            }
                                                         ),
                                                         'l id': $['l reference'],
                                                     })
@@ -292,8 +358,30 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 const prop_Subcategorie_fiscus = _p_cc(
                                                     $['Subcategorie fiscus'],
                                                     ($) => ({
-                                                        'l entry': _pdev.implement_me(
-                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            prop_Hoofdcategorie_fiscus['entry']['Subcategorieen']
+                                                        ).get_entry(
+                                                            $['l reference'],
+                                                            {
+                                                                'no_such_entry': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'no_context_lookup': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                                'cycle_detected': () => abort(
+                                                                    {
+                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                        'location': $['l location'],
+                                                                    }
+                                                                ),
+                                                            }
                                                         ),
                                                         'l id': $['l reference'],
                                                     })
@@ -392,8 +480,30 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         const prop_Hoofdcategorie = _p_cc(
                                             $['Hoofdcategorie'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    $p['Grootboek Categorieen']
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -402,8 +512,30 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         const prop_Subcategorie = _p_cc(
                                             $['Subcategorie'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    prop_Hoofdcategorie['entry']['Subcategorieen']
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -456,8 +588,30 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         const prop_Hoofdcategorie = _p_cc(
                                             $['Hoofdcategorie'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    $p['Grootboek Categorieen']
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -466,8 +620,30 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                         const prop_Subcategorie = _p_cc(
                                             $['Subcategorie'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    prop_Hoofdcategorie['entry']['Subcategorieen']
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -500,8 +676,30 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.resolv
                                                                                                         const prop_Correctietype = _p_cc(
                                                                                                             $['Correctietype'],
                                                                                                             ($) => ({
-                                                                                                                'l entry': _pdev.implement_me(
-                                                                                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                    $p['Grootboek Categorieen']
+                                                                                                                ).get_entry(
+                                                                                                                    $['l reference'],
+                                                                                                                    {
+                                                                                                                        'no_such_entry': () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            }
+                                                                                                                        ),
+                                                                                                                        'no_context_lookup': () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            }
+                                                                                                                        ),
+                                                                                                                        'cycle_detected': () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            }
+                                                                                                                        ),
+                                                                                                                    }
                                                                                                                 ),
                                                                                                                 'l id': $['l reference'],
                                                                                                             })
@@ -880,8 +1078,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Grootboekrekening_voor_BTW_afrondingen = _p_cc(
                         $['Grootboekrekening voor BTW afrondingen'],
                         ($) => ({
-                            'l entry': _pdev.implement_me(
-                                "IM: FIXME ACYCLIC ENTRY"
+                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                $p['Grootboekrekeningen']
+                            ).get_entry(
+                                $['l reference'],
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'no_context_lookup': () => abort(
+                                        {
+                                            'type': ['lookup', ['no context lookup', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'cycle_detected': () => abort(
+                                        {
+                                            'type': ['lookup', ['cycle detected', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                }
                             ),
                             'l id': $['l reference'],
                         })
@@ -1030,8 +1250,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Grootboekrekening_voor_nog_aan_te_geven_BTW = _p_cc(
                         $['Grootboekrekening voor nog aan te geven BTW'],
                         ($) => ({
-                            'l entry': _pdev.implement_me(
-                                "IM: FIXME ACYCLIC ENTRY"
+                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                $p['Grootboekrekeningen']
+                            ).get_entry(
+                                $['l reference'],
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'no_context_lookup': () => abort(
+                                        {
+                                            'type': ['lookup', ['no context lookup', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'cycle_detected': () => abort(
+                                        {
+                                            'type': ['lookup', ['cycle detected', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                }
                             ),
                             'l id': $['l reference'],
                         })
@@ -1040,8 +1282,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Grootboekrekening_voor_resultaat_dit_jaar = _p_cc(
                         $['Grootboekrekening voor resultaat dit jaar'],
                         ($) => ({
-                            'l entry': _pdev.implement_me(
-                                "IM: FIXME ACYCLIC ENTRY"
+                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                $p['Grootboekrekeningen']
+                            ).get_entry(
+                                $['l reference'],
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'no_context_lookup': () => abort(
+                                        {
+                                            'type': ['lookup', ['no context lookup', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'cycle_detected': () => abort(
+                                        {
+                                            'type': ['lookup', ['cycle detected', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                }
                             ),
                             'l id': $['l reference'],
                         })
@@ -1050,8 +1314,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Grootboekrekening_voor_winstreserve = _p_cc(
                         $['Grootboekrekening voor winstreserve'],
                         ($) => ({
-                            'l entry': _pdev.implement_me(
-                                "IM: FIXME ACYCLIC ENTRY"
+                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                $p['Grootboekrekeningen']
+                            ).get_entry(
+                                $['l reference'],
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'no_context_lookup': () => abort(
+                                        {
+                                            'type': ['lookup', ['no context lookup', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'cycle_detected': () => abort(
+                                        {
+                                            'type': ['lookup', ['cycle detected', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                }
                             ),
                             'l id': $['l reference'],
                         })
@@ -1060,8 +1346,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Grootboekrekening_voor_Inkoop_saldo = _p_cc(
                         $['Grootboekrekening voor Inkoop saldo'],
                         ($) => ({
-                            'l entry': _pdev.implement_me(
-                                "IM: FIXME ACYCLIC ENTRY"
+                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                $p['Grootboekrekeningen']
+                            ).get_entry(
+                                $['l reference'],
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'no_context_lookup': () => abort(
+                                        {
+                                            'type': ['lookup', ['no context lookup', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'cycle_detected': () => abort(
+                                        {
+                                            'type': ['lookup', ['cycle detected', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                }
                             ),
                             'l id': $['l reference'],
                         })
@@ -1070,8 +1378,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                     const prop_Grootboekrekening_voor_Verkoop_saldo = _p_cc(
                         $['Grootboekrekening voor Verkoop saldo'],
                         ($) => ({
-                            'l entry': _pdev.implement_me(
-                                "IM: FIXME ACYCLIC ENTRY"
+                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                $p['Grootboekrekeningen']
+                            ).get_entry(
+                                $['l reference'],
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'no_context_lookup': () => abort(
+                                        {
+                                            'type': ['lookup', ['no context lookup', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                    'cycle_detected': () => abort(
+                                        {
+                                            'type': ['lookup', ['cycle detected', null]],
+                                            'location': $['l location'],
+                                        }
+                                    ),
+                                }
                             ),
                             'l id': $['l reference'],
                         })
@@ -1094,8 +1424,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         const prop_Grootboekrekening = _p_cc(
                                             $['Grootboekrekening'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    $p['Grootboekrekeningen']
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -1175,8 +1527,30 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                         const prop_Grootboekrekening = _p_cc(
                                             $['Grootboekrekening'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    $p['Grootboekrekeningen']
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -1336,8 +1710,30 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
         const prop_Grootboekrekening = _p_cc(
             $['Grootboekrekening'],
             ($) => ({
-                'l entry': _pdev.implement_me(
-                    "IM: FIXME ACYCLIC ENTRY"
+                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                    $p['Grootboekrekeningen']
+                ).get_entry(
+                    $['l reference'],
+                    {
+                        'no_such_entry': () => abort(
+                            {
+                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                'location': $['l location'],
+                            }
+                        ),
+                        'no_context_lookup': () => abort(
+                            {
+                                'type': ['lookup', ['no context lookup', null]],
+                                'location': $['l location'],
+                            }
+                        ),
+                        'cycle_detected': () => abort(
+                            {
+                                'type': ['lookup', ['cycle detected', null]],
+                                'location': $['l location'],
+                            }
+                        ),
+                    }
                 ),
                 'l id': $['l reference'],
             })
@@ -1363,8 +1759,32 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                                         const prop_Balans_item = _p_cc(
                                             $['Balans item'],
                                             ($) => ({
-                                                'l entry': _pdev.implement_me(
-                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    _pdev.implement_me(
+                                                        "IM: OPTION CONSTRAINT"
+                                                    )
+                                                ).get_entry(
+                                                    $['l reference'],
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'no_context_lookup': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                        'cycle_detected': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                'location': $['l location'],
+                                                            }
+                                                        ),
+                                                    }
                                                 ),
                                                 'l id': $['l reference'],
                                             })
@@ -1392,15 +1812,59 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
 )
 
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($, abort, $l, $p) => ({
-    'l entry': _pdev.implement_me(
-        "IM: FIXME ACYCLIC ENTRY"
+    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+        $p['Jaarbeheer']
+    ).get_entry(
+        $['l reference'],
+        {
+            'no_such_entry': () => abort(
+                {
+                    'type': ['lookup', ['no such entry', $['l reference']]],
+                    'location': $['l location'],
+                }
+            ),
+            'no_context_lookup': () => abort(
+                {
+                    'type': ['lookup', ['no context lookup', null]],
+                    'location': $['l location'],
+                }
+            ),
+            'cycle_detected': () => abort(
+                {
+                    'type': ['lookup', ['cycle detected', null]],
+                    'location': $['l location'],
+                }
+            ),
+        }
     ),
     'l id': $['l reference'],
 })
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($, abort, $l, $p) => ({
-    'l entry': _pdev.implement_me(
-        "IM: FIXME ACYCLIC ENTRY"
+    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+        $p['Jaarbeheer']
+    ).get_entry(
+        $['l reference'],
+        {
+            'no_such_entry': () => abort(
+                {
+                    'type': ['lookup', ['no such entry', $['l reference']]],
+                    'location': $['l location'],
+                }
+            ),
+            'no_context_lookup': () => abort(
+                {
+                    'type': ['lookup', ['no context lookup', null]],
+                    'location': $['l location'],
+                }
+            ),
+            'cycle_detected': () => abort(
+                {
+                    'type': ['lookup', ['cycle detected', null]],
+                    'location': $['l location'],
+                }
+            ),
+        }
     ),
     'l id': $['l reference'],
 })
@@ -1437,8 +1901,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Rekening_courant = _p_cc(
                                                                 $['Rekening courant'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Jaarbeheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1493,8 +1979,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_BTW$mi_periode = _p_cc(
                                                                 $['BTW-periode'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Jaarbeheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1626,8 +2134,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_Balans_item = _p_cc(
                                                                                     $['Balans item'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            $p['Jaarbeheer']
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -1647,8 +2177,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_Grootboekrekening = _p_cc(
                                                                                     $['Grootboekrekening'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            $p['Grootboekrekeningen']
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -1698,8 +2250,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Crediteur = _p_cc(
                                                                 $['Crediteur'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Beheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1725,8 +2299,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Ronde = _p_cc(
                                                                 $['Ronde'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Jaarbeheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1746,8 +2342,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Ronde = _p_cc(
                                                                 $['Ronde'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Jaarbeheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1756,8 +2374,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Medewerker = _p_cc(
                                                                 $['Medewerker'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Beheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1813,8 +2453,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_BTW$mi_periode = _p_cc(
                                 $['BTW-periode'],
                                 ($) => ({
-                                    'l entry': _pdev.implement_me(
-                                        "IM: FIXME ACYCLIC ENTRY"
+                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        $p['Jaarbeheer']
+                                    ).get_entry(
+                                        $['l reference'],
+                                        {
+                                            'no_such_entry': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'no_context_lookup': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'cycle_detected': () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                        }
                                     ),
                                     'l id': $['l reference'],
                                 })
@@ -1854,8 +2516,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             const prop_Debiteur = _p_cc(
                                 $['Debiteur'],
                                 ($) => ({
-                                    'l entry': _pdev.implement_me(
-                                        "IM: FIXME ACYCLIC ENTRY"
+                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        $p['Beheer']
+                                    ).get_entry(
+                                        $['l reference'],
+                                        {
+                                            'no_such_entry': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'no_context_lookup': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'cycle_detected': () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                        }
                                     ),
                                     'l id': $['l reference'],
                                 })
@@ -1876,8 +2560,32 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Project = _p_cc(
                                                                 $['Project'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        _pdev.implement_me(
+                                                                            "IM: PARENT SIBLING"
+                                                                        )
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1886,8 +2594,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Offerte = _p_cc(
                                                                 $['Offerte'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        prop_Project['entry']['Offertes']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1908,8 +2638,32 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Overeenkomst = _p_cc(
                                                                 $['Overeenkomst'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        _pdev.implement_me(
+                                                                            "IM: PARENT SIBLING"
+                                                                        )
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1949,8 +2703,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                             const prop_Rekening_courant = _p_cc(
                                                                 $['Rekening courant'],
                                                                 ($) => ({
-                                                                    'l entry': _pdev.implement_me(
-                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                        $p['Jaarbeheer']
+                                                                    ).get_entry(
+                                                                        $['l reference'],
+                                                                        {
+                                                                            'no_such_entry': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'no_context_lookup': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                            'cycle_detected': () => abort(
+                                                                                {
+                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                    'location': $['l location'],
+                                                                                }
+                                                                            ),
+                                                                        }
                                                                     ),
                                                                     'l id': $['l reference'],
                                                                 })
@@ -1999,8 +2775,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_BTW$mi_categorie = _p_cc(
                                                                                     $['BTW-categorie'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            $p['Beheer']
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -2045,8 +2843,32 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_Opbrengst = _p_cc(
                                                                                     $['Opbrengst'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            _pdev.implement_me(
+                                                                                                "IM: OPTION CONSTRAINT"
+                                                                                            )
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -2071,8 +2893,32 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_Periode = _p_cc(
                                                                                     $['Periode'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            _pdev.implement_me(
+                                                                                                "IM: OPTION CONSTRAINT"
+                                                                                            )
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -2112,8 +2958,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_Grootboekrekening = _p_cc(
                                                                                     $['Grootboekrekening'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            $p['Grootboekrekeningen']
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -2133,8 +3001,30 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                 const prop_Balans_item = _p_cc(
                                                                                     $['Balans item'],
                                                                                     ($) => ({
-                                                                                        'l entry': _pdev.implement_me(
-                                                                                            "IM: FIXME ACYCLIC ENTRY"
+                                                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                            $p['Jaarbeheer']
+                                                                                        ).get_entry(
+                                                                                            $['l reference'],
+                                                                                            {
+                                                                                                'no_such_entry': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'no_context_lookup': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['no context lookup', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                                'cycle_detected': () => abort(
+                                                                                                    {
+                                                                                                        'type': ['lookup', ['cycle detected', null]],
+                                                                                                        'location': $['l location'],
+                                                                                                    }
+                                                                                                ),
+                                                                                            }
                                                                                         ),
                                                                                         'l id': $['l reference'],
                                                                                     })
@@ -2195,8 +3085,28 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             ($) => _p.optional.map(
                 $,
                 ($) => ({
-                    'l entry': _pdev.implement_me(
-                        "IM: FIXME ACYCLIC ENTRY"
+                    'l entry': $l['Jaren'].get_entry(
+                        $['l reference'],
+                        {
+                            'no_such_entry': () => abort(
+                                {
+                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                    'location': $['l location'],
+                                }
+                            ),
+                            'no_context_lookup': () => abort(
+                                {
+                                    'type': ['lookup', ['no context lookup', null]],
+                                    'location': $['l location'],
+                                }
+                            ),
+                            'cycle_detected': () => abort(
+                                {
+                                    'type': ['lookup', ['cycle detected', null]],
+                                    'location': $['l location'],
+                                }
+                            ),
+                        }
                     ),
                     'l id': $['l reference'],
                 })
@@ -2213,8 +3123,30 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             return _p.ss(
                                 $,
                                 ($) => ['Inkoop', {
-                                    'l entry': _pdev.implement_me(
-                                        "IM: FIXME ACYCLIC ENTRY"
+                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        $p['Handelstransacties']
+                                    ).get_entry(
+                                        $['l reference'],
+                                        {
+                                            'no_such_entry': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'no_context_lookup': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'cycle_detected': () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                        }
                                     ),
                                     'l id': $['l reference'],
                                 }]
@@ -2223,8 +3155,30 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             return _p.ss(
                                 $,
                                 ($) => ['Verkoop', {
-                                    'l entry': _pdev.implement_me(
-                                        "IM: FIXME ACYCLIC ENTRY"
+                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        $p['Handelstransacties']
+                                    ).get_entry(
+                                        $['l reference'],
+                                        {
+                                            'no_such_entry': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'no_context_lookup': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'cycle_detected': () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                        }
                                     ),
                                     'l id': $['l reference'],
                                 }]
@@ -2233,8 +3187,30 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             return _p.ss(
                                 $,
                                 ($) => ['BTW-periode', {
-                                    'l entry': _pdev.implement_me(
-                                        "IM: FIXME ACYCLIC ENTRY"
+                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        $p['Jaarbeheer']
+                                    ).get_entry(
+                                        $['l reference'],
+                                        {
+                                            'no_such_entry': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'no_context_lookup': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'cycle_detected': () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                        }
                                     ),
                                     'l id': $['l reference'],
                                 }]
@@ -2309,8 +3285,30 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                                         const prop_Informele_rekening = _p_cc(
                                                                                             $['Informele rekening'],
                                                                                             ($) => ({
-                                                                                                'l entry': _pdev.implement_me(
-                                                                                                    "IM: FIXME ACYCLIC ENTRY"
+                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    $p['Jaarbeheer']
+                                                                                                ).get_entry(
+                                                                                                    $['l reference'],
+                                                                                                    {
+                                                                                                        'no_such_entry': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'no_context_lookup': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                        'cycle_detected': () => abort(
+                                                                                                            {
+                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                'location': $['l location'],
+                                                                                                            }
+                                                                                                        ),
+                                                                                                    }
                                                                                                 ),
                                                                                                 'l id': $['l reference'],
                                                                                             })
@@ -2391,8 +3389,30 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                             const prop_Verrekenpost = _p_cc(
                                                                                 $['Verrekenpost'],
                                                                                 ($) => ({
-                                                                                    'l entry': _pdev.implement_me(
-                                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                        $p['Jaarbeheer']
+                                                                                    ).get_entry(
+                                                                                        $['l reference'],
+                                                                                        {
+                                                                                            'no_such_entry': () => abort(
+                                                                                                {
+                                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                    'location': $['l location'],
+                                                                                                }
+                                                                                            ),
+                                                                                            'no_context_lookup': () => abort(
+                                                                                                {
+                                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                                    'location': $['l location'],
+                                                                                                }
+                                                                                            ),
+                                                                                            'cycle_detected': () => abort(
+                                                                                                {
+                                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                                    'location': $['l location'],
+                                                                                                }
+                                                                                            ),
+                                                                                        }
                                                                                     ),
                                                                                     'l id': $['l reference'],
                                                                                 })
@@ -2412,8 +3432,30 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                                                             const prop_Informele_rekening = _p_cc(
                                                                                 $['Informele rekening'],
                                                                                 ($) => ({
-                                                                                    'l entry': _pdev.implement_me(
-                                                                                        "IM: FIXME ACYCLIC ENTRY"
+                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                        $p['Jaarbeheer']
+                                                                                    ).get_entry(
+                                                                                        $['l reference'],
+                                                                                        {
+                                                                                            'no_such_entry': () => abort(
+                                                                                                {
+                                                                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                    'location': $['l location'],
+                                                                                                }
+                                                                                            ),
+                                                                                            'no_context_lookup': () => abort(
+                                                                                                {
+                                                                                                    'type': ['lookup', ['no context lookup', null]],
+                                                                                                    'location': $['l location'],
+                                                                                                }
+                                                                                            ),
+                                                                                            'cycle_detected': () => abort(
+                                                                                                {
+                                                                                                    'type': ['lookup', ['cycle detected', null]],
+                                                                                                    'location': $['l location'],
+                                                                                                }
+                                                                                            ),
+                                                                                        }
                                                                                     ),
                                                                                     'l id': $['l reference'],
                                                                                 })
@@ -2471,8 +3513,30 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.re
                                     const prop_Grootboekrekening = _p_cc(
                                         $['Grootboekrekening'],
                                         ($) => ({
-                                            'l entry': _pdev.implement_me(
-                                                "IM: FIXME ACYCLIC ENTRY"
+                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                $p['Grootboekrekeningen']
+                                            ).get_entry(
+                                                $['l reference'],
+                                                {
+                                                    'no_such_entry': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'no_context_lookup': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                    'cycle_detected': () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        }
+                                                    ),
+                                                }
                                             ),
                                             'l id': $['l reference'],
                                         })
@@ -2521,8 +3585,28 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
                             const prop_Vorig_boekjaar = _p_cc(
                                 $['Vorig boekjaar'],
                                 ($) => ({
-                                    'l entry': _pdev.implement_me(
-                                        "IM: FIXME ACYCLIC ENTRY"
+                                    'l entry': $l['Jaren'].get_entry(
+                                        $['l reference'],
+                                        {
+                                            'no_such_entry': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'no_context_lookup': () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                            'cycle_detected': () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                }
+                                            ),
+                                        }
                                     ),
                                     'l id': $['l reference'],
                                 })
