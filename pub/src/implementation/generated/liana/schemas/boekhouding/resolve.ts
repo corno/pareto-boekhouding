@@ -7,6 +7,8 @@ import {
 
 import * as _pdev from "pareto-core-dev"
 
+import * as _p_ls from "pareto-core/dist/lookup_selection"
+
 import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/resolve"
@@ -2596,9 +2598,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                             $
                         ),
                         {
-                            'Jaren': _pdev.implement_me(
-                                "IM: selection"
-                            ),
+                            'Jaren': $a,
                         },
                         null
                     )
@@ -2612,9 +2612,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                             $
                         ),
                         {
-                            'Jaren': _pdev.implement_me(
-                                "IM: selection"
-                            ),
+                            'Jaren': $a,
                         },
                         {
                             'Grootboekrekeningen': _pdev.implement_me(
@@ -2655,9 +2653,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.res
                             $
                         ),
                         {
-                            'Jaren': _pdev.implement_me(
-                                "IM: selection"
-                            ),
+                            'Jaren': $a,
                         },
                         {
                             'Beheer': $p['Beheer'],
