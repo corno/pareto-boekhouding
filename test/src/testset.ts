@@ -3,7 +3,7 @@ import * as _pt from 'pareto-core/dist/transformer'
 
 import * as r_temp_static_html from "./schemas/boekhouding_oude_model"
 
-import * as s_unmarshall from "astn-sealed/dist/implementation/schemas/deserialize_unresolved_model/serializers"
+// import * as s_unmarshall from "astn-sealed/dist/implementation/schemas/deserialize_unresolved_model/serializers"
 
 import * as sh from "pareto-test/dist/temporary_testset_generator/shorthands"
 

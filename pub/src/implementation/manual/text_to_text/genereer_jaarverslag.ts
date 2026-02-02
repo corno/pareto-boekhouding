@@ -1,44 +1,44 @@
-import * as _pi from 'pareto-core/dist/interface'
-import * as _pdev from 'pareto-core-dev'
+// import * as _pi from 'pareto-core/dist/interface'
+// import * as _pdev from 'pareto-core-dev'
 
-import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"
+// import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"
 
-export type Signature = _pi.Deserializer_With_Parameters<string, string, d_xx.Parameters>
+// export type Signature = _pi.Deserializer_With_Parameters<string, string, d_xx.Parameters>
 
-import * as ds_boekhouding_resolved from "../schemas/boekhouding_resolved/deserializers"
+// import * as ds_boekhouding_resolved from "../schemas/boekhouding_resolved/deserializers"
 
-import * as t_bh_to_aggregatie from "../schemas/boekhouding_resolved/transformers/aggregatie"
+// import * as t_bh_to_aggregatie from "../schemas/boekhouding_resolved/transformers/aggregatie"
 
-import * as s_deserialize_resolved_model from "astn-sealed/dist/implementation/schemas/deserialize_resolved_model/serializers"
+// import * as s_deserialize_resolved_model from "astn-sealed/dist/implementation/schemas/deserialize_resolved_model/serializers"
 
-export const $$: Signature = ($, abort, $p) => {
-    const x3 = t_bh_to_aggregatie.Root(
-        ds_boekhouding_resolved.Root(
-            $,
-            ($) => abort(s_deserialize_resolved_model.Error($)),
-            $p
-        )
-    )
+// export const $$: Signature = ($, abort, $p) => {
+//     const x3 = t_bh_to_aggregatie.Root(
+//         ds_boekhouding_resolved.Root(
+//             $,
+//             ($) => abort(s_deserialize_resolved_model.Error($)),
+//             $p
+//         )
+//     )
 
-    //temp
-    x3.jaren.__d_map(($, id) => {
-        _pdev.log_debug_message(key, () => { })
-        _pdev.log_debug_message(`  'balans'`, () => { })
-        $.grootboekrekeningen.balans.__d_map(($, id) => {
-            _pdev.log_debug_message(`    ${key}`, () => { })
-            _pdev.log_debug_message(`      'inkopen'`, () => { })
-            $['gerelateerde inkopen'].__d_map(($, id) => {
-                _pdev.log_debug_message(`        ${key}`, () => { })
-            })
-        })
-        _pdev.log_debug_message(`  'resultaat'`, () => { })
-        $.grootboekrekeningen.resultaat.__d_map(($, id) => {
-            _pdev.log_debug_message(`    ${key}`, () => { })
-            _pdev.log_debug_message(`      'inkopen'`, () => { })
-            $['gerelateerde inkopen'].__d_map(($, id) => {
-                _pdev.log_debug_message(`        ${key}`, () => { })
-            })
-        })
-    })
-    return "success"
-}
+//     //temp
+//     x3.jaren.__d_map(($, id) => {
+//         _pdev.log_debug_message(key, () => { })
+//         _pdev.log_debug_message(`  'balans'`, () => { })
+//         $.grootboekrekeningen.balans.__d_map(($, id) => {
+//             _pdev.log_debug_message(`    ${key}`, () => { })
+//             _pdev.log_debug_message(`      'inkopen'`, () => { })
+//             $['gerelateerde inkopen'].__d_map(($, id) => {
+//                 _pdev.log_debug_message(`        ${key}`, () => { })
+//             })
+//         })
+//         _pdev.log_debug_message(`  'resultaat'`, () => { })
+//         $.grootboekrekeningen.resultaat.__d_map(($, id) => {
+//             _pdev.log_debug_message(`    ${key}`, () => { })
+//             _pdev.log_debug_message(`      'inkopen'`, () => { })
+//             $['gerelateerde inkopen'].__d_map(($, id) => {
+//                 _pdev.log_debug_message(`        ${key}`, () => { })
+//             })
+//         })
+//     })
+//     return "success"
+// }
