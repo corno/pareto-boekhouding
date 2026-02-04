@@ -1,7 +1,7 @@
-// import * as _p from 'pareto-core/dist/refiner'
+// import * as _p from 'pareto-core/dist/expression'
 // import * as _pdev from 'pareto-core-dev'
-// import { _p_deprecated_block } from 'pareto-core/dist/deprecated_block'
-// import { _p_cc } from 'pareto-core/dist/change_context'
+// import _p_block_deprecated_block from 'pareto-core/dist/_p_block_deprecated'
+// import _p_change_context from 'pareto-core/dist/_p_change_context'
 
 // import * as _i_generic from 'pareto-core/dist/algorithm_types/refiner/resolve'
 // import * as _i_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
@@ -12,7 +12,7 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Jaar: _i_out._T_Balans_Resultaat_Mutatie.Jaar = _p_cc($['Jaar'], ($) => $.__o_map(($) => _p_deprecated_block(() => {
+//         const p_Jaar: _i_out._T_Balans_Resultaat_Mutatie.Jaar = _p_change_context($['Jaar'], ($) => $.__o_map(($) => _p_deprecated_block(() => {
 //             return _i_generic.get_entry(
 //                 params['lookups']['Jaren'],
 //                 {
@@ -30,7 +30,7 @@
 //             ($) => $.entry.Handelstransacties,
 //             () => params.values.Handelstransacties
 //         )
-//         const p_type: _i_out._T_Balans_Resultaat_Mutatie._type = _p_cc($['type'], ($) => _p_cc($['state group'], ($): _i_out._T_Balans_Resultaat_Mutatie._type => {
+//         const p_type: _i_out._T_Balans_Resultaat_Mutatie._type = _p_change_context($['type'], ($) => _p_change_context($['state group'], ($): _i_out._T_Balans_Resultaat_Mutatie._type => {
 //             switch ($[0]) {
 //                 case 'BTW-periode': return _p.ss($, ($) => ['BTW-periode', _p_deprecated_block(() => {
 //                     return _i_generic.get_entry(
@@ -81,18 +81,18 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_BTW$mi_categorieen: _i_out._T_Beheer.BTW$mi_categorieen = _p_cc($['BTW-categorieen'], ($) => _p_deprecated_block(() => {
+//         const p_BTW$mi_categorieen: _i_out._T_Beheer.BTW$mi_categorieen = _p_change_context($['BTW-categorieen'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_BTW$mi_heffing: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing = _p_cc($['BTW-heffing'], ($) => _p_cc($['state group'], ($): _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_BTW$mi_heffing: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing = _p_change_context($['BTW-heffing'], ($) => _p_change_context($['state group'], ($): _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
 //                                 switch ($[0]) {
 //                                     case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_BTW$mi_promillage: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG.Ja.BTW$mi_promillage = _p_cc($['BTW-promillage'], ($) => $)
+//                                             const p_BTW$mi_promillage: _i_out._T_Beheer.BTW$mi_categorieen.D.BTW$mi_heffing.SG.Ja.BTW$mi_promillage = _p_change_context($['BTW-promillage'], ($) => $)
 //                                             return ({
 //                                                 'BTW-promillage': p_BTW$mi_promillage,
 //                                             })
@@ -109,15 +109,15 @@
 //                 }
 //             )
 //         }))
-//         const p_Grootboekrekeningen: _i_out._T_Beheer.Grootboekrekeningen = _p_cc($['Grootboekrekeningen'], ($) => _p_deprecated_block(() => {
-//             const p_Balans: _i_out._T_Beheer.Grootboekrekeningen.Balans = _p_cc($['Balans'], ($) => _p_deprecated_block(() => {
+//         const p_Grootboekrekeningen: _i_out._T_Beheer.Grootboekrekeningen = _p_change_context($['Grootboekrekeningen'], ($) => _p_deprecated_block(() => {
+//             const p_Balans: _i_out._T_Beheer.Grootboekrekeningen.Balans = _p_change_context($['Balans'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                 const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Hoofdcategorie = _p_cc($['Hoofdcategorie'], ($) => _i_generic.get_entry(
+//                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                 const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Hoofdcategorie = _p_change_context($['Hoofdcategorie'], ($) => _i_generic.get_entry(
 //                                     _i_generic.dictionary_to_lookup(
 //                                         params['values']['Grootboek Categorieen']['Balans'],
 //                                         null
@@ -127,7 +127,7 @@
 //                                         'reference': $,
 //                                     }
 //                                 ))
-//                                 const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Subcategorie = _p_cc($['Subcategorie'], ($) => _i_generic.get_entry(
+//                                 const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Subcategorie = _p_change_context($['Subcategorie'], ($) => _i_generic.get_entry(
 //                                     _i_generic.dictionary_to_lookup(
 //                                         p_Hoofdcategorie['entry']['Subcategorieen'],
 //                                         null
@@ -137,7 +137,7 @@
 //                                         'reference': $,
 //                                     }
 //                                 ))
-//                                 const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde = _p_cc($['Zijde'], ($) => _p_cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde => {
+//                                 const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde = _p_change_context($['Zijde'], ($) => _p_change_context($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Balans.D.Zijde => {
 //                                     switch ($[0]) {
 //                                         case 'Activa': return _p.ss($, ($) => ['Activa', _p_deprecated_block(() => {
 //                                             return null
@@ -158,14 +158,14 @@
 //                     }
 //                 )
 //             }))
-//             const p_Resultaat: _i_out._T_Beheer.Grootboekrekeningen.Resultaat = _p_cc($['Resultaat'], ($) => _p_deprecated_block(() => {
+//             const p_Resultaat: _i_out._T_Beheer.Grootboekrekeningen.Resultaat = _p_change_context($['Resultaat'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                 const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Hoofdcategorie = _p_cc($['Hoofdcategorie'], ($) => _i_generic.get_entry(
+//                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                 const p_Hoofdcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Hoofdcategorie = _p_change_context($['Hoofdcategorie'], ($) => _i_generic.get_entry(
 //                                     _i_generic.dictionary_to_lookup(
 //                                         params['values']['Grootboek Categorieen']['Resultaat'],
 //                                         null
@@ -175,7 +175,7 @@
 //                                         'reference': $,
 //                                     }
 //                                 ))
-//                                 const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Subcategorie = _p_cc($['Subcategorie'], ($) => _i_generic.get_entry(
+//                                 const p_Subcategorie: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Subcategorie = _p_change_context($['Subcategorie'], ($) => _i_generic.get_entry(
 //                                     _i_generic.dictionary_to_lookup(
 //                                         p_Hoofdcategorie['entry']['Subcategorieen'],
 //                                         null
@@ -185,15 +185,15 @@
 //                                         'reference': $,
 //                                     }
 //                                 ))
-//                                 const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde = _p_cc($['Zijde'], ($) => _p_cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
+//                                 const p_Zijde: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde = _p_change_context($['Zijde'], ($) => _p_change_context($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
 //                                     switch ($[0]) {
 //                                         case 'Kosten': return _p.ss($, ($) => ['Kosten', _p_deprecated_block(() => {
 //                                             return _p_deprecated_block(() => {
-//                                                 const p_Correctie_op_vennootschapsbelasting: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting = _p_cc($['Correctie op vennootschapsbelasting'], ($) => _p_cc($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting => {
+//                                                 const p_Correctie_op_vennootschapsbelasting: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting = _p_change_context($['Correctie op vennootschapsbelasting'], ($) => _p_change_context($['state group'], ($): _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting => {
 //                                                     switch ($[0]) {
 //                                                         case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Correctietype: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG.Ja.Correctietype = _p_cc($['Correctietype'], ($) => _i_generic.get_entry(
+//                                                                 const p_Correctietype: _i_out._T_Beheer.Grootboekrekeningen.Resultaat.D.Zijde.SG.Kosten.Correctie_op_vennootschapsbelasting.SG.Ja.Correctietype = _p_change_context($['Correctietype'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         params['values']['Grootboek Categorieen']['Correctietypes vennootschapsbelasting'],
 //                                                                         null
@@ -240,25 +240,25 @@
 //                 'Resultaat': p_Resultaat,
 //             })
 //         }))
-//         const p_Rekeningen: _i_out._T_Beheer.Rekeningen = _p_cc($['Rekeningen'], ($) => _p_deprecated_block(() => {
-//             const p_Bank: _i_out._T_Beheer.Rekeningen.Bank = _p_cc($['Bank'], ($) => _p_deprecated_block(() => {
+//         const p_Rekeningen: _i_out._T_Beheer.Rekeningen = _p_change_context($['Rekeningen'], ($) => _p_deprecated_block(() => {
+//             const p_Bank: _i_out._T_Beheer.Rekeningen.Bank = _p_change_context($['Bank'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => null)
+//                             return _p_change_context($['value'], ($) => null)
 //                         }),
 //                     }
 //                 )
 //             }))
-//             const p_Informeel: _i_out._T_Beheer.Rekeningen.Informeel = _p_cc($['Informeel'], ($) => _p_deprecated_block(() => {
+//             const p_Informeel: _i_out._T_Beheer.Rekeningen.Informeel = _p_change_context($['Informeel'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => null)
+//                             return _p_change_context($['value'], ($) => null)
 //                         }),
 //                     }
 //                 )
@@ -268,15 +268,15 @@
 //                 'Informeel': p_Informeel,
 //             })
 //         }))
-//         const p_Gebruikers: _i_out._T_Beheer.Gebruikers = _p_cc($['Gebruikers'], ($) => _p_deprecated_block(() => {
+//         const p_Gebruikers: _i_out._T_Beheer.Gebruikers = _p_change_context($['Gebruikers'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Volledige_naam: _i_out._T_Beheer.Gebruikers.D.Volledige_naam = _p_cc($['Volledige naam'], ($) => $)
-//                             const p_Wachtwoord: _i_out._T_Beheer.Gebruikers.D.Wachtwoord = _p_cc($['Wachtwoord'], ($) => $)
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Volledige_naam: _i_out._T_Beheer.Gebruikers.D.Volledige_naam = _p_change_context($['Volledige naam'], ($) => $)
+//                             const p_Wachtwoord: _i_out._T_Beheer.Gebruikers.D.Wachtwoord = _p_change_context($['Wachtwoord'], ($) => $)
 //                             return ({
 //                                 'Volledige naam': p_Volledige_naam,
 //                                 'Wachtwoord': p_Wachtwoord,
@@ -286,28 +286,28 @@
 //                 }
 //             )
 //         }))
-//         const p_Klanten: _i_out._T_Beheer.Klanten = _p_cc($['Klanten'], ($) => _p_deprecated_block(() => {
+//         const p_Klanten: _i_out._T_Beheer.Klanten = _p_change_context($['Klanten'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Licentieovereenkomsten: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten = _p_cc($['Licentieovereenkomsten'], ($) => _p_deprecated_block(() => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Licentieovereenkomsten: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten = _p_change_context($['Licentieovereenkomsten'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                 const p_Periodes: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes = _p_cc($['Periodes'], ($) => _p_deprecated_block(() => {
+//                                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                 const p_Periodes: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes = _p_change_context($['Periodes'], ($) => _p_deprecated_block(() => {
 //                                                     return _i_generic.resolve_dictionary(
 //                                                         $,
 //                                                         {
 //                                                             'location 2 string': l2s,
 //                                                             'map': ($, $p) => _p_deprecated_block(() => {
-//                                                                 return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                                     const p_Bedrag: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D.Bedrag = _p_cc($['Bedrag'], ($) => $)
+//                                                                 return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                                     const p_Bedrag: _i_out._T_Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D.Bedrag = _p_change_context($['Bedrag'], ($) => $)
 //                                                                     return ({
 //                                                                         'Bedrag': p_Bedrag,
 //                                                                     })
@@ -324,33 +324,33 @@
 //                                     }
 //                                 )
 //                             }))
-//                             const p_Projecten: _i_out._T_Beheer.Klanten.D.Projecten = _p_cc($['Projecten'], ($) => _p_deprecated_block(() => {
+//                             const p_Projecten: _i_out._T_Beheer.Klanten.D.Projecten = _p_change_context($['Projecten'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                 const p_Offertes: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes = _p_cc($['Offertes'], ($) => _p_deprecated_block(() => {
+//                                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                 const p_Offertes: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes = _p_change_context($['Offertes'], ($) => _p_deprecated_block(() => {
 //                                                     return _i_generic.resolve_dictionary(
 //                                                         $,
 //                                                         {
 //                                                             'location 2 string': l2s,
 //                                                             'map': ($, $p) => _p_deprecated_block(() => {
-//                                                                 return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                                     const p_Opbrengsten: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten = _p_cc($['Opbrengsten'], ($) => _p_deprecated_block(() => {
+//                                                                 return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                                     const p_Opbrengsten: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten = _p_change_context($['Opbrengsten'], ($) => _p_deprecated_block(() => {
 //                                                                         return _i_generic.resolve_dictionary(
 //                                                                             $,
 //                                                                             {
 //                                                                                 'location 2 string': l2s,
 //                                                                                 'map': ($, $p) => _p_deprecated_block(() => {
-//                                                                                     return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                                                         const p_Type: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type = _p_cc($['Type'], ($) => _p_cc($['state group'], ($): _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
+//                                                                                     return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                                                         const p_Type: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type = _p_change_context($['Type'], ($) => _p_change_context($['state group'], ($): _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
 //                                                                                             switch ($[0]) {
 //                                                                                                 case 'Project': return _p.ss($, ($) => ['Project', _p_deprecated_block(() => {
 //                                                                                                     return _p_deprecated_block(() => {
-//                                                                                                         const p_Bedrag: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Bedrag = _p_cc($['Bedrag'], ($) => $)
-//                                                                                                         const p_Betaaldatum: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Betaaldatum = _p_cc($['Betaaldatum'], ($) => $)
+//                                                                                                         const p_Bedrag: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Bedrag = _p_change_context($['Bedrag'], ($) => $)
+//                                                                                                         const p_Betaaldatum: _i_out._T_Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type.SG.Project.Betaaldatum = _p_change_context($['Betaaldatum'], ($) => $)
 //                                                                                                         return ({
 //                                                                                                             'Bedrag': p_Bedrag,
 //                                                                                                             'Betaaldatum': p_Betaaldatum,
@@ -393,24 +393,24 @@
 //                 }
 //             )
 //         }))
-//         const p_Leveranciers: _i_out._T_Beheer.Leveranciers = _p_cc($['Leveranciers'], ($) => _p_deprecated_block(() => {
+//         const p_Leveranciers: _i_out._T_Beheer.Leveranciers = _p_change_context($['Leveranciers'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => null)
+//                         return _p_change_context($['value'], ($) => null)
 //                     }),
 //                 }
 //             )
 //         }))
-//         const p_Medewerkers: _i_out._T_Beheer.Medewerkers = _p_cc($['Medewerkers'], ($) => _p_deprecated_block(() => {
+//         const p_Medewerkers: _i_out._T_Beheer.Medewerkers = _p_change_context($['Medewerkers'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => null)
+//                         return _p_change_context($['value'], ($) => null)
 //                     }),
 //                 }
 //             )
@@ -429,14 +429,14 @@
 // export const Eerste_boekjaar: _i_signatures._T_Eerste_boekjaar =  ($, $p) => _p_deprecated_block(() => {
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
-//     return _p_cc($['state group'], ($): _i_out._T_Eerste_boekjaar => {
+//     return _p_change_context($['state group'], ($): _i_out._T_Eerste_boekjaar => {
 //         switch ($[0]) {
 //             case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                 return null
 //             })])
 //             case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
 //                 return _p_deprecated_block(() => {
-//                     const p_Vorig_boekjaar: _i_out._T_Eerste_boekjaar.SG.Nee.Vorig_boekjaar = _p_cc($['Vorig boekjaar'], ($) => _i_generic.get_entry(
+//                     const p_Vorig_boekjaar: _i_out._T_Eerste_boekjaar.SG.Nee.Vorig_boekjaar = _p_change_context($['Vorig boekjaar'], ($) => _i_generic.get_entry(
 //                         params['lookups']['Jaren'],
 //                         {
 //                             'location 2 string': l2s,
@@ -456,14 +456,14 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Balans_Hoofdcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen = _p_cc($['Balans Hoofdcategorieen'], ($) => _p_deprecated_block(() => {
+//         const p_Balans_Hoofdcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen = _p_change_context($['Balans Hoofdcategorieen'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Zijde: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde = _p_cc($['Zijde'], ($) => _p_cc($['state group'], ($): _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Zijde: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde = _p_change_context($['Zijde'], ($) => _p_change_context($['state group'], ($): _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
 //                                 switch ($[0]) {
 //                                     case 'Activa': return _p.ss($, ($) => ['Activa', _p_deprecated_block(() => {
 //                                         return null
@@ -474,13 +474,13 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Subcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen = _p_cc($['Subcategorieen'], ($) => _p_deprecated_block(() => {
+//                             const p_Subcategorieen: _i_out._T_Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen = _p_change_context($['Subcategorieen'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => null)
+//                                             return _p_change_context($['value'], ($) => null)
 //                                         }),
 //                                     }
 //                                 )
@@ -494,14 +494,14 @@
 //                 }
 //             )
 //         }))
-//         const p_Resultaat_Hoofdcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen = _p_cc($['Resultaat Hoofdcategorieen'], ($) => _p_deprecated_block(() => {
+//         const p_Resultaat_Hoofdcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen = _p_change_context($['Resultaat Hoofdcategorieen'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Zijde: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde = _p_cc($['Zijde'], ($) => _p_cc($['state group'], ($): _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Zijde: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde = _p_change_context($['Zijde'], ($) => _p_change_context($['state group'], ($): _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
 //                                 switch ($[0]) {
 //                                     case 'Kosten': return _p.ss($, ($) => ['Kosten', _p_deprecated_block(() => {
 //                                         return null
@@ -512,13 +512,13 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Subcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen = _p_cc($['Subcategorieen'], ($) => _p_deprecated_block(() => {
+//                             const p_Subcategorieen: _i_out._T_Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen = _p_change_context($['Subcategorieen'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => null)
+//                                             return _p_change_context($['value'], ($) => null)
 //                                         }),
 //                                     }
 //                                 )
@@ -542,14 +542,14 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Correctietypes_vennootschapsbelasting: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting = _p_cc($['Correctietypes vennootschapsbelasting'], ($) => _p_deprecated_block(() => {
+//         const p_Correctietypes_vennootschapsbelasting: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting = _p_change_context($['Correctietypes vennootschapsbelasting'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Te_corrigeren_promillage: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D.Te_corrigeren_promillage = _p_cc($['Te corrigeren promillage'], ($) => $)
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Te_corrigeren_promillage: _i_out._T_Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D.Te_corrigeren_promillage = _p_change_context($['Te corrigeren promillage'], ($) => $)
 //                             return ({
 //                                 'Te corrigeren promillage': p_Te_corrigeren_promillage,
 //                             })
@@ -558,14 +558,14 @@
 //                 }
 //             )
 //         }))
-//         const p_Balans: _i_out._T_Grootboek_Categorieen.Balans = _p_cc($['Balans'], ($) => _p_deprecated_block(() => {
+//         const p_Balans: _i_out._T_Grootboek_Categorieen.Balans = _p_change_context($['Balans'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Zijde: _i_out._T_Grootboek_Categorieen.Balans.D.Zijde = _p_cc($['Zijde'], ($) => _p_cc($['state group'], ($): _i_out._T_Grootboek_Categorieen.Balans.D.Zijde => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Zijde: _i_out._T_Grootboek_Categorieen.Balans.D.Zijde = _p_change_context($['Zijde'], ($) => _p_change_context($['state group'], ($): _i_out._T_Grootboek_Categorieen.Balans.D.Zijde => {
 //                                 switch ($[0]) {
 //                                     case 'Activa': return _p.ss($, ($) => ['Activa', _p_deprecated_block(() => {
 //                                         return null
@@ -576,14 +576,14 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen = _p_cc($['Subcategorieen'], ($) => _p_deprecated_block(() => {
+//                             const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen = _p_change_context($['Subcategorieen'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                 const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Hoofdcategorie_fiscus = _p_cc($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
+//                                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                 const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Hoofdcategorie_fiscus = _p_change_context($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
 //                                                     _i_generic.dictionary_to_lookup(
 //                                                         params['values']['Fiscaal']['Balans Hoofdcategorieen'],
 //                                                         null
@@ -593,7 +593,7 @@
 //                                                         'reference': $,
 //                                                     }
 //                                                 ))
-//                                                 const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Subcategorie_fiscus = _p_cc($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
+//                                                 const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Balans.D.Subcategorieen.D.Subcategorie_fiscus = _p_change_context($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
 //                                                     _i_generic.dictionary_to_lookup(
 //                                                         p_Hoofdcategorie_fiscus['entry']['Subcategorieen'],
 //                                                         null
@@ -621,14 +621,14 @@
 //                 }
 //             )
 //         }))
-//         const p_Resultaat: _i_out._T_Grootboek_Categorieen.Resultaat = _p_cc($['Resultaat'], ($) => _p_deprecated_block(() => {
+//         const p_Resultaat: _i_out._T_Grootboek_Categorieen.Resultaat = _p_change_context($['Resultaat'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Zijde: _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde = _p_cc($['Zijde'], ($) => _p_cc($['state group'], ($): _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Zijde: _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde = _p_change_context($['Zijde'], ($) => _p_change_context($['state group'], ($): _i_out._T_Grootboek_Categorieen.Resultaat.D.Zijde => {
 //                                 switch ($[0]) {
 //                                     case 'Kosten': return _p.ss($, ($) => ['Kosten', _p_deprecated_block(() => {
 //                                         return null
@@ -639,14 +639,14 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen = _p_cc($['Subcategorieen'], ($) => _p_deprecated_block(() => {
+//                             const p_Subcategorieen: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen = _p_change_context($['Subcategorieen'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                 const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Hoofdcategorie_fiscus = _p_cc($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
+//                                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                 const p_Hoofdcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Hoofdcategorie_fiscus = _p_change_context($['Hoofdcategorie fiscus'], ($) => _i_generic.get_entry(
 //                                                     _i_generic.dictionary_to_lookup(
 //                                                         params['values']['Fiscaal']['Resultaat Hoofdcategorieen'],
 //                                                         null
@@ -656,7 +656,7 @@
 //                                                         'reference': $,
 //                                                     }
 //                                                 ))
-//                                                 const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Subcategorie_fiscus = _p_cc($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
+//                                                 const p_Subcategorie_fiscus: _i_out._T_Grootboek_Categorieen.Resultaat.D.Subcategorieen.D.Subcategorie_fiscus = _p_change_context($['Subcategorie fiscus'], ($) => _i_generic.get_entry(
 //                                                     _i_generic.dictionary_to_lookup(
 //                                                         p_Hoofdcategorie_fiscus['entry']['Subcategorieen'],
 //                                                         null
@@ -695,14 +695,14 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Balans: _i_out._T_Grootboekrekeningen.Balans = _p_cc($['Balans'], ($) => _p_deprecated_block(() => {
+//         const p_Balans: _i_out._T_Grootboekrekeningen.Balans = _p_change_context($['Balans'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Type: _i_out._T_Grootboekrekeningen.Balans.D.Type = _p_cc($['Type'], ($) => _p_cc($['state group'], ($): _i_out._T_Grootboekrekeningen.Balans.D.Type => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Type: _i_out._T_Grootboekrekeningen.Balans.D.Type = _p_change_context($['Type'], ($) => _p_change_context($['state group'], ($): _i_out._T_Grootboekrekeningen.Balans.D.Type => {
 //                                 switch ($[0]) {
 //                                     case 'Bankrekening': return _p.ss($, ($) => ['Bankrekening', _p_deprecated_block(() => {
 //                                         return null
@@ -724,13 +724,13 @@
 //                 }
 //             )
 //         }))
-//         const p_Resultaat: _i_out._T_Grootboekrekeningen.Resultaat = _p_cc($['Resultaat'], ($) => _p_deprecated_block(() => {
+//         const p_Resultaat: _i_out._T_Grootboekrekeningen.Resultaat = _p_change_context($['Resultaat'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => null)
+//                         return _p_change_context($['value'], ($) => null)
 //                     }),
 //                 }
 //             )
@@ -745,21 +745,21 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Inkopen: _i_out._T_Handelstransacties.Inkopen = _p_cc($['Inkopen'], ($) => _p_deprecated_block(() => {
+//         const p_Inkopen: _i_out._T_Handelstransacties.Inkopen = _p_change_context($['Inkopen'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Afhandeling: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling = _p_cc($['Afhandeling'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Afhandeling => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Afhandeling: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling = _p_change_context($['Afhandeling'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Afhandeling => {
 //                                 switch ($[0]) {
 //                                     case 'Mutaties': return _p.ss($, ($) => ['Mutaties', _p_deprecated_block(() => {
 //                                         return null
 //                                     })])
 //                                     case 'Rekening courant': return _p.ss($, ($) => ['Rekening courant', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Rekening_courant: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _p_cc($['Rekening courant'], ($) => _i_generic.get_entry(
+//                                             const p_Rekening_courant: _i_out._T_Handelstransacties.Inkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _p_change_context($['Rekening courant'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
 //                                                     null
@@ -777,7 +777,7 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_BTW$mi_regime: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime = _p_cc($['BTW-regime'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime => {
+//                             const p_BTW$mi_regime: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime = _p_change_context($['BTW-regime'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime => {
 //                                 switch ($[0]) {
 //                                     case 'Binnenland: heffing verlegd': return _p.ss($, ($) => ['Binnenland: heffing verlegd', _p_deprecated_block(() => {
 //                                         return null
@@ -793,7 +793,7 @@
 //                                     })])
 //                                     case 'Standaard': return _p.ss($, ($) => ['Standaard', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_BTW$mi_periode: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime.SG.Standaard.BTW$mi_periode = _p_cc($['BTW-periode'], ($) => _i_generic.get_entry(
+//                                             const p_BTW$mi_periode: _i_out._T_Handelstransacties.Inkopen.D.BTW$mi_regime.SG.Standaard.BTW$mi_periode = _p_change_context($['BTW-periode'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Jaarbeheer']['Resultaat']['BTW periodes'],
 //                                                     null
@@ -811,7 +811,7 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Brondocument: _i_out._T_Handelstransacties.Inkopen.D.Brondocument = _p_cc($['Brondocument'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Brondocument => {
+//                             const p_Brondocument: _i_out._T_Handelstransacties.Inkopen.D.Brondocument = _p_change_context($['Brondocument'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Brondocument => {
 //                                 switch ($[0]) {
 //                                     case 'Niet van toepassing': return _p.ss($, ($) => ['Niet van toepassing', _p_deprecated_block(() => {
 //                                         return null
@@ -821,7 +821,7 @@
 //                                     })])
 //                                     case 'Toegevoegd': return _p.ss($, ($) => ['Toegevoegd', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Document: _i_out._T_Handelstransacties.Inkopen.D.Brondocument.SG.Toegevoegd.Document = _p_cc($['Document'], ($) => $)
+//                                             const p_Document: _i_out._T_Handelstransacties.Inkopen.D.Brondocument.SG.Toegevoegd.Document = _p_change_context($['Document'], ($) => $)
 //                                             return ({
 //                                                 'Document': p_Document,
 //                                             })
@@ -830,20 +830,20 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Datum: _i_out._T_Handelstransacties.Inkopen.D.Datum = _p_cc($['Datum'], ($) => $)
-//                             const p_Regels: _i_out._T_Handelstransacties.Inkopen.D.Regels = _p_cc($['Regels'], ($) => _p_deprecated_block(() => {
+//                             const p_Datum: _i_out._T_Handelstransacties.Inkopen.D.Datum = _p_change_context($['Datum'], ($) => $)
+//                             const p_Regels: _i_out._T_Handelstransacties.Inkopen.D.Regels = _p_change_context($['Regels'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                 const p_Bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag = _p_cc($['Bedrag'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
+//                                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                 const p_Bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag = _p_change_context($['Bedrag'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
 //                                                     switch ($[0]) {
 //                                                         case 'Bekend': return _p.ss($, ($) => ['Bekend', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_BTW$mi_bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.BTW$mi_bedrag = _p_cc($['BTW-bedrag'], ($) => $)
-//                                                                 const p_Bedrag_inclusief_geheven_BTW: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.Bedrag_inclusief_geheven_BTW = _p_cc($['Bedrag inclusief geheven BTW'], ($) => $)
+//                                                                 const p_BTW$mi_bedrag: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.BTW$mi_bedrag = _p_change_context($['BTW-bedrag'], ($) => $)
+//                                                                 const p_Bedrag_inclusief_geheven_BTW: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Bedrag.SG.Bekend.Bedrag_inclusief_geheven_BTW = _p_change_context($['Bedrag inclusief geheven BTW'], ($) => $)
 //                                                                 return ({
 //                                                                     'BTW-bedrag': p_BTW$mi_bedrag,
 //                                                                     'Bedrag inclusief geheven BTW': p_Bedrag_inclusief_geheven_BTW,
@@ -853,12 +853,12 @@
 //                                                         default: return _p.au($[0])
 //                                                     }
 //                                                 }))
-//                                                 const p_Omschrijving: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Omschrijving = _p_cc($['Omschrijving'], ($) => $)
-//                                                 const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type = _p_cc($['Type'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type => {
+//                                                 const p_Omschrijving: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Omschrijving = _p_change_context($['Omschrijving'], ($) => $)
+//                                                 const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type = _p_change_context($['Type'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type => {
 //                                                     switch ($[0]) {
 //                                                         case 'Balans': return _p.ss($, ($) => ['Balans', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Balans_item: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Balans.Balans_item = _p_cc($['Balans item'], ($) => _i_generic.get_entry(
+//                                                                 const p_Balans_item: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Balans.Balans_item = _p_change_context($['Balans item'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         params['values']['Jaarbeheer']['Balans']['Overige balans items'],
 //                                                                         null
@@ -875,7 +875,7 @@
 //                                                         })])
 //                                                         case 'Kosten': return _p.ss($, ($) => ['Kosten', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Grootboekrekening: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Kosten.Grootboekrekening = _p_cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+//                                                                 const p_Grootboekrekening: _i_out._T_Handelstransacties.Inkopen.D.Regels.D.Type.SG.Kosten.Grootboekrekening = _p_change_context($['Grootboekrekening'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         params['values']['Grootboekrekeningen']['Resultaat'],
 //                                                                         null
@@ -903,14 +903,14 @@
 //                                     }
 //                                 )
 //                             }))
-//                             const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Type = _p_cc($['Type'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Type => {
+//                             const p_Type: _i_out._T_Handelstransacties.Inkopen.D.Type = _p_change_context($['Type'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Inkopen.D.Type => {
 //                                 switch ($[0]) {
 //                                     case 'Bonnetje': return _p.ss($, ($) => ['Bonnetje', _p_deprecated_block(() => {
 //                                         return null
 //                                     })])
 //                                     case 'Inkoop (met crediteur)': return _p.ss($, ($) => ['Inkoop (met crediteur)', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Crediteur: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Crediteur = _p_cc($['Crediteur'], ($) => _i_generic.get_entry(
+//                                             const p_Crediteur: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Crediteur = _p_change_context($['Crediteur'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Beheer']['Leveranciers'],
 //                                                     null
@@ -920,7 +920,7 @@
 //                                                     'reference': $,
 //                                                 }
 //                                             ))
-//                                             const p_Factuurnummer: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Factuurnummer = _p_cc($['Factuurnummer'], ($) => $)
+//                                             const p_Factuurnummer: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Inkoop_$po_met_crediteur$pc_.Factuurnummer = _p_change_context($['Factuurnummer'], ($) => $)
 //                                             return ({
 //                                                 'Crediteur': p_Crediteur,
 //                                                 'Factuurnummer': p_Factuurnummer,
@@ -929,7 +929,7 @@
 //                                     })])
 //                                     case 'Loonheffing': return _p.ss($, ($) => ['Loonheffing', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Loonheffing.Ronde = _p_cc($['Ronde'], ($) => _i_generic.get_entry(
+//                                             const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Loonheffing.Ronde = _p_change_context($['Ronde'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Jaarbeheer']['Resultaat']['Salarisrondes'],
 //                                                     null
@@ -946,7 +946,7 @@
 //                                     })])
 //                                     case 'Salaris': return _p.ss($, ($) => ['Salaris', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Ronde = _p_cc($['Ronde'], ($) => _i_generic.get_entry(
+//                                             const p_Ronde: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Ronde = _p_change_context($['Ronde'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Jaarbeheer']['Resultaat']['Salarisrondes'],
 //                                                     null
@@ -956,7 +956,7 @@
 //                                                     'reference': $,
 //                                                 }
 //                                             ))
-//                                             const p_Medewerker: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Medewerker = _p_cc($['Medewerker'], ($) => _i_generic.get_entry(
+//                                             const p_Medewerker: _i_out._T_Handelstransacties.Inkopen.D.Type.SG.Salaris.Medewerker = _p_change_context($['Medewerker'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Beheer']['Medewerkers'],
 //                                                     null
@@ -988,16 +988,16 @@
 //                 }
 //             )
 //         }))
-//         const p_Verkopen: _i_out._T_Handelstransacties.Verkopen = _p_cc($['Verkopen'], ($) => _p_deprecated_block(() => {
+//         const p_Verkopen: _i_out._T_Handelstransacties.Verkopen = _p_change_context($['Verkopen'], ($) => _p_deprecated_block(() => {
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                             const p_Datum: _i_out._T_Handelstransacties.Verkopen.D.Datum = _p_cc($['Datum'], ($) => $)
-//                             const p_Betalingstermijn: _i_out._T_Handelstransacties.Verkopen.D.Betalingstermijn = _p_cc($['Betalingstermijn'], ($) => $)
-//                             const p_BTW$mi_periode: _i_out._T_Handelstransacties.Verkopen.D.BTW$mi_periode = _p_cc($['BTW-periode'], ($) => _i_generic.get_entry(
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                             const p_Datum: _i_out._T_Handelstransacties.Verkopen.D.Datum = _p_change_context($['Datum'], ($) => $)
+//                             const p_Betalingstermijn: _i_out._T_Handelstransacties.Verkopen.D.Betalingstermijn = _p_change_context($['Betalingstermijn'], ($) => $)
+//                             const p_BTW$mi_periode: _i_out._T_Handelstransacties.Verkopen.D.BTW$mi_periode = _p_change_context($['BTW-periode'], ($) => _i_generic.get_entry(
 //                                 _i_generic.dictionary_to_lookup(
 //                                     params['values']['Jaarbeheer']['Resultaat']['BTW periodes'],
 //                                     null
@@ -1007,11 +1007,11 @@
 //                                     'reference': $,
 //                                 }
 //                             ))
-//                             const p_Brondocument: _i_out._T_Handelstransacties.Verkopen.D.Brondocument = _p_cc($['Brondocument'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Brondocument => {
+//                             const p_Brondocument: _i_out._T_Handelstransacties.Verkopen.D.Brondocument = _p_change_context($['Brondocument'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Brondocument => {
 //                                 switch ($[0]) {
 //                                     case 'Toegevoegd': return _p.ss($, ($) => ['Toegevoegd', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Document: _i_out._T_Handelstransacties.Verkopen.D.Brondocument.SG.Toegevoegd.Document = _p_cc($['Document'], ($) => $)
+//                                             const p_Document: _i_out._T_Handelstransacties.Verkopen.D.Brondocument.SG.Toegevoegd.Document = _p_change_context($['Document'], ($) => $)
 //                                             return ({
 //                                                 'Document': p_Document,
 //                                             })
@@ -1020,7 +1020,7 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Debiteur: _i_out._T_Handelstransacties.Verkopen.D.Debiteur = _p_cc($['Debiteur'], ($) => _i_generic.get_entry(
+//                             const p_Debiteur: _i_out._T_Handelstransacties.Verkopen.D.Debiteur = _p_change_context($['Debiteur'], ($) => _i_generic.get_entry(
 //                                 _i_generic.dictionary_to_lookup(
 //                                     params['values']['Beheer']['Klanten'],
 //                                     null
@@ -1030,11 +1030,11 @@
 //                                     'reference': $,
 //                                 }
 //                             ))
-//                             const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Contracttype = _p_cc($['Contracttype'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Contracttype => {
+//                             const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Contracttype = _p_change_context($['Contracttype'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Contracttype => {
 //                                 switch ($[0]) {
 //                                     case 'Licentieovereenkomst': return _p.ss($, ($) => ['Licentieovereenkomst', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Overeenkomst: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Licentieovereenkomst.Overeenkomst = _p_cc($['Overeenkomst'], ($) => _i_generic.get_entry(
+//                                             const p_Overeenkomst: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Licentieovereenkomst.Overeenkomst = _p_change_context($['Overeenkomst'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     p_Debiteur['entry']['Licentieovereenkomsten'],
 //                                                     null
@@ -1051,7 +1051,7 @@
 //                                     })])
 //                                     case 'Project': return _p.ss($, ($) => ['Project', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Project: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Project = _p_cc($['Project'], ($) => _i_generic.get_entry(
+//                                             const p_Project: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Project = _p_change_context($['Project'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     p_Debiteur['entry']['Projecten'],
 //                                                     null
@@ -1061,7 +1061,7 @@
 //                                                     'reference': $,
 //                                                 }
 //                                             ))
-//                                             const p_Offerte: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Offerte = _p_cc($['Offerte'], ($) => _i_generic.get_entry(
+//                                             const p_Offerte: _i_out._T_Handelstransacties.Verkopen.D.Contracttype.SG.Project.Offerte = _p_change_context($['Offerte'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     p_Project['entry']['Offertes'],
 //                                                     null
@@ -1081,14 +1081,14 @@
 //                                 }
 //                             }))
 //                             const p_parent_contract_type = p_Contracttype
-//                             const p_Afhandeling: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling = _p_cc($['Afhandeling'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Afhandeling => {
+//                             const p_Afhandeling: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling = _p_change_context($['Afhandeling'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Afhandeling => {
 //                                 switch ($[0]) {
 //                                     case 'Mutaties': return _p.ss($, ($) => ['Mutaties', _p_deprecated_block(() => {
 //                                         return null
 //                                     })])
 //                                     case 'Rekening courant': return _p.ss($, ($) => ['Rekening courant', _p_deprecated_block(() => {
 //                                         return _p_deprecated_block(() => {
-//                                             const p_Rekening_courant: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _p_cc($['Rekening courant'], ($) => _i_generic.get_entry(
+//                                             const p_Rekening_courant: _i_out._T_Handelstransacties.Verkopen.D.Afhandeling.SG.Rekening_courant.Rekening_courant = _p_change_context($['Rekening courant'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
 //                                                     null
@@ -1106,14 +1106,14 @@
 //                                     default: return _p.au($[0])
 //                                 }
 //                             }))
-//                             const p_Regels: _i_out._T_Handelstransacties.Verkopen.D.Regels = _p_cc($['Regels'], ($) => _p_deprecated_block(() => {
+//                             const p_Regels: _i_out._T_Handelstransacties.Verkopen.D.Regels = _p_change_context($['Regels'], ($) => _p_deprecated_block(() => {
 //                                 return _i_generic.resolve_dictionary(
 //                                     $,
 //                                     {
 //                                         'location 2 string': l2s,
 //                                         'map': ($, $p) => _p_deprecated_block(() => {
-//                                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                 const p_BTW$mi_regime: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime = _p_cc($['BTW-regime'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
+//                                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                 const p_BTW$mi_regime: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime = _p_change_context($['BTW-regime'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
 //                                                     switch ($[0]) {
 //                                                         case 'Binnenland: heffing verlegd': return _p.ss($, ($) => ['Binnenland: heffing verlegd', _p_deprecated_block(() => {
 //                                                             return null
@@ -1123,7 +1123,7 @@
 //                                                         })])
 //                                                         case 'Standaard': return _p.ss($, ($) => ['Standaard', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_BTW$mi_categorie: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime.SG.Standaard.BTW$mi_categorie = _p_cc($['BTW-categorie'], ($) => _i_generic.get_entry(
+//                                                                 const p_BTW$mi_categorie: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime.SG.Standaard.BTW$mi_categorie = _p_change_context($['BTW-categorie'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         params['values']['Beheer']['BTW-categorieen'],
 //                                                                         null
@@ -1141,13 +1141,13 @@
 //                                                         default: return _p.au($[0])
 //                                                     }
 //                                                 }))
-//                                                 const p_Bedrag_exclusief_BTW: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Bedrag_exclusief_BTW = _p_cc($['Bedrag exclusief BTW'], ($) => $)
-//                                                 const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype = _p_cc($['Contracttype'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
+//                                                 const p_Bedrag_exclusief_BTW: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Bedrag_exclusief_BTW = _p_change_context($['Bedrag exclusief BTW'], ($) => $)
+//                                                 const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype = _p_change_context($['Contracttype'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
 //                                                     switch ($[0]) {
 //                                                         case 'Licentieovereenkomst': return _p.ss($, ($) => ['Licentieovereenkomst', _p_deprecated_block(() => {
 //                                                             const c_Definitie = p_parent_contract_type[0] === 'Licentieovereenkomst' ? p_parent_contract_type[1] : _pdev.implement_me("xx")
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Periode: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Licentieovereenkomst.Periode = _p_cc($['Periode'], ($) => _i_generic.get_entry(
+//                                                                 const p_Periode: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Licentieovereenkomst.Periode = _p_change_context($['Periode'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         c_Definitie['Overeenkomst']['entry']['Periodes'],
 //                                                                         null
@@ -1168,7 +1168,7 @@
 //                                                         case 'Project': return _p.ss($, ($) => ['Project', _p_deprecated_block(() => {
 //                                                             const c_Definitie = p_parent_contract_type[0] === 'Project' ? p_parent_contract_type[1] : _pdev.implement_me("xx")
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Opbrengst: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Project.Opbrengst = _p_cc($['Opbrengst'], ($) => _i_generic.get_entry(
+//                                                                 const p_Opbrengst: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Project.Opbrengst = _p_change_context($['Opbrengst'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         c_Definitie['Offerte']['entry']['Opbrengsten'],
 //                                                                         null
@@ -1186,12 +1186,12 @@
 //                                                         default: return _p.au($[0])
 //                                                     }
 //                                                 }))
-//                                                 const p_Omschrijving: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Omschrijving = _p_cc($['Omschrijving'], ($) => $)
-//                                                 const p_Type: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type = _p_cc($['Type'], ($) => _p_cc($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type => {
+//                                                 const p_Omschrijving: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Omschrijving = _p_change_context($['Omschrijving'], ($) => $)
+//                                                 const p_Type: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type = _p_change_context($['Type'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type => {
 //                                                     switch ($[0]) {
 //                                                         case 'Balans': return _p.ss($, ($) => ['Balans', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Balans_item: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Balans.Balans_item = _p_cc($['Balans item'], ($) => _i_generic.get_entry(
+//                                                                 const p_Balans_item: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Balans.Balans_item = _p_change_context($['Balans item'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         params['values']['Jaarbeheer']['Balans']['Overige balans items'],
 //                                                                         null
@@ -1208,7 +1208,7 @@
 //                                                         })])
 //                                                         case 'Opbrengsten': return _p.ss($, ($) => ['Opbrengsten', _p_deprecated_block(() => {
 //                                                             return _p_deprecated_block(() => {
-//                                                                 const p_Grootboekrekening: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Opbrengsten.Grootboekrekening = _p_cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+//                                                                 const p_Grootboekrekening: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Type.SG.Opbrengsten.Grootboekrekening = _p_change_context($['Grootboekrekening'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
 //                                                                         params['values']['Grootboekrekeningen']['Resultaat'],
 //                                                                         null
@@ -1263,8 +1263,8 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Resultaat: _i_out._T_Jaarbeheer.Resultaat = _p_cc($['Resultaat'], ($) => _p_deprecated_block(() => {
-//             const p_Grootboekrekening_voor_BTW_afrondingen: _i_out._T_Jaarbeheer.Resultaat.Grootboekrekening_voor_BTW_afrondingen = _p_cc($['Grootboekrekening voor BTW afrondingen'], ($) => _i_generic.get_entry(
+//         const p_Resultaat: _i_out._T_Jaarbeheer.Resultaat = _p_change_context($['Resultaat'], ($) => _p_deprecated_block(() => {
+//             const p_Grootboekrekening_voor_BTW_afrondingen: _i_out._T_Jaarbeheer.Resultaat.Grootboekrekening_voor_BTW_afrondingen = _p_change_context($['Grootboekrekening voor BTW afrondingen'], ($) => _i_generic.get_entry(
 //                 _i_generic.dictionary_to_lookup(
 //                     params['values']['Grootboekrekeningen']['Resultaat'],
 //                     null
@@ -1274,43 +1274,43 @@
 //                     'reference': $,
 //                 }
 //             ))
-//             const p_Salarisrondes: _i_out._T_Jaarbeheer.Resultaat.Salarisrondes = _p_cc($['Salarisrondes'], ($) => _p_deprecated_block(() => {
+//             const p_Salarisrondes: _i_out._T_Jaarbeheer.Resultaat.Salarisrondes = _p_change_context($['Salarisrondes'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => null)
+//                             return _p_change_context($['value'], ($) => null)
 //                         }),
 //                     }
 //                 )
 //             }))
-//             const p_BTW_periodes: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes = _p_cc($['BTW periodes'], ($) => _p_deprecated_block(() => {
+//             const p_BTW_periodes: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes = _p_change_context($['BTW periodes'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                 const p_1$pe__BTW$mi_categorieen: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen = _p_cc($['1. BTW-categorieen'], ($) => _p_deprecated_block(() => {
+//                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                 const p_1$pe__BTW$mi_categorieen: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen = _p_change_context($['1. BTW-categorieen'], ($) => _p_deprecated_block(() => {
 //                                     return _i_generic.resolve_dictionary(
 //                                         $,
 //                                         {
 //                                             'location 2 string': l2s,
 //                                             'map': ($, $p) => _p_deprecated_block(() => {
-//                                                 return _p_cc($['value'], ($) => null)
+//                                                 return _p_change_context($['value'], ($) => null)
 //                                             }),
 //                                         }
 //                                     )
 //                                 }))
-//                                 const p_Documenten: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten = _p_cc($['Documenten'], ($) => _p_deprecated_block(() => {
+//                                 const p_Documenten: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten = _p_change_context($['Documenten'], ($) => _p_deprecated_block(() => {
 //                                     return _i_generic.resolve_dictionary(
 //                                         $,
 //                                         {
 //                                             'location 2 string': l2s,
 //                                             'map': ($, $p) => _p_deprecated_block(() => {
-//                                                 return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                     const p_Bestand: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D.Bestand = _p_cc($['Bestand'], ($) => $)
+//                                                 return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                     const p_Bestand: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D.Bestand = _p_change_context($['Bestand'], ($) => $)
 //                                                     return ({
 //                                                         'Bestand': p_Bestand,
 //                                                     })
@@ -1319,14 +1319,14 @@
 //                                         }
 //                                     )
 //                                 }))
-//                                 const p_Omschrijving: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Omschrijving = _p_cc($['Omschrijving'], ($) => $)
-//                                 const p_Status: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status = _p_cc($['Status'], ($) => _p_cc($['state group'], ($): _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
+//                                 const p_Omschrijving: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Omschrijving = _p_change_context($['Omschrijving'], ($) => $)
+//                                 const p_Status: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status = _p_change_context($['Status'], ($) => _p_change_context($['state group'], ($): _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
 //                                     switch ($[0]) {
 //                                         case 'Aangegeven': return _p.ss($, ($) => ['Aangegeven', _p_deprecated_block(() => {
 //                                             return _p_deprecated_block(() => {
-//                                                 const p_Afronding: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Afronding = _p_cc($['Afronding'], ($) => $)
-//                                                 const p_Bedrag: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Bedrag = _p_cc($['Bedrag'], ($) => $)
-//                                                 const p_Datum: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Datum = _p_cc($['Datum'], ($) => $)
+//                                                 const p_Afronding: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Afronding = _p_change_context($['Afronding'], ($) => $)
+//                                                 const p_Bedrag: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Bedrag = _p_change_context($['Bedrag'], ($) => $)
+//                                                 const p_Datum: _i_out._T_Jaarbeheer.Resultaat.BTW_periodes.D.Status.SG.Aangegeven.Datum = _p_change_context($['Datum'], ($) => $)
 //                                                 return ({
 //                                                     'Afronding': p_Afronding,
 //                                                     'Bedrag': p_Bedrag,
@@ -1357,10 +1357,10 @@
 //                 'Salarisrondes': p_Salarisrondes,
 //             })
 //         }))
-//         const p_Balans: _i_out._T_Jaarbeheer.Balans = _p_cc($['Balans'], ($) => _p_deprecated_block(() => {
-//             const p_Beginsaldo_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Beginsaldo_nog_aan_te_geven_BTW = _p_cc($['Beginsaldo nog aan te geven BTW'], ($) => $)
-//             const p_Beginsaldo_winstreserve: _i_out._T_Jaarbeheer.Balans.Beginsaldo_winstreserve = _p_cc($['Beginsaldo winstreserve'], ($) => $)
-//             const p_Grootboekrekening_voor_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_nog_aan_te_geven_BTW = _p_cc($['Grootboekrekening voor nog aan te geven BTW'], ($) => _i_generic.get_entry(
+//         const p_Balans: _i_out._T_Jaarbeheer.Balans = _p_change_context($['Balans'], ($) => _p_deprecated_block(() => {
+//             const p_Beginsaldo_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Beginsaldo_nog_aan_te_geven_BTW = _p_change_context($['Beginsaldo nog aan te geven BTW'], ($) => $)
+//             const p_Beginsaldo_winstreserve: _i_out._T_Jaarbeheer.Balans.Beginsaldo_winstreserve = _p_change_context($['Beginsaldo winstreserve'], ($) => $)
+//             const p_Grootboekrekening_voor_nog_aan_te_geven_BTW: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_nog_aan_te_geven_BTW = _p_change_context($['Grootboekrekening voor nog aan te geven BTW'], ($) => _i_generic.get_entry(
 //                 _i_generic.dictionary_to_lookup(
 //                     params['values']['Grootboekrekeningen']['Balans'],
 //                     null
@@ -1370,7 +1370,7 @@
 //                     'reference': $,
 //                 }
 //             ))
-//             const p_Grootboekrekening_voor_resultaat_dit_jaar: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_resultaat_dit_jaar = _p_cc($['Grootboekrekening voor resultaat dit jaar'], ($) => _i_generic.get_entry(
+//             const p_Grootboekrekening_voor_resultaat_dit_jaar: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_resultaat_dit_jaar = _p_change_context($['Grootboekrekening voor resultaat dit jaar'], ($) => _i_generic.get_entry(
 //                 _i_generic.dictionary_to_lookup(
 //                     params['values']['Grootboekrekeningen']['Balans'],
 //                     null
@@ -1380,7 +1380,7 @@
 //                     'reference': $,
 //                 }
 //             ))
-//             const p_Grootboekrekening_voor_winstreserve: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_winstreserve = _p_cc($['Grootboekrekening voor winstreserve'], ($) => _i_generic.get_entry(
+//             const p_Grootboekrekening_voor_winstreserve: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_winstreserve = _p_change_context($['Grootboekrekening voor winstreserve'], ($) => _i_generic.get_entry(
 //                 _i_generic.dictionary_to_lookup(
 //                     params['values']['Grootboekrekeningen']['Balans'],
 //                     null
@@ -1390,7 +1390,7 @@
 //                     'reference': $,
 //                 }
 //             ))
-//             const p_Grootboekrekening_voor_Inkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Inkoop_saldo = _p_cc($['Grootboekrekening voor Inkoop saldo'], ($) => _i_generic.get_entry(
+//             const p_Grootboekrekening_voor_Inkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Inkoop_saldo = _p_change_context($['Grootboekrekening voor Inkoop saldo'], ($) => _i_generic.get_entry(
 //                 _i_generic.dictionary_to_lookup(
 //                     params['values']['Grootboekrekeningen']['Balans'],
 //                     null
@@ -1400,7 +1400,7 @@
 //                     'reference': $,
 //                 }
 //             ))
-//             const p_Grootboekrekening_voor_Verkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Verkoop_saldo = _p_cc($['Grootboekrekening voor Verkoop saldo'], ($) => _i_generic.get_entry(
+//             const p_Grootboekrekening_voor_Verkoop_saldo: _i_out._T_Jaarbeheer.Balans.Grootboekrekening_voor_Verkoop_saldo = _p_change_context($['Grootboekrekening voor Verkoop saldo'], ($) => _i_generic.get_entry(
 //                 _i_generic.dictionary_to_lookup(
 //                     params['values']['Grootboekrekeningen']['Balans'],
 //                     null
@@ -1410,15 +1410,15 @@
 //                     'reference': $,
 //                 }
 //             ))
-//             const p_Informele_rekeningen: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen = _p_cc($['Informele rekeningen'], ($) => _p_deprecated_block(() => {
+//             const p_Informele_rekeningen: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen = _p_change_context($['Informele rekeningen'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                 const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Beginsaldo = _p_cc($['Beginsaldo'], ($) => $)
-//                                 const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Grootboekrekening = _p_cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+//                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                 const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Beginsaldo = _p_change_context($['Beginsaldo'], ($) => $)
+//                                 const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Grootboekrekening = _p_change_context($['Grootboekrekening'], ($) => _i_generic.get_entry(
 //                                     _i_generic.dictionary_to_lookup(
 //                                         params['values']['Grootboekrekeningen']['Balans'],
 //                                         null
@@ -1428,7 +1428,7 @@
 //                                         'reference': $,
 //                                     }
 //                                 ))
-//                                 const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw = _p_cc($['Nieuw'], ($) => _p_cc($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
+//                                 const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw = _p_change_context($['Nieuw'], ($) => _p_change_context($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
 //                                     switch ($[0]) {
 //                                         case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                                             return null
@@ -1436,7 +1436,7 @@
 //                                         case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
 //                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
 //                                             return _p_deprecated_block(() => {
-//                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _p_cc($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
+//                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _p_change_context($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
 //                                                     $,
 //                                                     {
 //                                                         'location 2 string': l2s,
@@ -1466,15 +1466,15 @@
 //                     }
 //                 )
 //             }))
-//             const p_Bankrekeningen: _i_out._T_Jaarbeheer.Balans.Bankrekeningen = _p_cc($['Bankrekeningen'], ($) => _p_deprecated_block(() => {
+//             const p_Bankrekeningen: _i_out._T_Jaarbeheer.Balans.Bankrekeningen = _p_change_context($['Bankrekeningen'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                 const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Beginsaldo = _p_cc($['Beginsaldo'], ($) => $)
-//                                 const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Grootboekrekening = _p_cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+//                             return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                 const p_Beginsaldo: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Beginsaldo = _p_change_context($['Beginsaldo'], ($) => $)
+//                                 const p_Grootboekrekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Grootboekrekening = _p_change_context($['Grootboekrekening'], ($) => _i_generic.get_entry(
 //                                     _i_generic.dictionary_to_lookup(
 //                                         params['values']['Grootboekrekeningen']['Balans'],
 //                                         null
@@ -1484,7 +1484,7 @@
 //                                         'reference': $,
 //                                     }
 //                                 ))
-//                                 const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw = _p_cc($['Nieuw'], ($) => _p_cc($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
+//                                 const p_Nieuw: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw = _p_change_context($['Nieuw'], ($) => _p_change_context($['state group'], ($): _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
 //                                     switch ($[0]) {
 //                                         case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                                             return null
@@ -1492,7 +1492,7 @@
 //                                         case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
 //                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
 //                                             return _p_deprecated_block(() => {
-//                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _p_cc($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
+//                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _p_change_context($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
 //                                                     $,
 //                                                     {
 //                                                         'location 2 string': l2s,
@@ -1512,16 +1512,16 @@
 //                                         default: return _p.au($[0])
 //                                     }
 //                                 }))
-//                                 const p_Mutaties: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties = _p_cc($['Mutaties'], ($) => _p_deprecated_block(() => {
+//                                 const p_Mutaties: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties = _p_change_context($['Mutaties'], ($) => _p_deprecated_block(() => {
 //                                     return _i_generic.resolve_dictionary(
 //                                         $,
 //                                         {
 //                                             'location 2 string': l2s,
 //                                             'map': ($, $p) => _p_deprecated_block(() => {
-//                                                 return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                                     const p_Bedrag: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Bedrag = _p_cc($['Bedrag'], ($) => $)
-//                                                     const p_Datum: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Datum = _p_cc($['Datum'], ($) => $)
-//                                                     const p_Omschrijving: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Omschrijving = _p_cc($['Omschrijving'], ($) => $)
+//                                                 return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                                     const p_Bedrag: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Bedrag = _p_change_context($['Bedrag'], ($) => $)
+//                                                     const p_Datum: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Datum = _p_change_context($['Datum'], ($) => $)
+//                                                     const p_Omschrijving: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D.Omschrijving = _p_change_context($['Omschrijving'], ($) => $)
 //                                                     return ({
 //                                                         'Bedrag': p_Bedrag,
 //                                                         'Datum': p_Datum,
@@ -1543,13 +1543,13 @@
 //                     }
 //                 )
 //             }))
-//             const p_Overige_balans_items: _i_out._T_Jaarbeheer.Balans.Overige_balans_items = _p_cc($['Overige balans items'], ($) => _p_deprecated_block(() => {
+//             const p_Overige_balans_items: _i_out._T_Jaarbeheer.Balans.Overige_balans_items = _p_change_context($['Overige balans items'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => Overige_balans_item(
+//                             return _p_change_context($['value'], ($) => Overige_balans_item(
 //                                 $,
 //                                 {
 //                                     'location 2 string': l2s,
@@ -1563,13 +1563,13 @@
 //                     }
 //                 )
 //             }))
-//             const p_Verrekenposten: _i_out._T_Jaarbeheer.Balans.Verrekenposten = _p_cc($['Verrekenposten'], ($) => _p_deprecated_block(() => {
+//             const p_Verrekenposten: _i_out._T_Jaarbeheer.Balans.Verrekenposten = _p_change_context($['Verrekenposten'], ($) => _p_deprecated_block(() => {
 //                 return _i_generic.resolve_dictionary(
 //                     $,
 //                     {
 //                         'location 2 string': l2s,
 //                         'map': ($, $p) => _p_deprecated_block(() => {
-//                             return _p_cc($['value'], ($) => null)
+//                             return _p_change_context($['value'], ($) => null)
 //                         }),
 //                     }
 //                 )
@@ -1603,8 +1603,8 @@
 //             {
 //                 'location 2 string': l2s,
 //                 'map': ($, $p) => _p_deprecated_block(() => {
-//                     return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                         const p_Afgesloten: _i_out._T_Jaren.D.Afgesloten = _p_cc($['Afgesloten'], ($) => _p_cc($['state group'], ($): _i_out._T_Jaren.D.Afgesloten => {
+//                     return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                         const p_Afgesloten: _i_out._T_Jaren.D.Afgesloten = _p_change_context($['Afgesloten'], ($) => _p_change_context($['state group'], ($): _i_out._T_Jaren.D.Afgesloten => {
 //                             switch ($[0]) {
 //                                 case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                                     return null
@@ -1615,8 +1615,8 @@
 //                                 default: return _p.au($[0])
 //                             }
 //                         }))
-//                         const p_Startdatum_boekjaar: _i_out._T_Jaren.D.Startdatum_boekjaar = _p_cc($['Startdatum boekjaar'], ($) => $)
-//                         const p_Grootboekrekeningen: _i_out._T_Jaren.D.Grootboekrekeningen = _p_cc($['Grootboekrekeningen'], ($) => Grootboekrekeningen(
+//                         const p_Startdatum_boekjaar: _i_out._T_Jaren.D.Startdatum_boekjaar = _p_change_context($['Startdatum boekjaar'], ($) => $)
+//                         const p_Grootboekrekeningen: _i_out._T_Jaren.D.Grootboekrekeningen = _p_change_context($['Grootboekrekeningen'], ($) => Grootboekrekeningen(
 //                             $,
 //                             {
 //                                 'location 2 string': l2s,
@@ -1626,7 +1626,7 @@
 //                                 }),
 //                             }
 //                         ))
-//                         const p_Eerste_boekjaar: _i_out._T_Jaren.D.Eerste_boekjaar = _p_cc($['Eerste boekjaar'], ($) => Eerste_boekjaar(
+//                         const p_Eerste_boekjaar: _i_out._T_Jaren.D.Eerste_boekjaar = _p_change_context($['Eerste boekjaar'], ($) => Eerste_boekjaar(
 //                             $,
 //                             {
 //                                 'location 2 string': l2s,
@@ -1638,7 +1638,7 @@
 //                                 }),
 //                             }
 //                         ))
-//                         const p_Jaarbeheer: _i_out._T_Jaren.D.Jaarbeheer = _p_cc($['Jaarbeheer'], ($) => Jaarbeheer(
+//                         const p_Jaarbeheer: _i_out._T_Jaren.D.Jaarbeheer = _p_change_context($['Jaarbeheer'], ($) => Jaarbeheer(
 //                             $,
 //                             {
 //                                 'location 2 string': l2s,
@@ -1653,7 +1653,7 @@
 //                                 }),
 //                             }
 //                         ))
-//                         const p_Handelstransacties: _i_out._T_Jaren.D.Handelstransacties = _p_cc($['Handelstransacties'], ($) => Handelstransacties(
+//                         const p_Handelstransacties: _i_out._T_Jaren.D.Handelstransacties = _p_change_context($['Handelstransacties'], ($) => Handelstransacties(
 //                             $,
 //                             {
 //                                 'location 2 string': l2s,
@@ -1667,7 +1667,7 @@
 //                                 }),
 //                             }
 //                         ))
-//                         const p_Mutaties: _i_out._T_Jaren.D.Mutaties = _p_cc($['Mutaties'], ($) => Mutaties(
+//                         const p_Mutaties: _i_out._T_Jaren.D.Mutaties = _p_change_context($['Mutaties'], ($) => Mutaties(
 //                             $,
 //                             {
 //                                 'location 2 string': l2s,
@@ -1703,29 +1703,29 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Verrekenpost_mutaties: _i_out._T_Mutaties.Verrekenpost_mutaties = _p_cc($['Verrekenpost mutaties'], ($) => _p_deprecated_block(() => {
+//         const p_Verrekenpost_mutaties: _i_out._T_Mutaties.Verrekenpost_mutaties = _p_change_context($['Verrekenpost mutaties'], ($) => _p_deprecated_block(() => {
 //             const benchmark = params['values']['Jaarbeheer']['Balans']['Verrekenposten']
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
 //                             return _i_generic.resolve_dictionary(
 //                                 $,
 //                                 {
 //                                     'location 2 string': l2s,
 //                                     'map': ($, $p) => _p_deprecated_block(() => {
-//                                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                             const p_Bedrag: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Bedrag = _p_cc($['Bedrag'], ($) => $)
-//                                             const p_Afhandeling: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling = _p_cc($['Afhandeling'], ($) => _p_cc($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
+//                                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                             const p_Bedrag: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Bedrag = _p_change_context($['Bedrag'], ($) => $)
+//                                             const p_Afhandeling: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling = _p_change_context($['Afhandeling'], ($) => _p_change_context($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling => {
 //                                                 switch ($[0]) {
 //                                                     case 'Balans': return _p.ss($, ($) => ['Balans', _p_deprecated_block(() => {
-//                                                         return _p_cc($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans => {
+//                                                         return _p_change_context($['state group'], ($): _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans => {
 //                                                             switch ($[0]) {
 //                                                                 case 'Informele rekening': return _p.ss($, ($) => ['Informele rekening', _p_deprecated_block(() => {
 //                                                                     return _p_deprecated_block(() => {
-//                                                                         const p_Informele_rekening: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans.SG.Informele_rekening.Informele_rekening = _p_cc($['Informele rekening'], ($) => _i_generic.get_entry(
+//                                                                         const p_Informele_rekening: _i_out._T_Mutaties.Verrekenpost_mutaties.D.D.Afhandeling.SG.Balans.SG.Informele_rekening.Informele_rekening = _p_change_context($['Informele rekening'], ($) => _i_generic.get_entry(
 //                                                                             _i_generic.dictionary_to_lookup(
 //                                                                                 params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
 //                                                                                 null
@@ -1772,27 +1772,27 @@
 //                 }
 //             )
 //         }))
-//         const p_Bankrekening_Mutatie_Verwerkingen: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen = _p_cc($['Bankrekening Mutatie Verwerkingen'], ($) => _p_deprecated_block(() => {
+//         const p_Bankrekening_Mutatie_Verwerkingen: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen = _p_change_context($['Bankrekening Mutatie Verwerkingen'], ($) => _p_deprecated_block(() => {
 //             const benchmark = params['values']['Jaarbeheer']['Balans']['Bankrekeningen']
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
 //                             return _i_generic.resolve_dictionary(
 //                                 $,
 //                                 {
 //                                     'location 2 string': l2s,
 //                                     'map': ($, $p) => _p_deprecated_block(() => {
-//                                         return _p_cc($['value'], ($) => _p_cc($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
+//                                         return _p_change_context($['value'], ($) => _p_change_context($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
 //                                             switch ($[0]) {
 //                                                 case 'Balans': return _p.ss($, ($) => ['Balans', _p_deprecated_block(() => {
-//                                                     return _p_cc($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans => {
+//                                                     return _p_change_context($['state group'], ($): _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans => {
 //                                                         switch ($[0]) {
 //                                                             case 'Informele rekening': return _p.ss($, ($) => ['Informele rekening', _p_deprecated_block(() => {
 //                                                                 return _p_deprecated_block(() => {
-//                                                                     const p_Informele_rekening: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Informele_rekening.Informele_rekening = _p_cc($['Informele rekening'], ($) => _i_generic.get_entry(
+//                                                                     const p_Informele_rekening: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Informele_rekening.Informele_rekening = _p_change_context($['Informele rekening'], ($) => _i_generic.get_entry(
 //                                                                         _i_generic.dictionary_to_lookup(
 //                                                                             params['values']['Jaarbeheer']['Balans']['Informele rekeningen'],
 //                                                                             null
@@ -1809,7 +1809,7 @@
 //                                                             })])
 //                                                             case 'Verrekenpost': return _p.ss($, ($) => ['Verrekenpost', _p_deprecated_block(() => {
 //                                                                 return _p_deprecated_block(() => {
-//                                                                     const p_Verrekenpost: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Verrekenpost.Verrekenpost = _p_cc($['Verrekenpost'], ($) => _i_generic.get_entry(
+//                                                                     const p_Verrekenpost: _i_out._T_Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.SG.Balans.SG.Verrekenpost.Verrekenpost = _p_change_context($['Verrekenpost'], ($) => _i_generic.get_entry(
 //                                                                         _i_generic.dictionary_to_lookup(
 //                                                                             params['values']['Jaarbeheer']['Balans']['Verrekenposten'],
 //                                                                             null
@@ -1851,23 +1851,23 @@
 //                 }
 //             )
 //         }))
-//         const p_Memoriaal_boekingen: _i_out._T_Mutaties.Memoriaal_boekingen = _p_cc($['Memoriaal boekingen'], ($) => _p_deprecated_block(() => {
+//         const p_Memoriaal_boekingen: _i_out._T_Mutaties.Memoriaal_boekingen = _p_change_context($['Memoriaal boekingen'], ($) => _p_deprecated_block(() => {
 //             const benchmark = params['values']['Jaarbeheer']['Balans']['Overige balans items']
 //             return _i_generic.resolve_dictionary(
 //                 $,
 //                 {
 //                     'location 2 string': l2s,
 //                     'map': ($, $p) => _p_deprecated_block(() => {
-//                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
+//                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
 //                             return _i_generic.resolve_dictionary(
 //                                 $,
 //                                 {
 //                                     'location 2 string': l2s,
 //                                     'map': ($, $p) => _p_deprecated_block(() => {
-//                                         return _p_cc($['value'], ($) => _p_deprecated_block(() => {
-//                                             const p_Bedrag: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Bedrag = _p_cc($['Bedrag'], ($) => $)
-//                                             const p_Datum: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Datum = _p_cc($['Datum'], ($) => $)
-//                                             const p_Grootboekrekening: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Grootboekrekening = _p_cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+//                                         return _p_change_context($['value'], ($) => _p_deprecated_block(() => {
+//                                             const p_Bedrag: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Bedrag = _p_change_context($['Bedrag'], ($) => $)
+//                                             const p_Datum: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Datum = _p_change_context($['Datum'], ($) => $)
+//                                             const p_Grootboekrekening: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Grootboekrekening = _p_change_context($['Grootboekrekening'], ($) => _i_generic.get_entry(
 //                                                 _i_generic.dictionary_to_lookup(
 //                                                     params['values']['Grootboekrekeningen']['Resultaat'],
 //                                                     null
@@ -1877,7 +1877,7 @@
 //                                                     'reference': $,
 //                                                 }
 //                                             ))
-//                                             const p_Omschrijving: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Omschrijving = _p_cc($['Omschrijving'], ($) => $)
+//                                             const p_Omschrijving: _i_out._T_Mutaties.Memoriaal_boekingen.D.D.Omschrijving = _p_change_context($['Omschrijving'], ($) => $)
 //                                             return ({
 //                                                 'Bedrag': p_Bedrag,
 //                                                 'Datum': p_Datum,
@@ -1904,8 +1904,8 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Beginsaldo: _i_out._T_Overige_balans_item.Beginsaldo = _p_cc($['Beginsaldo'], ($) => $)
-//         const p_Grootboekrekening: _i_out._T_Overige_balans_item.Grootboekrekening = _p_cc($['Grootboekrekening'], ($) => _i_generic.get_entry(
+//         const p_Beginsaldo: _i_out._T_Overige_balans_item.Beginsaldo = _p_change_context($['Beginsaldo'], ($) => $)
+//         const p_Grootboekrekening: _i_out._T_Overige_balans_item.Grootboekrekening = _p_change_context($['Grootboekrekening'], ($) => _i_generic.get_entry(
 //             _i_generic.dictionary_to_lookup(
 //                 params['values']['Grootboekrekeningen']['Balans'],
 //                 null
@@ -1915,7 +1915,7 @@
 //                 'reference': $,
 //             }
 //         ))
-//         const p_Nieuw: _i_out._T_Overige_balans_item.Nieuw = _p_cc($['Nieuw'], ($) => _p_cc($['state group'], ($): _i_out._T_Overige_balans_item.Nieuw => {
+//         const p_Nieuw: _i_out._T_Overige_balans_item.Nieuw = _p_change_context($['Nieuw'], ($) => _p_change_context($['state group'], ($): _i_out._T_Overige_balans_item.Nieuw => {
 //             switch ($[0]) {
 //                 case 'Ja': return _p.ss($, ($) => ['Ja', _p_deprecated_block(() => {
 //                     return null
@@ -1923,7 +1923,7 @@
 //                 case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
 //                     const c_Volgend_boekjaar = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
 //                     return _p_deprecated_block(() => {
-//                         const p_Balans_item: _i_out._T_Overige_balans_item.Nieuw.SG.Nee.Balans_item = _p_cc($['Balans item'], ($) => _i_generic.get_entry(
+//                         const p_Balans_item: _i_out._T_Overige_balans_item.Nieuw.SG.Nee.Balans_item = _p_change_context($['Balans item'], ($) => _i_generic.get_entry(
 //                             _i_generic.dictionary_to_lookup(
 //                                 c_Volgend_boekjaar['Vorig boekjaar']['entry']['Jaarbeheer']['Balans']['Overige balans items'],
 //                                 null
@@ -1952,7 +1952,7 @@
 //     const l2s = $p['location 2 string']
 //     const params = $p['parameters']
 //     return _p_deprecated_block(() => {
-//         const p_Fiscaal: _i_out._T_Root.Fiscaal = _p_cc($['Fiscaal'], ($) => Fiscaal(
+//         const p_Fiscaal: _i_out._T_Root.Fiscaal = _p_change_context($['Fiscaal'], ($) => Fiscaal(
 //             $,
 //             {
 //                 'location 2 string': l2s,
@@ -1962,7 +1962,7 @@
 //                 }),
 //             }
 //         ))
-//         const p_Categorieen: _i_out._T_Root.Categorieen = _p_cc($['Categorieen'], ($) => Grootboek_Categorieen(
+//         const p_Categorieen: _i_out._T_Root.Categorieen = _p_change_context($['Categorieen'], ($) => Grootboek_Categorieen(
 //             $,
 //             {
 //                 'location 2 string': l2s,
@@ -1974,7 +1974,7 @@
 //                 }),
 //             }
 //         ))
-//         const p_Beheer: _i_out._T_Root.Beheer = _p_cc($['Beheer'], ($) => Beheer(
+//         const p_Beheer: _i_out._T_Root.Beheer = _p_change_context($['Beheer'], ($) => Beheer(
 //             $,
 //             {
 //                 'location 2 string': l2s,
@@ -1986,7 +1986,7 @@
 //                 }),
 //             }
 //         ))
-//         const p_Jaren: _i_out._T_Root.Jaren = _p_cc($['Jaren'], ($) => Jaren(
+//         const p_Jaren: _i_out._T_Root.Jaren = _p_change_context($['Jaren'], ($) => Jaren(
 //             $,
 //             {
 //                 'location 2 string': l2s,

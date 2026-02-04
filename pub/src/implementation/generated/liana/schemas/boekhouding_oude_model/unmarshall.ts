@@ -1,9 +1,7 @@
 
 import * as _p from "pareto-core/dist/refiner"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/unmarshall"
 
@@ -17,7 +15,7 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const Root: t_signatures.Root = ($, abort) => _p_cc(
+export const Root: t_signatures.Root = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -25,7 +23,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'Bankrekeningen': _p_cc(
+        'Bankrekeningen': _p_change_context(
             $.__get_entry(
                 'Bankrekeningen',
                 ($) => abort(
@@ -39,7 +37,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -50,14 +48,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Beheer': _p_cc(
+        'Beheer': _p_change_context(
             $.__get_entry(
                 'Beheer',
                 ($) => abort(
                     ['no such entry', "Beheer"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -65,14 +63,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                     )
                 ),
                 ($) => ({
-                    'Balans': _p_cc(
+                    'Balans': _p_change_context(
                         $.__get_entry(
                             'Balans',
                             ($) => abort(
                                 ['no such entry', "Balans"]
                             )
                         ),
-                        ($) => _p_cc(
+                        ($) => _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -80,7 +78,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'Grootboekrekeningen': _p_cc(
+                                'Grootboekrekeningen': _p_change_context(
                                     $.__get_entry(
                                         'Grootboekrekeningen',
                                         ($) => abort(
@@ -94,7 +92,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -102,7 +100,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Hoofdcategorie': _p_cc(
+                                                'Hoofdcategorie': _p_change_context(
                                                     $.__get_entry(
                                                         'Hoofdcategorie',
                                                         ($) => abort(
@@ -116,7 +114,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Subcategorie': _p_cc(
+                                                'Subcategorie': _p_change_context(
                                                     $.__get_entry(
                                                         'Subcategorie',
                                                         ($) => abort(
@@ -130,14 +128,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Zijde': _p_cc(
+                                                'Zijde': _p_change_context(
                                                     $.__get_entry(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -149,9 +147,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ($t): t_out.Root.Beheer.Balans.Grootboekrekeningen.D.Zijde => {
                                                                 switch ($t) {
                                                                     case 'Activa':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Activa', _p_cc(
+                                                                            ($) => ['Activa', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -162,9 +160,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'Passiva':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Passiva', _p_cc(
+                                                                            ($) => ['Passiva', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -187,7 +185,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Hoofdcategorieen': _p_cc(
+                                'Hoofdcategorieen': _p_change_context(
                                     $.__get_entry(
                                         'Hoofdcategorieen',
                                         ($) => abort(
@@ -201,7 +199,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -209,14 +207,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Zijde': _p_cc(
+                                                'Zijde': _p_change_context(
                                                     $.__get_entry(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -228,9 +226,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ($t): t_out.Root.Beheer.Balans.Hoofdcategorieen.D.Zijde => {
                                                                 switch ($t) {
                                                                     case 'Activa':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Activa', _p_cc(
+                                                                            ($) => ['Activa', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -241,9 +239,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'Passiva':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Passiva', _p_cc(
+                                                                            ($) => ['Passiva', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -262,7 +260,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Subcategorieen': _p_cc(
+                                                'Subcategorieen': _p_change_context(
                                                     $.__get_entry(
                                                         'Subcategorieen',
                                                         ($) => abort(
@@ -276,7 +274,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 ['expected a dictionary', null]
                                                             )
                                                         ),
-                                                        ($, id) => _p_cc(
+                                                        ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
                                                                 ($) => abort(
@@ -284,7 +282,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             ),
                                                             ($) => ({
-                                                                'Hoofdcategorie fiscus': _p_cc(
+                                                                'Hoofdcategorie fiscus': _p_change_context(
                                                                     $.__get_entry(
                                                                         'Hoofdcategorie fiscus',
                                                                         ($) => abort(
@@ -298,7 +296,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                         )
                                                                     )
                                                                 ),
-                                                                'Subcategorie fiscus': _p_cc(
+                                                                'Subcategorie fiscus': _p_change_context(
                                                                     $.__get_entry(
                                                                         'Subcategorie fiscus',
                                                                         ($) => abort(
@@ -320,7 +318,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Hoofdcategorieen fiscus': _p_cc(
+                                'Hoofdcategorieen fiscus': _p_change_context(
                                     $.__get_entry(
                                         'Hoofdcategorieen fiscus',
                                         ($) => abort(
@@ -334,7 +332,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -342,14 +340,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Zijde': _p_cc(
+                                                'Zijde': _p_change_context(
                                                     $.__get_entry(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -361,9 +359,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ($t): t_out.Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde => {
                                                                 switch ($t) {
                                                                     case 'Activa':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Activa', _p_cc(
+                                                                            ($) => ['Activa', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -374,9 +372,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'Passiva':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Passiva', _p_cc(
+                                                                            ($) => ['Passiva', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -395,7 +393,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Subcategorieen': _p_cc(
+                                                'Subcategorieen': _p_change_context(
                                                     $.__get_entry(
                                                         'Subcategorieen',
                                                         ($) => abort(
@@ -409,7 +407,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 ['expected a dictionary', null]
                                                             )
                                                         ),
-                                                        ($, id) => _p_cc(
+                                                        ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
                                                                 ($) => abort(
@@ -427,7 +425,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                             })
                         )
                     ),
-                    'BTW-categorieen': _p_cc(
+                    'BTW-categorieen': _p_change_context(
                         $.__get_entry(
                             'BTW-categorieen',
                             ($) => abort(
@@ -441,7 +439,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     ['expected a dictionary', null]
                                 )
                             ),
-                            ($, id) => _p_cc(
+                            ($, id) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -449,14 +447,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     )
                                 ),
                                 ($) => ({
-                                    'BTW-heffing': _p_cc(
+                                    'BTW-heffing': _p_change_context(
                                         $.__get_entry(
                                             'BTW-heffing',
                                             ($) => abort(
                                                 ['no such entry', "BTW-heffing"]
                                             )
                                         ),
-                                        ($) => _p_cc(
+                                        ($) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.State(
                                                 $,
                                                 ($) => abort(
@@ -468,9 +466,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ($t): t_out.Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                                     switch ($t) {
                                                         case 'Ja':
-                                                            return _p_cc(
+                                                            return _p_change_context(
                                                                 $['value'],
-                                                                ($) => ['Ja', _p_cc(
+                                                                ($) => ['Ja', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -478,7 +476,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'BTW-promillage': _p_cc(
+                                                                        'BTW-promillage': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'BTW-promillage',
                                                                                 ($) => abort(
@@ -501,9 +499,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )]
                                                             )
                                                         case 'Nee':
-                                                            return _p_cc(
+                                                            return _p_change_context(
                                                                 $['value'],
-                                                                ($) => ['Nee', _p_cc(
+                                                                ($) => ['Nee', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -526,7 +524,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                             )
                         )
                     ),
-                    'Gebruikers': _p_cc(
+                    'Gebruikers': _p_change_context(
                         $.__get_entry(
                             'Gebruikers',
                             ($) => abort(
@@ -540,7 +538,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     ['expected a dictionary', null]
                                 )
                             ),
-                            ($, id) => _p_cc(
+                            ($, id) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -548,7 +546,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     )
                                 ),
                                 ($) => ({
-                                    'Volledige naam': _p_cc(
+                                    'Volledige naam': _p_change_context(
                                         $.__get_entry(
                                             'Volledige naam',
                                             ($) => abort(
@@ -562,7 +560,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                             )
                                         )
                                     ),
-                                    'Wachtwoord': _p_cc(
+                                    'Wachtwoord': _p_change_context(
                                         $.__get_entry(
                                             'Wachtwoord',
                                             ($) => abort(
@@ -580,7 +578,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                             )
                         )
                     ),
-                    'Huidige datum': _p_cc(
+                    'Huidige datum': _p_change_context(
                         $.__get_entry(
                             'Huidige datum',
                             ($) => abort(
@@ -599,14 +597,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                             )
                         )
                     ),
-                    'Resultaat': _p_cc(
+                    'Resultaat': _p_change_context(
                         $.__get_entry(
                             'Resultaat',
                             ($) => abort(
                                 ['no such entry', "Resultaat"]
                             )
                         ),
-                        ($) => _p_cc(
+                        ($) => _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -614,7 +612,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'Correctietypes vennootschapsbelasting': _p_cc(
+                                'Correctietypes vennootschapsbelasting': _p_change_context(
                                     $.__get_entry(
                                         'Correctietypes vennootschapsbelasting',
                                         ($) => abort(
@@ -628,7 +626,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -636,7 +634,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Te corrigeren promillage': _p_cc(
+                                                'Te corrigeren promillage': _p_change_context(
                                                     $.__get_entry(
                                                         'Te corrigeren promillage',
                                                         ($) => abort(
@@ -659,7 +657,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Grootboekrekeningen': _p_cc(
+                                'Grootboekrekeningen': _p_change_context(
                                     $.__get_entry(
                                         'Grootboekrekeningen',
                                         ($) => abort(
@@ -673,7 +671,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -681,7 +679,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Hoofdcategorie': _p_cc(
+                                                'Hoofdcategorie': _p_change_context(
                                                     $.__get_entry(
                                                         'Hoofdcategorie',
                                                         ($) => abort(
@@ -695,7 +693,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Subcategorie': _p_cc(
+                                                'Subcategorie': _p_change_context(
                                                     $.__get_entry(
                                                         'Subcategorie',
                                                         ($) => abort(
@@ -709,14 +707,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Zijde': _p_cc(
+                                                'Zijde': _p_change_context(
                                                     $.__get_entry(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -728,9 +726,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ($t): t_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde => {
                                                                 switch ($t) {
                                                                     case 'Kosten':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Kosten', _p_cc(
+                                                                            ($) => ['Kosten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -738,14 +736,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 ),
                                                                                 ($) => ({
-                                                                                    'Correctie op vennootschapsbelasting': _p_cc(
+                                                                                    'Correctie op vennootschapsbelasting': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Correctie op vennootschapsbelasting',
                                                                                             ($) => abort(
                                                                                                 ['no such entry', "Correctie op vennootschapsbelasting"]
                                                                                             )
                                                                                         ),
-                                                                                        ($) => _p_cc(
+                                                                                        ($) => _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.State(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -757,9 +755,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                 ($t): t_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                     switch ($t) {
                                                                                                         case 'Ja':
-                                                                                                            return _p_cc(
+                                                                                                            return _p_change_context(
                                                                                                                 $['value'],
-                                                                                                                ($) => ['Ja', _p_cc(
+                                                                                                                ($) => ['Ja', _p_change_context(
                                                                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                                                                         $,
                                                                                                                         ($) => abort(
@@ -767,7 +765,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                         )
                                                                                                                     ),
                                                                                                                     ($) => ({
-                                                                                                                        'Correctietype': _p_cc(
+                                                                                                                        'Correctietype': _p_change_context(
                                                                                                                             $.__get_entry(
                                                                                                                                 'Correctietype',
                                                                                                                                 ($) => abort(
@@ -785,9 +783,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                 )]
                                                                                                             )
                                                                                                         case 'Nee':
-                                                                                                            return _p_cc(
+                                                                                                            return _p_change_context(
                                                                                                                 $['value'],
-                                                                                                                ($) => ['Nee', _p_cc(
+                                                                                                                ($) => ['Nee', _p_change_context(
                                                                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                                                                         $,
                                                                                                                         ($) => abort(
@@ -810,9 +808,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'Opbrengsten':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Opbrengsten', _p_cc(
+                                                                            ($) => ['Opbrengsten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -835,7 +833,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Hoofdcategorieen': _p_cc(
+                                'Hoofdcategorieen': _p_change_context(
                                     $.__get_entry(
                                         'Hoofdcategorieen',
                                         ($) => abort(
@@ -849,7 +847,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -857,14 +855,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Zijde': _p_cc(
+                                                'Zijde': _p_change_context(
                                                     $.__get_entry(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -876,9 +874,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ($t): t_out.Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde => {
                                                                 switch ($t) {
                                                                     case 'Kosten':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Kosten', _p_cc(
+                                                                            ($) => ['Kosten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -889,9 +887,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'Opbrengsten':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Opbrengsten', _p_cc(
+                                                                            ($) => ['Opbrengsten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -910,7 +908,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Subcategorieen': _p_cc(
+                                                'Subcategorieen': _p_change_context(
                                                     $.__get_entry(
                                                         'Subcategorieen',
                                                         ($) => abort(
@@ -924,7 +922,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 ['expected a dictionary', null]
                                                             )
                                                         ),
-                                                        ($, id) => _p_cc(
+                                                        ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
                                                                 ($) => abort(
@@ -932,7 +930,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             ),
                                                             ($) => ({
-                                                                'Hoofdcategorie fiscus': _p_cc(
+                                                                'Hoofdcategorie fiscus': _p_change_context(
                                                                     $.__get_entry(
                                                                         'Hoofdcategorie fiscus',
                                                                         ($) => abort(
@@ -946,7 +944,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                         )
                                                                     )
                                                                 ),
-                                                                'Subcategorie fiscus': _p_cc(
+                                                                'Subcategorie fiscus': _p_change_context(
                                                                     $.__get_entry(
                                                                         'Subcategorie fiscus',
                                                                         ($) => abort(
@@ -968,7 +966,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Hoofdcategorieen fiscus': _p_cc(
+                                'Hoofdcategorieen fiscus': _p_change_context(
                                     $.__get_entry(
                                         'Hoofdcategorieen fiscus',
                                         ($) => abort(
@@ -982,7 +980,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 ['expected a dictionary', null]
                                             )
                                         ),
-                                        ($, id) => _p_cc(
+                                        ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -990,14 +988,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             ),
                                             ($) => ({
-                                                'Zijde': _p_cc(
+                                                'Zijde': _p_change_context(
                                                     $.__get_entry(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"]
                                                         )
                                                     ),
-                                                    ($) => _p_cc(
+                                                    ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -1009,9 +1007,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             ($t): t_out.Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde => {
                                                                 switch ($t) {
                                                                     case 'Kosten':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Kosten', _p_cc(
+                                                                            ($) => ['Kosten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -1022,9 +1020,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )]
                                                                         )
                                                                     case 'Opbrengsten':
-                                                                        return _p_cc(
+                                                                        return _p_change_context(
                                                                             $['value'],
-                                                                            ($) => ['Opbrengsten', _p_cc(
+                                                                            ($) => ['Opbrengsten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -1043,7 +1041,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     )
                                                 ),
-                                                'Subcategorieen': _p_cc(
+                                                'Subcategorieen': _p_change_context(
                                                     $.__get_entry(
                                                         'Subcategorieen',
                                                         ($) => abort(
@@ -1057,7 +1055,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 ['expected a dictionary', null]
                                                             )
                                                         ),
-                                                        ($, id) => _p_cc(
+                                                        ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
                                                                 ($) => abort(
@@ -1078,7 +1076,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 })
             )
         ),
-        'Informele rekeningen': _p_cc(
+        'Informele rekeningen': _p_change_context(
             $.__get_entry(
                 'Informele rekeningen',
                 ($) => abort(
@@ -1092,7 +1090,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -1103,7 +1101,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Jaren': _p_cc(
+        'Jaren': _p_change_context(
             $.__get_entry(
                 'Jaren',
                 ($) => abort(
@@ -1117,7 +1115,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -1125,14 +1123,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         )
                     ),
                     ($) => ({
-                        'Afgesloten': _p_cc(
+                        'Afgesloten': _p_change_context(
                             $.__get_entry(
                                 'Afgesloten',
                                 ($) => abort(
                                     ['no such entry', "Afgesloten"]
                                 )
                             ),
-                            ($) => _p_cc(
+                            ($) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -1144,9 +1142,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     ($t): t_out.Root.Jaren.D.Afgesloten => {
                                         switch ($t) {
                                             case 'Ja':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
-                                                    ($) => ['Ja', _p_cc(
+                                                    ($) => ['Ja', _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
                                                             ($) => abort(
@@ -1157,9 +1155,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     )]
                                                 )
                                             case 'Nee':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
-                                                    ($) => ['Nee', _p_cc(
+                                                    ($) => ['Nee', _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
                                                             ($) => abort(
@@ -1178,7 +1176,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Balans grootboekrekeningen': _p_cc(
+                        'Balans grootboekrekeningen': _p_change_context(
                             $.__get_entry(
                                 'Balans grootboekrekeningen',
                                 ($) => abort(
@@ -1192,7 +1190,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -1200,14 +1198,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Type': _p_cc(
+                                        'Type': _p_change_context(
                                             $.__get_entry(
                                                 'Type',
                                                 ($) => abort(
                                                     ['no such entry', "Type"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -1219,9 +1217,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Balans_grootboekrekeningen.D.Type => {
                                                         switch ($t) {
                                                             case 'Bankrekening':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Bankrekening', _p_cc(
+                                                                    ($) => ['Bankrekening', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -1232,9 +1230,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Overig':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Overig', _p_cc(
+                                                                    ($) => ['Overig', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -1245,9 +1243,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Informele rekening':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Informele rekening', _p_cc(
+                                                                    ($) => ['Informele rekening', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -1270,7 +1268,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Bankrekeningen': _p_cc(
+                        'Bankrekeningen': _p_change_context(
                             $.__get_entry(
                                 'Bankrekeningen',
                                 ($) => abort(
@@ -1284,7 +1282,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -1292,7 +1290,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Beginsaldo': _p_cc(
+                                        'Beginsaldo': _p_change_context(
                                             $.__get_entry(
                                                 'Beginsaldo',
                                                 ($) => abort(
@@ -1311,7 +1309,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Grootboekrekening': _p_cc(
+                                        'Grootboekrekening': _p_change_context(
                                             $.__get_entry(
                                                 'Grootboekrekening',
                                                 ($) => abort(
@@ -1325,7 +1323,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Mutaties': _p_cc(
+                                        'Mutaties': _p_change_context(
                                             $.__get_entry(
                                                 'Mutaties',
                                                 ($) => abort(
@@ -1339,7 +1337,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1347,7 +1345,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag',
                                                                 ($) => abort(
@@ -1366,7 +1364,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Datum': _p_cc(
+                                                        'Datum': _p_change_context(
                                                             $.__get_entry(
                                                                 'Datum',
                                                                 ($) => abort(
@@ -1385,7 +1383,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Omschrijving': _p_cc(
+                                                        'Omschrijving': _p_change_context(
                                                             $.__get_entry(
                                                                 'Omschrijving',
                                                                 ($) => abort(
@@ -1399,14 +1397,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Status': _p_cc(
+                                                        'Status': _p_change_context(
                                                             $.__get_entry(
                                                                 'Status',
                                                                 ($) => abort(
                                                                     ['no such entry', "Status"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -1418,9 +1416,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status => {
                                                                         switch ($t) {
                                                                             case 'Nog te verwerken':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Nog te verwerken', _p_cc(
+                                                                                    ($) => ['Nog te verwerken', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -1431,9 +1429,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Verwerkt':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Verwerkt', _p_cc(
+                                                                                    ($) => ['Verwerkt', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -1441,14 +1439,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Afhandeling': _p_cc(
+                                                                                            'Afhandeling': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Afhandeling',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Afhandeling"]
                                                                                                     )
                                                                                                 ),
-                                                                                                ($) => _p_cc(
+                                                                                                ($) => _p_change_context(
                                                                                                     v_unmarshalled_from_parse_tree.State(
                                                                                                         $,
                                                                                                         ($) => abort(
@@ -1460,9 +1458,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                         ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.Verwerkt.Afhandeling => {
                                                                                                             switch ($t) {
                                                                                                                 case 'Inkoop':
-                                                                                                                    return _p_cc(
+                                                                                                                    return _p_change_context(
                                                                                                                         $['value'],
-                                                                                                                        ($) => ['Inkoop', _p_cc(
+                                                                                                                        ($) => ['Inkoop', _p_change_context(
                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                 $,
                                                                                                                                 ($) => abort(
@@ -1470,7 +1468,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                 )
                                                                                                                             ),
                                                                                                                             ($) => ({
-                                                                                                                                'Jaar': _p_cc(
+                                                                                                                                'Jaar': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Jaar',
                                                                                                                                         ($) => abort(
@@ -1484,7 +1482,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                         )
                                                                                                                                     )
                                                                                                                                 ),
-                                                                                                                                'Inkoop': _p_cc(
+                                                                                                                                'Inkoop': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Inkoop',
                                                                                                                                         ($) => abort(
@@ -1502,9 +1500,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                         )]
                                                                                                                     )
                                                                                                                 case 'Verrekenpost':
-                                                                                                                    return _p_cc(
+                                                                                                                    return _p_change_context(
                                                                                                                         $['value'],
-                                                                                                                        ($) => ['Verrekenpost', _p_cc(
+                                                                                                                        ($) => ['Verrekenpost', _p_change_context(
                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                 $,
                                                                                                                                 ($) => abort(
@@ -1512,7 +1510,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                 )
                                                                                                                             ),
                                                                                                                             ($) => ({
-                                                                                                                                'Verrekenpost': _p_cc(
+                                                                                                                                'Verrekenpost': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Verrekenpost',
                                                                                                                                         ($) => abort(
@@ -1530,9 +1528,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                         )]
                                                                                                                     )
                                                                                                                 case 'BTW-periode':
-                                                                                                                    return _p_cc(
+                                                                                                                    return _p_change_context(
                                                                                                                         $['value'],
-                                                                                                                        ($) => ['BTW-periode', _p_cc(
+                                                                                                                        ($) => ['BTW-periode', _p_change_context(
                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                 $,
                                                                                                                                 ($) => abort(
@@ -1540,7 +1538,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                 )
                                                                                                                             ),
                                                                                                                             ($) => ({
-                                                                                                                                'Jaar': _p_cc(
+                                                                                                                                'Jaar': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Jaar',
                                                                                                                                         ($) => abort(
@@ -1554,7 +1552,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                         )
                                                                                                                                     )
                                                                                                                                 ),
-                                                                                                                                'BTW-periode': _p_cc(
+                                                                                                                                'BTW-periode': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'BTW-periode',
                                                                                                                                         ($) => abort(
@@ -1572,9 +1570,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                         )]
                                                                                                                     )
                                                                                                                 case 'Verkoop':
-                                                                                                                    return _p_cc(
+                                                                                                                    return _p_change_context(
                                                                                                                         $['value'],
-                                                                                                                        ($) => ['Verkoop', _p_cc(
+                                                                                                                        ($) => ['Verkoop', _p_change_context(
                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                 $,
                                                                                                                                 ($) => abort(
@@ -1582,7 +1580,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                 )
                                                                                                                             ),
                                                                                                                             ($) => ({
-                                                                                                                                'Jaar': _p_cc(
+                                                                                                                                'Jaar': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Jaar',
                                                                                                                                         ($) => abort(
@@ -1596,7 +1594,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                         )
                                                                                                                                     )
                                                                                                                                 ),
-                                                                                                                                'Verkoop': _p_cc(
+                                                                                                                                'Verkoop': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Verkoop',
                                                                                                                                         ($) => abort(
@@ -1614,9 +1612,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                         )]
                                                                                                                     )
                                                                                                                 case 'Informele rekening':
-                                                                                                                    return _p_cc(
+                                                                                                                    return _p_change_context(
                                                                                                                         $['value'],
-                                                                                                                        ($) => ['Informele rekening', _p_cc(
+                                                                                                                        ($) => ['Informele rekening', _p_change_context(
                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                 $,
                                                                                                                                 ($) => abort(
@@ -1624,7 +1622,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                                 )
                                                                                                                             ),
                                                                                                                             ($) => ({
-                                                                                                                                'Informele rekening': _p_cc(
+                                                                                                                                'Informele rekening': _p_change_context(
                                                                                                                                     $.__get_entry(
                                                                                                                                         'Informele rekening',
                                                                                                                                         ($) => abort(
@@ -1666,14 +1664,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Nieuw': _p_cc(
+                                        'Nieuw': _p_change_context(
                                             $.__get_entry(
                                                 'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -1685,9 +1683,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Nieuw => {
                                                         switch ($t) {
                                                             case 'Ja':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Ja', _p_cc(
+                                                                    ($) => ['Ja', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -1698,9 +1696,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Nee':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Nee', _p_cc(
+                                                                    ($) => ['Nee', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -1708,7 +1706,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Jaar': _p_cc(
+                                                                            'Jaar': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Jaar',
                                                                                     ($) => abort(
@@ -1722,7 +1720,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Rekening': _p_cc(
+                                                                            'Rekening': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Rekening',
                                                                                     ($) => abort(
@@ -1752,7 +1750,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Beginsaldo nog aan te geven BTW': _p_cc(
+                        'Beginsaldo nog aan te geven BTW': _p_change_context(
                             $.__get_entry(
                                 'Beginsaldo nog aan te geven BTW',
                                 ($) => abort(
@@ -1771,7 +1769,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Beginsaldo winstreserve': _p_cc(
+                        'Beginsaldo winstreserve': _p_change_context(
                             $.__get_entry(
                                 'Beginsaldo winstreserve',
                                 ($) => abort(
@@ -1790,14 +1788,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'BTW periode saldo': _p_cc(
+                        'BTW periode saldo': _p_change_context(
                             $.__get_entry(
                                 'BTW periode saldo',
                                 ($) => abort(
                                     ['no such entry', "BTW periode saldo"]
                                 )
                             ),
-                            ($) => _p_cc(
+                            ($) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -1805,7 +1803,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     )
                                 ),
                                 ($) => ({
-                                    'Grootboekrekening': _p_cc(
+                                    'Grootboekrekening': _p_change_context(
                                         $.__get_entry(
                                             'Grootboekrekening',
                                             ($) => abort(
@@ -1822,7 +1820,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 })
                             )
                         ),
-                        'BTW periodes': _p_cc(
+                        'BTW periodes': _p_change_context(
                             $.__get_entry(
                                 'BTW periodes',
                                 ($) => abort(
@@ -1836,7 +1834,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -1844,7 +1842,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        '1. BTW-categorieen': _p_cc(
+                                        '1. BTW-categorieen': _p_change_context(
                                             $.__get_entry(
                                                 '1. BTW-categorieen',
                                                 ($) => abort(
@@ -1858,7 +1856,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1869,7 +1867,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Documenten': _p_cc(
+                                        'Documenten': _p_change_context(
                                             $.__get_entry(
                                                 'Documenten',
                                                 ($) => abort(
@@ -1883,7 +1881,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1891,7 +1889,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bestand': _p_cc(
+                                                        'Bestand': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bestand',
                                                                 ($) => abort(
@@ -1909,7 +1907,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Omschrijving': _p_cc(
+                                        'Omschrijving': _p_change_context(
                                             $.__get_entry(
                                                 'Omschrijving',
                                                 ($) => abort(
@@ -1923,14 +1921,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Status': _p_cc(
+                                        'Status': _p_change_context(
                                             $.__get_entry(
                                                 'Status',
                                                 ($) => abort(
                                                     ['no such entry', "Status"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -1942,9 +1940,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.BTW_periodes.D.Status => {
                                                         switch ($t) {
                                                             case 'Aangegeven':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Aangegeven', _p_cc(
+                                                                    ($) => ['Aangegeven', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -1952,7 +1950,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Afronding': _p_cc(
+                                                                            'Afronding': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Afronding',
                                                                                     ($) => abort(
@@ -1971,7 +1969,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Bedrag': _p_cc(
+                                                                            'Bedrag': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Bedrag',
                                                                                     ($) => abort(
@@ -1990,7 +1988,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Datum': _p_cc(
+                                                                            'Datum': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Datum',
                                                                                     ($) => abort(
@@ -2013,9 +2011,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Openstaand':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Openstaand', _p_cc(
+                                                                    ($) => ['Openstaand', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2038,14 +2036,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Eerste boekjaar': _p_cc(
+                        'Eerste boekjaar': _p_change_context(
                             $.__get_entry(
                                 'Eerste boekjaar',
                                 ($) => abort(
                                     ['no such entry', "Eerste boekjaar"]
                                 )
                             ),
-                            ($) => _p_cc(
+                            ($) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.State(
                                     $,
                                     ($) => abort(
@@ -2057,9 +2055,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     ($t): t_out.Root.Jaren.D.Eerste_boekjaar => {
                                         switch ($t) {
                                             case 'Ja':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
-                                                    ($) => ['Ja', _p_cc(
+                                                    ($) => ['Ja', _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
                                                             ($) => abort(
@@ -2070,9 +2068,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     )]
                                                 )
                                             case 'Nee':
-                                                return _p_cc(
+                                                return _p_change_context(
                                                     $['value'],
-                                                    ($) => ['Nee', _p_cc(
+                                                    ($) => ['Nee', _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Group(
                                                             $,
                                                             ($) => abort(
@@ -2080,7 +2078,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                             )
                                                         ),
                                                         ($) => ({
-                                                            'Vorig boekjaar': _p_cc(
+                                                            'Vorig boekjaar': _p_change_context(
                                                                 $.__get_entry(
                                                                     'Vorig boekjaar',
                                                                     ($) => abort(
@@ -2106,7 +2104,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Grootboekrekening voor BTW afrondingen': _p_cc(
+                        'Grootboekrekening voor BTW afrondingen': _p_change_context(
                             $.__get_entry(
                                 'Grootboekrekening voor BTW afrondingen',
                                 ($) => abort(
@@ -2120,7 +2118,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Grootboekrekening voor nog aan te geven BTW': _p_cc(
+                        'Grootboekrekening voor nog aan te geven BTW': _p_change_context(
                             $.__get_entry(
                                 'Grootboekrekening voor nog aan te geven BTW',
                                 ($) => abort(
@@ -2134,7 +2132,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Grootboekrekening voor resultaat dit jaar': _p_cc(
+                        'Grootboekrekening voor resultaat dit jaar': _p_change_context(
                             $.__get_entry(
                                 'Grootboekrekening voor resultaat dit jaar',
                                 ($) => abort(
@@ -2148,7 +2146,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Grootboekrekening voor winstreserve': _p_cc(
+                        'Grootboekrekening voor winstreserve': _p_change_context(
                             $.__get_entry(
                                 'Grootboekrekening voor winstreserve',
                                 ($) => abort(
@@ -2162,7 +2160,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Informele rekeningen': _p_cc(
+                        'Informele rekeningen': _p_change_context(
                             $.__get_entry(
                                 'Informele rekeningen',
                                 ($) => abort(
@@ -2176,7 +2174,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -2184,7 +2182,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Beginsaldo': _p_cc(
+                                        'Beginsaldo': _p_change_context(
                                             $.__get_entry(
                                                 'Beginsaldo',
                                                 ($) => abort(
@@ -2203,7 +2201,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Grootboekrekening': _p_cc(
+                                        'Grootboekrekening': _p_change_context(
                                             $.__get_entry(
                                                 'Grootboekrekening',
                                                 ($) => abort(
@@ -2217,14 +2215,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Nieuw': _p_cc(
+                                        'Nieuw': _p_change_context(
                                             $.__get_entry(
                                                 'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -2236,9 +2234,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Informele_rekeningen.D.Nieuw => {
                                                         switch ($t) {
                                                             case 'Ja':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Ja', _p_cc(
+                                                                    ($) => ['Ja', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2249,9 +2247,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Nee':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Nee', _p_cc(
+                                                                    ($) => ['Nee', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2259,7 +2257,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Jaar': _p_cc(
+                                                                            'Jaar': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Jaar',
                                                                                     ($) => abort(
@@ -2273,7 +2271,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Rekening': _p_cc(
+                                                                            'Rekening': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Rekening',
                                                                                     ($) => abort(
@@ -2303,7 +2301,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Inkopen': _p_cc(
+                        'Inkopen': _p_change_context(
                             $.__get_entry(
                                 'Inkopen',
                                 ($) => abort(
@@ -2317,7 +2315,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -2325,14 +2323,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Afhandeling': _p_cc(
+                                        'Afhandeling': _p_change_context(
                                             $.__get_entry(
                                                 'Afhandeling',
                                                 ($) => abort(
                                                     ['no such entry', "Afhandeling"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -2344,9 +2342,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
                                                         switch ($t) {
                                                             case 'Mutaties':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Mutaties', _p_cc(
+                                                                    ($) => ['Mutaties', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2357,9 +2355,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Rekening courant':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Rekening courant', _p_cc(
+                                                                    ($) => ['Rekening courant', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2367,7 +2365,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Rekening courant': _p_cc(
+                                                                            'Rekening courant': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Rekening courant',
                                                                                     ($) => abort(
@@ -2393,14 +2391,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'BTW-regime': _p_cc(
+                                        'BTW-regime': _p_change_context(
                                             $.__get_entry(
                                                 'BTW-regime',
                                                 ($) => abort(
                                                     ['no such entry', "BTW-regime"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -2412,9 +2410,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.BTW$mi_regime => {
                                                         switch ($t) {
                                                             case 'Binnenland: heffing verlegd':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Binnenland: heffing verlegd', _p_cc(
+                                                                    ($) => ['Binnenland: heffing verlegd', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2425,9 +2423,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Geen BTW van toepassing':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Geen BTW van toepassing', _p_cc(
+                                                                    ($) => ['Geen BTW van toepassing', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2435,7 +2433,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'BTW-periode': _p_cc(
+                                                                            'BTW-periode': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'BTW-periode',
                                                                                     ($) => abort(
@@ -2453,9 +2451,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Import van buiten de EU':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Import van buiten de EU', _p_cc(
+                                                                    ($) => ['Import van buiten de EU', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2466,9 +2464,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Intracommunautair':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Intracommunautair', _p_cc(
+                                                                    ($) => ['Intracommunautair', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2479,9 +2477,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Standaard':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Standaard', _p_cc(
+                                                                    ($) => ['Standaard', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2489,7 +2487,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'BTW-periode': _p_cc(
+                                                                            'BTW-periode': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'BTW-periode',
                                                                                     ($) => abort(
@@ -2515,14 +2513,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Brondocument': _p_cc(
+                                        'Brondocument': _p_change_context(
                                             $.__get_entry(
                                                 'Brondocument',
                                                 ($) => abort(
                                                     ['no such entry', "Brondocument"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -2534,9 +2532,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.Brondocument => {
                                                         switch ($t) {
                                                             case 'Toegevoegd':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Toegevoegd', _p_cc(
+                                                                    ($) => ['Toegevoegd', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2544,7 +2542,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Document': _p_cc(
+                                                                            'Document': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Document',
                                                                                     ($) => abort(
@@ -2562,9 +2560,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Niet van toepassing':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Niet van toepassing', _p_cc(
+                                                                    ($) => ['Niet van toepassing', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2575,9 +2573,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Ontbreekt':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Ontbreekt', _p_cc(
+                                                                    ($) => ['Ontbreekt', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2588,9 +2586,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Nog toevoegen':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Nog toevoegen', _p_cc(
+                                                                    ($) => ['Nog toevoegen', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2609,7 +2607,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Datum': _p_cc(
+                                        'Datum': _p_change_context(
                                             $.__get_entry(
                                                 'Datum',
                                                 ($) => abort(
@@ -2628,7 +2626,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Regels': _p_cc(
+                                        'Regels': _p_change_context(
                                             $.__get_entry(
                                                 'Regels',
                                                 ($) => abort(
@@ -2642,7 +2640,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -2650,14 +2648,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -2669,9 +2667,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.Regels.D.Bedrag => {
                                                                         switch ($t) {
                                                                             case 'Bekend':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Bekend', _p_cc(
+                                                                                    ($) => ['Bekend', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -2679,7 +2677,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'BTW-bedrag': _p_cc(
+                                                                                            'BTW-bedrag': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'BTW-bedrag',
                                                                                                     ($) => abort(
@@ -2698,7 +2696,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                     )
                                                                                                 )
                                                                                             ),
-                                                                                            'Bedrag inclusief geheven BTW': _p_cc(
+                                                                                            'Bedrag inclusief geheven BTW': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Bedrag inclusief geheven BTW',
                                                                                                     ($) => abort(
@@ -2729,7 +2727,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Omschrijving': _p_cc(
+                                                        'Omschrijving': _p_change_context(
                                                             $.__get_entry(
                                                                 'Omschrijving',
                                                                 ($) => abort(
@@ -2743,14 +2741,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Type': _p_cc(
+                                                        'Type': _p_change_context(
                                                             $.__get_entry(
                                                                 'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -2762,9 +2760,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.Regels.D.Type => {
                                                                         switch ($t) {
                                                                             case 'Balans':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Balans', _p_cc(
+                                                                                    ($) => ['Balans', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -2772,7 +2770,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Balans item': _p_cc(
+                                                                                            'Balans item': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Balans item',
                                                                                                     ($) => abort(
@@ -2790,9 +2788,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Kosten':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Kosten', _p_cc(
+                                                                                    ($) => ['Kosten', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -2800,7 +2798,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Grootboekrekening': _p_cc(
+                                                                                            'Grootboekrekening': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Grootboekrekening',
                                                                                                     ($) => abort(
@@ -2830,14 +2828,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Type': _p_cc(
+                                        'Type': _p_change_context(
                                             $.__get_entry(
                                                 'Type',
                                                 ($) => abort(
                                                     ['no such entry', "Type"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -2849,9 +2847,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.Type => {
                                                         switch ($t) {
                                                             case 'Bonnetje':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Bonnetje', _p_cc(
+                                                                    ($) => ['Bonnetje', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2862,9 +2860,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Inkoop (met crediteur)':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Inkoop (met crediteur)', _p_cc(
+                                                                    ($) => ['Inkoop (met crediteur)', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2872,7 +2870,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Crediteur': _p_cc(
+                                                                            'Crediteur': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Crediteur',
                                                                                     ($) => abort(
@@ -2886,7 +2884,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Factuurnummer': _p_cc(
+                                                                            'Factuurnummer': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Factuurnummer',
                                                                                     ($) => abort(
@@ -2904,9 +2902,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Loonheffing':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Loonheffing', _p_cc(
+                                                                    ($) => ['Loonheffing', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2914,7 +2912,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Ronde': _p_cc(
+                                                                            'Ronde': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Ronde',
                                                                                     ($) => abort(
@@ -2932,9 +2930,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Salaris':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Salaris', _p_cc(
+                                                                    ($) => ['Salaris', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -2942,7 +2940,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Ronde': _p_cc(
+                                                                            'Ronde': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Ronde',
                                                                                     ($) => abort(
@@ -2956,7 +2954,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Medewerker': _p_cc(
+                                                                            'Medewerker': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Medewerker',
                                                                                     ($) => abort(
@@ -2986,14 +2984,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Inkoop saldo': _p_cc(
+                        'Inkoop saldo': _p_change_context(
                             $.__get_entry(
                                 'Inkoop saldo',
                                 ($) => abort(
                                     ['no such entry', "Inkoop saldo"]
                                 )
                             ),
-                            ($) => _p_cc(
+                            ($) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -3001,7 +2999,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     )
                                 ),
                                 ($) => ({
-                                    'Grootboekrekening': _p_cc(
+                                    'Grootboekrekening': _p_change_context(
                                         $.__get_entry(
                                             'Grootboekrekening',
                                             ($) => abort(
@@ -3018,7 +3016,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 })
                             )
                         ),
-                        'Overige balans items': _p_cc(
+                        'Overige balans items': _p_change_context(
                             $.__get_entry(
                                 'Overige balans items',
                                 ($) => abort(
@@ -3032,7 +3030,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -3040,7 +3038,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Beginsaldo': _p_cc(
+                                        'Beginsaldo': _p_change_context(
                                             $.__get_entry(
                                                 'Beginsaldo',
                                                 ($) => abort(
@@ -3059,7 +3057,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Grootboekrekening': _p_cc(
+                                        'Grootboekrekening': _p_change_context(
                                             $.__get_entry(
                                                 'Grootboekrekening',
                                                 ($) => abort(
@@ -3073,7 +3071,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Memoriaal boekingen': _p_cc(
+                                        'Memoriaal boekingen': _p_change_context(
                                             $.__get_entry(
                                                 'Memoriaal boekingen',
                                                 ($) => abort(
@@ -3087,7 +3085,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -3095,7 +3093,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag',
                                                                 ($) => abort(
@@ -3114,7 +3112,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Datum': _p_cc(
+                                                        'Datum': _p_change_context(
                                                             $.__get_entry(
                                                                 'Datum',
                                                                 ($) => abort(
@@ -3133,7 +3131,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Grootboekrekening': _p_cc(
+                                                        'Grootboekrekening': _p_change_context(
                                                             $.__get_entry(
                                                                 'Grootboekrekening',
                                                                 ($) => abort(
@@ -3147,7 +3145,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Omschrijving': _p_cc(
+                                                        'Omschrijving': _p_change_context(
                                                             $.__get_entry(
                                                                 'Omschrijving',
                                                                 ($) => abort(
@@ -3165,14 +3163,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Nieuw': _p_cc(
+                                        'Nieuw': _p_change_context(
                                             $.__get_entry(
                                                 'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -3184,9 +3182,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Overige_balans_items.D.Nieuw => {
                                                         switch ($t) {
                                                             case 'Ja':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Ja', _p_cc(
+                                                                    ($) => ['Ja', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3197,9 +3195,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Nee':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Nee', _p_cc(
+                                                                    ($) => ['Nee', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3207,7 +3205,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Jaar': _p_cc(
+                                                                            'Jaar': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Jaar',
                                                                                     ($) => abort(
@@ -3221,7 +3219,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Balans item': _p_cc(
+                                                                            'Balans item': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Balans item',
                                                                                     ($) => abort(
@@ -3251,7 +3249,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Resultaat grootboekrekeningen': _p_cc(
+                        'Resultaat grootboekrekeningen': _p_change_context(
                             $.__get_entry(
                                 'Resultaat grootboekrekeningen',
                                 ($) => abort(
@@ -3265,7 +3263,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -3276,7 +3274,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Salarisrondes': _p_cc(
+                        'Salarisrondes': _p_change_context(
                             $.__get_entry(
                                 'Salarisrondes',
                                 ($) => abort(
@@ -3290,7 +3288,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -3301,7 +3299,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Startdatum boekjaar': _p_cc(
+                        'Startdatum boekjaar': _p_change_context(
                             $.__get_entry(
                                 'Startdatum boekjaar',
                                 ($) => abort(
@@ -3320,14 +3318,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Verkoop saldo': _p_cc(
+                        'Verkoop saldo': _p_change_context(
                             $.__get_entry(
                                 'Verkoop saldo',
                                 ($) => abort(
                                     ['no such entry', "Verkoop saldo"]
                                 )
                             ),
-                            ($) => _p_cc(
+                            ($) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -3335,7 +3333,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                     )
                                 ),
                                 ($) => ({
-                                    'Grootboekrekening': _p_cc(
+                                    'Grootboekrekening': _p_change_context(
                                         $.__get_entry(
                                             'Grootboekrekening',
                                             ($) => abort(
@@ -3352,7 +3350,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 })
                             )
                         ),
-                        'Verkopen': _p_cc(
+                        'Verkopen': _p_change_context(
                             $.__get_entry(
                                 'Verkopen',
                                 ($) => abort(
@@ -3366,7 +3364,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -3374,14 +3372,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Afhandeling': _p_cc(
+                                        'Afhandeling': _p_change_context(
                                             $.__get_entry(
                                                 'Afhandeling',
                                                 ($) => abort(
                                                     ['no such entry', "Afhandeling"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -3393,9 +3391,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Verkopen.D.Afhandeling => {
                                                         switch ($t) {
                                                             case 'Mutaties':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Mutaties', _p_cc(
+                                                                    ($) => ['Mutaties', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3406,9 +3404,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Rekening courant':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Rekening courant', _p_cc(
+                                                                    ($) => ['Rekening courant', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3416,7 +3414,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Rekening courant': _p_cc(
+                                                                            'Rekening courant': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Rekening courant',
                                                                                     ($) => abort(
@@ -3442,7 +3440,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Betalingstermijn': _p_cc(
+                                        'Betalingstermijn': _p_change_context(
                                             $.__get_entry(
                                                 'Betalingstermijn',
                                                 ($) => abort(
@@ -3461,7 +3459,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'BTW-periode': _p_cc(
+                                        'BTW-periode': _p_change_context(
                                             $.__get_entry(
                                                 'BTW-periode',
                                                 ($) => abort(
@@ -3475,14 +3473,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Brondocument': _p_cc(
+                                        'Brondocument': _p_change_context(
                                             $.__get_entry(
                                                 'Brondocument',
                                                 ($) => abort(
                                                     ['no such entry', "Brondocument"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -3494,9 +3492,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Verkopen.D.Brondocument => {
                                                         switch ($t) {
                                                             case 'Toegevoegd':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Toegevoegd', _p_cc(
+                                                                    ($) => ['Toegevoegd', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3504,7 +3502,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Document': _p_cc(
+                                                                            'Document': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Document',
                                                                                     ($) => abort(
@@ -3530,14 +3528,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Contracttype': _p_cc(
+                                        'Contracttype': _p_change_context(
                                             $.__get_entry(
                                                 'Contracttype',
                                                 ($) => abort(
                                                     ['no such entry', "Contracttype"]
                                                 )
                                             ),
-                                            ($) => _p_cc(
+                                            ($) => _p_change_context(
                                                 v_unmarshalled_from_parse_tree.State(
                                                     $,
                                                     ($) => abort(
@@ -3549,9 +3547,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                     ($t): t_out.Root.Jaren.D.Verkopen.D.Contracttype => {
                                                         switch ($t) {
                                                             case 'Project':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Project', _p_cc(
+                                                                    ($) => ['Project', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3559,7 +3557,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Project': _p_cc(
+                                                                            'Project': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Project',
                                                                                     ($) => abort(
@@ -3573,7 +3571,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )
                                                                                 )
                                                                             ),
-                                                                            'Offerte': _p_cc(
+                                                                            'Offerte': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Offerte',
                                                                                     ($) => abort(
@@ -3591,9 +3589,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     )]
                                                                 )
                                                             case 'Licentieovereenkomst':
-                                                                return _p_cc(
+                                                                return _p_change_context(
                                                                     $['value'],
-                                                                    ($) => ['Licentieovereenkomst', _p_cc(
+                                                                    ($) => ['Licentieovereenkomst', _p_change_context(
                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                             $,
                                                                             ($) => abort(
@@ -3601,7 +3599,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                             )
                                                                         ),
                                                                         ($) => ({
-                                                                            'Overeenkomst': _p_cc(
+                                                                            'Overeenkomst': _p_change_context(
                                                                                 $.__get_entry(
                                                                                     'Overeenkomst',
                                                                                     ($) => abort(
@@ -3627,7 +3625,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Datum': _p_cc(
+                                        'Datum': _p_change_context(
                                             $.__get_entry(
                                                 'Datum',
                                                 ($) => abort(
@@ -3646,7 +3644,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Debiteur': _p_cc(
+                                        'Debiteur': _p_change_context(
                                             $.__get_entry(
                                                 'Debiteur',
                                                 ($) => abort(
@@ -3660,7 +3658,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                 )
                                             )
                                         ),
-                                        'Regels': _p_cc(
+                                        'Regels': _p_change_context(
                                             $.__get_entry(
                                                 'Regels',
                                                 ($) => abort(
@@ -3674,7 +3672,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -3682,14 +3680,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'BTW-regime': _p_cc(
+                                                        'BTW-regime': _p_change_context(
                                                             $.__get_entry(
                                                                 'BTW-regime',
                                                                 ($) => abort(
                                                                     ['no such entry', "BTW-regime"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -3701,9 +3699,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                                         switch ($t) {
                                                                             case 'Intracommunautair':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Intracommunautair', _p_cc(
+                                                                                    ($) => ['Intracommunautair', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3714,9 +3712,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Standaard':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Standaard', _p_cc(
+                                                                                    ($) => ['Standaard', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3724,7 +3722,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'BTW-categorie': _p_cc(
+                                                                                            'BTW-categorie': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'BTW-categorie',
                                                                                                     ($) => abort(
@@ -3742,9 +3740,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Binnenland: heffing verlegd':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Binnenland: heffing verlegd', _p_cc(
+                                                                                    ($) => ['Binnenland: heffing verlegd', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3763,7 +3761,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Bedrag exclusief BTW': _p_cc(
+                                                        'Bedrag exclusief BTW': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag exclusief BTW',
                                                                 ($) => abort(
@@ -3782,14 +3780,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Contracttype': _p_cc(
+                                                        'Contracttype': _p_change_context(
                                                             $.__get_entry(
                                                                 'Contracttype',
                                                                 ($) => abort(
                                                                     ['no such entry', "Contracttype"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -3801,9 +3799,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.Contracttype => {
                                                                         switch ($t) {
                                                                             case 'Project':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Project', _p_cc(
+                                                                                    ($) => ['Project', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3811,7 +3809,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Opbrengst': _p_cc(
+                                                                                            'Opbrengst': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Opbrengst',
                                                                                                     ($) => abort(
@@ -3829,9 +3827,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Los':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Los', _p_cc(
+                                                                                    ($) => ['Los', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3842,9 +3840,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Licentieovereenkomst':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Licentieovereenkomst', _p_cc(
+                                                                                    ($) => ['Licentieovereenkomst', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3852,7 +3850,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Periode': _p_cc(
+                                                                                            'Periode': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Periode',
                                                                                                     ($) => abort(
@@ -3878,7 +3876,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Omschrijving': _p_cc(
+                                                        'Omschrijving': _p_change_context(
                                                             $.__get_entry(
                                                                 'Omschrijving',
                                                                 ($) => abort(
@@ -3892,14 +3890,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Type': _p_cc(
+                                                        'Type': _p_change_context(
                                                             $.__get_entry(
                                                                 'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -3911,9 +3909,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.Type => {
                                                                         switch ($t) {
                                                                             case 'Opbrengsten':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Opbrengsten', _p_cc(
+                                                                                    ($) => ['Opbrengsten', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3921,7 +3919,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Grootboekrekening': _p_cc(
+                                                                                            'Grootboekrekening': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Grootboekrekening',
                                                                                                     ($) => abort(
@@ -3939,9 +3937,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Balans':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Balans', _p_cc(
+                                                                                    ($) => ['Balans', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -3949,7 +3947,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Balans item': _p_cc(
+                                                                                            'Balans item': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Balans item',
                                                                                                     ($) => abort(
@@ -3983,7 +3981,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Verrekenposten': _p_cc(
+                        'Verrekenposten': _p_change_context(
                             $.__get_entry(
                                 'Verrekenposten',
                                 ($) => abort(
@@ -3997,7 +3995,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -4005,7 +4003,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Mutaties': _p_cc(
+                                        'Mutaties': _p_change_context(
                                             $.__get_entry(
                                                 'Mutaties',
                                                 ($) => abort(
@@ -4019,7 +4017,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -4027,7 +4025,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag',
                                                                 ($) => abort(
@@ -4046,14 +4044,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                 )
                                                             )
                                                         ),
-                                                        'Afhandeling': _p_cc(
+                                                        'Afhandeling': _p_change_context(
                                                             $.__get_entry(
                                                                 'Afhandeling',
                                                                 ($) => abort(
                                                                     ['no such entry', "Afhandeling"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -4065,9 +4063,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                     ($t): t_out.Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling => {
                                                                         switch ($t) {
                                                                             case 'Inkoop':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Inkoop', _p_cc(
+                                                                                    ($) => ['Inkoop', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -4075,7 +4073,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Jaar': _p_cc(
+                                                                                            'Jaar': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Jaar',
                                                                                                     ($) => abort(
@@ -4089,7 +4087,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                     )
                                                                                                 )
                                                                                             ),
-                                                                                            'Inkoop': _p_cc(
+                                                                                            'Inkoop': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Inkoop',
                                                                                                     ($) => abort(
@@ -4107,9 +4105,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Informele rekening':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Informele rekening', _p_cc(
+                                                                                    ($) => ['Informele rekening', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -4117,7 +4115,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Informele rekening': _p_cc(
+                                                                                            'Informele rekening': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Informele rekening',
                                                                                                     ($) => abort(
@@ -4135,9 +4133,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'Verkoop':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['Verkoop', _p_cc(
+                                                                                    ($) => ['Verkoop', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -4145,7 +4143,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Jaar': _p_cc(
+                                                                                            'Jaar': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Jaar',
                                                                                                     ($) => abort(
@@ -4159,7 +4157,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                     )
                                                                                                 )
                                                                                             ),
-                                                                                            'Verkoop': _p_cc(
+                                                                                            'Verkoop': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Verkoop',
                                                                                                     ($) => abort(
@@ -4177,9 +4175,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     )]
                                                                                 )
                                                                             case 'BTW-periode':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
-                                                                                    ($) => ['BTW-periode', _p_cc(
+                                                                                    ($) => ['BTW-periode', _p_change_context(
                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                             $,
                                                                                             ($) => abort(
@@ -4187,7 +4185,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                             )
                                                                                         ),
                                                                                         ($) => ({
-                                                                                            'Jaar': _p_cc(
+                                                                                            'Jaar': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'Jaar',
                                                                                                     ($) => abort(
@@ -4201,7 +4199,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                     )
                                                                                                 )
                                                                                             ),
-                                                                                            'BTW-periode': _p_cc(
+                                                                                            'BTW-periode': _p_change_context(
                                                                                                 $.__get_entry(
                                                                                                     'BTW-periode',
                                                                                                     ($) => abort(
@@ -4239,7 +4237,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Klanten': _p_cc(
+        'Klanten': _p_change_context(
             $.__get_entry(
                 'Klanten',
                 ($) => abort(
@@ -4253,7 +4251,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -4261,7 +4259,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         )
                     ),
                     ($) => ({
-                        'Licentieovereenkomsten': _p_cc(
+                        'Licentieovereenkomsten': _p_change_context(
                             $.__get_entry(
                                 'Licentieovereenkomsten',
                                 ($) => abort(
@@ -4275,7 +4273,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -4283,7 +4281,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Periodes': _p_cc(
+                                        'Periodes': _p_change_context(
                                             $.__get_entry(
                                                 'Periodes',
                                                 ($) => abort(
@@ -4297,7 +4295,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -4305,7 +4303,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag',
                                                                 ($) => abort(
@@ -4332,7 +4330,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                 )
                             )
                         ),
-                        'Projecten': _p_cc(
+                        'Projecten': _p_change_context(
                             $.__get_entry(
                                 'Projecten',
                                 ($) => abort(
@@ -4346,7 +4344,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         ['expected a dictionary', null]
                                     )
                                 ),
-                                ($, id) => _p_cc(
+                                ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
                                         ($) => abort(
@@ -4354,7 +4352,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                         )
                                     ),
                                     ($) => ({
-                                        'Offertes': _p_cc(
+                                        'Offertes': _p_change_context(
                                             $.__get_entry(
                                                 'Offertes',
                                                 ($) => abort(
@@ -4368,7 +4366,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         ['expected a dictionary', null]
                                                     )
                                                 ),
-                                                ($, id) => _p_cc(
+                                                ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -4376,7 +4374,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Opbrengsten': _p_cc(
+                                                        'Opbrengsten': _p_change_context(
                                                             $.__get_entry(
                                                                 'Opbrengsten',
                                                                 ($) => abort(
@@ -4390,7 +4388,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                         ['expected a dictionary', null]
                                                                     )
                                                                 ),
-                                                                ($, id) => _p_cc(
+                                                                ($, id) => _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -4398,14 +4396,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Type': _p_cc(
+                                                                        'Type': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Type',
                                                                                 ($) => abort(
                                                                                     ['no such entry', "Type"]
                                                                                 )
                                                                             ),
-                                                                            ($) => _p_cc(
+                                                                            ($) => _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.State(
                                                                                     $,
                                                                                     ($) => abort(
@@ -4417,9 +4415,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                     ($t): t_out.Root.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                         switch ($t) {
                                                                                             case 'Project':
-                                                                                                return _p_cc(
+                                                                                                return _p_change_context(
                                                                                                     $['value'],
-                                                                                                    ($) => ['Project', _p_cc(
+                                                                                                    ($) => ['Project', _p_change_context(
                                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                                             $,
                                                                                                             ($) => abort(
@@ -4427,7 +4425,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                             )
                                                                                                         ),
                                                                                                         ($) => ({
-                                                                                                            'Bedrag': _p_cc(
+                                                                                                            'Bedrag': _p_change_context(
                                                                                                                 $.__get_entry(
                                                                                                                     'Bedrag',
                                                                                                                     ($) => abort(
@@ -4446,7 +4444,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                                                                                                                     )
                                                                                                                 )
                                                                                                             ),
-                                                                                                            'Betaaldatum': _p_cc(
+                                                                                                            'Betaaldatum': _p_change_context(
                                                                                                                 $.__get_entry(
                                                                                                                     'Betaaldatum',
                                                                                                                     ($) => abort(
@@ -4493,7 +4491,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Leveranciers': _p_cc(
+        'Leveranciers': _p_change_context(
             $.__get_entry(
                 'Leveranciers',
                 ($) => abort(
@@ -4507,7 +4505,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(
@@ -4518,7 +4516,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Medewerkers': _p_cc(
+        'Medewerkers': _p_change_context(
             $.__get_entry(
                 'Medewerkers',
                 ($) => abort(
@@ -4532,7 +4530,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                         ['expected a dictionary', null]
                     )
                 ),
-                ($, id) => _p_cc(
+                ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
                         ($) => abort(

@@ -1,42 +1,40 @@
 
-import * as _p from "pareto-core/dist/transformer"
+import * as _p from "pareto-core/dist/expression"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/migrate_boilerplate"
 
 import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 
 export const Root: t_signatures.Root = ($) => ({
-    'Bankrekeningen': _p_cc(
+    'Bankrekeningen': _p_change_context(
         $['Bankrekeningen'],
         ($) => _p.dictionary.map(
             $,
             ($, id) => null
         )
     ),
-    'Beheer': _p_cc(
+    'Beheer': _p_change_context(
         $['Beheer'],
         ($) => ({
-            'Balans': _p_cc(
+            'Balans': _p_change_context(
                 $['Balans'],
                 ($) => ({
-                    'Grootboekrekeningen': _p_cc(
+                    'Grootboekrekeningen': _p_change_context(
                         $['Grootboekrekeningen'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Hoofdcategorie': _p_cc(
+                                'Hoofdcategorie': _p_change_context(
                                     $['Hoofdcategorie'],
                                     ($) => $
                                 ),
-                                'Subcategorie': _p_cc(
+                                'Subcategorie': _p_change_context(
                                     $['Subcategorie'],
                                     ($) => $
                                 ),
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => _p.decide.state(
                                         $,
@@ -63,12 +61,12 @@ export const Root: t_signatures.Root = ($) => ({
                             })
                         )
                     ),
-                    'Hoofdcategorieen': _p_cc(
+                    'Hoofdcategorieen': _p_change_context(
                         $['Hoofdcategorieen'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => _p.decide.state(
                                         $,
@@ -92,16 +90,16 @@ export const Root: t_signatures.Root = ($) => ({
                                         }
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $['Subcategorieen'],
                                     ($) => _p.dictionary.map(
                                         $,
                                         ($, id) => ({
-                                            'Hoofdcategorie fiscus': _p_cc(
+                                            'Hoofdcategorie fiscus': _p_change_context(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => $
                                             ),
-                                            'Subcategorie fiscus': _p_cc(
+                                            'Subcategorie fiscus': _p_change_context(
                                                 $['Subcategorie fiscus'],
                                                 ($) => $
                                             ),
@@ -111,12 +109,12 @@ export const Root: t_signatures.Root = ($) => ({
                             })
                         )
                     ),
-                    'Hoofdcategorieen fiscus': _p_cc(
+                    'Hoofdcategorieen fiscus': _p_change_context(
                         $['Hoofdcategorieen fiscus'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => _p.decide.state(
                                         $,
@@ -140,7 +138,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         }
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $['Subcategorieen'],
                                     ($) => _p.dictionary.map(
                                         $,
@@ -152,12 +150,12 @@ export const Root: t_signatures.Root = ($) => ({
                     ),
                 })
             ),
-            'BTW-categorieen': _p_cc(
+            'BTW-categorieen': _p_change_context(
                 $['BTW-categorieen'],
                 ($) => _p.dictionary.map(
                     $,
                     ($, id) => ({
-                        'BTW-heffing': _p_cc(
+                        'BTW-heffing': _p_change_context(
                             $['BTW-heffing'],
                             ($) => _p.decide.state(
                                 $,
@@ -167,7 +165,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             return _p.ss(
                                                 $,
                                                 ($) => ['Ja', {
-                                                    'BTW-promillage': _p_cc(
+                                                    'BTW-promillage': _p_change_context(
                                                         $['BTW-promillage'],
                                                         ($) => $
                                                     ),
@@ -189,55 +187,55 @@ export const Root: t_signatures.Root = ($) => ({
                     })
                 )
             ),
-            'Gebruikers': _p_cc(
+            'Gebruikers': _p_change_context(
                 $['Gebruikers'],
                 ($) => _p.dictionary.map(
                     $,
                     ($, id) => ({
-                        'Volledige naam': _p_cc(
+                        'Volledige naam': _p_change_context(
                             $['Volledige naam'],
                             ($) => $
                         ),
-                        'Wachtwoord': _p_cc(
+                        'Wachtwoord': _p_change_context(
                             $['Wachtwoord'],
                             ($) => $
                         ),
                     })
                 )
             ),
-            'Huidige datum': _p_cc(
+            'Huidige datum': _p_change_context(
                 $['Huidige datum'],
                 ($) => $
             ),
-            'Resultaat': _p_cc(
+            'Resultaat': _p_change_context(
                 $['Resultaat'],
                 ($) => ({
-                    'Correctietypes vennootschapsbelasting': _p_cc(
+                    'Correctietypes vennootschapsbelasting': _p_change_context(
                         $['Correctietypes vennootschapsbelasting'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Te corrigeren promillage': _p_cc(
+                                'Te corrigeren promillage': _p_change_context(
                                     $['Te corrigeren promillage'],
                                     ($) => $
                                 ),
                             })
                         )
                     ),
-                    'Grootboekrekeningen': _p_cc(
+                    'Grootboekrekeningen': _p_change_context(
                         $['Grootboekrekeningen'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Hoofdcategorie': _p_cc(
+                                'Hoofdcategorie': _p_change_context(
                                     $['Hoofdcategorie'],
                                     ($) => $
                                 ),
-                                'Subcategorie': _p_cc(
+                                'Subcategorie': _p_change_context(
                                     $['Subcategorie'],
                                     ($) => $
                                 ),
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => _p.decide.state(
                                         $,
@@ -247,7 +245,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                     return _p.ss(
                                                         $,
                                                         ($) => ['Kosten', {
-                                                            'Correctie op vennootschapsbelasting': _p_cc(
+                                                            'Correctie op vennootschapsbelasting': _p_change_context(
                                                                 $['Correctie op vennootschapsbelasting'],
                                                                 ($) => _p.decide.state(
                                                                     $,
@@ -257,7 +255,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                 return _p.ss(
                                                                                     $,
                                                                                     ($) => ['Ja', {
-                                                                                        'Correctietype': _p_cc(
+                                                                                        'Correctietype': _p_change_context(
                                                                                             $['Correctietype'],
                                                                                             ($) => $
                                                                                         ),
@@ -294,12 +292,12 @@ export const Root: t_signatures.Root = ($) => ({
                             })
                         )
                     ),
-                    'Hoofdcategorieen': _p_cc(
+                    'Hoofdcategorieen': _p_change_context(
                         $['Hoofdcategorieen'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => _p.decide.state(
                                         $,
@@ -323,16 +321,16 @@ export const Root: t_signatures.Root = ($) => ({
                                         }
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $['Subcategorieen'],
                                     ($) => _p.dictionary.map(
                                         $,
                                         ($, id) => ({
-                                            'Hoofdcategorie fiscus': _p_cc(
+                                            'Hoofdcategorie fiscus': _p_change_context(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => $
                                             ),
-                                            'Subcategorie fiscus': _p_cc(
+                                            'Subcategorie fiscus': _p_change_context(
                                                 $['Subcategorie fiscus'],
                                                 ($) => $
                                             ),
@@ -342,12 +340,12 @@ export const Root: t_signatures.Root = ($) => ({
                             })
                         )
                     ),
-                    'Hoofdcategorieen fiscus': _p_cc(
+                    'Hoofdcategorieen fiscus': _p_change_context(
                         $['Hoofdcategorieen fiscus'],
                         ($) => _p.dictionary.map(
                             $,
                             ($, id) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => _p.decide.state(
                                         $,
@@ -371,7 +369,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         }
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $['Subcategorieen'],
                                     ($) => _p.dictionary.map(
                                         $,
@@ -385,19 +383,19 @@ export const Root: t_signatures.Root = ($) => ({
             ),
         })
     ),
-    'Informele rekeningen': _p_cc(
+    'Informele rekeningen': _p_change_context(
         $['Informele rekeningen'],
         ($) => _p.dictionary.map(
             $,
             ($, id) => null
         )
     ),
-    'Jaren': _p_cc(
+    'Jaren': _p_change_context(
         $['Jaren'],
         ($) => _p.dictionary.map(
             $,
             ($, id) => ({
-                'Afgesloten': _p_cc(
+                'Afgesloten': _p_change_context(
                     $['Afgesloten'],
                     ($) => _p.decide.state(
                         $,
@@ -421,12 +419,12 @@ export const Root: t_signatures.Root = ($) => ({
                         }
                     )
                 ),
-                'Balans grootboekrekeningen': _p_cc(
+                'Balans grootboekrekeningen': _p_change_context(
                     $['Balans grootboekrekeningen'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Type': _p_cc(
+                            'Type': _p_change_context(
                                 $['Type'],
                                 ($) => _p.decide.state(
                                     $,
@@ -458,37 +456,37 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Bankrekeningen': _p_cc(
+                'Bankrekeningen': _p_change_context(
                     $['Bankrekeningen'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Beginsaldo': _p_cc(
+                            'Beginsaldo': _p_change_context(
                                 $['Beginsaldo'],
                                 ($) => $
                             ),
-                            'Grootboekrekening': _p_cc(
+                            'Grootboekrekening': _p_change_context(
                                 $['Grootboekrekening'],
                                 ($) => $
                             ),
-                            'Mutaties': _p_cc(
+                            'Mutaties': _p_change_context(
                                 $['Mutaties'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Bedrag': _p_cc(
+                                        'Bedrag': _p_change_context(
                                             $['Bedrag'],
                                             ($) => $
                                         ),
-                                        'Datum': _p_cc(
+                                        'Datum': _p_change_context(
                                             $['Datum'],
                                             ($) => $
                                         ),
-                                        'Omschrijving': _p_cc(
+                                        'Omschrijving': _p_change_context(
                                             $['Omschrijving'],
                                             ($) => $
                                         ),
-                                        'Status': _p_cc(
+                                        'Status': _p_change_context(
                                             $['Status'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -503,7 +501,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Verwerkt', {
-                                                                    'Afhandeling': _p_cc(
+                                                                    'Afhandeling': _p_change_context(
                                                                         $['Afhandeling'],
                                                                         ($) => _p.decide.state(
                                                                             $,
@@ -513,11 +511,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                         return _p.ss(
                                                                                             $,
                                                                                             ($) => ['Inkoop', {
-                                                                                                'Jaar': _p_cc(
+                                                                                                'Jaar': _p_change_context(
                                                                                                     $['Jaar'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                                'Inkoop': _p_cc(
+                                                                                                'Inkoop': _p_change_context(
                                                                                                     $['Inkoop'],
                                                                                                     ($) => $
                                                                                                 ),
@@ -527,7 +525,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                         return _p.ss(
                                                                                             $,
                                                                                             ($) => ['Verrekenpost', {
-                                                                                                'Verrekenpost': _p_cc(
+                                                                                                'Verrekenpost': _p_change_context(
                                                                                                     $['Verrekenpost'],
                                                                                                     ($) => $
                                                                                                 ),
@@ -537,11 +535,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                         return _p.ss(
                                                                                             $,
                                                                                             ($) => ['BTW-periode', {
-                                                                                                'Jaar': _p_cc(
+                                                                                                'Jaar': _p_change_context(
                                                                                                     $['Jaar'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                                'BTW-periode': _p_cc(
+                                                                                                'BTW-periode': _p_change_context(
                                                                                                     $['BTW-periode'],
                                                                                                     ($) => $
                                                                                                 ),
@@ -551,11 +549,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                         return _p.ss(
                                                                                             $,
                                                                                             ($) => ['Verkoop', {
-                                                                                                'Jaar': _p_cc(
+                                                                                                'Jaar': _p_change_context(
                                                                                                     $['Jaar'],
                                                                                                     ($) => $
                                                                                                 ),
-                                                                                                'Verkoop': _p_cc(
+                                                                                                'Verkoop': _p_change_context(
                                                                                                     $['Verkoop'],
                                                                                                     ($) => $
                                                                                                 ),
@@ -565,7 +563,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                                         return _p.ss(
                                                                                             $,
                                                                                             ($) => ['Informele rekening', {
-                                                                                                'Informele rekening': _p_cc(
+                                                                                                'Informele rekening': _p_change_context(
                                                                                                     $['Informele rekening'],
                                                                                                     ($) => $
                                                                                                 ),
@@ -592,7 +590,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     })
                                 )
                             ),
-                            'Nieuw': _p_cc(
+                            'Nieuw': _p_change_context(
                                 $['Nieuw'],
                                 ($) => _p.decide.state(
                                     $,
@@ -607,11 +605,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Nee', {
-                                                        'Jaar': _p_cc(
+                                                        'Jaar': _p_change_context(
                                                             $['Jaar'],
                                                             ($) => $
                                                         ),
-                                                        'Rekening': _p_cc(
+                                                        'Rekening': _p_change_context(
                                                             $['Rekening'],
                                                             ($) => $
                                                         ),
@@ -628,41 +626,41 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Beginsaldo nog aan te geven BTW': _p_cc(
+                'Beginsaldo nog aan te geven BTW': _p_change_context(
                     $['Beginsaldo nog aan te geven BTW'],
                     ($) => $
                 ),
-                'Beginsaldo winstreserve': _p_cc(
+                'Beginsaldo winstreserve': _p_change_context(
                     $['Beginsaldo winstreserve'],
                     ($) => $
                 ),
-                'BTW periode saldo': _p_cc(
+                'BTW periode saldo': _p_change_context(
                     $['BTW periode saldo'],
                     ($) => ({
-                        'Grootboekrekening': _p_cc(
+                        'Grootboekrekening': _p_change_context(
                             $['Grootboekrekening'],
                             ($) => $
                         ),
                     })
                 ),
-                'BTW periodes': _p_cc(
+                'BTW periodes': _p_change_context(
                     $['BTW periodes'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            '1. BTW-categorieen': _p_cc(
+                            '1. BTW-categorieen': _p_change_context(
                                 $['1. BTW-categorieen'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => null
                                 )
                             ),
-                            'Documenten': _p_cc(
+                            'Documenten': _p_change_context(
                                 $['Documenten'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Bestand': _p_cc(
+                                        'Bestand': _p_change_context(
                                             $['Bestand'],
                                             ($) => Bestandsnaam(
                                                 $
@@ -671,11 +669,11 @@ export const Root: t_signatures.Root = ($) => ({
                                     })
                                 )
                             ),
-                            'Omschrijving': _p_cc(
+                            'Omschrijving': _p_change_context(
                                 $['Omschrijving'],
                                 ($) => $
                             ),
-                            'Status': _p_cc(
+                            'Status': _p_change_context(
                                 $['Status'],
                                 ($) => _p.decide.state(
                                     $,
@@ -685,15 +683,15 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Aangegeven', {
-                                                        'Afronding': _p_cc(
+                                                        'Afronding': _p_change_context(
                                                             $['Afronding'],
                                                             ($) => $
                                                         ),
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $['Bedrag'],
                                                             ($) => $
                                                         ),
-                                                        'Datum': _p_cc(
+                                                        'Datum': _p_change_context(
                                                             $['Datum'],
                                                             ($) => $
                                                         ),
@@ -715,7 +713,7 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Eerste boekjaar': _p_cc(
+                'Eerste boekjaar': _p_change_context(
                     $['Eerste boekjaar'],
                     ($) => _p.decide.state(
                         $,
@@ -730,7 +728,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     return _p.ss(
                                         $,
                                         ($) => ['Nee', {
-                                            'Vorig boekjaar': _p_cc(
+                                            'Vorig boekjaar': _p_change_context(
                                                 $['Vorig boekjaar'],
                                                 ($) => $
                                             ),
@@ -744,36 +742,36 @@ export const Root: t_signatures.Root = ($) => ({
                         }
                     )
                 ),
-                'Grootboekrekening voor BTW afrondingen': _p_cc(
+                'Grootboekrekening voor BTW afrondingen': _p_change_context(
                     $['Grootboekrekening voor BTW afrondingen'],
                     ($) => $
                 ),
-                'Grootboekrekening voor nog aan te geven BTW': _p_cc(
+                'Grootboekrekening voor nog aan te geven BTW': _p_change_context(
                     $['Grootboekrekening voor nog aan te geven BTW'],
                     ($) => $
                 ),
-                'Grootboekrekening voor resultaat dit jaar': _p_cc(
+                'Grootboekrekening voor resultaat dit jaar': _p_change_context(
                     $['Grootboekrekening voor resultaat dit jaar'],
                     ($) => $
                 ),
-                'Grootboekrekening voor winstreserve': _p_cc(
+                'Grootboekrekening voor winstreserve': _p_change_context(
                     $['Grootboekrekening voor winstreserve'],
                     ($) => $
                 ),
-                'Informele rekeningen': _p_cc(
+                'Informele rekeningen': _p_change_context(
                     $['Informele rekeningen'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Beginsaldo': _p_cc(
+                            'Beginsaldo': _p_change_context(
                                 $['Beginsaldo'],
                                 ($) => $
                             ),
-                            'Grootboekrekening': _p_cc(
+                            'Grootboekrekening': _p_change_context(
                                 $['Grootboekrekening'],
                                 ($) => $
                             ),
-                            'Nieuw': _p_cc(
+                            'Nieuw': _p_change_context(
                                 $['Nieuw'],
                                 ($) => _p.decide.state(
                                     $,
@@ -788,11 +786,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Nee', {
-                                                        'Jaar': _p_cc(
+                                                        'Jaar': _p_change_context(
                                                             $['Jaar'],
                                                             ($) => $
                                                         ),
-                                                        'Rekening': _p_cc(
+                                                        'Rekening': _p_change_context(
                                                             $['Rekening'],
                                                             ($) => $
                                                         ),
@@ -809,12 +807,12 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Inkopen': _p_cc(
+                'Inkopen': _p_change_context(
                     $['Inkopen'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Afhandeling': _p_cc(
+                            'Afhandeling': _p_change_context(
                                 $['Afhandeling'],
                                 ($) => _p.decide.state(
                                     $,
@@ -829,7 +827,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Rekening courant', {
-                                                        'Rekening courant': _p_cc(
+                                                        'Rekening courant': _p_change_context(
                                                             $['Rekening courant'],
                                                             ($) => $
                                                         ),
@@ -843,7 +841,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     }
                                 )
                             ),
-                            'BTW-regime': _p_cc(
+                            'BTW-regime': _p_change_context(
                                 $['BTW-regime'],
                                 ($) => _p.decide.state(
                                     $,
@@ -858,7 +856,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Geen BTW van toepassing', {
-                                                        'BTW-periode': _p_cc(
+                                                        'BTW-periode': _p_change_context(
                                                             $['BTW-periode'],
                                                             ($) => $
                                                         ),
@@ -878,7 +876,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Standaard', {
-                                                        'BTW-periode': _p_cc(
+                                                        'BTW-periode': _p_change_context(
                                                             $['BTW-periode'],
                                                             ($) => $
                                                         ),
@@ -892,7 +890,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     }
                                 )
                             ),
-                            'Brondocument': _p_cc(
+                            'Brondocument': _p_change_context(
                                 $['Brondocument'],
                                 ($) => _p.decide.state(
                                     $,
@@ -902,7 +900,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Toegevoegd', {
-                                                        'Document': _p_cc(
+                                                        'Document': _p_change_context(
                                                             $['Document'],
                                                             ($) => Bestandsnaam(
                                                                 $
@@ -933,16 +931,16 @@ export const Root: t_signatures.Root = ($) => ({
                                     }
                                 )
                             ),
-                            'Datum': _p_cc(
+                            'Datum': _p_change_context(
                                 $['Datum'],
                                 ($) => $
                             ),
-                            'Regels': _p_cc(
+                            'Regels': _p_change_context(
                                 $['Regels'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Bedrag': _p_cc(
+                                        'Bedrag': _p_change_context(
                                             $['Bedrag'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -952,11 +950,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Bekend', {
-                                                                    'BTW-bedrag': _p_cc(
+                                                                    'BTW-bedrag': _p_change_context(
                                                                         $['BTW-bedrag'],
                                                                         ($) => $
                                                                     ),
-                                                                    'Bedrag inclusief geheven BTW': _p_cc(
+                                                                    'Bedrag inclusief geheven BTW': _p_change_context(
                                                                         $['Bedrag inclusief geheven BTW'],
                                                                         ($) => $
                                                                     ),
@@ -970,11 +968,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 }
                                             )
                                         ),
-                                        'Omschrijving': _p_cc(
+                                        'Omschrijving': _p_change_context(
                                             $['Omschrijving'],
                                             ($) => $
                                         ),
-                                        'Type': _p_cc(
+                                        'Type': _p_change_context(
                                             $['Type'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -984,7 +982,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Balans', {
-                                                                    'Balans item': _p_cc(
+                                                                    'Balans item': _p_change_context(
                                                                         $['Balans item'],
                                                                         ($) => $
                                                                     ),
@@ -994,7 +992,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Kosten', {
-                                                                    'Grootboekrekening': _p_cc(
+                                                                    'Grootboekrekening': _p_change_context(
                                                                         $['Grootboekrekening'],
                                                                         ($) => $
                                                                     ),
@@ -1011,7 +1009,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     })
                                 )
                             ),
-                            'Type': _p_cc(
+                            'Type': _p_change_context(
                                 $['Type'],
                                 ($) => _p.decide.state(
                                     $,
@@ -1026,11 +1024,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Inkoop (met crediteur)', {
-                                                        'Crediteur': _p_cc(
+                                                        'Crediteur': _p_change_context(
                                                             $['Crediteur'],
                                                             ($) => $
                                                         ),
-                                                        'Factuurnummer': _p_cc(
+                                                        'Factuurnummer': _p_change_context(
                                                             $['Factuurnummer'],
                                                             ($) => $
                                                         ),
@@ -1040,7 +1038,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Loonheffing', {
-                                                        'Ronde': _p_cc(
+                                                        'Ronde': _p_change_context(
                                                             $['Ronde'],
                                                             ($) => $
                                                         ),
@@ -1050,11 +1048,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Salaris', {
-                                                        'Ronde': _p_cc(
+                                                        'Ronde': _p_change_context(
                                                             $['Ronde'],
                                                             ($) => $
                                                         ),
-                                                        'Medewerker': _p_cc(
+                                                        'Medewerker': _p_change_context(
                                                             $['Medewerker'],
                                                             ($) => $
                                                         ),
@@ -1071,53 +1069,53 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Inkoop saldo': _p_cc(
+                'Inkoop saldo': _p_change_context(
                     $['Inkoop saldo'],
                     ($) => ({
-                        'Grootboekrekening': _p_cc(
+                        'Grootboekrekening': _p_change_context(
                             $['Grootboekrekening'],
                             ($) => $
                         ),
                     })
                 ),
-                'Overige balans items': _p_cc(
+                'Overige balans items': _p_change_context(
                     $['Overige balans items'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Beginsaldo': _p_cc(
+                            'Beginsaldo': _p_change_context(
                                 $['Beginsaldo'],
                                 ($) => $
                             ),
-                            'Grootboekrekening': _p_cc(
+                            'Grootboekrekening': _p_change_context(
                                 $['Grootboekrekening'],
                                 ($) => $
                             ),
-                            'Memoriaal boekingen': _p_cc(
+                            'Memoriaal boekingen': _p_change_context(
                                 $['Memoriaal boekingen'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Bedrag': _p_cc(
+                                        'Bedrag': _p_change_context(
                                             $['Bedrag'],
                                             ($) => $
                                         ),
-                                        'Datum': _p_cc(
+                                        'Datum': _p_change_context(
                                             $['Datum'],
                                             ($) => $
                                         ),
-                                        'Grootboekrekening': _p_cc(
+                                        'Grootboekrekening': _p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => $
                                         ),
-                                        'Omschrijving': _p_cc(
+                                        'Omschrijving': _p_change_context(
                                             $['Omschrijving'],
                                             ($) => $
                                         ),
                                     })
                                 )
                             ),
-                            'Nieuw': _p_cc(
+                            'Nieuw': _p_change_context(
                                 $['Nieuw'],
                                 ($) => _p.decide.state(
                                     $,
@@ -1132,11 +1130,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Nee', {
-                                                        'Jaar': _p_cc(
+                                                        'Jaar': _p_change_context(
                                                             $['Jaar'],
                                                             ($) => $
                                                         ),
-                                                        'Balans item': _p_cc(
+                                                        'Balans item': _p_change_context(
                                                             $['Balans item'],
                                                             ($) => $
                                                         ),
@@ -1153,39 +1151,39 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Resultaat grootboekrekeningen': _p_cc(
+                'Resultaat grootboekrekeningen': _p_change_context(
                     $['Resultaat grootboekrekeningen'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => null
                     )
                 ),
-                'Salarisrondes': _p_cc(
+                'Salarisrondes': _p_change_context(
                     $['Salarisrondes'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => null
                     )
                 ),
-                'Startdatum boekjaar': _p_cc(
+                'Startdatum boekjaar': _p_change_context(
                     $['Startdatum boekjaar'],
                     ($) => $
                 ),
-                'Verkoop saldo': _p_cc(
+                'Verkoop saldo': _p_change_context(
                     $['Verkoop saldo'],
                     ($) => ({
-                        'Grootboekrekening': _p_cc(
+                        'Grootboekrekening': _p_change_context(
                             $['Grootboekrekening'],
                             ($) => $
                         ),
                     })
                 ),
-                'Verkopen': _p_cc(
+                'Verkopen': _p_change_context(
                     $['Verkopen'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Afhandeling': _p_cc(
+                            'Afhandeling': _p_change_context(
                                 $['Afhandeling'],
                                 ($) => _p.decide.state(
                                     $,
@@ -1200,7 +1198,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Rekening courant', {
-                                                        'Rekening courant': _p_cc(
+                                                        'Rekening courant': _p_change_context(
                                                             $['Rekening courant'],
                                                             ($) => $
                                                         ),
@@ -1214,15 +1212,15 @@ export const Root: t_signatures.Root = ($) => ({
                                     }
                                 )
                             ),
-                            'Betalingstermijn': _p_cc(
+                            'Betalingstermijn': _p_change_context(
                                 $['Betalingstermijn'],
                                 ($) => $
                             ),
-                            'BTW-periode': _p_cc(
+                            'BTW-periode': _p_change_context(
                                 $['BTW-periode'],
                                 ($) => $
                             ),
-                            'Brondocument': _p_cc(
+                            'Brondocument': _p_change_context(
                                 $['Brondocument'],
                                 ($) => _p.decide.state(
                                     $,
@@ -1232,7 +1230,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Toegevoegd', {
-                                                        'Document': _p_cc(
+                                                        'Document': _p_change_context(
                                                             $['Document'],
                                                             ($) => Bestandsnaam(
                                                                 $
@@ -1248,7 +1246,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     }
                                 )
                             ),
-                            'Contracttype': _p_cc(
+                            'Contracttype': _p_change_context(
                                 $['Contracttype'],
                                 ($) => _p.decide.state(
                                     $,
@@ -1258,11 +1256,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Project', {
-                                                        'Project': _p_cc(
+                                                        'Project': _p_change_context(
                                                             $['Project'],
                                                             ($) => $
                                                         ),
-                                                        'Offerte': _p_cc(
+                                                        'Offerte': _p_change_context(
                                                             $['Offerte'],
                                                             ($) => $
                                                         ),
@@ -1272,7 +1270,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Licentieovereenkomst', {
-                                                        'Overeenkomst': _p_cc(
+                                                        'Overeenkomst': _p_change_context(
                                                             $['Overeenkomst'],
                                                             ($) => $
                                                         ),
@@ -1286,20 +1284,20 @@ export const Root: t_signatures.Root = ($) => ({
                                     }
                                 )
                             ),
-                            'Datum': _p_cc(
+                            'Datum': _p_change_context(
                                 $['Datum'],
                                 ($) => $
                             ),
-                            'Debiteur': _p_cc(
+                            'Debiteur': _p_change_context(
                                 $['Debiteur'],
                                 ($) => $
                             ),
-                            'Regels': _p_cc(
+                            'Regels': _p_change_context(
                                 $['Regels'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'BTW-regime': _p_cc(
+                                        'BTW-regime': _p_change_context(
                                             $['BTW-regime'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -1314,7 +1312,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Standaard', {
-                                                                    'BTW-categorie': _p_cc(
+                                                                    'BTW-categorie': _p_change_context(
                                                                         $['BTW-categorie'],
                                                                         ($) => $
                                                                     ),
@@ -1333,11 +1331,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 }
                                             )
                                         ),
-                                        'Bedrag exclusief BTW': _p_cc(
+                                        'Bedrag exclusief BTW': _p_change_context(
                                             $['Bedrag exclusief BTW'],
                                             ($) => $
                                         ),
-                                        'Contracttype': _p_cc(
+                                        'Contracttype': _p_change_context(
                                             $['Contracttype'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -1347,7 +1345,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Project', {
-                                                                    'Opbrengst': _p_cc(
+                                                                    'Opbrengst': _p_change_context(
                                                                         $['Opbrengst'],
                                                                         ($) => $
                                                                     ),
@@ -1362,7 +1360,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Licentieovereenkomst', {
-                                                                    'Periode': _p_cc(
+                                                                    'Periode': _p_change_context(
                                                                         $['Periode'],
                                                                         ($) => $
                                                                     ),
@@ -1376,11 +1374,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                 }
                                             )
                                         ),
-                                        'Omschrijving': _p_cc(
+                                        'Omschrijving': _p_change_context(
                                             $['Omschrijving'],
                                             ($) => $
                                         ),
-                                        'Type': _p_cc(
+                                        'Type': _p_change_context(
                                             $['Type'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -1390,7 +1388,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Opbrengsten', {
-                                                                    'Grootboekrekening': _p_cc(
+                                                                    'Grootboekrekening': _p_change_context(
                                                                         $['Grootboekrekening'],
                                                                         ($) => $
                                                                     ),
@@ -1400,7 +1398,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Balans', {
-                                                                    'Balans item': _p_cc(
+                                                                    'Balans item': _p_change_context(
                                                                         $['Balans item'],
                                                                         ($) => $
                                                                     ),
@@ -1420,21 +1418,21 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Verrekenposten': _p_cc(
+                'Verrekenposten': _p_change_context(
                     $['Verrekenposten'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Mutaties': _p_cc(
+                            'Mutaties': _p_change_context(
                                 $['Mutaties'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Bedrag': _p_cc(
+                                        'Bedrag': _p_change_context(
                                             $['Bedrag'],
                                             ($) => $
                                         ),
-                                        'Afhandeling': _p_cc(
+                                        'Afhandeling': _p_change_context(
                                             $['Afhandeling'],
                                             ($) => _p.decide.state(
                                                 $,
@@ -1444,11 +1442,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Inkoop', {
-                                                                    'Jaar': _p_cc(
+                                                                    'Jaar': _p_change_context(
                                                                         $['Jaar'],
                                                                         ($) => $
                                                                     ),
-                                                                    'Inkoop': _p_cc(
+                                                                    'Inkoop': _p_change_context(
                                                                         $['Inkoop'],
                                                                         ($) => $
                                                                     ),
@@ -1458,7 +1456,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Informele rekening', {
-                                                                    'Informele rekening': _p_cc(
+                                                                    'Informele rekening': _p_change_context(
                                                                         $['Informele rekening'],
                                                                         ($) => $
                                                                     ),
@@ -1468,11 +1466,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Verkoop', {
-                                                                    'Jaar': _p_cc(
+                                                                    'Jaar': _p_change_context(
                                                                         $['Jaar'],
                                                                         ($) => $
                                                                     ),
-                                                                    'Verkoop': _p_cc(
+                                                                    'Verkoop': _p_change_context(
                                                                         $['Verkoop'],
                                                                         ($) => $
                                                                     ),
@@ -1482,11 +1480,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['BTW-periode', {
-                                                                    'Jaar': _p_cc(
+                                                                    'Jaar': _p_change_context(
                                                                         $['Jaar'],
                                                                         ($) => $
                                                                     ),
-                                                                    'BTW-periode': _p_cc(
+                                                                    'BTW-periode': _p_change_context(
                                                                         $['BTW-periode'],
                                                                         ($) => $
                                                                     ),
@@ -1509,22 +1507,22 @@ export const Root: t_signatures.Root = ($) => ({
             })
         )
     ),
-    'Klanten': _p_cc(
+    'Klanten': _p_change_context(
         $['Klanten'],
         ($) => _p.dictionary.map(
             $,
             ($, id) => ({
-                'Licentieovereenkomsten': _p_cc(
+                'Licentieovereenkomsten': _p_change_context(
                     $['Licentieovereenkomsten'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Periodes': _p_cc(
+                            'Periodes': _p_change_context(
                                 $['Periodes'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Bedrag': _p_cc(
+                                        'Bedrag': _p_change_context(
                                             $['Bedrag'],
                                             ($) => $
                                         ),
@@ -1534,22 +1532,22 @@ export const Root: t_signatures.Root = ($) => ({
                         })
                     )
                 ),
-                'Projecten': _p_cc(
+                'Projecten': _p_change_context(
                     $['Projecten'],
                     ($) => _p.dictionary.map(
                         $,
                         ($, id) => ({
-                            'Offertes': _p_cc(
+                            'Offertes': _p_change_context(
                                 $['Offertes'],
                                 ($) => _p.dictionary.map(
                                     $,
                                     ($, id) => ({
-                                        'Opbrengsten': _p_cc(
+                                        'Opbrengsten': _p_change_context(
                                             $['Opbrengsten'],
                                             ($) => _p.dictionary.map(
                                                 $,
                                                 ($, id) => ({
-                                                    'Type': _p_cc(
+                                                    'Type': _p_change_context(
                                                         $['Type'],
                                                         ($) => _p.decide.state(
                                                             $,
@@ -1559,11 +1557,11 @@ export const Root: t_signatures.Root = ($) => ({
                                                                         return _p.ss(
                                                                             $,
                                                                             ($) => ['Project', {
-                                                                                'Bedrag': _p_cc(
+                                                                                'Bedrag': _p_change_context(
                                                                                     $['Bedrag'],
                                                                                     ($) => $
                                                                                 ),
-                                                                                'Betaaldatum': _p_cc(
+                                                                                'Betaaldatum': _p_change_context(
                                                                                     $['Betaaldatum'],
                                                                                     ($) => $
                                                                                 ),
@@ -1589,14 +1587,14 @@ export const Root: t_signatures.Root = ($) => ({
             })
         )
     ),
-    'Leveranciers': _p_cc(
+    'Leveranciers': _p_change_context(
         $['Leveranciers'],
         ($) => _p.dictionary.map(
             $,
             ($, id) => null
         )
     ),
-    'Medewerkers': _p_cc(
+    'Medewerkers': _p_change_context(
         $['Medewerkers'],
         ($) => _p.dictionary.map(
             $,

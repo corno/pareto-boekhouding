@@ -10,7 +10,7 @@ import * as d_transform_file from "../../../interface/to_be_generated/transform_
 
 //dependencies
 import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refiners/main"
-import * as s_path from "pareto-resources/dist/implementation/manual/schemas/path/serializers"
+import * as t_path_to_text from "pareto-resources/dist/implementation/manual/schemas/path/transformers/text"
 import * as s_transform_file from "../schemas/transform_file/serializers"
 
 

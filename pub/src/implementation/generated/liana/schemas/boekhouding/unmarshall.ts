@@ -1,9 +1,7 @@
 
 import * as _p from "pareto-core/dist/refiner"
 
-import {
-    _p_cc,
-} from "pareto-core/dist/change_context"
+import _p_change_context from "pareto-core/dist/_p_change_context"
 
 import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/unmarshall"
 
@@ -17,7 +15,7 @@ import * as v_unmarshalled_from_parse_tree from "astn-core/dist/implementation/m
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/schemas/parse_tree/transformers/location"
 
-export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
+export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -25,7 +23,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'Balans Hoofdcategorieen': _p_cc(
+        'Balans Hoofdcategorieen': _p_change_context(
             $.__get_entry(
                 'Balans Hoofdcategorieen',
                 ($) => abort(
@@ -47,7 +45,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -55,14 +53,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $.__get_entry(
                                         'Zijde',
                                         ($) => abort(
                                             ['no such entry', "Zijde"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -74,7 +72,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                             ($t): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                 switch ($t) {
                                                     case 'Activa':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -89,7 +87,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                             })
                                                         )
                                                     case 'Passiva':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -112,7 +110,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $.__get_entry(
                                         'Subcategorieen',
                                         ($) => abort(
@@ -150,7 +148,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Resultaat Hoofdcategorieen': _p_cc(
+        'Resultaat Hoofdcategorieen': _p_change_context(
             $.__get_entry(
                 'Resultaat Hoofdcategorieen',
                 ($) => abort(
@@ -172,7 +170,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -180,14 +178,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $.__get_entry(
                                         'Zijde',
                                         ($) => abort(
                                             ['no such entry', "Zijde"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -199,7 +197,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                             ($t): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                 switch ($t) {
                                                     case 'Kosten':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -214,7 +212,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                                             })
                                                         )
                                                     case 'Opbrengsten':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -237,7 +235,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $.__get_entry(
                                         'Subcategorieen',
                                         ($) => abort(
@@ -278,7 +276,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_cc(
     })
 )
 
-export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abort) => _p_cc(
+export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -286,7 +284,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
         )
     ),
     ($) => ({
-        'Correctietypes vennootschapsbelasting': _p_cc(
+        'Correctietypes vennootschapsbelasting': _p_change_context(
             $.__get_entry(
                 'Correctietypes vennootschapsbelasting',
                 ($) => abort(
@@ -308,7 +306,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -316,7 +314,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                 )
                             ),
                             ($) => ({
-                                'Te corrigeren promillage': _p_cc(
+                                'Te corrigeren promillage': _p_change_context(
                                     $.__get_entry(
                                         'Te corrigeren promillage',
                                         ($) => abort(
@@ -341,7 +339,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 ),
             })
         ),
-        'Balans': _p_cc(
+        'Balans': _p_change_context(
             $.__get_entry(
                 'Balans',
                 ($) => abort(
@@ -363,7 +361,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -371,14 +369,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                 )
                             ),
                             ($) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $.__get_entry(
                                         'Zijde',
                                         ($) => abort(
                                             ['no such entry', "Zijde"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -390,7 +388,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                             ($t): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                 switch ($t) {
                                                     case 'Activa':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -405,7 +403,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                             })
                                                         )
                                                     case 'Passiva':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -428,7 +426,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         )
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $.__get_entry(
                                         'Subcategorieen',
                                         ($) => abort(
@@ -450,7 +448,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'l entry': _p_cc(
+                                                'l entry': _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -458,7 +456,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Hoofdcategorie fiscus': _p_cc(
+                                                        'Hoofdcategorie fiscus': _p_change_context(
                                                             $.__get_entry(
                                                                 'Hoofdcategorie fiscus',
                                                                 ($) => abort(
@@ -477,7 +475,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 ),
                                                             })
                                                         ),
-                                                        'Subcategorie fiscus': _p_cc(
+                                                        'Subcategorie fiscus': _p_change_context(
                                                             $.__get_entry(
                                                                 'Subcategorie fiscus',
                                                                 ($) => abort(
@@ -508,7 +506,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 ),
             })
         ),
-        'Resultaat': _p_cc(
+        'Resultaat': _p_change_context(
             $.__get_entry(
                 'Resultaat',
                 ($) => abort(
@@ -530,7 +528,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -538,14 +536,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                 )
                             ),
                             ($) => ({
-                                'Zijde': _p_cc(
+                                'Zijde': _p_change_context(
                                     $.__get_entry(
                                         'Zijde',
                                         ($) => abort(
                                             ['no such entry', "Zijde"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -557,7 +555,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                             ($t): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                 switch ($t) {
                                                     case 'Kosten':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -572,7 +570,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                             })
                                                         )
                                                     case 'Opbrengsten':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -595,7 +593,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         )
                                     )
                                 ),
-                                'Subcategorieen': _p_cc(
+                                'Subcategorieen': _p_change_context(
                                     $.__get_entry(
                                         'Subcategorieen',
                                         ($) => abort(
@@ -617,7 +615,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'l entry': _p_cc(
+                                                'l entry': _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -625,7 +623,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Hoofdcategorie fiscus': _p_cc(
+                                                        'Hoofdcategorie fiscus': _p_change_context(
                                                             $.__get_entry(
                                                                 'Hoofdcategorie fiscus',
                                                                 ($) => abort(
@@ -644,7 +642,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 ),
                                                             })
                                                         ),
-                                                        'Subcategorie fiscus': _p_cc(
+                                                        'Subcategorie fiscus': _p_change_context(
                                                             $.__get_entry(
                                                                 'Subcategorie fiscus',
                                                                 ($) => abort(
@@ -678,7 +676,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
     })
 )
 
-export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
+export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -686,7 +684,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'BTW-categorieen': _p_cc(
+        'BTW-categorieen': _p_change_context(
             $.__get_entry(
                 'BTW-categorieen',
                 ($) => abort(
@@ -708,7 +706,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -716,14 +714,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'BTW-heffing': _p_cc(
+                                'BTW-heffing': _p_change_context(
                                     $.__get_entry(
                                         'BTW-heffing',
                                         ($) => abort(
                                             ['no such entry', "BTW-heffing"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -735,13 +733,13 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                             ($t): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
                                                 switch ($t) {
                                                     case 'Ja':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Ja', _p_cc(
+                                                                'l state': ['Ja', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -749,7 +747,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'BTW-promillage': _p_cc(
+                                                                        'BTW-promillage': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'BTW-promillage',
                                                                                 ($) => abort(
@@ -787,14 +785,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Grootboekrekeningen': _p_cc(
+        'Grootboekrekeningen': _p_change_context(
             $.__get_entry(
                 'Grootboekrekeningen',
                 ($) => abort(
                     ['no such entry', "Grootboekrekeningen"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -802,7 +800,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                     )
                 ),
                 ($) => ({
-                    'Balans': _p_cc(
+                    'Balans': _p_change_context(
                         $.__get_entry(
                             'Balans',
                             ($) => abort(
@@ -824,7 +822,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -832,7 +830,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'Hoofdcategorie': _p_cc(
+                                            'Hoofdcategorie': _p_change_context(
                                                 $.__get_entry(
                                                     'Hoofdcategorie',
                                                     ($) => abort(
@@ -851,7 +849,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Subcategorie': _p_cc(
+                                            'Subcategorie': _p_change_context(
                                                 $.__get_entry(
                                                     'Subcategorie',
                                                     ($) => abort(
@@ -870,14 +868,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Zijde': _p_cc(
+                                            'Zijde': _p_change_context(
                                                 $.__get_entry(
                                                     'Zijde',
                                                     ($) => abort(
                                                         ['no such entry', "Zijde"]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.State(
                                                         $,
                                                         ($) => abort(
@@ -889,7 +887,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                         ($t): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                             switch ($t) {
                                                                 case 'Activa':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -904,7 +902,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         })
                                                                     )
                                                                 case 'Passiva':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -933,7 +931,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Resultaat': _p_cc(
+                    'Resultaat': _p_change_context(
                         $.__get_entry(
                             'Resultaat',
                             ($) => abort(
@@ -955,7 +953,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -963,7 +961,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'Hoofdcategorie': _p_cc(
+                                            'Hoofdcategorie': _p_change_context(
                                                 $.__get_entry(
                                                     'Hoofdcategorie',
                                                     ($) => abort(
@@ -982,7 +980,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Subcategorie': _p_cc(
+                                            'Subcategorie': _p_change_context(
                                                 $.__get_entry(
                                                     'Subcategorie',
                                                     ($) => abort(
@@ -1001,14 +999,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Zijde': _p_cc(
+                                            'Zijde': _p_change_context(
                                                 $.__get_entry(
                                                     'Zijde',
                                                     ($) => abort(
                                                         ['no such entry', "Zijde"]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.State(
                                                         $,
                                                         ($) => abort(
@@ -1020,13 +1018,13 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                         ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                             switch ($t) {
                                                                 case 'Kosten':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'l state': ['Kosten', _p_cc(
+                                                                            'l state': ['Kosten', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -1034,14 +1032,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                     )
                                                                                 ),
                                                                                 ($) => ({
-                                                                                    'Correctie op vennootschapsbelasting': _p_cc(
+                                                                                    'Correctie op vennootschapsbelasting': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Correctie op vennootschapsbelasting',
                                                                                             ($) => abort(
                                                                                                 ['no such entry', "Correctie op vennootschapsbelasting"]
                                                                                             )
                                                                                         ),
-                                                                                        ($) => _p_cc(
+                                                                                        ($) => _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.State(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -1053,13 +1051,13 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                 ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                     switch ($t) {
                                                                                                         case 'Ja':
-                                                                                                            return _p_cc(
+                                                                                                            return _p_change_context(
                                                                                                                 $['value'],
                                                                                                                 ($) => ({
                                                                                                                     'l location': v_parse_tree_to_location.Value(
                                                                                                                         $
                                                                                                                     )['start']['relative'],
-                                                                                                                    'l state': ['Ja', _p_cc(
+                                                                                                                    'l state': ['Ja', _p_change_context(
                                                                                                                         v_unmarshalled_from_parse_tree.Group(
                                                                                                                             $,
                                                                                                                             ($) => abort(
@@ -1067,7 +1065,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                             )
                                                                                                                         ),
                                                                                                                         ($) => ({
-                                                                                                                            'Correctietype': _p_cc(
+                                                                                                                            'Correctietype': _p_change_context(
                                                                                                                                 $.__get_entry(
                                                                                                                                     'Correctietype',
                                                                                                                                     ($) => abort(
@@ -1091,7 +1089,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                 })
                                                                                                             )
                                                                                                         case 'Nee':
-                                                                                                            return _p_cc(
+                                                                                                            return _p_change_context(
                                                                                                                 $['value'],
                                                                                                                 ($) => ({
                                                                                                                     'l location': v_parse_tree_to_location.Value(
@@ -1119,7 +1117,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         })
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -1151,14 +1149,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 })
             )
         ),
-        'Rekeningen': _p_cc(
+        'Rekeningen': _p_change_context(
             $.__get_entry(
                 'Rekeningen',
                 ($) => abort(
                     ['no such entry', "Rekeningen"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -1166,7 +1164,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                     )
                 ),
                 ($) => ({
-                    'Bank': _p_cc(
+                    'Bank': _p_change_context(
                         $.__get_entry(
                             'Bank',
                             ($) => abort(
@@ -1198,7 +1196,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Informeel': _p_cc(
+                    'Informeel': _p_change_context(
                         $.__get_entry(
                             'Informeel',
                             ($) => abort(
@@ -1233,7 +1231,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 })
             )
         ),
-        'Gebruikers': _p_cc(
+        'Gebruikers': _p_change_context(
             $.__get_entry(
                 'Gebruikers',
                 ($) => abort(
@@ -1255,7 +1253,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -1263,7 +1261,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'Volledige naam': _p_cc(
+                                'Volledige naam': _p_change_context(
                                     $.__get_entry(
                                         'Volledige naam',
                                         ($) => abort(
@@ -1277,7 +1275,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                         )
                                     )
                                 ),
-                                'Wachtwoord': _p_cc(
+                                'Wachtwoord': _p_change_context(
                                     $.__get_entry(
                                         'Wachtwoord',
                                         ($) => abort(
@@ -1297,7 +1295,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Klanten': _p_cc(
+        'Klanten': _p_change_context(
             $.__get_entry(
                 'Klanten',
                 ($) => abort(
@@ -1319,7 +1317,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -1327,7 +1325,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                 )
                             ),
                             ($) => ({
-                                'Licentieovereenkomsten': _p_cc(
+                                'Licentieovereenkomsten': _p_change_context(
                                     $.__get_entry(
                                         'Licentieovereenkomsten',
                                         ($) => abort(
@@ -1349,7 +1347,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'l entry': _p_cc(
+                                                'l entry': _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1357,7 +1355,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Periodes': _p_cc(
+                                                        'Periodes': _p_change_context(
                                                             $.__get_entry(
                                                                 'Periodes',
                                                                 ($) => abort(
@@ -1379,7 +1377,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         'l location': v_parse_tree_to_location.Value(
                                                                             $
                                                                         )['start']['relative'],
-                                                                        'l entry': _p_cc(
+                                                                        'l entry': _p_change_context(
                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                 $,
                                                                                 ($) => abort(
@@ -1387,7 +1385,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                 )
                                                                             ),
                                                                             ($) => ({
-                                                                                'Bedrag': _p_cc(
+                                                                                'Bedrag': _p_change_context(
                                                                                     $.__get_entry(
                                                                                         'Bedrag',
                                                                                         ($) => abort(
@@ -1418,7 +1416,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                         ),
                                     })
                                 ),
-                                'Projecten': _p_cc(
+                                'Projecten': _p_change_context(
                                     $.__get_entry(
                                         'Projecten',
                                         ($) => abort(
@@ -1440,7 +1438,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'l entry': _p_cc(
+                                                'l entry': _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -1448,7 +1446,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Offertes': _p_cc(
+                                                        'Offertes': _p_change_context(
                                                             $.__get_entry(
                                                                 'Offertes',
                                                                 ($) => abort(
@@ -1470,7 +1468,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                         'l location': v_parse_tree_to_location.Value(
                                                                             $
                                                                         )['start']['relative'],
-                                                                        'l entry': _p_cc(
+                                                                        'l entry': _p_change_context(
                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                 $,
                                                                                 ($) => abort(
@@ -1478,7 +1476,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                 )
                                                                             ),
                                                                             ($) => ({
-                                                                                'Opbrengsten': _p_cc(
+                                                                                'Opbrengsten': _p_change_context(
                                                                                     $.__get_entry(
                                                                                         'Opbrengsten',
                                                                                         ($) => abort(
@@ -1500,7 +1498,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                 'l location': v_parse_tree_to_location.Value(
                                                                                                     $
                                                                                                 )['start']['relative'],
-                                                                                                'l entry': _p_cc(
+                                                                                                'l entry': _p_change_context(
                                                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                                                         $,
                                                                                                         ($) => abort(
@@ -1508,14 +1506,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                         )
                                                                                                     ),
                                                                                                     ($) => ({
-                                                                                                        'Type': _p_cc(
+                                                                                                        'Type': _p_change_context(
                                                                                                             $.__get_entry(
                                                                                                                 'Type',
                                                                                                                 ($) => abort(
                                                                                                                     ['no such entry', "Type"]
                                                                                                                 )
                                                                                                             ),
-                                                                                                            ($) => _p_cc(
+                                                                                                            ($) => _p_change_context(
                                                                                                                 v_unmarshalled_from_parse_tree.State(
                                                                                                                     $,
                                                                                                                     ($) => abort(
@@ -1527,13 +1525,13 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                     ($t): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
                                                                                                                         switch ($t) {
                                                                                                                             case 'Project':
-                                                                                                                                return _p_cc(
+                                                                                                                                return _p_change_context(
                                                                                                                                     $['value'],
                                                                                                                                     ($) => ({
                                                                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                                                                             $
                                                                                                                                         )['start']['relative'],
-                                                                                                                                        'l state': ['Project', _p_cc(
+                                                                                                                                        'l state': ['Project', _p_change_context(
                                                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                                                 $,
                                                                                                                                                 ($) => abort(
@@ -1541,7 +1539,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                                                 )
                                                                                                                                             ),
                                                                                                                                             ($) => ({
-                                                                                                                                                'Bedrag': _p_cc(
+                                                                                                                                                'Bedrag': _p_change_context(
                                                                                                                                                     $.__get_entry(
                                                                                                                                                         'Bedrag',
                                                                                                                                                         ($) => abort(
@@ -1560,7 +1558,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                                                                                                                                                         )
                                                                                                                                                     )
                                                                                                                                                 ),
-                                                                                                                                                'Betaaldatum': _p_cc(
+                                                                                                                                                'Betaaldatum': _p_change_context(
                                                                                                                                                     $.__get_entry(
                                                                                                                                                         'Betaaldatum',
                                                                                                                                                         ($) => abort(
@@ -1616,7 +1614,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Leveranciers': _p_cc(
+        'Leveranciers': _p_change_context(
             $.__get_entry(
                 'Leveranciers',
                 ($) => abort(
@@ -1648,7 +1646,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Medewerkers': _p_cc(
+        'Medewerkers': _p_change_context(
             $.__get_entry(
                 'Medewerkers',
                 ($) => abort(
@@ -1683,7 +1681,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_cc(
     })
 )
 
-export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) => _p_cc(
+export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -1691,7 +1689,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
         )
     ),
     ($) => ({
-        'Balans': _p_cc(
+        'Balans': _p_change_context(
             $.__get_entry(
                 'Balans',
                 ($) => abort(
@@ -1713,7 +1711,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -1721,14 +1719,14 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                 )
                             ),
                             ($) => ({
-                                'Type': _p_cc(
+                                'Type': _p_change_context(
                                     $.__get_entry(
                                         'Type',
                                         ($) => abort(
                                             ['no such entry', "Type"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -1740,7 +1738,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                             ($t): t_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
                                                 switch ($t) {
                                                     case 'Bankrekening':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -1755,7 +1753,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                             })
                                                         )
                                                     case 'Overig':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -1770,7 +1768,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                             })
                                                         )
                                                     case 'Informele rekening':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -1799,7 +1797,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                 ),
             })
         ),
-        'Resultaat': _p_cc(
+        'Resultaat': _p_change_context(
             $.__get_entry(
                 'Resultaat',
                 ($) => abort(
@@ -1834,7 +1832,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
     })
 )
 
-export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
+export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -1842,14 +1840,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'Resultaat': _p_cc(
+        'Resultaat': _p_change_context(
             $.__get_entry(
                 'Resultaat',
                 ($) => abort(
                     ['no such entry', "Resultaat"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -1857,7 +1855,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                     )
                 ),
                 ($) => ({
-                    'Grootboekrekening voor BTW afrondingen': _p_cc(
+                    'Grootboekrekening voor BTW afrondingen': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekening voor BTW afrondingen',
                             ($) => abort(
@@ -1876,7 +1874,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Salarisrondes': _p_cc(
+                    'Salarisrondes': _p_change_context(
                         $.__get_entry(
                             'Salarisrondes',
                             ($) => abort(
@@ -1908,7 +1906,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'BTW periodes': _p_cc(
+                    'BTW periodes': _p_change_context(
                         $.__get_entry(
                             'BTW periodes',
                             ($) => abort(
@@ -1930,7 +1928,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -1938,7 +1936,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            '1. BTW-categorieen': _p_cc(
+                                            '1. BTW-categorieen': _p_change_context(
                                                 $.__get_entry(
                                                     '1. BTW-categorieen',
                                                     ($) => abort(
@@ -1970,7 +1968,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Documenten': _p_cc(
+                                            'Documenten': _p_change_context(
                                                 $.__get_entry(
                                                     'Documenten',
                                                     ($) => abort(
@@ -1992,7 +1990,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                             'l location': v_parse_tree_to_location.Value(
                                                                 $
                                                             )['start']['relative'],
-                                                            'l entry': _p_cc(
+                                                            'l entry': _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                     $,
                                                                     ($) => abort(
@@ -2000,7 +1998,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                     )
                                                                 ),
                                                                 ($) => ({
-                                                                    'Bestand': _p_cc(
+                                                                    'Bestand': _p_change_context(
                                                                         $.__get_entry(
                                                                             'Bestand',
                                                                             ($) => abort(
@@ -2020,7 +2018,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Omschrijving': _p_cc(
+                                            'Omschrijving': _p_change_context(
                                                 $.__get_entry(
                                                     'Omschrijving',
                                                     ($) => abort(
@@ -2034,14 +2032,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Status': _p_cc(
+                                            'Status': _p_change_context(
                                                 $.__get_entry(
                                                     'Status',
                                                     ($) => abort(
                                                         ['no such entry', "Status"]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.State(
                                                         $,
                                                         ($) => abort(
@@ -2053,13 +2051,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                         ($t): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
                                                             switch ($t) {
                                                                 case 'Aangegeven':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'l state': ['Aangegeven', _p_cc(
+                                                                            'l state': ['Aangegeven', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -2067,7 +2065,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                                     )
                                                                                 ),
                                                                                 ($) => ({
-                                                                                    'Afronding': _p_cc(
+                                                                                    'Afronding': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Afronding',
                                                                                             ($) => abort(
@@ -2086,7 +2084,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                                             )
                                                                                         )
                                                                                     ),
-                                                                                    'Bedrag': _p_cc(
+                                                                                    'Bedrag': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Bedrag',
                                                                                             ($) => abort(
@@ -2105,7 +2103,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                                             )
                                                                                         )
                                                                                     ),
-                                                                                    'Datum': _p_cc(
+                                                                                    'Datum': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Datum',
                                                                                             ($) => abort(
@@ -2129,7 +2127,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                         })
                                                                     )
                                                                 case 'Openstaand':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -2161,14 +2159,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                 })
             )
         ),
-        'Balans': _p_cc(
+        'Balans': _p_change_context(
             $.__get_entry(
                 'Balans',
                 ($) => abort(
                     ['no such entry', "Balans"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -2176,7 +2174,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                     )
                 ),
                 ($) => ({
-                    'Grootboekrekening voor nog aan te geven BTW': _p_cc(
+                    'Grootboekrekening voor nog aan te geven BTW': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekening voor nog aan te geven BTW',
                             ($) => abort(
@@ -2195,7 +2193,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Grootboekrekening voor resultaat dit jaar': _p_cc(
+                    'Grootboekrekening voor resultaat dit jaar': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekening voor resultaat dit jaar',
                             ($) => abort(
@@ -2214,7 +2212,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Grootboekrekening voor winstreserve': _p_cc(
+                    'Grootboekrekening voor winstreserve': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekening voor winstreserve',
                             ($) => abort(
@@ -2233,7 +2231,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Grootboekrekening voor Inkoop saldo': _p_cc(
+                    'Grootboekrekening voor Inkoop saldo': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekening voor Inkoop saldo',
                             ($) => abort(
@@ -2252,7 +2250,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Grootboekrekening voor Verkoop saldo': _p_cc(
+                    'Grootboekrekening voor Verkoop saldo': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekening voor Verkoop saldo',
                             ($) => abort(
@@ -2271,7 +2269,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Beginsaldo nog aan te geven BTW': _p_cc(
+                    'Beginsaldo nog aan te geven BTW': _p_change_context(
                         $.__get_entry(
                             'Beginsaldo nog aan te geven BTW',
                             ($) => abort(
@@ -2290,7 +2288,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             )
                         )
                     ),
-                    'Beginsaldo winstreserve': _p_cc(
+                    'Beginsaldo winstreserve': _p_change_context(
                         $.__get_entry(
                             'Beginsaldo winstreserve',
                             ($) => abort(
@@ -2309,7 +2307,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             )
                         )
                     ),
-                    'Informele rekeningen': _p_cc(
+                    'Informele rekeningen': _p_change_context(
                         $.__get_entry(
                             'Informele rekeningen',
                             ($) => abort(
@@ -2331,7 +2329,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -2339,7 +2337,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'Beginsaldo': _p_cc(
+                                            'Beginsaldo': _p_change_context(
                                                 $.__get_entry(
                                                     'Beginsaldo',
                                                     ($) => abort(
@@ -2358,7 +2356,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Grootboekrekening': _p_cc(
+                                            'Grootboekrekening': _p_change_context(
                                                 $.__get_entry(
                                                     'Grootboekrekening',
                                                     ($) => abort(
@@ -2377,14 +2375,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Nieuw': _p_cc(
+                                            'Nieuw': _p_change_context(
                                                 $.__get_entry(
                                                     'Nieuw',
                                                     ($) => abort(
                                                         ['no such entry', "Nieuw"]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.State(
                                                         $,
                                                         ($) => abort(
@@ -2396,7 +2394,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                         ($t): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                             switch ($t) {
                                                                 case 'Ja':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -2411,13 +2409,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                         })
                                                                     )
                                                                 case 'Nee':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'l state': ['Nee', _p_cc(
+                                                                            'l state': ['Nee', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -2425,7 +2423,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                                     )
                                                                                 ),
                                                                                 ($) => ({
-                                                                                    'Rekening': _p_cc(
+                                                                                    'Rekening': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Rekening',
                                                                                             ($) => abort(
@@ -2458,7 +2456,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Bankrekeningen': _p_cc(
+                    'Bankrekeningen': _p_change_context(
                         $.__get_entry(
                             'Bankrekeningen',
                             ($) => abort(
@@ -2480,7 +2478,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -2488,7 +2486,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'Beginsaldo': _p_cc(
+                                            'Beginsaldo': _p_change_context(
                                                 $.__get_entry(
                                                     'Beginsaldo',
                                                     ($) => abort(
@@ -2507,7 +2505,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Grootboekrekening': _p_cc(
+                                            'Grootboekrekening': _p_change_context(
                                                 $.__get_entry(
                                                     'Grootboekrekening',
                                                     ($) => abort(
@@ -2526,14 +2524,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     ),
                                                 })
                                             ),
-                                            'Nieuw': _p_cc(
+                                            'Nieuw': _p_change_context(
                                                 $.__get_entry(
                                                     'Nieuw',
                                                     ($) => abort(
                                                         ['no such entry', "Nieuw"]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.State(
                                                         $,
                                                         ($) => abort(
@@ -2545,7 +2543,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                         ($t): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                             switch ($t) {
                                                                 case 'Ja':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -2560,13 +2558,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                         })
                                                                     )
                                                                 case 'Nee':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'l state': ['Nee', _p_cc(
+                                                                            'l state': ['Nee', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                     $,
                                                                                     ($) => abort(
@@ -2574,7 +2572,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                                     )
                                                                                 ),
                                                                                 ($) => ({
-                                                                                    'Rekening': _p_cc(
+                                                                                    'Rekening': _p_change_context(
                                                                                         $.__get_entry(
                                                                                             'Rekening',
                                                                                             ($) => abort(
@@ -2601,7 +2599,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Mutaties': _p_cc(
+                                            'Mutaties': _p_change_context(
                                                 $.__get_entry(
                                                     'Mutaties',
                                                     ($) => abort(
@@ -2623,7 +2621,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                             'l location': v_parse_tree_to_location.Value(
                                                                 $
                                                             )['start']['relative'],
-                                                            'l entry': _p_cc(
+                                                            'l entry': _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                     $,
                                                                     ($) => abort(
@@ -2631,7 +2629,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                     )
                                                                 ),
                                                                 ($) => ({
-                                                                    'Bedrag': _p_cc(
+                                                                    'Bedrag': _p_change_context(
                                                                         $.__get_entry(
                                                                             'Bedrag',
                                                                             ($) => abort(
@@ -2650,7 +2648,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             )
                                                                         )
                                                                     ),
-                                                                    'Datum': _p_cc(
+                                                                    'Datum': _p_change_context(
                                                                         $.__get_entry(
                                                                             'Datum',
                                                                             ($) => abort(
@@ -2669,7 +2667,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                                                                             )
                                                                         )
                                                                     ),
-                                                                    'Omschrijving': _p_cc(
+                                                                    'Omschrijving': _p_change_context(
                                                                         $.__get_entry(
                                                                             'Omschrijving',
                                                                             ($) => abort(
@@ -2695,7 +2693,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Overige balans items': _p_cc(
+                    'Overige balans items': _p_change_context(
                         $.__get_entry(
                             'Overige balans items',
                             ($) => abort(
@@ -2727,7 +2725,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
                             ),
                         })
                     ),
-                    'Verrekenposten': _p_cc(
+                    'Verrekenposten': _p_change_context(
                         $.__get_entry(
                             'Verrekenposten',
                             ($) => abort(
@@ -2765,7 +2763,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_cc(
     })
 )
 
-export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) => _p_cc(
+export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -2773,7 +2771,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
         )
     ),
     ($) => ({
-        'Beginsaldo': _p_cc(
+        'Beginsaldo': _p_change_context(
             $.__get_entry(
                 'Beginsaldo',
                 ($) => abort(
@@ -2792,7 +2790,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                 )
             )
         ),
-        'Grootboekrekening': _p_cc(
+        'Grootboekrekening': _p_change_context(
             $.__get_entry(
                 'Grootboekrekening',
                 ($) => abort(
@@ -2811,14 +2809,14 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                 ),
             })
         ),
-        'Nieuw': _p_cc(
+        'Nieuw': _p_change_context(
             $.__get_entry(
                 'Nieuw',
                 ($) => abort(
                     ['no such entry', "Nieuw"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.State(
                     $,
                     ($) => abort(
@@ -2830,7 +2828,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                     ($t): t_out.Overige_balans_item.Nieuw => {
                         switch ($t) {
                             case 'Ja':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
                                     ($) => ({
                                         'l location': v_parse_tree_to_location.Value(
@@ -2845,13 +2843,13 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                                     })
                                 )
                             case 'Nee':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
                                     ($) => ({
                                         'l location': v_parse_tree_to_location.Value(
                                             $
                                         )['start']['relative'],
-                                        'l state': ['Nee', _p_cc(
+                                        'l state': ['Nee', _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
                                                 ($) => abort(
@@ -2859,7 +2857,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                                                 )
                                             ),
                                             ($) => ({
-                                                'Balans item': _p_cc(
+                                                'Balans item': _p_change_context(
                                                     $.__get_entry(
                                                         'Balans item',
                                                         ($) => abort(
@@ -2918,7 +2916,7 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
     ),
 })
 
-export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) => _p_cc(
+export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -2926,7 +2924,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
         )
     ),
     ($) => ({
-        'Inkopen': _p_cc(
+        'Inkopen': _p_change_context(
             $.__get_entry(
                 'Inkopen',
                 ($) => abort(
@@ -2948,7 +2946,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -2956,14 +2954,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                 )
                             ),
                             ($) => ({
-                                'Afhandeling': _p_cc(
+                                'Afhandeling': _p_change_context(
                                     $.__get_entry(
                                         'Afhandeling',
                                         ($) => abort(
                                             ['no such entry', "Afhandeling"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -2975,7 +2973,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                 switch ($t) {
                                                     case 'Mutaties':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -2990,13 +2988,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Rekening courant':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Rekening courant', _p_cc(
+                                                                'l state': ['Rekening courant', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3004,7 +3002,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Rekening courant': _p_cc(
+                                                                        'Rekening courant': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Rekening courant',
                                                                                 ($) => abort(
@@ -3036,14 +3034,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'BTW-regime': _p_cc(
+                                'BTW-regime': _p_change_context(
                                     $.__get_entry(
                                         'BTW-regime',
                                         ($) => abort(
                                             ['no such entry', "BTW-regime"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -3055,7 +3053,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
                                                 switch ($t) {
                                                     case 'Binnenland: heffing verlegd':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3070,7 +3068,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Geen BTW van toepassing':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3085,7 +3083,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Import van buiten de EU':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3100,7 +3098,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Intracommunautair':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3115,13 +3113,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Standaard':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Standaard', _p_cc(
+                                                                'l state': ['Standaard', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3129,7 +3127,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'BTW-periode': _p_cc(
+                                                                        'BTW-periode': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'BTW-periode',
                                                                                 ($) => abort(
@@ -3161,14 +3159,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Brondocument': _p_cc(
+                                'Brondocument': _p_change_context(
                                     $.__get_entry(
                                         'Brondocument',
                                         ($) => abort(
                                             ['no such entry', "Brondocument"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -3180,13 +3178,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
                                                 switch ($t) {
                                                     case 'Toegevoegd':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Toegevoegd', _p_cc(
+                                                                'l state': ['Toegevoegd', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3194,7 +3192,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Document': _p_cc(
+                                                                        'Document': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Document',
                                                                                 ($) => abort(
@@ -3213,7 +3211,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Niet van toepassing':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3228,7 +3226,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Ontbreekt':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3251,7 +3249,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Datum': _p_cc(
+                                'Datum': _p_change_context(
                                     $.__get_entry(
                                         'Datum',
                                         ($) => abort(
@@ -3270,7 +3268,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Regels': _p_cc(
+                                'Regels': _p_change_context(
                                     $.__get_entry(
                                         'Regels',
                                         ($) => abort(
@@ -3292,7 +3290,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'l entry': _p_cc(
+                                                'l entry': _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -3300,14 +3298,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'Bedrag': _p_cc(
+                                                        'Bedrag': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -3319,13 +3317,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                     ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                                                                         switch ($t) {
                                                                             case 'Bekend':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Bekend', _p_cc(
+                                                                                        'l state': ['Bekend', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -3333,7 +3331,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'BTW-bedrag': _p_cc(
+                                                                                                'BTW-bedrag': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'BTW-bedrag',
                                                                                                         ($) => abort(
@@ -3352,7 +3350,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                         )
                                                                                                     )
                                                                                                 ),
-                                                                                                'Bedrag inclusief geheven BTW': _p_cc(
+                                                                                                'Bedrag inclusief geheven BTW': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Bedrag inclusief geheven BTW',
                                                                                                         ($) => abort(
@@ -3384,7 +3382,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'Omschrijving': _p_cc(
+                                                        'Omschrijving': _p_change_context(
                                                             $.__get_entry(
                                                                 'Omschrijving',
                                                                 ($) => abort(
@@ -3398,14 +3396,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'Type': _p_cc(
+                                                        'Type': _p_change_context(
                                                             $.__get_entry(
                                                                 'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -3417,13 +3415,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                     ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                         switch ($t) {
                                                                             case 'Balans':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Balans', _p_cc(
+                                                                                        'l state': ['Balans', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -3431,7 +3429,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'Balans item': _p_cc(
+                                                                                                'Balans item': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Balans item',
                                                                                                         ($) => abort(
@@ -3455,13 +3453,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                     })
                                                                                 )
                                                                             case 'Kosten':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Kosten', _p_cc(
+                                                                                        'l state': ['Kosten', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -3469,7 +3467,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'Grootboekrekening': _p_cc(
+                                                                                                'Grootboekrekening': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Grootboekrekening',
                                                                                                         ($) => abort(
@@ -3507,14 +3505,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                     })
                                 ),
-                                'Type': _p_cc(
+                                'Type': _p_change_context(
                                     $.__get_entry(
                                         'Type',
                                         ($) => abort(
                                             ['no such entry', "Type"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -3526,7 +3524,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type => {
                                                 switch ($t) {
                                                     case 'Bonnetje':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3541,13 +3539,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Inkoop (met crediteur)':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Inkoop (met crediteur)', _p_cc(
+                                                                'l state': ['Inkoop (met crediteur)', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3555,7 +3553,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Crediteur': _p_cc(
+                                                                        'Crediteur': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Crediteur',
                                                                                 ($) => abort(
@@ -3574,7 +3572,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 ),
                                                                             })
                                                                         ),
-                                                                        'Factuurnummer': _p_cc(
+                                                                        'Factuurnummer': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Factuurnummer',
                                                                                 ($) => abort(
@@ -3593,13 +3591,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Loonheffing':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Loonheffing', _p_cc(
+                                                                'l state': ['Loonheffing', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3607,7 +3605,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Ronde': _p_cc(
+                                                                        'Ronde': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Ronde',
                                                                                 ($) => abort(
@@ -3631,13 +3629,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Salaris':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Salaris', _p_cc(
+                                                                'l state': ['Salaris', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3645,7 +3643,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Ronde': _p_cc(
+                                                                        'Ronde': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Ronde',
                                                                                 ($) => abort(
@@ -3664,7 +3662,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 ),
                                                                             })
                                                                         ),
-                                                                        'Medewerker': _p_cc(
+                                                                        'Medewerker': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Medewerker',
                                                                                 ($) => abort(
@@ -3702,7 +3700,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                 ),
             })
         ),
-        'Verkopen': _p_cc(
+        'Verkopen': _p_change_context(
             $.__get_entry(
                 'Verkopen',
                 ($) => abort(
@@ -3724,7 +3722,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                         'l location': v_parse_tree_to_location.Value(
                             $
                         )['start']['relative'],
-                        'l entry': _p_cc(
+                        'l entry': _p_change_context(
                             v_unmarshalled_from_parse_tree.Group(
                                 $,
                                 ($) => abort(
@@ -3732,14 +3730,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                 )
                             ),
                             ($) => ({
-                                'Afhandeling': _p_cc(
+                                'Afhandeling': _p_change_context(
                                     $.__get_entry(
                                         'Afhandeling',
                                         ($) => abort(
                                             ['no such entry', "Afhandeling"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -3751,7 +3749,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                 switch ($t) {
                                                     case 'Mutaties':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -3766,13 +3764,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Rekening courant':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Rekening courant', _p_cc(
+                                                                'l state': ['Rekening courant', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3780,7 +3778,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Rekening courant': _p_cc(
+                                                                        'Rekening courant': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Rekening courant',
                                                                                 ($) => abort(
@@ -3812,7 +3810,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Betalingstermijn': _p_cc(
+                                'Betalingstermijn': _p_change_context(
                                     $.__get_entry(
                                         'Betalingstermijn',
                                         ($) => abort(
@@ -3831,7 +3829,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'BTW-periode': _p_cc(
+                                'BTW-periode': _p_change_context(
                                     $.__get_entry(
                                         'BTW-periode',
                                         ($) => abort(
@@ -3850,14 +3848,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                     })
                                 ),
-                                'Brondocument': _p_cc(
+                                'Brondocument': _p_change_context(
                                     $.__get_entry(
                                         'Brondocument',
                                         ($) => abort(
                                             ['no such entry', "Brondocument"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -3869,13 +3867,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
                                                 switch ($t) {
                                                     case 'Toegevoegd':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Toegevoegd', _p_cc(
+                                                                'l state': ['Toegevoegd', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3883,7 +3881,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Document': _p_cc(
+                                                                        'Document': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Document',
                                                                                 ($) => abort(
@@ -3910,7 +3908,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Debiteur': _p_cc(
+                                'Debiteur': _p_change_context(
                                     $.__get_entry(
                                         'Debiteur',
                                         ($) => abort(
@@ -3929,14 +3927,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         ),
                                     })
                                 ),
-                                'Contracttype': _p_cc(
+                                'Contracttype': _p_change_context(
                                     $.__get_entry(
                                         'Contracttype',
                                         ($) => abort(
                                             ['no such entry', "Contracttype"]
                                         )
                                     ),
-                                    ($) => _p_cc(
+                                    ($) => _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -3948,13 +3946,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                             ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype => {
                                                 switch ($t) {
                                                     case 'Project':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Project', _p_cc(
+                                                                'l state': ['Project', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -3962,7 +3960,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Project': _p_cc(
+                                                                        'Project': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Project',
                                                                                 ($) => abort(
@@ -3981,7 +3979,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                 ),
                                                                             })
                                                                         ),
-                                                                        'Offerte': _p_cc(
+                                                                        'Offerte': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Offerte',
                                                                                 ($) => abort(
@@ -4005,13 +4003,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             })
                                                         )
                                                     case 'Licentieovereenkomst':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Licentieovereenkomst', _p_cc(
+                                                                'l state': ['Licentieovereenkomst', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
                                                                         ($) => abort(
@@ -4019,7 +4017,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         )
                                                                     ),
                                                                     ($) => ({
-                                                                        'Overeenkomst': _p_cc(
+                                                                        'Overeenkomst': _p_change_context(
                                                                             $.__get_entry(
                                                                                 'Overeenkomst',
                                                                                 ($) => abort(
@@ -4051,7 +4049,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Datum': _p_cc(
+                                'Datum': _p_change_context(
                                     $.__get_entry(
                                         'Datum',
                                         ($) => abort(
@@ -4070,7 +4068,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         )
                                     )
                                 ),
-                                'Regels': _p_cc(
+                                'Regels': _p_change_context(
                                     $.__get_entry(
                                         'Regels',
                                         ($) => abort(
@@ -4092,7 +4090,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $
                                                 )['start']['relative'],
-                                                'l entry': _p_cc(
+                                                'l entry': _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
                                                         ($) => abort(
@@ -4100,14 +4098,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                         )
                                                     ),
                                                     ($) => ({
-                                                        'BTW-regime': _p_cc(
+                                                        'BTW-regime': _p_change_context(
                                                             $.__get_entry(
                                                                 'BTW-regime',
                                                                 ($) => abort(
                                                                     ['no such entry', "BTW-regime"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -4119,7 +4117,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                     ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
                                                                         switch ($t) {
                                                                             case 'Intracommunautair':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
@@ -4134,13 +4132,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                     })
                                                                                 )
                                                                             case 'Standaard':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Standaard', _p_cc(
+                                                                                        'l state': ['Standaard', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4148,7 +4146,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'BTW-categorie': _p_cc(
+                                                                                                'BTW-categorie': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'BTW-categorie',
                                                                                                         ($) => abort(
@@ -4172,7 +4170,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                     })
                                                                                 )
                                                                             case 'Binnenland: heffing verlegd':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
@@ -4195,7 +4193,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'Bedrag exclusief BTW': _p_cc(
+                                                        'Bedrag exclusief BTW': _p_change_context(
                                                             $.__get_entry(
                                                                 'Bedrag exclusief BTW',
                                                                 ($) => abort(
@@ -4214,14 +4212,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'Contracttype': _p_cc(
+                                                        'Contracttype': _p_change_context(
                                                             $.__get_entry(
                                                                 'Contracttype',
                                                                 ($) => abort(
                                                                     ['no such entry', "Contracttype"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -4233,13 +4231,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                     ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype => {
                                                                         switch ($t) {
                                                                             case 'Project':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Project', _p_cc(
+                                                                                        'l state': ['Project', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4247,7 +4245,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'Opbrengst': _p_cc(
+                                                                                                'Opbrengst': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Opbrengst',
                                                                                                         ($) => abort(
@@ -4271,7 +4269,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                     })
                                                                                 )
                                                                             case 'Los':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
@@ -4286,13 +4284,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                     })
                                                                                 )
                                                                             case 'Licentieovereenkomst':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Licentieovereenkomst', _p_cc(
+                                                                                        'l state': ['Licentieovereenkomst', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4300,7 +4298,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'Periode': _p_cc(
+                                                                                                'Periode': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Periode',
                                                                                                         ($) => abort(
@@ -4332,7 +4330,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'Omschrijving': _p_cc(
+                                                        'Omschrijving': _p_change_context(
                                                             $.__get_entry(
                                                                 'Omschrijving',
                                                                 ($) => abort(
@@ -4346,14 +4344,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 )
                                                             )
                                                         ),
-                                                        'Type': _p_cc(
+                                                        'Type': _p_change_context(
                                                             $.__get_entry(
                                                                 'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"]
                                                                 )
                                                             ),
-                                                            ($) => _p_cc(
+                                                            ($) => _p_change_context(
                                                                 v_unmarshalled_from_parse_tree.State(
                                                                     $,
                                                                     ($) => abort(
@@ -4365,13 +4363,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                     ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                         switch ($t) {
                                                                             case 'Opbrengsten':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Opbrengsten', _p_cc(
+                                                                                        'l state': ['Opbrengsten', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4379,7 +4377,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'Grootboekrekening': _p_cc(
+                                                                                                'Grootboekrekening': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Grootboekrekening',
                                                                                                         ($) => abort(
@@ -4403,13 +4401,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                     })
                                                                                 )
                                                                             case 'Balans':
-                                                                                return _p_cc(
+                                                                                return _p_change_context(
                                                                                     $['value'],
                                                                                     ($) => ({
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $
                                                                                         )['start']['relative'],
-                                                                                        'l state': ['Balans', _p_cc(
+                                                                                        'l state': ['Balans', _p_change_context(
                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                 $,
                                                                                                 ($) => abort(
@@ -4417,7 +4415,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 )
                                                                                             ),
                                                                                             ($) => ({
-                                                                                                'Balans item': _p_cc(
+                                                                                                'Balans item': _p_change_context(
                                                                                                     $.__get_entry(
                                                                                                         'Balans item',
                                                                                                         ($) => abort(
@@ -4464,7 +4462,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
     })
 )
 
-export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
+export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -4472,7 +4470,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'Verrekenpost mutaties': _p_cc(
+        'Verrekenpost mutaties': _p_change_context(
             $.__get_entry(
                 'Verrekenpost mutaties',
                 ($) => abort(
@@ -4509,7 +4507,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -4517,7 +4515,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'Bedrag': _p_cc(
+                                            'Bedrag': _p_change_context(
                                                 $.__get_entry(
                                                     'Bedrag',
                                                     ($) => abort(
@@ -4536,14 +4534,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Afhandeling': _p_cc(
+                                            'Afhandeling': _p_change_context(
                                                 $.__get_entry(
                                                     'Afhandeling',
                                                     ($) => abort(
                                                         ['no such entry', "Afhandeling"]
                                                     )
                                                 ),
-                                                ($) => _p_cc(
+                                                ($) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.State(
                                                         $,
                                                         ($) => abort(
@@ -4555,7 +4553,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                         ($t): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling => {
                                                             switch ($t) {
                                                                 case 'Resultaat':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
@@ -4570,13 +4568,13 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                         })
                                                                     )
                                                                 case 'Balans':
-                                                                    return _p_cc(
+                                                                    return _p_change_context(
                                                                         $['value'],
                                                                         ($) => ({
                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                 $
                                                                             )['start']['relative'],
-                                                                            'l state': ['Balans', _p_cc(
+                                                                            'l state': ['Balans', _p_change_context(
                                                                                 v_unmarshalled_from_parse_tree.State(
                                                                                     $,
                                                                                     ($) => abort(
@@ -4588,13 +4586,13 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                     ($t): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling.l_state.Balans => {
                                                                                         switch ($t) {
                                                                                             case 'Informele rekening':
-                                                                                                return _p_cc(
+                                                                                                return _p_change_context(
                                                                                                     $['value'],
                                                                                                     ($) => ({
                                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                                             $
                                                                                                         )['start']['relative'],
-                                                                                                        'l state': ['Informele rekening', _p_cc(
+                                                                                                        'l state': ['Informele rekening', _p_change_context(
                                                                                                             v_unmarshalled_from_parse_tree.Group(
                                                                                                                 $,
                                                                                                                 ($) => abort(
@@ -4602,7 +4600,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                                 )
                                                                                                             ),
                                                                                                             ($) => ({
-                                                                                                                'Informele rekening': _p_cc(
+                                                                                                                'Informele rekening': _p_change_context(
                                                                                                                     $.__get_entry(
                                                                                                                         'Informele rekening',
                                                                                                                         ($) => abort(
@@ -4653,7 +4651,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Bankrekening Mutatie Verwerkingen': _p_cc(
+        'Bankrekening Mutatie Verwerkingen': _p_change_context(
             $.__get_entry(
                 'Bankrekening Mutatie Verwerkingen',
                 ($) => abort(
@@ -4690,7 +4688,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.State(
                                             $,
                                             ($) => abort(
@@ -4702,7 +4700,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                             ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry => {
                                                 switch ($t) {
                                                     case 'Resultaat':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
@@ -4717,13 +4715,13 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                             })
                                                         )
                                                     case 'Balans':
-                                                        return _p_cc(
+                                                        return _p_change_context(
                                                             $['value'],
                                                             ($) => ({
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $
                                                                 )['start']['relative'],
-                                                                'l state': ['Balans', _p_cc(
+                                                                'l state': ['Balans', _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.State(
                                                                         $,
                                                                         ($) => abort(
@@ -4735,13 +4733,13 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                         ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state.Balans => {
                                                                             switch ($t) {
                                                                                 case 'Informele rekening':
-                                                                                    return _p_cc(
+                                                                                    return _p_change_context(
                                                                                         $['value'],
                                                                                         ($) => ({
                                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                                 $
                                                                                             )['start']['relative'],
-                                                                                            'l state': ['Informele rekening', _p_cc(
+                                                                                            'l state': ['Informele rekening', _p_change_context(
                                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                                     $,
                                                                                                     ($) => abort(
@@ -4749,7 +4747,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                     )
                                                                                                 ),
                                                                                                 ($) => ({
-                                                                                                    'Informele rekening': _p_cc(
+                                                                                                    'Informele rekening': _p_change_context(
                                                                                                         $.__get_entry(
                                                                                                             'Informele rekening',
                                                                                                             ($) => abort(
@@ -4773,13 +4771,13 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                         })
                                                                                     )
                                                                                 case 'Verrekenpost':
-                                                                                    return _p_cc(
+                                                                                    return _p_change_context(
                                                                                         $['value'],
                                                                                         ($) => ({
                                                                                             'l location': v_parse_tree_to_location.Value(
                                                                                                 $
                                                                                             )['start']['relative'],
-                                                                                            'l state': ['Verrekenpost', _p_cc(
+                                                                                            'l state': ['Verrekenpost', _p_change_context(
                                                                                                 v_unmarshalled_from_parse_tree.Group(
                                                                                                     $,
                                                                                                     ($) => abort(
@@ -4787,7 +4785,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                                                                     )
                                                                                                 ),
                                                                                                 ($) => ({
-                                                                                                    'Verrekenpost': _p_cc(
+                                                                                                    'Verrekenpost': _p_change_context(
                                                                                                         $.__get_entry(
                                                                                                             'Verrekenpost',
                                                                                                             ($) => abort(
@@ -4835,7 +4833,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                 ),
             })
         ),
-        'Memoriaal boekingen': _p_cc(
+        'Memoriaal boekingen': _p_change_context(
             $.__get_entry(
                 'Memoriaal boekingen',
                 ($) => abort(
@@ -4872,7 +4870,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                     'l location': v_parse_tree_to_location.Value(
                                         $
                                     )['start']['relative'],
-                                    'l entry': _p_cc(
+                                    'l entry': _p_change_context(
                                         v_unmarshalled_from_parse_tree.Group(
                                             $,
                                             ($) => abort(
@@ -4880,7 +4878,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                             )
                                         ),
                                         ($) => ({
-                                            'Bedrag': _p_cc(
+                                            'Bedrag': _p_change_context(
                                                 $.__get_entry(
                                                     'Bedrag',
                                                     ($) => abort(
@@ -4899,7 +4897,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Datum': _p_cc(
+                                            'Datum': _p_change_context(
                                                 $.__get_entry(
                                                     'Datum',
                                                     ($) => abort(
@@ -4918,7 +4916,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Omschrijving': _p_cc(
+                                            'Omschrijving': _p_change_context(
                                                 $.__get_entry(
                                                     'Omschrijving',
                                                     ($) => abort(
@@ -4932,7 +4930,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_cc(
                                                     )
                                                 )
                                             ),
-                                            'Grootboekrekening': _p_cc(
+                                            'Grootboekrekening': _p_change_context(
                                                 $.__get_entry(
                                                     'Grootboekrekening',
                                                     ($) => abort(
@@ -4978,7 +4976,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
             'l location': v_parse_tree_to_location.Value(
                 $
             )['start']['relative'],
-            'l entry': _p_cc(
+            'l entry': _p_change_context(
                 v_unmarshalled_from_parse_tree.Group(
                     $,
                     ($) => abort(
@@ -4986,14 +4984,14 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                     )
                 ),
                 ($) => ({
-                    'Afgesloten': _p_cc(
+                    'Afgesloten': _p_change_context(
                         $.__get_entry(
                             'Afgesloten',
                             ($) => abort(
                                 ['no such entry', "Afgesloten"]
                             )
                         ),
-                        ($) => _p_cc(
+                        ($) => _p_change_context(
                             v_unmarshalled_from_parse_tree.State(
                                 $,
                                 ($) => abort(
@@ -5005,7 +5003,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                                 ($t): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
                                     switch ($t) {
                                         case 'Ja':
-                                            return _p_cc(
+                                            return _p_change_context(
                                                 $['value'],
                                                 ($) => ({
                                                     'l location': v_parse_tree_to_location.Value(
@@ -5020,7 +5018,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                                                 })
                                             )
                                         case 'Nee':
-                                            return _p_cc(
+                                            return _p_change_context(
                                                 $['value'],
                                                 ($) => ({
                                                     'l location': v_parse_tree_to_location.Value(
@@ -5043,7 +5041,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             )
                         )
                     ),
-                    'Startdatum boekjaar': _p_cc(
+                    'Startdatum boekjaar': _p_change_context(
                         $.__get_entry(
                             'Startdatum boekjaar',
                             ($) => abort(
@@ -5062,7 +5060,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             )
                         )
                     ),
-                    'Grootboekrekeningen': _p_cc(
+                    'Grootboekrekeningen': _p_change_context(
                         $.__get_entry(
                             'Grootboekrekeningen',
                             ($) => abort(
@@ -5076,7 +5074,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             )
                         )
                     ),
-                    'Eerste boekjaar': _p_cc(
+                    'Eerste boekjaar': _p_change_context(
                         $.__get_entry(
                             'Eerste boekjaar',
                             ($) => abort(
@@ -5090,7 +5088,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             )
                         )
                     ),
-                    'Jaarbeheer': _p_cc(
+                    'Jaarbeheer': _p_change_context(
                         $.__get_entry(
                             'Jaarbeheer',
                             ($) => abort(
@@ -5104,7 +5102,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             )
                         )
                     ),
-                    'Handelstransacties': _p_cc(
+                    'Handelstransacties': _p_change_context(
                         $.__get_entry(
                             'Handelstransacties',
                             ($) => abort(
@@ -5118,7 +5116,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
                             )
                         )
                     ),
-                    'Mutaties': _p_cc(
+                    'Mutaties': _p_change_context(
                         $.__get_entry(
                             'Mutaties',
                             ($) => abort(
@@ -5138,7 +5136,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
     ),
 })
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($, abort) => _p_cc(
+export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -5146,7 +5144,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         )
     ),
     ($) => ({
-        'Jaar': _p_cc(
+        'Jaar': _p_change_context(
             $.__get_entry(
                 'Jaar',
                 ($) => abort(
@@ -5173,14 +5171,14 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                 })
             )
         ),
-        'type': _p_cc(
+        'type': _p_change_context(
             $.__get_entry(
                 'type',
                 ($) => abort(
                     ['no such entry', "type"]
                 )
             ),
-            ($) => _p_cc(
+            ($) => _p_change_context(
                 v_unmarshalled_from_parse_tree.State(
                     $,
                     ($) => abort(
@@ -5192,7 +5190,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     ($t): t_out.Balans_Resultaat_Mutatie.type_ => {
                         switch ($t) {
                             case 'Inkoop':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
                                     ($) => ({
                                         'l location': v_parse_tree_to_location.Value(
@@ -5212,7 +5210,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     })
                                 )
                             case 'Verkoop':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
                                     ($) => ({
                                         'l location': v_parse_tree_to_location.Value(
@@ -5232,7 +5230,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     })
                                 )
                             case 'BTW-periode':
-                                return _p_cc(
+                                return _p_change_context(
                                     $['value'],
                                     ($) => ({
                                         'l location': v_parse_tree_to_location.Value(
@@ -5263,7 +5261,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
     })
 )
 
-export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc(
+export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.State(
         $,
         ($) => abort(
@@ -5275,7 +5273,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
         ($t): t_out.Eerste_boekjaar => {
             switch ($t) {
                 case 'Ja':
-                    return _p_cc(
+                    return _p_change_context(
                         $['value'],
                         ($) => ({
                             'l location': v_parse_tree_to_location.Value(
@@ -5290,13 +5288,13 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
                         })
                     )
                 case 'Nee':
-                    return _p_cc(
+                    return _p_change_context(
                         $['value'],
                         ($) => ({
                             'l location': v_parse_tree_to_location.Value(
                                 $
                             )['start']['relative'],
-                            'l state': ['Nee', _p_cc(
+                            'l state': ['Nee', _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
                                     ($) => abort(
@@ -5304,7 +5302,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
                                     )
                                 ),
                                 ($) => ({
-                                    'Vorig boekjaar': _p_cc(
+                                    'Vorig boekjaar': _p_change_context(
                                         $.__get_entry(
                                             'Vorig boekjaar',
                                             ($) => abort(
@@ -5336,7 +5334,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_cc
     )
 )
 
-export const Root: t_signatures.Root = ($, abort) => _p_cc(
+export const Root: t_signatures.Root = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Group(
         $,
         ($) => abort(
@@ -5344,7 +5342,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
         )
     ),
     ($) => ({
-        'Fiscaal': _p_cc(
+        'Fiscaal': _p_change_context(
             $.__get_entry(
                 'Fiscaal',
                 ($) => abort(
@@ -5358,7 +5356,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Categorieen': _p_cc(
+        'Categorieen': _p_change_context(
             $.__get_entry(
                 'Categorieen',
                 ($) => abort(
@@ -5372,7 +5370,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Beheer': _p_cc(
+        'Beheer': _p_change_context(
             $.__get_entry(
                 'Beheer',
                 ($) => abort(
@@ -5386,7 +5384,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_cc(
                 )
             )
         ),
-        'Jaren': _p_cc(
+        'Jaren': _p_change_context(
             $.__get_entry(
                 'Jaren',
                 ($) => abort(
