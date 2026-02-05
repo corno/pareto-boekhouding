@@ -5,15 +5,13 @@
     
     import * as _pdev from "pareto-core-dev"
     
-    import * as _p_ls from "pareto-core/dist/lookup_selection"
+    import * as _p_sl from "pareto-core/dist/select_lookup"
     
-    import {
-        _p_deprecated_block,
-    } from "pareto-core/dist/deprecated_block"
+    import _p_variables from "pareto-core/dist/_p_variables"
     
-    import * as t_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
+    import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
     
-    import * as t_signatures from "../../../../../interface/generated/liana/schemas/boekhouding/resolve"
+    import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/resolve"
     
     export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.resolve(
         () => {
@@ -29,7 +27,7 @@
                                 
                                 const prop_Zijde = _p_change_context(
                                     $['Zijde'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -89,7 +87,7 @@
                                 
                                 const prop_Zijde = _p_change_context(
                                     $['Zijde'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -180,7 +178,7 @@
                                 
                                 const prop_Zijde = _p_change_context(
                                     $['Zijde'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -221,7 +219,7 @@
                                                     const prop_Hoofdcategorie_fiscus = _p_change_context(
                                                         $['Hoofdcategorie fiscus'],
                                                         ($) => ({
-                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                 $p['Fiscaal'],
                                                             ).get_entry(
                                                                 $['l reference'],
@@ -253,7 +251,7 @@
                                                     const prop_Subcategorie_fiscus = _p_change_context(
                                                         $['Subcategorie fiscus'],
                                                         ($) => ({
-                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                 prop_Hoofdcategorie_fiscus['l entry']['Subcategorieen'],
                                                             ).get_entry(
                                                                 $['l reference'],
@@ -311,7 +309,7 @@
                                 
                                 const prop_Zijde = _p_change_context(
                                     $['Zijde'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -352,7 +350,7 @@
                                                     const prop_Hoofdcategorie_fiscus = _p_change_context(
                                                         $['Hoofdcategorie fiscus'],
                                                         ($) => ({
-                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                 $p['Fiscaal'],
                                                             ).get_entry(
                                                                 $['l reference'],
@@ -384,7 +382,7 @@
                                                     const prop_Subcategorie_fiscus = _p_change_context(
                                                         $['Subcategorie fiscus'],
                                                         ($) => ({
-                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                 prop_Hoofdcategorie_fiscus['l entry']['Subcategorieen'],
                                                             ).get_entry(
                                                                 $['l reference'],
@@ -452,7 +450,7 @@
                                 
                                 const prop_BTW$mi_heffing = _p_change_context(
                                     $['BTW-heffing'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -512,7 +510,7 @@
                                             const prop_Hoofdcategorie = _p_change_context(
                                                 $['Hoofdcategorie'],
                                                 ($) => ({
-                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                         $p['Grootboek Categorieen'],
                                                     ).get_entry(
                                                         $['l reference'],
@@ -544,7 +542,7 @@
                                             const prop_Subcategorie = _p_change_context(
                                                 $['Subcategorie'],
                                                 ($) => ({
-                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                         prop_Hoofdcategorie['l entry']['Subcategorieen'],
                                                     ).get_entry(
                                                         $['l reference'],
@@ -575,7 +573,7 @@
                                             
                                             const prop_Zijde = _p_change_context(
                                                 $['Zijde'],
-                                                ($) => _p_deprecated_block(
+                                                ($) => _p_variables(
                                                     () => {
                                                         
                                                         const var_location = $['l location']
@@ -626,7 +624,7 @@
                                             const prop_Hoofdcategorie = _p_change_context(
                                                 $['Hoofdcategorie'],
                                                 ($) => ({
-                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                         $p['Grootboek Categorieen'],
                                                     ).get_entry(
                                                         $['l reference'],
@@ -658,7 +656,7 @@
                                             const prop_Subcategorie = _p_change_context(
                                                 $['Subcategorie'],
                                                 ($) => ({
-                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                         prop_Hoofdcategorie['l entry']['Subcategorieen'],
                                                     ).get_entry(
                                                         $['l reference'],
@@ -689,7 +687,7 @@
                                             
                                             const prop_Zijde = _p_change_context(
                                                 $['Zijde'],
-                                                ($) => _p_deprecated_block(
+                                                ($) => _p_variables(
                                                     () => {
                                                         
                                                         const var_location = $['l location']
@@ -705,7 +703,7 @@
                                                                                     
                                                                                     const prop_Correctie_op_vennootschapsbelasting = _p_change_context(
                                                                                         $['Correctie op vennootschapsbelasting'],
-                                                                                        ($) => _p_deprecated_block(
+                                                                                        ($) => _p_variables(
                                                                                             () => {
                                                                                                 
                                                                                                 const var_location = $['l location']
@@ -722,7 +720,7 @@
                                                                                                                             const prop_Correctietype = _p_change_context(
                                                                                                                                 $['Correctietype'],
                                                                                                                                 ($) => ({
-                                                                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                                                         $p['Grootboek Categorieen'],
                                                                                                                                     ).get_entry(
                                                                                                                                         $['l reference'],
@@ -949,7 +947,7 @@
                                                                                             
                                                                                             const prop_Type = _p_change_context(
                                                                                                 $['Type'],
-                                                                                                ($) => _p_deprecated_block(
+                                                                                                ($) => _p_variables(
                                                                                                     () => {
                                                                                                         
                                                                                                         const var_location = $['l location']
@@ -1070,7 +1068,7 @@
                                 
                                 const prop_Type = _p_change_context(
                                     $['Type'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -1140,7 +1138,7 @@
                         const prop_Grootboekrekening_voor_BTW_afrondingen = _p_change_context(
                             $['Grootboekrekening voor BTW afrondingen'],
                             ($) => ({
-                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                     $p['Grootboekrekeningen'],
                                 ).get_entry(
                                     $['l reference'],
@@ -1229,7 +1227,7 @@
                                             
                                             const prop_Status = _p_change_context(
                                                 $['Status'],
-                                                ($) => _p_deprecated_block(
+                                                ($) => _p_variables(
                                                     () => {
                                                         
                                                         const var_location = $['l location']
@@ -1318,7 +1316,7 @@
                         const prop_Grootboekrekening_voor_nog_aan_te_geven_BTW = _p_change_context(
                             $['Grootboekrekening voor nog aan te geven BTW'],
                             ($) => ({
-                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                     $p['Grootboekrekeningen'],
                                 ).get_entry(
                                     $['l reference'],
@@ -1350,7 +1348,7 @@
                         const prop_Grootboekrekening_voor_resultaat_dit_jaar = _p_change_context(
                             $['Grootboekrekening voor resultaat dit jaar'],
                             ($) => ({
-                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                     $p['Grootboekrekeningen'],
                                 ).get_entry(
                                     $['l reference'],
@@ -1382,7 +1380,7 @@
                         const prop_Grootboekrekening_voor_winstreserve = _p_change_context(
                             $['Grootboekrekening voor winstreserve'],
                             ($) => ({
-                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                     $p['Grootboekrekeningen'],
                                 ).get_entry(
                                     $['l reference'],
@@ -1414,7 +1412,7 @@
                         const prop_Grootboekrekening_voor_Inkoop_saldo = _p_change_context(
                             $['Grootboekrekening voor Inkoop saldo'],
                             ($) => ({
-                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                     $p['Grootboekrekeningen'],
                                 ).get_entry(
                                     $['l reference'],
@@ -1446,7 +1444,7 @@
                         const prop_Grootboekrekening_voor_Verkoop_saldo = _p_change_context(
                             $['Grootboekrekening voor Verkoop saldo'],
                             ($) => ({
-                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                     $p['Grootboekrekeningen'],
                                 ).get_entry(
                                     $['l reference'],
@@ -1492,7 +1490,7 @@
                                             const prop_Grootboekrekening = _p_change_context(
                                                 $['Grootboekrekening'],
                                                 ($) => ({
-                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                         $p['Grootboekrekeningen'],
                                                     ).get_entry(
                                                         $['l reference'],
@@ -1523,7 +1521,7 @@
                                             
                                             const prop_Nieuw = _p_change_context(
                                                 $['Nieuw'],
-                                                ($) => _p_deprecated_block(
+                                                ($) => _p_variables(
                                                     () => {
                                                         
                                                         const var_location = $['l location']
@@ -1539,7 +1537,7 @@
                                                                     case 'Nee':
                                                                         return _p.ss(
                                                                             $,
-                                                                            ($) => ['Nee', _p_deprecated_block(
+                                                                            ($) => ['Nee', _p_variables(
                                                                                 () => {
                                                                                     
                                                                                     const var_constraint_Niet_Nieuw = _p.decide.state(
@@ -1623,7 +1621,7 @@
                                             const prop_Grootboekrekening = _p_change_context(
                                                 $['Grootboekrekening'],
                                                 ($) => ({
-                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                         $p['Grootboekrekeningen'],
                                                     ).get_entry(
                                                         $['l reference'],
@@ -1654,7 +1652,7 @@
                                             
                                             const prop_Nieuw = _p_change_context(
                                                 $['Nieuw'],
-                                                ($) => _p_deprecated_block(
+                                                ($) => _p_variables(
                                                     () => {
                                                         
                                                         const var_location = $['l location']
@@ -1670,7 +1668,7 @@
                                                                     case 'Nee':
                                                                         return _p.ss(
                                                                             $,
-                                                                            ($) => ['Nee', _p_deprecated_block(
+                                                                            ($) => ['Nee', _p_variables(
                                                                                 () => {
                                                                                     
                                                                                     const var_constraint_Niet_Nieuw = _p.decide.state(
@@ -1834,7 +1832,7 @@
             const prop_Grootboekrekening = _p_change_context(
                 $['Grootboekrekening'],
                 ($) => ({
-                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                         $p['Grootboekrekeningen'],
                     ).get_entry(
                         $['l reference'],
@@ -1865,7 +1863,7 @@
             
             const prop_Nieuw = _p_change_context(
                 $['Nieuw'],
-                ($) => _p_deprecated_block(
+                ($) => _p_variables(
                     () => {
                         
                         const var_location = $['l location']
@@ -1881,7 +1879,7 @@
                                     case 'Nee':
                                         return _p.ss(
                                             $,
-                                            ($) => ['Nee', _p_deprecated_block(
+                                            ($) => ['Nee', _p_variables(
                                                 () => {
                                                     
                                                     const var_constraint_Volgend_boekjaar = _p.decide.state(
@@ -1909,7 +1907,7 @@
                                                             const prop_Balans_item = _p_change_context(
                                                                 $['Balans item'],
                                                                 ($) => ({
-                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                         var_constraint_Volgend_boekjaar['Vorig boekjaar']['l entry']['Jaarbeheer']['Balans']['Overige balans items'],
                                                                     ).get_entry(
                                                                         $['l reference'],
@@ -1964,7 +1962,7 @@
     )
     
     export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($, abort, $l, $p) => ({
-        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+        'l entry': _p_sl.acyclic.from_resolved_dictionary(
             $p['Jaarbeheer'],
         ).get_entry(
             $['l reference'],
@@ -1993,7 +1991,7 @@
     })
     
     export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($, abort, $l, $p) => ({
-        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+        'l entry': _p_sl.acyclic.from_resolved_dictionary(
             $p['Jaarbeheer'],
         ).get_entry(
             $['l reference'],
@@ -2035,7 +2033,7 @@
                                 
                                 const prop_Afhandeling = _p_change_context(
                                     $['Afhandeling'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2057,7 +2055,7 @@
                                                                         const prop_Rekening_courant = _p_change_context(
                                                                             $['Rekening courant'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Jaarbeheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2104,7 +2102,7 @@
                                 
                                 const prop_BTW$mi_regime = _p_change_context(
                                     $['BTW-regime'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2141,7 +2139,7 @@
                                                                         const prop_BTW$mi_periode = _p_change_context(
                                                                             $['BTW-periode'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Jaarbeheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2188,7 +2186,7 @@
                                 
                                 const prop_Brondocument = _p_change_context(
                                     $['Brondocument'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2249,7 +2247,7 @@
                                                     
                                                     const prop_Bedrag = _p_change_context(
                                                         $['Bedrag'],
-                                                        ($) => _p_deprecated_block(
+                                                        ($) => _p_variables(
                                                             () => {
                                                                 
                                                                 const var_location = $['l location']
@@ -2297,7 +2295,7 @@
                                                     
                                                     const prop_Type = _p_change_context(
                                                         $['Type'],
-                                                        ($) => _p_deprecated_block(
+                                                        ($) => _p_variables(
                                                             () => {
                                                                 
                                                                 const var_location = $['l location']
@@ -2314,7 +2312,7 @@
                                                                                             const prop_Balans_item = _p_change_context(
                                                                                                 $['Balans item'],
                                                                                                 ($) => ({
-                                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                         $p['Jaarbeheer'],
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
@@ -2357,7 +2355,7 @@
                                                                                             const prop_Grootboekrekening = _p_change_context(
                                                                                                 $['Grootboekrekening'],
                                                                                                 ($) => ({
-                                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                         $p['Grootboekrekeningen'],
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
@@ -2414,7 +2412,7 @@
                                 
                                 const prop_Type = _p_change_context(
                                     $['Type'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2436,7 +2434,7 @@
                                                                         const prop_Crediteur = _p_change_context(
                                                                             $['Crediteur'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Beheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2485,7 +2483,7 @@
                                                                         const prop_Ronde = _p_change_context(
                                                                             $['Ronde'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Jaarbeheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2528,7 +2526,7 @@
                                                                         const prop_Ronde = _p_change_context(
                                                                             $['Ronde'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Jaarbeheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2560,7 +2558,7 @@
                                                                         const prop_Medewerker = _p_change_context(
                                                                             $['Medewerker'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Beheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2641,7 +2639,7 @@
                                 const prop_BTW$mi_periode = _p_change_context(
                                     $['BTW-periode'],
                                     ($) => ({
-                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                             $p['Jaarbeheer'],
                                         ).get_entry(
                                             $['l reference'],
@@ -2672,7 +2670,7 @@
                                 
                                 const prop_Brondocument = _p_change_context(
                                     $['Brondocument'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2710,7 +2708,7 @@
                                 const prop_Debiteur = _p_change_context(
                                     $['Debiteur'],
                                     ($) => ({
-                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                        'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                             $p['Beheer'],
                                         ).get_entry(
                                             $['l reference'],
@@ -2741,7 +2739,7 @@
                                 
                                 const prop_Contracttype = _p_change_context(
                                     $['Contracttype'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2758,7 +2756,7 @@
                                                                         const prop_Project = _p_change_context(
                                                                             $['Project'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     _pdev.implement_me(
                                                                                         "IM: PARENT SIBLING",
                                                                                     ),
@@ -2792,7 +2790,7 @@
                                                                         const prop_Offerte = _p_change_context(
                                                                             $['Offerte'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     prop_Project['l entry']['Offertes'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2836,7 +2834,7 @@
                                                                         const prop_Overeenkomst = _p_change_context(
                                                                             $['Overeenkomst'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     _pdev.implement_me(
                                                                                         "IM: PARENT SIBLING",
                                                                                     ),
@@ -2885,7 +2883,7 @@
                                 
                                 const prop_Afhandeling = _p_change_context(
                                     $['Afhandeling'],
-                                    ($) => _p_deprecated_block(
+                                    ($) => _p_variables(
                                         () => {
                                             
                                             const var_location = $['l location']
@@ -2907,7 +2905,7 @@
                                                                         const prop_Rekening_courant = _p_change_context(
                                                                             $['Rekening courant'],
                                                                             ($) => ({
-                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                     $p['Jaarbeheer'],
                                                                                 ).get_entry(
                                                                                     $['l reference'],
@@ -2963,7 +2961,7 @@
                                                     
                                                     const prop_BTW$mi_regime = _p_change_context(
                                                         $['BTW-regime'],
-                                                        ($) => _p_deprecated_block(
+                                                        ($) => _p_variables(
                                                             () => {
                                                                 
                                                                 const var_location = $['l location']
@@ -2985,7 +2983,7 @@
                                                                                             const prop_BTW$mi_categorie = _p_change_context(
                                                                                                 $['BTW-categorie'],
                                                                                                 ($) => ({
-                                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                         $p['Beheer'],
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
@@ -3042,7 +3040,7 @@
                                                     
                                                     const prop_Contracttype = _p_change_context(
                                                         $['Contracttype'],
-                                                        ($) => _p_deprecated_block(
+                                                        ($) => _p_variables(
                                                             () => {
                                                                 
                                                                 const var_location = $['l location']
@@ -3053,7 +3051,7 @@
                                                                             case 'Project':
                                                                                 return _p.ss(
                                                                                     $,
-                                                                                    ($) => ['Project', _p_deprecated_block(
+                                                                                    ($) => ['Project', _p_variables(
                                                                                         () => {
                                                                                             
                                                                                             const var_constraint_Definitie = _p.decide.state(
@@ -3081,7 +3079,7 @@
                                                                                                     const prop_Opbrengst = _p_change_context(
                                                                                                         $['Opbrengst'],
                                                                                                         ($) => ({
-                                                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                                 var_constraint_Definitie['Offerte']['l entry']['Opbrengsten'],
                                                                                                             ).get_entry(
                                                                                                                 $['l reference'],
@@ -3125,7 +3123,7 @@
                                                                             case 'Licentieovereenkomst':
                                                                                 return _p.ss(
                                                                                     $,
-                                                                                    ($) => ['Licentieovereenkomst', _p_deprecated_block(
+                                                                                    ($) => ['Licentieovereenkomst', _p_variables(
                                                                                         () => {
                                                                                             
                                                                                             const var_constraint_Definitie = _p.decide.state(
@@ -3153,7 +3151,7 @@
                                                                                                     const prop_Periode = _p_change_context(
                                                                                                         $['Periode'],
                                                                                                         ($) => ({
-                                                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                                 var_constraint_Definitie['Overeenkomst']['l entry']['Periodes'],
                                                                                                             ).get_entry(
                                                                                                                 $['l reference'],
@@ -3207,7 +3205,7 @@
                                                     
                                                     const prop_Type = _p_change_context(
                                                         $['Type'],
-                                                        ($) => _p_deprecated_block(
+                                                        ($) => _p_variables(
                                                             () => {
                                                                 
                                                                 const var_location = $['l location']
@@ -3224,7 +3222,7 @@
                                                                                             const prop_Grootboekrekening = _p_change_context(
                                                                                                 $['Grootboekrekening'],
                                                                                                 ($) => ({
-                                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                         $p['Grootboekrekeningen'],
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
@@ -3267,7 +3265,7 @@
                                                                                             const prop_Balans_item = _p_change_context(
                                                                                                 $['Balans item'],
                                                                                                 ($) => ({
-                                                                                                    'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                         $p['Jaarbeheer'],
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
@@ -3383,7 +3381,7 @@
             
             const prop_type = _p_change_context(
                 $['type'],
-                ($) => _p_deprecated_block(
+                ($) => _p_variables(
                     () => {
                         
                         const var_location = $['l location']
@@ -3395,7 +3393,7 @@
                                         return _p.ss(
                                             $,
                                             ($) => ['Inkoop', {
-                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                     $p['Handelstransacties'],
                                                 ).get_entry(
                                                     $['l reference'],
@@ -3427,7 +3425,7 @@
                                         return _p.ss(
                                             $,
                                             ($) => ['Verkoop', {
-                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                     $p['Handelstransacties'],
                                                 ).get_entry(
                                                     $['l reference'],
@@ -3459,7 +3457,7 @@
                                         return _p.ss(
                                             $,
                                             ($) => ['BTW-periode', {
-                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                     $p['Jaarbeheer'],
                                                 ).get_entry(
                                                     $['l reference'],
@@ -3513,7 +3511,7 @@
                     $['l dictionary'],
                     ($, id, $a, $c): t_out.Mutaties.Verrekenpost_mutaties.D => _p_change_context(
                         $['l entry'],
-                        ($) => _p_deprecated_block(
+                        ($) => _p_variables(
                             () => {
                                 
                                 const var_referenced_entry = _pdev.implement_me(
@@ -3533,7 +3531,7 @@
                                                 
                                                 const prop_Afhandeling = _p_change_context(
                                                     $['Afhandeling'],
-                                                    ($) => _p_deprecated_block(
+                                                    ($) => _p_variables(
                                                         () => {
                                                             
                                                             const var_location = $['l location']
@@ -3556,7 +3554,7 @@
                                                                         case 'Balans':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Balans', _p_deprecated_block(
+                                                                                ($) => ['Balans', _p_variables(
                                                                                     () => {
                                                                                         
                                                                                         const var_location = $['l location']
@@ -3573,7 +3571,7 @@
                                                                                                                     const prop_Informele_rekening = _p_change_context(
                                                                                                                         $['Informele rekening'],
                                                                                                                         ($) => ({
-                                                                                                                            'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                                                 $p['Jaarbeheer'],
                                                                                                                             ).get_entry(
                                                                                                                                 $['l reference'],
@@ -3647,7 +3645,7 @@
                     $['l dictionary'],
                     ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D => _p_change_context(
                         $['l entry'],
-                        ($) => _p_deprecated_block(
+                        ($) => _p_variables(
                             () => {
                                 
                                 const var_referenced_entry = _pdev.implement_me(
@@ -3657,7 +3655,7 @@
                                     $['l dictionary'],
                                     ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p_deprecated_block(
+                                        ($) => _p_variables(
                                             () => {
                                                 
                                                 const var_location = $['l location']
@@ -3680,7 +3678,7 @@
                                                             case 'Balans':
                                                                 return _p.ss(
                                                                     $,
-                                                                    ($) => ['Balans', _p_deprecated_block(
+                                                                    ($) => ['Balans', _p_variables(
                                                                         () => {
                                                                             
                                                                             const var_location = $['l location']
@@ -3697,7 +3695,7 @@
                                                                                                         const prop_Verrekenpost = _p_change_context(
                                                                                                             $['Verrekenpost'],
                                                                                                             ($) => ({
-                                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                                     $p['Jaarbeheer'],
                                                                                                                 ).get_entry(
                                                                                                                     $['l reference'],
@@ -3740,7 +3738,7 @@
                                                                                                         const prop_Informele_rekening = _p_change_context(
                                                                                                             $['Informele rekening'],
                                                                                                             ($) => ({
-                                                                                                                'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                                                                                     $p['Jaarbeheer'],
                                                                                                                 ).get_entry(
                                                                                                                     $['l reference'],
@@ -3807,7 +3805,7 @@
                     $['l dictionary'],
                     ($, id, $a, $c): t_out.Mutaties.Memoriaal_boekingen.D => _p_change_context(
                         $['l entry'],
-                        ($) => _p_deprecated_block(
+                        ($) => _p_variables(
                             () => {
                                 
                                 const var_referenced_entry = _pdev.implement_me(
@@ -3833,7 +3831,7 @@
                                                 const prop_Grootboekrekening = _p_change_context(
                                                     $['Grootboekrekening'],
                                                     ($) => ({
-                                                        'l entry': _p_ls.acyclic.from_resolved_dictionary(
+                                                        'l entry': _p_sl.acyclic.from_resolved_dictionary(
                                                             $p['Grootboekrekeningen'],
                                                         ).get_entry(
                                                             $['l reference'],
@@ -3889,7 +3887,7 @@
         },
     )
     
-    export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p_deprecated_block(
+    export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) => _p_variables(
         () => {
             
             const var_location = $['l location']
@@ -3962,7 +3960,7 @@
                     
                     const prop_Afgesloten = _p_change_context(
                         $['Afgesloten'],
-                        ($) => _p_deprecated_block(
+                        ($) => _p_variables(
                             () => {
                                 
                                 const var_location = $['l location']
