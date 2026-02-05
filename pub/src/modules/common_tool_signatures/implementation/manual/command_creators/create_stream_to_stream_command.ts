@@ -9,7 +9,7 @@ import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_ma
 
 type My_Error =
     | ['could not read instream', null]
-    | ['deserialization failed', string]
+    | ['deserialization failed', Phrase]
     | ['could not write to stdout', null]
 
 
