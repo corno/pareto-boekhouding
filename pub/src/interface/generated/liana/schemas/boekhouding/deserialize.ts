@@ -3,11 +3,13 @@
     
     import * as i_generic from "astn-core/dist/interface/to_be_generated/deserialize"
     
+    import * as i_in from "pareto-fountain-pen/dist/interface/to_be_generated/list_of_characters"
+    
     import * as i_out from "./data/unresolved"
     
     export namespace Fiscaal_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Fiscaal
         
@@ -34,7 +36,7 @@
     
     export namespace Grootboek_Categorieen_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Grootboek_Categorieen
         
@@ -61,7 +63,7 @@
     
     export namespace Beheer_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Beheer
         
@@ -88,7 +90,7 @@
     
     export namespace Grootboekrekeningen_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Grootboekrekeningen
         
@@ -115,7 +117,7 @@
     
     export namespace Jaarbeheer_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Jaarbeheer
         
@@ -142,7 +144,7 @@
     
     export namespace Overige_balans_item_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Overige_balans_item
         
@@ -169,7 +171,7 @@
     
     export namespace Verwijzing_naar_Informele_rekening_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Verwijzing_naar_Informele_rekening
         
@@ -196,7 +198,7 @@
     
     export namespace Verwijzing_naar_Bankrekening_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Verwijzing_naar_Bankrekening
         
@@ -223,7 +225,7 @@
     
     export namespace Handelstransacties_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Handelstransacties
         
@@ -250,7 +252,7 @@
     
     export namespace Mutaties_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Mutaties
         
@@ -277,7 +279,7 @@
     
     export namespace Jaren_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Jaren
         
@@ -304,7 +306,7 @@
     
     export namespace Balans_Resultaat_Mutatie_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Balans_Resultaat_Mutatie
         
@@ -331,7 +333,7 @@
     
     export namespace Eerste_boekjaar_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Eerste_boekjaar
         
@@ -358,7 +360,7 @@
     
     export namespace Root_ {
         
-        export type I = string
+        export type I = i_in.List_of_Characters
         
         export type O = i_out.Root
         
