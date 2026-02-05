@@ -3,11 +3,13 @@
     
     import * as i_in from "./data/resolved"
     
+    import * as i_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
+    
     export namespace Fiscaal_ {
         
         export type I = i_in.Fiscaal
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -23,7 +25,7 @@
         
         export type I = i_in.Grootboek_Categorieen
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -39,7 +41,7 @@
         
         export type I = i_in.Beheer
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -55,7 +57,7 @@
         
         export type I = i_in.Grootboekrekeningen
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -71,7 +73,7 @@
         
         export type I = i_in.Jaarbeheer
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -87,7 +89,7 @@
         
         export type I = i_in.Overige_balans_item
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -103,7 +105,7 @@
         
         export type I = i_in.Verwijzing_naar_Informele_rekening
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -119,7 +121,7 @@
         
         export type I = i_in.Verwijzing_naar_Bankrekening
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -135,7 +137,7 @@
         
         export type I = i_in.Handelstransacties
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -151,7 +153,7 @@
         
         export type I = i_in.Mutaties
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -167,7 +169,7 @@
         
         export type I = i_in.Jaren
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -183,7 +185,7 @@
         
         export type I = i_in.Balans_Resultaat_Mutatie
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -199,7 +201,7 @@
         
         export type I = i_in.Eerste_boekjaar
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
@@ -215,7 +217,7 @@
         
         export type I = i_in.Root
         
-        export type O = string
+        export type O = i_out.Paragraph
         
         export namespace P {
             
