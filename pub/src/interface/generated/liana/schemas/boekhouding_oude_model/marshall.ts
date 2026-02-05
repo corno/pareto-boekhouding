@@ -1,43 +1,43 @@
-
-import * as _pi from "pareto-core/dist/interface"
-
-import * as i_out from "astn-core/dist/interface/generated/liana/schemas/sealed_target/data"
-
-import * as i_in from "./data"
-
-export namespace Root_ {
     
-    export type I = i_in.Root
+    import * as _pi from "pareto-core/dist/interface"
     
-    export type O = i_out.Value
+    import * as i_out from "astn-core/dist/interface/generated/liana/schemas/sealed_target/data"
     
-    export namespace P {
+    import * as i_in from "./data"
+    
+    export namespace Root_ {
+        
+        export type I = i_in.Root
+        
+        export type O = i_out.Value
+        
+        export namespace P {
+            
+        }
         
     }
     
-}
-
-export type Root_ = (
-    context: Root_.I,
-) => Root_.O
-
-export namespace Bestandsnaam_ {
+    export type Root_ = (
+        context: Root_.I,
+    ) => Root_.O
     
-    export type I = i_in.Bestandsnaam
-    
-    export type O = i_out.Value
-    
-    export namespace P {
+    export namespace Bestandsnaam_ {
+        
+        export type I = i_in.Bestandsnaam
+        
+        export type O = i_out.Value
+        
+        export namespace P {
+            
+        }
         
     }
     
-}
-
-export type Bestandsnaam_ = (
-    context: Bestandsnaam_.I,
-) => Bestandsnaam_.O
-
-export { 
-    Root_ as Root, 
-    Bestandsnaam_ as Bestandsnaam, 
-}
+    export type Bestandsnaam_ = (
+        context: Bestandsnaam_.I,
+    ) => Bestandsnaam_.O
+    
+    export { 
+        Root_ as Root, 
+        Bestandsnaam_ as Bestandsnaam, 
+    }
