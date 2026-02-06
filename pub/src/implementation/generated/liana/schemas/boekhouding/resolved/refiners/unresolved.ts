@@ -1,13 +1,13 @@
     
-    import * as _p from "pareto-core/dist/expression"
+    import * as _p from 'pareto-core/dist/expression'
     
-    import _p_change_context from "pareto-core/dist/_p_change_context"
+    import _p_change_context from 'pareto-core/dist/_p_change_context'
     
-    import * as _pdev from "pareto-core-dev"
+    import * as _pdev from 'pareto-core-dev'
     
-    import * as _p_sl from "pareto-core/dist/select_lookup"
+    import * as _p_sl from 'pareto-core/dist/select_lookup'
     
-    import _p_variables from "pareto-core/dist/_p_variables"
+    import _p_variables from 'pareto-core/dist/_p_variables'
     
     import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
     
@@ -224,19 +224,19 @@
                                                             ).get_entry(
                                                                 $['l reference'],
                                                                 {
-                                                                    'no_such_entry': () => abort(
+                                                                    no_such_entry: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'no_context_lookup': () => abort(
+                                                                    no_context_lookup: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'cycle_detected': () => abort(
+                                                                    cycle_detected: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                             'location': $['l location'],
@@ -256,19 +256,19 @@
                                                             ).get_entry(
                                                                 $['l reference'],
                                                                 {
-                                                                    'no_such_entry': () => abort(
+                                                                    no_such_entry: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'no_context_lookup': () => abort(
+                                                                    no_context_lookup: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'cycle_detected': () => abort(
+                                                                    cycle_detected: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                             'location': $['l location'],
@@ -355,19 +355,19 @@
                                                             ).get_entry(
                                                                 $['l reference'],
                                                                 {
-                                                                    'no_such_entry': () => abort(
+                                                                    no_such_entry: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'no_context_lookup': () => abort(
+                                                                    no_context_lookup: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'cycle_detected': () => abort(
+                                                                    cycle_detected: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                             'location': $['l location'],
@@ -387,19 +387,19 @@
                                                             ).get_entry(
                                                                 $['l reference'],
                                                                 {
-                                                                    'no_such_entry': () => abort(
+                                                                    no_such_entry: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'no_context_lookup': () => abort(
+                                                                    no_context_lookup: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                             'location': $['l location'],
                                                                         },
                                                                     ),
-                                                                    'cycle_detected': () => abort(
+                                                                    cycle_detected: () => abort(
                                                                         {
                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                             'location': $['l location'],
@@ -515,19 +515,19 @@
                                                     ).get_entry(
                                                         $['l reference'],
                                                         {
-                                                            'no_such_entry': () => abort(
+                                                            no_such_entry: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'no_context_lookup': () => abort(
+                                                            no_context_lookup: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'cycle_detected': () => abort(
+                                                            cycle_detected: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                     'location': $['l location'],
@@ -547,19 +547,19 @@
                                                     ).get_entry(
                                                         $['l reference'],
                                                         {
-                                                            'no_such_entry': () => abort(
+                                                            no_such_entry: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'no_context_lookup': () => abort(
+                                                            no_context_lookup: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'cycle_detected': () => abort(
+                                                            cycle_detected: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                     'location': $['l location'],
@@ -629,19 +629,19 @@
                                                     ).get_entry(
                                                         $['l reference'],
                                                         {
-                                                            'no_such_entry': () => abort(
+                                                            no_such_entry: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'no_context_lookup': () => abort(
+                                                            no_context_lookup: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'cycle_detected': () => abort(
+                                                            cycle_detected: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                     'location': $['l location'],
@@ -661,19 +661,19 @@
                                                     ).get_entry(
                                                         $['l reference'],
                                                         {
-                                                            'no_such_entry': () => abort(
+                                                            no_such_entry: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'no_context_lookup': () => abort(
+                                                            no_context_lookup: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'cycle_detected': () => abort(
+                                                            cycle_detected: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                     'location': $['l location'],
@@ -725,19 +725,19 @@
                                                                                                                                     ).get_entry(
                                                                                                                                         $['l reference'],
                                                                                                                                         {
-                                                                                                                                            'no_such_entry': () => abort(
+                                                                                                                                            no_such_entry: () => abort(
                                                                                                                                                 {
                                                                                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                                                     'location': $['l location'],
                                                                                                                                                 },
                                                                                                                                             ),
-                                                                                                                                            'no_context_lookup': () => abort(
+                                                                                                                                            no_context_lookup: () => abort(
                                                                                                                                                 {
                                                                                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                                                                                     'location': $['l location'],
                                                                                                                                                 },
                                                                                                                                             ),
-                                                                                                                                            'cycle_detected': () => abort(
+                                                                                                                                            cycle_detected: () => abort(
                                                                                                                                                 {
                                                                                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                                                                                     'location': $['l location'],
@@ -1143,19 +1143,19 @@
                                 ).get_entry(
                                     $['l reference'],
                                     {
-                                        'no_such_entry': () => abort(
+                                        no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'no_context_lookup': () => abort(
+                                        no_context_lookup: () => abort(
                                             {
                                                 'type': ['lookup', ['no context lookup', null]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'cycle_detected': () => abort(
+                                        cycle_detected: () => abort(
                                             {
                                                 'type': ['lookup', ['cycle detected', null]],
                                                 'location': $['l location'],
@@ -1321,19 +1321,19 @@
                                 ).get_entry(
                                     $['l reference'],
                                     {
-                                        'no_such_entry': () => abort(
+                                        no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'no_context_lookup': () => abort(
+                                        no_context_lookup: () => abort(
                                             {
                                                 'type': ['lookup', ['no context lookup', null]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'cycle_detected': () => abort(
+                                        cycle_detected: () => abort(
                                             {
                                                 'type': ['lookup', ['cycle detected', null]],
                                                 'location': $['l location'],
@@ -1353,19 +1353,19 @@
                                 ).get_entry(
                                     $['l reference'],
                                     {
-                                        'no_such_entry': () => abort(
+                                        no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'no_context_lookup': () => abort(
+                                        no_context_lookup: () => abort(
                                             {
                                                 'type': ['lookup', ['no context lookup', null]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'cycle_detected': () => abort(
+                                        cycle_detected: () => abort(
                                             {
                                                 'type': ['lookup', ['cycle detected', null]],
                                                 'location': $['l location'],
@@ -1385,19 +1385,19 @@
                                 ).get_entry(
                                     $['l reference'],
                                     {
-                                        'no_such_entry': () => abort(
+                                        no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'no_context_lookup': () => abort(
+                                        no_context_lookup: () => abort(
                                             {
                                                 'type': ['lookup', ['no context lookup', null]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'cycle_detected': () => abort(
+                                        cycle_detected: () => abort(
                                             {
                                                 'type': ['lookup', ['cycle detected', null]],
                                                 'location': $['l location'],
@@ -1417,19 +1417,19 @@
                                 ).get_entry(
                                     $['l reference'],
                                     {
-                                        'no_such_entry': () => abort(
+                                        no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'no_context_lookup': () => abort(
+                                        no_context_lookup: () => abort(
                                             {
                                                 'type': ['lookup', ['no context lookup', null]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'cycle_detected': () => abort(
+                                        cycle_detected: () => abort(
                                             {
                                                 'type': ['lookup', ['cycle detected', null]],
                                                 'location': $['l location'],
@@ -1449,19 +1449,19 @@
                                 ).get_entry(
                                     $['l reference'],
                                     {
-                                        'no_such_entry': () => abort(
+                                        no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'no_context_lookup': () => abort(
+                                        no_context_lookup: () => abort(
                                             {
                                                 'type': ['lookup', ['no context lookup', null]],
                                                 'location': $['l location'],
                                             },
                                         ),
-                                        'cycle_detected': () => abort(
+                                        cycle_detected: () => abort(
                                             {
                                                 'type': ['lookup', ['cycle detected', null]],
                                                 'location': $['l location'],
@@ -1495,19 +1495,19 @@
                                                     ).get_entry(
                                                         $['l reference'],
                                                         {
-                                                            'no_such_entry': () => abort(
+                                                            no_such_entry: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'no_context_lookup': () => abort(
+                                                            no_context_lookup: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'cycle_detected': () => abort(
+                                                            cycle_detected: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                     'location': $['l location'],
@@ -1626,19 +1626,19 @@
                                                     ).get_entry(
                                                         $['l reference'],
                                                         {
-                                                            'no_such_entry': () => abort(
+                                                            no_such_entry: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'no_context_lookup': () => abort(
+                                                            no_context_lookup: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                     'location': $['l location'],
                                                                 },
                                                             ),
-                                                            'cycle_detected': () => abort(
+                                                            cycle_detected: () => abort(
                                                                 {
                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                     'location': $['l location'],
@@ -1837,19 +1837,19 @@
                     ).get_entry(
                         $['l reference'],
                         {
-                            'no_such_entry': () => abort(
+                            no_such_entry: () => abort(
                                 {
                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                     'location': $['l location'],
                                 },
                             ),
-                            'no_context_lookup': () => abort(
+                            no_context_lookup: () => abort(
                                 {
                                     'type': ['lookup', ['no context lookup', null]],
                                     'location': $['l location'],
                                 },
                             ),
-                            'cycle_detected': () => abort(
+                            cycle_detected: () => abort(
                                 {
                                     'type': ['lookup', ['cycle detected', null]],
                                     'location': $['l location'],
@@ -1912,19 +1912,19 @@
                                                                     ).get_entry(
                                                                         $['l reference'],
                                                                         {
-                                                                            'no_such_entry': () => abort(
+                                                                            no_such_entry: () => abort(
                                                                                 {
                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                     'location': $['l location'],
                                                                                 },
                                                                             ),
-                                                                            'no_context_lookup': () => abort(
+                                                                            no_context_lookup: () => abort(
                                                                                 {
                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                     'location': $['l location'],
                                                                                 },
                                                                             ),
-                                                                            'cycle_detected': () => abort(
+                                                                            cycle_detected: () => abort(
                                                                                 {
                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                     'location': $['l location'],
@@ -1967,19 +1967,19 @@
         ).get_entry(
             $['l reference'],
             {
-                'no_such_entry': () => abort(
+                no_such_entry: () => abort(
                     {
                         'type': ['lookup', ['no such entry', $['l reference']]],
                         'location': $['l location'],
                     },
                 ),
-                'no_context_lookup': () => abort(
+                no_context_lookup: () => abort(
                     {
                         'type': ['lookup', ['no context lookup', null]],
                         'location': $['l location'],
                     },
                 ),
-                'cycle_detected': () => abort(
+                cycle_detected: () => abort(
                     {
                         'type': ['lookup', ['cycle detected', null]],
                         'location': $['l location'],
@@ -1996,19 +1996,19 @@
         ).get_entry(
             $['l reference'],
             {
-                'no_such_entry': () => abort(
+                no_such_entry: () => abort(
                     {
                         'type': ['lookup', ['no such entry', $['l reference']]],
                         'location': $['l location'],
                     },
                 ),
-                'no_context_lookup': () => abort(
+                no_context_lookup: () => abort(
                     {
                         'type': ['lookup', ['no context lookup', null]],
                         'location': $['l location'],
                     },
                 ),
-                'cycle_detected': () => abort(
+                cycle_detected: () => abort(
                     {
                         'type': ['lookup', ['cycle detected', null]],
                         'location': $['l location'],
@@ -2060,19 +2060,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2144,19 +2144,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2317,19 +2317,19 @@
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
                                                                                                         {
-                                                                                                            'no_such_entry': () => abort(
+                                                                                                            no_such_entry: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'no_context_lookup': () => abort(
+                                                                                                            no_context_lookup: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'cycle_detected': () => abort(
+                                                                                                            cycle_detected: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                                                     'location': $['l location'],
@@ -2360,19 +2360,19 @@
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
                                                                                                         {
-                                                                                                            'no_such_entry': () => abort(
+                                                                                                            no_such_entry: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'no_context_lookup': () => abort(
+                                                                                                            no_context_lookup: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'cycle_detected': () => abort(
+                                                                                                            cycle_detected: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                                                     'location': $['l location'],
@@ -2439,19 +2439,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2488,19 +2488,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2531,19 +2531,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2563,19 +2563,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2644,19 +2644,19 @@
                                         ).get_entry(
                                             $['l reference'],
                                             {
-                                                'no_such_entry': () => abort(
+                                                no_such_entry: () => abort(
                                                     {
                                                         'type': ['lookup', ['no such entry', $['l reference']]],
                                                         'location': $['l location'],
                                                     },
                                                 ),
-                                                'no_context_lookup': () => abort(
+                                                no_context_lookup: () => abort(
                                                     {
                                                         'type': ['lookup', ['no context lookup', null]],
                                                         'location': $['l location'],
                                                     },
                                                 ),
-                                                'cycle_detected': () => abort(
+                                                cycle_detected: () => abort(
                                                     {
                                                         'type': ['lookup', ['cycle detected', null]],
                                                         'location': $['l location'],
@@ -2713,19 +2713,19 @@
                                         ).get_entry(
                                             $['l reference'],
                                             {
-                                                'no_such_entry': () => abort(
+                                                no_such_entry: () => abort(
                                                     {
                                                         'type': ['lookup', ['no such entry', $['l reference']]],
                                                         'location': $['l location'],
                                                     },
                                                 ),
-                                                'no_context_lookup': () => abort(
+                                                no_context_lookup: () => abort(
                                                     {
                                                         'type': ['lookup', ['no context lookup', null]],
                                                         'location': $['l location'],
                                                     },
                                                 ),
-                                                'cycle_detected': () => abort(
+                                                cycle_detected: () => abort(
                                                     {
                                                         'type': ['lookup', ['cycle detected', null]],
                                                         'location': $['l location'],
@@ -2763,19 +2763,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2795,19 +2795,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2841,19 +2841,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2910,19 +2910,19 @@
                                                                                 ).get_entry(
                                                                                     $['l reference'],
                                                                                     {
-                                                                                        'no_such_entry': () => abort(
+                                                                                        no_such_entry: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'no_context_lookup': () => abort(
+                                                                                        no_context_lookup: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                 'location': $['l location'],
                                                                                             },
                                                                                         ),
-                                                                                        'cycle_detected': () => abort(
+                                                                                        cycle_detected: () => abort(
                                                                                             {
                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                 'location': $['l location'],
@@ -2988,19 +2988,19 @@
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
                                                                                                         {
-                                                                                                            'no_such_entry': () => abort(
+                                                                                                            no_such_entry: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'no_context_lookup': () => abort(
+                                                                                                            no_context_lookup: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'cycle_detected': () => abort(
+                                                                                                            cycle_detected: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                                                     'location': $['l location'],
@@ -3084,19 +3084,19 @@
                                                                                                             ).get_entry(
                                                                                                                 $['l reference'],
                                                                                                                 {
-                                                                                                                    'no_such_entry': () => abort(
+                                                                                                                    no_such_entry: () => abort(
                                                                                                                         {
                                                                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                             'location': $['l location'],
                                                                                                                         },
                                                                                                                     ),
-                                                                                                                    'no_context_lookup': () => abort(
+                                                                                                                    no_context_lookup: () => abort(
                                                                                                                         {
                                                                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                                                                             'location': $['l location'],
                                                                                                                         },
                                                                                                                     ),
-                                                                                                                    'cycle_detected': () => abort(
+                                                                                                                    cycle_detected: () => abort(
                                                                                                                         {
                                                                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                                                                             'location': $['l location'],
@@ -3156,19 +3156,19 @@
                                                                                                             ).get_entry(
                                                                                                                 $['l reference'],
                                                                                                                 {
-                                                                                                                    'no_such_entry': () => abort(
+                                                                                                                    no_such_entry: () => abort(
                                                                                                                         {
                                                                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                             'location': $['l location'],
                                                                                                                         },
                                                                                                                     ),
-                                                                                                                    'no_context_lookup': () => abort(
+                                                                                                                    no_context_lookup: () => abort(
                                                                                                                         {
                                                                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                                                                             'location': $['l location'],
                                                                                                                         },
                                                                                                                     ),
-                                                                                                                    'cycle_detected': () => abort(
+                                                                                                                    cycle_detected: () => abort(
                                                                                                                         {
                                                                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                                                                             'location': $['l location'],
@@ -3227,19 +3227,19 @@
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
                                                                                                         {
-                                                                                                            'no_such_entry': () => abort(
+                                                                                                            no_such_entry: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'no_context_lookup': () => abort(
+                                                                                                            no_context_lookup: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'cycle_detected': () => abort(
+                                                                                                            cycle_detected: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                                                     'location': $['l location'],
@@ -3270,19 +3270,19 @@
                                                                                                     ).get_entry(
                                                                                                         $['l reference'],
                                                                                                         {
-                                                                                                            'no_such_entry': () => abort(
+                                                                                                            no_such_entry: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'no_context_lookup': () => abort(
+                                                                                                            no_context_lookup: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['no context lookup', null]],
                                                                                                                     'location': $['l location'],
                                                                                                                 },
                                                                                                             ),
-                                                                                                            'cycle_detected': () => abort(
+                                                                                                            cycle_detected: () => abort(
                                                                                                                 {
                                                                                                                     'type': ['lookup', ['cycle detected', null]],
                                                                                                                     'location': $['l location'],
@@ -3354,19 +3354,19 @@
                         'l entry': $l['Jaren'].get_entry(
                             $['l reference'],
                             {
-                                'no_such_entry': () => abort(
+                                no_such_entry: () => abort(
                                     {
                                         'type': ['lookup', ['no such entry', $['l reference']]],
                                         'location': $['l location'],
                                     },
                                 ),
-                                'no_context_lookup': () => abort(
+                                no_context_lookup: () => abort(
                                     {
                                         'type': ['lookup', ['no context lookup', null]],
                                         'location': $['l location'],
                                     },
                                 ),
-                                'cycle_detected': () => abort(
+                                cycle_detected: () => abort(
                                     {
                                         'type': ['lookup', ['cycle detected', null]],
                                         'location': $['l location'],
@@ -3398,19 +3398,19 @@
                                                 ).get_entry(
                                                     $['l reference'],
                                                     {
-                                                        'no_such_entry': () => abort(
+                                                        no_such_entry: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'no_context_lookup': () => abort(
+                                                        no_context_lookup: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'cycle_detected': () => abort(
+                                                        cycle_detected: () => abort(
                                                             {
                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                 'location': $['l location'],
@@ -3430,19 +3430,19 @@
                                                 ).get_entry(
                                                     $['l reference'],
                                                     {
-                                                        'no_such_entry': () => abort(
+                                                        no_such_entry: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'no_context_lookup': () => abort(
+                                                        no_context_lookup: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'cycle_detected': () => abort(
+                                                        cycle_detected: () => abort(
                                                             {
                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                 'location': $['l location'],
@@ -3462,19 +3462,19 @@
                                                 ).get_entry(
                                                     $['l reference'],
                                                     {
-                                                        'no_such_entry': () => abort(
+                                                        no_such_entry: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'no_context_lookup': () => abort(
+                                                        no_context_lookup: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'cycle_detected': () => abort(
+                                                        cycle_detected: () => abort(
                                                             {
                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                 'location': $['l location'],
@@ -3576,19 +3576,19 @@
                                                                                                                             ).get_entry(
                                                                                                                                 $['l reference'],
                                                                                                                                 {
-                                                                                                                                    'no_such_entry': () => abort(
+                                                                                                                                    no_such_entry: () => abort(
                                                                                                                                         {
                                                                                                                                             'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                                             'location': $['l location'],
                                                                                                                                         },
                                                                                                                                     ),
-                                                                                                                                    'no_context_lookup': () => abort(
+                                                                                                                                    no_context_lookup: () => abort(
                                                                                                                                         {
                                                                                                                                             'type': ['lookup', ['no context lookup', null]],
                                                                                                                                             'location': $['l location'],
                                                                                                                                         },
                                                                                                                                     ),
-                                                                                                                                    'cycle_detected': () => abort(
+                                                                                                                                    cycle_detected: () => abort(
                                                                                                                                         {
                                                                                                                                             'type': ['lookup', ['cycle detected', null]],
                                                                                                                                             'location': $['l location'],
@@ -3700,19 +3700,19 @@
                                                                                                                 ).get_entry(
                                                                                                                     $['l reference'],
                                                                                                                     {
-                                                                                                                        'no_such_entry': () => abort(
+                                                                                                                        no_such_entry: () => abort(
                                                                                                                             {
                                                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                                 'location': $['l location'],
                                                                                                                             },
                                                                                                                         ),
-                                                                                                                        'no_context_lookup': () => abort(
+                                                                                                                        no_context_lookup: () => abort(
                                                                                                                             {
                                                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                                                 'location': $['l location'],
                                                                                                                             },
                                                                                                                         ),
-                                                                                                                        'cycle_detected': () => abort(
+                                                                                                                        cycle_detected: () => abort(
                                                                                                                             {
                                                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                                                 'location': $['l location'],
@@ -3743,19 +3743,19 @@
                                                                                                                 ).get_entry(
                                                                                                                     $['l reference'],
                                                                                                                     {
-                                                                                                                        'no_such_entry': () => abort(
+                                                                                                                        no_such_entry: () => abort(
                                                                                                                             {
                                                                                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                                                                                 'location': $['l location'],
                                                                                                                             },
                                                                                                                         ),
-                                                                                                                        'no_context_lookup': () => abort(
+                                                                                                                        no_context_lookup: () => abort(
                                                                                                                             {
                                                                                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                                                                                 'location': $['l location'],
                                                                                                                             },
                                                                                                                         ),
-                                                                                                                        'cycle_detected': () => abort(
+                                                                                                                        cycle_detected: () => abort(
                                                                                                                             {
                                                                                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                                                                                 'location': $['l location'],
@@ -3836,19 +3836,19 @@
                                                         ).get_entry(
                                                             $['l reference'],
                                                             {
-                                                                'no_such_entry': () => abort(
+                                                                no_such_entry: () => abort(
                                                                     {
                                                                         'type': ['lookup', ['no such entry', $['l reference']]],
                                                                         'location': $['l location'],
                                                                     },
                                                                 ),
-                                                                'no_context_lookup': () => abort(
+                                                                no_context_lookup: () => abort(
                                                                     {
                                                                         'type': ['lookup', ['no context lookup', null]],
                                                                         'location': $['l location'],
                                                                     },
                                                                 ),
-                                                                'cycle_detected': () => abort(
+                                                                cycle_detected: () => abort(
                                                                     {
                                                                         'type': ['lookup', ['cycle detected', null]],
                                                                         'location': $['l location'],
@@ -3912,19 +3912,19 @@
                                                 'l entry': $l['Jaren'].get_entry(
                                                     $['l reference'],
                                                     {
-                                                        'no_such_entry': () => abort(
+                                                        no_such_entry: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no such entry', $['l reference']]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'no_context_lookup': () => abort(
+                                                        no_context_lookup: () => abort(
                                                             {
                                                                 'type': ['lookup', ['no context lookup', null]],
                                                                 'location': $['l location'],
                                                             },
                                                         ),
-                                                        'cycle_detected': () => abort(
+                                                        cycle_detected: () => abort(
                                                             {
                                                                 'type': ['lookup', ['cycle detected', null]],
                                                                 'location': $['l location'],

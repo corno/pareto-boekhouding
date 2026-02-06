@@ -1,9 +1,9 @@
     
-    import * as _p from "pareto-core/dist/expression"
+    import * as _p from 'pareto-core/dist/expression'
     
-    import _p_change_context from "pareto-core/dist/_p_change_context"
+    import _p_change_context from 'pareto-core/dist/_p_change_context'
     
-    import _p_text_from_list from "pareto-core/dist/_p_text_from_list"
+    import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
     
     import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/marshall"
     
@@ -15,7 +15,7 @@
     
     export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
         {
-            'Bankrekeningen': _p_change_context(
+            "Bankrekeningen": _p_change_context(
                 $['Bankrekeningen'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,
@@ -25,35 +25,35 @@
                     )]],
                 )],
             ),
-            'Beheer': _p_change_context(
+            "Beheer": _p_change_context(
                 $['Beheer'],
                 ($) => ['group', ['verbose', _p.dictionary.literal(
                     {
-                        'Balans': _p_change_context(
+                        "Balans": _p_change_context(
                             $['Balans'],
                             ($) => ['group', ['verbose', _p.dictionary.literal(
                                 {
-                                    'Grootboekrekeningen': _p_change_context(
+                                    "Grootboekrekeningen": _p_change_context(
                                         $['Grootboekrekeningen'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Hoofdcategorie': _p_change_context(
+                                                    "Hoofdcategorie": _p_change_context(
                                                         $['Hoofdcategorie'],
                                                         ($) => ['text', {
                                                             'delimiter': ['quote', null],
                                                             'value': $,
                                                         }],
                                                     ),
-                                                    'Subcategorie': _p_change_context(
+                                                    "Subcategorie": _p_change_context(
                                                         $['Subcategorie'],
                                                         ($) => ['text', {
                                                             'delimiter': ['quote', null],
                                                             'value': $,
                                                         }],
                                                     ),
-                                                    'Zijde': _p_change_context(
+                                                    "Zijde": _p_change_context(
                                                         $['Zijde'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -93,13 +93,13 @@
                                             )]],
                                         )],
                                     ),
-                                    'Hoofdcategorieen': _p_change_context(
+                                    "Hoofdcategorieen": _p_change_context(
                                         $['Hoofdcategorieen'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Zijde': _p_change_context(
+                                                    "Zijde": _p_change_context(
                                                         $['Zijde'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -135,20 +135,20 @@
                                                             },
                                                         )],
                                                     ),
-                                                    'Subcategorieen': _p_change_context(
+                                                    "Subcategorieen": _p_change_context(
                                                         $['Subcategorieen'],
                                                         ($) => ['dictionary', _p.dictionary.map(
                                                             $,
                                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                                 {
-                                                                    'Hoofdcategorie fiscus': _p_change_context(
+                                                                    "Hoofdcategorie fiscus": _p_change_context(
                                                                         $['Hoofdcategorie fiscus'],
                                                                         ($) => ['text', {
                                                                             'delimiter': ['quote', null],
                                                                             'value': $,
                                                                         }],
                                                                     ),
-                                                                    'Subcategorie fiscus': _p_change_context(
+                                                                    "Subcategorie fiscus": _p_change_context(
                                                                         $['Subcategorie fiscus'],
                                                                         ($) => ['text', {
                                                                             'delimiter': ['quote', null],
@@ -163,13 +163,13 @@
                                             )]],
                                         )],
                                     ),
-                                    'Hoofdcategorieen fiscus': _p_change_context(
+                                    "Hoofdcategorieen fiscus": _p_change_context(
                                         $['Hoofdcategorieen fiscus'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Zijde': _p_change_context(
+                                                    "Zijde": _p_change_context(
                                                         $['Zijde'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -205,7 +205,7 @@
                                                             },
                                                         )],
                                                     ),
-                                                    'Subcategorieen': _p_change_context(
+                                                    "Subcategorieen": _p_change_context(
                                                         $['Subcategorieen'],
                                                         ($) => ['dictionary', _p.dictionary.map(
                                                             $,
@@ -222,13 +222,13 @@
                                 },
                             )]],
                         ),
-                        'BTW-categorieen': _p_change_context(
+                        "BTW-categorieen": _p_change_context(
                             $['BTW-categorieen'],
                             ($) => ['dictionary', _p.dictionary.map(
                                 $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'BTW-heffing': _p_change_context(
+                                        "BTW-heffing": _p_change_context(
                                             $['BTW-heffing'],
                                             ($) => ['state', _p.decide.state(
                                                 $,
@@ -241,7 +241,7 @@
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                         {
-                                                                            'BTW-promillage': _p_change_context(
+                                                                            "BTW-promillage": _p_change_context(
                                                                                 $['BTW-promillage'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
@@ -280,20 +280,20 @@
                                 )]],
                             )],
                         ),
-                        'Gebruikers': _p_change_context(
+                        "Gebruikers": _p_change_context(
                             $['Gebruikers'],
                             ($) => ['dictionary', _p.dictionary.map(
                                 $,
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'Volledige naam': _p_change_context(
+                                        "Volledige naam": _p_change_context(
                                             $['Volledige naam'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        'Wachtwoord': _p_change_context(
+                                        "Wachtwoord": _p_change_context(
                                             $['Wachtwoord'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
@@ -304,7 +304,7 @@
                                 )]],
                             )],
                         ),
-                        'Huidige datum': _p_change_context(
+                        "Huidige datum": _p_change_context(
                             $['Huidige datum'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
@@ -316,17 +316,17 @@
                                 ),
                             }],
                         ),
-                        'Resultaat': _p_change_context(
+                        "Resultaat": _p_change_context(
                             $['Resultaat'],
                             ($) => ['group', ['verbose', _p.dictionary.literal(
                                 {
-                                    'Correctietypes vennootschapsbelasting': _p_change_context(
+                                    "Correctietypes vennootschapsbelasting": _p_change_context(
                                         $['Correctietypes vennootschapsbelasting'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Te corrigeren promillage': _p_change_context(
+                                                    "Te corrigeren promillage": _p_change_context(
                                                         $['Te corrigeren promillage'],
                                                         ($) => ['text', {
                                                             'delimiter': ['none', null],
@@ -342,27 +342,27 @@
                                             )]],
                                         )],
                                     ),
-                                    'Grootboekrekeningen': _p_change_context(
+                                    "Grootboekrekeningen": _p_change_context(
                                         $['Grootboekrekeningen'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Hoofdcategorie': _p_change_context(
+                                                    "Hoofdcategorie": _p_change_context(
                                                         $['Hoofdcategorie'],
                                                         ($) => ['text', {
                                                             'delimiter': ['quote', null],
                                                             'value': $,
                                                         }],
                                                     ),
-                                                    'Subcategorie': _p_change_context(
+                                                    "Subcategorie": _p_change_context(
                                                         $['Subcategorie'],
                                                         ($) => ['text', {
                                                             'delimiter': ['quote', null],
                                                             'value': $,
                                                         }],
                                                     ),
-                                                    'Zijde': _p_change_context(
+                                                    "Zijde": _p_change_context(
                                                         $['Zijde'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -375,7 +375,7 @@
                                                                                 'option': 'Kosten',
                                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                     {
-                                                                                        'Correctie op vennootschapsbelasting': _p_change_context(
+                                                                                        "Correctie op vennootschapsbelasting": _p_change_context(
                                                                                             $['Correctie op vennootschapsbelasting'],
                                                                                             ($) => ['state', _p.decide.state(
                                                                                                 $,
@@ -388,7 +388,7 @@
                                                                                                                     'option': 'Ja',
                                                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                                         {
-                                                                                                                            'Correctietype': _p_change_context(
+                                                                                                                            "Correctietype": _p_change_context(
                                                                                                                                 $['Correctietype'],
                                                                                                                                 ($) => ['text', {
                                                                                                                                     'delimiter': ['quote', null],
@@ -445,13 +445,13 @@
                                             )]],
                                         )],
                                     ),
-                                    'Hoofdcategorieen': _p_change_context(
+                                    "Hoofdcategorieen": _p_change_context(
                                         $['Hoofdcategorieen'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Zijde': _p_change_context(
+                                                    "Zijde": _p_change_context(
                                                         $['Zijde'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -487,20 +487,20 @@
                                                             },
                                                         )],
                                                     ),
-                                                    'Subcategorieen': _p_change_context(
+                                                    "Subcategorieen": _p_change_context(
                                                         $['Subcategorieen'],
                                                         ($) => ['dictionary', _p.dictionary.map(
                                                             $,
                                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                                 {
-                                                                    'Hoofdcategorie fiscus': _p_change_context(
+                                                                    "Hoofdcategorie fiscus": _p_change_context(
                                                                         $['Hoofdcategorie fiscus'],
                                                                         ($) => ['text', {
                                                                             'delimiter': ['quote', null],
                                                                             'value': $,
                                                                         }],
                                                                     ),
-                                                                    'Subcategorie fiscus': _p_change_context(
+                                                                    "Subcategorie fiscus": _p_change_context(
                                                                         $['Subcategorie fiscus'],
                                                                         ($) => ['text', {
                                                                             'delimiter': ['quote', null],
@@ -515,13 +515,13 @@
                                             )]],
                                         )],
                                     ),
-                                    'Hoofdcategorieen fiscus': _p_change_context(
+                                    "Hoofdcategorieen fiscus": _p_change_context(
                                         $['Hoofdcategorieen fiscus'],
                                         ($) => ['dictionary', _p.dictionary.map(
                                             $,
                                             ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                 {
-                                                    'Zijde': _p_change_context(
+                                                    "Zijde": _p_change_context(
                                                         $['Zijde'],
                                                         ($) => ['state', _p.decide.state(
                                                             $,
@@ -557,7 +557,7 @@
                                                             },
                                                         )],
                                                     ),
-                                                    'Subcategorieen': _p_change_context(
+                                                    "Subcategorieen": _p_change_context(
                                                         $['Subcategorieen'],
                                                         ($) => ['dictionary', _p.dictionary.map(
                                                             $,
@@ -577,7 +577,7 @@
                     },
                 )]],
             ),
-            'Informele rekeningen': _p_change_context(
+            "Informele rekeningen": _p_change_context(
                 $['Informele rekeningen'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,
@@ -587,13 +587,13 @@
                     )]],
                 )],
             ),
-            'Jaren': _p_change_context(
+            "Jaren": _p_change_context(
                 $['Jaren'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,
                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                         {
-                            'Afgesloten': _p_change_context(
+                            "Afgesloten": _p_change_context(
                                 $['Afgesloten'],
                                 ($) => ['state', _p.decide.state(
                                     $,
@@ -629,13 +629,13 @@
                                     },
                                 )],
                             ),
-                            'Balans grootboekrekeningen': _p_change_context(
+                            "Balans grootboekrekeningen": _p_change_context(
                                 $['Balans grootboekrekeningen'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Type': _p_change_context(
+                                            "Type": _p_change_context(
                                                 $['Type'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -686,13 +686,13 @@
                                     )]],
                                 )],
                             ),
-                            'Bankrekeningen': _p_change_context(
+                            "Bankrekeningen": _p_change_context(
                                 $['Bankrekeningen'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Beginsaldo': _p_change_context(
+                                            "Beginsaldo": _p_change_context(
                                                 $['Beginsaldo'],
                                                 ($) => ['text', {
                                                     'delimiter': ['none', null],
@@ -704,20 +704,20 @@
                                                     ),
                                                 }],
                                             ),
-                                            'Grootboekrekening': _p_change_context(
+                                            "Grootboekrekening": _p_change_context(
                                                 $['Grootboekrekening'],
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
                                                 }],
                                             ),
-                                            'Mutaties': _p_change_context(
+                                            "Mutaties": _p_change_context(
                                                 $['Mutaties'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Bedrag': _p_change_context(
+                                                            "Bedrag": _p_change_context(
                                                                 $['Bedrag'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -729,7 +729,7 @@
                                                                     ),
                                                                 }],
                                                             ),
-                                                            'Datum': _p_change_context(
+                                                            "Datum": _p_change_context(
                                                                 $['Datum'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -741,14 +741,14 @@
                                                                     ),
                                                                 }],
                                                             ),
-                                                            'Omschrijving': _p_change_context(
+                                                            "Omschrijving": _p_change_context(
                                                                 $['Omschrijving'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
                                                                 }],
                                                             ),
-                                                            'Status': _p_change_context(
+                                                            "Status": _p_change_context(
                                                                 $['Status'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -772,7 +772,7 @@
                                                                                         'option': 'Verwerkt',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Afhandeling': _p_change_context(
+                                                                                                "Afhandeling": _p_change_context(
                                                                                                     $['Afhandeling'],
                                                                                                     ($) => ['state', _p.decide.state(
                                                                                                         $,
@@ -785,14 +785,14 @@
                                                                                                                             'option': 'Inkoop',
                                                                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                                                 {
-                                                                                                                                    'Jaar': _p_change_context(
+                                                                                                                                    "Jaar": _p_change_context(
                                                                                                                                         $['Jaar'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
                                                                                                                                             'value': $,
                                                                                                                                         }],
                                                                                                                                     ),
-                                                                                                                                    'Inkoop': _p_change_context(
+                                                                                                                                    "Inkoop": _p_change_context(
                                                                                                                                         $['Inkoop'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
@@ -810,7 +810,7 @@
                                                                                                                             'option': 'Verrekenpost',
                                                                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                                                 {
-                                                                                                                                    'Verrekenpost': _p_change_context(
+                                                                                                                                    "Verrekenpost": _p_change_context(
                                                                                                                                         $['Verrekenpost'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
@@ -828,14 +828,14 @@
                                                                                                                             'option': 'BTW-periode',
                                                                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                                                 {
-                                                                                                                                    'Jaar': _p_change_context(
+                                                                                                                                    "Jaar": _p_change_context(
                                                                                                                                         $['Jaar'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
                                                                                                                                             'value': $,
                                                                                                                                         }],
                                                                                                                                     ),
-                                                                                                                                    'BTW-periode': _p_change_context(
+                                                                                                                                    "BTW-periode": _p_change_context(
                                                                                                                                         $['BTW-periode'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
@@ -853,14 +853,14 @@
                                                                                                                             'option': 'Verkoop',
                                                                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                                                 {
-                                                                                                                                    'Jaar': _p_change_context(
+                                                                                                                                    "Jaar": _p_change_context(
                                                                                                                                         $['Jaar'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
                                                                                                                                             'value': $,
                                                                                                                                         }],
                                                                                                                                     ),
-                                                                                                                                    'Verkoop': _p_change_context(
+                                                                                                                                    "Verkoop": _p_change_context(
                                                                                                                                         $['Verkoop'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
@@ -878,7 +878,7 @@
                                                                                                                             'option': 'Informele rekening',
                                                                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                                                 {
-                                                                                                                                    'Informele rekening': _p_change_context(
+                                                                                                                                    "Informele rekening": _p_change_context(
                                                                                                                                         $['Informele rekening'],
                                                                                                                                         ($) => ['text', {
                                                                                                                                             'delimiter': ['quote', null],
@@ -913,7 +913,7 @@
                                                     )]],
                                                 )],
                                             ),
-                                            'Nieuw': _p_change_context(
+                                            "Nieuw": _p_change_context(
                                                 $['Nieuw'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -937,14 +937,14 @@
                                                                         'option': 'Nee',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Jaar': _p_change_context(
+                                                                                "Jaar": _p_change_context(
                                                                                     $['Jaar'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
                                                                                         'value': $,
                                                                                     }],
                                                                                 ),
-                                                                                'Rekening': _p_change_context(
+                                                                                "Rekening": _p_change_context(
                                                                                     $['Rekening'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -967,7 +967,7 @@
                                     )]],
                                 )],
                             ),
-                            'Beginsaldo nog aan te geven BTW': _p_change_context(
+                            "Beginsaldo nog aan te geven BTW": _p_change_context(
                                 $['Beginsaldo nog aan te geven BTW'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
@@ -979,7 +979,7 @@
                                     ),
                                 }],
                             ),
-                            'Beginsaldo winstreserve': _p_change_context(
+                            "Beginsaldo winstreserve": _p_change_context(
                                 $['Beginsaldo winstreserve'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
@@ -991,11 +991,11 @@
                                     ),
                                 }],
                             ),
-                            'BTW periode saldo': _p_change_context(
+                            "BTW periode saldo": _p_change_context(
                                 $['BTW periode saldo'],
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'Grootboekrekening': _p_change_context(
+                                        "Grootboekrekening": _p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
@@ -1005,13 +1005,13 @@
                                     },
                                 )]],
                             ),
-                            'BTW periodes': _p_change_context(
+                            "BTW periodes": _p_change_context(
                                 $['BTW periodes'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            '1. BTW-categorieen': _p_change_context(
+                                            "1. BTW-categorieen": _p_change_context(
                                                 $['1. BTW-categorieen'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
@@ -1021,13 +1021,13 @@
                                                     )]],
                                                 )],
                                             ),
-                                            'Documenten': _p_change_context(
+                                            "Documenten": _p_change_context(
                                                 $['Documenten'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Bestand': _p_change_context(
+                                                            "Bestand": _p_change_context(
                                                                 $['Bestand'],
                                                                 ($) => Bestandsnaam(
                                                                     $,
@@ -1037,14 +1037,14 @@
                                                     )]],
                                                 )],
                                             ),
-                                            'Omschrijving': _p_change_context(
+                                            "Omschrijving": _p_change_context(
                                                 $['Omschrijving'],
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
                                                 }],
                                             ),
-                                            'Status': _p_change_context(
+                                            "Status": _p_change_context(
                                                 $['Status'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1057,7 +1057,7 @@
                                                                         'option': 'Aangegeven',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Afronding': _p_change_context(
+                                                                                "Afronding": _p_change_context(
                                                                                     $['Afronding'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['none', null],
@@ -1069,7 +1069,7 @@
                                                                                         ),
                                                                                     }],
                                                                                 ),
-                                                                                'Bedrag': _p_change_context(
+                                                                                "Bedrag": _p_change_context(
                                                                                     $['Bedrag'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['none', null],
@@ -1081,7 +1081,7 @@
                                                                                         ),
                                                                                     }],
                                                                                 ),
-                                                                                'Datum': _p_change_context(
+                                                                                "Datum": _p_change_context(
                                                                                     $['Datum'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['none', null],
@@ -1120,7 +1120,7 @@
                                     )]],
                                 )],
                             ),
-                            'Eerste boekjaar': _p_change_context(
+                            "Eerste boekjaar": _p_change_context(
                                 $['Eerste boekjaar'],
                                 ($) => ['state', _p.decide.state(
                                     $,
@@ -1144,7 +1144,7 @@
                                                         'option': 'Nee',
                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                             {
-                                                                'Vorig boekjaar': _p_change_context(
+                                                                "Vorig boekjaar": _p_change_context(
                                                                     $['Vorig boekjaar'],
                                                                     ($) => ['text', {
                                                                         'delimiter': ['quote', null],
@@ -1163,41 +1163,41 @@
                                     },
                                 )],
                             ),
-                            'Grootboekrekening voor BTW afrondingen': _p_change_context(
+                            "Grootboekrekening voor BTW afrondingen": _p_change_context(
                                 $['Grootboekrekening voor BTW afrondingen'],
                                 ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
                                 }],
                             ),
-                            'Grootboekrekening voor nog aan te geven BTW': _p_change_context(
+                            "Grootboekrekening voor nog aan te geven BTW": _p_change_context(
                                 $['Grootboekrekening voor nog aan te geven BTW'],
                                 ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
                                 }],
                             ),
-                            'Grootboekrekening voor resultaat dit jaar': _p_change_context(
+                            "Grootboekrekening voor resultaat dit jaar": _p_change_context(
                                 $['Grootboekrekening voor resultaat dit jaar'],
                                 ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
                                 }],
                             ),
-                            'Grootboekrekening voor winstreserve': _p_change_context(
+                            "Grootboekrekening voor winstreserve": _p_change_context(
                                 $['Grootboekrekening voor winstreserve'],
                                 ($) => ['text', {
                                     'delimiter': ['quote', null],
                                     'value': $,
                                 }],
                             ),
-                            'Informele rekeningen': _p_change_context(
+                            "Informele rekeningen": _p_change_context(
                                 $['Informele rekeningen'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Beginsaldo': _p_change_context(
+                                            "Beginsaldo": _p_change_context(
                                                 $['Beginsaldo'],
                                                 ($) => ['text', {
                                                     'delimiter': ['none', null],
@@ -1209,14 +1209,14 @@
                                                     ),
                                                 }],
                                             ),
-                                            'Grootboekrekening': _p_change_context(
+                                            "Grootboekrekening": _p_change_context(
                                                 $['Grootboekrekening'],
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
                                                 }],
                                             ),
-                                            'Nieuw': _p_change_context(
+                                            "Nieuw": _p_change_context(
                                                 $['Nieuw'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1240,14 +1240,14 @@
                                                                         'option': 'Nee',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Jaar': _p_change_context(
+                                                                                "Jaar": _p_change_context(
                                                                                     $['Jaar'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
                                                                                         'value': $,
                                                                                     }],
                                                                                 ),
-                                                                                'Rekening': _p_change_context(
+                                                                                "Rekening": _p_change_context(
                                                                                     $['Rekening'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1270,13 +1270,13 @@
                                     )]],
                                 )],
                             ),
-                            'Inkopen': _p_change_context(
+                            "Inkopen": _p_change_context(
                                 $['Inkopen'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Afhandeling': _p_change_context(
+                                            "Afhandeling": _p_change_context(
                                                 $['Afhandeling'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1300,7 +1300,7 @@
                                                                         'option': 'Rekening courant',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Rekening courant': _p_change_context(
+                                                                                "Rekening courant": _p_change_context(
                                                                                     $['Rekening courant'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1319,7 +1319,7 @@
                                                     },
                                                 )],
                                             ),
-                                            'BTW-regime': _p_change_context(
+                                            "BTW-regime": _p_change_context(
                                                 $['BTW-regime'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1343,7 +1343,7 @@
                                                                         'option': 'Geen BTW van toepassing',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'BTW-periode': _p_change_context(
+                                                                                "BTW-periode": _p_change_context(
                                                                                     $['BTW-periode'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1383,7 +1383,7 @@
                                                                         'option': 'Standaard',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'BTW-periode': _p_change_context(
+                                                                                "BTW-periode": _p_change_context(
                                                                                     $['BTW-periode'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1402,7 +1402,7 @@
                                                     },
                                                 )],
                                             ),
-                                            'Brondocument': _p_change_context(
+                                            "Brondocument": _p_change_context(
                                                 $['Brondocument'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1415,7 +1415,7 @@
                                                                         'option': 'Toegevoegd',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Document': _p_change_context(
+                                                                                "Document": _p_change_context(
                                                                                     $['Document'],
                                                                                     ($) => Bestandsnaam(
                                                                                         $,
@@ -1466,7 +1466,7 @@
                                                     },
                                                 )],
                                             ),
-                                            'Datum': _p_change_context(
+                                            "Datum": _p_change_context(
                                                 $['Datum'],
                                                 ($) => ['text', {
                                                     'delimiter': ['none', null],
@@ -1478,13 +1478,13 @@
                                                     ),
                                                 }],
                                             ),
-                                            'Regels': _p_change_context(
+                                            "Regels": _p_change_context(
                                                 $['Regels'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Bedrag': _p_change_context(
+                                                            "Bedrag": _p_change_context(
                                                                 $['Bedrag'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -1497,7 +1497,7 @@
                                                                                         'option': 'Bekend',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'BTW-bedrag': _p_change_context(
+                                                                                                "BTW-bedrag": _p_change_context(
                                                                                                     $['BTW-bedrag'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['none', null],
@@ -1509,7 +1509,7 @@
                                                                                                         ),
                                                                                                     }],
                                                                                                 ),
-                                                                                                'Bedrag inclusief geheven BTW': _p_change_context(
+                                                                                                "Bedrag inclusief geheven BTW": _p_change_context(
                                                                                                     $['Bedrag inclusief geheven BTW'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['none', null],
@@ -1533,14 +1533,14 @@
                                                                     },
                                                                 )],
                                                             ),
-                                                            'Omschrijving': _p_change_context(
+                                                            "Omschrijving": _p_change_context(
                                                                 $['Omschrijving'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
                                                                 }],
                                                             ),
-                                                            'Type': _p_change_context(
+                                                            "Type": _p_change_context(
                                                                 $['Type'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -1553,7 +1553,7 @@
                                                                                         'option': 'Balans',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Balans item': _p_change_context(
+                                                                                                "Balans item": _p_change_context(
                                                                                                     $['Balans item'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -1571,7 +1571,7 @@
                                                                                         'option': 'Kosten',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Grootboekrekening': _p_change_context(
+                                                                                                "Grootboekrekening": _p_change_context(
                                                                                                     $['Grootboekrekening'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -1594,7 +1594,7 @@
                                                     )]],
                                                 )],
                                             ),
-                                            'Type': _p_change_context(
+                                            "Type": _p_change_context(
                                                 $['Type'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1618,14 +1618,14 @@
                                                                         'option': 'Inkoop (met crediteur)',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Crediteur': _p_change_context(
+                                                                                "Crediteur": _p_change_context(
                                                                                     $['Crediteur'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
                                                                                         'value': $,
                                                                                     }],
                                                                                 ),
-                                                                                'Factuurnummer': _p_change_context(
+                                                                                "Factuurnummer": _p_change_context(
                                                                                     $['Factuurnummer'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1643,7 +1643,7 @@
                                                                         'option': 'Loonheffing',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Ronde': _p_change_context(
+                                                                                "Ronde": _p_change_context(
                                                                                     $['Ronde'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1661,14 +1661,14 @@
                                                                         'option': 'Salaris',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Ronde': _p_change_context(
+                                                                                "Ronde": _p_change_context(
                                                                                     $['Ronde'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
                                                                                         'value': $,
                                                                                     }],
                                                                                 ),
-                                                                                'Medewerker': _p_change_context(
+                                                                                "Medewerker": _p_change_context(
                                                                                     $['Medewerker'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1691,11 +1691,11 @@
                                     )]],
                                 )],
                             ),
-                            'Inkoop saldo': _p_change_context(
+                            "Inkoop saldo": _p_change_context(
                                 $['Inkoop saldo'],
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'Grootboekrekening': _p_change_context(
+                                        "Grootboekrekening": _p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
@@ -1705,13 +1705,13 @@
                                     },
                                 )]],
                             ),
-                            'Overige balans items': _p_change_context(
+                            "Overige balans items": _p_change_context(
                                 $['Overige balans items'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Beginsaldo': _p_change_context(
+                                            "Beginsaldo": _p_change_context(
                                                 $['Beginsaldo'],
                                                 ($) => ['text', {
                                                     'delimiter': ['none', null],
@@ -1723,20 +1723,20 @@
                                                     ),
                                                 }],
                                             ),
-                                            'Grootboekrekening': _p_change_context(
+                                            "Grootboekrekening": _p_change_context(
                                                 $['Grootboekrekening'],
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
                                                 }],
                                             ),
-                                            'Memoriaal boekingen': _p_change_context(
+                                            "Memoriaal boekingen": _p_change_context(
                                                 $['Memoriaal boekingen'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Bedrag': _p_change_context(
+                                                            "Bedrag": _p_change_context(
                                                                 $['Bedrag'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -1748,7 +1748,7 @@
                                                                     ),
                                                                 }],
                                                             ),
-                                                            'Datum': _p_change_context(
+                                                            "Datum": _p_change_context(
                                                                 $['Datum'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -1760,14 +1760,14 @@
                                                                     ),
                                                                 }],
                                                             ),
-                                                            'Grootboekrekening': _p_change_context(
+                                                            "Grootboekrekening": _p_change_context(
                                                                 $['Grootboekrekening'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
                                                                 }],
                                                             ),
-                                                            'Omschrijving': _p_change_context(
+                                                            "Omschrijving": _p_change_context(
                                                                 $['Omschrijving'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['quote', null],
@@ -1778,7 +1778,7 @@
                                                     )]],
                                                 )],
                                             ),
-                                            'Nieuw': _p_change_context(
+                                            "Nieuw": _p_change_context(
                                                 $['Nieuw'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1802,14 +1802,14 @@
                                                                         'option': 'Nee',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Jaar': _p_change_context(
+                                                                                "Jaar": _p_change_context(
                                                                                     $['Jaar'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
                                                                                         'value': $,
                                                                                     }],
                                                                                 ),
-                                                                                'Balans item': _p_change_context(
+                                                                                "Balans item": _p_change_context(
                                                                                     $['Balans item'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1832,7 +1832,7 @@
                                     )]],
                                 )],
                             ),
-                            'Resultaat grootboekrekeningen': _p_change_context(
+                            "Resultaat grootboekrekeningen": _p_change_context(
                                 $['Resultaat grootboekrekeningen'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
@@ -1842,7 +1842,7 @@
                                     )]],
                                 )],
                             ),
-                            'Salarisrondes': _p_change_context(
+                            "Salarisrondes": _p_change_context(
                                 $['Salarisrondes'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
@@ -1852,7 +1852,7 @@
                                     )]],
                                 )],
                             ),
-                            'Startdatum boekjaar': _p_change_context(
+                            "Startdatum boekjaar": _p_change_context(
                                 $['Startdatum boekjaar'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
@@ -1864,11 +1864,11 @@
                                     ),
                                 }],
                             ),
-                            'Verkoop saldo': _p_change_context(
+                            "Verkoop saldo": _p_change_context(
                                 $['Verkoop saldo'],
                                 ($) => ['group', ['verbose', _p.dictionary.literal(
                                     {
-                                        'Grootboekrekening': _p_change_context(
+                                        "Grootboekrekening": _p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
@@ -1878,13 +1878,13 @@
                                     },
                                 )]],
                             ),
-                            'Verkopen': _p_change_context(
+                            "Verkopen": _p_change_context(
                                 $['Verkopen'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Afhandeling': _p_change_context(
+                                            "Afhandeling": _p_change_context(
                                                 $['Afhandeling'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1908,7 +1908,7 @@
                                                                         'option': 'Rekening courant',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Rekening courant': _p_change_context(
+                                                                                "Rekening courant": _p_change_context(
                                                                                     $['Rekening courant'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -1927,7 +1927,7 @@
                                                     },
                                                 )],
                                             ),
-                                            'Betalingstermijn': _p_change_context(
+                                            "Betalingstermijn": _p_change_context(
                                                 $['Betalingstermijn'],
                                                 ($) => ['text', {
                                                     'delimiter': ['none', null],
@@ -1939,14 +1939,14 @@
                                                     ),
                                                 }],
                                             ),
-                                            'BTW-periode': _p_change_context(
+                                            "BTW-periode": _p_change_context(
                                                 $['BTW-periode'],
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
                                                 }],
                                             ),
-                                            'Brondocument': _p_change_context(
+                                            "Brondocument": _p_change_context(
                                                 $['Brondocument'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1959,7 +1959,7 @@
                                                                         'option': 'Toegevoegd',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Document': _p_change_context(
+                                                                                "Document": _p_change_context(
                                                                                     $['Document'],
                                                                                     ($) => Bestandsnaam(
                                                                                         $,
@@ -1977,7 +1977,7 @@
                                                     },
                                                 )],
                                             ),
-                                            'Contracttype': _p_change_context(
+                                            "Contracttype": _p_change_context(
                                                 $['Contracttype'],
                                                 ($) => ['state', _p.decide.state(
                                                     $,
@@ -1990,14 +1990,14 @@
                                                                         'option': 'Project',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Project': _p_change_context(
+                                                                                "Project": _p_change_context(
                                                                                     $['Project'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
                                                                                         'value': $,
                                                                                     }],
                                                                                 ),
-                                                                                'Offerte': _p_change_context(
+                                                                                "Offerte": _p_change_context(
                                                                                     $['Offerte'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -2015,7 +2015,7 @@
                                                                         'option': 'Licentieovereenkomst',
                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                             {
-                                                                                'Overeenkomst': _p_change_context(
+                                                                                "Overeenkomst": _p_change_context(
                                                                                     $['Overeenkomst'],
                                                                                     ($) => ['text', {
                                                                                         'delimiter': ['quote', null],
@@ -2034,7 +2034,7 @@
                                                     },
                                                 )],
                                             ),
-                                            'Datum': _p_change_context(
+                                            "Datum": _p_change_context(
                                                 $['Datum'],
                                                 ($) => ['text', {
                                                     'delimiter': ['none', null],
@@ -2046,20 +2046,20 @@
                                                     ),
                                                 }],
                                             ),
-                                            'Debiteur': _p_change_context(
+                                            "Debiteur": _p_change_context(
                                                 $['Debiteur'],
                                                 ($) => ['text', {
                                                     'delimiter': ['quote', null],
                                                     'value': $,
                                                 }],
                                             ),
-                                            'Regels': _p_change_context(
+                                            "Regels": _p_change_context(
                                                 $['Regels'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'BTW-regime': _p_change_context(
+                                                            "BTW-regime": _p_change_context(
                                                                 $['BTW-regime'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -2083,7 +2083,7 @@
                                                                                         'option': 'Standaard',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'BTW-categorie': _p_change_context(
+                                                                                                "BTW-categorie": _p_change_context(
                                                                                                     $['BTW-categorie'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2113,7 +2113,7 @@
                                                                     },
                                                                 )],
                                                             ),
-                                                            'Bedrag exclusief BTW': _p_change_context(
+                                                            "Bedrag exclusief BTW": _p_change_context(
                                                                 $['Bedrag exclusief BTW'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -2125,7 +2125,7 @@
                                                                     ),
                                                                 }],
                                                             ),
-                                                            'Contracttype': _p_change_context(
+                                                            "Contracttype": _p_change_context(
                                                                 $['Contracttype'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -2138,7 +2138,7 @@
                                                                                         'option': 'Project',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Opbrengst': _p_change_context(
+                                                                                                "Opbrengst": _p_change_context(
                                                                                                     $['Opbrengst'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2167,7 +2167,7 @@
                                                                                         'option': 'Licentieovereenkomst',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Periode': _p_change_context(
+                                                                                                "Periode": _p_change_context(
                                                                                                     $['Periode'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2186,14 +2186,14 @@
                                                                     },
                                                                 )],
                                                             ),
-                                                            'Omschrijving': _p_change_context(
+                                                            "Omschrijving": _p_change_context(
                                                                 $['Omschrijving'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['quote', null],
                                                                     'value': $,
                                                                 }],
                                                             ),
-                                                            'Type': _p_change_context(
+                                                            "Type": _p_change_context(
                                                                 $['Type'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -2206,7 +2206,7 @@
                                                                                         'option': 'Opbrengsten',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Grootboekrekening': _p_change_context(
+                                                                                                "Grootboekrekening": _p_change_context(
                                                                                                     $['Grootboekrekening'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2224,7 +2224,7 @@
                                                                                         'option': 'Balans',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Balans item': _p_change_context(
+                                                                                                "Balans item": _p_change_context(
                                                                                                     $['Balans item'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2251,19 +2251,19 @@
                                     )]],
                                 )],
                             ),
-                            'Verrekenposten': _p_change_context(
+                            "Verrekenposten": _p_change_context(
                                 $['Verrekenposten'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Mutaties': _p_change_context(
+                                            "Mutaties": _p_change_context(
                                                 $['Mutaties'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Bedrag': _p_change_context(
+                                                            "Bedrag": _p_change_context(
                                                                 $['Bedrag'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -2275,7 +2275,7 @@
                                                                     ),
                                                                 }],
                                                             ),
-                                                            'Afhandeling': _p_change_context(
+                                                            "Afhandeling": _p_change_context(
                                                                 $['Afhandeling'],
                                                                 ($) => ['state', _p.decide.state(
                                                                     $,
@@ -2288,14 +2288,14 @@
                                                                                         'option': 'Inkoop',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Jaar': _p_change_context(
+                                                                                                "Jaar": _p_change_context(
                                                                                                     $['Jaar'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
                                                                                                         'value': $,
                                                                                                     }],
                                                                                                 ),
-                                                                                                'Inkoop': _p_change_context(
+                                                                                                "Inkoop": _p_change_context(
                                                                                                     $['Inkoop'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2313,7 +2313,7 @@
                                                                                         'option': 'Informele rekening',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Informele rekening': _p_change_context(
+                                                                                                "Informele rekening": _p_change_context(
                                                                                                     $['Informele rekening'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2331,14 +2331,14 @@
                                                                                         'option': 'Verkoop',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Jaar': _p_change_context(
+                                                                                                "Jaar": _p_change_context(
                                                                                                     $['Jaar'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
                                                                                                         'value': $,
                                                                                                     }],
                                                                                                 ),
-                                                                                                'Verkoop': _p_change_context(
+                                                                                                "Verkoop": _p_change_context(
                                                                                                     $['Verkoop'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2356,14 +2356,14 @@
                                                                                         'option': 'BTW-periode',
                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                             {
-                                                                                                'Jaar': _p_change_context(
+                                                                                                "Jaar": _p_change_context(
                                                                                                     $['Jaar'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
                                                                                                         'value': $,
                                                                                                     }],
                                                                                                 ),
-                                                                                                'BTW-periode': _p_change_context(
+                                                                                                "BTW-periode": _p_change_context(
                                                                                                     $['BTW-periode'],
                                                                                                     ($) => ['text', {
                                                                                                         'delimiter': ['quote', null],
@@ -2394,25 +2394,25 @@
                     )]],
                 )],
             ),
-            'Klanten': _p_change_context(
+            "Klanten": _p_change_context(
                 $['Klanten'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,
                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                         {
-                            'Licentieovereenkomsten': _p_change_context(
+                            "Licentieovereenkomsten": _p_change_context(
                                 $['Licentieovereenkomsten'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Periodes': _p_change_context(
+                                            "Periodes": _p_change_context(
                                                 $['Periodes'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Bedrag': _p_change_context(
+                                                            "Bedrag": _p_change_context(
                                                                 $['Bedrag'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
@@ -2432,25 +2432,25 @@
                                     )]],
                                 )],
                             ),
-                            'Projecten': _p_change_context(
+                            "Projecten": _p_change_context(
                                 $['Projecten'],
                                 ($) => ['dictionary', _p.dictionary.map(
                                     $,
                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                         {
-                                            'Offertes': _p_change_context(
+                                            "Offertes": _p_change_context(
                                                 $['Offertes'],
                                                 ($) => ['dictionary', _p.dictionary.map(
                                                     $,
                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                         {
-                                                            'Opbrengsten': _p_change_context(
+                                                            "Opbrengsten": _p_change_context(
                                                                 $['Opbrengsten'],
                                                                 ($) => ['dictionary', _p.dictionary.map(
                                                                     $,
                                                                     ($, id) => ['group', ['verbose', _p.dictionary.literal(
                                                                         {
-                                                                            'Type': _p_change_context(
+                                                                            "Type": _p_change_context(
                                                                                 $['Type'],
                                                                                 ($) => ['state', _p.decide.state(
                                                                                     $,
@@ -2463,7 +2463,7 @@
                                                                                                         'option': 'Project',
                                                                                                         'value': ['group', ['verbose', _p.dictionary.literal(
                                                                                                             {
-                                                                                                                'Bedrag': _p_change_context(
+                                                                                                                "Bedrag": _p_change_context(
                                                                                                                     $['Bedrag'],
                                                                                                                     ($) => ['text', {
                                                                                                                         'delimiter': ['none', null],
@@ -2475,7 +2475,7 @@
                                                                                                                         ),
                                                                                                                     }],
                                                                                                                 ),
-                                                                                                                'Betaaldatum': _p_change_context(
+                                                                                                                "Betaaldatum": _p_change_context(
                                                                                                                     $['Betaaldatum'],
                                                                                                                     ($) => ['text', {
                                                                                                                         'delimiter': ['none', null],
@@ -2515,7 +2515,7 @@
                     )]],
                 )],
             ),
-            'Leveranciers': _p_change_context(
+            "Leveranciers": _p_change_context(
                 $['Leveranciers'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,
@@ -2525,7 +2525,7 @@
                     )]],
                 )],
             ),
-            'Medewerkers': _p_change_context(
+            "Medewerkers": _p_change_context(
                 $['Medewerkers'],
                 ($) => ['dictionary', _p.dictionary.map(
                     $,

@@ -1,7 +1,6 @@
 import * as _p from 'pareto-core/dist/expression'
 import * as _pi from 'pareto-core/dist/interface'
 import * as _pdev from 'pareto-core-dev'
-import * as _pds from 'pareto-core/dist/deserializer'
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
 import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
