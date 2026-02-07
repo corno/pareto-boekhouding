@@ -41,9 +41,9 @@ export const $$ = (func: _pi.Refiner<string, string, string>): signatures.comman
                         {
                             'lines': _p.list.literal([_p.decide.state($, ($) => {
                                 switch ($[0]) {
-                                    case 'could not read instream': return _p.ss($, ($) => `could not read instream`)
+                                    case 'could not read instream': return _p.ss($, ($) => "could not read instream")
                                     case 'deserialization failed': return _p.ss($, ($) => $)
-                                    case 'could not write to stdout': return _p.ss($, ($) => `could not write to stdout`)
+                                    case 'could not write to stdout': return _p.ss($, ($) => "could not write to stdout")
                                     default: return _p.au($[0])
                                 }
                             })]),

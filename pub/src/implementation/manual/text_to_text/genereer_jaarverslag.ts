@@ -23,20 +23,20 @@
 //     //temp
 //     x3.jaren.__d_map(($, id) => {
 //         _pdev.log_debug_message(key, () => { })
-//         _pdev.log_debug_message(`  'balans'`, () => { })
+//         _pdev.log_debug_message("  'balans'", () => { })
 //         $.grootboekrekeningen.balans.__d_map(($, id) => {
-//             _pdev.log_debug_message(`    ${key}`, () => { })
-//             _pdev.log_debug_message(`      'inkopen'`, () => { })
+//             _pdev.log_debug_message("    ${key}", () => { })
+//             _pdev.log_debug_message("      'inkopen'", () => { })
 //             $['gerelateerde inkopen'].__d_map(($, id) => {
-//                 _pdev.log_debug_message(`        ${key}`, () => { })
+//                 _pdev.log_debug_message("        ${key}", () => { })
 //             })
 //         })
-//         _pdev.log_debug_message(`  'resultaat'`, () => { })
+//         _pdev.log_debug_message("  'resultaat'", () => { })
 //         $.grootboekrekeningen.resultaat.__d_map(($, id) => {
-//             _pdev.log_debug_message(`    ${key}`, () => { })
-//             _pdev.log_debug_message(`      'inkopen'`, () => { })
+//             _pdev.log_debug_message("    ${key}", () => { })
+//             _pdev.log_debug_message("      'inkopen'", () => { })
 //             $['gerelateerde inkopen'].__d_map(($, id) => {
-//                 _pdev.log_debug_message(`        ${key}`, () => { })
+//                 _pdev.log_debug_message("        ${key}", () => { })
 //             })
 //         })
 //     })

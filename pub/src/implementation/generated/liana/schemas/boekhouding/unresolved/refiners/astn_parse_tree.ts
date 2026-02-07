@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -36,13 +36,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -123,13 +124,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -161,13 +163,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -248,13 +251,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -297,13 +301,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -355,13 +360,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -442,13 +448,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -522,13 +529,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -609,13 +617,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -700,13 +709,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -819,13 +829,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -950,13 +961,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -1183,13 +1195,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -1215,13 +1228,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -1250,13 +1264,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -1314,13 +1329,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -1344,13 +1360,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -1374,13 +1391,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $,
                                                                 )['start']['relative'],
-                                                                'l dictionary': _p.dictionary.map(
+                                                                'l dictionary': _p.dictionary.from.dictionary(
                                                                     v_unmarshalled_from_parse_tree.Dictionary(
                                                                         $,
                                                                         ($) => abort(
                                                                             ['expected a dictionary', null],
                                                                         ),
                                                                     ),
+                                                                ).map(
                                                                     ($, id) => ({
                                                                         'l location': v_parse_tree_to_location.Value(
                                                                             $,
@@ -1438,13 +1456,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -1468,13 +1487,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                 'l location': v_parse_tree_to_location.Value(
                                                                     $,
                                                                 )['start']['relative'],
-                                                                'l dictionary': _p.dictionary.map(
+                                                                'l dictionary': _p.dictionary.from.dictionary(
                                                                     v_unmarshalled_from_parse_tree.Dictionary(
                                                                         $,
                                                                         ($) => abort(
                                                                             ['expected a dictionary', null],
                                                                         ),
                                                                     ),
+                                                                ).map(
                                                                     ($, id) => ({
                                                                         'l location': v_parse_tree_to_location.Value(
                                                                             $,
@@ -1498,13 +1518,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                         'l location': v_parse_tree_to_location.Value(
                                                                                             $,
                                                                                         )['start']['relative'],
-                                                                                        'l dictionary': _p.dictionary.map(
+                                                                                        'l dictionary': _p.dictionary.from.dictionary(
                                                                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                                                                 $,
                                                                                                 ($) => abort(
                                                                                                     ['expected a dictionary', null],
                                                                                                 ),
                                                                                             ),
+                                                                                        ).map(
                                                                                             ($, id) => ({
                                                                                                 'l location': v_parse_tree_to_location.Value(
                                                                                                     $,
@@ -1642,13 +1663,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -1674,13 +1696,14 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -1717,13 +1740,14 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -1825,13 +1849,14 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -1902,13 +1927,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -1934,13 +1960,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -1964,13 +1991,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                     'l location': v_parse_tree_to_location.Value(
                                                         $,
                                                     )['start']['relative'],
-                                                    'l dictionary': _p.dictionary.map(
+                                                    'l dictionary': _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => ({
                                                             'l location': v_parse_tree_to_location.Value(
                                                                 $,
@@ -1996,13 +2024,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                     'l location': v_parse_tree_to_location.Value(
                                                         $,
                                                     )['start']['relative'],
-                                                    'l dictionary': _p.dictionary.map(
+                                                    'l dictionary': _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => ({
                                                             'l location': v_parse_tree_to_location.Value(
                                                                 $,
@@ -2350,13 +2379,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -2502,13 +2532,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -2648,13 +2679,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                     'l location': v_parse_tree_to_location.Value(
                                                         $,
                                                     )['start']['relative'],
-                                                    'l dictionary': _p.dictionary.map(
+                                                    'l dictionary': _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => ({
                                                             'l location': v_parse_tree_to_location.Value(
                                                                 $,
@@ -2748,13 +2780,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -2780,13 +2813,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -2982,13 +3016,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -3329,13 +3364,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -3767,13 +3803,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -4141,13 +4178,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                         'l location': v_parse_tree_to_location.Value(
                                             $,
                                         )['start']['relative'],
-                                        'l dictionary': _p.dictionary.map(
+                                        'l dictionary': _p.dictionary.from.dictionary(
                                             v_unmarshalled_from_parse_tree.Dictionary(
                                                 $,
                                                 ($) => abort(
                                                     ['expected a dictionary', null],
                                                 ),
                                             ),
+                                        ).map(
                                             ($, id) => ({
                                                 'l location': v_parse_tree_to_location.Value(
                                                     $,
@@ -4546,13 +4584,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -4561,13 +4600,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -4730,13 +4770,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -4745,13 +4786,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -4912,13 +4954,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                 'l location': v_parse_tree_to_location.Value(
                     $,
                 )['start']['relative'],
-                'l dictionary': _p.dictionary.map(
+                'l dictionary': _p.dictionary.from.dictionary(
                     v_unmarshalled_from_parse_tree.Dictionary(
                         $,
                         ($) => abort(
                             ['expected a dictionary', null],
                         ),
                     ),
+                ).map(
                     ($, id) => ({
                         'l location': v_parse_tree_to_location.Value(
                             $,
@@ -4927,13 +4970,14 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                             'l location': v_parse_tree_to_location.Value(
                                 $,
                             )['start']['relative'],
-                            'l dictionary': _p.dictionary.map(
+                            'l dictionary': _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => ({
                                     'l location': v_parse_tree_to_location.Value(
                                         $,
@@ -5039,13 +5083,14 @@ export const Jaren: t_signatures.Jaren = ($, abort) => ({
     'l location': v_parse_tree_to_location.Value(
         $,
     )['start']['relative'],
-    'l dictionary': _p.dictionary.map(
+    'l dictionary': _p.dictionary.from.dictionary(
         v_unmarshalled_from_parse_tree.Dictionary(
             $,
             ($) => abort(
                 ['expected a dictionary', null],
             ),
         ),
+    ).map(
         ($, id) => ({
             'l location': v_parse_tree_to_location.Value(
                 $,
@@ -5228,13 +5273,14 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     ['no such entry', "Jaar"],
                 ),
             ),
-            ($) => _p.optional.map(
+            ($) => _p.optional.from.optional(
                 v_unmarshalled_from_parse_tree.Optional(
                     $,
                     ($) => abort(
                         ['expected an optional', null],
                     ),
                 ),
+            ).map(
                 ($) => ({
                     'l location': v_parse_tree_to_location.Value(
                         $,

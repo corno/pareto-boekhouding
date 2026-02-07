@@ -1,5 +1,5 @@
 import * as _pi from 'pareto-core/dist/interface'
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 
 //data types
@@ -17,8 +17,8 @@ const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _p
     return _p.dictionary.filter(
         $,
         ($) => $['is relevant']
-            ? _p.optional.set($['entry'])
-            : _p.optional.not_set()
+            ? _p.optional.literal.set($['entry'])
+            : _p.optional.literal.not_set()
 
     )
 }

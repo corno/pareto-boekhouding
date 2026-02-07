@@ -18,7 +18,7 @@
 //         dummy_jaarverslag.rapportage
 //     ),
 //     {
-//         'indentation': `    `,
-//         'newline': `\n`,
+//         'indentation': "    ",
+//         'newline': "\n",
 //     }
 // )

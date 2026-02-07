@@ -241,7 +241,7 @@ export const rapportage: d_static_html.Document = {
                 sh.t.header(
                     [],
                     [
-                        sh.t.th([], _p.optional.not_set(), [
+                        sh.t.th([], _p.optional.literal.not_set(), [
                             sh.t.cell([], []),
                             sh.t.cell([], [sh.f.span([sh.p.p("2011")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("2012")])]),
@@ -260,7 +260,7 @@ export const rapportage: d_static_html.Document = {
                 sh.t.body(
                     [],
                     [
-                        sh.t.td([ "basis" ], _p.optional.not_set(), [
+                        sh.t.td([ "basis" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Kosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -79.788,65")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -127,19")])]),
@@ -274,7 +274,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -517,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Overige bedrijfskosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -1.028,65")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -127,19")])]),
@@ -288,7 +288,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -517,00")])])
                         ]),
-                        sh.t.td([ "subcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "subcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Andere kosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -1.028,65")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -127,19")])]),
@@ -302,7 +302,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -517,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Administratie")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -361,25")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -316,7 +316,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Heffingsrente")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -218,00")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -330,7 +330,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Telefoon")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("30,00")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -344,7 +344,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Afrondingsverschillen")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -1,50")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -358,7 +358,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Belastingrente")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -372,7 +372,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Boetes belastingdienst")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -194,00")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -386,7 +386,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -517,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Diversen")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -283,90")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -127,19")])]),
@@ -400,7 +400,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "item" ], _p.optional.not_set(), [
+                        sh.t.td([ "item" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Niet incasseerbaar")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -414,7 +414,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Dividentuitkering")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -428,7 +428,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Personeelskosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -78.760,00")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -442,7 +442,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Overige personeelskosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -78.760,00")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -456,7 +456,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Inhuur")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -78.760,00")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -470,7 +470,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Financiële baten en lasten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -484,7 +484,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Kosten van schulden, rentelasten en soortgelijke kosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -498,7 +498,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Financieringskosten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -512,7 +512,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Vennootschapsbelasting")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -526,7 +526,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Opbrengsten")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 2.481,11")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -540,7 +540,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Claim Moxio")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -554,7 +554,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Correctie voorgeschoten kosten M-industries 2010")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 2.481,11")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -568,7 +568,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Ontvangen rente")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
@@ -582,7 +582,7 @@ export const rapportage: d_static_html.Document = {
                             sh.t.cell([], [sh.f.span([sh.p.p("")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ 0,00")])])
                         ]),
-                        sh.t.td([ "hoofdcategorie" ], _p.optional.not_set(), [
+                        sh.t.td([ "hoofdcategorie" ], _p.optional.literal.not_set(), [
                             sh.t.cell([], [sh.f.span([sh.p.p("Grand Total")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -77.307,54")])]),
                             sh.t.cell([], [sh.f.span([sh.p.p("€ -127,19")])]),

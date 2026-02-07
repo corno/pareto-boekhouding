@@ -1,5 +1,5 @@
 import * as _pi from 'pareto-core/dist/interface'
-import * as _pt from 'pareto-core/dist/expression'
+import * as _pt from 'pareto-core/dist/assign'
 
 // import * as d_static_html from "pub/dist/interface/generated/liana/schemas/static-html/data"
 
@@ -41,7 +41,7 @@ export const $$ = sh.schema(
     //     }
     //     // 'serializers': {
     //     //     "Document": sh.serializer(
-    //     //         `.html`,
+    //     //         ".html",
     //     //         r_temp_static_html.Document_Serialize,
     //     //         r_temp_static_html.Document_Deserialize,
     //     //         s_unmarshall.Error,

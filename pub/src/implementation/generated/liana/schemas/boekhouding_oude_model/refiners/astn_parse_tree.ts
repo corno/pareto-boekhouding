@@ -1,5 +1,5 @@
 
-import * as _p from 'pareto-core/dist/expression'
+import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
@@ -32,13 +32,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "Bankrekeningen"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -87,13 +88,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Grootboekrekeningen"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -194,13 +196,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Hoofdcategorieen"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -269,13 +272,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ['no such entry', "Subcategorieen"],
                                                         ),
                                                     ),
-                                                    ($) => _p.dictionary.map(
+                                                    ($) => _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
@@ -327,13 +331,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Hoofdcategorieen fiscus"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -402,13 +407,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ['no such entry', "Subcategorieen"],
                                                         ),
                                                     ),
-                                                    ($) => _p.dictionary.map(
+                                                    ($) => _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
@@ -434,13 +440,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ['no such entry', "BTW-categorieen"],
                             ),
                         ),
-                        ($) => _p.dictionary.map(
+                        ($) => _p.dictionary.from.dictionary(
                             v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null],
                                 ),
                             ),
+                        ).map(
                             ($, id) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
@@ -536,13 +543,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ['no such entry', "Gebruikers"],
                             ),
                         ),
-                        ($) => _p.dictionary.map(
+                        ($) => _p.dictionary.from.dictionary(
                             v_unmarshalled_from_parse_tree.Dictionary(
                                 $,
                                 ($) => abort(
                                     ['expected a dictionary', null],
                                 ),
                             ),
+                        ).map(
                             ($, id) => _p_change_context(
                                 v_unmarshalled_from_parse_tree.Group(
                                     $,
@@ -627,13 +635,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Correctietypes vennootschapsbelasting"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -675,13 +684,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Grootboekrekeningen"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -851,13 +861,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Hoofdcategorieen"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -926,13 +937,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ['no such entry', "Subcategorieen"],
                                                         ),
                                                     ),
-                                                    ($) => _p.dictionary.map(
+                                                    ($) => _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
@@ -984,13 +996,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ['no such entry', "Hoofdcategorieen fiscus"],
                                         ),
                                     ),
-                                    ($) => _p.dictionary.map(
+                                    ($) => _p.dictionary.from.dictionary(
                                         v_unmarshalled_from_parse_tree.Dictionary(
                                             $,
                                             ($) => abort(
                                                 ['expected a dictionary', null],
                                             ),
                                         ),
+                                    ).map(
                                         ($, id) => _p_change_context(
                                             v_unmarshalled_from_parse_tree.Group(
                                                 $,
@@ -1059,13 +1072,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ['no such entry', "Subcategorieen"],
                                                         ),
                                                     ),
-                                                    ($) => _p.dictionary.map(
+                                                    ($) => _p.dictionary.from.dictionary(
                                                         v_unmarshalled_from_parse_tree.Dictionary(
                                                             $,
                                                             ($) => abort(
                                                                 ['expected a dictionary', null],
                                                             ),
                                                         ),
+                                                    ).map(
                                                         ($, id) => _p_change_context(
                                                             v_unmarshalled_from_parse_tree.Group(
                                                                 $,
@@ -1094,13 +1108,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "Informele rekeningen"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -1119,13 +1134,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "Jaren"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -1194,13 +1210,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Balans grootboekrekeningen"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -1286,13 +1303,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Bankrekeningen"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -1344,13 +1362,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Mutaties"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -1853,13 +1872,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "BTW periodes"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -1875,13 +1895,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "1. BTW-categorieen"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -1900,13 +1921,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Documenten"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -2202,13 +2224,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Informele rekeningen"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -2346,13 +2369,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Inkopen"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -2674,13 +2698,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Regels"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -3070,13 +3095,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Overige balans items"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -3128,13 +3154,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Memoriaal boekingen"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -3312,13 +3339,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Resultaat grootboekrekeningen"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -3337,13 +3365,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Salarisrondes"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -3416,13 +3445,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Verkopen"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -3730,13 +3760,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Regels"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -4056,13 +4087,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Verrekenposten"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -4078,13 +4110,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Mutaties"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -4315,13 +4348,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "Klanten"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -4337,13 +4371,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Licentieovereenkomsten"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -4359,13 +4394,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Periodes"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -4411,13 +4447,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ['no such entry', "Projecten"],
                                 ),
                             ),
-                            ($) => _p.dictionary.map(
+                            ($) => _p.dictionary.from.dictionary(
                                 v_unmarshalled_from_parse_tree.Dictionary(
                                     $,
                                     ($) => abort(
                                         ['expected a dictionary', null],
                                     ),
                                 ),
+                            ).map(
                                 ($, id) => _p_change_context(
                                     v_unmarshalled_from_parse_tree.Group(
                                         $,
@@ -4433,13 +4470,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ['no such entry', "Offertes"],
                                                 ),
                                             ),
-                                            ($) => _p.dictionary.map(
+                                            ($) => _p.dictionary.from.dictionary(
                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                     $,
                                                     ($) => abort(
                                                         ['expected a dictionary', null],
                                                     ),
                                                 ),
+                                            ).map(
                                                 ($, id) => _p_change_context(
                                                     v_unmarshalled_from_parse_tree.Group(
                                                         $,
@@ -4455,13 +4493,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ['no such entry', "Opbrengsten"],
                                                                 ),
                                                             ),
-                                                            ($) => _p.dictionary.map(
+                                                            ($) => _p.dictionary.from.dictionary(
                                                                 v_unmarshalled_from_parse_tree.Dictionary(
                                                                     $,
                                                                     ($) => abort(
                                                                         ['expected a dictionary', null],
                                                                     ),
                                                                 ),
+                                                            ).map(
                                                                 ($, id) => _p_change_context(
                                                                     v_unmarshalled_from_parse_tree.Group(
                                                                         $,
@@ -4578,13 +4617,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "Leveranciers"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
@@ -4603,13 +4643,14 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ['no such entry', "Medewerkers"],
                 ),
             ),
-            ($) => _p.dictionary.map(
+            ($) => _p.dictionary.from.dictionary(
                 v_unmarshalled_from_parse_tree.Dictionary(
                     $,
                     ($) => abort(
                         ['expected a dictionary', null],
                     ),
                 ),
+            ).map(
                 ($, id) => _p_change_context(
                     v_unmarshalled_from_parse_tree.Group(
                         $,
