@@ -26,7 +26,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
     ),
     ($) => ({
         'Bankrekeningen': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Bankrekeningen',
                 ($) => abort(
                     ['no such entry', "Bankrekeningen"],
@@ -51,7 +51,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             ),
         ),
         'Beheer': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Beheer',
                 ($) => abort(
                     ['no such entry', "Beheer"],
@@ -66,7 +66,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                 ),
                 ($) => ({
                     'Balans': _p_change_context(
-                        $.__get_entry(
+                        $.__get_entry_deprecated(
                             'Balans',
                             ($) => abort(
                                 ['no such entry', "Balans"],
@@ -81,7 +81,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                             ($) => ({
                                 'Grootboekrekeningen': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Grootboekrekeningen',
                                         ($) => abort(
                                             ['no such entry', "Grootboekrekeningen"],
@@ -103,7 +103,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Hoofdcategorie': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Hoofdcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Hoofdcategorie"],
@@ -117,7 +117,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Subcategorie': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Subcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorie"],
@@ -131,7 +131,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Zijde': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"],
@@ -188,7 +188,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                 ),
                                 'Hoofdcategorieen': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Hoofdcategorieen',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen"],
@@ -210,7 +210,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Zijde': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"],
@@ -263,7 +263,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Subcategorieen': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"],
@@ -285,7 +285,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                             ($) => ({
                                                                 'Hoofdcategorie fiscus': _p_change_context(
-                                                                    $.__get_entry(
+                                                                    $.__get_entry_deprecated(
                                                                         'Hoofdcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Hoofdcategorie fiscus"],
@@ -299,7 +299,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ),
                                                                 ),
                                                                 'Subcategorie fiscus': _p_change_context(
-                                                                    $.__get_entry(
+                                                                    $.__get_entry_deprecated(
                                                                         'Subcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Subcategorie fiscus"],
@@ -321,7 +321,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                 ),
                                 'Hoofdcategorieen fiscus': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Hoofdcategorieen fiscus',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen fiscus"],
@@ -343,7 +343,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Zijde': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"],
@@ -396,7 +396,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Subcategorieen': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"],
@@ -428,7 +428,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                     ),
                     'BTW-categorieen': _p_change_context(
-                        $.__get_entry(
+                        $.__get_entry_deprecated(
                             'BTW-categorieen',
                             ($) => abort(
                                 ['no such entry', "BTW-categorieen"],
@@ -450,7 +450,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ),
                                 ($) => ({
                                     'BTW-heffing': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'BTW-heffing',
                                             ($) => abort(
                                                 ['no such entry', "BTW-heffing"],
@@ -479,7 +479,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ),
                                                                     ($) => ({
                                                                         'BTW-promillage': _p_change_context(
-                                                                            $.__get_entry(
+                                                                            $.__get_entry_deprecated(
                                                                                 'BTW-promillage',
                                                                                 ($) => abort(
                                                                                     ['no such entry', "BTW-promillage"],
@@ -530,7 +530,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                     ),
                     'Gebruikers': _p_change_context(
-                        $.__get_entry(
+                        $.__get_entry_deprecated(
                             'Gebruikers',
                             ($) => abort(
                                 ['no such entry', "Gebruikers"],
@@ -552,7 +552,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ),
                                 ($) => ({
                                     'Volledige naam': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'Volledige naam',
                                             ($) => abort(
                                                 ['no such entry', "Volledige naam"],
@@ -566,7 +566,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         ),
                                     ),
                                     'Wachtwoord': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'Wachtwoord',
                                             ($) => abort(
                                                 ['no such entry', "Wachtwoord"],
@@ -584,7 +584,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                     ),
                     'Huidige datum': _p_change_context(
-                        $.__get_entry(
+                        $.__get_entry_deprecated(
                             'Huidige datum',
                             ($) => abort(
                                 ['no such entry', "Huidige datum"],
@@ -606,7 +606,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                     ),
                     'Resultaat': _p_change_context(
-                        $.__get_entry(
+                        $.__get_entry_deprecated(
                             'Resultaat',
                             ($) => abort(
                                 ['no such entry', "Resultaat"],
@@ -621,7 +621,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                             ($) => ({
                                 'Correctietypes vennootschapsbelasting': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Correctietypes vennootschapsbelasting',
                                         ($) => abort(
                                             ['no such entry', "Correctietypes vennootschapsbelasting"],
@@ -643,7 +643,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Te corrigeren promillage': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Te corrigeren promillage',
                                                         ($) => abort(
                                                             ['no such entry', "Te corrigeren promillage"],
@@ -669,7 +669,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                 ),
                                 'Grootboekrekeningen': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Grootboekrekeningen',
                                         ($) => abort(
                                             ['no such entry', "Grootboekrekeningen"],
@@ -691,7 +691,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Hoofdcategorie': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Hoofdcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Hoofdcategorie"],
@@ -705,7 +705,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Subcategorie': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Subcategorie',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorie"],
@@ -719,7 +719,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Zijde': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"],
@@ -748,7 +748,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 ($) => ({
                                                                                     'Correctie op vennootschapsbelasting': _p_change_context(
-                                                                                        $.__get_entry(
+                                                                                        $.__get_entry_deprecated(
                                                                                             'Correctie op vennootschapsbelasting',
                                                                                             ($) => abort(
                                                                                                 ['no such entry', "Correctie op vennootschapsbelasting"],
@@ -777,7 +777,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     ),
                                                                                                                     ($) => ({
                                                                                                                         'Correctietype': _p_change_context(
-                                                                                                                            $.__get_entry(
+                                                                                                                            $.__get_entry_deprecated(
                                                                                                                                 'Correctietype',
                                                                                                                                 ($) => abort(
                                                                                                                                     ['no such entry', "Correctietype"],
@@ -845,7 +845,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                 ),
                                 'Hoofdcategorieen': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Hoofdcategorieen',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen"],
@@ -867,7 +867,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Zijde': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"],
@@ -920,7 +920,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Subcategorieen': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"],
@@ -942,7 +942,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                             ($) => ({
                                                                 'Hoofdcategorie fiscus': _p_change_context(
-                                                                    $.__get_entry(
+                                                                    $.__get_entry_deprecated(
                                                                         'Hoofdcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Hoofdcategorie fiscus"],
@@ -956,7 +956,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ),
                                                                 ),
                                                                 'Subcategorie fiscus': _p_change_context(
-                                                                    $.__get_entry(
+                                                                    $.__get_entry_deprecated(
                                                                         'Subcategorie fiscus',
                                                                         ($) => abort(
                                                                             ['no such entry', "Subcategorie fiscus"],
@@ -978,7 +978,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                 ),
                                 'Hoofdcategorieen fiscus': _p_change_context(
-                                    $.__get_entry(
+                                    $.__get_entry_deprecated(
                                         'Hoofdcategorieen fiscus',
                                         ($) => abort(
                                             ['no such entry', "Hoofdcategorieen fiscus"],
@@ -1000,7 +1000,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             ($) => ({
                                                 'Zijde': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Zijde',
                                                         ($) => abort(
                                                             ['no such entry', "Zijde"],
@@ -1053,7 +1053,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                 ),
                                                 'Subcategorieen': _p_change_context(
-                                                    $.__get_entry(
+                                                    $.__get_entry_deprecated(
                                                         'Subcategorieen',
                                                         ($) => abort(
                                                             ['no such entry', "Subcategorieen"],
@@ -1088,7 +1088,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             ),
         ),
         'Informele rekeningen': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Informele rekeningen',
                 ($) => abort(
                     ['no such entry', "Informele rekeningen"],
@@ -1113,7 +1113,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             ),
         ),
         'Jaren': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Jaren',
                 ($) => abort(
                     ['no such entry', "Jaren"],
@@ -1135,7 +1135,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ),
                     ($) => ({
                         'Afgesloten': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Afgesloten',
                                 ($) => abort(
                                     ['no such entry', "Afgesloten"],
@@ -1188,7 +1188,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Balans grootboekrekeningen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Balans grootboekrekeningen',
                                 ($) => abort(
                                     ['no such entry', "Balans grootboekrekeningen"],
@@ -1210,7 +1210,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Type': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Type',
                                                 ($) => abort(
                                                     ['no such entry', "Type"],
@@ -1280,7 +1280,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Bankrekeningen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Bankrekeningen',
                                 ($) => abort(
                                     ['no such entry', "Bankrekeningen"],
@@ -1302,7 +1302,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Beginsaldo': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Beginsaldo',
                                                 ($) => abort(
                                                     ['no such entry', "Beginsaldo"],
@@ -1324,7 +1324,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Grootboekrekening': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Grootboekrekening',
                                                 ($) => abort(
                                                     ['no such entry', "Grootboekrekening"],
@@ -1338,7 +1338,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Mutaties': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Mutaties',
                                                 ($) => abort(
                                                     ['no such entry', "Mutaties"],
@@ -1360,7 +1360,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Bedrag': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"],
@@ -1382,7 +1382,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Datum': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Datum',
                                                                 ($) => abort(
                                                                     ['no such entry', "Datum"],
@@ -1404,7 +1404,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Omschrijving': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"],
@@ -1418,7 +1418,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Status': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Status',
                                                                 ($) => abort(
                                                                     ['no such entry', "Status"],
@@ -1460,7 +1460,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Afhandeling': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Afhandeling',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Afhandeling"],
@@ -1489,7 +1489,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => ({
                                                                                                                                 'Jaar': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Jaar',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Jaar"],
@@ -1503,7 +1503,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     ),
                                                                                                                                 ),
                                                                                                                                 'Inkoop': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Inkoop',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Inkoop"],
@@ -1531,7 +1531,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => ({
                                                                                                                                 'Verrekenpost': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Verrekenpost',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Verrekenpost"],
@@ -1559,7 +1559,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => ({
                                                                                                                                 'Jaar': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Jaar',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Jaar"],
@@ -1573,7 +1573,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     ),
                                                                                                                                 ),
                                                                                                                                 'BTW-periode': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'BTW-periode',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "BTW-periode"],
@@ -1601,7 +1601,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => ({
                                                                                                                                 'Jaar': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Jaar',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Jaar"],
@@ -1615,7 +1615,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     ),
                                                                                                                                 ),
                                                                                                                                 'Verkoop': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Verkoop',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Verkoop"],
@@ -1643,7 +1643,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => ({
                                                                                                                                 'Informele rekening': _p_change_context(
-                                                                                                                                    $.__get_entry(
+                                                                                                                                    $.__get_entry_deprecated(
                                                                                                                                         'Informele rekening',
                                                                                                                                         ($) => abort(
                                                                                                                                             ['no such entry', "Informele rekening"],
@@ -1685,7 +1685,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Nieuw': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"],
@@ -1727,7 +1727,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Jaar': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Jaar',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Jaar"],
@@ -1741,7 +1741,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Rekening': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Rekening',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Rekening"],
@@ -1771,7 +1771,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Beginsaldo nog aan te geven BTW': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Beginsaldo nog aan te geven BTW',
                                 ($) => abort(
                                     ['no such entry', "Beginsaldo nog aan te geven BTW"],
@@ -1793,7 +1793,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Beginsaldo winstreserve': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Beginsaldo winstreserve',
                                 ($) => abort(
                                     ['no such entry', "Beginsaldo winstreserve"],
@@ -1815,7 +1815,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'BTW periode saldo': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'BTW periode saldo',
                                 ($) => abort(
                                     ['no such entry', "BTW periode saldo"],
@@ -1830,7 +1830,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ),
                                 ($) => ({
                                     'Grootboekrekening': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'Grootboekrekening',
                                             ($) => abort(
                                                 ['no such entry', "Grootboekrekening"],
@@ -1847,7 +1847,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'BTW periodes': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'BTW periodes',
                                 ($) => abort(
                                     ['no such entry', "BTW periodes"],
@@ -1869,7 +1869,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         '1. BTW-categorieen': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 '1. BTW-categorieen',
                                                 ($) => abort(
                                                     ['no such entry', "1. BTW-categorieen"],
@@ -1894,7 +1894,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Documenten': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Documenten',
                                                 ($) => abort(
                                                     ['no such entry', "Documenten"],
@@ -1916,7 +1916,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Bestand': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bestand',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bestand"],
@@ -1934,7 +1934,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Omschrijving': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Omschrijving',
                                                 ($) => abort(
                                                     ['no such entry', "Omschrijving"],
@@ -1948,7 +1948,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Status': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Status',
                                                 ($) => abort(
                                                     ['no such entry', "Status"],
@@ -1977,7 +1977,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Afronding': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Afronding',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Afronding"],
@@ -1999,7 +1999,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Bedrag': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Bedrag',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Bedrag"],
@@ -2021,7 +2021,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Datum': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Datum',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Datum"],
@@ -2072,7 +2072,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Eerste boekjaar': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Eerste boekjaar',
                                 ($) => abort(
                                     ['no such entry', "Eerste boekjaar"],
@@ -2114,7 +2114,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ),
                                                         ($) => ({
                                                             'Vorig boekjaar': _p_change_context(
-                                                                $.__get_entry(
+                                                                $.__get_entry_deprecated(
                                                                     'Vorig boekjaar',
                                                                     ($) => abort(
                                                                         ['no such entry', "Vorig boekjaar"],
@@ -2140,7 +2140,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Grootboekrekening voor BTW afrondingen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Grootboekrekening voor BTW afrondingen',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor BTW afrondingen"],
@@ -2154,7 +2154,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Grootboekrekening voor nog aan te geven BTW': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Grootboekrekening voor nog aan te geven BTW',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor nog aan te geven BTW"],
@@ -2168,7 +2168,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Grootboekrekening voor resultaat dit jaar': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Grootboekrekening voor resultaat dit jaar',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor resultaat dit jaar"],
@@ -2182,7 +2182,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Grootboekrekening voor winstreserve': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Grootboekrekening voor winstreserve',
                                 ($) => abort(
                                     ['no such entry', "Grootboekrekening voor winstreserve"],
@@ -2196,7 +2196,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Informele rekeningen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Informele rekeningen',
                                 ($) => abort(
                                     ['no such entry', "Informele rekeningen"],
@@ -2218,7 +2218,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Beginsaldo': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Beginsaldo',
                                                 ($) => abort(
                                                     ['no such entry', "Beginsaldo"],
@@ -2240,7 +2240,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Grootboekrekening': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Grootboekrekening',
                                                 ($) => abort(
                                                     ['no such entry', "Grootboekrekening"],
@@ -2254,7 +2254,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Nieuw': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"],
@@ -2296,7 +2296,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Jaar': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Jaar',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Jaar"],
@@ -2310,7 +2310,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Rekening': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Rekening',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Rekening"],
@@ -2340,7 +2340,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Inkopen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Inkopen',
                                 ($) => abort(
                                     ['no such entry', "Inkopen"],
@@ -2362,7 +2362,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Afhandeling': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Afhandeling',
                                                 ($) => abort(
                                                     ['no such entry', "Afhandeling"],
@@ -2404,7 +2404,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Rekening courant': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Rekening courant',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Rekening courant"],
@@ -2430,7 +2430,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'BTW-regime': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'BTW-regime',
                                                 ($) => abort(
                                                     ['no such entry', "BTW-regime"],
@@ -2472,7 +2472,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'BTW-periode': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'BTW-periode',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "BTW-periode"],
@@ -2526,7 +2526,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'BTW-periode': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'BTW-periode',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "BTW-periode"],
@@ -2552,7 +2552,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Brondocument': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Brondocument',
                                                 ($) => abort(
                                                     ['no such entry', "Brondocument"],
@@ -2581,7 +2581,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Document': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Document',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Document"],
@@ -2646,7 +2646,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Datum': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Datum',
                                                 ($) => abort(
                                                     ['no such entry', "Datum"],
@@ -2668,7 +2668,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Regels': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Regels',
                                                 ($) => abort(
                                                     ['no such entry', "Regels"],
@@ -2690,7 +2690,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Bedrag': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"],
@@ -2719,7 +2719,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'BTW-bedrag': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'BTW-bedrag',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "BTW-bedrag"],
@@ -2741,7 +2741,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ),
                                                                                             ),
                                                                                             'Bedrag inclusief geheven BTW': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Bedrag inclusief geheven BTW',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Bedrag inclusief geheven BTW"],
@@ -2775,7 +2775,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Omschrijving': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"],
@@ -2789,7 +2789,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Type': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"],
@@ -2818,7 +2818,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Balans item': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Balans item',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Balans item"],
@@ -2846,7 +2846,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Grootboekrekening': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Grootboekrekening',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Grootboekrekening"],
@@ -2876,7 +2876,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Type': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Type',
                                                 ($) => abort(
                                                     ['no such entry', "Type"],
@@ -2918,7 +2918,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Crediteur': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Crediteur',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Crediteur"],
@@ -2932,7 +2932,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Factuurnummer': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Factuurnummer',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Factuurnummer"],
@@ -2960,7 +2960,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Ronde': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Ronde',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Ronde"],
@@ -2988,7 +2988,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Ronde': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Ronde',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Ronde"],
@@ -3002,7 +3002,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Medewerker': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Medewerker',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Medewerker"],
@@ -3032,7 +3032,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Inkoop saldo': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Inkoop saldo',
                                 ($) => abort(
                                     ['no such entry', "Inkoop saldo"],
@@ -3047,7 +3047,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ),
                                 ($) => ({
                                     'Grootboekrekening': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'Grootboekrekening',
                                             ($) => abort(
                                                 ['no such entry', "Grootboekrekening"],
@@ -3064,7 +3064,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Overige balans items': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Overige balans items',
                                 ($) => abort(
                                     ['no such entry', "Overige balans items"],
@@ -3086,7 +3086,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Beginsaldo': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Beginsaldo',
                                                 ($) => abort(
                                                     ['no such entry', "Beginsaldo"],
@@ -3108,7 +3108,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Grootboekrekening': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Grootboekrekening',
                                                 ($) => abort(
                                                     ['no such entry', "Grootboekrekening"],
@@ -3122,7 +3122,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Memoriaal boekingen': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Memoriaal boekingen',
                                                 ($) => abort(
                                                     ['no such entry', "Memoriaal boekingen"],
@@ -3144,7 +3144,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Bedrag': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"],
@@ -3166,7 +3166,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Datum': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Datum',
                                                                 ($) => abort(
                                                                     ['no such entry', "Datum"],
@@ -3188,7 +3188,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Grootboekrekening': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Grootboekrekening',
                                                                 ($) => abort(
                                                                     ['no such entry', "Grootboekrekening"],
@@ -3202,7 +3202,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Omschrijving': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"],
@@ -3220,7 +3220,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Nieuw': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Nieuw',
                                                 ($) => abort(
                                                     ['no such entry', "Nieuw"],
@@ -3262,7 +3262,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Jaar': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Jaar',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Jaar"],
@@ -3276,7 +3276,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Balans item': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Balans item',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Balans item"],
@@ -3306,7 +3306,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Resultaat grootboekrekeningen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Resultaat grootboekrekeningen',
                                 ($) => abort(
                                     ['no such entry', "Resultaat grootboekrekeningen"],
@@ -3331,7 +3331,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Salarisrondes': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Salarisrondes',
                                 ($) => abort(
                                     ['no such entry', "Salarisrondes"],
@@ -3356,7 +3356,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Startdatum boekjaar': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Startdatum boekjaar',
                                 ($) => abort(
                                     ['no such entry', "Startdatum boekjaar"],
@@ -3378,7 +3378,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Verkoop saldo': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Verkoop saldo',
                                 ($) => abort(
                                     ['no such entry', "Verkoop saldo"],
@@ -3393,7 +3393,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 ),
                                 ($) => ({
                                     'Grootboekrekening': _p_change_context(
-                                        $.__get_entry(
+                                        $.__get_entry_deprecated(
                                             'Grootboekrekening',
                                             ($) => abort(
                                                 ['no such entry', "Grootboekrekening"],
@@ -3410,7 +3410,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Verkopen': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Verkopen',
                                 ($) => abort(
                                     ['no such entry', "Verkopen"],
@@ -3432,7 +3432,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Afhandeling': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Afhandeling',
                                                 ($) => abort(
                                                     ['no such entry', "Afhandeling"],
@@ -3474,7 +3474,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Rekening courant': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Rekening courant',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Rekening courant"],
@@ -3500,7 +3500,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Betalingstermijn': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Betalingstermijn',
                                                 ($) => abort(
                                                     ['no such entry', "Betalingstermijn"],
@@ -3522,7 +3522,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'BTW-periode': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'BTW-periode',
                                                 ($) => abort(
                                                     ['no such entry', "BTW-periode"],
@@ -3536,7 +3536,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Brondocument': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Brondocument',
                                                 ($) => abort(
                                                     ['no such entry', "Brondocument"],
@@ -3565,7 +3565,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Document': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Document',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Document"],
@@ -3591,7 +3591,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Contracttype': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Contracttype',
                                                 ($) => abort(
                                                     ['no such entry', "Contracttype"],
@@ -3620,7 +3620,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Project': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Project',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Project"],
@@ -3634,7 +3634,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             'Offerte': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Offerte',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Offerte"],
@@ -3662,7 +3662,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         ($) => ({
                                                                             'Overeenkomst': _p_change_context(
-                                                                                $.__get_entry(
+                                                                                $.__get_entry_deprecated(
                                                                                     'Overeenkomst',
                                                                                     ($) => abort(
                                                                                         ['no such entry', "Overeenkomst"],
@@ -3688,7 +3688,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Datum': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Datum',
                                                 ($) => abort(
                                                     ['no such entry', "Datum"],
@@ -3710,7 +3710,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Debiteur': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Debiteur',
                                                 ($) => abort(
                                                     ['no such entry', "Debiteur"],
@@ -3724,7 +3724,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         'Regels': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Regels',
                                                 ($) => abort(
                                                     ['no such entry', "Regels"],
@@ -3746,7 +3746,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'BTW-regime': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'BTW-regime',
                                                                 ($) => abort(
                                                                     ['no such entry', "BTW-regime"],
@@ -3788,7 +3788,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'BTW-categorie': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'BTW-categorie',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "BTW-categorie"],
@@ -3827,7 +3827,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Bedrag exclusief BTW': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bedrag exclusief BTW',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag exclusief BTW"],
@@ -3849,7 +3849,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Contracttype': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Contracttype',
                                                                 ($) => abort(
                                                                     ['no such entry', "Contracttype"],
@@ -3878,7 +3878,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Opbrengst': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Opbrengst',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Opbrengst"],
@@ -3919,7 +3919,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Periode': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Periode',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Periode"],
@@ -3945,7 +3945,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Omschrijving': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Omschrijving',
                                                                 ($) => abort(
                                                                     ['no such entry', "Omschrijving"],
@@ -3959,7 +3959,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Type': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Type',
                                                                 ($) => abort(
                                                                     ['no such entry', "Type"],
@@ -3988,7 +3988,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Grootboekrekening': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Grootboekrekening',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Grootboekrekening"],
@@ -4016,7 +4016,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Balans item': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Balans item',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Balans item"],
@@ -4050,7 +4050,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Verrekenposten': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Verrekenposten',
                                 ($) => abort(
                                     ['no such entry', "Verrekenposten"],
@@ -4072,7 +4072,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Mutaties': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Mutaties',
                                                 ($) => abort(
                                                     ['no such entry', "Mutaties"],
@@ -4094,7 +4094,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Bedrag': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"],
@@ -4116,7 +4116,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         'Afhandeling': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Afhandeling',
                                                                 ($) => abort(
                                                                     ['no such entry', "Afhandeling"],
@@ -4145,7 +4145,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Jaar': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Jaar',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Jaar"],
@@ -4159,7 +4159,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ),
                                                                                             ),
                                                                                             'Inkoop': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Inkoop',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Inkoop"],
@@ -4187,7 +4187,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Informele rekening': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Informele rekening',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Informele rekening"],
@@ -4215,7 +4215,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Jaar': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Jaar',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Jaar"],
@@ -4229,7 +4229,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ),
                                                                                             ),
                                                                                             'Verkoop': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Verkoop',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Verkoop"],
@@ -4257,7 +4257,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                         ($) => ({
                                                                                             'Jaar': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'Jaar',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "Jaar"],
@@ -4271,7 +4271,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ),
                                                                                             ),
                                                                                             'BTW-periode': _p_change_context(
-                                                                                                $.__get_entry(
+                                                                                                $.__get_entry_deprecated(
                                                                                                     'BTW-periode',
                                                                                                     ($) => abort(
                                                                                                         ['no such entry', "BTW-periode"],
@@ -4309,7 +4309,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             ),
         ),
         'Klanten': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Klanten',
                 ($) => abort(
                     ['no such entry', "Klanten"],
@@ -4331,7 +4331,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     ),
                     ($) => ({
                         'Licentieovereenkomsten': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Licentieovereenkomsten',
                                 ($) => abort(
                                     ['no such entry', "Licentieovereenkomsten"],
@@ -4353,7 +4353,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Periodes': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Periodes',
                                                 ($) => abort(
                                                     ['no such entry', "Periodes"],
@@ -4375,7 +4375,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Bedrag': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Bedrag',
                                                                 ($) => abort(
                                                                     ['no such entry', "Bedrag"],
@@ -4405,7 +4405,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ),
                         ),
                         'Projecten': _p_change_context(
-                            $.__get_entry(
+                            $.__get_entry_deprecated(
                                 'Projecten',
                                 ($) => abort(
                                     ['no such entry', "Projecten"],
@@ -4427,7 +4427,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                     ),
                                     ($) => ({
                                         'Offertes': _p_change_context(
-                                            $.__get_entry(
+                                            $.__get_entry_deprecated(
                                                 'Offertes',
                                                 ($) => abort(
                                                     ['no such entry', "Offertes"],
@@ -4449,7 +4449,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     ($) => ({
                                                         'Opbrengsten': _p_change_context(
-                                                            $.__get_entry(
+                                                            $.__get_entry_deprecated(
                                                                 'Opbrengsten',
                                                                 ($) => abort(
                                                                     ['no such entry', "Opbrengsten"],
@@ -4471,7 +4471,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ),
                                                                     ($) => ({
                                                                         'Type': _p_change_context(
-                                                                            $.__get_entry(
+                                                                            $.__get_entry_deprecated(
                                                                                 'Type',
                                                                                 ($) => abort(
                                                                                     ['no such entry', "Type"],
@@ -4500,7 +4500,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         ),
                                                                                                         ($) => ({
                                                                                                             'Bedrag': _p_change_context(
-                                                                                                                $.__get_entry(
+                                                                                                                $.__get_entry_deprecated(
                                                                                                                     'Bedrag',
                                                                                                                     ($) => abort(
                                                                                                                         ['no such entry', "Bedrag"],
@@ -4522,7 +4522,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 ),
                                                                                                             ),
                                                                                                             'Betaaldatum': _p_change_context(
-                                                                                                                $.__get_entry(
+                                                                                                                $.__get_entry_deprecated(
                                                                                                                     'Betaaldatum',
                                                                                                                     ($) => abort(
                                                                                                                         ['no such entry', "Betaaldatum"],
@@ -4572,7 +4572,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             ),
         ),
         'Leveranciers': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Leveranciers',
                 ($) => abort(
                     ['no such entry', "Leveranciers"],
@@ -4597,7 +4597,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             ),
         ),
         'Medewerkers': _p_change_context(
-            $.__get_entry(
+            $.__get_entry_deprecated(
                 'Medewerkers',
                 ($) => abort(
                     ['no such entry', "Medewerkers"],
