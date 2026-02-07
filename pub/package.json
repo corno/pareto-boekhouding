@@ -32,7 +32,7 @@
     "pareto-core-dev": "^0.12.7",
     "pareto-core-shorthands": "^0.2.19",
     "pareto-host-nodejs": "^0.2.22",
-    "pareto-resources": "^0.2.37",
+    "pareto-resources": "^0.2.38",
     "pareto-static-html": "^0.1.22"
   }
 }
