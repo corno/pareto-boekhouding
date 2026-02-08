@@ -21,8 +21,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                 $,
             ).map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    {
-                    },
+                    {},
                 )]],
             )],
         ),
@@ -67,8 +66,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Activa',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -78,8 +76,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Passiva',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -114,8 +111,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Activa',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -125,8 +121,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Passiva',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -186,8 +181,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Activa',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -197,8 +191,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Passiva',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -216,8 +209,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         $,
                                                     ).map(
                                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                            {
-                                                            },
+                                                            {},
                                                         )]],
                                                     )],
                                                 ),
@@ -270,8 +262,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             ($) => ({
                                                                 'option': 'Nee',
                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                    {
-                                                                    },
+                                                                    {},
                                                                 )]],
                                                             }),
                                                         )
@@ -415,8 +406,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                             ($) => ({
                                                                                                                 'option': 'Nee',
                                                                                                                 'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                                                    {
-                                                                                                                    },
+                                                                                                                    {},
                                                                                                                 )]],
                                                                                                             }),
                                                                                                         )
@@ -438,8 +428,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -474,8 +463,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Kosten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -485,8 +473,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -546,8 +533,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Kosten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -557,8 +543,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
                                                                             'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                {
-                                                                                },
+                                                                                {},
                                                                             )]],
                                                                         }),
                                                                     )
@@ -576,8 +561,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                         $,
                                                     ).map(
                                                         ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                            {
-                                                            },
+                                                            {},
                                                         )]],
                                                     )],
                                                 ),
@@ -597,8 +581,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                 $,
             ).map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    {
-                    },
+                    {},
                 )]],
             )],
         ),
@@ -621,8 +604,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Ja',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        {
-                                                        },
+                                                        {},
                                                     )]],
                                                 }),
                                             )
@@ -632,8 +614,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Nee',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        {
-                                                        },
+                                                        {},
                                                     )]],
                                                 }),
                                             )
@@ -664,8 +645,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Bankrekening',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -675,8 +655,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Overig',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -686,8 +665,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Informele rekening',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -779,8 +757,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Nog te verwerken',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        {
-                                                                                        },
+                                                                                        {},
                                                                                     )]],
                                                                                 }),
                                                                             )
@@ -944,8 +921,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1037,8 +1013,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 $,
                                             ).map(
                                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                                    {
-                                                    },
+                                                    {},
                                                 )]],
                                             )],
                                         ),
@@ -1125,8 +1100,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Openstaand',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1154,8 +1128,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 ($) => ({
                                                     'option': 'Ja',
                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        {
-                                                        },
+                                                        {},
                                                     )]],
                                                 }),
                                             )
@@ -1251,8 +1224,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1312,8 +1284,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1355,8 +1326,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1384,8 +1354,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Import van buiten de EU',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1395,8 +1364,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1455,8 +1423,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Niet van toepassing',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1466,8 +1433,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ontbreekt',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1477,8 +1443,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Nog toevoegen',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1631,8 +1596,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Bonnetje',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1817,8 +1781,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Ja',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -1865,8 +1828,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                 $,
                             ).map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    {
-                                    },
+                                    {},
                                 )]],
                             )],
                         ),
@@ -1876,8 +1838,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                 $,
                             ).map(
                                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                    {
-                                    },
+                                    {},
                                 )]],
                             )],
                         ),
@@ -1926,8 +1887,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {
-                                                                        },
+                                                                        {},
                                                                     )]],
                                                                 }),
                                                             )
@@ -2102,8 +2062,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Intracommunautair',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        {
-                                                                                        },
+                                                                                        {},
                                                                                     )]],
                                                                                 }),
                                                                             )
@@ -2131,8 +2090,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Binnenland: heffing verlegd',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        {
-                                                                                        },
+                                                                                        {},
                                                                                     )]],
                                                                                 }),
                                                                             )
@@ -2186,8 +2144,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 ($) => ({
                                                                                     'option': 'Los',
                                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                        {
-                                                                                        },
+                                                                                        {},
                                                                                     )]],
                                                                                 }),
                                                                             )
@@ -2560,8 +2517,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                 $,
             ).map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    {
-                    },
+                    {},
                 )]],
             )],
         ),
@@ -2571,8 +2527,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                 $,
             ).map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                    {
-                    },
+                    {},
                 )]],
             )],
         ),
