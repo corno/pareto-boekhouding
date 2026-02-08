@@ -3,9 +3,6 @@ import * as _pi from 'pareto-core/dist/interface'
 import * as d_in from "../../../generated/liana/schemas/boekhouding_oude_model/data"
 import * as d_out from "../../../generated/liana/schemas/boekhouding/data/unresolved"
 
-
-// **** TYPES
-
 export type Balans_Resultaat_Mutatie = (
     $$_: d_in.Root,
 ) => d_out.Balans_Resultaat_Mutatie
