@@ -14,16 +14,15 @@ type Possibly_Relevant_Entry<T> = {
 //dependencies
 
 const o_filter_relevant = <T>($: _pi.Dictionary<Possibly_Relevant_Entry<T>>): _pi.Dictionary<T> => {
-    return _p.dictionary.filter(
+    return _p.dictionary.from.dictionary(
         $,
+    ).filter(
         ($) => $['is relevant']
             ? _p.optional.literal.set($['entry'])
             : _p.optional.literal.not_set()
 
     )
 }
-
-
 
 export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
     'bron': $,

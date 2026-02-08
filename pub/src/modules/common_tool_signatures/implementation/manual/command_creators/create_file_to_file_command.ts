@@ -15,7 +15,8 @@ import * as s_transform_file from "../schemas/transform_file/serializers"
 
 
 export type Creator = (
-    deserializer: _pi.Deserializer_With_Parameters<
+    deserializer: _pi.Refiner_With_Parameter<
+        string,
         string,
         string,
         {
