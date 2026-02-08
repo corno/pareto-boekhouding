@@ -1,28 +1,35 @@
 import * as _p from 'pareto-core/dist/command'
 import * as _pi from 'pareto-core/dist/interface'
 import * as _pdev from 'pareto-core-dev'
+import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
 
 import * as signatures from "../../../interface/signatures"
 
 //data types
 import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_main"
 import * as d_transform_file from "../../../interface/to_be_generated/transform_file"
+import * as d_loc from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
+import * as d_fp from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
+import * as d_deserialize from "astn-core/dist/interface/generated/liana/schemas/deserialize_parse_tree/data"
 
 //dependencies
 import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refiners/main"
 import * as t_path_to_text from "pareto-resources/dist/implementation/manual/schemas/path/transformers/text"
-import * as s_transform_file from "../schemas/transform_file/serializers"
+import * as t_transform_file_to_fountain_pen from "../schemas/transform_file/transformers/fountain_pen"
+import * as t_fp_to_loc from "pareto-fountain-pen/dist/implementation/manual/schemas/block/transformers/list_of_characters"
 
+//shorthands
+import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+
+export type Deserializer = _pi.Refiner_With_Parameter<
+    d_fp.Paragraph,
+    d_fp.Phrase,
+    d_loc.List_of_Characters,
+    d_deserialize.Parameters
+>
 
 export type Creator = (
-    deserializer: _pi.Refiner_With_Parameter<
-        string,
-        string,
-        string,
-        {
-            'uri': string
-        }
-    >,
+    deserializer: Deserializer,
 ) => signatures.commands.transform_file
 
 
@@ -48,13 +55,26 @@ export const $$: Creator = (deserializer) => _p.command_procedure(($p, $cr, $qr)
                                 $,
                                 ($) => abort(['processing', $]),
                                 {
-                                    'uri': s_path.Node_Path($r.in),
+                                    'document resource identifier': _p_text_from_list(
+                                        t_path_to_text.Node_Path($r.in),
+                                        ($) => $,
+                                    ),
+                                    'tab size': 4,
                                 },
                             ),
                         }),
                         ($v) => [
                             $cr['write file'].execute(
-                                $v,
+                                {
+                                    'path': $v.path,
+                                    'data': t_fp_to_loc.Paragraph(
+                                        $v.data,
+                                        {
+                                            'indentation': "    ",
+                                            'newline': "\n",
+                                        }
+                                    )
+                                },
                                 ($) => {
                                     return ['file in file out', ['writing file', $]]
                                 },
@@ -68,7 +88,11 @@ export const $$: Creator = (deserializer) => _p.command_procedure(($p, $cr, $qr)
         ($) => [
             $cr['log error'].execute(
                 {
-                    'lines': _p.list.literal([s_transform_file.My_Error($)])
+                    'message': sh.pg.sentences([
+                        sh.sentence([
+                            t_transform_file_to_fountain_pen.My_Error($)
+                        ]),
+                    ])
                 },
                 ($) => ({
                     'exit code': 2

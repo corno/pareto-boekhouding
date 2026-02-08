@@ -1,5 +1,6 @@
 import * as _p from 'pareto-core/dist/assign'
 import * as _pi from 'pareto-core/dist/interface'
+import _p_list_from_text from 'pareto-core/dist/_p_list_from_text'
 
 //data types
 import * as d_file_in_file_out from "../../../../../interface/to_be_generated/file_in_file_out"
@@ -11,8 +12,13 @@ import * as r_node_path_from_text from "pareto-resources/dist/implementation/man
 
 export const Path: Signature = (iterator, abort) => r_node_path_from_text.Node_Path(
     iterator.consume(
-        ($) => $,
-        () => abort(['missing', null])
+        ($) => _p_list_from_text(
+            $,
+            ($) => $
+        ),
+        {
+            no_more_tokens: () => abort(['missing', null])
+        }
     ),
     ($) => abort(['not valid', null]),
     {

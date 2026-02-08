@@ -1,24 +1,20 @@
-// import * as _pi from 'pareto-core/dist/interface'
-// import * as _pdev from 'pareto-core-dev'
+import * as _pi from 'pareto-core/dist/interface'
+import * as _pdev from 'pareto-core-dev'
 
-// import * as d_xx from "astn-core/dist/interface/to_be_generated/deserialize_resolved_model"
+import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
-// export type Signature = _pi.Deserializer_With_Parameters<string, string, d_xx.Parameters>
+export type Signature = cffc.Deserializer
 
-// //data
-// import * as dummy_jaarverslag from "../../../data/temp_static_html_rapportage"
+//data
+import * as dummy_jaarverslag from "../../../data/temp_static_html_rapportage"
 
-// //dependencies
-// import * as s_fp from "pareto-fountain-pen/dist/implementation/manual/schemas/block/serializers"
-// import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/manual/schemas/static_html/transformers/fountain_pen"
+//dependencies
+import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/manual/schemas/static_html/transformers/fountain_pen"
+
+//shorthands
+import * as sh from "pareto-fountain-pen/dist/shorthands/block"
 
 
-// export const $$: Signature = ($) => s_fp.Group(//do nothing with the input file
-//     t_static_html_to_fp.Document(
-//         dummy_jaarverslag.rapportage
-//     ),
-//     {
-//         'indentation': "    ",
-//         'newline': "\n",
-//     }
-// )
+export const $$: Signature = ($) => t_static_html_to_fp.Document( //do nothing with the input, just return the dummy jaarverslag
+    dummy_jaarverslag.rapportage
+)

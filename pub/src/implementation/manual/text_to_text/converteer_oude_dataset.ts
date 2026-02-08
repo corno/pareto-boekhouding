@@ -1,26 +1,28 @@
-// import * as _pi from 'pareto-core/dist/interface'
+import * as _pi from 'pareto-core/dist/interface'
+import * as _pdev from 'pareto-core-dev'
 
-// import * as d_xx from "astn-sealed/dist/interface/to_be_generated/deserialize_resolved_model"
+import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
-// export type Signature = _pi.Deserializer_With_Parameters<string, string, d_xx.Parameters>
+export type Signature = cffc.Deserializer
 
-// import * as s_deserialize_unresolved_model from "astn-sealed/dist/implementation/schemas/deserialize_unresolved_model/serializers"
+//dependencies
+import * as r_boekhouding_oude_model_from_loc from "../../generated/liana/schemas/boekhouding_oude_model/refiners/list_of_characters"
+import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../schemas/boekhouding_unresolved/refiners/boekhouding_oude_model"
+import * as t_deserialize_parse_tree_to_fountain_pen from "liana-core/dist/implementation/manual/schemas/deserialize/transformers/fountain_pen"
+// import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
+namespace r_boekhouding_resolved_from_boekhouding_unresolved {
+    export const Root = ($: any) => _pdev.implement_me("fix generated code")
+}
+import * as t_boekhouding_resolved_to_fp from "../../generated/liana/schemas/boekhouding/resolved/transformers/fountain_pen"
 
-
-// import * as ds_boekhouding_oude_model from "../schemas/boekhouding_oude_model/temp_astn_deserializers"
-// import * as t_bh_oud_to_bh from "../schemas/boekhouding_unresolved/refiners/boekhouding_unresolved"
-// import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../schemas/boekhouding_resolved/refiners/boekhouding_unresolved"
-// import * as s_boekhouding_resolved from "../schemas/boekhouding_resolved/serializers"
-
-// export const $$: Signature = ($, abort, $p) => s_boekhouding_resolved.Root(
-//     r_boekhouding_resolved_from_boekhouding_unresolved.Root(
-//         t_bh_oud_to_bh.Root(
-//             ds_boekhouding_oude_model.Root(
-//                 $,
-//                 ($) => abort(s_deserialize_unresolved_model.Error($)),
-//                 $p,
-//             )
-//         ),
-//         $p,
-//     )
-// )
+export const $$: Signature = ($, abort, $p) => t_boekhouding_resolved_to_fp.Root(
+    r_boekhouding_resolved_from_boekhouding_unresolved.Root(
+        r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
+            r_boekhouding_oude_model_from_loc.Root(
+                $,
+                ($) => abort(t_deserialize_parse_tree_to_fountain_pen.Error($)),
+                $p
+            )
+        ),
+    )
+)
