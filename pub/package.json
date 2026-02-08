@@ -33,6 +33,6 @@
     "pareto-core-shorthands": "^0.2.19",
     "pareto-host-nodejs": "^0.2.26",
     "pareto-resources": "^0.2.44",
-    "pareto-static-html": "^0.1.22"
+    "pareto-static-html": "^0.1.23"
   }
 }
