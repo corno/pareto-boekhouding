@@ -29,8 +29,8 @@
   "dependencies": {
     "astn-core": "^0.5.33",
     "liana-core": "^0.0.18",
-    "pareto-core-dev": "^0.12.7",
-    "pareto-core-shorthands": "^0.2.19",
+    "pareto-core-dev": "^0.12.8",
+    "pareto-core-shorthands": "^0.2.20",
     "pareto-host-nodejs": "^0.2.26",
     "pareto-resources": "^0.2.44",
     "pareto-static-html": "^0.1.23"
