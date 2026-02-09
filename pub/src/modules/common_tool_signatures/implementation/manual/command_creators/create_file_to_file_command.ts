@@ -10,7 +10,7 @@ import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_ma
 import * as d_transform_file from "../../../interface/to_be_generated/transform_file"
 import * as d_loc from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
 import * as d_fp from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
-import * as d_deserialize from "astn-core/dist/interface/generated/liana/schemas/deserialize_parse_tree/data"
+import * as d_deserialize from "liana-core/dist/interface/to_be_generated/deserialize"
 
 //dependencies
 import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refiners/main"
