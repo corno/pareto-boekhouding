@@ -2,7 +2,7 @@ import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core/dist/interface'
 
 //data types
-import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/block/data"
+import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
 import * as d_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 import * as d_deserialize from "liana-core/dist/interface/to_be_generated/deserialize_resolved"
 

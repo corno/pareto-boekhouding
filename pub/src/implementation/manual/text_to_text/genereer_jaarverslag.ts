@@ -13,7 +13,7 @@ import * as t_bh_to_aggregatie from "../schemas/boekhouding_resolved/transformer
 import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/schemas/deserialize_resolved/transformers/fountain_pen"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
 
 export const $$: Signature = ($, abort, $p) => {
     const x3 = t_bh_to_aggregatie.Root(

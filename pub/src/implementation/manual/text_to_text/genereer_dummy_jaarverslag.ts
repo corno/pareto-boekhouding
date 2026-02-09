@@ -12,7 +12,7 @@ import * as dummy_jaarverslag from "../../../data/temp_static_html_rapportage"
 import * as t_static_html_to_fp from "pareto-static-html/dist/implementation/manual/schemas/static_html/transformers/fountain_pen"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/dist/shorthands/block"
+import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
 
 
 export const $$: Signature = ($) => t_static_html_to_fp.Document( //do nothing with the input, just return the dummy jaarverslag
