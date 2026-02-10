@@ -4,7 +4,7 @@ import * as _pi from 'pareto-core/dist/interface'
 //data types
 import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
 import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
-import * as d_deserialize from "liana-core/dist/interface/to_be_generated/deserialize_resolved"
+import * as d_function from "liana-core/dist/interface/to_be_generated/deserialize_resolved"
 
 //dependencies
 // import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
@@ -16,9 +16,9 @@ import * as r_boekhouding_unresolved_from_loc from "../../../generated/liana/sch
 
 export type Root = _pi.Refiner_With_Parameter<
     d_out.Root,
-    d_deserialize.Error,
+    d_function.Error,
     d_in.List_of_Characters,
-    d_deserialize.Parameters
+    d_function.Parameters
 >
 
 export const Root: Root = ($, abort, $p): d_out.Root => {
