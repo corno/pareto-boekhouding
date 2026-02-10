@@ -5,8 +5,8 @@ import * as d_in from "../../../../../interface/to_be_generated/file_in_file_out
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/prose/data"
 
 //dependencies
-import * as t_read_file from "pareto-resources/dist/implementation/manual/schemas/read_file/transformers/fountain_pen"
-import * as t_write_file from "pareto-resources/dist/implementation/manual/schemas/write_file/transformers/fountain_pen"
+import * as t_read_file from "pareto-resources/dist/implementation/manual/transformers/read_file/fountain_pen"
+import * as t_write_file from "pareto-resources/dist/implementation/manual/transformers/write_file/fountain_pen"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
