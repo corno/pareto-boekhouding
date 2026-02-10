@@ -7,10 +7,10 @@ export type Signature = cffc.Deserializer
 
 
 //dependencies
-import * as t_boekhouding_resolved_from_loc from "../schemas/boekhouding_resolved/refiners/list_of_characters"
-import * as t_bh_to_aggregatie from "../schemas/boekhouding_resolved/transformers/aggregatie"
+import * as t_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters"
+import * as t_bh_to_aggregatie from "../transformers/boekhouding_resolved/aggregatie"
 
-import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/schemas/deserialize_resolved/transformers/fountain_pen"
+import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/fountain_pen"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/prose"

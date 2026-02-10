@@ -5,8 +5,8 @@ import _p_change_context from 'pareto-core/dist/_p_change_context'
 
 import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
 
-import * as d_out from "../../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
-import * as signatures from "../../../../../interface/signatures/refiners/boekhouding_unresolved/boekhouding_oude_model"
+import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
+import * as signatures from "../../../../interface/signatures/refiners/boekhouding_unresolved/boekhouding_oude_model"
 
 export const Beheer: signatures.Beheer = ($) => ({
     'BTW-categorieen': sh.dictionary(_p_change_context($.Beheer['BTW-categorieen'], ($) => $.__d_map(($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry => ({

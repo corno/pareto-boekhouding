@@ -7,8 +7,8 @@ export type Signature = cffc.Deserializer
 
 //dependencies
 import * as r_boekhouding_oude_model_from_loc from "../../generated/liana/schemas/boekhouding_oude_model/refiners/list_of_characters"
-import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../schemas/boekhouding_unresolved/refiners/boekhouding_oude_model"
-import * as t_deserialize_parse_tree_to_fountain_pen from "liana-core/dist/implementation/manual/schemas/deserialize/transformers/fountain_pen"
+import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../refiners/boekhouding_unresolved/boekhouding_oude_model"
+import * as t_deserialize_parse_tree_to_fountain_pen from "liana-core/dist/implementation/manual/transformers/deserialize/fountain_pen"
 // import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
 namespace r_boekhouding_resolved_from_boekhouding_unresolved {
     export const Root = ($: any) => _pdev.implement_me("fix generated code")

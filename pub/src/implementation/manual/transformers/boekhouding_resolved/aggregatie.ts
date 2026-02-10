@@ -3,8 +3,8 @@ import * as _p from 'pareto-core/dist/assign'
 
 
 //data types
-import * as d_in from "../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
-import * as d_out from "../../../../../interface/to_be_generated/aggregatie"
+import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
+import * as d_out from "../../../../interface/to_be_generated/aggregatie"
 
 type Possibly_Relevant_Entry<T> = {
     'is relevant': boolean
