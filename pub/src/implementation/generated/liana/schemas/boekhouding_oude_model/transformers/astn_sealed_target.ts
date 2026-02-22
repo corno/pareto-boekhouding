@@ -9,9 +9,7 @@ import * as t_signatures from "../../../../../../interface/generated/liana/schem
 
 import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_target/data"
 
-import * as v_serialize_number from "liana-core/dist/implementation/manual/primitives/integer/serializers/decimal"
-
-import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
+import * as v_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
 
 export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
@@ -244,11 +242,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                             $['BTW-promillage'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': _p_text_from_list(
-                                                                                    v_serialize_number.serialize(
-                                                                                        $,
-                                                                                    ),
-                                                                                    ($) => $,
+                                                                                'value': v_primitives_to_text.decimal(
+                                                                                    $,
                                                                                 ),
                                                                             }],
                                                                         ),
@@ -307,11 +302,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                         $['Huidige datum'],
                         ($) => ['text', {
                             'delimiter': ['none', null],
-                            'value': _p_text_from_list(
-                                v_serialize_number.serialize(
-                                    $,
-                                ),
-                                ($) => $,
+                            'value': v_primitives_to_text.decimal(
+                                $,
                             ),
                         }],
                     ),
@@ -330,11 +322,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                     $['Te corrigeren promillage'],
                                                     ($) => ['text', {
                                                         'delimiter': ['none', null],
-                                                        'value': _p_text_from_list(
-                                                            v_serialize_number.serialize(
-                                                                $,
-                                                            ),
-                                                            ($) => $,
+                                                        'value': v_primitives_to_text.decimal(
+                                                            $,
                                                         ),
                                                     }],
                                                 ),
@@ -692,11 +681,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Beginsaldo'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -718,11 +704,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -730,11 +713,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Datum'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -966,11 +946,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Beginsaldo nog aan te geven BTW'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -978,11 +955,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Beginsaldo winstreserve'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -1058,11 +1032,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 $['Afronding'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': _p_text_from_list(
-                                                                                        v_serialize_number.serialize(
-                                                                                            $,
-                                                                                        ),
-                                                                                        ($) => $,
+                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                        $,
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1070,11 +1041,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 $['Bedrag'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': _p_text_from_list(
-                                                                                        v_serialize_number.serialize(
-                                                                                            $,
-                                                                                        ),
-                                                                                        ($) => $,
+                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                        $,
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1082,11 +1050,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                 $['Datum'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': _p_text_from_list(
-                                                                                        v_serialize_number.serialize(
-                                                                                            $,
-                                                                                        ),
-                                                                                        ($) => $,
+                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                        $,
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1197,11 +1162,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Beginsaldo'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -1459,11 +1421,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Datum'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -1491,11 +1450,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                 $['BTW-bedrag'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['none', null],
-                                                                                                    'value': _p_text_from_list(
-                                                                                                        v_serialize_number.serialize(
-                                                                                                            $,
-                                                                                                        ),
-                                                                                                        ($) => $,
+                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                        $,
                                                                                                     ),
                                                                                                 }],
                                                                                             ),
@@ -1503,11 +1459,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                 $['Bedrag inclusief geheven BTW'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['none', null],
-                                                                                                    'value': _p_text_from_list(
-                                                                                                        v_serialize_number.serialize(
-                                                                                                            $,
-                                                                                                        ),
-                                                                                                        ($) => $,
+                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                        $,
                                                                                                     ),
                                                                                                 }],
                                                                                             ),
@@ -1705,11 +1658,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Beginsaldo'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -1731,11 +1681,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -1743,11 +1690,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Datum'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -1846,11 +1790,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                             $['Startdatum boekjaar'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -1921,11 +1862,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Betalingstermijn'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -2028,11 +1966,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                             $['Datum'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -2106,11 +2041,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Bedrag exclusief BTW'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -2257,11 +2189,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -2409,11 +2338,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -2463,11 +2389,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                 $['Bedrag'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
-                                                                                                                    'value': _p_text_from_list(
-                                                                                                                        v_serialize_number.serialize(
-                                                                                                                            $,
-                                                                                                                        ),
-                                                                                                                        ($) => $,
+                                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                                        $,
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             ),
@@ -2475,11 +2398,8 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                                                                 $['Betaaldatum'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
-                                                                                                                    'value': _p_text_from_list(
-                                                                                                                        v_serialize_number.serialize(
-                                                                                                                            $,
-                                                                                                                        ),
-                                                                                                                        ($) => $,
+                                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                                        $,
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             ),

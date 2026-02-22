@@ -9,9 +9,7 @@ import * as t_signatures from "../../../../../../../interface/generated/liana/sc
 
 import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_target/data"
 
-import * as v_serialize_number from "liana-core/dist/implementation/manual/primitives/integer/serializers/decimal"
-
-import * as v_serialize_boolean from "liana-core/dist/implementation/manual/primitives/boolean/serializers/true_false"
+import * as v_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
 
 export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
@@ -129,11 +127,8 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             $['Te corrigeren promillage'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -302,11 +297,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                 $['BTW-promillage'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['none', null],
-                                                                    'value': _p_text_from_list(
-                                                                        v_serialize_number.serialize(
-                                                                            $,
-                                                                        ),
-                                                                        ($) => $,
+                                                                    'value': v_primitives_to_text.decimal(
+                                                                        $,
                                                                     ),
                                                                 }],
                                                             ),
@@ -559,11 +551,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': _p_text_from_list(
-                                                                    v_serialize_number.serialize(
-                                                                        $,
-                                                                    ),
-                                                                    ($) => $,
+                                                                'value': v_primitives_to_text.decimal(
+                                                                    $,
                                                                 ),
                                                             }],
                                                         ),
@@ -613,11 +602,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                                 $['Bedrag'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
-                                                                                                                    'value': _p_text_from_list(
-                                                                                                                        v_serialize_number.serialize(
-                                                                                                                            $,
-                                                                                                                        ),
-                                                                                                                        ($) => $,
+                                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                                        $,
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             ),
@@ -625,11 +611,8 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                                 $['Betaaldatum'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
-                                                                                                                    'value': _p_text_from_list(
-                                                                                                                        v_serialize_number.serialize(
-                                                                                                                            $,
-                                                                                                                        ),
-                                                                                                                        ($) => $,
+                                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                                        $,
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             ),
@@ -820,11 +803,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             $['Afronding'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': _p_text_from_list(
-                                                                                    v_serialize_number.serialize(
-                                                                                        $,
-                                                                                    ),
-                                                                                    ($) => $,
+                                                                                'value': v_primitives_to_text.decimal(
+                                                                                    $,
                                                                                 ),
                                                                             }],
                                                                         ),
@@ -832,11 +812,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             $['Bedrag'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': _p_text_from_list(
-                                                                                    v_serialize_number.serialize(
-                                                                                        $,
-                                                                                    ),
-                                                                                    ($) => $,
+                                                                                'value': v_primitives_to_text.decimal(
+                                                                                    $,
                                                                                 ),
                                                                             }],
                                                                         ),
@@ -844,11 +821,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             $['Datum'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': _p_text_from_list(
-                                                                                    v_serialize_number.serialize(
-                                                                                        $,
-                                                                                    ),
-                                                                                    ($) => $,
+                                                                                'value': v_primitives_to_text.decimal(
+                                                                                    $,
                                                                                 ),
                                                                             }],
                                                                         ),
@@ -922,11 +896,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         $['Beginsaldo nog aan te geven BTW'],
                         ($) => ['text', {
                             'delimiter': ['none', null],
-                            'value': _p_text_from_list(
-                                v_serialize_number.serialize(
-                                    $,
-                                ),
-                                ($) => $,
+                            'value': v_primitives_to_text.decimal(
+                                $,
                             ),
                         }],
                     ),
@@ -934,11 +905,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         $['Beginsaldo winstreserve'],
                         ($) => ['text', {
                             'delimiter': ['none', null],
-                            'value': _p_text_from_list(
-                                v_serialize_number.serialize(
-                                    $,
-                                ),
-                                ($) => $,
+                            'value': v_primitives_to_text.decimal(
+                                $,
                             ),
                         }],
                     ),
@@ -953,11 +921,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         $['Beginsaldo'],
                                         ($) => ['text', {
                                             'delimiter': ['none', null],
-                                            'value': _p_text_from_list(
-                                                v_serialize_number.serialize(
-                                                    $,
-                                                ),
-                                                ($) => $,
+                                            'value': v_primitives_to_text.decimal(
+                                                $,
                                             ),
                                         }],
                                     ),
@@ -1022,11 +987,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         $['Beginsaldo'],
                                         ($) => ['text', {
                                             'delimiter': ['none', null],
-                                            'value': _p_text_from_list(
-                                                v_serialize_number.serialize(
-                                                    $,
-                                                ),
-                                                ($) => $,
+                                            'value': v_primitives_to_text.decimal(
+                                                $,
                                             ),
                                         }],
                                     ),
@@ -1087,11 +1049,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         $['Bedrag'],
                                                         ($) => ['text', {
                                                             'delimiter': ['none', null],
-                                                            'value': _p_text_from_list(
-                                                                v_serialize_number.serialize(
-                                                                    $,
-                                                                ),
-                                                                ($) => $,
+                                                            'value': v_primitives_to_text.decimal(
+                                                                $,
                                                             ),
                                                         }],
                                                     ),
@@ -1099,11 +1058,8 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         $['Datum'],
                                                         ($) => ['text', {
                                                             'delimiter': ['none', null],
-                                                            'value': _p_text_from_list(
-                                                                v_serialize_number.serialize(
-                                                                    $,
-                                                                ),
-                                                                ($) => $,
+                                                            'value': v_primitives_to_text.decimal(
+                                                                $,
                                                             ),
                                                         }],
                                                     ),
@@ -1152,11 +1108,8 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
             $['Beginsaldo'],
             ($) => ['text', {
                 'delimiter': ['none', null],
-                'value': _p_text_from_list(
-                    v_serialize_number.serialize(
-                        $,
-                    ),
-                    ($) => $,
+                'value': v_primitives_to_text.decimal(
+                    $,
                 ),
             }],
         ),
@@ -1385,11 +1338,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['Datum'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -1417,11 +1367,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['BTW-bedrag'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': _p_text_from_list(
-                                                                                        v_serialize_number.serialize(
-                                                                                            $,
-                                                                                        ),
-                                                                                        ($) => $,
+                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                        $,
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1429,11 +1376,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Bedrag inclusief geheven BTW'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': _p_text_from_list(
-                                                                                        v_serialize_number.serialize(
-                                                                                            $,
-                                                                                        ),
-                                                                                        ($) => $,
+                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                        $,
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1655,11 +1599,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['Betalingstermijn'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -1770,11 +1711,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['Datum'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': _p_text_from_list(
-                                    v_serialize_number.serialize(
-                                        $,
-                                    ),
-                                    ($) => $,
+                                'value': v_primitives_to_text.decimal(
+                                    $,
                                 ),
                             }],
                         ),
@@ -1837,11 +1775,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             $['Bedrag exclusief BTW'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': _p_text_from_list(
-                                                    v_serialize_number.serialize(
-                                                        $,
-                                                    ),
-                                                    ($) => $,
+                                                'value': v_primitives_to_text.decimal(
+                                                    $,
                                                 ),
                                             }],
                                         ),
@@ -1987,11 +1922,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Bedrag'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
-                                    'value': _p_text_from_list(
-                                        v_serialize_number.serialize(
-                                            $,
-                                        ),
-                                        ($) => $,
+                                    'value': v_primitives_to_text.decimal(
+                                        $,
                                     ),
                                 }],
                             ),
@@ -2160,11 +2092,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Bedrag'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
-                                    'value': _p_text_from_list(
-                                        v_serialize_number.serialize(
-                                            $,
-                                        ),
-                                        ($) => $,
+                                    'value': v_primitives_to_text.decimal(
+                                        $,
                                     ),
                                 }],
                             ),
@@ -2172,11 +2101,8 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Datum'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
-                                    'value': _p_text_from_list(
-                                        v_serialize_number.serialize(
-                                            $,
-                                        ),
-                                        ($) => $,
+                                    'value': v_primitives_to_text.decimal(
+                                        $,
                                     ),
                                 }],
                             ),
@@ -2241,11 +2167,8 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', _p.dictionary.fro
                 $['Startdatum boekjaar'],
                 ($) => ['text', {
                     'delimiter': ['none', null],
-                    'value': _p_text_from_list(
-                        v_serialize_number.serialize(
-                            $,
-                        ),
-                        ($) => $,
+                    'value': v_primitives_to_text.decimal(
+                        $,
                     ),
                 }],
             ),
