@@ -30,8 +30,8 @@
     "liana-core": "^0.0.23",
     "pareto-core-dev": "^0.12.8",
     "pareto-core-shorthands": "^0.2.20",
-    "pareto-host-nodejs": "^0.2.31",
-    "pareto-resources": "^0.2.50",
+    "pareto-host-nodejs": "^0.2.33",
+    "pareto-resources": "^0.2.52",
     "pareto-static-html": "^0.1.27"
   }
 }

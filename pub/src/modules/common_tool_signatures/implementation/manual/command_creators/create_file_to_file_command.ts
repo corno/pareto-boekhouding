@@ -99,8 +99,8 @@ export const $$: Creator = (deserializer) => _p.command_procedure(($p, $cr, $qr)
                 })
             )
         ],
-        {
+        () => ({
             'exit code': 1
-        },
+        }),
     ),
 ])
