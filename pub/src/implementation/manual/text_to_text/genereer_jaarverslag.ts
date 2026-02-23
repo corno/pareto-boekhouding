@@ -1,5 +1,4 @@
 import * as _pi from 'pareto-core/dist/interface'
-import * as _pdev from 'pareto-core-dev'
 
 import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
@@ -25,25 +24,25 @@ export const $$: Signature = ($, abort, $p) => {
     )
 
     //temp
-    x3.jaren.__d_map(($, id) => {
-        _pdev.log_debug_message(id, () => { })
-        _pdev.log_debug_message("  'balans'", () => { })
-        $.grootboekrekeningen.balans.__d_map(($, id) => {
-            _pdev.log_debug_message("    ${key}", () => { })
-            _pdev.log_debug_message("      'inkopen'", () => { })
-            $['gerelateerde inkopen'].__d_map(($, id) => {
-                _pdev.log_debug_message("        ${key}", () => { })
-            })
-        })
-        _pdev.log_debug_message("  'resultaat'", () => { })
-        $.grootboekrekeningen.resultaat.__d_map(($, id) => {
-            _pdev.log_debug_message("    ${key}", () => { })
-            _pdev.log_debug_message("      'inkopen'", () => { })
-            $['gerelateerde inkopen'].__d_map(($, id) => {
-                _pdev.log_debug_message("        ${key}", () => { })
-            })
-        })
-    })
+    // x3.jaren.__d_map(($, id) => {
+    //     _pdev.log_debug_message(id, () => { })
+    //     _pdev.log_debug_message("  'balans'", () => { })
+    //     $.grootboekrekeningen.balans.__d_map(($, id) => {
+    //         _pdev.log_debug_message("    ${key}", () => { })
+    //         _pdev.log_debug_message("      'inkopen'", () => { })
+    //         $['gerelateerde inkopen'].__d_map(($, id) => {
+    //             _pdev.log_debug_message("        ${key}", () => { })
+    //         })
+    //     })
+    //     _pdev.log_debug_message("  'resultaat'", () => { })
+    //     $.grootboekrekeningen.resultaat.__d_map(($, id) => {
+    //         _pdev.log_debug_message("    ${key}", () => { })
+    //         _pdev.log_debug_message("      'inkopen'", () => { })
+    //         $['gerelateerde inkopen'].__d_map(($, id) => {
+    //             _pdev.log_debug_message("        ${key}", () => { })
+    //         })
+    //     })
+    // })
     return sh.pg.sentences([
         sh.sentence([
             sh.ph.literal("TODO: print jaarverslag")

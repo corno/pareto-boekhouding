@@ -1,4 +1,3 @@
-import * as _pdev from 'pareto-core-dev'
 import * as _pi from 'pareto-core/dist/interface'
 
 //data types
@@ -7,10 +6,8 @@ import * as d_out from "../../../../interface/generated/liana/schemas/boekhoudin
 import * as d_function from "liana-core/dist/interface/to_be_generated/deserialize_resolved"
 
 //dependencies
-// import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
-namespace r_boekhouding_resolved_from_boekhouding_unresolved {
-    export const Root = ($: any) => _pdev.implement_me("fix generated code")
-}
+import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
+
 import * as r_boekhouding_unresolved_from_loc from "../../../generated/liana/schemas/boekhouding/unresolved/refiners/list_of_characters"
 
 
@@ -27,6 +24,9 @@ export const Root: Root = ($, abort, $p) => {
             $,
             ($) => abort(['deserialize', $]),
             $p
-        )
+        ),
+        ($) => abort(['resolve error', $]),
+        null,
+        null
     )
 }

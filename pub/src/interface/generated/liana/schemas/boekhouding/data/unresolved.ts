@@ -516,10 +516,13 @@ export namespace Beheer_ {
                                 readonly 'BTW-promillage': Ja.BTW$mi_promillage
                             }
                             
+                            export type Nee = null
+                            
                         }
                         
                         export type l_state = 
                             | readonly ['Ja', l_state.Ja]
+                            | readonly ['Nee', l_state.Nee]
                         
                     }
                     

@@ -260,10 +260,13 @@ export namespace Beheer_ {
                     readonly 'BTW-promillage': Ja.BTW$mi_promillage
                 }
                 
+                export type Nee = null
+                
             }
             
             export type BTW$mi_heffing = 
                 | readonly ['Ja', BTW$mi_heffing.Ja]
+                | readonly ['Nee', BTW$mi_heffing.Nee]
             
         }
         

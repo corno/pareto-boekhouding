@@ -306,6 +306,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                     )]],
                                                 }),
                                             )
+                                        case 'Nee':
+                                            return _p.ss(
+                                                $,
+                                                ($) => ({
+                                                    'option': 'Nee',
+                                                    'value': ['nothing', null],
+                                                }),
+                                            )
                                         default:
                                             return _p.au(
                                                 $[0],

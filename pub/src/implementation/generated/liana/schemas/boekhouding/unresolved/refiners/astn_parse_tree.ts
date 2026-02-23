@@ -1079,6 +1079,21 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                     )],
                                                                                 }),
                                                                             )
+                                                                        case 'Nee':
+                                                                            return _p_change_context(
+                                                                                $['value'],
+                                                                                ($) => ({
+                                                                                    'l location': v_parse_tree_to_location.Value(
+                                                                                        $,
+                                                                                    ),
+                                                                                    'l state': ['Nee', v_unmarshalled_from_parse_tree.Nothing(
+                                                                                        $,
+                                                                                        ($) => abort(
+                                                                                            $,
+                                                                                        ),
+                                                                                    )],
+                                                                                }),
+                                                                            )
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {

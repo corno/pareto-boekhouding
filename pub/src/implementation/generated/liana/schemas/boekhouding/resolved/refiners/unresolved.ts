@@ -484,6 +484,15 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                                 },
                                                             )],
                                                         )
+                                                    case 'Nee':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Nee', _p.group.literal.resolve(
+                                                                () => {
+                                                                    return null
+                                                                },
+                                                            )],
+                                                        )
                                                     default:
                                                         return _p.au(
                                                             $[0],

@@ -1,6 +1,5 @@
 import * as _p from 'pareto-core/dist/assign'
 import * as _pi from 'pareto-core/dist/interface'
-import * as _pdev from 'pareto-core-dev'
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
 import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
@@ -15,7 +14,7 @@ export const Beheer: signatures.Beheer = ($) => ({
                 case 'Ja': return _p.ss($, ($) => sh.state(['Ja', ({
                     'BTW-promillage': _p_change_context($['BTW-promillage'], ($) => $),
                 })]))
-                case 'Nee': return _p.ss($, ($) => _pdev.implement_me("SDFS"))
+                case 'Nee': return _p.ss($, ($) => sh.state(['Nee', null]))
                 default: return _p.au($[0])
             }
         })),

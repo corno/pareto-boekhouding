@@ -790,6 +790,11 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                         ),
                                                     }],
                                                 )
+                                            case 'Nee':
+                                                return _p.ss(
+                                                    $,
+                                                    ($) => ['Nee', null],
+                                                )
                                             default:
                                                 return _p.au(
                                                     $[0],
