@@ -21,7 +21,7 @@ export type Root = _pi.Refiner_With_Parameter<
     d_function.Parameters
 >
 
-export const Root: Root = ($, abort, $p): d_out.Root => {
+export const Root: Root = ($, abort, $p) => {
     return r_boekhouding_resolved_from_boekhouding_unresolved.Root(
         r_boekhouding_unresolved_from_loc.Root(
             $,
