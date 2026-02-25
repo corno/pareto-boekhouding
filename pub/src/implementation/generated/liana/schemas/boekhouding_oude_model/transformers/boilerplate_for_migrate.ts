@@ -3,7 +3,7 @@ import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
-import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/boilerplate_for_migrate"
+import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/signatures/transformers/boilerplate_for_migrate"
 
 import * as t_out from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 
@@ -842,6 +842,16 @@ export const Root: t_signatures.Root = ($) => ({
                                     $,
                                     ($): t_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
                                         switch ($[0]) {
+                                            case 'Nog te betalen':
+                                                return _p.ss(
+                                                    $,
+                                                    ($) => ['Nog te betalen', {
+                                                        'Betalingstermijn': _p_change_context(
+                                                            $['Betalingstermijn'],
+                                                            ($) => $,
+                                                        ),
+                                                    }],
+                                                )
                                             case 'Mutaties':
                                                 return _p.ss(
                                                     $,
@@ -1644,4 +1654,13 @@ export const Root: t_signatures.Root = ($) => ({
     ),
 })
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => $
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ({
+    'stem': _p_change_context(
+        $['stem'],
+        ($) => $,
+    ),
+    'extension': _p_change_context(
+        $['extension'],
+        ($) => $,
+    ),
+})

@@ -847,6 +847,16 @@ export namespace Root_ {
                     
                     export namespace Afhandeling {
                         
+                        export namespace Nog_te_betalen {
+                            
+                            export type Betalingstermijn = number
+                            
+                        }
+                        
+                        export type Nog_te_betalen = {
+                            readonly 'Betalingstermijn': Nog_te_betalen.Betalingstermijn
+                        }
+                        
                         export namespace Mutaties {
                             
                         }
@@ -866,6 +876,7 @@ export namespace Root_ {
                     }
                     
                     export type Afhandeling = 
+                        | readonly ['Nog te betalen', Afhandeling.Nog_te_betalen]
                         | readonly ['Mutaties', Afhandeling.Mutaties]
                         | readonly ['Rekening courant', Afhandeling.Rekening_courant]
                     
@@ -1691,7 +1702,18 @@ export type Root_ = {
     readonly 'Medewerkers': Root_.Medewerkers
 }
 
-export type Bestandsnaam_ = string
+export namespace Bestandsnaam_ {
+    
+    export type stem = string
+    
+    export type extension = string
+    
+}
+
+export type Bestandsnaam_ = {
+    readonly 'stem': Bestandsnaam_.stem
+    readonly 'extension': Bestandsnaam_.extension
+}
 
 export { 
     Root_ as Root, 

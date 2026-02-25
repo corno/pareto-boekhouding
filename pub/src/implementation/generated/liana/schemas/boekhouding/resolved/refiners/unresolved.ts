@@ -11,7 +11,7 @@ import _p_variables from 'pareto-core/dist/_p_variables'
 
 import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 
-import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/resolve"
+import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/signatures/resolved/refiners/unresolved"
 
 export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.literal.resolve(
     () => {
@@ -2098,6 +2098,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                         return _p.ss(
                                                             $,
                                                             ($) => ['Mutaties', null],
+                                                        )
+                                                    case 'Nog te betalen':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Nog te betalen', {
+                                                                'Betalingstermijn': $.Betalingstermijn
+                                                            }],
                                                         )
                                                     case 'Rekening courant':
                                                         return _p.ss(

@@ -5,7 +5,7 @@ import _p_change_context from 'pareto-core/dist/_p_change_context'
 
 import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
 
-import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/marshall"
+import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/signatures/transformers/astn_sealed_target"
 
 import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_target/data"
 
@@ -1240,6 +1240,26 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
+                                                        case 'Nog te betalen':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ({
+                                                                    'option': 'Nog te betalen',
+                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                        {
+                                                                            "Betalingstermijn": _p_change_context(
+                                                                                $['Betalingstermijn'],
+                                                                                ($) => ['text', {
+                                                                                    'delimiter': ['none', null],
+                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                        $,
+                                                                                    ),
+                                                                                }],
+                                                                            ),
+                                                                        },
+                                                                    )]],
+                                                                }),
+                                                            )
                                                         case 'Mutaties':
                                                             return _p.ss(
                                                                 $,
@@ -2454,7 +2474,21 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
     },
 )]]
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['text', {
-    'delimiter': ['quote', null],
-    'value': $,
-}]
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['group', ['verbose', _p.dictionary.literal(
+    {
+        "stem": _p_change_context(
+            $['stem'],
+            ($) => ['text', {
+                'delimiter': ['quote', null],
+                'value': $,
+            }],
+        ),
+        "extension": _p_change_context(
+            $['extension'],
+            ($) => ['text', {
+                'delimiter': ['quote', null],
+                'value': $,
+            }],
+        ),
+    },
+)]]

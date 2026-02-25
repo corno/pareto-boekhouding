@@ -1,15 +1,15 @@
 
 import * as _pi from 'pareto-core/dist/interface'
 
-import * as i_in from "./data/resolved"
+import * as i_out from "../../../data/unresolved"
 
-import * as i_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/prose/data"
+import * as i_in from "../../../data/resolved"
 
 export namespace Fiscaal_ {
     
     export type I = i_in.Fiscaal
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Fiscaal
     
     export namespace P {
         
@@ -25,7 +25,7 @@ export namespace Grootboek_Categorieen_ {
     
     export type I = i_in.Grootboek_Categorieen
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Grootboek_Categorieen
     
     export namespace P {
         
@@ -41,7 +41,7 @@ export namespace Beheer_ {
     
     export type I = i_in.Beheer
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Beheer
     
     export namespace P {
         
@@ -57,7 +57,7 @@ export namespace Grootboekrekeningen_ {
     
     export type I = i_in.Grootboekrekeningen
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Grootboekrekeningen
     
     export namespace P {
         
@@ -73,7 +73,7 @@ export namespace Jaarbeheer_ {
     
     export type I = i_in.Jaarbeheer
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Jaarbeheer
     
     export namespace P {
         
@@ -89,7 +89,7 @@ export namespace Overige_balans_item_ {
     
     export type I = i_in.Overige_balans_item
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Overige_balans_item
     
     export namespace P {
         
@@ -105,7 +105,7 @@ export namespace Verwijzing_naar_Informele_rekening_ {
     
     export type I = i_in.Verwijzing_naar_Informele_rekening
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Verwijzing_naar_Informele_rekening
     
     export namespace P {
         
@@ -121,7 +121,7 @@ export namespace Verwijzing_naar_Bankrekening_ {
     
     export type I = i_in.Verwijzing_naar_Bankrekening
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Verwijzing_naar_Bankrekening
     
     export namespace P {
         
@@ -137,7 +137,7 @@ export namespace Handelstransacties_ {
     
     export type I = i_in.Handelstransacties
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Handelstransacties
     
     export namespace P {
         
@@ -153,7 +153,7 @@ export namespace Mutaties_ {
     
     export type I = i_in.Mutaties
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Mutaties
     
     export namespace P {
         
@@ -169,7 +169,7 @@ export namespace Jaren_ {
     
     export type I = i_in.Jaren
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Jaren
     
     export namespace P {
         
@@ -185,7 +185,7 @@ export namespace Balans_Resultaat_Mutatie_ {
     
     export type I = i_in.Balans_Resultaat_Mutatie
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Balans_Resultaat_Mutatie
     
     export namespace P {
         
@@ -201,7 +201,7 @@ export namespace Eerste_boekjaar_ {
     
     export type I = i_in.Eerste_boekjaar
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Eerste_boekjaar
     
     export namespace P {
         
@@ -217,7 +217,7 @@ export namespace Root_ {
     
     export type I = i_in.Root
     
-    export type O = i_out.Paragraph
+    export type O = i_out.Root
     
     export namespace P {
         

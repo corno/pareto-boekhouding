@@ -7,7 +7,7 @@ import _p_list_from_text from 'pareto-core/dist/_p_list_from_text'
 
 import _p_variables from 'pareto-core/dist/_p_variables'
 
-import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/unmarshall"
+import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/signatures/unresolved/refiners/astn_parse_tree"
 
 import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
 
@@ -4161,6 +4161,60 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                         $,
                                                                                         ($) => abort(
                                                                                             $,
+                                                                                        ),
+                                                                                    )],
+                                                                                }),
+                                                                            )
+                                                                        case 'Nog te betalen':
+                                                                            return _p_change_context(
+                                                                                $['value'],
+                                                                                ($) => ({
+                                                                                    'l location': v_parse_tree_to_location.Value(
+                                                                                        $,
+                                                                                    ),
+                                                                                    'l state': ['Nog te betalen', _p_change_context(
+                                                                                        v_unmarshalled_from_parse_tree.Verbose_Group(
+                                                                                            $,
+                                                                                            ($) => abort(
+                                                                                                $,
+                                                                                            ),
+                                                                                            {
+                                                                                                'expected properties': _p.dictionary.literal(
+                                                                                                    {
+                                                                                                        "Betalingstermijn": null,
+                                                                                                    },
+                                                                                                ),
+                                                                                            },
+                                                                                        ),
+                                                                                        ($) => _p_variables(
+                                                                                            () => {
+                                                                                                
+                                                                                                const var_verbose_group_range = v_parse_tree_to_location.Value(
+                                                                                                    $['value'],
+                                                                                                )
+                                                                                                return {
+                                                                                                    'Betalingstermijn': _p_change_context(
+                                                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                                                            $,
+                                                                                                            ($) => abort(
+                                                                                                                $,
+                                                                                                            ),
+                                                                                                            {
+                                                                                                                'id': 'Betalingstermijn',
+                                                                                                            },
+                                                                                                        ),
+                                                                                                        ($) => v_unmarshalled_from_parse_tree.Number(
+                                                                                                            $,
+                                                                                                            ($) => abort(
+                                                                                                                $,
+                                                                                                            ),
+                                                                                                            {
+                                                                                                                'type': ['decimal', null],
+                                                                                                            },
+                                                                                                        ),
+                                                                                                    ),
+                                                                                                }
+                                                                                            },
                                                                                         ),
                                                                                     )],
                                                                                 }),

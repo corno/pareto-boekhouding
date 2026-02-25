@@ -7,7 +7,7 @@ import _p_list_from_text from 'pareto-core/dist/_p_list_from_text'
 
 import _p_variables from 'pareto-core/dist/_p_variables'
 
-import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/unmarshall"
+import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/signatures/refiners/astn_parse_tree"
 
 import * as t_out from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 
@@ -3747,6 +3747,55 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     $['option']['value'],
                                                                                     ($t): t_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
                                                                                         switch ($t) {
+                                                                                            case 'Nog te betalen':
+                                                                                                return _p_change_context(
+                                                                                                    $['value'],
+                                                                                                    ($) => ['Nog te betalen', _p_change_context(
+                                                                                                        v_unmarshalled_from_parse_tree.Verbose_Group(
+                                                                                                            $,
+                                                                                                            ($) => abort(
+                                                                                                                $,
+                                                                                                            ),
+                                                                                                            {
+                                                                                                                'expected properties': _p.dictionary.literal(
+                                                                                                                    {
+                                                                                                                        "Betalingstermijn": null,
+                                                                                                                    },
+                                                                                                                ),
+                                                                                                            },
+                                                                                                        ),
+                                                                                                        ($) => _p_variables(
+                                                                                                            () => {
+                                                                                                                
+                                                                                                                const var_verbose_group_range = v_parse_tree_to_location.Value(
+                                                                                                                    $['value'],
+                                                                                                                )
+                                                                                                                return {
+                                                                                                                    'Betalingstermijn': _p_change_context(
+                                                                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                            {
+                                                                                                                                'id': 'Betalingstermijn',
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        ($) => v_unmarshalled_from_parse_tree.Number(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                            {
+                                                                                                                                'type': ['decimal', null],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                    ),
+                                                                                                                }
+                                                                                                            },
+                                                                                                        ),
+                                                                                                    )],
+                                                                                                )
                                                                                             case 'Mutaties':
                                                                                                 return _p_change_context(
                                                                                                     $['value'],
@@ -7182,9 +7231,63 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
     ),
 )
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => v_unmarshalled_from_parse_tree.Text(
-    $,
-    ($) => abort(
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => _p_change_context(
+    v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
+        ($) => abort(
+            $,
+        ),
+        {
+            'expected properties': _p.dictionary.literal(
+                {
+                    "stem": null,
+                    "extension": null,
+                },
+            ),
+        },
+    ),
+    ($) => _p_variables(
+        () => {
+            
+            const var_verbose_group_range = v_parse_tree_to_location.Value(
+                $['value'],
+            )
+            return {
+                'stem': _p_change_context(
+                    v_unmarshalled_from_parse_tree.Property(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                        {
+                            'id': 'stem',
+                        },
+                    ),
+                    ($) => v_unmarshalled_from_parse_tree.Text(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                    ),
+                ),
+                'extension': _p_change_context(
+                    v_unmarshalled_from_parse_tree.Property(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                        {
+                            'id': 'extension',
+                        },
+                    ),
+                    ($) => v_unmarshalled_from_parse_tree.Text(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                    ),
+                ),
+            }
+        },
     ),
 )

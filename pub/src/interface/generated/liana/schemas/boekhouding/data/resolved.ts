@@ -1086,6 +1086,16 @@ export namespace Handelstransacties_ {
                 
                 export type Mutaties = null
                 
+                export namespace Nog_te_betalen {
+                    
+                    export type Betalingstermijn = number
+                    
+                }
+                
+                export type Nog_te_betalen = {
+                    readonly 'Betalingstermijn': Nog_te_betalen.Betalingstermijn
+                }
+                
                 export namespace Rekening_courant {
                     
                     export namespace Rekening_courant {
@@ -1111,6 +1121,7 @@ export namespace Handelstransacties_ {
             
             export type Afhandeling = 
                 | readonly ['Mutaties', Afhandeling.Mutaties]
+                | readonly ['Nog te betalen', Afhandeling.Nog_te_betalen]
                 | readonly ['Rekening courant', Afhandeling.Rekening_courant]
             
             export namespace BTW$mi_regime {

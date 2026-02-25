@@ -3,7 +3,7 @@ import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
-import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/boilerplate_for_migrate"
+import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/signatures/resolved/transformers/boilerplate_for_migrate"
 
 import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
 
@@ -2974,6 +2974,16 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 return _p.ss(
                                                     $,
                                                     ($) => ['Mutaties', null],
+                                                )
+                                            case 'Nog te betalen':
+                                                return _p.ss(
+                                                    $,
+                                                    ($) => ['Nog te betalen', {
+                                                        'Betalingstermijn': _p_change_context(
+                                                            $['Betalingstermijn'],
+                                                            ($) => $,
+                                                        ),
+                                                    }],
                                                 )
                                             case 'Rekening courant':
                                                 return _p.ss(

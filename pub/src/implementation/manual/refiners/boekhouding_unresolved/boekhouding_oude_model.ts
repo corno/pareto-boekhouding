@@ -166,6 +166,9 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
         'Afhandeling': _p_change_context($['Afhandeling'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
             switch ($[0]) {
                 case 'Mutaties': return _p.ss($, ($) => sh.state(['Mutaties', null]))
+                case 'Nog te betalen': return _p.ss($, ($) => sh.state(['Nog te betalen', {
+                    'Betalingstermijn': _p_change_context($['Betalingstermijn'], ($) => $),
+                }]))
                 case 'Rekening courant': return _p.ss($, ($) => sh.state(['Rekening courant', ({
                     'Rekening courant': _p_change_context($['Rekening courant'], ($) => sh.reference($)),
                 })]))
@@ -189,7 +192,7 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
                 case 'Niet van toepassing': return _p.ss($, ($) => sh.state(['Niet van toepassing', null]))
                 case 'Ontbreekt': return _p.ss($, ($) => sh.state(['Ontbreekt', null]))
                 case 'Toegevoegd': return _p.ss($, ($) => sh.state(['Toegevoegd', ({
-                    'Document': _p_change_context($['Document'], ($) => $),
+                    'Document': _p_change_context($['Document'], ($) => $.stem + "." + $.extension),
                 })]))
                 case 'Nog toevoegen': return _p.ss($, ($) => sh.state(['Ontbreekt', null]))//FIXME!!!!
                 default: return _p.au($[0])
@@ -252,7 +255,7 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
         'Brondocument': _p_change_context($['Brondocument'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
             switch ($[0]) {
                 case 'Toegevoegd': return _p.ss($, ($) => sh.state(['Toegevoegd', ({
-                    'Document': _p_change_context($['Document'], ($) => $),
+                    'Document': _p_change_context($['Document'], ($) => $.stem + "." + $.extension),
                 })]))
                 default: return _p.au($[0])
             }
@@ -363,7 +366,7 @@ export const Jaarbeheer: signatures.Jaarbeheer = ($) => ({
         'BTW periodes': _p_change_context($['BTW periodes'], ($) => sh.dictionary($.__d_map(($) => ({
             '1. BTW-categorieen': _p_change_context($['1. BTW-categorieen'], ($) => sh.dictionary($.__d_map(($) => null))),
             'Documenten': _p_change_context($['Documenten'], ($) => sh.dictionary($.__d_map(($) => ({
-                'Bestand': _p_change_context($['Bestand'], ($) => $),
+                'Bestand': _p_change_context($['Bestand'], ($) => $.stem + "." + $.extension),
             })))),
             'Omschrijving': _p_change_context($['Omschrijving'], ($) => $),
             'Status': _p_change_context($['Status'], ($) => _p.decide.state($, ($): d_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
