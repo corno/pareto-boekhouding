@@ -1,6 +1,6 @@
 {
   "name": "pareto-boekhouding",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "author": "Corno",
   "license": "Apache-2.0",
   "description": "Een tool voor het bijhouden van een boekhouding in text vorm",
