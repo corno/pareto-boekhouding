@@ -18,11 +18,21 @@ export const $$: Signature = ($, abort, $p) => t_boekhouding_resolved_to_fp.Root
         r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
             r_boekhouding_oude_model_from_loc.Root(
                 $,
-                ($) => abort(t_deserialize_parse_tree_to_fountain_pen.Error($)),
+                ($) => abort(t_deserialize_parse_tree_to_fountain_pen.Error(
+                    $,
+                    {
+                        'character location reporting': ['one based', null]
+                    }
+                )),
                 $p
             )
         ),
-                ($) => abort(t_deserialize_resolve_to_fountain_pen.Error($)),
+                ($) => abort(t_deserialize_resolve_to_fountain_pen.Error(
+                    $,
+                    {
+                        'character location reporting': ['one based', null]
+                    }
+                )),
         null,
         null,
     )

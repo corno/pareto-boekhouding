@@ -27,7 +27,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "liana-core": "^0.0.35",
+    "liana-core": "^0.0.38",
     "pareto-core-shorthands": "^0.2.23",
     "pareto-host-nodejs": "^0.2.33",
     "pareto-resources": "^0.2.54",

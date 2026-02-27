@@ -18,7 +18,12 @@ export const $$: Signature = ($, abort, $p) => {
     const x3 = t_bh_to_aggregatie.Root(
         t_boekhouding_resolved_from_loc.Root(
             $,
-            ($) => abort(t_deserialize_resolved_to_fountain_pen.Error($)),
+            ($) => abort(t_deserialize_resolved_to_fountain_pen.Error(
+                $,
+                {
+                    'character location reporting': ['one based', null]
+                }
+            )),
             $p
         )
     )
