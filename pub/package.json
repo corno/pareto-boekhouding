@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "liana-core": "^0.0.38",
-    "pareto-core-shorthands": "^0.2.24",
+    "pareto-core-shorthands": "^0.2.25",
     "pareto-host-nodejs": "^0.2.34",
-    "pareto-resources": "^0.2.54",
+    "pareto-resources": "^0.2.55",
     "pareto-static-html": "^0.1.29"
   }
 }

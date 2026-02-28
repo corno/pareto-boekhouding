@@ -13,10 +13,7 @@ import * as r_node_path_from_text from "pareto-resources/dist/implementation/man
 
 export const Path: Signature = (iterator, abort) => r_node_path_from_text.Node_Path(
     iterator.consume(
-        ($) => _p_list_from_text(
-            $,
-            ($) => $
-        ),
+        ($) => $,
         {
             no_more_tokens: () => abort(['missing', null])
         }
