@@ -29,7 +29,7 @@
   "dependencies": {
     "liana-core": "^0.0.41",
     "pareto-core-shorthands": "^0.2.26",
-    "pareto-host-nodejs": "^0.2.34",
+    "pareto-host-nodejs": "^0.2.35",
     "pareto-resources": "^0.2.56",
     "pareto-static-html": "^0.1.30"
   }
