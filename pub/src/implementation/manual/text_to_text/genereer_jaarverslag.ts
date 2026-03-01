@@ -10,6 +10,8 @@ import * as t_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolv
 import * as t_bh_to_aggregatie from "../transformers/boekhouding_resolved/aggregatie"
 
 import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/fountain_pen"
+import * as t_deserialize_resolved_to_location from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/location"
+import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
@@ -18,12 +20,18 @@ export const $$: Signature = ($, abort, $p) => {
     const x3 = t_bh_to_aggregatie.Root(
         t_boekhouding_resolved_from_loc.Root(
             $,
-            ($) => abort(t_deserialize_resolved_to_fountain_pen.Error(
-                $,
-                {
-                    'character location reporting': ['one based', null]
-                }
-            )),
+            ($) => abort(sh.ph.composed([
+                t_location_to_fountain_pen.Range(
+                    t_deserialize_resolved_to_location.Error($),
+                    {
+                        'character location reporting': ['one based', null],
+                    }
+                ),
+                sh.ph.literal(": "),
+                t_deserialize_resolved_to_fountain_pen.Error(
+                    $,
+                )
+            ])),
             $p
         )
     )
