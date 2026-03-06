@@ -27,10 +27,10 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "liana-core": "^0.0.41",
+    "liana-core": "^0.1.1",
     "pareto-core-shorthands": "^0.2.27",
-    "pareto-host-nodejs": "^0.2.35",
-    "pareto-resources": "^0.2.56",
-    "pareto-static-html": "^0.1.30"
+    "pareto-host-nodejs": "^0.2.36",
+    "pareto-resources": "^0.2.57",
+    "pareto-static-html": "^0.1.31"
   }
 }

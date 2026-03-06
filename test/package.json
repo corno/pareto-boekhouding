@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "astn-core": "^0.5.73",
-    "pareto-host-nodejs": "^0.2.35",
-    "pareto-test": "^0.13.81",
+    "astn-core": "^0.5.74",
+    "pareto-host-nodejs": "^0.2.36",
+    "pareto-test": "^0.13.82",
     "pub": "file:../pub"
   }
 }
