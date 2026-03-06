@@ -5,6 +5,22 @@ import * as i_out from "astn-core/dist/interface/generated/liana/schemas/sealed_
 
 import * as i_in from "../../../data/resolved"
 
+export namespace Root_ {
+    
+    export type I = i_in.Root
+    
+    export type O = i_out.Value
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type Root_ = (
+    context: Root_.I,
+) => Root_.O
+
 export namespace Fiscaal_ {
     
     export type I = i_in.Fiscaal
@@ -213,23 +229,8 @@ export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
 ) => Eerste_boekjaar_.O
 
-export namespace Root_ {
-    
-    export type I = i_in.Root
-    
-    export type O = i_out.Value
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type Root_ = (
-    context: Root_.I,
-) => Root_.O
-
 export { 
+    Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 
     Beheer_ as Beheer, 
@@ -243,5 +244,4 @@ export {
     Jaren_ as Jaren, 
     Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
     Eerste_boekjaar_ as Eerste_boekjaar, 
-    Root_ as Root, 
 }

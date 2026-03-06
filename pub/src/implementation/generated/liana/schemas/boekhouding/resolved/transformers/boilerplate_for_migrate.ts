@@ -7,6 +7,33 @@ import * as t_signatures from "../../../../../../../interface/generated/liana/sc
 
 import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
 
+export const Root: t_signatures.Root = ($) => ({
+    'Fiscaal': _p_change_context(
+        $['Fiscaal'],
+        ($) => Fiscaal(
+            $,
+        ),
+    ),
+    'Categorieen': _p_change_context(
+        $['Categorieen'],
+        ($) => Grootboek_Categorieen(
+            $,
+        ),
+    ),
+    'Beheer': _p_change_context(
+        $['Beheer'],
+        ($) => Beheer(
+            $,
+        ),
+    ),
+    'Jaren': _p_change_context(
+        $['Jaren'],
+        ($) => Jaren(
+            $,
+        ),
+    ),
+})
+
 export const Fiscaal: t_signatures.Fiscaal = ($) => ({
     'Balans Hoofdcategorieen': _p_change_context(
         $['Balans Hoofdcategorieen'],
@@ -5091,32 +5118,5 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                     )
             }
         },
-    ),
-})
-
-export const Root: t_signatures.Root = ($) => ({
-    'Fiscaal': _p_change_context(
-        $['Fiscaal'],
-        ($) => Fiscaal(
-            $,
-        ),
-    ),
-    'Categorieen': _p_change_context(
-        $['Categorieen'],
-        ($) => Grootboek_Categorieen(
-            $,
-        ),
-    ),
-    'Beheer': _p_change_context(
-        $['Beheer'],
-        ($) => Beheer(
-            $,
-        ),
-    ),
-    'Jaren': _p_change_context(
-        $['Jaren'],
-        ($) => Jaren(
-            $,
-        ),
     ),
 })

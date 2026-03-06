@@ -7,6 +7,33 @@ import * as i_in from "pareto-fountain-pen/dist/interface/generated/liana/schema
 
 import * as i_out from "../../../data/unresolved"
 
+export namespace Root_ {
+    
+    export type I = i_in.List_of_Characters
+    
+    export type O = i_out.Root
+    
+    export type E = i_generic.Error
+    
+    export namespace P {
+        
+        export type document_resource_identifier = string
+        
+        export type tab_size = number
+        
+    }
+    
+}
+
+export type Root_ = (
+    context: Root_.I,
+    abort: _pi.Abort<Root_.E>,
+    parameters: {
+        readonly 'document resource identifier': Root_.P.document_resource_identifier
+        readonly 'tab size': Root_.P.tab_size
+    },
+) => Root_.O
+
 export namespace Fiscaal_ {
     
     export type I = i_in.List_of_Characters
@@ -358,34 +385,8 @@ export type Eerste_boekjaar_ = (
     },
 ) => Eerste_boekjaar_.O
 
-export namespace Root_ {
-    
-    export type I = i_in.List_of_Characters
-    
-    export type O = i_out.Root
-    
-    export type E = i_generic.Error
-    
-    export namespace P {
-        
-        export type document_resource_identifier = string
-        
-        export type tab_size = number
-        
-    }
-    
-}
-
-export type Root_ = (
-    context: Root_.I,
-    abort: _pi.Abort<Root_.E>,
-    parameters: {
-        readonly 'document resource identifier': Root_.P.document_resource_identifier
-        readonly 'tab size': Root_.P.tab_size
-    },
-) => Root_.O
-
 export { 
+    Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 
     Beheer_ as Beheer, 
@@ -399,5 +400,4 @@ export {
     Jaren_ as Jaren, 
     Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
     Eerste_boekjaar_ as Eerste_boekjaar, 
-    Root_ as Root, 
 }

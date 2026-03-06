@@ -7,6 +7,25 @@ import * as i_out from "../../../data/unresolved"
 
 import * as i_in from "astn-core/dist/interface/generated/liana/schemas/parse_tree/data"
 
+export namespace Root_ {
+    
+    export type I = i_in.Value
+    
+    export type O = i_out.Root
+    
+    export type E = i_generic.Error
+    
+    export namespace P {
+        
+    }
+    
+}
+
+export type Root_ = (
+    context: Root_.I,
+    abort: _pi.Abort<Root_.E>,
+) => Root_.O
+
 export namespace Fiscaal_ {
     
     export type I = i_in.Value
@@ -254,26 +273,8 @@ export type Eerste_boekjaar_ = (
     abort: _pi.Abort<Eerste_boekjaar_.E>,
 ) => Eerste_boekjaar_.O
 
-export namespace Root_ {
-    
-    export type I = i_in.Value
-    
-    export type O = i_out.Root
-    
-    export type E = i_generic.Error
-    
-    export namespace P {
-        
-    }
-    
-}
-
-export type Root_ = (
-    context: Root_.I,
-    abort: _pi.Abort<Root_.E>,
-) => Root_.O
-
 export { 
+    Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 
     Beheer_ as Beheer, 
@@ -287,5 +288,4 @@ export {
     Jaren_ as Jaren, 
     Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
     Eerste_boekjaar_ as Eerste_boekjaar, 
-    Root_ as Root, 
 }

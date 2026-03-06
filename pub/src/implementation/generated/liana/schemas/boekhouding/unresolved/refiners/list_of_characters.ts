@@ -7,6 +7,22 @@ import * as v_deserialize from "astn-core/dist/implementation/manual/refiners/pa
 
 import * as v_unmarshall from "./astn_parse_tree"
 
+export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
+    v_deserialize.Document(
+        $,
+        ($) => abort(
+            ['parse error', $],
+        ),
+        {
+            'document resource identifier': $p['document resource identifier'],
+            'tab size': $p['tab size'],
+        },
+    )['content'],
+    ($) => abort(
+        ['unmarshall error', $],
+    ),
+)
+
 export const Fiscaal: t_signatures.Fiscaal = ($, abort, $p) => v_unmarshall.Fiscaal(
     v_deserialize.Document(
         $,
@@ -200,22 +216,6 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
 )
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $p) => v_unmarshall.Eerste_boekjaar(
-    v_deserialize.Document(
-        $,
-        ($) => abort(
-            ['parse error', $],
-        ),
-        {
-            'document resource identifier': $p['document resource identifier'],
-            'tab size': $p['tab size'],
-        },
-    )['content'],
-    ($) => abort(
-        ['unmarshall error', $],
-    ),
-)
-
-export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
     v_deserialize.Document(
         $,
         ($) => abort(

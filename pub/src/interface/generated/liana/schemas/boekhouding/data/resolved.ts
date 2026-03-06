@@ -1,6 +1,25 @@
 
 import * as _pi from 'pareto-core/dist/interface'
 
+export namespace Root_ {
+    
+    export type Fiscaal = Fiscaal_
+    
+    export type Categorieen = Grootboek_Categorieen_
+    
+    export type Beheer = Beheer_
+    
+    export type Jaren = Jaren_
+    
+}
+
+export type Root_ = {
+    readonly 'Fiscaal': Root_.Fiscaal
+    readonly 'Categorieen': Root_.Categorieen
+    readonly 'Beheer': Root_.Beheer
+    readonly 'Jaren': Root_.Jaren
+}
+
 export namespace Fiscaal_ {
     
     export namespace Balans_Hoofdcategorieen {
@@ -2049,26 +2068,8 @@ export type Eerste_boekjaar_ =
     | readonly ['Ja', Eerste_boekjaar_.Ja]
     | readonly ['Nee', Eerste_boekjaar_.Nee]
 
-export namespace Root_ {
-    
-    export type Fiscaal = Fiscaal_
-    
-    export type Categorieen = Grootboek_Categorieen_
-    
-    export type Beheer = Beheer_
-    
-    export type Jaren = Jaren_
-    
-}
-
-export type Root_ = {
-    readonly 'Fiscaal': Root_.Fiscaal
-    readonly 'Categorieen': Root_.Categorieen
-    readonly 'Beheer': Root_.Beheer
-    readonly 'Jaren': Root_.Jaren
-}
-
 export { 
+    Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 
     Beheer_ as Beheer, 
@@ -2082,5 +2083,4 @@ export {
     Jaren_ as Jaren, 
     Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
     Eerste_boekjaar_ as Eerste_boekjaar, 
-    Root_ as Root, 
 }

@@ -11,6 +11,35 @@ import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_
 
 import * as v_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
 
+export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
+    {
+        "Fiscaal": _p_change_context(
+            $['Fiscaal'],
+            ($) => Fiscaal(
+                $,
+            ),
+        ),
+        "Categorieen": _p_change_context(
+            $['Categorieen'],
+            ($) => Grootboek_Categorieen(
+                $,
+            ),
+        ),
+        "Beheer": _p_change_context(
+            $['Beheer'],
+            ($) => Beheer(
+                $,
+            ),
+        ),
+        "Jaren": _p_change_context(
+            $['Jaren'],
+            ($) => Jaren(
+                $,
+            ),
+        ),
+    },
+)]]
+
 export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
         "Balans Hoofdcategorieen": _p_change_context(
@@ -2334,32 +2363,3 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', _p
         }
     },
 )]
-
-export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
-    {
-        "Fiscaal": _p_change_context(
-            $['Fiscaal'],
-            ($) => Fiscaal(
-                $,
-            ),
-        ),
-        "Categorieen": _p_change_context(
-            $['Categorieen'],
-            ($) => Grootboek_Categorieen(
-                $,
-            ),
-        ),
-        "Beheer": _p_change_context(
-            $['Beheer'],
-            ($) => Beheer(
-                $,
-            ),
-        ),
-        "Jaren": _p_change_context(
-            $['Jaren'],
-            ($) => Jaren(
-                $,
-            ),
-        ),
-    },
-)]]

@@ -7,6 +7,12 @@ import * as v_serialize from "astn-core/dist/implementation/manual/transformers/
 
 import * as v_marshall from "./astn_sealed_target"
 
+export const Root: t_signatures.Root = ($) => v_serialize.Document(
+    v_marshall.Root(
+        $,
+    ),
+)
+
 export const Fiscaal: t_signatures.Fiscaal = ($) => v_serialize.Document(
     v_marshall.Fiscaal(
         $,
@@ -81,12 +87,6 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => v_serialize.Document(
     v_marshall.Eerste_boekjaar(
-        $,
-    ),
-)
-
-export const Root: t_signatures.Root = ($) => v_serialize.Document(
-    v_marshall.Root(
         $,
     ),
 )

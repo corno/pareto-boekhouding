@@ -15,6 +15,103 @@ import * as v_unmarshalled_from_parse_tree from "liana-core/dist/implementation/
 
 import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/transformers/parse_tree/start_token_range"
 
+export const Root: t_signatures.Root = ($, abort) => _p_change_context(
+    v_unmarshalled_from_parse_tree.Verbose_Group(
+        $,
+        ($) => abort(
+            $,
+        ),
+        {
+            'expected properties': _p.dictionary.literal(
+                {
+                    "Fiscaal": null,
+                    "Categorieen": null,
+                    "Beheer": null,
+                    "Jaren": null,
+                },
+            ),
+        },
+    ),
+    ($) => _p_variables(
+        () => {
+            
+            const var_verbose_group_range = v_parse_tree_to_location.Value(
+                $['value'],
+            )
+            return {
+                'Fiscaal': _p_change_context(
+                    v_unmarshalled_from_parse_tree.Property(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                        {
+                            'id': 'Fiscaal',
+                        },
+                    ),
+                    ($) => Fiscaal(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                    ),
+                ),
+                'Categorieen': _p_change_context(
+                    v_unmarshalled_from_parse_tree.Property(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                        {
+                            'id': 'Categorieen',
+                        },
+                    ),
+                    ($) => Grootboek_Categorieen(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                    ),
+                ),
+                'Beheer': _p_change_context(
+                    v_unmarshalled_from_parse_tree.Property(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                        {
+                            'id': 'Beheer',
+                        },
+                    ),
+                    ($) => Beheer(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                    ),
+                ),
+                'Jaren': _p_change_context(
+                    v_unmarshalled_from_parse_tree.Property(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                        {
+                            'id': 'Jaren',
+                        },
+                    ),
+                    ($) => Jaren(
+                        $,
+                        ($) => abort(
+                            $,
+                        ),
+                    ),
+                ),
+            }
+        },
+    ),
+)
+
 export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
@@ -7360,103 +7457,6 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_ch
                             ),
                         }],
                     )
-            }
-        },
-    ),
-)
-
-export const Root: t_signatures.Root = ($, abort) => _p_change_context(
-    v_unmarshalled_from_parse_tree.Verbose_Group(
-        $,
-        ($) => abort(
-            $,
-        ),
-        {
-            'expected properties': _p.dictionary.literal(
-                {
-                    "Fiscaal": null,
-                    "Categorieen": null,
-                    "Beheer": null,
-                    "Jaren": null,
-                },
-            ),
-        },
-    ),
-    ($) => _p_variables(
-        () => {
-            
-            const var_verbose_group_range = v_parse_tree_to_location.Value(
-                $['value'],
-            )
-            return {
-                'Fiscaal': _p_change_context(
-                    v_unmarshalled_from_parse_tree.Property(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                        {
-                            'id': 'Fiscaal',
-                        },
-                    ),
-                    ($) => Fiscaal(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                    ),
-                ),
-                'Categorieen': _p_change_context(
-                    v_unmarshalled_from_parse_tree.Property(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                        {
-                            'id': 'Categorieen',
-                        },
-                    ),
-                    ($) => Grootboek_Categorieen(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                    ),
-                ),
-                'Beheer': _p_change_context(
-                    v_unmarshalled_from_parse_tree.Property(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                        {
-                            'id': 'Beheer',
-                        },
-                    ),
-                    ($) => Beheer(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                    ),
-                ),
-                'Jaren': _p_change_context(
-                    v_unmarshalled_from_parse_tree.Property(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                        {
-                            'id': 'Jaren',
-                        },
-                    ),
-                    ($) => Jaren(
-                        $,
-                        ($) => abort(
-                            $,
-                        ),
-                    ),
-                ),
             }
         },
     ),
