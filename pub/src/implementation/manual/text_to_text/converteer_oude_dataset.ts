@@ -25,9 +25,10 @@ export const $$: Signature = ($, abort, $p) => t_boekhouding_resolved_to_fp.Root
             r_boekhouding_oude_model_from_loc.Root(
                 $,
                 ($) => abort(sh.ph.composed([
-                    t_location_to_fountain_pen.Range(
+                    t_location_to_fountain_pen.Possible_Range(
                         t_deserialize_parse_tree_to_location.Error($),
                         {
+                            'document resource identifier': $p['document resource identifier'],
                             'character location reporting': ['one based', null],
                         }
                     ),
@@ -43,6 +44,7 @@ export const $$: Signature = ($, abort, $p) => t_boekhouding_resolved_to_fp.Root
             t_location_to_fountain_pen.Range(
                 t_deserialize_resolve_to_location.Error($),
                 {
+                    'document resource identifier': $p['document resource identifier'], 
                     'character location reporting': ['one based', null],
                 }
             ),

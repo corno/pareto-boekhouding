@@ -202,7 +202,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Activa':
@@ -238,7 +238,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -365,7 +365,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Kosten':
@@ -401,7 +401,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => _p_change_context(
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -634,7 +634,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Activa':
@@ -670,7 +670,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -861,7 +861,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Kosten':
@@ -897,7 +897,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -1119,7 +1119,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
                                                                     switch ($t) {
                                                                         case 'Ja':
@@ -1194,7 +1194,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -1359,7 +1359,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                     ),
                                                                                 ),
                                                                                 ($) => _p.decide.text(
-                                                                                    $['option']['value'],
+                                                                                    $['option']['token']['value'],
                                                                                     ($t): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                                                         switch ($t) {
                                                                                             case 'Activa':
@@ -1395,7 +1395,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                             default:
                                                                                                 return abort(
                                                                                                     ['liana', {
-                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
                                                                                                         ),
@@ -1528,7 +1528,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                     ),
                                                                                 ),
                                                                                 ($) => _p.decide.text(
-                                                                                    $['option']['value'],
+                                                                                    $['option']['token']['value'],
                                                                                     ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                                                         switch ($t) {
                                                                                             case 'Kosten':
@@ -1577,7 +1577,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                     ),
                                                                                                                                 ),
                                                                                                                                 ($) => _p.decide.text(
-                                                                                                                                    $['option']['value'],
+                                                                                                                                    $['option']['token']['value'],
                                                                                                                                     ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                                                         switch ($t) {
                                                                                                                                             case 'Ja':
@@ -1654,7 +1654,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                             default:
                                                                                                                                                 return abort(
                                                                                                                                                     ['liana', {
-                                                                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                                                                             $['value'],
                                                                                                                                                         ),
@@ -1689,7 +1689,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                             default:
                                                                                                 return abort(
                                                                                                     ['liana', {
-                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
                                                                                                         ),
@@ -2273,7 +2273,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                                                             ),
                                                                                                                                                                         ),
                                                                                                                                                                         ($) => _p.decide.text(
-                                                                                                                                                                            $['option']['value'],
+                                                                                                                                                                            $['option']['token']['value'],
                                                                                                                                                                             ($t): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
                                                                                                                                                                                 switch ($t) {
                                                                                                                                                                                     case 'Project':
@@ -2354,7 +2354,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                                                                     default:
                                                                                                                                                                                         return abort(
                                                                                                                                                                                             ['liana', {
-                                                                                                                                                                                                'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                                                                                                'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                                                                                                                                     $['value'],
                                                                                                                                                                                                 ),
@@ -2573,7 +2573,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
                                                                     switch ($t) {
                                                                         case 'Bankrekening':
@@ -2624,7 +2624,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -3005,7 +3005,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                     ),
                                                                                 ),
                                                                                 ($) => _p.decide.text(
-                                                                                    $['option']['value'],
+                                                                                    $['option']['token']['value'],
                                                                                     ($t): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
                                                                                         switch ($t) {
                                                                                             case 'Aangegeven':
@@ -3122,7 +3122,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                             default:
                                                                                                 return abort(
                                                                                                     ['liana', {
-                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
                                                                                                         ),
@@ -3449,7 +3449,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                     ),
                                                                                 ),
                                                                                 ($) => _p.decide.text(
-                                                                                    $['option']['value'],
+                                                                                    $['option']['token']['value'],
                                                                                     ($t): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
@@ -3521,7 +3521,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                             default:
                                                                                                 return abort(
                                                                                                     ['liana', {
-                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
                                                                                                         ),
@@ -3653,7 +3653,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                     ),
                                                                                 ),
                                                                                 ($) => _p.decide.text(
-                                                                                    $['option']['value'],
+                                                                                    $['option']['token']['value'],
                                                                                     ($t): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
@@ -3725,7 +3725,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                             default:
                                                                                                 return abort(
                                                                                                     ['liana', {
-                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
                                                                                                         ),
@@ -4033,7 +4033,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                             ),
                         ),
                         ($) => _p.decide.text(
-                            $['option']['value'],
+                            $['option']['token']['value'],
                             ($t): t_out.Overige_balans_item.Nieuw => {
                                 switch ($t) {
                                     case 'Ja':
@@ -4110,7 +4110,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                                     default:
                                         return abort(
                                             ['liana', {
-                                                'type': ['state', ['unknown option', $['option']['value']]],
+                                                'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                 'range': v_parse_tree_to_location.Value(
                                                     $['value'],
                                                 ),
@@ -4244,7 +4244,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                                     switch ($t) {
                                                                         case 'Mutaties':
@@ -4375,7 +4375,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -4404,7 +4404,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
                                                                     switch ($t) {
                                                                         case 'Binnenland: heffing verlegd':
@@ -4526,7 +4526,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -4555,7 +4555,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
                                                                     switch ($t) {
                                                                         case 'Toegevoegd':
@@ -4642,7 +4642,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -4742,7 +4742,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                     ),
                                                                                                 ),
                                                                                                 ($) => _p.decide.text(
-                                                                                                    $['option']['value'],
+                                                                                                    $['option']['token']['value'],
                                                                                                     ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                                                                                                         switch ($t) {
                                                                                                             case 'Bekend':
@@ -4823,7 +4823,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                             default:
                                                                                                                 return abort(
                                                                                                                     ['liana', {
-                                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                                             $['value'],
                                                                                                                         ),
@@ -4869,7 +4869,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                     ),
                                                                                                 ),
                                                                                                 ($) => _p.decide.text(
-                                                                                                    $['option']['value'],
+                                                                                                    $['option']['token']['value'],
                                                                                                     ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                                                         switch ($t) {
                                                                                                             case 'Balans':
@@ -4987,7 +4987,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                             default:
                                                                                                                 return abort(
                                                                                                                     ['liana', {
-                                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                                             $['value'],
                                                                                                                         ),
@@ -5025,7 +5025,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type => {
                                                                     switch ($t) {
                                                                         case 'Bonnetje':
@@ -5255,7 +5255,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -5349,7 +5349,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                                     switch ($t) {
                                                                         case 'Mutaties':
@@ -5426,7 +5426,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -5497,7 +5497,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
                                                                     switch ($t) {
                                                                         case 'Toegevoegd':
@@ -5554,7 +5554,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -5605,7 +5605,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 ),
                                                             ),
                                                             ($) => _p.decide.text(
-                                                                $['option']['value'],
+                                                                $['option']['token']['value'],
                                                                 ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype => {
                                                                     switch ($t) {
                                                                         case 'Project':
@@ -5746,7 +5746,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                         default:
                                                                             return abort(
                                                                                 ['liana', {
-                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                         $['value'],
                                                                                     ),
@@ -5848,7 +5848,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                     ),
                                                                                                 ),
                                                                                                 ($) => _p.decide.text(
-                                                                                                    $['option']['value'],
+                                                                                                    $['option']['token']['value'],
                                                                                                     ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
                                                                                                         switch ($t) {
                                                                                                             case 'Intracommunautair':
@@ -5940,7 +5940,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                             default:
                                                                                                                 return abort(
                                                                                                                     ['liana', {
-                                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                                             $['value'],
                                                                                                                         ),
@@ -5989,7 +5989,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                     ),
                                                                                                 ),
                                                                                                 ($) => _p.decide.text(
-                                                                                                    $['option']['value'],
+                                                                                                    $['option']['token']['value'],
                                                                                                     ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype => {
                                                                                                         switch ($t) {
                                                                                                             case 'Project':
@@ -6122,7 +6122,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                             default:
                                                                                                                 return abort(
                                                                                                                     ['liana', {
-                                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                                             $['value'],
                                                                                                                         ),
@@ -6168,7 +6168,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                     ),
                                                                                                 ),
                                                                                                 ($) => _p.decide.text(
-                                                                                                    $['option']['value'],
+                                                                                                    $['option']['token']['value'],
                                                                                                     ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                                                         switch ($t) {
                                                                                                             case 'Opbrengsten':
@@ -6286,7 +6286,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                             default:
                                                                                                                 return abort(
                                                                                                                     ['liana', {
-                                                                                                                        'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                        'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                                             $['value'],
                                                                                                                         ),
@@ -6449,7 +6449,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             ),
                                                                             ($) => _p.decide.text(
-                                                                                $['option']['value'],
+                                                                                $['option']['token']['value'],
                                                                                 ($t): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling => {
                                                                                     switch ($t) {
                                                                                         case 'Resultaat':
@@ -6482,7 +6482,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                         ),
                                                                                                         ($) => _p.decide.text(
-                                                                                                            $['option']['value'],
+                                                                                                            $['option']['token']['value'],
                                                                                                             ($t): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling.l_state.Balans => {
                                                                                                                 switch ($t) {
                                                                                                                     case 'Informele rekening':
@@ -6544,7 +6544,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                                                     default:
                                                                                                                         return abort(
                                                                                                                             ['liana', {
-                                                                                                                                'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                                                'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                                                                     $['value'],
                                                                                                                                 ),
@@ -6559,7 +6559,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                         default:
                                                                                             return abort(
                                                                                                 ['liana', {
-                                                                                                    'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                    'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                         $['value'],
                                                                                                     ),
@@ -6637,7 +6637,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                             ),
                                                         ),
                                                         ($) => _p.decide.text(
-                                                            $['option']['value'],
+                                                            $['option']['token']['value'],
                                                             ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry => {
                                                                 switch ($t) {
                                                                     case 'Resultaat':
@@ -6670,7 +6670,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                         ),
                                                                                     ),
                                                                                     ($) => _p.decide.text(
-                                                                                        $['option']['value'],
+                                                                                        $['option']['token']['value'],
                                                                                         ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state.Balans => {
                                                                                             switch ($t) {
                                                                                                 case 'Informele rekening':
@@ -6788,7 +6788,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                                 default:
                                                                                                     return abort(
                                                                                                         ['liana', {
-                                                                                                            'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                                            'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                             'range': v_parse_tree_to_location.Value(
                                                                                                                 $['value'],
                                                                                                             ),
@@ -6803,7 +6803,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                     default:
                                                                         return abort(
                                                                             ['liana', {
-                                                                                'type': ['state', ['unknown option', $['option']['value']]],
+                                                                                'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                     $['value'],
                                                                                 ),
@@ -7052,7 +7052,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => _p_change_context(
                                             ),
                                         ),
                                         ($) => _p.decide.text(
-                                            $['option']['value'],
+                                            $['option']['token']['value'],
                                             ($t): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
                                                 switch ($t) {
                                                     case 'Ja':
@@ -7088,7 +7088,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => _p_change_context(
                                                     default:
                                                         return abort(
                                                             ['liana', {
-                                                                'type': ['state', ['unknown option', $['option']['value']]],
+                                                                'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                 'range': v_parse_tree_to_location.Value(
                                                                     $['value'],
                                                                 ),
@@ -7284,7 +7284,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             ),
                         ),
                         ($) => _p.decide.text(
-                            $['option']['value'],
+                            $['option']['token']['value'],
                             ($t): t_out.Balans_Resultaat_Mutatie.type_ => {
                                 switch ($t) {
                                     case 'Inkoop':
@@ -7350,7 +7350,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                     default:
                                         return abort(
                                             ['liana', {
-                                                'type': ['state', ['unknown option', $['option']['value']]],
+                                                'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                 'range': v_parse_tree_to_location.Value(
                                                     $['value'],
                                                 ),
@@ -7374,7 +7374,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_ch
         ),
     ),
     ($) => _p.decide.text(
-        $['option']['value'],
+        $['option']['token']['value'],
         ($t): t_out.Eerste_boekjaar => {
             switch ($t) {
                 case 'Ja':
@@ -7451,7 +7451,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => _p_ch
                 default:
                     return abort(
                         ['liana', {
-                            'type': ['state', ['unknown option', $['option']['value']]],
+                            'type': ['state', ['unknown option', $['option']['token']['value']]],
                             'range': v_parse_tree_to_location.Value(
                                 $['value'],
                             ),

@@ -21,9 +21,10 @@ export const $$: Signature = ($, abort, $p) => {
         t_boekhouding_resolved_from_loc.Root(
             $,
             ($) => abort(sh.ph.composed([
-                t_location_to_fountain_pen.Range(
+                t_location_to_fountain_pen.Possible_Range(
                     t_deserialize_resolved_to_location.Error($),
                     {
+                        'document resource identifier': $p['document resource identifier'],
                         'character location reporting': ['one based', null],
                     }
                 ),
