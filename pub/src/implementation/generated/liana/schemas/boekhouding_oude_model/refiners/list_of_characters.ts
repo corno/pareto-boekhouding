@@ -14,7 +14,6 @@ export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -30,7 +29,6 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort, $p) => v_unmar
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],

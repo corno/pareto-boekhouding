@@ -24,7 +24,10 @@ export type Deserializer = _pi.Refiner_With_Parameter<
     d_fp.Paragraph,
     d_fp.Phrase,
     d_loc.List_of_Characters,
-    d_deserialize.Parameters
+    {
+        'document resource identifier': string
+        'tab size': number
+    }
 >
 
 export type Creator = (

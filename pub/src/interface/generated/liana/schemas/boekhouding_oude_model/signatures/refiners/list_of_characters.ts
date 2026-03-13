@@ -17,8 +17,6 @@ export namespace Root_ {
     
     export namespace P {
         
-        export type document_resource_identifier = string
-        
         export type tab_size = number
         
     }
@@ -29,7 +27,6 @@ export type Root_ = (
     context: Root_.I,
     abort: _pi.Abort<Root_.E>,
     parameters: {
-        readonly 'document resource identifier': Root_.P.document_resource_identifier
         readonly 'tab size': Root_.P.tab_size
     },
 ) => Root_.O
@@ -44,8 +41,6 @@ export namespace Bestandsnaam_ {
     
     export namespace P {
         
-        export type document_resource_identifier = string
-        
         export type tab_size = number
         
     }
@@ -56,7 +51,6 @@ export type Bestandsnaam_ = (
     context: Bestandsnaam_.I,
     abort: _pi.Abort<Bestandsnaam_.E>,
     parameters: {
-        readonly 'document resource identifier': Bestandsnaam_.P.document_resource_identifier
         readonly 'tab size': Bestandsnaam_.P.tab_size
     },
 ) => Bestandsnaam_.O

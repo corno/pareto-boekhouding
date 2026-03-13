@@ -14,7 +14,6 @@ export const Root: t_signatures.Root = ($, abort, $p) => v_unmarshall.Root(
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -30,7 +29,6 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $p) => v_unmarshall.Fisc
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -46,7 +44,6 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -62,7 +59,6 @@ export const Beheer: t_signatures.Beheer = ($, abort, $p) => v_unmarshall.Beheer
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -78,7 +74,6 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -94,7 +89,6 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $p) => v_unmarshal
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -110,7 +104,6 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -126,7 +119,6 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -142,7 +134,6 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -158,7 +149,6 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $p
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -174,7 +164,6 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $p) => v_unmarshall.Mu
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -190,7 +179,6 @@ export const Jaren: t_signatures.Jaren = ($, abort, $p) => v_unmarshall.Jaren(
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -206,7 +194,6 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
@@ -222,7 +209,6 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $p) => v
             ['parse error', $],
         ),
         {
-            'document resource identifier': $p['document resource identifier'],
             'tab size': $p['tab size'],
         },
     )['content'],
