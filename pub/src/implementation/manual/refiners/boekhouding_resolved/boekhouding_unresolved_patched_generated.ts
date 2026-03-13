@@ -1144,7 +1144,7 @@
 //                                                 const p_Contracttype: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype = _p_change_context($['Contracttype'], ($) => _p_change_context($['state group'], ($): _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
 //                                                     switch ($[0]) {
 //                                                         case 'Licentieovereenkomst': return _p.ss($, ($) => ['Licentieovereenkomst', _p_deprecated_block(() => {
-//                                                             const c_Definitie = p_parent_contract_type[0] === 'Licentieovereenkomst' ? p_parent_contract_type[1] : _pdev.implement_me("xx")
+//                                                             const c_Definitie = p_parent_contract_type[0] === 'Licentieovereenkomst' ? p_parent_contract_type[1] : _p_implement_me("xx")
 //                                                             return _p_deprecated_block(() => {
 //                                                                 const p_Periode: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Licentieovereenkomst.Periode = _p_change_context($['Periode'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
@@ -1165,7 +1165,7 @@
 //                                                             return null
 //                                                         })])
 //                                                         case 'Project': return _p.ss($, ($) => ['Project', _p_deprecated_block(() => {
-//                                                             const c_Definitie = p_parent_contract_type[0] === 'Project' ? p_parent_contract_type[1] : _pdev.implement_me("xx")
+//                                                             const c_Definitie = p_parent_contract_type[0] === 'Project' ? p_parent_contract_type[1] : _p_implement_me("xx")
 //                                                             return _p_deprecated_block(() => {
 //                                                                 const p_Opbrengst: _i_out._T_Handelstransacties.Verkopen.D.Regels.D.Contracttype.SG.Project.Opbrengst = _p_change_context($['Opbrengst'], ($) => _i_generic.get_entry(
 //                                                                     _i_generic.dictionary_to_lookup(
@@ -1433,7 +1433,7 @@
 //                                             return null
 //                                         })])
 //                                         case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
-//                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
+//                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _p_implement_me("xx")
 //                                             return _p_deprecated_block(() => {
 //                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw.SG.Nee.Rekening = _p_change_context($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
 //                                                     $,
@@ -1489,7 +1489,7 @@
 //                                             return null
 //                                         })])
 //                                         case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
-//                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
+//                                             const c_Niet_Nieuw = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _p_implement_me("xx")
 //                                             return _p_deprecated_block(() => {
 //                                                 const p_Rekening: _i_out._T_Jaarbeheer.Balans.Bankrekeningen.D.Nieuw.SG.Nee.Rekening = _p_change_context($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
 //                                                     $,
@@ -1920,7 +1920,7 @@
 //                     return null
 //                 })])
 //                 case 'Nee': return _p.ss($, ($) => ['Nee', _p_deprecated_block(() => {
-//                     const c_Volgend_boekjaar = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _pdev.implement_me("xx")
+//                     const c_Volgend_boekjaar = params.values['Eerste boekjaar'][0] === 'Nee' ? params.values['Eerste boekjaar'][1] : _p_implement_me("xx")
 //                     return _p_deprecated_block(() => {
 //                         const p_Balans_item: _i_out._T_Overige_balans_item.Nieuw.SG.Nee.Balans_item = _p_change_context($['Balans item'], ($) => _i_generic.get_entry(
 //                             _i_generic.dictionary_to_lookup(
