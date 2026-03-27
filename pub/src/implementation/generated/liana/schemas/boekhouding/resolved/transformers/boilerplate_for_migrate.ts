@@ -39,6 +39,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
         $['Balans Hoofdcategorieen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -63,6 +64,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                             $['Zijde'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -105,6 +107,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                             $['Subcategorieen'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -126,6 +129,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     ($, id) => ({
                                         'l entry': null,
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -147,6 +151,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -170,6 +175,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
         $['Resultaat Hoofdcategorieen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -194,6 +200,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                             $['Zijde'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -236,6 +243,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                             $['Subcategorieen'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -257,6 +265,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     ($, id) => ({
                                         'l entry': null,
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -278,6 +287,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -304,6 +314,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
         $['Correctietypes vennootschapsbelasting'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -330,6 +341,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -353,6 +365,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
         $['Balans'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -377,6 +390,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             $['Zijde'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -419,6 +433,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             $['Subcategorieen'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -443,6 +458,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -465,6 +481,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                 $['Subcategorie fiscus'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -485,6 +502,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             ),
                                         },
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -506,6 +524,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -529,6 +548,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
         $['Resultaat'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -553,6 +573,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             $['Zijde'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -595,6 +616,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             $['Subcategorieen'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -619,6 +641,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -641,6 +664,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                 $['Subcategorie fiscus'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -661,6 +685,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             ),
                                         },
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -682,6 +707,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -708,6 +734,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
         $['BTW-categorieen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -732,6 +759,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             $['BTW-heffing'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -777,6 +805,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -803,6 +832,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 $['Balans'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -827,6 +857,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     $['Hoofdcategorie'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -849,6 +880,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     $['Subcategorie'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -871,6 +903,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     $['Zijde'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -911,6 +944,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 ),
                             },
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -934,6 +968,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 $['Resultaat'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -958,6 +993,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     $['Hoofdcategorie'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -980,6 +1016,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     $['Subcategorie'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1002,6 +1039,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     $['Zijde'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1029,6 +1067,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                     $['Correctie op vennootschapsbelasting'],
                                                                     ($) => ({
                                                                         'l location': {
+                                                                            'document resource identifier': "dummy dri",
                                                                             'start': {
                                                                                 'absolute': 42,
                                                                                 'relative': {
@@ -1056,6 +1095,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                     $['Correctietype'],
                                                                                                     ($) => ({
                                                                                                         'l location': {
+                                                                                                            'document resource identifier': "dummy dri",
                                                                                                             'start': {
                                                                                                                 'absolute': 42,
                                                                                                                 'relative': {
@@ -1108,6 +1148,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 ),
                             },
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1136,6 +1177,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 $['Bank'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1157,6 +1199,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1180,6 +1223,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 $['Informeel'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1201,6 +1245,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1226,6 +1271,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
         $['Gebruikers'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1256,6 +1302,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1279,6 +1326,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
         $['Klanten'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1303,6 +1351,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             $['Licentieovereenkomsten'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -1327,6 +1376,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                 $['Periodes'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -1353,6 +1403,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 ),
                                                             },
                                                             'l location': {
+                                                                'document resource identifier': "dummy dri",
                                                                 'start': {
                                                                     'absolute': 42,
                                                                     'relative': {
@@ -1374,6 +1425,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             ),
                                         },
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1397,6 +1449,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             $['Projecten'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -1421,6 +1474,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                 $['Offertes'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -1445,6 +1499,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                     $['Opbrengsten'],
                                                                     ($) => ({
                                                                         'l location': {
+                                                                            'document resource identifier': "dummy dri",
                                                                             'start': {
                                                                                 'absolute': 42,
                                                                                 'relative': {
@@ -1469,6 +1524,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                         $['Type'],
                                                                                         ($) => ({
                                                                                             'l location': {
+                                                                                                'document resource identifier': "dummy dri",
                                                                                                 'start': {
                                                                                                     'absolute': 42,
                                                                                                     'relative': {
@@ -1513,6 +1569,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                     ),
                                                                                 },
                                                                                 'l location': {
+                                                                                    'document resource identifier': "dummy dri",
                                                                                     'start': {
                                                                                         'absolute': 42,
                                                                                         'relative': {
@@ -1534,6 +1591,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 ),
                                                             },
                                                             'l location': {
+                                                                'document resource identifier': "dummy dri",
                                                                 'start': {
                                                                     'absolute': 42,
                                                                     'relative': {
@@ -1555,6 +1613,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             ),
                                         },
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1576,6 +1635,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1599,6 +1659,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
         $['Leveranciers'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1620,6 +1681,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 ($, id) => ({
                     'l entry': null,
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1643,6 +1705,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
         $['Medewerkers'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1664,6 +1727,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                 ($, id) => ({
                     'l entry': null,
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1690,6 +1754,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
         $['Balans'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1714,6 +1779,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                             $['Type'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -1759,6 +1825,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1782,6 +1849,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
         $['Resultaat'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1803,6 +1871,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                 ($, id) => ({
                     'l entry': null,
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1832,6 +1901,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Grootboekrekening voor BTW afrondingen'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1854,6 +1924,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Salarisrondes'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1875,6 +1946,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1898,6 +1970,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['BTW periodes'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1922,6 +1995,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['1. BTW-categorieen'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1943,6 +2017,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             ($, id) => ({
                                                 'l entry': null,
                                                 'l location': {
+                                                    'document resource identifier': "dummy dri",
                                                     'start': {
                                                         'absolute': 42,
                                                         'relative': {
@@ -1966,6 +2041,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Documenten'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1992,6 +2068,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     ),
                                                 },
                                                 'l location': {
+                                                    'document resource identifier': "dummy dri",
                                                     'start': {
                                                         'absolute': 42,
                                                         'relative': {
@@ -2019,6 +2096,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Status'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2072,6 +2150,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 ),
                             },
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2100,6 +2179,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Grootboekrekening voor nog aan te geven BTW'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2122,6 +2202,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Grootboekrekening voor resultaat dit jaar'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2144,6 +2225,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Grootboekrekening voor winstreserve'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2166,6 +2248,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Grootboekrekening voor Inkoop saldo'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2188,6 +2271,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Grootboekrekening voor Verkoop saldo'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2218,6 +2302,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Informele rekeningen'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2246,6 +2331,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Grootboekrekening'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2268,6 +2354,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Nieuw'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2315,6 +2402,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 ),
                             },
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2338,6 +2426,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Bankrekeningen'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2366,6 +2455,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Grootboekrekening'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2388,6 +2478,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Nieuw'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2437,6 +2528,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     $['Mutaties'],
                                     ($) => ({
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2471,6 +2563,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     ),
                                                 },
                                                 'l location': {
+                                                    'document resource identifier': "dummy dri",
                                                     'start': {
                                                         'absolute': 42,
                                                         'relative': {
@@ -2492,6 +2585,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 ),
                             },
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2515,6 +2609,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Overige balans items'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2538,6 +2633,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 $,
                             ),
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2561,6 +2657,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Verrekenposten'],
                 ($) => ({
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2582,6 +2679,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                         ($, id) => ({
                             'l entry': null,
                             'l location': {
+                                'document resource identifier': "dummy dri",
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2614,6 +2712,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
         $['Grootboekrekening'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -2636,6 +2735,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
         $['Nieuw'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -2668,6 +2768,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                                         $['Balans item'],
                                         ($) => ({
                                             'l location': {
+                                                'document resource identifier': "dummy dri",
                                                 'start': {
                                                     'absolute': 42,
                                                     'relative': {
@@ -2701,6 +2802,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
 
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($) => ({
     'l location': {
+        'document resource identifier': "dummy dri",
         'start': {
             'absolute': 42,
             'relative': {
@@ -2721,6 +2823,7 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($) => ({
     'l location': {
+        'document resource identifier': "dummy dri",
         'start': {
             'absolute': 42,
             'relative': {
@@ -2744,6 +2847,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
         $['Inkopen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -2768,6 +2872,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Afhandeling'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -2810,6 +2915,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Rekening courant'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -2843,6 +2949,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['BTW-regime'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -2890,6 +2997,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['BTW-periode'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -2923,6 +3031,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Brondocument'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -2979,6 +3088,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Regels'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3003,6 +3113,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 $['Bedrag'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3053,6 +3164,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 $['Type'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3080,6 +3192,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['Balans item'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3108,6 +3221,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3139,6 +3253,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             ),
                                         },
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -3162,6 +3277,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Type'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3194,6 +3310,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Crediteur'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3226,6 +3343,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Ronde'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3254,6 +3372,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Ronde'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3276,6 +3395,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Medewerker'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3307,6 +3427,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -3330,6 +3451,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
         $['Verkopen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -3354,6 +3476,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Afhandeling'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3386,6 +3509,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Rekening courant'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3423,6 +3547,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['BTW-periode'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3445,6 +3570,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Brondocument'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3487,6 +3613,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Debiteur'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3509,6 +3636,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Contracttype'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3536,6 +3664,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Project'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3558,6 +3687,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Offerte'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3586,6 +3716,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                             $['Overeenkomst'],
                                                             ($) => ({
                                                                 'l location': {
+                                                                    'document resource identifier': "dummy dri",
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3623,6 +3754,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             $['Regels'],
                             ($) => ({
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3647,6 +3779,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 $['BTW-regime'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3679,6 +3812,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['BTW-categorie'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3721,6 +3855,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 $['Contracttype'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3748,6 +3883,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['Opbrengst'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3781,6 +3917,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['Periode'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3818,6 +3955,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 $['Type'],
                                                 ($) => ({
                                                     'l location': {
+                                                        'document resource identifier': "dummy dri",
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3845,6 +3983,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3873,6 +4012,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                 $['Balans item'],
                                                                                 ($) => ({
                                                                                     'l location': {
+                                                                                        'document resource identifier': "dummy dri",
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3904,6 +4044,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             ),
                                         },
                                         'l location': {
+                                            'document resource identifier': "dummy dri",
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -3925,6 +4066,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -3951,6 +4093,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
         $['Verrekenpost mutaties'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -3972,6 +4115,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 ($, id) => ({
                     'l entry': {
                         'l location': {
+                            'document resource identifier': "dummy dri",
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4000,6 +4144,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         $['Afhandeling'],
                                         ($) => ({
                                             'l location': {
+                                                'document resource identifier': "dummy dri",
                                                 'start': {
                                                     'absolute': 42,
                                                     'relative': {
@@ -4031,6 +4176,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                 $,
                                                                 ($) => ['Balans', {
                                                                     'l location': {
+                                                                        'document resource identifier': "dummy dri",
                                                                         'start': {
                                                                             'absolute': 42,
                                                                             'relative': {
@@ -4058,6 +4204,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                 $['Informele rekening'],
                                                                                                 ($) => ({
                                                                                                     'l location': {
+                                                                                                        'document resource identifier': "dummy dri",
                                                                                                         'start': {
                                                                                                             'absolute': 42,
                                                                                                             'relative': {
@@ -4098,6 +4245,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     ),
                                 },
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -4117,6 +4265,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4140,6 +4289,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
         $['Bankrekening Mutatie Verwerkingen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4161,6 +4311,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 ($, id) => ({
                     'l entry': {
                         'l location': {
+                            'document resource identifier': "dummy dri",
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4182,6 +4333,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                             ($, id) => ({
                                 'l entry': {
                                     'l location': {
+                                        'document resource identifier': "dummy dri",
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4213,6 +4365,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                         $,
                                                         ($) => ['Balans', {
                                                             'l location': {
+                                                                'document resource identifier': "dummy dri",
                                                                 'start': {
                                                                     'absolute': 42,
                                                                     'relative': {
@@ -4240,6 +4393,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                         $['Informele rekening'],
                                                                                         ($) => ({
                                                                                             'l location': {
+                                                                                                'document resource identifier': "dummy dri",
                                                                                                 'start': {
                                                                                                     'absolute': 42,
                                                                                                     'relative': {
@@ -4268,6 +4422,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                         $['Verrekenpost'],
                                                                                         ($) => ({
                                                                                             'l location': {
+                                                                                                'document resource identifier': "dummy dri",
                                                                                                 'start': {
                                                                                                     'absolute': 42,
                                                                                                     'relative': {
@@ -4306,6 +4461,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     ),
                                 },
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -4325,6 +4481,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4348,6 +4505,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
         $['Memoriaal boekingen'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4369,6 +4527,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                 ($, id) => ({
                     'l entry': {
                         'l location': {
+                            'document resource identifier': "dummy dri",
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4405,6 +4564,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         $['Grootboekrekening'],
                                         ($) => ({
                                             'l location': {
+                                                'document resource identifier': "dummy dri",
                                                 'start': {
                                                     'absolute': 42,
                                                     'relative': {
@@ -4425,6 +4585,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     ),
                                 },
                                 'l location': {
+                                    'document resource identifier': "dummy dri",
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -4444,6 +4605,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         ),
                     },
                     'l location': {
+                        'document resource identifier': "dummy dri",
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4467,6 +4629,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
 
 export const Jaren: t_signatures.Jaren = ($) => ({
     'l location': {
+        'document resource identifier': "dummy dri",
         'start': {
             'absolute': 42,
             'relative': {
@@ -4491,6 +4654,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                     $['Afgesloten'],
                     ($) => ({
                         'l location': {
+                            'document resource identifier': "dummy dri",
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4565,6 +4729,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                 ),
             },
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4592,6 +4757,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         ).map(
             ($) => ({
                 'l location': {
+                    'document resource identifier': "dummy dri",
                     'start': {
                         'absolute': 42,
                         'relative': {
@@ -4615,6 +4781,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         $['type'],
         ($) => ({
             'l location': {
+                'document resource identifier': "dummy dri",
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4639,6 +4806,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                 $,
                                 ($) => ['Inkoop', {
                                     'l location': {
+                                        'document resource identifier': "dummy dri",
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4662,6 +4830,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                 $,
                                 ($) => ['Verkoop', {
                                     'l location': {
+                                        'document resource identifier': "dummy dri",
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4685,6 +4854,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                 $,
                                 ($) => ['BTW-periode', {
                                     'l location': {
+                                        'document resource identifier': "dummy dri",
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4716,6 +4886,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
     'l location': {
+        'document resource identifier': "dummy dri",
         'start': {
             'absolute': 42,
             'relative': {
@@ -4748,6 +4919,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                                 $['Vorig boekjaar'],
                                 ($) => ({
                                     'l location': {
+                                        'document resource identifier': "dummy dri",
                                         'start': {
                                             'absolute': 42,
                                             'relative': {

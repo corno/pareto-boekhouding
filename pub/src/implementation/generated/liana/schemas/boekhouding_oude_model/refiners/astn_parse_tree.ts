@@ -13,7 +13,7 @@ import * as t_out from "../../../../../../interface/generated/liana/schemas/boek
 
 import * as v_unmarshalled_from_parse_tree from "liana-core/dist/implementation/manual/refiners/unmarshalled/astn_parse_tree"
 
-import * as v_parse_tree_to_location from "astn-core/dist/implementation/manual/transformers/parse_tree/start_token_range"
+import * as v_parse_tree_to_location from "liana-core/dist/implementation/manual/transformers/parse_tree/start_token_range"
 
 export const Root: t_signatures.Root = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
@@ -33,6 +33,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                     "Medewerkers": null,
                 },
             ),
+            'document resource identifier': "dummy dri",
         },
     ),
     ($) => _p_variables(
@@ -40,6 +41,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
             
             const var_verbose_group_range = v_parse_tree_to_location.Value(
                 $['value'],
+                {
+                    'document resource identifier': "dummy dri",
+                },
             )
             return {
                 'Bankrekeningen': _p_change_context(
@@ -50,6 +54,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Bankrekeningen',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -58,6 +63,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ($) => abort(
                                 $,
                             ),
+                            {
+                                'document resource identifier': "dummy dri",
+                            },
                         ),
                         ($) => _p.dictionary.from.dictionary(
                             $['entries'],
@@ -72,6 +80,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         'expected properties': _p.dictionary.literal(
                                             {},
                                         ),
+                                        'document resource identifier': "dummy dri",
                                     },
                                 ),
                                 ($) => _p_variables(
@@ -79,6 +88,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         
                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                             $['value'],
+                                            {
+                                                'document resource identifier': "dummy dri",
+                                            },
                                         )
                                         return null
                                     },
@@ -95,6 +107,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Beheer',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -113,6 +126,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         "Resultaat": null,
                                     },
                                 ),
+                                'document resource identifier': "dummy dri",
                             },
                         ),
                         ($) => _p_variables(
@@ -120,6 +134,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                 
                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                     $['value'],
+                                    {
+                                        'document resource identifier': "dummy dri",
+                                    },
                                 )
                                 return {
                                     'Balans': _p_change_context(
@@ -130,6 +147,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             {
                                                 'id': 'Balans',
+                                                'document resource identifier': "dummy dri",
                                             },
                                         ),
                                         ($) => _p_change_context(
@@ -146,6 +164,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             "Hoofdcategorieen fiscus": null,
                                                         },
                                                     ),
+                                                    'document resource identifier': "dummy dri",
                                                 },
                                             ),
                                             ($) => _p_variables(
@@ -153,6 +172,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     
                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                         $['value'],
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     )
                                                     return {
                                                         'Grootboekrekeningen': _p_change_context(
@@ -163,6 +185,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Grootboekrekeningen',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -171,6 +194,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -189,6 +215,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Zijde": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -196,6 +223,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Hoofdcategorie': _p_change_context(
@@ -206,6 +236,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Hoofdcategorie',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -223,6 +254,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Subcategorie',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -240,6 +272,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Zijde',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -266,6 +299,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -273,6 +307,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -292,6 +329,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -299,6 +337,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -311,6 +352,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                         $['value'],
+                                                                                                                        {
+                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             )
@@ -334,6 +378,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Hoofdcategorieen',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -342,6 +387,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -359,6 +407,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Subcategorieen": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -366,6 +415,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Zijde': _p_change_context(
@@ -376,6 +428,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Zijde',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -402,6 +455,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -409,6 +463,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -428,6 +485,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -435,6 +493,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -447,6 +508,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                         $['value'],
+                                                                                                                        {
+                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             )
@@ -463,6 +527,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Subcategorieen',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -471,6 +536,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
+                                                                                                {
+                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                },
                                                                                             ),
                                                                                             ($) => _p.dictionary.from.dictionary(
                                                                                                 $['entries'],
@@ -488,6 +556,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     "Subcategorie fiscus": null,
                                                                                                                 },
                                                                                                             ),
+                                                                                                            'document resource identifier': "dummy dri",
                                                                                                         },
                                                                                                     ),
                                                                                                     ($) => _p_variables(
@@ -495,6 +564,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             
                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                 $['value'],
+                                                                                                                {
+                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                },
                                                                                                             )
                                                                                                             return {
                                                                                                                 'Hoofdcategorie fiscus': _p_change_context(
@@ -505,6 +577,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         ),
                                                                                                                         {
                                                                                                                             'id': 'Hoofdcategorie fiscus',
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -522,6 +595,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         ),
                                                                                                                         {
                                                                                                                             'id': 'Subcategorie fiscus',
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -553,6 +627,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Hoofdcategorieen fiscus',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -561,6 +636,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -578,6 +656,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Subcategorieen": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -585,6 +664,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Zijde': _p_change_context(
@@ -595,6 +677,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Zijde',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -621,6 +704,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -628,6 +712,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -647,6 +734,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -654,6 +742,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -666,6 +757,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                         $['value'],
+                                                                                                                        {
+                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             )
@@ -682,6 +776,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Subcategorieen',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -690,6 +785,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
+                                                                                                {
+                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                },
                                                                                             ),
                                                                                             ($) => _p.dictionary.from.dictionary(
                                                                                                 $['entries'],
@@ -704,6 +802,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                 {},
                                                                                                             ),
+                                                                                                            'document resource identifier': "dummy dri",
                                                                                                         },
                                                                                                     ),
                                                                                                     ($) => _p_variables(
@@ -711,6 +810,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             
                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                 $['value'],
+                                                                                                                {
+                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                },
                                                                                                             )
                                                                                                             return null
                                                                                                         },
@@ -739,6 +841,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             {
                                                 'id': 'BTW-categorieen',
+                                                'document resource identifier': "dummy dri",
                                             },
                                         ),
                                         ($) => _p_change_context(
@@ -747,6 +850,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                 ($) => abort(
                                                     $,
                                                 ),
+                                                {
+                                                    'document resource identifier': "dummy dri",
+                                                },
                                             ),
                                             ($) => _p.dictionary.from.dictionary(
                                                 $['entries'],
@@ -763,6 +869,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     "BTW-heffing": null,
                                                                 },
                                                             ),
+                                                            'document resource identifier': "dummy dri",
                                                         },
                                                     ),
                                                     ($) => _p_variables(
@@ -770,6 +877,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             
                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                 $['value'],
+                                                                {
+                                                                    'document resource identifier': "dummy dri",
+                                                                },
                                                             )
                                                             return {
                                                                 'BTW-heffing': _p_change_context(
@@ -780,6 +890,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         {
                                                                             'id': 'BTW-heffing',
+                                                                            'document resource identifier': "dummy dri",
                                                                         },
                                                                     ),
                                                                     ($) => _p_change_context(
@@ -808,6 +919,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 "BTW-promillage": null,
                                                                                                             },
                                                                                                         ),
+                                                                                                        'document resource identifier': "dummy dri",
                                                                                                     },
                                                                                                 ),
                                                                                                 ($) => _p_variables(
@@ -815,6 +927,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         
                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         )
                                                                                                         return {
                                                                                                             'BTW-promillage': _p_change_context(
@@ -825,6 +940,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     ),
                                                                                                                     {
                                                                                                                         'id': 'BTW-promillage',
+                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                     },
                                                                                                                 ),
                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Number(
@@ -834,6 +950,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     ),
                                                                                                                     {
                                                                                                                         'type': ['decimal', null],
+                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                     },
                                                                                                                 ),
                                                                                                             ),
@@ -855,6 +972,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'expected properties': _p.dictionary.literal(
                                                                                                             {},
                                                                                                         ),
+                                                                                                        'document resource identifier': "dummy dri",
                                                                                                     },
                                                                                                 ),
                                                                                                 ($) => _p_variables(
@@ -862,6 +980,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         
                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         )
                                                                                                         return null
                                                                                                     },
@@ -874,6 +995,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 ),
                                                                                             }],
                                                                                         )
@@ -897,6 +1021,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             {
                                                 'id': 'Gebruikers',
+                                                'document resource identifier': "dummy dri",
                                             },
                                         ),
                                         ($) => _p_change_context(
@@ -905,6 +1030,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                 ($) => abort(
                                                     $,
                                                 ),
+                                                {
+                                                    'document resource identifier': "dummy dri",
+                                                },
                                             ),
                                             ($) => _p.dictionary.from.dictionary(
                                                 $['entries'],
@@ -922,6 +1050,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     "Wachtwoord": null,
                                                                 },
                                                             ),
+                                                            'document resource identifier': "dummy dri",
                                                         },
                                                     ),
                                                     ($) => _p_variables(
@@ -929,6 +1058,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             
                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                 $['value'],
+                                                                {
+                                                                    'document resource identifier': "dummy dri",
+                                                                },
                                                             )
                                                             return {
                                                                 'Volledige naam': _p_change_context(
@@ -939,6 +1071,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         {
                                                                             'id': 'Volledige naam',
+                                                                            'document resource identifier': "dummy dri",
                                                                         },
                                                                     ),
                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -956,6 +1089,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         {
                                                                             'id': 'Wachtwoord',
+                                                                            'document resource identifier': "dummy dri",
                                                                         },
                                                                     ),
                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -980,6 +1114,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             {
                                                 'id': 'Huidige datum',
+                                                'document resource identifier': "dummy dri",
                                             },
                                         ),
                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -989,6 +1124,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             {
                                                 'type': ['decimal', null],
+                                                'document resource identifier': "dummy dri",
                                             },
                                         ),
                                     ),
@@ -1000,6 +1136,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                             ),
                                             {
                                                 'id': 'Resultaat',
+                                                'document resource identifier': "dummy dri",
                                             },
                                         ),
                                         ($) => _p_change_context(
@@ -1017,6 +1154,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             "Hoofdcategorieen fiscus": null,
                                                         },
                                                     ),
+                                                    'document resource identifier': "dummy dri",
                                                 },
                                             ),
                                             ($) => _p_variables(
@@ -1024,6 +1162,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     
                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                         $['value'],
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     )
                                                     return {
                                                         'Correctietypes vennootschapsbelasting': _p_change_context(
@@ -1034,6 +1175,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Correctietypes vennootschapsbelasting',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -1042,6 +1184,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -1058,6 +1203,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Te corrigeren promillage": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -1065,6 +1211,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Te corrigeren promillage': _p_change_context(
@@ -1075,6 +1224,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Te corrigeren promillage',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -1084,6 +1234,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'type': ['decimal', null],
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                     ),
@@ -1102,6 +1253,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Grootboekrekeningen',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -1110,6 +1262,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -1128,6 +1283,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Zijde": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -1135,6 +1291,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Hoofdcategorie': _p_change_context(
@@ -1145,6 +1304,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Hoofdcategorie',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -1162,6 +1322,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Subcategorie',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -1179,6 +1340,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Zijde',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -1207,6 +1369,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     "Correctie op vennootschapsbelasting": null,
                                                                                                                                 },
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -1214,6 +1377,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return {
                                                                                                                                 'Correctie op vennootschapsbelasting': _p_change_context(
@@ -1224,6 +1390,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                         ),
                                                                                                                                         {
                                                                                                                                             'id': 'Correctie op vennootschapsbelasting',
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_change_context(
@@ -1252,6 +1419,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                 "Correctietype": null,
                                                                                                                                                                             },
                                                                                                                                                                         ),
+                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                     },
                                                                                                                                                                 ),
                                                                                                                                                                 ($) => _p_variables(
@@ -1259,6 +1427,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                         
                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                             $['value'],
+                                                                                                                                                                            {
+                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                            },
                                                                                                                                                                         )
                                                                                                                                                                         return {
                                                                                                                                                                             'Correctietype': _p_change_context(
@@ -1269,6 +1440,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                     ),
                                                                                                                                                                                     {
                                                                                                                                                                                         'id': 'Correctietype',
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -1296,6 +1468,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                         'expected properties': _p.dictionary.literal(
                                                                                                                                                                             {},
                                                                                                                                                                         ),
+                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                     },
                                                                                                                                                                 ),
                                                                                                                                                                 ($) => _p_variables(
@@ -1303,6 +1476,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                         
                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                             $['value'],
+                                                                                                                                                                            {
+                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                            },
                                                                                                                                                                         )
                                                                                                                                                                         return null
                                                                                                                                                                     },
@@ -1315,6 +1491,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                 'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                                                                                                     $['value'],
+                                                                                                                                                                    {
+                                                                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                                                                    },
                                                                                                                                                                 ),
                                                                                                                                                             }],
                                                                                                                                                         )
@@ -1341,6 +1520,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -1348,6 +1528,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -1360,6 +1543,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                         $['value'],
+                                                                                                                        {
+                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             )
@@ -1383,6 +1569,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Hoofdcategorieen',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -1391,6 +1578,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -1408,6 +1598,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Subcategorieen": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -1415,6 +1606,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Zijde': _p_change_context(
@@ -1425,6 +1619,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Zijde',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -1451,6 +1646,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -1458,6 +1654,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -1477,6 +1676,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -1484,6 +1684,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -1496,6 +1699,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                         $['value'],
+                                                                                                                        {
+                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             )
@@ -1512,6 +1718,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Subcategorieen',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -1520,6 +1727,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
+                                                                                                {
+                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                },
                                                                                             ),
                                                                                             ($) => _p.dictionary.from.dictionary(
                                                                                                 $['entries'],
@@ -1537,6 +1747,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     "Subcategorie fiscus": null,
                                                                                                                 },
                                                                                                             ),
+                                                                                                            'document resource identifier': "dummy dri",
                                                                                                         },
                                                                                                     ),
                                                                                                     ($) => _p_variables(
@@ -1544,6 +1755,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             
                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                 $['value'],
+                                                                                                                {
+                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                },
                                                                                                             )
                                                                                                             return {
                                                                                                                 'Hoofdcategorie fiscus': _p_change_context(
@@ -1554,6 +1768,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         ),
                                                                                                                         {
                                                                                                                             'id': 'Hoofdcategorie fiscus',
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -1571,6 +1786,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         ),
                                                                                                                         {
                                                                                                                             'id': 'Subcategorie fiscus',
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -1602,6 +1818,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                 ),
                                                                 {
                                                                     'id': 'Hoofdcategorieen fiscus',
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_change_context(
@@ -1610,6 +1827,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     ($) => abort(
                                                                         $,
                                                                     ),
+                                                                    {
+                                                                        'document resource identifier': "dummy dri",
+                                                                    },
                                                                 ),
                                                                 ($) => _p.dictionary.from.dictionary(
                                                                     $['entries'],
@@ -1627,6 +1847,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                         "Subcategorieen": null,
                                                                                     },
                                                                                 ),
+                                                                                'document resource identifier': "dummy dri",
                                                                             },
                                                                         ),
                                                                         ($) => _p_variables(
@@ -1634,6 +1855,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 
                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                     $['value'],
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 )
                                                                                 return {
                                                                                     'Zijde': _p_change_context(
@@ -1644,6 +1868,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Zijde',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -1670,6 +1895,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -1677,6 +1903,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -1696,6 +1925,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                 {},
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -1703,6 +1933,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return null
                                                                                                                         },
@@ -1715,6 +1948,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                         $['value'],
+                                                                                                                        {
+                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             )
@@ -1731,6 +1967,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             ),
                                                                                             {
                                                                                                 'id': 'Subcategorieen',
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_change_context(
@@ -1739,6 +1976,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
+                                                                                                {
+                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                },
                                                                                             ),
                                                                                             ($) => _p.dictionary.from.dictionary(
                                                                                                 $['entries'],
@@ -1753,6 +1993,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                 {},
                                                                                                             ),
+                                                                                                            'document resource identifier': "dummy dri",
                                                                                                         },
                                                                                                     ),
                                                                                                     ($) => _p_variables(
@@ -1760,6 +2001,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             
                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                 $['value'],
+                                                                                                                {
+                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                },
                                                                                                             )
                                                                                                             return null
                                                                                                         },
@@ -1793,6 +2037,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Informele rekeningen',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -1801,6 +2046,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ($) => abort(
                                 $,
                             ),
+                            {
+                                'document resource identifier': "dummy dri",
+                            },
                         ),
                         ($) => _p.dictionary.from.dictionary(
                             $['entries'],
@@ -1815,6 +2063,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         'expected properties': _p.dictionary.literal(
                                             {},
                                         ),
+                                        'document resource identifier': "dummy dri",
                                     },
                                 ),
                                 ($) => _p_variables(
@@ -1822,6 +2071,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         
                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                             $['value'],
+                                            {
+                                                'document resource identifier': "dummy dri",
+                                            },
                                         )
                                         return null
                                     },
@@ -1838,6 +2090,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Jaren',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -1846,6 +2099,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ($) => abort(
                                 $,
                             ),
+                            {
+                                'document resource identifier': "dummy dri",
+                            },
                         ),
                         ($) => _p.dictionary.from.dictionary(
                             $['entries'],
@@ -1883,6 +2139,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                 "Verrekenposten": null,
                                             },
                                         ),
+                                        'document resource identifier': "dummy dri",
                                     },
                                 ),
                                 ($) => _p_variables(
@@ -1890,6 +2147,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         
                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                             $['value'],
+                                            {
+                                                'document resource identifier': "dummy dri",
+                                            },
                                         )
                                         return {
                                             'Afgesloten': _p_change_context(
@@ -1900,6 +2160,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Afgesloten',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -1926,6 +2187,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     'expected properties': _p.dictionary.literal(
                                                                                         {},
                                                                                     ),
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_variables(
@@ -1933,6 +2195,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     
                                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                         $['value'],
+                                                                                        {
+                                                                                            'document resource identifier': "dummy dri",
+                                                                                        },
                                                                                     )
                                                                                     return null
                                                                                 },
@@ -1952,6 +2217,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     'expected properties': _p.dictionary.literal(
                                                                                         {},
                                                                                     ),
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_variables(
@@ -1959,6 +2225,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     
                                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                         $['value'],
+                                                                                        {
+                                                                                            'document resource identifier': "dummy dri",
+                                                                                        },
                                                                                     )
                                                                                     return null
                                                                                 },
@@ -1971,6 +2240,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                             'range': v_parse_tree_to_location.Value(
                                                                                 $['value'],
+                                                                                {
+                                                                                    'document resource identifier': "dummy dri",
+                                                                                },
                                                                             ),
                                                                         }],
                                                                     )
@@ -1987,6 +2259,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Balans grootboekrekeningen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -1995,6 +2268,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -2011,6 +2287,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Type": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -2018,6 +2295,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Type': _p_change_context(
@@ -2028,6 +2308,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Type',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -2054,6 +2335,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -2061,6 +2343,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -2080,6 +2365,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -2087,6 +2373,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -2106,6 +2395,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -2113,6 +2403,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -2125,6 +2418,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -2148,6 +2444,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Bankrekeningen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -2156,6 +2453,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -2175,6 +2475,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Nieuw": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -2182,6 +2483,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Beginsaldo': _p_change_context(
@@ -2192,6 +2496,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Beginsaldo',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Number(
@@ -2201,6 +2506,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'type': ['decimal', null],
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                         ),
@@ -2212,6 +2518,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Grootboekrekening',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2229,6 +2536,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Mutaties',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -2237,6 +2545,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -2256,6 +2567,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Status": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -2263,6 +2575,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Bedrag': _p_change_context(
@@ -2273,6 +2588,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bedrag',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -2282,6 +2598,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -2293,6 +2610,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Datum',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -2302,6 +2620,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -2313,6 +2632,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Omschrijving',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2330,6 +2650,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Status',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -2356,6 +2677,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                                 {},
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -2363,6 +2685,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return null
                                                                                                                                         },
@@ -2384,6 +2709,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Afhandeling": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -2391,6 +2717,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Afhandeling': _p_change_context(
@@ -2401,6 +2730,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Afhandeling',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => _p_change_context(
@@ -2430,6 +2760,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                 "Inkoop": null,
                                                                                                                                                                                             },
                                                                                                                                                                                         ),
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => _p_variables(
@@ -2437,6 +2768,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                         
                                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                                             $['value'],
+                                                                                                                                                                                            {
+                                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                                            },
                                                                                                                                                                                         )
                                                                                                                                                                                         return {
                                                                                                                                                                                             'Jaar': _p_change_context(
@@ -2447,6 +2781,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Jaar',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2464,6 +2799,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Inkoop',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2493,6 +2829,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                 "Verrekenpost": null,
                                                                                                                                                                                             },
                                                                                                                                                                                         ),
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => _p_variables(
@@ -2500,6 +2837,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                         
                                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                                             $['value'],
+                                                                                                                                                                                            {
+                                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                                            },
                                                                                                                                                                                         )
                                                                                                                                                                                         return {
                                                                                                                                                                                             'Verrekenpost': _p_change_context(
@@ -2510,6 +2850,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Verrekenpost',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2540,6 +2881,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                 "BTW-periode": null,
                                                                                                                                                                                             },
                                                                                                                                                                                         ),
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => _p_variables(
@@ -2547,6 +2889,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                         
                                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                                             $['value'],
+                                                                                                                                                                                            {
+                                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                                            },
                                                                                                                                                                                         )
                                                                                                                                                                                         return {
                                                                                                                                                                                             'Jaar': _p_change_context(
@@ -2557,6 +2902,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Jaar',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2574,6 +2920,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'BTW-periode',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2604,6 +2951,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                 "Verkoop": null,
                                                                                                                                                                                             },
                                                                                                                                                                                         ),
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => _p_variables(
@@ -2611,6 +2959,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                         
                                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                                             $['value'],
+                                                                                                                                                                                            {
+                                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                                            },
                                                                                                                                                                                         )
                                                                                                                                                                                         return {
                                                                                                                                                                                             'Jaar': _p_change_context(
@@ -2621,6 +2972,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Jaar',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2638,6 +2990,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Verkoop',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2667,6 +3020,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                 "Informele rekening": null,
                                                                                                                                                                                             },
                                                                                                                                                                                         ),
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => _p_variables(
@@ -2674,6 +3028,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                         
                                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                                             $['value'],
+                                                                                                                                                                                            {
+                                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                                            },
                                                                                                                                                                                         )
                                                                                                                                                                                         return {
                                                                                                                                                                                             'Informele rekening': _p_change_context(
@@ -2684,6 +3041,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                                     ),
                                                                                                                                                                                                     {
                                                                                                                                                                                                         'id': 'Informele rekening',
+                                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                                     },
                                                                                                                                                                                                 ),
                                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2704,6 +3062,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                 'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                                                                                                                     $['value'],
+                                                                                                                                                                                    {
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                                                                                    },
                                                                                                                                                                                 ),
                                                                                                                                                                             }],
                                                                                                                                                                         )
@@ -2723,6 +3084,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -2746,6 +3110,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Nieuw',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -2772,6 +3137,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -2779,6 +3145,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -2801,6 +3170,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Rekening": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -2808,6 +3178,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Jaar': _p_change_context(
@@ -2818,6 +3191,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Jaar',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2835,6 +3209,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Rekening',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2855,6 +3230,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -2878,6 +3256,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Beginsaldo nog aan te geven BTW',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Number(
@@ -2887,6 +3266,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'type': ['decimal', null],
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                             ),
@@ -2898,6 +3278,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Beginsaldo winstreserve',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Number(
@@ -2907,6 +3288,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'type': ['decimal', null],
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                             ),
@@ -2918,6 +3300,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'BTW periode saldo',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -2932,6 +3315,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     "Grootboekrekening": null,
                                                                 },
                                                             ),
+                                                            'document resource identifier': "dummy dri",
                                                         },
                                                     ),
                                                     ($) => _p_variables(
@@ -2939,6 +3323,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             
                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                 $['value'],
+                                                                {
+                                                                    'document resource identifier': "dummy dri",
+                                                                },
                                                             )
                                                             return {
                                                                 'Grootboekrekening': _p_change_context(
@@ -2949,6 +3336,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         {
                                                                             'id': 'Grootboekrekening',
+                                                                            'document resource identifier': "dummy dri",
                                                                         },
                                                                     ),
                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -2971,6 +3359,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'BTW periodes',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -2979,6 +3368,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -2998,6 +3390,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Status": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -3005,6 +3398,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         '1. BTW-categorieen': _p_change_context(
@@ -3015,6 +3411,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': '1. BTW-categorieen',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -3023,6 +3420,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -3037,6 +3437,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                     {},
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -3044,6 +3445,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return null
                                                                                             },
@@ -3060,6 +3464,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Documenten',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -3068,6 +3473,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -3084,6 +3492,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Bestand": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -3091,6 +3500,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Bestand': _p_change_context(
@@ -3101,6 +3513,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bestand',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => Bestandsnaam(
@@ -3125,6 +3538,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Omschrijving',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3142,6 +3556,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Status',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -3172,6 +3587,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Datum": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3179,6 +3595,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Afronding': _p_change_context(
@@ -3189,6 +3608,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Afronding',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -3198,6 +3618,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'type': ['decimal', null],
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                     ),
@@ -3209,6 +3630,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Bedrag',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -3218,6 +3640,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'type': ['decimal', null],
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                     ),
@@ -3229,6 +3652,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Datum',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -3238,6 +3662,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'type': ['decimal', null],
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                     ),
@@ -3259,6 +3684,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3266,6 +3692,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -3278,6 +3707,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -3301,6 +3733,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Eerste boekjaar',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -3327,6 +3760,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     'expected properties': _p.dictionary.literal(
                                                                                         {},
                                                                                     ),
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_variables(
@@ -3334,6 +3768,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     
                                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                         $['value'],
+                                                                                        {
+                                                                                            'document resource identifier': "dummy dri",
+                                                                                        },
                                                                                     )
                                                                                     return null
                                                                                 },
@@ -3355,6 +3792,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                             "Vorig boekjaar": null,
                                                                                         },
                                                                                     ),
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_variables(
@@ -3362,6 +3800,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     
                                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                         $['value'],
+                                                                                        {
+                                                                                            'document resource identifier': "dummy dri",
+                                                                                        },
                                                                                     )
                                                                                     return {
                                                                                         'Vorig boekjaar': _p_change_context(
@@ -3372,6 +3813,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 ),
                                                                                                 {
                                                                                                     'id': 'Vorig boekjaar',
+                                                                                                    'document resource identifier': "dummy dri",
                                                                                                 },
                                                                                             ),
                                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3392,6 +3834,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                             'range': v_parse_tree_to_location.Value(
                                                                                 $['value'],
+                                                                                {
+                                                                                    'document resource identifier': "dummy dri",
+                                                                                },
                                                                             ),
                                                                         }],
                                                                     )
@@ -3408,6 +3853,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Grootboekrekening voor BTW afrondingen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3425,6 +3871,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Grootboekrekening voor nog aan te geven BTW',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3442,6 +3889,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Grootboekrekening voor resultaat dit jaar',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3459,6 +3907,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Grootboekrekening voor winstreserve',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3476,6 +3925,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Informele rekeningen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -3484,6 +3934,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -3502,6 +3955,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Nieuw": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -3509,6 +3963,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Beginsaldo': _p_change_context(
@@ -3519,6 +3976,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Beginsaldo',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Number(
@@ -3528,6 +3986,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'type': ['decimal', null],
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                         ),
@@ -3539,6 +3998,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Grootboekrekening',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3556,6 +4016,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Nieuw',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -3582,6 +4043,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3589,6 +4051,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -3611,6 +4076,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Rekening": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3618,6 +4084,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Jaar': _p_change_context(
@@ -3628,6 +4097,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Jaar',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3645,6 +4115,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Rekening',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3665,6 +4136,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -3688,6 +4162,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Inkopen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -3696,6 +4171,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -3717,6 +4195,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Type": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -3724,6 +4203,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Afhandeling': _p_change_context(
@@ -3734,6 +4216,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Afhandeling',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -3762,6 +4245,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Betalingstermijn": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3769,6 +4253,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Betalingstermijn': _p_change_context(
@@ -3779,6 +4266,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Betalingstermijn',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -3788,6 +4276,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'type': ['decimal', null],
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                     ),
@@ -3809,6 +4298,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3816,6 +4306,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -3837,6 +4330,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Rekening courant": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3844,6 +4338,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Rekening courant': _p_change_context(
@@ -3854,6 +4351,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Rekening courant',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3874,6 +4372,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -3890,6 +4391,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'BTW-regime',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -3916,6 +4418,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3923,6 +4426,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -3944,6 +4450,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "BTW-periode": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3951,6 +4458,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'BTW-periode': _p_change_context(
@@ -3961,6 +4471,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'BTW-periode',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -3988,6 +4499,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -3995,6 +4507,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -4014,6 +4529,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4021,6 +4537,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -4042,6 +4561,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "BTW-periode": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4049,6 +4569,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'BTW-periode': _p_change_context(
@@ -4059,6 +4582,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'BTW-periode',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4079,6 +4603,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -4095,6 +4622,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Brondocument',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -4123,6 +4651,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Document": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4130,6 +4659,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Document': _p_change_context(
@@ -4140,6 +4672,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Document',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => Bestandsnaam(
@@ -4167,6 +4700,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4174,6 +4708,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -4193,6 +4730,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4200,6 +4738,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -4219,6 +4760,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4226,6 +4768,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -4238,6 +4783,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -4254,6 +4802,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Datum',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Number(
@@ -4263,6 +4812,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'type': ['decimal', null],
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                         ),
@@ -4274,6 +4824,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Regels',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -4282,6 +4833,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -4300,6 +4854,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Type": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -4307,6 +4862,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Bedrag': _p_change_context(
@@ -4317,6 +4875,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bedrag',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -4346,6 +4905,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Bedrag inclusief geheven BTW": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -4353,6 +4913,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'BTW-bedrag': _p_change_context(
@@ -4363,6 +4926,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'BTW-bedrag',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Number(
@@ -4372,6 +4936,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'type': ['decimal', null],
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                 ),
@@ -4383,6 +4948,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Bedrag inclusief geheven BTW',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Number(
@@ -4392,6 +4958,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'type': ['decimal', null],
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                 ),
@@ -4406,6 +4973,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -4422,6 +4992,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Omschrijving',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4439,6 +5010,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Type',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -4467,6 +5039,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Balans item": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -4474,6 +5047,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Balans item': _p_change_context(
@@ -4484,6 +5060,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Balans item',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4513,6 +5090,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Grootboekrekening": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -4520,6 +5098,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Grootboekrekening': _p_change_context(
@@ -4530,6 +5111,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Grootboekrekening',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4550,6 +5132,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -4573,6 +5158,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Type',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -4599,6 +5185,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4606,6 +5193,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -4628,6 +5218,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Factuurnummer": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4635,6 +5226,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Crediteur': _p_change_context(
@@ -4645,6 +5239,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Crediteur',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4662,6 +5257,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Factuurnummer',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4691,6 +5287,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Ronde": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4698,6 +5295,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Ronde': _p_change_context(
@@ -4708,6 +5308,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Ronde',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4738,6 +5339,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Medewerker": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -4745,6 +5347,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Ronde': _p_change_context(
@@ -4755,6 +5360,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Ronde',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4772,6 +5378,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Medewerker',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4792,6 +5399,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -4815,6 +5425,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Inkoop saldo',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -4829,6 +5440,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     "Grootboekrekening": null,
                                                                 },
                                                             ),
+                                                            'document resource identifier': "dummy dri",
                                                         },
                                                     ),
                                                     ($) => _p_variables(
@@ -4836,6 +5448,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             
                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                 $['value'],
+                                                                {
+                                                                    'document resource identifier': "dummy dri",
+                                                                },
                                                             )
                                                             return {
                                                                 'Grootboekrekening': _p_change_context(
@@ -4846,6 +5461,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         {
                                                                             'id': 'Grootboekrekening',
+                                                                            'document resource identifier': "dummy dri",
                                                                         },
                                                                     ),
                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4868,6 +5484,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Overige balans items',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -4876,6 +5493,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -4895,6 +5515,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Nieuw": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -4902,6 +5523,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Beginsaldo': _p_change_context(
@@ -4912,6 +5536,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Beginsaldo',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Number(
@@ -4921,6 +5546,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'type': ['decimal', null],
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                         ),
@@ -4932,6 +5558,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Grootboekrekening',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -4949,6 +5576,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Memoriaal boekingen',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -4957,6 +5585,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -4976,6 +5607,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Omschrijving": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -4983,6 +5615,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Bedrag': _p_change_context(
@@ -4993,6 +5628,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bedrag',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -5002,6 +5638,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -5013,6 +5650,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Datum',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -5022,6 +5660,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -5033,6 +5672,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Grootboekrekening',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5050,6 +5690,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Omschrijving',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5074,6 +5715,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Nieuw',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -5100,6 +5742,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5107,6 +5750,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -5129,6 +5775,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Balans item": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5136,6 +5783,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Jaar': _p_change_context(
@@ -5146,6 +5796,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Jaar',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5163,6 +5814,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Balans item',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5183,6 +5835,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -5206,6 +5861,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Resultaat grootboekrekeningen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -5214,6 +5870,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -5228,6 +5887,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     'expected properties': _p.dictionary.literal(
                                                                         {},
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -5235,6 +5895,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return null
                                                                 },
@@ -5251,6 +5914,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Salarisrondes',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -5259,6 +5923,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -5273,6 +5940,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     'expected properties': _p.dictionary.literal(
                                                                         {},
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -5280,6 +5948,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return null
                                                                 },
@@ -5296,6 +5967,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Startdatum boekjaar',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => v_unmarshalled_from_parse_tree.Number(
@@ -5305,6 +5977,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'type': ['decimal', null],
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                             ),
@@ -5316,6 +5989,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Verkoop saldo',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -5330,6 +6004,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     "Grootboekrekening": null,
                                                                 },
                                                             ),
+                                                            'document resource identifier': "dummy dri",
                                                         },
                                                     ),
                                                     ($) => _p_variables(
@@ -5337,6 +6012,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                             
                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                 $['value'],
+                                                                {
+                                                                    'document resource identifier': "dummy dri",
+                                                                },
                                                             )
                                                             return {
                                                                 'Grootboekrekening': _p_change_context(
@@ -5347,6 +6025,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                         ),
                                                                         {
                                                                             'id': 'Grootboekrekening',
+                                                                            'document resource identifier': "dummy dri",
                                                                         },
                                                                     ),
                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5369,6 +6048,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Verkopen',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -5377,6 +6057,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -5400,6 +6083,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Regels": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -5407,6 +6091,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Afhandeling': _p_change_context(
@@ -5417,6 +6104,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Afhandeling',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -5443,6 +6131,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 'expected properties': _p.dictionary.literal(
                                                                                                                     {},
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5450,6 +6139,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return null
                                                                                                             },
@@ -5471,6 +6163,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Rekening courant": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5478,6 +6171,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Rekening courant': _p_change_context(
@@ -5488,6 +6184,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Rekening courant',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5508,6 +6205,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -5524,6 +6224,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Betalingstermijn',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Number(
@@ -5533,6 +6234,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'type': ['decimal', null],
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                         ),
@@ -5544,6 +6246,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'BTW-periode',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5561,6 +6264,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Brondocument',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -5589,6 +6293,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Document": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5596,6 +6301,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Document': _p_change_context(
@@ -5606,6 +6314,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Document',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => Bestandsnaam(
@@ -5626,6 +6335,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -5642,6 +6354,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Contracttype',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -5671,6 +6384,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Offerte": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5678,6 +6392,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Project': _p_change_context(
@@ -5688,6 +6405,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Project',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5705,6 +6423,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Offerte',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5734,6 +6453,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         "Overeenkomst": null,
                                                                                                                     },
                                                                                                                 ),
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_variables(
@@ -5741,6 +6461,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 
                                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                     $['value'],
+                                                                                                                    {
+                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                    },
                                                                                                                 )
                                                                                                                 return {
                                                                                                                     'Overeenkomst': _p_change_context(
@@ -5751,6 +6474,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             ),
                                                                                                                             {
                                                                                                                                 'id': 'Overeenkomst',
+                                                                                                                                'document resource identifier': "dummy dri",
                                                                                                                             },
                                                                                                                         ),
                                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5771,6 +6495,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                         'range': v_parse_tree_to_location.Value(
                                                                                                             $['value'],
+                                                                                                            {
+                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                            },
                                                                                                         ),
                                                                                                     }],
                                                                                                 )
@@ -5787,6 +6514,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Datum',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Number(
@@ -5796,6 +6524,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'type': ['decimal', null],
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                         ),
@@ -5807,6 +6536,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Debiteur',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5824,6 +6554,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Regels',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -5832,6 +6563,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -5852,6 +6586,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Type": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -5859,6 +6594,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'BTW-regime': _p_change_context(
@@ -5869,6 +6607,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'BTW-regime',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -5895,6 +6634,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                                 {},
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -5902,6 +6642,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return null
                                                                                                                                         },
@@ -5923,6 +6666,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "BTW-categorie": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -5930,6 +6674,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'BTW-categorie': _p_change_context(
@@ -5940,6 +6687,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'BTW-categorie',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -5967,6 +6715,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                                 {},
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -5974,6 +6723,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return null
                                                                                                                                         },
@@ -5986,6 +6738,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -6002,6 +6757,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bedrag exclusief BTW',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -6011,6 +6767,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -6022,6 +6779,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Contracttype',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -6050,6 +6808,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Opbrengst": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6057,6 +6816,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Opbrengst': _p_change_context(
@@ -6067,6 +6829,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Opbrengst',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6094,6 +6857,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             'expected properties': _p.dictionary.literal(
                                                                                                                                                 {},
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6101,6 +6865,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return null
                                                                                                                                         },
@@ -6122,6 +6889,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Periode": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6129,6 +6897,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Periode': _p_change_context(
@@ -6139,6 +6910,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Periode',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6159,6 +6931,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -6175,6 +6950,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Omschrijving',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6192,6 +6968,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Type',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -6220,6 +6997,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Grootboekrekening": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6227,6 +7005,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Grootboekrekening': _p_change_context(
@@ -6237,6 +7018,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Grootboekrekening',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6266,6 +7048,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Balans item": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6273,6 +7056,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Balans item': _p_change_context(
@@ -6283,6 +7069,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Balans item',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6303,6 +7090,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -6333,6 +7123,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Verrekenposten',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -6341,6 +7132,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -6357,6 +7151,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Mutaties": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -6364,6 +7159,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Mutaties': _p_change_context(
@@ -6374,6 +7172,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Mutaties',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -6382,6 +7181,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -6399,6 +7201,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Afhandeling": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -6406,6 +7209,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Bedrag': _p_change_context(
@@ -6416,6 +7222,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bedrag',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -6425,6 +7232,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -6436,6 +7244,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Afhandeling',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -6465,6 +7274,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Inkoop": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6472,6 +7282,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Jaar': _p_change_context(
@@ -6482,6 +7295,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Jaar',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6499,6 +7313,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Inkoop',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6528,6 +7343,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Informele rekening": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6535,6 +7351,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Informele rekening': _p_change_context(
@@ -6545,6 +7364,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Informele rekening',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6575,6 +7395,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "Verkoop": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6582,6 +7403,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Jaar': _p_change_context(
@@ -6592,6 +7416,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Jaar',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6609,6 +7434,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Verkoop',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6639,6 +7465,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                     "BTW-periode": null,
                                                                                                                                                 },
                                                                                                                                             ),
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_variables(
@@ -6646,6 +7473,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                             
                                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                 $['value'],
+                                                                                                                                                {
+                                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                                },
                                                                                                                                             )
                                                                                                                                             return {
                                                                                                                                                 'Jaar': _p_change_context(
@@ -6656,6 +7486,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'Jaar',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6673,6 +7504,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         {
                                                                                                                                                             'id': 'BTW-periode',
+                                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                                         },
                                                                                                                                                     ),
                                                                                                                                                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -6693,6 +7525,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                     'range': v_parse_tree_to_location.Value(
                                                                                                                                         $['value'],
+                                                                                                                                        {
+                                                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                                                        },
                                                                                                                                     ),
                                                                                                                                 }],
                                                                                                                             )
@@ -6730,6 +7565,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Klanten',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -6738,6 +7574,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ($) => abort(
                                 $,
                             ),
+                            {
+                                'document resource identifier': "dummy dri",
+                            },
                         ),
                         ($) => _p.dictionary.from.dictionary(
                             $['entries'],
@@ -6755,6 +7594,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                 "Projecten": null,
                                             },
                                         ),
+                                        'document resource identifier': "dummy dri",
                                     },
                                 ),
                                 ($) => _p_variables(
@@ -6762,6 +7602,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         
                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                             $['value'],
+                                            {
+                                                'document resource identifier': "dummy dri",
+                                            },
                                         )
                                         return {
                                             'Licentieovereenkomsten': _p_change_context(
@@ -6772,6 +7615,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Licentieovereenkomsten',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -6780,6 +7624,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -6796,6 +7643,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Periodes": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -6803,6 +7651,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Periodes': _p_change_context(
@@ -6813,6 +7664,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Periodes',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -6821,6 +7673,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -6837,6 +7692,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Bedrag": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -6844,6 +7700,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Bedrag': _p_change_context(
@@ -6854,6 +7713,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Bedrag',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => v_unmarshalled_from_parse_tree.Number(
@@ -6863,6 +7723,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'type': ['decimal', null],
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                     ),
@@ -6888,6 +7749,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                     ),
                                                     {
                                                         'id': 'Projecten',
+                                                        'document resource identifier': "dummy dri",
                                                     },
                                                 ),
                                                 ($) => _p_change_context(
@@ -6896,6 +7758,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                         ($) => abort(
                                                             $,
                                                         ),
+                                                        {
+                                                            'document resource identifier': "dummy dri",
+                                                        },
                                                     ),
                                                     ($) => _p.dictionary.from.dictionary(
                                                         $['entries'],
@@ -6912,6 +7777,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                             "Offertes": null,
                                                                         },
                                                                     ),
+                                                                    'document resource identifier': "dummy dri",
                                                                 },
                                                             ),
                                                             ($) => _p_variables(
@@ -6919,6 +7785,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                     
                                                                     const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                         $['value'],
+                                                                        {
+                                                                            'document resource identifier': "dummy dri",
+                                                                        },
                                                                     )
                                                                     return {
                                                                         'Offertes': _p_change_context(
@@ -6929,6 +7798,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                 ),
                                                                                 {
                                                                                     'id': 'Offertes',
+                                                                                    'document resource identifier': "dummy dri",
                                                                                 },
                                                                             ),
                                                                             ($) => _p_change_context(
@@ -6937,6 +7807,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                     ($) => abort(
                                                                                         $,
                                                                                     ),
+                                                                                    {
+                                                                                        'document resource identifier': "dummy dri",
+                                                                                    },
                                                                                 ),
                                                                                 ($) => _p.dictionary.from.dictionary(
                                                                                     $['entries'],
@@ -6953,6 +7826,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                         "Opbrengsten": null,
                                                                                                     },
                                                                                                 ),
+                                                                                                'document resource identifier': "dummy dri",
                                                                                             },
                                                                                         ),
                                                                                         ($) => _p_variables(
@@ -6960,6 +7834,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                 
                                                                                                 const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                     $['value'],
+                                                                                                    {
+                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    },
                                                                                                 )
                                                                                                 return {
                                                                                                     'Opbrengsten': _p_change_context(
@@ -6970,6 +7847,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'id': 'Opbrengsten',
+                                                                                                                'document resource identifier': "dummy dri",
                                                                                                             },
                                                                                                         ),
                                                                                                         ($) => _p_change_context(
@@ -6978,6 +7856,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                 ($) => abort(
                                                                                                                     $,
                                                                                                                 ),
+                                                                                                                {
+                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                },
                                                                                                             ),
                                                                                                             ($) => _p.dictionary.from.dictionary(
                                                                                                                 $['entries'],
@@ -6994,6 +7875,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                     "Type": null,
                                                                                                                                 },
                                                                                                                             ),
+                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                         },
                                                                                                                     ),
                                                                                                                     ($) => _p_variables(
@@ -7001,6 +7883,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                             
                                                                                                                             const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                 $['value'],
+                                                                                                                                {
+                                                                                                                                    'document resource identifier': "dummy dri",
+                                                                                                                                },
                                                                                                                             )
                                                                                                                             return {
                                                                                                                                 'Type': _p_change_context(
@@ -7011,6 +7896,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                         ),
                                                                                                                                         {
                                                                                                                                             'id': 'Type',
+                                                                                                                                            'document resource identifier': "dummy dri",
                                                                                                                                         },
                                                                                                                                     ),
                                                                                                                                     ($) => _p_change_context(
@@ -7040,6 +7926,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                 "Betaaldatum": null,
                                                                                                                                                                             },
                                                                                                                                                                         ),
+                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                     },
                                                                                                                                                                 ),
                                                                                                                                                                 ($) => _p_variables(
@@ -7047,6 +7934,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                         
                                                                                                                                                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                                                                                                                                                             $['value'],
+                                                                                                                                                                            {
+                                                                                                                                                                                'document resource identifier': "dummy dri",
+                                                                                                                                                                            },
                                                                                                                                                                         )
                                                                                                                                                                         return {
                                                                                                                                                                             'Bedrag': _p_change_context(
@@ -7057,6 +7947,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                     ),
                                                                                                                                                                                     {
                                                                                                                                                                                         'id': 'Bedrag',
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Number(
@@ -7066,6 +7957,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                     ),
                                                                                                                                                                                     {
                                                                                                                                                                                         'type': ['decimal', null],
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                             ),
@@ -7077,6 +7969,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                     ),
                                                                                                                                                                                     {
                                                                                                                                                                                         'id': 'Betaaldatum',
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                                 ($) => v_unmarshalled_from_parse_tree.Number(
@@ -7086,6 +7979,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                                     ),
                                                                                                                                                                                     {
                                                                                                                                                                                         'type': ['decimal', null],
+                                                                                                                                                                                        'document resource identifier': "dummy dri",
                                                                                                                                                                                     },
                                                                                                                                                                                 ),
                                                                                                                                                                             ),
@@ -7100,6 +7994,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                                                                 'type': ['state', ['unknown option', $['option']['token']['value']]],
                                                                                                                                                                 'range': v_parse_tree_to_location.Value(
                                                                                                                                                                     $['value'],
+                                                                                                                                                                    {
+                                                                                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                                                                                    },
                                                                                                                                                                 ),
                                                                                                                                                             }],
                                                                                                                                                         )
@@ -7144,6 +8041,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Leveranciers',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -7152,6 +8050,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ($) => abort(
                                 $,
                             ),
+                            {
+                                'document resource identifier': "dummy dri",
+                            },
                         ),
                         ($) => _p.dictionary.from.dictionary(
                             $['entries'],
@@ -7166,6 +8067,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         'expected properties': _p.dictionary.literal(
                                             {},
                                         ),
+                                        'document resource identifier': "dummy dri",
                                     },
                                 ),
                                 ($) => _p_variables(
@@ -7173,6 +8075,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         
                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                             $['value'],
+                                            {
+                                                'document resource identifier': "dummy dri",
+                                            },
                                         )
                                         return null
                                     },
@@ -7189,6 +8094,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                         ),
                         {
                             'id': 'Medewerkers',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => _p_change_context(
@@ -7197,6 +8103,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                             ($) => abort(
                                 $,
                             ),
+                            {
+                                'document resource identifier': "dummy dri",
+                            },
                         ),
                         ($) => _p.dictionary.from.dictionary(
                             $['entries'],
@@ -7211,6 +8120,7 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         'expected properties': _p.dictionary.literal(
                                             {},
                                         ),
+                                        'document resource identifier': "dummy dri",
                                     },
                                 ),
                                 ($) => _p_variables(
@@ -7218,6 +8128,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                         
                                         const var_verbose_group_range = v_parse_tree_to_location.Value(
                                             $['value'],
+                                            {
+                                                'document resource identifier': "dummy dri",
+                                            },
                                         )
                                         return null
                                     },
@@ -7244,6 +8157,7 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => _p_change_c
                     "extension": null,
                 },
             ),
+            'document resource identifier': "dummy dri",
         },
     ),
     ($) => _p_variables(
@@ -7251,6 +8165,9 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => _p_change_c
             
             const var_verbose_group_range = v_parse_tree_to_location.Value(
                 $['value'],
+                {
+                    'document resource identifier': "dummy dri",
+                },
             )
             return {
                 'stem': _p_change_context(
@@ -7261,6 +8178,7 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => _p_change_c
                         ),
                         {
                             'id': 'stem',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => v_unmarshalled_from_parse_tree.Text(
@@ -7278,6 +8196,7 @@ export const Bestandsnaam: t_signatures.Bestandsnaam = ($, abort) => _p_change_c
                         ),
                         {
                             'id': 'extension',
+                            'document resource identifier': "dummy dri",
                         },
                     ),
                     ($) => v_unmarshalled_from_parse_tree.Text(
