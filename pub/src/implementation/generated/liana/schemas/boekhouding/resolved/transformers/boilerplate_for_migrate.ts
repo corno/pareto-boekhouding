@@ -38,8 +38,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
     'Balans Hoofdcategorieen': _p_change_context(
         $['Balans Hoofdcategorieen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -54,7 +53,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -63,8 +62,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'Zijde': _p_change_context(
                             $['Zijde'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -79,7 +77,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
@@ -106,8 +104,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'Subcategorieen': _p_change_context(
                             $['Subcategorieen'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -122,14 +119,13 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': null,
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -144,14 +140,13 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -166,7 +161,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -174,8 +169,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
     'Resultaat Hoofdcategorieen': _p_change_context(
         $['Resultaat Hoofdcategorieen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -190,7 +184,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -199,8 +193,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'Zijde': _p_change_context(
                             $['Zijde'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -215,7 +208,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
@@ -242,8 +235,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                         'Subcategorieen': _p_change_context(
                             $['Subcategorieen'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -258,14 +250,13 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': null,
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -280,14 +271,13 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -302,7 +292,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -313,8 +303,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     'Correctietypes vennootschapsbelasting': _p_change_context(
         $['Correctietypes vennootschapsbelasting'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -329,7 +318,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -340,8 +329,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             ($) => $,
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -356,7 +344,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -364,8 +352,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     'Balans': _p_change_context(
         $['Balans'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -380,7 +367,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -389,8 +376,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'Zijde': _p_change_context(
                             $['Zijde'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -405,7 +391,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
@@ -432,8 +418,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'Subcategorieen': _p_change_context(
                             $['Subcategorieen'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -448,7 +433,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
@@ -457,8 +442,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             'Hoofdcategorie fiscus': _p_change_context(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -473,15 +457,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l reference': $['l id'],
                                                 }),
                                             ),
                                             'Subcategorie fiscus': _p_change_context(
                                                 $['Subcategorie fiscus'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -496,13 +479,12 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l reference': $['l id'],
                                                 }),
                                             ),
                                         },
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -517,14 +499,13 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -539,7 +520,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -547,8 +528,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     'Resultaat': _p_change_context(
         $['Resultaat'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -563,7 +543,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -572,8 +552,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'Zijde': _p_change_context(
                             $['Zijde'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -588,7 +567,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
@@ -615,8 +594,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                         'Subcategorieen': _p_change_context(
                             $['Subcategorieen'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -631,7 +609,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
@@ -640,8 +618,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                             'Hoofdcategorie fiscus': _p_change_context(
                                                 $['Hoofdcategorie fiscus'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -656,15 +633,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l reference': $['l id'],
                                                 }),
                                             ),
                                             'Subcategorie fiscus': _p_change_context(
                                                 $['Subcategorie fiscus'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -679,13 +655,12 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l reference': $['l id'],
                                                 }),
                                             ),
                                         },
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -700,14 +675,13 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -722,7 +696,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -733,8 +707,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'BTW-categorieen': _p_change_context(
         $['BTW-categorieen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -749,7 +722,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -758,8 +731,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'BTW-heffing': _p_change_context(
                             $['BTW-heffing'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -774,7 +746,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing.l_state => {
@@ -804,8 +776,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -820,7 +791,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -831,8 +802,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Balans': _p_change_context(
                 $['Balans'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -847,7 +817,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
@@ -856,8 +826,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'Hoofdcategorie': _p_change_context(
                                     $['Hoofdcategorie'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -872,15 +841,14 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l reference': $['l id'],
                                     }),
                                 ),
                                 'Subcategorie': _p_change_context(
                                     $['Subcategorie'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -895,15 +863,14 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l reference': $['l id'],
                                     }),
                                 ),
                                 'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -918,7 +885,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l state': _p.decide.state(
                                             $,
                                             ($): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
@@ -943,8 +910,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     }),
                                 ),
                             },
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -959,7 +925,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -967,8 +933,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Resultaat': _p_change_context(
                 $['Resultaat'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -983,7 +948,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
@@ -992,8 +957,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'Hoofdcategorie': _p_change_context(
                                     $['Hoofdcategorie'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1008,15 +972,14 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l reference': $['l id'],
                                     }),
                                 ),
                                 'Subcategorie': _p_change_context(
                                     $['Subcategorie'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1031,15 +994,14 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l reference': $['l id'],
                                     }),
                                 ),
                                 'Zijde': _p_change_context(
                                     $['Zijde'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1054,7 +1016,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l state': _p.decide.state(
                                             $,
                                             ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
@@ -1066,8 +1028,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 'Correctie op vennootschapsbelasting': _p_change_context(
                                                                     $['Correctie op vennootschapsbelasting'],
                                                                     ($) => ({
-                                                                        'l location': {
-                                                                            'document resource identifier': "dummy dri",
+                                                                        'l location': ['in main document', {
                                                                             'start': {
                                                                                 'absolute': 42,
                                                                                 'relative': {
@@ -1082,7 +1043,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                     'column': 42,
                                                                                 },
                                                                             },
-                                                                        },
+                                                                        }],
                                                                         'l state': _p.decide.state(
                                                                             $,
                                                                             ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting.l_state => {
@@ -1094,8 +1055,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                 'Correctietype': _p_change_context(
                                                                                                     $['Correctietype'],
                                                                                                     ($) => ({
-                                                                                                        'l location': {
-                                                                                                            'document resource identifier': "dummy dri",
+                                                                                                        'l location': ['in main document', {
                                                                                                             'start': {
                                                                                                                 'absolute': 42,
                                                                                                                 'relative': {
@@ -1110,7 +1070,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                                     'column': 42,
                                                                                                                 },
                                                                                                             },
-                                                                                                        },
+                                                                                                        }],
                                                                                                         'l reference': $['l id'],
                                                                                                     }),
                                                                                                 ),
@@ -1147,8 +1107,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     }),
                                 ),
                             },
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1163,7 +1122,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -1176,8 +1135,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Bank': _p_change_context(
                 $['Bank'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1192,14 +1150,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1214,7 +1171,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -1222,8 +1179,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
             'Informeel': _p_change_context(
                 $['Informeel'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1238,14 +1194,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1260,7 +1215,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -1270,8 +1225,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Gebruikers': _p_change_context(
         $['Gebruikers'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1286,7 +1240,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -1301,8 +1255,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             ($) => $,
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1317,7 +1270,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -1325,8 +1278,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Klanten': _p_change_context(
         $['Klanten'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1341,7 +1293,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -1350,8 +1302,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'Licentieovereenkomsten': _p_change_context(
                             $['Licentieovereenkomsten'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -1366,7 +1317,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
@@ -1375,8 +1326,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'Periodes': _p_change_context(
                                                 $['Periodes'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -1391,7 +1341,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l dictionary': _p.dictionary.from.dictionary(
                                                         $,
                                                     ).map(
@@ -1402,8 +1352,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                     ($) => $,
                                                                 ),
                                                             },
-                                                            'l location': {
-                                                                'document resource identifier': "dummy dri",
+                                                            'l location': ['in main document', {
                                                                 'start': {
                                                                     'absolute': 42,
                                                                     'relative': {
@@ -1418,14 +1367,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                         'column': 42,
                                                                     },
                                                                 },
-                                                            },
+                                                            }],
                                                         }),
                                                     ),
                                                 }),
                                             ),
                                         },
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1440,7 +1388,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
@@ -1448,8 +1396,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'Projecten': _p_change_context(
                             $['Projecten'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -1464,7 +1411,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
@@ -1473,8 +1420,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             'Offertes': _p_change_context(
                                                 $['Offertes'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -1489,7 +1435,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l dictionary': _p.dictionary.from.dictionary(
                                                         $,
                                                     ).map(
@@ -1498,8 +1444,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                 'Opbrengsten': _p_change_context(
                                                                     $['Opbrengsten'],
                                                                     ($) => ({
-                                                                        'l location': {
-                                                                            'document resource identifier': "dummy dri",
+                                                                        'l location': ['in main document', {
                                                                             'start': {
                                                                                 'absolute': 42,
                                                                                 'relative': {
@@ -1514,7 +1459,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                     'column': 42,
                                                                                 },
                                                                             },
-                                                                        },
+                                                                        }],
                                                                         'l dictionary': _p.dictionary.from.dictionary(
                                                                             $,
                                                                         ).map(
@@ -1523,8 +1468,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                     'Type': _p_change_context(
                                                                                         $['Type'],
                                                                                         ($) => ({
-                                                                                            'l location': {
-                                                                                                'document resource identifier': "dummy dri",
+                                                                                            'l location': ['in main document', {
                                                                                                 'start': {
                                                                                                     'absolute': 42,
                                                                                                     'relative': {
@@ -1539,7 +1483,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                         'column': 42,
                                                                                                     },
                                                                                                 },
-                                                                                            },
+                                                                                            }],
                                                                                             'l state': _p.decide.state(
                                                                                                 $,
                                                                                                 ($): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type.l_state => {
@@ -1568,8 +1512,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                         }),
                                                                                     ),
                                                                                 },
-                                                                                'l location': {
-                                                                                    'document resource identifier': "dummy dri",
+                                                                                'l location': ['in main document', {
                                                                                     'start': {
                                                                                         'absolute': 42,
                                                                                         'relative': {
@@ -1584,14 +1527,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                             'column': 42,
                                                                                         },
                                                                                     },
-                                                                                },
+                                                                                }],
                                                                             }),
                                                                         ),
                                                                     }),
                                                                 ),
                                                             },
-                                                            'l location': {
-                                                                'document resource identifier': "dummy dri",
+                                                            'l location': ['in main document', {
                                                                 'start': {
                                                                     'absolute': 42,
                                                                     'relative': {
@@ -1606,14 +1548,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                         'column': 42,
                                                                     },
                                                                 },
-                                                            },
+                                                            }],
                                                         }),
                                                     ),
                                                 }),
                                             ),
                                         },
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -1628,14 +1569,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1650,7 +1590,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -1658,8 +1598,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Leveranciers': _p_change_context(
         $['Leveranciers'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1674,14 +1613,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
                 ($, id) => ({
                     'l entry': null,
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1696,7 +1634,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -1704,8 +1642,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
     'Medewerkers': _p_change_context(
         $['Medewerkers'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1720,14 +1657,13 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
                 ($, id) => ({
                     'l entry': null,
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1742,7 +1678,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -1753,8 +1689,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
     'Balans': _p_change_context(
         $['Balans'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1769,7 +1704,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -1778,8 +1713,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                         'Type': _p_change_context(
                             $['Type'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -1794,7 +1728,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type.l_state => {
@@ -1824,8 +1758,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1840,7 +1773,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -1848,8 +1781,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
     'Resultaat': _p_change_context(
         $['Resultaat'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -1864,14 +1796,13 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
                 ($, id) => ({
                     'l entry': null,
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1886,7 +1817,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -1900,8 +1831,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Grootboekrekening voor BTW afrondingen': _p_change_context(
                 $['Grootboekrekening voor BTW afrondingen'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1916,15 +1846,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l reference': $['l id'],
                 }),
             ),
             'Salarisrondes': _p_change_context(
                 $['Salarisrondes'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1939,14 +1868,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -1961,7 +1889,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -1969,8 +1897,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'BTW periodes': _p_change_context(
                 $['BTW periodes'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -1985,7 +1912,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
@@ -1994,8 +1921,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 '1. BTW-categorieen': _p_change_context(
                                     $['1. BTW-categorieen'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2010,14 +1936,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l dictionary': _p.dictionary.from.dictionary(
                                             $,
                                         ).map(
                                             ($, id) => ({
                                                 'l entry': null,
-                                                'l location': {
-                                                    'document resource identifier': "dummy dri",
+                                                'l location': ['in main document', {
                                                     'start': {
                                                         'absolute': 42,
                                                         'relative': {
@@ -2032,7 +1957,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                             'column': 42,
                                                         },
                                                     },
-                                                },
+                                                }],
                                             }),
                                         ),
                                     }),
@@ -2040,8 +1965,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Documenten': _p_change_context(
                                     $['Documenten'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2056,7 +1980,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l dictionary': _p.dictionary.from.dictionary(
                                             $,
                                         ).map(
@@ -2067,8 +1991,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                         ($) => $,
                                                     ),
                                                 },
-                                                'l location': {
-                                                    'document resource identifier': "dummy dri",
+                                                'l location': ['in main document', {
                                                     'start': {
                                                         'absolute': 42,
                                                         'relative': {
@@ -2083,7 +2006,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                             'column': 42,
                                                         },
                                                     },
-                                                },
+                                                }],
                                             }),
                                         ),
                                     }),
@@ -2095,8 +2018,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Status': _p_change_context(
                                     $['Status'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2111,7 +2033,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l state': _p.decide.state(
                                             $,
                                             ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status.l_state => {
@@ -2149,8 +2071,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     }),
                                 ),
                             },
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2165,7 +2086,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -2178,8 +2099,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Grootboekrekening voor nog aan te geven BTW': _p_change_context(
                 $['Grootboekrekening voor nog aan te geven BTW'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2194,15 +2114,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l reference': $['l id'],
                 }),
             ),
             'Grootboekrekening voor resultaat dit jaar': _p_change_context(
                 $['Grootboekrekening voor resultaat dit jaar'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2217,15 +2136,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l reference': $['l id'],
                 }),
             ),
             'Grootboekrekening voor winstreserve': _p_change_context(
                 $['Grootboekrekening voor winstreserve'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2240,15 +2158,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l reference': $['l id'],
                 }),
             ),
             'Grootboekrekening voor Inkoop saldo': _p_change_context(
                 $['Grootboekrekening voor Inkoop saldo'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2263,15 +2180,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l reference': $['l id'],
                 }),
             ),
             'Grootboekrekening voor Verkoop saldo': _p_change_context(
                 $['Grootboekrekening voor Verkoop saldo'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2286,7 +2202,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l reference': $['l id'],
                 }),
             ),
@@ -2301,8 +2217,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Informele rekeningen': _p_change_context(
                 $['Informele rekeningen'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2317,7 +2232,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
@@ -2330,8 +2245,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Grootboekrekening': _p_change_context(
                                     $['Grootboekrekening'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2346,15 +2260,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l reference': $['l id'],
                                     }),
                                 ),
                                 'Nieuw': _p_change_context(
                                     $['Nieuw'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2369,7 +2282,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l state': _p.decide.state(
                                             $,
                                             ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
@@ -2401,8 +2314,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                     }),
                                 ),
                             },
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2417,7 +2329,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -2425,8 +2337,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Bankrekeningen': _p_change_context(
                 $['Bankrekeningen'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2441,7 +2352,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
@@ -2454,8 +2365,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Grootboekrekening': _p_change_context(
                                     $['Grootboekrekening'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2470,15 +2380,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l reference': $['l id'],
                                     }),
                                 ),
                                 'Nieuw': _p_change_context(
                                     $['Nieuw'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2493,7 +2402,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l state': _p.decide.state(
                                             $,
                                             ($): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
@@ -2527,8 +2436,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'Mutaties': _p_change_context(
                                     $['Mutaties'],
                                     ($) => ({
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -2543,7 +2451,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                         'l dictionary': _p.dictionary.from.dictionary(
                                             $,
                                         ).map(
@@ -2562,8 +2470,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                         ($) => $,
                                                     ),
                                                 },
-                                                'l location': {
-                                                    'document resource identifier': "dummy dri",
+                                                'l location': ['in main document', {
                                                     'start': {
                                                         'absolute': 42,
                                                         'relative': {
@@ -2578,14 +2485,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                             'column': 42,
                                                         },
                                                     },
-                                                },
+                                                }],
                                             }),
                                         ),
                                     }),
                                 ),
                             },
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2600,7 +2506,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -2608,8 +2514,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Overige balans items': _p_change_context(
                 $['Overige balans items'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2624,7 +2529,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
@@ -2632,8 +2537,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             'l entry': Overige_balans_item(
                                 $,
                             ),
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2648,7 +2552,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -2656,8 +2560,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
             'Verrekenposten': _p_change_context(
                 $['Verrekenposten'],
                 ($) => ({
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -2672,14 +2575,13 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                     'l dictionary': _p.dictionary.from.dictionary(
                         $,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
-                            'l location': {
-                                'document resource identifier': "dummy dri",
+                            'l location': ['in main document', {
                                 'start': {
                                     'absolute': 42,
                                     'relative': {
@@ -2694,7 +2596,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         'column': 42,
                                     },
                                 },
-                            },
+                            }],
                         }),
                     ),
                 }),
@@ -2711,8 +2613,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
     'Grootboekrekening': _p_change_context(
         $['Grootboekrekening'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -2727,15 +2628,14 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l reference': $['l id'],
         }),
     ),
     'Nieuw': _p_change_context(
         $['Nieuw'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -2750,7 +2650,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l state': _p.decide.state(
                 $,
                 ($): t_out.Overige_balans_item.Nieuw.l_state => {
@@ -2767,8 +2667,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                                     'Balans item': _p_change_context(
                                         $['Balans item'],
                                         ($) => ({
-                                            'l location': {
-                                                'document resource identifier': "dummy dri",
+                                            'l location': ['in main document', {
                                                 'start': {
                                                     'absolute': 42,
                                                     'relative': {
@@ -2783,7 +2682,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                                                         'column': 42,
                                                     },
                                                 },
-                                            },
+                                            }],
                                             'l reference': $['l id'],
                                         }),
                                     ),
@@ -2801,8 +2700,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
 })
 
 export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_Informele_rekening = ($) => ({
-    'l location': {
-        'document resource identifier': "dummy dri",
+    'l location': ['in main document', {
         'start': {
             'absolute': 42,
             'relative': {
@@ -2817,13 +2715,12 @@ export const Verwijzing_naar_Informele_rekening: t_signatures.Verwijzing_naar_In
                 'column': 42,
             },
         },
-    },
+    }],
     'l reference': $['l id'],
 })
 
 export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankrekening = ($) => ({
-    'l location': {
-        'document resource identifier': "dummy dri",
+    'l location': ['in main document', {
         'start': {
             'absolute': 42,
             'relative': {
@@ -2838,7 +2735,7 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
                 'column': 42,
             },
         },
-    },
+    }],
     'l reference': $['l id'],
 })
 
@@ -2846,8 +2743,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
     'Inkopen': _p_change_context(
         $['Inkopen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -2862,7 +2758,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -2871,8 +2767,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Afhandeling': _p_change_context(
                             $['Afhandeling'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -2887,7 +2782,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
@@ -2914,8 +2809,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Rekening courant': _p_change_context(
                                                             $['Rekening courant'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -2930,7 +2824,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -2948,8 +2842,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'BTW-regime': _p_change_context(
                             $['BTW-regime'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -2964,7 +2857,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
@@ -2996,8 +2889,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'BTW-periode': _p_change_context(
                                                             $['BTW-periode'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3012,7 +2904,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3030,8 +2922,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Brondocument': _p_change_context(
                             $['Brondocument'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3046,7 +2937,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
@@ -3087,8 +2978,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Regels': _p_change_context(
                             $['Regels'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3103,7 +2993,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
@@ -3112,8 +3002,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Bedrag': _p_change_context(
                                                 $['Bedrag'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3128,7 +3017,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l state': _p.decide.state(
                                                         $,
                                                         ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag.l_state => {
@@ -3163,8 +3052,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Type': _p_change_context(
                                                 $['Type'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3179,7 +3067,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l state': _p.decide.state(
                                                         $,
                                                         ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
@@ -3191,8 +3079,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Balans item': _p_change_context(
                                                                                 $['Balans item'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3207,7 +3094,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -3220,8 +3107,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Grootboekrekening': _p_change_context(
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3236,7 +3122,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -3252,8 +3138,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 }),
                                             ),
                                         },
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -3268,7 +3153,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
@@ -3276,8 +3161,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Type': _p_change_context(
                             $['Type'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3292,7 +3176,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type.l_state => {
@@ -3309,8 +3193,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Crediteur': _p_change_context(
                                                             $['Crediteur'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3325,7 +3208,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3342,8 +3225,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Ronde': _p_change_context(
                                                             $['Ronde'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3358,7 +3240,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3371,8 +3253,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Ronde': _p_change_context(
                                                             $['Ronde'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3387,15 +3268,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
                                                         'Medewerker': _p_change_context(
                                                             $['Medewerker'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3410,7 +3290,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3426,8 +3306,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -3442,7 +3321,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -3450,8 +3329,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
     'Verkopen': _p_change_context(
         $['Verkopen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -3466,7 +3344,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
@@ -3475,8 +3353,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Afhandeling': _p_change_context(
                             $['Afhandeling'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3491,7 +3368,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
@@ -3508,8 +3385,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Rekening courant': _p_change_context(
                                                             $['Rekening courant'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3524,7 +3400,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3546,8 +3422,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'BTW-periode': _p_change_context(
                             $['BTW-periode'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3562,15 +3437,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l reference': $['l id'],
                             }),
                         ),
                         'Brondocument': _p_change_context(
                             $['Brondocument'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3585,7 +3459,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
@@ -3612,8 +3486,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Debiteur': _p_change_context(
                             $['Debiteur'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3628,15 +3501,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l reference': $['l id'],
                             }),
                         ),
                         'Contracttype': _p_change_context(
                             $['Contracttype'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3651,7 +3523,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l state': _p.decide.state(
                                     $,
                                     ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype.l_state => {
@@ -3663,8 +3535,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Project': _p_change_context(
                                                             $['Project'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3679,15 +3550,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
                                                         'Offerte': _p_change_context(
                                                             $['Offerte'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3702,7 +3572,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3715,8 +3585,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         'Overeenkomst': _p_change_context(
                                                             $['Overeenkomst'],
                                                             ($) => ({
-                                                                'l location': {
-                                                                    'document resource identifier': "dummy dri",
+                                                                'l location': ['in main document', {
                                                                     'start': {
                                                                         'absolute': 42,
                                                                         'relative': {
@@ -3731,7 +3600,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'column': 42,
                                                                         },
                                                                     },
-                                                                },
+                                                                }],
                                                                 'l reference': $['l id'],
                                                             }),
                                                         ),
@@ -3753,8 +3622,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                         'Regels': _p_change_context(
                             $['Regels'],
                             ($) => ({
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -3769,7 +3637,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                                 'l dictionary': _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
@@ -3778,8 +3646,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'BTW-regime': _p_change_context(
                                                 $['BTW-regime'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3794,7 +3661,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l state': _p.decide.state(
                                                         $,
                                                         ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
@@ -3811,8 +3678,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'BTW-categorie': _p_change_context(
                                                                                 $['BTW-categorie'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3827,7 +3693,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -3854,8 +3720,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Contracttype': _p_change_context(
                                                 $['Contracttype'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3870,7 +3735,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l state': _p.decide.state(
                                                         $,
                                                         ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype.l_state => {
@@ -3882,8 +3747,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Opbrengst': _p_change_context(
                                                                                 $['Opbrengst'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3898,7 +3762,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -3916,8 +3780,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Periode': _p_change_context(
                                                                                 $['Periode'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3932,7 +3795,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -3954,8 +3817,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                             'Type': _p_change_context(
                                                 $['Type'],
                                                 ($) => ({
-                                                    'l location': {
-                                                        'document resource identifier': "dummy dri",
+                                                    'l location': ['in main document', {
                                                         'start': {
                                                             'absolute': 42,
                                                             'relative': {
@@ -3970,7 +3832,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                 'column': 42,
                                                             },
                                                         },
-                                                    },
+                                                    }],
                                                     'l state': _p.decide.state(
                                                         $,
                                                         ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
@@ -3982,8 +3844,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Grootboekrekening': _p_change_context(
                                                                                 $['Grootboekrekening'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -3998,7 +3859,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -4011,8 +3872,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                             'Balans item': _p_change_context(
                                                                                 $['Balans item'],
                                                                                 ($) => ({
-                                                                                    'l location': {
-                                                                                        'document resource identifier': "dummy dri",
+                                                                                    'l location': ['in main document', {
                                                                                         'start': {
                                                                                             'absolute': 42,
                                                                                             'relative': {
@@ -4027,7 +3887,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                                                 'column': 42,
                                                                                             },
                                                                                         },
-                                                                                    },
+                                                                                    }],
                                                                                     'l reference': $['l id'],
                                                                                 }),
                                                                             ),
@@ -4043,8 +3903,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                 }),
                                             ),
                                         },
-                                        'l location': {
-                                            'document resource identifier': "dummy dri",
+                                        'l location': ['in main document', {
                                             'start': {
                                                 'absolute': 42,
                                                 'relative': {
@@ -4059,14 +3918,13 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     'column': 42,
                                                 },
                                             },
-                                        },
+                                        }],
                                     }),
                                 ),
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4081,7 +3939,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -4092,8 +3950,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
     'Verrekenpost mutaties': _p_change_context(
         $['Verrekenpost mutaties'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4108,14 +3965,13 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
                 ($, id) => ({
                     'l entry': {
-                        'l location': {
-                            'document resource identifier': "dummy dri",
+                        'l location': ['in main document', {
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4130,7 +3986,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'column': 42,
                                 },
                             },
-                        },
+                        }],
                         'l dictionary': _p.dictionary.from.dictionary(
                             $,
                         ).map(
@@ -4143,8 +3999,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'Afhandeling': _p_change_context(
                                         $['Afhandeling'],
                                         ($) => ({
-                                            'l location': {
-                                                'document resource identifier': "dummy dri",
+                                            'l location': ['in main document', {
                                                 'start': {
                                                     'absolute': 42,
                                                     'relative': {
@@ -4159,7 +4014,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                         'column': 42,
                                                     },
                                                 },
-                                            },
+                                            }],
                                             'l state': _p.decide.state(
                                                 $,
                                                 ($): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling.l_state => {
@@ -4175,8 +4030,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                             return _p.ss(
                                                                 $,
                                                                 ($) => ['Balans', {
-                                                                    'l location': {
-                                                                        'document resource identifier': "dummy dri",
+                                                                    'l location': ['in main document', {
                                                                         'start': {
                                                                             'absolute': 42,
                                                                             'relative': {
@@ -4191,7 +4045,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                 'column': 42,
                                                                             },
                                                                         },
-                                                                    },
+                                                                    }],
                                                                     'l state': _p.decide.state(
                                                                         $,
                                                                         ($): t_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling.l_state.Balans.l_state => {
@@ -4203,8 +4057,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                             'Informele rekening': _p_change_context(
                                                                                                 $['Informele rekening'],
                                                                                                 ($) => ({
-                                                                                                    'l location': {
-                                                                                                        'document resource identifier': "dummy dri",
+                                                                                                    'l location': ['in main document', {
                                                                                                         'start': {
                                                                                                             'absolute': 42,
                                                                                                             'relative': {
@@ -4219,7 +4072,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                                 'column': 42,
                                                                                                             },
                                                                                                         },
-                                                                                                    },
+                                                                                                    }],
                                                                                                     'l reference': $['l id'],
                                                                                                 }),
                                                                                             ),
@@ -4244,8 +4097,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         }),
                                     ),
                                 },
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -4260,12 +4112,11 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4280,7 +4131,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -4288,8 +4139,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
     'Bankrekening Mutatie Verwerkingen': _p_change_context(
         $['Bankrekening Mutatie Verwerkingen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4304,14 +4154,13 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
                 ($, id) => ({
                     'l entry': {
-                        'l location': {
-                            'document resource identifier': "dummy dri",
+                        'l location': ['in main document', {
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4326,14 +4175,13 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'column': 42,
                                 },
                             },
-                        },
+                        }],
                         'l dictionary': _p.dictionary.from.dictionary(
                             $,
                         ).map(
                             ($, id) => ({
                                 'l entry': {
-                                    'l location': {
-                                        'document resource identifier': "dummy dri",
+                                    'l location': ['in main document', {
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4348,7 +4196,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                 'column': 42,
                                             },
                                         },
-                                    },
+                                    }],
                                     'l state': _p.decide.state(
                                         $,
                                         ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state => {
@@ -4364,8 +4212,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                     return _p.ss(
                                                         $,
                                                         ($) => ['Balans', {
-                                                            'l location': {
-                                                                'document resource identifier': "dummy dri",
+                                                            'l location': ['in main document', {
                                                                 'start': {
                                                                     'absolute': 42,
                                                                     'relative': {
@@ -4380,7 +4227,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                         'column': 42,
                                                                     },
                                                                 },
-                                                            },
+                                                            }],
                                                             'l state': _p.decide.state(
                                                                 $,
                                                                 ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state.Balans.l_state => {
@@ -4392,8 +4239,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                     'Informele rekening': _p_change_context(
                                                                                         $['Informele rekening'],
                                                                                         ($) => ({
-                                                                                            'l location': {
-                                                                                                'document resource identifier': "dummy dri",
+                                                                                            'l location': ['in main document', {
                                                                                                 'start': {
                                                                                                     'absolute': 42,
                                                                                                     'relative': {
@@ -4408,7 +4254,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                         'column': 42,
                                                                                                     },
                                                                                                 },
-                                                                                            },
+                                                                                            }],
                                                                                             'l reference': $['l id'],
                                                                                         }),
                                                                                     ),
@@ -4421,8 +4267,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                     'Verrekenpost': _p_change_context(
                                                                                         $['Verrekenpost'],
                                                                                         ($) => ({
-                                                                                            'l location': {
-                                                                                                'document resource identifier': "dummy dri",
+                                                                                            'l location': ['in main document', {
                                                                                                 'start': {
                                                                                                     'absolute': 42,
                                                                                                     'relative': {
@@ -4437,7 +4282,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                         'column': 42,
                                                                                                     },
                                                                                                 },
-                                                                                            },
+                                                                                            }],
                                                                                             'l reference': $['l id'],
                                                                                         }),
                                                                                     ),
@@ -4460,8 +4305,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         },
                                     ),
                                 },
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -4476,12 +4320,11 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4496,7 +4339,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -4504,8 +4347,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
     'Memoriaal boekingen': _p_change_context(
         $['Memoriaal boekingen'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4520,14 +4362,13 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l dictionary': _p.dictionary.from.dictionary(
                 $,
             ).map(
                 ($, id) => ({
                     'l entry': {
-                        'l location': {
-                            'document resource identifier': "dummy dri",
+                        'l location': ['in main document', {
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4542,7 +4383,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'column': 42,
                                 },
                             },
-                        },
+                        }],
                         'l dictionary': _p.dictionary.from.dictionary(
                             $,
                         ).map(
@@ -4563,8 +4404,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                     'Grootboekrekening': _p_change_context(
                                         $['Grootboekrekening'],
                                         ($) => ({
-                                            'l location': {
-                                                'document resource identifier': "dummy dri",
+                                            'l location': ['in main document', {
                                                 'start': {
                                                     'absolute': 42,
                                                     'relative': {
@@ -4579,13 +4419,12 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                         'column': 42,
                                                     },
                                                 },
-                                            },
+                                            }],
                                             'l reference': $['l id'],
                                         }),
                                     ),
                                 },
-                                'l location': {
-                                    'document resource identifier': "dummy dri",
+                                'l location': ['in main document', {
                                     'start': {
                                         'absolute': 42,
                                         'relative': {
@@ -4600,12 +4439,11 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                             'column': 42,
                                         },
                                     },
-                                },
+                                }],
                             }),
                         ),
                     },
-                    'l location': {
-                        'document resource identifier': "dummy dri",
+                    'l location': ['in main document', {
                         'start': {
                             'absolute': 42,
                             'relative': {
@@ -4620,7 +4458,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                 'column': 42,
                             },
                         },
-                    },
+                    }],
                 }),
             ),
         }),
@@ -4628,8 +4466,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
 })
 
 export const Jaren: t_signatures.Jaren = ($) => ({
-    'l location': {
-        'document resource identifier': "dummy dri",
+    'l location': ['in main document', {
         'start': {
             'absolute': 42,
             'relative': {
@@ -4644,7 +4481,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                 'column': 42,
             },
         },
-    },
+    }],
     'l dictionary': _p.dictionary.from.dictionary(
         $,
     ).map(
@@ -4653,8 +4490,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                 'Afgesloten': _p_change_context(
                     $['Afgesloten'],
                     ($) => ({
-                        'l location': {
-                            'document resource identifier': "dummy dri",
+                        'l location': ['in main document', {
                             'start': {
                                 'absolute': 42,
                                 'relative': {
@@ -4669,7 +4505,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                                     'column': 42,
                                 },
                             },
-                        },
+                        }],
                         'l state': _p.decide.state(
                             $,
                             ($): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten.l_state => {
@@ -4728,8 +4564,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                     ),
                 ),
             },
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4744,7 +4579,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                         'column': 42,
                     },
                 },
-            },
+            }],
         }),
     ),
 })
@@ -4756,8 +4591,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             $,
         ).map(
             ($) => ({
-                'l location': {
-                    'document resource identifier': "dummy dri",
+                'l location': ['in main document', {
                     'start': {
                         'absolute': 42,
                         'relative': {
@@ -4772,7 +4606,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             'column': 42,
                         },
                     },
-                },
+                }],
                 'l reference': $['l id'],
             }),
         ),
@@ -4780,8 +4614,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
     'type': _p_change_context(
         $['type'],
         ($) => ({
-            'l location': {
-                'document resource identifier': "dummy dri",
+            'l location': ['in main document', {
                 'start': {
                     'absolute': 42,
                     'relative': {
@@ -4796,7 +4629,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                         'column': 42,
                     },
                 },
-            },
+            }],
             'l state': _p.decide.state(
                 $,
                 ($): t_out.Balans_Resultaat_Mutatie.type_.l_state => {
@@ -4805,8 +4638,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             return _p.ss(
                                 $,
                                 ($) => ['Inkoop', {
-                                    'l location': {
-                                        'document resource identifier': "dummy dri",
+                                    'l location': ['in main document', {
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4821,7 +4653,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                                 'column': 42,
                                             },
                                         },
-                                    },
+                                    }],
                                     'l reference': $['l id'],
                                 }],
                             )
@@ -4829,8 +4661,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             return _p.ss(
                                 $,
                                 ($) => ['Verkoop', {
-                                    'l location': {
-                                        'document resource identifier': "dummy dri",
+                                    'l location': ['in main document', {
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4845,7 +4676,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                                 'column': 42,
                                             },
                                         },
-                                    },
+                                    }],
                                     'l reference': $['l id'],
                                 }],
                             )
@@ -4853,8 +4684,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                             return _p.ss(
                                 $,
                                 ($) => ['BTW-periode', {
-                                    'l location': {
-                                        'document resource identifier': "dummy dri",
+                                    'l location': ['in main document', {
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4869,7 +4699,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                                                 'column': 42,
                                             },
                                         },
-                                    },
+                                    }],
                                     'l reference': $['l id'],
                                 }],
                             )
@@ -4885,8 +4715,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
 })
 
 export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
-    'l location': {
-        'document resource identifier': "dummy dri",
+    'l location': ['in main document', {
         'start': {
             'absolute': 42,
             'relative': {
@@ -4901,7 +4730,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                 'column': 42,
             },
         },
-    },
+    }],
     'l state': _p.decide.state(
         $,
         ($): t_out.Eerste_boekjaar.l_state => {
@@ -4918,8 +4747,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                             'Vorig boekjaar': _p_change_context(
                                 $['Vorig boekjaar'],
                                 ($) => ({
-                                    'l location': {
-                                        'document resource identifier': "dummy dri",
+                                    'l location': ['in main document', {
                                         'start': {
                                             'absolute': 42,
                                             'relative': {
@@ -4934,7 +4762,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
                                                 'column': 42,
                                             },
                                         },
-                                    },
+                                    }],
                                     'l reference': $['l id'],
                                 }),
                             ),
