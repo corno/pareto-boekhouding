@@ -20,7 +20,7 @@
                         `type`: | `multi line` ~
                     )
                 }
-                `number types`: {
+                `simple types`: {
                     'Bedrag': (
                         `precision`: | `exact` (
                             `decimal separator offset`: * 2
@@ -5247,7 +5247,7 @@
                         `type`: | `multi line` ~
                     )
                 }
-                `number types`: {
+                `simple types`: {
                     'Bedrag': (
                         `precision`: | `exact` (
                             `decimal separator offset`: * 2

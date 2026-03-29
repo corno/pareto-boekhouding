@@ -7,6 +7,11 @@ import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
 import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
 import * as signatures from "../../../../interface/signatures/refiners/boekhouding_unresolved/boekhouding_oude_model"
 
+
+const fix_date = ($: number) => {
+    return $ - 	2432895 // the date of the universal declaration of human rights (1948-12-10) in julian days, rounded down to the nearest day to avoid the strange noon changeover)
+}
+
 export const Beheer: signatures.Beheer = ($) => ({
     'BTW-categorieen': sh.dictionary(_p_change_context($.Beheer['BTW-categorieen'], ($) => $.__d_map(($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry => ({
         'BTW-heffing': _p_change_context($['BTW-heffing'], ($) => _p.decide.state($, ($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
@@ -70,7 +75,7 @@ export const Beheer: signatures.Beheer = ($) => ({
                         switch ($[0]) {
                             case 'Project': return _p.ss($, ($) => sh.state(['Project', ({
                                 'Bedrag': _p_change_context($['Bedrag'], ($) => $),
-                                'Betaaldatum': _p_change_context($['Betaaldatum'], ($) => $),
+                                'Betaaldatum': _p_change_context($['Betaaldatum'], ($) => fix_date($)),
                             })]))
                             default: return _p.au($[0])
                         }
@@ -198,7 +203,7 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
                 default: return _p.au($[0])
             }
         })),
-        'Datum': _p_change_context($['Datum'], ($) => $),
+        'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
         'Regels': _p_change_context($['Regels'], ($) => sh.dictionary($.__d_map(($) => ({
             'Bedrag': _p_change_context($['Bedrag'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                 switch ($[0]) {
@@ -272,7 +277,7 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
                 default: return _p.au($[0])
             }
         })),
-        'Datum': _p_change_context($['Datum'], ($) => $),
+        'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
         'Debiteur': _p_change_context($['Debiteur'], ($) => sh.reference($)),
         'Regels': _p_change_context($['Regels'], ($) => sh.dictionary($.__d_map(($) => ({
             'BTW-regime': _p_change_context($['BTW-regime'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
@@ -320,7 +325,7 @@ export const Jaarbeheer: signatures.Jaarbeheer = ($) => ({
             'Grootboekrekening': _p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
             'Mutaties': _p_change_context($['Mutaties'], ($) => sh.dictionary($.__d_map(($) => ({
                 'Bedrag': _p_change_context($['Bedrag'], ($) => $),
-                'Datum': _p_change_context($['Datum'], ($) => $),
+                'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
                 'Omschrijving': _p_change_context($['Omschrijving'], ($) => $),
             })))),
             'Nieuw': _p_change_context($['Nieuw'], ($) => _p.decide.state($, ($): d_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
@@ -374,7 +379,7 @@ export const Jaarbeheer: signatures.Jaarbeheer = ($) => ({
                     case 'Aangegeven': return _p.ss($, ($) => sh.state(['Aangegeven', ({
                         'Afronding': _p_change_context($['Afronding'], ($) => $),
                         'Bedrag': _p_change_context($['Bedrag'], ($) => $),
-                        'Datum': _p_change_context($['Datum'], ($) => $),
+                        'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
                     })]))
                     case 'Openstaand': return _p.ss($, ($) => sh.state(['Openstaand', null]))
                     default: return _p.au($[0])
@@ -411,7 +416,7 @@ export const Jaren: signatures.Jaren = ($) => sh.dictionary($.Jaren.__d_map(($, 
             'jaar': id,
         }
     )),
-    'Startdatum boekjaar': _p_change_context($['Startdatum boekjaar'], ($) => $),
+    'Startdatum boekjaar': _p_change_context($['Startdatum boekjaar'], ($) => fix_date($)),
 })))
 export const Mutaties: signatures.Mutaties = ($, $p) => ({
     'Bankrekening Mutatie Verwerkingen': _p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map(($) => sh.dictionary(_p.dictionary.from.dictionary(
@@ -456,7 +461,7 @@ export const Mutaties: signatures.Mutaties = ($, $p) => ({
         })))))),
     'Memoriaal boekingen': _p_change_context($['Overige balans items'], ($) => sh.dictionary($.__d_map(($) => sh.dictionary($['Memoriaal boekingen'].__d_map(($) => ({
         'Bedrag': _p_change_context($['Bedrag'], ($) => $),
-        'Datum': _p_change_context($['Datum'], ($) => $),
+        'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
         'Grootboekrekening': _p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
         'Omschrijving': _p_change_context($['Omschrijving'], ($) => $),
     })))))),

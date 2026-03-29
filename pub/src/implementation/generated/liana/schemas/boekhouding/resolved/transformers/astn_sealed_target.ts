@@ -588,8 +588,11 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
-                                                                'value': v_primitives_to_text.decimal(
+                                                                'value': v_primitives_to_text.fractional_decimal(
                                                                     $,
+                                                                    {
+                                                                        'number of fractional digits': 2,
+                                                                    },
                                                                 ),
                                                             }],
                                                         ),
@@ -639,8 +642,11 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                                 $['Bedrag'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
-                                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                                    'value': v_primitives_to_text.fractional_decimal(
                                                                                                                         $,
+                                                                                                                        {
+                                                                                                                            'number of fractional digits': 2,
+                                                                                                                        },
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             ),
@@ -648,7 +654,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                                 $['Betaaldatum'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
-                                                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                                                    'value': v_primitives_to_text.iso_date_udhr(
                                                                                                                         $,
                                                                                                                     ),
                                                                                                                 }],
@@ -840,8 +846,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             $['Afronding'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': v_primitives_to_text.decimal(
+                                                                                'value': v_primitives_to_text.fractional_decimal(
                                                                                     $,
+                                                                                    {
+                                                                                        'number of fractional digits': 2,
+                                                                                    },
                                                                                 ),
                                                                             }],
                                                                         ),
@@ -849,8 +858,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             $['Bedrag'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': v_primitives_to_text.decimal(
+                                                                                'value': v_primitives_to_text.fractional_decimal(
                                                                                     $,
+                                                                                    {
+                                                                                        'number of fractional digits': 2,
+                                                                                    },
                                                                                 ),
                                                                             }],
                                                                         ),
@@ -858,7 +870,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                             $['Datum'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
-                                                                                'value': v_primitives_to_text.decimal(
+                                                                                'value': v_primitives_to_text.iso_date_udhr(
                                                                                     $,
                                                                                 ),
                                                                             }],
@@ -933,8 +945,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         $['Beginsaldo nog aan te geven BTW'],
                         ($) => ['text', {
                             'delimiter': ['none', null],
-                            'value': v_primitives_to_text.decimal(
+                            'value': v_primitives_to_text.fractional_decimal(
                                 $,
+                                {
+                                    'number of fractional digits': 2,
+                                },
                             ),
                         }],
                     ),
@@ -942,8 +957,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         $['Beginsaldo winstreserve'],
                         ($) => ['text', {
                             'delimiter': ['none', null],
-                            'value': v_primitives_to_text.decimal(
+                            'value': v_primitives_to_text.fractional_decimal(
                                 $,
+                                {
+                                    'number of fractional digits': 2,
+                                },
                             ),
                         }],
                     ),
@@ -958,8 +976,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         $['Beginsaldo'],
                                         ($) => ['text', {
                                             'delimiter': ['none', null],
-                                            'value': v_primitives_to_text.decimal(
+                                            'value': v_primitives_to_text.fractional_decimal(
                                                 $,
+                                                {
+                                                    'number of fractional digits': 2,
+                                                },
                                             ),
                                         }],
                                     ),
@@ -1024,8 +1045,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         $['Beginsaldo'],
                                         ($) => ['text', {
                                             'delimiter': ['none', null],
-                                            'value': v_primitives_to_text.decimal(
+                                            'value': v_primitives_to_text.fractional_decimal(
                                                 $,
+                                                {
+                                                    'number of fractional digits': 2,
+                                                },
                                             ),
                                         }],
                                     ),
@@ -1086,8 +1110,11 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         $['Bedrag'],
                                                         ($) => ['text', {
                                                             'delimiter': ['none', null],
-                                                            'value': v_primitives_to_text.decimal(
+                                                            'value': v_primitives_to_text.fractional_decimal(
                                                                 $,
+                                                                {
+                                                                    'number of fractional digits': 2,
+                                                                },
                                                             ),
                                                         }],
                                                     ),
@@ -1095,7 +1122,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                         $['Datum'],
                                                         ($) => ['text', {
                                                             'delimiter': ['none', null],
-                                                            'value': v_primitives_to_text.decimal(
+                                                            'value': v_primitives_to_text.iso_date_udhr(
                                                                 $,
                                                             ),
                                                         }],
@@ -1145,8 +1172,11 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
             $['Beginsaldo'],
             ($) => ['text', {
                 'delimiter': ['none', null],
-                'value': v_primitives_to_text.decimal(
+                'value': v_primitives_to_text.fractional_decimal(
                     $,
+                    {
+                        'number of fractional digits': 2,
+                    },
                 ),
             }],
         ),
@@ -1395,7 +1425,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['Datum'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': v_primitives_to_text.decimal(
+                                'value': v_primitives_to_text.iso_date_udhr(
                                     $,
                                 ),
                             }],
@@ -1424,8 +1454,11 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['BTW-bedrag'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                    'value': v_primitives_to_text.fractional_decimal(
                                                                                         $,
+                                                                                        {
+                                                                                            'number of fractional digits': 2,
+                                                                                        },
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1433,8 +1466,11 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                                 $['Bedrag inclusief geheven BTW'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
-                                                                                    'value': v_primitives_to_text.decimal(
+                                                                                    'value': v_primitives_to_text.fractional_decimal(
                                                                                         $,
+                                                                                        {
+                                                                                            'number of fractional digits': 2,
+                                                                                        },
                                                                                     ),
                                                                                 }],
                                                                             ),
@@ -1768,7 +1804,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             $['Datum'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
-                                'value': v_primitives_to_text.decimal(
+                                'value': v_primitives_to_text.iso_date_udhr(
                                     $,
                                 ),
                             }],
@@ -1832,8 +1868,11 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                             $['Bedrag exclusief BTW'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
-                                                'value': v_primitives_to_text.decimal(
+                                                'value': v_primitives_to_text.fractional_decimal(
                                                     $,
+                                                    {
+                                                        'number of fractional digits': 2,
+                                                    },
                                                 ),
                                             }],
                                         ),
@@ -1979,8 +2018,11 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Bedrag'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
-                                    'value': v_primitives_to_text.decimal(
+                                    'value': v_primitives_to_text.fractional_decimal(
                                         $,
+                                        {
+                                            'number of fractional digits': 2,
+                                        },
                                     ),
                                 }],
                             ),
@@ -2149,8 +2191,11 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Bedrag'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
-                                    'value': v_primitives_to_text.decimal(
+                                    'value': v_primitives_to_text.fractional_decimal(
                                         $,
+                                        {
+                                            'number of fractional digits': 2,
+                                        },
                                     ),
                                 }],
                             ),
@@ -2158,7 +2203,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                 $['Datum'],
                                 ($) => ['text', {
                                     'delimiter': ['none', null],
-                                    'value': v_primitives_to_text.decimal(
+                                    'value': v_primitives_to_text.iso_date_udhr(
                                         $,
                                     ),
                                 }],
@@ -2224,7 +2269,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', _p.dictionary.fro
                 $['Startdatum boekjaar'],
                 ($) => ['text', {
                     'delimiter': ['none', null],
-                    'value': v_primitives_to_text.decimal(
+                    'value': v_primitives_to_text.iso_date_udhr(
                         $,
                     ),
                 }],
