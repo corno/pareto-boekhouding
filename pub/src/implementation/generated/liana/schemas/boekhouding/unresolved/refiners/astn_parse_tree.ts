@@ -2487,7 +2487,9 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                         $,
                                                                                                                                     ),
                                                                                                                                     {
-                                                                                                                                        'type': ['decimal', null],
+                                                                                                                                        'type': ['fractional decimal', {
+                                                                                                                                            'digits': 2,
+                                                                                                                                        }],
                                                                                                                                         'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                     },
                                                                                                                                 ),
@@ -2774,7 +2776,9 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                                                                                                             $,
                                                                                                                                                                                                                         ),
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            'type': ['decimal', null],
+                                                                                                                                                                                                                            'type': ['fractional decimal', {
+                                                                                                                                                                                                                                'digits': 2,
+                                                                                                                                                                                                                            }],
                                                                                                                                                                                                                             'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                                                                                                         },
                                                                                                                                                                                                                     ),
@@ -2796,7 +2800,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => _p_change_context(
                                                                                                                                                                                                                             $,
                                                                                                                                                                                                                         ),
                                                                                                                                                                                                                         {
-                                                                                                                                                                                                                            'type': ['decimal', null],
+                                                                                                                                                                                                                            'type': ['iso date', null],
                                                                                                                                                                                                                             'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                                                                                                         },
                                                                                                                                                                                                                     ),
@@ -3646,7 +3650,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                                                                     $,
                                                                                                                                 ),
                                                                                                                                 {
-                                                                                                                                    'type': ['decimal', null],
+                                                                                                                                    'type': ['fractional decimal', {
+                                                                                                                                        'digits': 2,
+                                                                                                                                    }],
                                                                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                 },
                                                                                                                             ),
@@ -3668,7 +3674,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                                                                     $,
                                                                                                                                 ),
                                                                                                                                 {
-                                                                                                                                    'type': ['decimal', null],
+                                                                                                                                    'type': ['fractional decimal', {
+                                                                                                                                        'digits': 2,
+                                                                                                                                    }],
                                                                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                 },
                                                                                                                             ),
@@ -3690,7 +3698,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                                                                     $,
                                                                                                                                 ),
                                                                                                                                 {
-                                                                                                                                    'type': ['decimal', null],
+                                                                                                                                    'type': ['iso date', null],
                                                                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                 },
                                                                                                                             ),
@@ -3943,7 +3951,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                 $,
                                             ),
                                             {
-                                                'type': ['decimal', null],
+                                                'type': ['fractional decimal', {
+                                                    'digits': 2,
+                                                }],
                                                 'subdocument context': _p.optional.literal.not_set(),
                                             },
                                         ),
@@ -3965,7 +3975,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                 $,
                                             ),
                                             {
-                                                'type': ['decimal', null],
+                                                'type': ['fractional decimal', {
+                                                    'digits': 2,
+                                                }],
                                                 'subdocument context': _p.optional.literal.not_set(),
                                             },
                                         ),
@@ -4052,7 +4064,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                     $,
                                                                                 ),
                                                                                 {
-                                                                                    'type': ['decimal', null],
+                                                                                    'type': ['fractional decimal', {
+                                                                                        'digits': 2,
+                                                                                    }],
                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                 },
                                                                             ),
@@ -4291,7 +4305,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                     $,
                                                                                 ),
                                                                                 {
-                                                                                    'type': ['decimal', null],
+                                                                                    'type': ['fractional decimal', {
+                                                                                        'digits': 2,
+                                                                                    }],
                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                 },
                                                                             ),
@@ -4520,7 +4536,9 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                                                         $,
                                                                                                                     ),
                                                                                                                     {
-                                                                                                                        'type': ['decimal', null],
+                                                                                                                        'type': ['fractional decimal', {
+                                                                                                                            'digits': 2,
+                                                                                                                        }],
                                                                                                                         'subdocument context': _p.optional.literal.not_set(),
                                                                                                                     },
                                                                                                                 ),
@@ -4542,7 +4560,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => _p_change_conte
                                                                                                                         $,
                                                                                                                     ),
                                                                                                                     {
-                                                                                                                        'type': ['decimal', null],
+                                                                                                                        'type': ['iso date', null],
                                                                                                                         'subdocument context': _p.optional.literal.not_set(),
                                                                                                                     },
                                                                                                                 ),
@@ -4735,7 +4753,9 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                             $,
                         ),
                         {
-                            'type': ['decimal', null],
+                            'type': ['fractional decimal', {
+                                'digits': 2,
+                            }],
                             'subdocument context': _p.optional.literal.not_set(),
                         },
                     ),
@@ -5535,7 +5555,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 $,
                                                             ),
                                                             {
-                                                                'type': ['decimal', null],
+                                                                'type': ['iso date', null],
                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                             },
                                                         ),
@@ -5680,7 +5700,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                                                                     $,
                                                                                                                                                 ),
                                                                                                                                                 {
-                                                                                                                                                    'type': ['decimal', null],
+                                                                                                                                                    'type': ['fractional decimal', {
+                                                                                                                                                        'digits': 2,
+                                                                                                                                                    }],
                                                                                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                                 },
                                                                                                                                             ),
@@ -5702,7 +5724,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                                                                     $,
                                                                                                                                                 ),
                                                                                                                                                 {
-                                                                                                                                                    'type': ['decimal', null],
+                                                                                                                                                    'type': ['fractional decimal', {
+                                                                                                                                                        'digits': 2,
+                                                                                                                                                    }],
                                                                                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                                                                                 },
                                                                                                                                             ),
@@ -6826,7 +6850,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                 $,
                                                             ),
                                                             {
-                                                                'type': ['decimal', null],
+                                                                'type': ['iso date', null],
                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                             },
                                                         ),
@@ -7057,7 +7081,9 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                     $,
                                                                                                 ),
                                                                                                 {
-                                                                                                    'type': ['decimal', null],
+                                                                                                    'type': ['fractional decimal', {
+                                                                                                        'digits': 2,
+                                                                                                    }],
                                                                                                     'subdocument context': _p.optional.literal.not_set(),
                                                                                                 },
                                                                                             ),
@@ -7602,7 +7628,9 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                 $,
                                                                             ),
                                                                             {
-                                                                                'type': ['decimal', null],
+                                                                                'type': ['fractional decimal', {
+                                                                                    'digits': 2,
+                                                                                }],
                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                             },
                                                                         ),
@@ -8185,7 +8213,9 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                 $,
                                                                             ),
                                                                             {
-                                                                                'type': ['decimal', null],
+                                                                                'type': ['fractional decimal', {
+                                                                                    'digits': 2,
+                                                                                }],
                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                             },
                                                                         ),
@@ -8207,7 +8237,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                 $,
                                                                             ),
                                                                             {
-                                                                                'type': ['decimal', null],
+                                                                                'type': ['iso date', null],
                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                             },
                                                                         ),
@@ -8424,7 +8454,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => _p_change_context(
                                             $,
                                         ),
                                         {
-                                            'type': ['decimal', null],
+                                            'type': ['iso date', null],
                                             'subdocument context': _p.optional.literal.not_set(),
                                         },
                                     ),

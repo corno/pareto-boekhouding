@@ -22,27 +22,30 @@
                 }
                 `simple types`: {
                     'Bedrag': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 2
-                            `type`: | `integer` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: * 2
+                                `type`: | `integer` ~
+                            )
                         )
                     )
                     'Dagen': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: _
-                            `type`: | `positive natural` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: _
+                                `type`: | `positive natural` ~
+                            )
                         )
                     )
                     'Datum': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 0
-                            `type`: | `integer` ~
-                        )
+                        `type`: | `date` ~
                     )
                     'Promillage': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 0
-                            `type`: | `natural` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: _
+                                `type`: | `natural` ~
+                            )
                         )
                     )
                 }
@@ -154,7 +157,7 @@
                                 `value`: | `group` {
                                     'Te corrigeren promillage': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Promillage'
+                                        `value`: | `simple` | `global` 'Promillage'
                                     )
                                 }
                             )
@@ -321,7 +324,7 @@
                                                     `value`: | `group` {
                                                         'BTW-promillage': (
                                                             `description`: _
-                                                            `value`: | `number` | `global` 'Promillage'
+                                                            `value`: | `simple` | `global` 'Promillage'
                                                         )
                                                     }
                                                 )
@@ -558,7 +561,7 @@
                                                         `value`: | `group` {
                                                             'Bedrag': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                `value`: | `simple` | `global` 'Bedrag'
                                                             )
                                                         }
                                                     )
@@ -588,11 +591,11 @@
                                                                                         `value`: | `group` {
                                                                                             'Bedrag': (
                                                                                                 `description`: _
-                                                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                                                `value`: | `simple` | `global` 'Bedrag'
                                                                                             )
                                                                                             'Betaaldatum': (
                                                                                                 `description`: _
-                                                                                                `value`: | `number` | `global` 'Datum'
+                                                                                                `value`: | `simple` | `global` 'Datum'
                                                                                             )
                                                                                         }
                                                                                     )
@@ -732,15 +735,15 @@
                                                             `value`: | `group` {
                                                                 'Afronding': (
                                                                     `description`: _
-                                                                    `value`: | `number` | `global` 'Bedrag'
+                                                                    `value`: | `simple` | `global` 'Bedrag'
                                                                 )
                                                                 'Bedrag': (
                                                                     `description`: _
-                                                                    `value`: | `number` | `global` 'Bedrag'
+                                                                    `value`: | `simple` | `global` 'Bedrag'
                                                                 )
                                                                 'Datum': (
                                                                     `description`: _
-                                                                    `value`: | `number` | `global` 'Datum'
+                                                                    `value`: | `simple` | `global` 'Datum'
                                                                 )
                                                             }
                                                         )
@@ -863,11 +866,11 @@
                                 )
                                 'Beginsaldo nog aan te geven BTW': (
                                     `description`: _
-                                    `value`: | `number` | `global` 'Bedrag'
+                                    `value`: | `simple` | `global` 'Bedrag'
                                 )
                                 'Beginsaldo winstreserve': (
                                     `description`: _
-                                    `value`: | `number` | `global` 'Bedrag'
+                                    `value`: | `simple` | `global` 'Bedrag'
                                 )
                                 'Informele rekeningen': (
                                     `description`: _
@@ -875,7 +878,7 @@
                                         `value`: | `group` {
                                             'Beginsaldo': (
                                                 `description`: _
-                                                `value`: | `number` | `global` 'Bedrag'
+                                                `value`: | `simple` | `global` 'Bedrag'
                                             )
                                             'Grootboekrekening': (
                                                 `description`: _
@@ -932,7 +935,7 @@
                                         `value`: | `group` {
                                             'Beginsaldo': (
                                                 `description`: _
-                                                `value`: | `number` | `global` 'Bedrag'
+                                                `value`: | `simple` | `global` 'Bedrag'
                                             )
                                             'Grootboekrekening': (
                                                 `description`: _
@@ -986,11 +989,11 @@
                                                     `value`: | `group` {
                                                         'Bedrag': (
                                                             `description`: _
-                                                            `value`: | `number` | `global` 'Bedrag'
+                                                            `value`: | `simple` | `global` 'Bedrag'
                                                         )
                                                         'Datum': (
                                                             `description`: _
-                                                            `value`: | `number` | `global` 'Datum'
+                                                            `value`: | `simple` | `global` 'Datum'
                                                         )
                                                         'Omschrijving': (
                                                             `description`: _
@@ -1025,7 +1028,7 @@
                     `root value`: | `group` {
                         'Beginsaldo': (
                             `description`: _
-                            `value`: | `number` | `global` 'Bedrag'
+                            `value`: | `simple` | `global` 'Bedrag'
                         )
                         'Grootboekrekening': (
                             `description`: _
@@ -1147,7 +1150,7 @@
                                                     `value`: | `group` {
                                                         'Betalingstermijn': (
                                                             `description`: _
-                                                            `value`: | `number` | `global` 'Dagen'
+                                                            `value`: | `simple` | `global` 'Dagen'
                                                         )
                                                     }
                                                 )
@@ -1265,7 +1268,7 @@
                                     )
                                     'Datum': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Datum'
+                                        `value`: | `simple` | `global` 'Datum'
                                     )
                                     'Regels': (
                                         `description`: _
@@ -1281,11 +1284,11 @@
                                                                 `value`: | `group` {
                                                                     'BTW-bedrag': (
                                                                         `description`: _
-                                                                        `value`: | `number` | `global` 'Bedrag'
+                                                                        `value`: | `simple` | `global` 'Bedrag'
                                                                     )
                                                                     'Bedrag inclusief geheven BTW': (
                                                                         `description`: _
-                                                                        `value`: | `number` | `global` 'Bedrag'
+                                                                        `value`: | `simple` | `global` 'Bedrag'
                                                                     )
                                                                 }
                                                             )
@@ -1523,7 +1526,7 @@
                                     )
                                     'Betalingstermijn': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Dagen'
+                                        `value`: | `simple` | `global` 'Dagen'
                                     )
                                     'BTW-periode': (
                                         `description`: _
@@ -1665,7 +1668,7 @@
                                     )
                                     'Datum': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Datum'
+                                        `value`: | `simple` | `global` 'Datum'
                                     )
                                     'Regels': (
                                         `description`: _
@@ -1717,7 +1720,7 @@
                                                 )
                                                 'Bedrag exclusief BTW': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Bedrag'
+                                                    `value`: | `simple` | `global` 'Bedrag'
                                                 )
                                                 'Contracttype': (
                                                     `description`: _
@@ -1865,7 +1868,7 @@
                                     `value`: | `group` {
                                         'Bedrag': (
                                             `description`: _
-                                            `value`: | `number` | `global` 'Bedrag'
+                                            `value`: | `simple` | `global` 'Bedrag'
                                         )
                                         'Afhandeling': (
                                             `description`: _
@@ -2010,11 +2013,11 @@
                                     `value`: | `group` {
                                         'Bedrag': (
                                             `description`: _
-                                            `value`: | `number` | `global` 'Bedrag'
+                                            `value`: | `simple` | `global` 'Bedrag'
                                         )
                                         'Datum': (
                                             `description`: _
-                                            `value`: | `number` | `global` 'Datum'
+                                            `value`: | `simple` | `global` 'Datum'
                                         )
                                         'Omschrijving': (
                                             `description`: _
@@ -2069,7 +2072,7 @@
                             )
                             'Startdatum boekjaar': (
                                 `description`: _
-                                `value`: | `number` | `global` 'Datum'
+                                `value`: | `simple` | `global` 'Datum'
                             )
                             'Grootboekrekeningen': (
                                 `description`: _
@@ -2572,7 +2575,7 @@
                                     `resolver`: | `group` {
                                         'Te corrigeren promillage': (
                                             `definition`: ~
-                                            `resolver`: | `number` ~
+                                            `resolver`: | `simple` ~
                                         )
                                     }
                                     `benchmark`: _
@@ -2766,7 +2769,7 @@
                                                         `resolver`: | `group` {
                                                             'BTW-promillage': (
                                                                 `definition`: ~
-                                                                `resolver`: | `number` ~
+                                                                `resolver`: | `simple` ~
                                                             )
                                                         }
                                                     )
@@ -3033,7 +3036,7 @@
                                                             `resolver`: | `group` {
                                                                 'Bedrag': (
                                                                     `definition`: ~
-                                                                    `resolver`: | `number` ~
+                                                                    `resolver`: | `simple` ~
                                                                 )
                                                             }
                                                             `benchmark`: _
@@ -3068,11 +3071,11 @@
                                                                                             `resolver`: | `group` {
                                                                                                 'Bedrag': (
                                                                                                     `definition`: ~
-                                                                                                    `resolver`: | `number` ~
+                                                                                                    `resolver`: | `simple` ~
                                                                                                 )
                                                                                                 'Betaaldatum': (
                                                                                                     `definition`: ~
-                                                                                                    `resolver`: | `number` ~
+                                                                                                    `resolver`: | `simple` ~
                                                                                                 )
                                                                                             }
                                                                                         )
@@ -3233,15 +3236,15 @@
                                                                 `resolver`: | `group` {
                                                                     'Afronding': (
                                                                         `definition`: ~
-                                                                        `resolver`: | `number` ~
+                                                                        `resolver`: | `simple` ~
                                                                     )
                                                                     'Bedrag': (
                                                                         `definition`: ~
-                                                                        `resolver`: | `number` ~
+                                                                        `resolver`: | `simple` ~
                                                                     )
                                                                     'Datum': (
                                                                         `definition`: ~
-                                                                        `resolver`: | `number` ~
+                                                                        `resolver`: | `simple` ~
                                                                     )
                                                                 }
                                                             )
@@ -3263,11 +3266,11 @@
                                 `resolver`: | `group` {
                                     'Beginsaldo nog aan te geven BTW': (
                                         `definition`: ~
-                                        `resolver`: | `number` ~
+                                        `resolver`: | `simple` ~
                                     )
                                     'Beginsaldo winstreserve': (
                                         `definition`: ~
-                                        `resolver`: | `number` ~
+                                        `resolver`: | `simple` ~
                                     )
                                     'Grootboekrekening voor nog aan te geven BTW': (
                                         `definition`: ~
@@ -3396,7 +3399,7 @@
                                             `resolver`: | `group` {
                                                 'Beginsaldo': (
                                                     `definition`: ~
-                                                    `resolver`: | `number` ~
+                                                    `resolver`: | `simple` ~
                                                 )
                                                 'Grootboekrekening': (
                                                     `definition`: ~
@@ -3487,7 +3490,7 @@
                                             `resolver`: | `group` {
                                                 'Beginsaldo': (
                                                     `definition`: ~
-                                                    `resolver`: | `number` ~
+                                                    `resolver`: | `simple` ~
                                                 )
                                                 'Grootboekrekening': (
                                                     `definition`: ~
@@ -3574,11 +3577,11 @@
                                                         `resolver`: | `group` {
                                                             'Bedrag': (
                                                                 `definition`: ~
-                                                                `resolver`: | `number` ~
+                                                                `resolver`: | `simple` ~
                                                             )
                                                             'Datum': (
                                                                 `definition`: ~
-                                                                `resolver`: | `number` ~
+                                                                `resolver`: | `simple` ~
                                                             )
                                                             'Omschrijving': (
                                                                 `definition`: ~
@@ -3626,7 +3629,7 @@
                         `root value resolver`: | `group` {
                             'Beginsaldo': (
                                 `definition`: ~
-                                `resolver`: | `number` ~
+                                `resolver`: | `simple` ~
                             )
                             'Grootboekrekening': (
                                 `definition`: ~
@@ -3780,7 +3783,7 @@
                                                         `resolver`: | `group` {
                                                             'Betalingstermijn': (
                                                                 `definition`: ~
-                                                                `resolver`: | `number` ~
+                                                                `resolver`: | `simple` ~
                                                             )
                                                         }
                                                     )
@@ -3896,7 +3899,7 @@
                                         )
                                         'Datum': (
                                             `definition`: ~
-                                            `resolver`: | `number` ~
+                                            `resolver`: | `simple` ~
                                         )
                                         'Regels': (
                                             `definition`: ~
@@ -3913,11 +3916,11 @@
                                                                     `resolver`: | `group` {
                                                                         'BTW-bedrag': (
                                                                             `definition`: ~
-                                                                            `resolver`: | `number` ~
+                                                                            `resolver`: | `simple` ~
                                                                         )
                                                                         'Bedrag inclusief geheven BTW': (
                                                                             `definition`: ~
-                                                                            `resolver`: | `number` ~
+                                                                            `resolver`: | `simple` ~
                                                                         )
                                                                     }
                                                                 )
@@ -4136,11 +4139,11 @@
                                     `resolver`: | `group` {
                                         'Datum': (
                                             `definition`: ~
-                                            `resolver`: | `number` ~
+                                            `resolver`: | `simple` ~
                                         )
                                         'Betalingstermijn': (
                                             `definition`: ~
-                                            `resolver`: | `number` ~
+                                            `resolver`: | `simple` ~
                                         )
                                         'BTW-periode': (
                                             `definition`: ~
@@ -4396,7 +4399,7 @@
                                                     )
                                                     'Bedrag exclusief BTW': (
                                                         `definition`: ~
-                                                        `resolver`: | `number` ~
+                                                        `resolver`: | `simple` ~
                                                     )
                                                     'Contracttype': (
                                                         `definition`: ~
@@ -4692,7 +4695,7 @@
                                         `resolver`: | `group` {
                                             'Bedrag': (
                                                 `definition`: ~
-                                                `resolver`: | `number` ~
+                                                `resolver`: | `simple` ~
                                             )
                                             'Afhandeling': (
                                                 `definition`: ~
@@ -4884,11 +4887,11 @@
                                         `resolver`: | `group` {
                                             'Bedrag': (
                                                 `definition`: ~
-                                                `resolver`: | `number` ~
+                                                `resolver`: | `simple` ~
                                             )
                                             'Datum': (
                                                 `definition`: ~
-                                                `resolver`: | `number` ~
+                                                `resolver`: | `simple` ~
                                             )
                                             'Grootboekrekening': (
                                                 `definition`: ~
@@ -4991,7 +4994,7 @@
                                 )
                                 'Startdatum boekjaar': (
                                     `definition`: ~
-                                    `resolver`: | `number` ~
+                                    `resolver`: | `simple` ~
                                 )
                                 'Grootboekrekeningen': (
                                     `definition`: ~
@@ -5246,30 +5249,41 @@
                     'Omschrijving': (
                         `type`: | `multi line` ~
                     )
+                    'text': (
+                        `type`: | `single line` ~
+                    )
                 }
                 `simple types`: {
                     'Bedrag': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 2
-                            `type`: | `integer` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: _
+                                `type`: | `integer` ~
+                            )
                         )
                     )
                     'Dagen': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 0
-                            `type`: | `positive natural` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: _
+                                `type`: | `positive natural` ~
+                            )
                         )
                     )
                     'Datum': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 0
-                            `type`: | `integer` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: _
+                                `type`: | `integer` ~
+                            )
                         )
                     )
                     'Promillage': (
-                        `precision`: | `exact` (
-                            `decimal separator offset`: * 0
-                            `type`: | `natural` ~
+                        `type`: | `number` (
+                            `precision`: | `exact` (
+                                `number of fractional digits`: _
+                                `type`: | `natural` ~
+                            )
                         )
                     )
                 }
@@ -5409,7 +5423,7 @@
                                                             `value`: | `group` {
                                                                 'BTW-promillage': (
                                                                     `description`: _
-                                                                    `value`: | `number` | `global` 'Promillage'
+                                                                    `value`: | `simple` | `global` 'Promillage'
                                                                 )
                                                             }
                                                         )
@@ -5442,7 +5456,7 @@
                                 )
                                 'Huidige datum': (
                                     `description`: _
-                                    `value`: | `number` | `global` 'Datum'
+                                    `value`: | `simple` | `global` 'Datum'
                                 )
                                 'Resultaat': (
                                     `description`: _
@@ -5453,7 +5467,7 @@
                                                 `value`: | `group` {
                                                     'Te corrigeren promillage': (
                                                         `description`: _
-                                                        `value`: | `number` | `global` 'Promillage'
+                                                        `value`: | `simple` | `global` 'Promillage'
                                                     )
                                                 }
                                             )
@@ -5654,7 +5668,7 @@
                                             `value`: | `group` {
                                                 'Beginsaldo': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Bedrag'
+                                                    `value`: | `simple` | `global` 'Bedrag'
                                                 )
                                                 'Grootboekrekening': (
                                                     `description`: _
@@ -5666,11 +5680,11 @@
                                                         `value`: | `group` {
                                                             'Bedrag': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                `value`: | `simple` | `global` 'Bedrag'
                                                             )
                                                             'Datum': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Datum'
+                                                                `value`: | `simple` | `global` 'Datum'
                                                             )
                                                             'Omschrijving': (
                                                                 `description`: _
@@ -5800,11 +5814,11 @@
                                     )
                                     'Beginsaldo nog aan te geven BTW': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Bedrag'
+                                        `value`: | `simple` | `global` 'Bedrag'
                                     )
                                     'Beginsaldo winstreserve': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Bedrag'
+                                        `value`: | `simple` | `global` 'Bedrag'
                                     )
                                     'BTW periode saldo': (
                                         `description`: _
@@ -5853,15 +5867,15 @@
                                                                 `value`: | `group` {
                                                                     'Afronding': (
                                                                         `description`: _
-                                                                        `value`: | `number` | `global` 'Bedrag'
+                                                                        `value`: | `simple` | `global` 'Bedrag'
                                                                     )
                                                                     'Bedrag': (
                                                                         `description`: _
-                                                                        `value`: | `number` | `global` 'Bedrag'
+                                                                        `value`: | `simple` | `global` 'Bedrag'
                                                                     )
                                                                     'Datum': (
                                                                         `description`: _
-                                                                        `value`: | `number` | `global` 'Datum'
+                                                                        `value`: | `simple` | `global` 'Datum'
                                                                     )
                                                                 }
                                                             )
@@ -5922,7 +5936,7 @@
                                             `value`: | `group` {
                                                 'Beginsaldo': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Bedrag'
+                                                    `value`: | `simple` | `global` 'Bedrag'
                                                 )
                                                 'Grootboekrekening': (
                                                     `description`: _
@@ -5972,7 +5986,7 @@
                                                                 `value`: | `group` {
                                                                     'Betalingstermijn': (
                                                                         `description`: _
-                                                                        `value`: | `number` | `global` 'Dagen'
+                                                                        `value`: | `simple` | `global` 'Dagen'
                                                                     )
                                                                 }
                                                             )
@@ -6076,7 +6090,7 @@
                                                 )
                                                 'Datum': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Datum'
+                                                    `value`: | `simple` | `global` 'Datum'
                                                 )
                                                 'Regels': (
                                                     `description`: _
@@ -6092,11 +6106,11 @@
                                                                             `value`: | `group` {
                                                                                 'BTW-bedrag': (
                                                                                     `description`: _
-                                                                                    `value`: | `number` | `global` 'Bedrag'
+                                                                                    `value`: | `simple` | `global` 'Bedrag'
                                                                                 )
                                                                                 'Bedrag inclusief geheven BTW': (
                                                                                     `description`: _
-                                                                                    `value`: | `number` | `global` 'Bedrag'
+                                                                                    `value`: | `simple` | `global` 'Bedrag'
                                                                                 )
                                                                             }
                                                                         )
@@ -6208,7 +6222,7 @@
                                             `value`: | `group` {
                                                 'Beginsaldo': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Bedrag'
+                                                    `value`: | `simple` | `global` 'Bedrag'
                                                 )
                                                 'Grootboekrekening': (
                                                     `description`: _
@@ -6220,11 +6234,11 @@
                                                         `value`: | `group` {
                                                             'Bedrag': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                `value`: | `simple` | `global` 'Bedrag'
                                                             )
                                                             'Datum': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Datum'
+                                                                `value`: | `simple` | `global` 'Datum'
                                                             )
                                                             'Grootboekrekening': (
                                                                 `description`: _
@@ -6281,7 +6295,7 @@
                                     )
                                     'Startdatum boekjaar': (
                                         `description`: _
-                                        `value`: | `number` | `global` 'Datum'
+                                        `value`: | `simple` | `global` 'Datum'
                                     )
                                     'Verkoop saldo': (
                                         `description`: _
@@ -6321,7 +6335,7 @@
                                                 )
                                                 'Betalingstermijn': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Dagen'
+                                                    `value`: | `simple` | `global` 'Dagen'
                                                 )
                                                 'BTW-periode': (
                                                     `description`: _
@@ -6382,7 +6396,7 @@
                                                 )
                                                 'Datum': (
                                                     `description`: _
-                                                    `value`: | `number` | `global` 'Datum'
+                                                    `value`: | `simple` | `global` 'Datum'
                                                 )
                                                 'Debiteur': (
                                                     `description`: _
@@ -6422,7 +6436,7 @@
                                                             )
                                                             'Bedrag exclusief BTW': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                `value`: | `simple` | `global` 'Bedrag'
                                                             )
                                                             'Contracttype': (
                                                                 `description`: _
@@ -6505,7 +6519,7 @@
                                                         `value`: | `group` {
                                                             'Bedrag': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                `value`: | `simple` | `global` 'Bedrag'
                                                             )
                                                             'Afhandeling': (
                                                                 `description`: _
@@ -6590,7 +6604,7 @@
                                                         `value`: | `group` {
                                                             'Bedrag': (
                                                                 `description`: _
-                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                `value`: | `simple` | `global` 'Bedrag'
                                                             )
                                                         }
                                                     )
@@ -6620,11 +6634,11 @@
                                                                                         `value`: | `group` {
                                                                                             'Bedrag': (
                                                                                                 `description`: _
-                                                                                                `value`: | `number` | `global` 'Bedrag'
+                                                                                                `value`: | `simple` | `global` 'Bedrag'
                                                                                             )
                                                                                             'Betaaldatum': (
                                                                                                 `description`: _
-                                                                                                `value`: | `number` | `global` 'Datum'
+                                                                                                `value`: | `simple` | `global` 'Datum'
                                                                                             )
                                                                                         }
                                                                                     )
@@ -6662,15 +6676,11 @@
                     `root value`: | `group` {
                         'stem': (
                             `description`: _
-                            `value`: | `text` | `local` (
-                                `type`: | `single line` ~
-                            )
+                            `value`: | `text` | `global` 'text'
                         )
                         'extension': (
                             `description`: _
-                            `value`: | `text` | `local` (
-                                `type`: | `single line` ~
-                            )
+                            `value`: | `text` | `global` 'text'
                         )
                     }
                 )
