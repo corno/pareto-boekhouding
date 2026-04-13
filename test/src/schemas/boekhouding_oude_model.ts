@@ -1,11 +1,11 @@
 import * as _pi from 'pareto-core/dist/interface'
 import * as _pt from 'pareto-core/dist/assign'
 
-// import * as d_static_html from "pub/dist/interface/generated/liana/schemas/static-html/data"
+// import * as d_static_html from "lib/dist/interface/generated/liana/schemas/static-html/data"
 
-// import * as ds_static_html from "pub/dist/implementation/manual/schemas/static_html/deserializers"
-// import * as s_static_html from "pub/dist/implementation/manual/schemas/static_html/serializers"
-// import * as d_unmarshall from "pub/dist/interface/generated/liana/generic/unmarshall"
+// import * as ds_static_html from "lib/dist/implementation/manual/schemas/static_html/deserializers"
+// import * as s_static_html from "lib/dist/implementation/manual/schemas/static_html/serializers"
+// import * as d_unmarshall from "lib/dist/interface/generated/liana/generic/unmarshall"
 
 import * as sh from "pareto-test/dist/temporary_testset_generator/shorthands"
 
