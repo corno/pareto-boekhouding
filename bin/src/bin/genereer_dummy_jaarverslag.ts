@@ -2,9 +2,7 @@
 
 import * as _pn from 'pareto-host-nodejs'
 
-import { $$ as procedure } from "../implementation/manual/commands/converteer_oude_dataset"
-
-import * as d_resources from "../implementation/manual/commands/converteer_oude_dataset"
+import { $$ as procedure } from "lib/dist/implementation/manual/commands/genereer_dummy_jaarverslag"
 
 _pn.run_main_command(
     ($r) => {
