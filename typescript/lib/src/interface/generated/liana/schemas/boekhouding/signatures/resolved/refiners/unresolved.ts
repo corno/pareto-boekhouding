@@ -127,7 +127,7 @@ export type Jaarbeheer_ = (
     context: Jaarbeheer_.I,
     abort: _pi.Abort<Jaarbeheer_.E>,
     lookups: {
-        readonly 'Jaren': _pi.lookup.Acyclic<Jaarbeheer_.L.Jaren>
+        readonly 'Jaren': _pi.static_lookup.Acyclic<Jaarbeheer_.L.Jaren>
     },
     parameters: {
         readonly 'Eerste boekjaar': Jaarbeheer_.P.Eerste_boekjaar
@@ -163,7 +163,7 @@ export type Overige_balans_item_ = (
     context: Overige_balans_item_.I,
     abort: _pi.Abort<Overige_balans_item_.E>,
     lookups: {
-        readonly 'Jaren': _pi.lookup.Acyclic<Overige_balans_item_.L.Jaren>
+        readonly 'Jaren': _pi.static_lookup.Acyclic<Overige_balans_item_.L.Jaren>
     },
     parameters: {
         readonly 'Eerste boekjaar': Overige_balans_item_.P.Eerste_boekjaar
@@ -284,7 +284,7 @@ export type Mutaties_ = (
     context: Mutaties_.I,
     abort: _pi.Abort<Mutaties_.E>,
     lookups: {
-        readonly 'Jaren': _pi.lookup.Acyclic<Mutaties_.L.Jaren>
+        readonly 'Jaren': _pi.static_lookup.Acyclic<Mutaties_.L.Jaren>
     },
     parameters: {
         readonly 'Beheer': Mutaties_.P.Beheer
@@ -326,7 +326,7 @@ export type Balans_Resultaat_Mutatie_ = (
     context: Balans_Resultaat_Mutatie_.I,
     abort: _pi.Abort<Balans_Resultaat_Mutatie_.E>,
     lookups: {
-        readonly 'Jaren': _pi.lookup.Acyclic<Balans_Resultaat_Mutatie_.L.Jaren>
+        readonly 'Jaren': _pi.static_lookup.Acyclic<Balans_Resultaat_Mutatie_.L.Jaren>
     },
     parameters: {
         readonly 'Beheer': Balans_Resultaat_Mutatie_.P.Beheer
@@ -406,7 +406,7 @@ export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
     abort: _pi.Abort<Eerste_boekjaar_.E>,
     lookups: {
-        readonly 'Jaren': _pi.lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
+        readonly 'Jaren': _pi.static_lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
     },
     parameters: null,
 ) => Eerste_boekjaar_.O
