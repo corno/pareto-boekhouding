@@ -1,8 +1,12 @@
 import * as _pi from 'pareto-core/dist/interface'
+import * as _p from 'pareto-core/dist/assign'
 
 import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
 export type Signature = cffc.Deserializer
+
+//data types
+import * as d_html from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
 
 
 //dependencies
@@ -12,24 +16,26 @@ import * as t_bh_to_aggregatie from "../transformers/boekhouding_resolved/aggreg
 import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/fountain_pen"
 import * as t_deserialize_resolved_to_location from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/location"
 import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
+import * as t_html_to_fountain_pen from "pareto-static-html/dist/implementation/manual/transformers/static_html/fountain_pen"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
+import * as sh_fp from "pareto-fountain-pen/dist/shorthands/prose"
+import * as sh from "pareto-static-html/dist/shorthands/static_html"
 
 export const $$: Signature = ($, abort, $p) => {
-    const x3 = t_bh_to_aggregatie.Root(
+    const geaggregeerd = t_bh_to_aggregatie.Root(
         t_boekhouding_resolved_from_loc.Root(
             $,
-            ($) => abort(sh.ph.composed([
-                sh.ph.literal($p['document resource identifier']),
-                sh.ph.literal(":"),
+            ($) => abort(sh_fp.ph.composed([
+                sh_fp.ph.literal($p['document resource identifier']),
+                sh_fp.ph.literal(":"),
                 t_location_to_fountain_pen.Possible_Range(
                     t_deserialize_resolved_to_location.Error($),
                     {
                         'character location reporting': ['one based', null],
                     }
                 ),
-                sh.ph.literal(": "),
+                sh_fp.ph.literal(": "),
                 t_deserialize_resolved_to_fountain_pen.Error(
                     $,
                 )
@@ -58,9 +64,209 @@ export const $$: Signature = ($, abort, $p) => {
     //         })
     //     })
     // })
-    return sh.pg.sentences([
-        sh.sentence([
-            sh.ph.literal("TODO: print jaarverslag")
-        ])
-    ])
+    return t_html_to_fountain_pen.Document(
+        sh.document(
+            `
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 20px;
+                background-color: #f8f9fa;
+                color: #333;
+            }
+            
+            table {
+                border-collapse: collapse;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                margin: 20px 0;
+                table-layout: fixed;
+                width: 1400px;
+            }
+            
+            thead {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+            }
+            
+            thead th {
+                padding: 15px 12px;
+                text-align: right;
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+                border-right: 1px solid rgba(255, 255, 255, 0.3);
+                white-space: nowrap;
+                width: 100px;
+            }
+            
+            tbody tr {
+                transition: background-color 0.2s ease;
+            }
+            
+            tbody tr:nth-child(even) {
+                background-color: #f8f9fa;
+            }
+            
+            tbody tr:hover {
+                background-color: #e9ecef;
+            }
+            
+            tbody td {
+                padding: 12px;
+                border-bottom: 1px solid #dee2e6;
+                border-right: 1px solid #dee2e6;
+                font-size: 13px;
+                white-space: nowrap;
+            }
+            
+            /* Negative values in red */
+            td:contains('-') {
+                color: #dc3545;
+            }
+            
+            /* Empty cells subtle styling */
+            td:empty::after {
+                content: '—';
+                color: #adb5bd;
+                font-style: italic;
+            }
+            
+            /* Responsive design */
+            @media (max-width: 1200px) {
+                table {
+                    font-size: 11px;
+                }
+                
+                thead th, tbody td {
+                    padding: 10px 8px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                body {
+                    margin: 10px;
+                }
+                
+                table {
+                    font-size: 10px;
+                }
+                
+                thead th, tbody td {
+                    padding: 8px 6px;
+                }
+            }
+            
+            /* Print styles */
+            @media print {
+                @page {
+                    size: A4 landscape;
+                    margin: 0.5in;
+                }
+                
+                body {
+                    background-color: white;
+                    margin: 0;
+                    font-size: 8px;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                table {
+                    box-shadow: none;
+                    border: 1px solid #000;
+                    width: 100%;
+                    font-size: 7px;
+                    page-break-inside: avoid;
+                }
+                
+                thead {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                    color: white !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                thead th {
+                    padding: 4px 2px;
+                    font-size: 6px;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                tbody td {
+                    padding: 3px 2px;
+                    font-size: 6px;
+                    line-height: 1.1;
+                }
+                
+                tbody tr:nth-child(even) {
+                    background-color: #f8f9fa !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+            }
+            `,
+            sh.f.div([
+                sh.f.classified_div(["indent"], geaggregeerd.jaren.__to_list(($, id) => ({
+                    'value': $,
+                    'id': id,
+                })).__l_map(($) => sh.f.div([
+                    sh.f.span([
+                        sh.p.p($.id)
+
+                    ]),
+                    sh.f.classified_div(["indent"], [
+                        sh.f.span([sh.p.p("balans")]),
+                        sh.f.table(
+                            [],
+                            [
+                                sh.t.body([], $.value.grootboekrekeningen.balans.__to_list(($, id) => ({
+                                    'value': $,
+                                    'id': id,
+                                })).__l_map(($) => sh.t.s.td(
+                                    ["item"],
+                                    _p.optional.literal.not_set(),
+                                    [
+                                        sh.t.s.r.cell([], [
+                                            sh.f.span([sh.p.p($.id)]),
+                                        ]),
+                                        sh.t.s.r.cell([], [
+                                            sh.f.span([sh.p.p("123.45")])
+                                        ]),
+                                    ]
+                                )))
+                            ]
+                        ),
+                    ]),
+                    sh.f.classified_div(["indent"], [
+                        sh.f.span([sh.p.p("resultaat")]),
+                        sh.f.table(
+                            [],
+                            [
+                                sh.t.body([], $.value.grootboekrekeningen.resultaat.__to_list(($, id) => ({
+                                    'value': $,
+                                    'id': id,
+                                })).__l_map(($) => sh.t.s.td(
+                                    ["item"],
+                                    _p.optional.literal.not_set(),
+                                    [
+                                        sh.t.s.r.cell([], [
+                                            sh.f.span([sh.p.p($.id)])
+                                        ]),
+                                        sh.t.s.r.cell([], [
+                                            sh.f.span([sh.p.p("123.45")])
+                                        ]),
+                                    ]
+                                )))
+                            ]
+                        ),
+
+                    ]),
+                ])))
+            ])
+        )
+    )
 }
