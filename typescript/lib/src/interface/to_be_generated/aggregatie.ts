@@ -10,8 +10,14 @@ export type Root = {
 export type Jaar = {
     'bron': d_boekhouding.Jaren.D
     'grootboekrekeningen': {
-        'balans': _pi.Dictionary<Balans_Grootboekrekening>
-        'resultaat': _pi.Dictionary<Resultaat_Grootboekrekening>
+        'balans': {
+            'activa': _pi.Dictionary<Balans_Grootboekrekening>
+            'passiva': _pi.Dictionary<Balans_Grootboekrekening>
+        }
+        'resultaat': {
+            'kosten': _pi.Dictionary<Resultaat_Grootboekrekening>
+            'opbrengsten': _pi.Dictionary<Resultaat_Grootboekrekening>
+        }
     }
 }
 

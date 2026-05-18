@@ -635,6 +635,22 @@
                             `description`: _
                             `value`: | `dictionary` (
                                 `value`: | `group` {
+                                    'Stam': (
+                                        `description`: _
+                                        `value`: | `reference` (
+                                            `referent`: (
+                                                `module`: (
+                                                    `location`: | `internal` 'Beheer'
+                                                    `resulting module`: ~
+                                                )
+                                                `path`: (
+                                                    `tail`: [ | `group` 'Grootboekrekeningen' | `group` 'Balans' | `dictionary` ~ ]
+                                                    `resulting node`: ~
+                                                )
+                                            )
+                                            `type`: | `derived` ~
+                                        )
+                                    )
                                     'Type': (
                                         `description`: _
                                         `value`: | `state` (
@@ -664,7 +680,24 @@
                         'Resultaat': (
                             `description`: _
                             `value`: | `dictionary` (
-                                `value`: | `nothing` ~
+                                `value`: | `group` {
+                                    'Stam': (
+                                        `description`: _
+                                        `value`: | `reference` (
+                                            `referent`: (
+                                                `module`: (
+                                                    `location`: | `internal` 'Beheer'
+                                                    `resulting module`: ~
+                                                )
+                                                `path`: (
+                                                    `tail`: [ | `group` 'Grootboekrekeningen' | `group` 'Resultaat' | `dictionary` ~ ]
+                                                    `resulting node`: ~
+                                                )
+                                            )
+                                            `type`: | `derived` ~
+                                        )
+                                    )
+                                }
                             )
                         )
                     }
@@ -2260,7 +2293,15 @@
                         'Grootboekrekeningen': (
                             `module`: ~
                             `parameters`: | `local` (
-                                `modules`: {}
+                                `modules`: {
+                                    'Beheer': (
+                                        `module`: (
+                                            `location`: | `internal` 'Beheer'
+                                            `resulting module`: ~
+                                        )
+                                        `presence`: | `required` ~
+                                    )
+                                }
                                 `lookups`: {}
                             )
                             `resolved parameters`: ~
@@ -3124,6 +3165,22 @@
                                 `resolver`: | `dictionary` (
                                     `definition`: ~
                                     `resolver`: | `group` {
+                                        'Stam': (
+                                            `definition`: ~
+                                            `resolver`: | `reference` (
+                                                `definition`: ~
+                                                `type`: | `derived` (
+                                                    `value`: (
+                                                        `start`: | `linked entry` ~
+                                                        `tail`: (
+                                                            `path`: [ ]
+                                                            `resulting node`: ~
+                                                        )
+                                                        `resulting node`: ~
+                                                    )
+                                                )
+                                            )
+                                        )
                                         'Type': (
                                             `definition`: ~
                                             `resolver`: | `state` (
@@ -3145,15 +3202,54 @@
                                             )
                                         )
                                     }
-                                    `benchmark`: _
+                                    `benchmark`: * (
+                                        `selection`: (
+                                            `start`: | `parameter` 'Beheer'
+                                            `tail`: (
+                                                `path`: [ | `group` 'Grootboekrekeningen' | `group` 'Balans' ]
+                                                `resulting node`: ~
+                                            )
+                                            `resulting node`: ~
+                                        )
+                                        `resulting dictionary`: ~
+                                        `dense`: false
+                                    )
                                 )
                             )
                             'Resultaat': (
                                 `definition`: ~
                                 `resolver`: | `dictionary` (
                                     `definition`: ~
-                                    `resolver`: | `nothing` ~
-                                    `benchmark`: _
+                                    `resolver`: | `group` {
+                                        'Stam': (
+                                            `definition`: ~
+                                            `resolver`: | `reference` (
+                                                `definition`: ~
+                                                `type`: | `derived` (
+                                                    `value`: (
+                                                        `start`: | `linked entry` ~
+                                                        `tail`: (
+                                                            `path`: [ ]
+                                                            `resulting node`: ~
+                                                        )
+                                                        `resulting node`: ~
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    }
+                                    `benchmark`: * (
+                                        `selection`: (
+                                            `start`: | `parameter` 'Beheer'
+                                            `tail`: (
+                                                `path`: [ | `group` 'Grootboekrekeningen' | `group` 'Resultaat' ]
+                                                `resulting node`: ~
+                                            )
+                                            `resulting node`: ~
+                                        )
+                                        `resulting dictionary`: ~
+                                        `dense`: false
+                                    )
                                 )
                             )
                         }
@@ -5003,7 +5099,9 @@
                                         `location`: | `internal` 'Grootboekrekeningen'
                                         `signature`: ~
                                         `arguments`: * (
-                                            `modules`: * {}
+                                            `modules`: * {
+                                                'Beheer': | `parameter` 'Beheer'
+                                            }
                                             `lookups`: * {}
                                         )
                                         `constraints`: {}

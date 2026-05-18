@@ -1710,6 +1710,10 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
             ).map(
                 ($, id) => ({
                     'l entry': {
+                        'Stam': _p_change_context(
+                            $['Stam'],
+                            ($) => null,
+                        ),
                         'Type': _p_change_context(
                             $['Type'],
                             ($) => ({
@@ -1801,7 +1805,12 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                 $,
             ).map(
                 ($, id) => ({
-                    'l entry': null,
+                    'l entry': {
+                        'Stam': _p_change_context(
+                            $['Stam'],
+                            ($) => null,
+                        ),
+                    },
                     'l location': ['in main document', {
                         'start': {
                             'absolute': 42,

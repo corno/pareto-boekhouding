@@ -1251,6 +1251,8 @@ export namespace Grootboekrekeningen_ {
                 
                 export namespace l_entry {
                     
+                    export type Stam = null
+                    
                     export namespace Type {
                         
                         export type l_location = i_location.Range
@@ -1280,6 +1282,7 @@ export namespace Grootboekrekeningen_ {
                 }
                 
                 export type l_entry = {
+                    readonly 'Stam': l_entry.Stam
                     readonly 'Type': l_entry.Type
                 }
                 
@@ -1311,7 +1314,15 @@ export namespace Grootboekrekeningen_ {
                 
                 export type l_location = i_location.Range
                 
-                export type l_entry = null
+                export namespace l_entry {
+                    
+                    export type Stam = null
+                    
+                }
+                
+                export type l_entry = {
+                    readonly 'Stam': l_entry.Stam
+                }
                 
             }
             

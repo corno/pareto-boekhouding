@@ -715,6 +715,10 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
             ).map(
                 ($, id) => ['group', ['verbose', _p.dictionary.literal(
                     {
+                        "Stam": _p_change_context(
+                            $['Stam'],
+                            ($) => ['nothing', null],
+                        ),
                         "Type": _p_change_context(
                             $['Type'],
                             ($) => ['state', _p.decide.state(
@@ -762,7 +766,14 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['nothing', null],
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                    {
+                        "Stam": _p_change_context(
+                            $['Stam'],
+                            ($) => ['nothing', null],
+                        ),
+                    },
+                )]],
             )],
         ),
     },

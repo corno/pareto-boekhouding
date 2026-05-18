@@ -359,7 +359,7 @@ export const $$: Signature = ($, abort, $p) => {
                                         ]
                                     ),
                                 ],
-                                $.value.grootboekrekeningen.balans.__to_list(($, id) => ({
+                                $.value.grootboekrekeningen.balans.activa.__to_list(($, id) => ({
                                     'value': $,
                                     'id': id,
                                 })).__l_map(($) => sh.t.s.row(
@@ -368,6 +368,12 @@ export const $$: Signature = ($, abort, $p) => {
                                     [
                                         sh.t.s.r.td(
                                             ["indent"],
+                                            // _p.decide.state($.value.bron.Stam, ($) => {
+                                            //     switch ($[0]) {
+                                                    
+                                            //         default: return _p.au($[0])
+                                            //     }
+                                            // }),
                                             _p.optional.literal.not_set(),
                                             []
                                         ),
@@ -412,7 +418,7 @@ export const $$: Signature = ($, abort, $p) => {
                                         ]
                                     ),
                                 ],
-                                $.value.grootboekrekeningen.resultaat.__to_list(($, id) => ({
+                                $.value.grootboekrekeningen.resultaat.kosten.__to_list(($, id) => ({
                                     'value': $,
                                     'id': id,
                                 })).__l_map(($) => sh.t.s.row(

@@ -1135,6 +1135,17 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                                 ),
                             )
                             return {
+                                'Stam': $p.Beheer.Grootboekrekeningen.Balans.__get_entry_deprecated(
+                                    id,
+                                    {
+                                        no_such_entry: () => abort(
+                                            {
+                                                'type': ['lookup', ['no such entry', id]],
+                                                'location': $.Type['l location'],
+                                            },
+                                        )
+                                    }
+                                ),
                                 'Type': prop_Type,
                             }
                         },
@@ -1150,7 +1161,34 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
             ).resolve_static(
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Resultaat.D => _p_change_context(
                     $['l entry'],
-                    ($) => null,
+                    ($) => ({
+                        'Stam': $p.Beheer.Grootboekrekeningen.Resultaat.__get_entry_deprecated(
+                            id,
+                            {
+                                no_such_entry: () => abort(
+                                    {
+                                        'type': ['lookup', ['no such entry', id]],
+                                        'location': ['in main document', {
+                                            'start': {
+                                                'absolute': 0,
+                                                'relative': {
+                                                    'line': 0,
+                                                    'column': 0
+                                                }
+                                            },
+                                            'end': {
+                                                'absolute': 0,
+                                                'relative': {
+                                                    'line': 0,
+                                                    'column': 0
+                                                }
+                                            }
+                                        }],
+                                    },
+                                )
+                            }
+                        ),
+                    }),
                 ),
             ),
         )
@@ -3459,121 +3497,121 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
         )
 
         const prop_type = _p_change_context(
-                $['type'],
-                ($) => _p_variables(
-                    () => {
+            $['type'],
+            ($) => _p_variables(
+                () => {
 
-                        const var_location = $['l location']
-                        return _p.decide.state(
-                            $['l state'],
-                            ($): t_out.Balans_Resultaat_Mutatie.type_ => {
-                                switch ($[0]) {
-                                    case 'Inkoop':
-                                        return _p.ss(
-                                            $,
-                                            ($) => ['Inkoop', {
-                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
-                                                    temp_handelstransacties.Inkopen,
-                                                ).get_entry(
-                                                    $['l reference'],
-                                                    {
-                                                        no_such_entry: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                        no_context_lookup: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no context lookup', null]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                        cycle_detected: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['cycle detected', null]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                    },
-                                                ),
-                                                'l id': $['l reference'],
-                                            }],
-                                        )
-                                    case 'Verkoop':
-                                        return _p.ss(
-                                            $,
-                                            ($) => ['Verkoop', {
-                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
-                                                    temp_handelstransacties.Verkopen,
-                                                ).get_entry(
-                                                    $['l reference'],
-                                                    {
-                                                        no_such_entry: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                        no_context_lookup: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no context lookup', null]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                        cycle_detected: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['cycle detected', null]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                    },
-                                                ),
-                                                'l id': $['l reference'],
-                                            }],
-                                        )
-                                    case 'BTW-periode':
-                                        return _p.ss(
-                                            $,
-                                            ($) => ['BTW-periode', {
-                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
-                                                    temp_jaar_beheer.Resultaat['BTW periodes'],
-                                                ).get_entry(
-                                                    $['l reference'],
-                                                    {
-                                                        no_such_entry: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                        no_context_lookup: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['no context lookup', null]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                        cycle_detected: () => abort(
-                                                            {
-                                                                'type': ['lookup', ['cycle detected', null]],
-                                                                'location': $['l location'],
-                                                            },
-                                                        ),
-                                                    },
-                                                ),
-                                                'l id': $['l reference'],
-                                            }],
-                                        )
-                                    default:
-                                        return _p.au(
-                                            $[0],
-                                        )
-                                }
-                            },
-                        )
-                    },
-                ),
-            )
+                    const var_location = $['l location']
+                    return _p.decide.state(
+                        $['l state'],
+                        ($): t_out.Balans_Resultaat_Mutatie.type_ => {
+                            switch ($[0]) {
+                                case 'Inkoop':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['Inkoop', {
+                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
+                                                temp_handelstransacties.Inkopen,
+                                            ).get_entry(
+                                                $['l reference'],
+                                                {
+                                                    no_such_entry: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                    no_context_lookup: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                    cycle_detected: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                },
+                                            ),
+                                            'l id': $['l reference'],
+                                        }],
+                                    )
+                                case 'Verkoop':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['Verkoop', {
+                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
+                                                temp_handelstransacties.Verkopen,
+                                            ).get_entry(
+                                                $['l reference'],
+                                                {
+                                                    no_such_entry: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                    no_context_lookup: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                    cycle_detected: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                },
+                                            ),
+                                            'l id': $['l reference'],
+                                        }],
+                                    )
+                                case 'BTW-periode':
+                                    return _p.ss(
+                                        $,
+                                        ($) => ['BTW-periode', {
+                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
+                                                temp_jaar_beheer.Resultaat['BTW periodes'],
+                                            ).get_entry(
+                                                $['l reference'],
+                                                {
+                                                    no_such_entry: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no such entry', $['l reference']]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                    no_context_lookup: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['no context lookup', null]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                    cycle_detected: () => abort(
+                                                        {
+                                                            'type': ['lookup', ['cycle detected', null]],
+                                                            'location': $['l location'],
+                                                        },
+                                                    ),
+                                                },
+                                            ),
+                                            'l id': $['l reference'],
+                                        }],
+                                    )
+                                default:
+                                    return _p.au(
+                                        $[0],
+                                    )
+                            }
+                        },
+                    )
+                },
+            ),
+        )
         return {
             'Jaar': prop_Jaar,
             'type': prop_type,
@@ -4088,7 +4126,9 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.fro
                             $,
                         ),
                         null,
-                        null,
+                        {
+                            'Beheer': $p['Beheer'],
+                        },
                     ),
                 )
 

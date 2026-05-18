@@ -636,6 +636,8 @@ export namespace Grootboekrekeningen_ {
         
         export namespace D {
             
+            export type Stam = Beheer_.Grootboekrekeningen.Balans.D
+            
             export namespace Type {
                 
                 export type Bankrekening = null
@@ -654,6 +656,7 @@ export namespace Grootboekrekeningen_ {
         }
         
         export type D = {
+            readonly 'Stam': D.Stam
             readonly 'Type': D.Type
         }
         
@@ -663,7 +666,15 @@ export namespace Grootboekrekeningen_ {
     
     export namespace Resultaat {
         
-        export type D = null
+        export namespace D {
+            
+            export type Stam = Beheer_.Grootboekrekeningen.Resultaat.D
+            
+        }
+        
+        export type D = {
+            readonly 'Stam': D.Stam
+        }
         
     }
     

@@ -38,6 +38,8 @@ export namespace Grootboekrekeningen_ {
     
     export namespace P {
         
+        export type Beheer = i_resolved.Beheer_
+        
     }
     
 }
@@ -46,7 +48,9 @@ export type Grootboekrekeningen_ = (
     context: Grootboekrekeningen_.I,
     abort: _pi.Abort<Grootboekrekeningen_.E>,
     lookups: null,
-    parameters: null,
+    parameters: {
+        readonly 'Beheer': Grootboekrekeningen_.P.Beheer
+    },
 ) => Grootboekrekeningen_.O
 
 export namespace Grootboek_Categorieen_ {

@@ -3040,6 +3040,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                             {
                                                 'expected properties': _p.dictionary.literal(
                                                     {
+                                                        "Stam": null,
                                                         "Type": null,
                                                     },
                                                 ),
@@ -3056,6 +3057,24 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                                     },
                                                 )
                                                 return {
+                                                    'Stam': _p_change_context(
+                                                        v_unmarshalled_from_parse_tree.Property(
+                                                            $,
+                                                            ($) => abort(
+                                                                $,
+                                                            ),
+                                                            {
+                                                                'id': 'Stam',
+                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                            },
+                                                        ),
+                                                        ($) => v_unmarshalled_from_parse_tree.Nothing(
+                                                            $,
+                                                            ($) => abort(
+                                                                $,
+                                                            ),
+                                                        ),
+                                                    ),
                                                     'Type': _p_change_context(
                                                         v_unmarshalled_from_parse_tree.Property(
                                                             $,
@@ -3196,10 +3215,51 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort) 
                                             'subdocument context': _p.optional.literal.not_set(),
                                         },
                                     ),
-                                    'l entry': v_unmarshalled_from_parse_tree.Nothing(
-                                        $,
-                                        ($) => abort(
+                                    'l entry': _p_change_context(
+                                        v_unmarshalled_from_parse_tree.Verbose_Group(
                                             $,
+                                            ($) => abort(
+                                                $,
+                                            ),
+                                            {
+                                                'expected properties': _p.dictionary.literal(
+                                                    {
+                                                        "Stam": null,
+                                                    },
+                                                ),
+                                                'subdocument context': _p.optional.literal.not_set(),
+                                            },
+                                        ),
+                                        ($) => _p_variables(
+                                            () => {
+                                                
+                                                const var_verbose_group_range = v_parse_tree_to_location.Value(
+                                                    $['value'],
+                                                    {
+                                                        'subdocument context': _p.optional.literal.not_set(),
+                                                    },
+                                                )
+                                                return {
+                                                    'Stam': _p_change_context(
+                                                        v_unmarshalled_from_parse_tree.Property(
+                                                            $,
+                                                            ($) => abort(
+                                                                $,
+                                                            ),
+                                                            {
+                                                                'id': 'Stam',
+                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                            },
+                                                        ),
+                                                        ($) => v_unmarshalled_from_parse_tree.Nothing(
+                                                            $,
+                                                            ($) => abort(
+                                                                $,
+                                                            ),
+                                                        ),
+                                                    ),
+                                                }
+                                            },
                                         ),
                                     ),
                                 }),

@@ -155,6 +155,7 @@ export const Grootboek_Categorieen: signatures.Grootboek_Categorieen = ($) => ({
 })
 export const Grootboekrekeningen: signatures.Grootboekrekeningen = ($) => ({
     'Balans': _p_change_context($['Balans grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
+        'Stam': null,
         'Type': _p_change_context($['Type'], ($) => _p.decide.state($, ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
             switch ($[0]) {
                 case 'Bankrekening': return _p.ss($, ($) => sh.state(['Bankrekening', null]))
@@ -164,7 +165,9 @@ export const Grootboekrekeningen: signatures.Grootboekrekeningen = ($) => ({
             }
         })),
     })))),
-    'Resultaat': _p_change_context($['Resultaat grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => null))),
+    'Resultaat': _p_change_context($['Resultaat grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
+        'Stam': null,
+    })))),
 })
 export const Handelstransacties: signatures.Handelstransacties = ($) => ({
     'Inkopen': _p_change_context($['Inkopen'], ($) => sh.dictionary($.__d_map(($) => ({
@@ -421,7 +424,7 @@ export const Jaren: signatures.Jaren = ($) => sh.dictionary($.Jaren.__d_map(($, 
 export const Mutaties: signatures.Mutaties = ($, $p) => ({
     'Bankrekening Mutatie Verwerkingen': _p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map(($) => sh.dictionary(_p.dictionary.from.dictionary(
         $.Mutaties,
-    ).filter(
+    ).map_optionally(
         ($) => _p.decide.state($.Status, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry> => {
             switch ($[0]) {
                 case 'Nog te verwerken': return _p.ss($, ($) => _p.optional.literal.not_set())
