@@ -74,15 +74,26 @@ export const $$: Signature = ($, abort, $p) => {
                 color: #333;
             }
             
+            /* Remove spacing from nested p and div tags */
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            
+            div {
+                margin: 0;
+                padding: 0;
+            }
+            
             table {
                 border-collapse: collapse;
                 background-color: white;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 border-radius: 8px;
                 overflow: hidden;
-                margin: 20px 0;
-                table-layout: fixed;
-                width: 1400px;
+                margin: 5px 0;
+                table-layout: auto;
+                width: auto;
             }
             
             thead {
@@ -91,7 +102,7 @@ export const $$: Signature = ($, abort, $p) => {
             }
             
             thead th {
-                padding: 15px 12px;
+                padding: 1px 4px;
                 text-align: right;
                 font-weight: 600;
                 font-size: 14px;
@@ -99,7 +110,7 @@ export const $$: Signature = ($, abort, $p) => {
                 text-transform: uppercase;
                 border-right: 1px solid rgba(255, 255, 255, 0.3);
                 white-space: nowrap;
-                width: 100px;
+                line-height: 1.1;
             }
             
             tbody tr {
@@ -115,23 +126,84 @@ export const $$: Signature = ($, abort, $p) => {
             }
             
             tbody td {
-                padding: 12px;
+                padding: 1px 4px;
                 border-bottom: 1px solid #dee2e6;
                 border-right: 1px solid #dee2e6;
                 font-size: 13px;
                 white-space: nowrap;
+                line-height: 1.2;
             }
             
-            /* Negative values in red */
-            td:contains('-') {
-                color: #dc3545;
+            /* Indent cells for hierarchical structure */
+            td.indent {
+                width: 20px;
+                min-width: 20px;
+                max-width: 20px;
+                padding: 0;
+                background-color: transparent;
             }
             
-            /* Empty cells subtle styling */
-            td:empty::after {
-                content: '—';
-                color: #adb5bd;
-                font-style: italic;
+            /* Right-align amount cells */
+            td.bedrag {
+                text-align: right;
+                font-variant-numeric: tabular-nums;
+            }
+            
+            /* Special styling for year rows */
+            tr.jaar {
+                background-color: #2c3e50 !important;
+            }
+            
+            tr.jaar td {
+                font-size: 16px;
+                font-weight: 700;
+                color: white !important;
+                padding: 4px 8px;
+                border-bottom: 2px solid #1a252f;
+            }
+            
+            /* Special styling for grootboek_categorie rows */
+            tr.grootboek_categorie {
+                background-color: transparent;
+            }
+            
+            tr.grootboek_categorie td:not(.indent) {
+                font-size: 14px;
+                font-weight: 600;
+                color: white !important;
+                padding: 3px 8px;
+                border-bottom: 2px solid #5568d3;
+                background-color: #667eea !important;
+            }
+            
+            /* Indent cells in special rows should not have borders */
+            tr.jaar td.indent,
+            tr.grootboek_categorie td.indent {
+                border: none;
+                background-color: transparent;
+            }
+            
+            /* Margin rows as separators */
+            tr.margin {
+                height: 20px;
+                background-color: transparent;
+            }
+            
+            tr.margin td {
+                border: none;
+                padding: 0;
+            }
+            
+            div.jaar span {
+                font-size: 18px;
+                font-weight: 700;
+                color: #495057;
+            }
+            
+            div.categorie span {
+                font-size: 16px;
+                font-weight: 600;
+                color: #667eea;
             }
             
             /* Responsive design */
@@ -141,7 +213,13 @@ export const $$: Signature = ($, abort, $p) => {
                 }
                 
                 thead th, tbody td {
-                    padding: 10px 8px;
+                    padding: 1px 4px;
+                }
+                
+                td.indent {
+                    width: 15px;
+                    min-width: 15px;
+                    max-width: 15px;
                 }
             }
             
@@ -155,7 +233,13 @@ export const $$: Signature = ($, abort, $p) => {
                 }
                 
                 thead th, tbody td {
-                    padding: 8px 6px;
+                    padding: 1px 3px;
+                }
+                
+                td.indent {
+                    width: 10px;
+                    min-width: 10px;
+                    max-width: 10px;
                 }
             }
             
@@ -177,7 +261,7 @@ export const $$: Signature = ($, abort, $p) => {
                 table {
                     box-shadow: none;
                     border: 1px solid #000;
-                    width: 100%;
+                    width: auto;
                     font-size: 7px;
                     page-break-inside: avoid;
                 }
@@ -190,14 +274,14 @@ export const $$: Signature = ($, abort, $p) => {
                 }
                 
                 thead th {
-                    padding: 4px 2px;
+                    padding: 1px 2px;
                     font-size: 6px;
                     -webkit-print-color-adjust: exact;
                     print-color-adjust: exact;
                 }
                 
                 tbody td {
-                    padding: 3px 2px;
+                    padding: 1px 2px;
                     font-size: 6px;
                     line-height: 1.1;
                 }
@@ -207,65 +291,167 @@ export const $$: Signature = ($, abort, $p) => {
                     -webkit-print-color-adjust: exact;
                     print-color-adjust: exact;
                 }
+                
+                tr.jaar {
+                    background-color: #2c3e50 !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                tr.grootboek_categorie td:not(.indent) {
+                    background-color: #667eea !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                td.indent {
+                    width: 10px;
+                    min-width: 10px;
+                    max-width: 10px;
+                }
             }
             `,
             sh.f.div([
-                sh.f.classified_div(["indent"], geaggregeerd.jaren.__to_list(($, id) => ({
-                    'value': $,
-                    'id': id,
-                })).__l_map(($) => sh.f.div([
-                    sh.f.span([
-                        sh.p.p($.id)
-
-                    ]),
-                    sh.f.classified_div(["indent"], [
-                        sh.f.span([sh.p.p("balans")]),
-                        sh.f.table(
+                sh.f.table(
+                    [],
+                    [
+                        sh.t.body(
                             [],
-                            [
-                                sh.t.body([], $.value.grootboekrekeningen.balans.__to_list(($, id) => ({
+                            _p.list.from.list(
+                                geaggregeerd.jaren.__to_list(($, id) => ({
                                     'value': $,
                                     'id': id,
-                                })).__l_map(($) => sh.t.s.td(
+                                }))
+                            ).flatten(($) => _p.list.nested_literal_old([
+                                [
+                                    sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
+                                    sh.t.s.row(
+                                        ["jaar"],
+                                        _p.optional.literal.not_set(),
+                                        [
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(4),
+                                                [
+                                                    sh.f.span([sh.p.p($.id)])
+                                                ]
+                                            ),
+                                        ]
+                                    ),
+                                ],
+                                [
+                                    sh.t.s.row(
+                                        ["grootboek_categorie"],
+                                        _p.optional.literal.not_set(),
+                                        [
+                                            sh.t.s.r.td(
+                                                ["indent"],
+                                                _p.optional.literal.not_set(),
+                                                []
+                                            ),
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(3),
+                                                [
+                                                    sh.f.span([sh.p.p("balans")])
+                                                ]
+                                            ),
+                                        ]
+                                    ),
+                                ],
+                                $.value.grootboekrekeningen.balans.__to_list(($, id) => ({
+                                    'value': $,
+                                    'id': id,
+                                })).__l_map(($) => sh.t.s.row(
                                     ["item"],
                                     _p.optional.literal.not_set(),
                                     [
-                                        sh.t.s.r.cell([], [
-                                            sh.f.span([sh.p.p($.id)]),
-                                        ]),
-                                        sh.t.s.r.cell([], [
-                                            sh.f.span([sh.p.p("123.45")])
-                                        ]),
+                                        sh.t.s.r.td(
+                                            ["indent"],
+                                            _p.optional.literal.not_set(),
+                                            []
+                                        ),
+                                        sh.t.s.r.td(
+                                            ["indent"],
+                                            _p.optional.literal.not_set(),
+                                            []
+                                        ),
+                                        sh.t.s.r.td(
+                                            [],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span([sh.p.p($.id)])
+                                            ]
+                                        ),
+                                        sh.t.s.r.td(
+                                            ["bedrag"],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span([sh.p.p("123.45")])
+                                            ]
+                                        ),
                                     ]
-                                )))
-                            ]
-                        ),
-                    ]),
-                    sh.f.classified_div(["indent"], [
-                        sh.f.span([sh.p.p("resultaat")]),
-                        sh.f.table(
-                            [],
-                            [
-                                sh.t.body([], $.value.grootboekrekeningen.resultaat.__to_list(($, id) => ({
+                                )),
+                                [
+                                    sh.t.s.row(
+                                        ["grootboek_categorie"],
+                                        _p.optional.literal.not_set(),
+                                        [
+                                            sh.t.s.r.td(
+                                                ["indent"],
+                                                _p.optional.literal.not_set(),
+                                                []
+                                            ),
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(3),
+                                                [
+                                                    sh.f.span([sh.p.p("resultaat")])
+                                                ]
+                                            ),
+                                        ]
+                                    ),
+                                ],
+                                $.value.grootboekrekeningen.resultaat.__to_list(($, id) => ({
                                     'value': $,
                                     'id': id,
-                                })).__l_map(($) => sh.t.s.td(
+                                })).__l_map(($) => sh.t.s.row(
                                     ["item"],
                                     _p.optional.literal.not_set(),
                                     [
-                                        sh.t.s.r.cell([], [
-                                            sh.f.span([sh.p.p($.id)])
-                                        ]),
-                                        sh.t.s.r.cell([], [
-                                            sh.f.span([sh.p.p("123.45")])
-                                        ]),
+                                        sh.t.s.r.td(
+                                            ["indent"],
+                                            _p.optional.literal.not_set(),
+                                            []
+                                        ),
+                                        sh.t.s.r.td(
+                                            ["indent"],
+                                            _p.optional.literal.not_set(),
+                                            []
+                                        ),
+                                        sh.t.s.r.td(
+                                            [],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span([sh.p.p($.id)])
+                                            ]
+                                        ),
+                                        sh.t.s.r.td(
+                                            ["bedrag"],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span([sh.p.p("123.45")])
+                                            ]
+                                        ),
                                     ]
-                                )))
-                            ]
-                        ),
-
-                    ]),
-                ])))
+                                )),
+                                [
+                                    sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
+                                ]
+                            ]))
+                        )
+                    ]
+                ),
             ])
         )
     )
