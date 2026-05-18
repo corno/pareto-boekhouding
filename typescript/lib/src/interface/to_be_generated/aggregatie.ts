@@ -8,39 +8,24 @@ export type Root = {
 }
 
 export type Jaar = {
-    'bron': d_boekhouding.Jaren.D
     'grootboekrekeningen': {
-        'balans': {
-            'activa': _pi.Dictionary<Balans_Grootboekrekening>
-            'passiva': _pi.Dictionary<Balans_Grootboekrekening>
-        }
-        'resultaat': {
-            'kosten': _pi.Dictionary<Resultaat_Grootboekrekening>
-            'opbrengsten': _pi.Dictionary<Resultaat_Grootboekrekening>
-        }
+        'balans': Domein
+        'resultaat': Domein
     }
 }
 
-export type Balans_Grootboekrekening = {
-    'bron': d_boekhouding.Grootboekrekeningen.Balans.D
-    'bedrag': number
-    'gerelateerde inkopen': _pi.Dictionary<{
-        'bron': d_boekhouding.Handelstransacties.Inkopen.D
-        'regels': _pi.Dictionary<Gerelateerde_Inkoop_Regel>
-    }>
+export type Domein = {
+    'links': Domein_Zijde
+    'rechts': Domein_Zijde
 }
 
-export type Gerelateerde_Inkoop_Regels = _pi.Dictionary<Gerelateerde_Inkoop_Regel>
-
-export type Gerelateerde_Inkoop_Regel = {
-    'bron': d_boekhouding.Handelstransacties.Inkopen.D.Regels.D
+export type Domein_Zijde = {
+    'label': string
+    'grootboekrekeningen': _pi.Dictionary<Grootboekrekening>
+    'totaal': number
+    
 }
 
-export type Resultaat_Grootboekrekening = {
-    'bron': d_boekhouding.Grootboekrekeningen.Resultaat.D
+export type Grootboekrekening = {
     'bedrag': number
-    'gerelateerde inkopen': _pi.Dictionary<{
-        'bron': d_boekhouding.Handelstransacties.Inkopen.D
-        'regels': _pi.Dictionary<Gerelateerde_Inkoop_Regel>
-    }>
 }

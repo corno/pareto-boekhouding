@@ -29,73 +29,79 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
     'jaren': $.Jaren.__d_map(($) => {
         const bron_jaar = $
 
-        const balans_grootboekrekeningen = $.Grootboekrekeningen.Balans.__d_map(($, id): d_out.Balans_Grootboekrekening => {
+
+        const Balans_Grootboekrekeningen = ($: d_in.Grootboekrekeningen.Balans, label: string): d_out.Domein_Zijde => {
+            const gbr = $.__d_map(($) => ({
+                'bedrag': 12345,
+            }))
             return {
-                'bron': $,
-                'bedrag': 123.23,
-                'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
-
-                    const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.__d_map(($) => ({
-                        'is relevant': _p.decide.state($.Type, ($) => {
-                            switch ($[0]) {
-                                case 'Balans': return _p.ss($, ($) => $['Balans item']['l entry'].Grootboekrekening['l id'] === id)
-                                case 'Kosten': return _p.ss($, ($) => false)
-                                default: return _p.au($[0])
-                            }
-                        }),
-                        'entry': {
-                            'bron': $,
-                        },
-                    })))
-                    return {
-                        'is relevant': !(regels.__get_number_of_entries() === 0),
-                        'entry': {
-                            'bron': $,
-                            'regels': regels
-                        }
-                    }
-                })),
+                'label': label,
+                'grootboekrekeningen': gbr,
+                'totaal': _p.number.integer.from.list(
+                    _p.list.from.dictionary(gbr).convert(($, $i) => $)
+                ).sum(
+                    ($) => $.bedrag
+                ),
             }
-        })
-        const resultaat_grootboekrekeningen = $.Grootboekrekeningen.Resultaat.__d_map(($, id) => ({
-            'bron': $,
-                'bedrag': 123.23,
-            'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
+        }
+        const Resultaat_Grootboekrekeningen = ($: d_in.Grootboekrekeningen.Resultaat, label: string): d_out.Domein_Zijde => {
+            const gbr = $.__d_map(($) => ({
+                'bedrag': 12345,
+            }))
+            return {
+                'label': label,
+                'grootboekrekeningen': gbr,
+                'totaal': _p.number.integer.from.list(
+                    _p.list.from.dictionary(gbr).convert(($, $i) => $)
+                ).sum(
+                    ($) => $.bedrag
+                ),
+            }
+        }
 
-                const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.__d_map(($) => {
-                    return {
-                        'is relevant': _p.decide.state($.Type, ($) => {
-                            switch ($[0]) {
-                                case 'Balans': return _p.ss($, ($) => false)
-                                case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening['l id'] === id)
-                                default: return _p.au($[0])
-                            }
-                        }),
-                        'entry': {
-                            'bron': $,
-                        },
-                    }
-                }))
-                return {
-                    'is relevant': !(regels.__get_number_of_entries() === 0),
-                    'entry': {
-                        'bron': $,
-                        'regels': regels
-                    }
-                }
-            })),
-        }))
+        // const balans_grootboekrekeningen = $.Grootboekrekeningen.Balans.__d_map(($, id): d_out.Grootboekrekening => {
+        //     return {
+        //         'bedrag': 123.23,
+        //     }
+        // })
+        // const resultaat_grootboekrekeningen = $.Grootboekrekeningen.Resultaat.__d_map(($, id) => ({
+        //     // 'bron': $,
+        //     'bedrag': 123.23,
+        //     // 'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
+
+        //     //     const regels = o_filter_relevant($.Regels.__d_map(($) => {
+        //     //         return {
+        //     //             'is relevant': _p.decide.state($.Type, ($) => {
+        //     //                 switch ($[0]) {
+        //     //                     case 'Balans': return _p.ss($, ($) => false)
+        //     //                     case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening['l id'] === id)
+        //     //                     default: return _p.au($[0])
+        //     //                 }
+        //     //             }),
+        //     //             'entry': {
+        //     //                 'bron': $,
+        //     //             },
+        //     //         }
+        //     //     }))
+        //     //     return {
+        //     //         'is relevant': !(regels.__get_number_of_entries() === 0),
+        //     //         'entry': {
+        //     //             'bron': $,
+        //     //             'regels': regels
+        //     //         }
+        //     //     }
+        //     // })),
+        // }))
         return {
-            'bron': $,
             'grootboekrekeningen': {
                 'balans': {
-                    'activa': _p.dictionary.from.dictionary(balans_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'),
-                    'passiva': _p.dictionary.from.dictionary(balans_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'),
+                    'links': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.Grootboekrekeningen.Balans).filter(($) => $.Stam.Zijde[0] === 'Activa'), "activa"),
+                    'rechts': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.Grootboekrekeningen.Balans).filter(($) => $.Stam.Zijde[0] === 'Passiva'), "passiva"),
 
                 },
                 'resultaat': {
-                    'kosten': _p.dictionary.from.dictionary(resultaat_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Kosten'),
-                    'opbrengsten': _p.dictionary.from.dictionary(resultaat_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'),
+                    'links': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.Grootboekrekeningen.Resultaat).filter(($) => $.Stam.Zijde[0] === 'Kosten'), "kosten"),
+                    'rechts': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.Grootboekrekeningen.Resultaat).filter(($) => $.Stam.Zijde[0] === 'Opbrengsten'), "opbrengsten"),
                 }
             },
         }

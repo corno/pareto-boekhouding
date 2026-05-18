@@ -7,6 +7,7 @@ export type Signature = cffc.Deserializer
 
 //data types
 import * as d_html from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
+import * as d_agg from "../../../interface/to_be_generated/aggregatie"
 
 
 //dependencies
@@ -17,10 +18,127 @@ import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/impleme
 import * as t_deserialize_resolved_to_location from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/location"
 import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 import * as t_html_to_fountain_pen from "pareto-static-html/dist/implementation/manual/transformers/static_html/fountain_pen"
+import * as t_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
 
 //shorthands
 import * as sh_fp from "pareto-fountain-pen/dist/shorthands/prose"
 import * as sh from "pareto-static-html/dist/shorthands/static_html"
+
+
+const Bedrag = ($: number): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["bedrag"],
+    _p.optional.literal.not_set(),
+    [
+        sh.f.span([sh.p.p("€ " + t_primitives_to_text.fractional_decimal($, { 'number of fractional digits': 2 }))])
+    ]
+)
+
+const Optioneel_Bedrag = ($: _pi.Optional_Value<number>): d_html.Flow_Element.table.sections.L.rows.L.cells.L => $.__decide(
+    ($) => Bedrag($),
+    () => sh.t.s.r.td(
+        ["missend-bedrag"],
+        _p.optional.literal.not_set(),
+        []
+    )
+)
+
+const Text = ($: string): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["text"],
+    _p.optional.literal.not_set(),
+    [
+        sh.f.span([sh.p.p($)])
+    ]
+)
+
+const Span_Text = (text: string, number_of_cell: number): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["span-text"],
+    _p.optional.literal.set(number_of_cell),
+    [
+        sh.f.span([sh.p.p(text)])
+    ]
+)
+
+const Indent = (depth: number): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["indent"],
+    _p.optional.literal.set(depth),
+    []
+)
+
+
+
+
+const Domein = (
+    $: d_agg.Domein,
+    $p: {
+        'label': string
+    }
+): d_html.Flow_Element.table.sections.L.rows => _p.list.nested_literal_old([
+    [
+        sh.t.s.row(
+            ["grootboek_categorie"],
+            _p.optional.literal.not_set(),
+            [
+                Indent(2),
+                Span_Text($p.label, 5),
+            ]
+        ),
+        sh.t.s.row(
+            ["domein"],
+            _p.optional.literal.not_set(),
+            [
+                Indent(2),
+                Span_Text($.links.label, 2),
+                Span_Text($.rechts.label, 2),
+            ]
+        ),
+    ],
+    _p.list.from.list(
+        $.links.grootboekrekeningen.__to_list(($, id) => ({
+            'value': $,
+            'id': id,
+        }))
+    ).full_join(
+        $.rechts.grootboekrekeningen.__to_list(($, id) => ({
+            'value': $,
+            'id': id,
+        })),
+        (value, other_value) => ({
+            'links': value,
+            'rechts': other_value,
+        })
+    ).__l_map(($) => sh.t.s.row(
+        ["item"],
+        _p.optional.literal.not_set(),
+        [
+            Indent(2),
+            //activa
+            Text($.links.__decide(
+                ($) => $.id,
+                () => ""
+            )),
+            Optioneel_Bedrag(_p.optional.from.optional($.links).map(($) => $.value.bedrag)),
+            //passiva
+            Text($.rechts.__decide(
+                ($) => $.id,
+                () => ""
+            )),
+            Optioneel_Bedrag(_p.optional.from.optional($['rechts']).map(($) => $.value.bedrag)),
+        ]
+    )),
+    [
+        sh.t.s.row(
+            ["totaal"],
+            _p.optional.literal.not_set(),
+            [
+                Indent(2),
+                Text("totaal"),
+                Bedrag($.links.totaal),
+                Text("totaal"),
+                Bedrag($.rechts.totaal),
+            ]
+        ),
+    ]
+])
 
 export const $$: Signature = ($, abort, $p) => {
     const geaggregeerd = t_bh_to_aggregatie.Root(
@@ -113,6 +231,19 @@ export const $$: Signature = ($, abort, $p) => {
                 line-height: 1.1;
             }
             
+            /* Title row styling */
+            thead.title {
+                background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            }
+            
+            thead.title th {
+                font-size: 18px;
+                font-weight: 700;
+                text-align: center;
+                padding: 8px 12px;
+                letter-spacing: 1px;
+            }
+            
             tbody tr {
                 transition: background-color 0.2s ease;
             }
@@ -140,7 +271,8 @@ export const $$: Signature = ($, abort, $p) => {
                 min-width: 20px;
                 max-width: 20px;
                 padding: 0;
-                background-color: transparent;
+                background-color: transparent !important;
+                border: none !important;
             }
             
             /* Right-align amount cells */
@@ -150,11 +282,11 @@ export const $$: Signature = ($, abort, $p) => {
             }
             
             /* Special styling for year rows */
-            tr.jaar {
+            tbody tr.jaar {
                 background-color: #2c3e50 !important;
             }
             
-            tr.jaar td {
+            tbody tr.jaar td {
                 font-size: 16px;
                 font-weight: 700;
                 color: white !important;
@@ -163,11 +295,11 @@ export const $$: Signature = ($, abort, $p) => {
             }
             
             /* Special styling for grootboek_categorie rows */
-            tr.grootboek_categorie {
+            tbody tr.grootboek_categorie {
                 background-color: transparent;
             }
             
-            tr.grootboek_categorie td:not(.indent) {
+            tbody tr.grootboek_categorie td:not(.indent) {
                 font-size: 14px;
                 font-weight: 600;
                 color: white !important;
@@ -176,9 +308,28 @@ export const $$: Signature = ($, abort, $p) => {
                 background-color: #667eea !important;
             }
             
+            tbody tr.domein {
+                background-color: transparent;
+            }
+            
+            tbody tr.domein td:not(.indent) {
+                font-size: 13px;
+                font-weight: 500;
+                color: #2c3e50 !important;
+                padding: 2px 8px;
+                border-bottom: 1px solid #b3c2f5;
+                background-color: #aab8f0 !important;
+            }
+            
+            /* Special styling for totaal (total) rows */
+            tbody tr.totaal td {
+                font-weight: 700;
+            }
+            
             /* Indent cells in special rows should not have borders */
-            tr.jaar td.indent,
-            tr.grootboek_categorie td.indent {
+            tbody tr.jaar td.indent,
+            tbody tr.grootboek_categorie td.indent,
+            tbody tr.domein td.indent {
                 border: none;
                 background-color: transparent;
             }
@@ -263,7 +414,13 @@ export const $$: Signature = ($, abort, $p) => {
                     border: 1px solid #000;
                     width: auto;
                     font-size: 7px;
+                    page-break-inside: auto;
+                }
+                
+                /* Keep each year group together on print */
+                tbody.jaar {
                     page-break-inside: avoid;
+                    break-inside: avoid;
                 }
                 
                 thead {
@@ -280,6 +437,17 @@ export const $$: Signature = ($, abort, $p) => {
                     print-color-adjust: exact;
                 }
                 
+                thead.title {
+                    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%) !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                thead.title th {
+                    font-size: 10px;
+                    padding: 4px 6px;
+                }
+                
                 tbody td {
                     padding: 1px 2px;
                     font-size: 6px;
@@ -292,16 +460,34 @@ export const $$: Signature = ($, abort, $p) => {
                     print-color-adjust: exact;
                 }
                 
-                tr.jaar {
+                tbody tr.jaar {
                     background-color: #2c3e50 !important;
                     -webkit-print-color-adjust: exact;
                     print-color-adjust: exact;
                 }
                 
-                tr.grootboek_categorie td:not(.indent) {
-                    background-color: #667eea !important;
+                tbody tr.jaar td {
+                    color: white !important;
                     -webkit-print-color-adjust: exact;
                     print-color-adjust: exact;
+                }
+                
+                tbody tr.grootboek_categorie td:not(.indent) {
+                    background-color: #667eea !important;
+                    color: white !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                tbody tr.domein td:not(.indent) {
+                    background-color: #aab8f0 !important;
+                    color: #2c3e50 !important;
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                
+                tr.totaal td {
+                    font-weight: 700;
                 }
                 
                 td.indent {
@@ -314,261 +500,57 @@ export const $$: Signature = ($, abort, $p) => {
             sh.f.div([
                 sh.f.table(
                     [],
-                    [
-                        sh.t.body(
-                            [],
-                            _p.list.from.list(
-                                geaggregeerd.jaren.__to_list(($, id) => ({
-                                    'value': $,
-                                    'id': id,
-                                }))
-                            ).flatten(($) => _p.list.nested_literal_old([
+                    _p.list.nested_literal_old([
+                        [
+                            sh.t.header(["title"], [
+                                sh.t.s.row(
+                                    [],
+                                    _p.optional.literal.not_set(),
+                                    [
+                                        sh.t.s.r.th(
+                                            [],
+                                            _p.optional.literal.set(6),
+                                            [
+                                                sh.f.span([sh.p.p("Jaarrekeningen")])
+                                            ]
+                                        )
+                                    ]
+                                )
+                            ]),
+                        ],
+                        _p.list.from.list(
+                            geaggregeerd.jaren.__to_list(($, id) => ({
+                                'value': $,
+                                'id': id,
+                            }))
+                        ).map(($) => sh.t.body(
+                            ["jaar"],
+                            _p.list.nested_literal_old([
                                 [
                                     sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
                                     sh.t.s.row(
                                         ["jaar"],
                                         _p.optional.literal.not_set(),
                                         [
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(6),
-                                                [
-                                                    sh.f.span([sh.p.p($.id)])
-                                                ]
-                                            ),
+                                            Span_Text($.id, 6),
                                         ]
                                     ),
                                 ],
-                                [
-                                    sh.t.s.row(
-                                        ["grootboek_categorie"],
-                                        _p.optional.literal.not_set(),
-                                        [
-                                            sh.t.s.r.td(
-                                                ["indent"],
-                                                _p.optional.literal.not_set(),
-                                                []
-                                            ),
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(5),
-                                                [
-                                                    sh.f.span([sh.p.p("balans")])
-                                                ]
-                                            ),
-                                        ]
-                                    ),
-                                    sh.t.s.row(
-                                        ["zijde"],
-                                        _p.optional.literal.not_set(),
-                                        [
-                                            sh.t.s.r.td(
-                                                ["indent"],
-                                                _p.optional.literal.set(2),
-                                                []
-                                            ),
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(2),
-                                                [
-                                                    sh.f.span([sh.p.p("activa")])
-                                                ]
-                                            ),
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(2),
-                                                [
-                                                    sh.f.span([sh.p.p("passiva")])
-                                                ]
-                                            ),
-                                        ]
-                                    ),
-                                ],
-                                _p.list.from.list(
-                                    $.value.grootboekrekeningen.balans.activa.__to_list(($, id) => ({
-                                        'value': $,
-                                        'id': id,
-                                    }))
-                                ).full_join(
-                                    $.value.grootboekrekeningen.balans.passiva.__to_list(($, id) => ({
-                                        'value': $,
-                                        'id': id,
-                                    })),
-                                    (value, other_value) => ({
-                                        'value': value,
-                                        'other value': other_value,
-                                    })
-                                ).__l_map(($) => sh.t.s.row(
-                                    ["item"],
-                                    _p.optional.literal.not_set(),
-                                    [
-                                        sh.t.s.r.td(
-                                            ["indent"],
-                                            _p.optional.literal.set(2),
-                                            []
-                                        ),
-                                        //activa
-                                        sh.t.s.r.td(
-                                            [],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($.value.__decide(
-                                                    ($) => [sh.p.p($.id)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                        sh.t.s.r.td(
-                                            ["bedrag"],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($.value.__decide(
-                                                    ($) => [sh.p.p("" + $.value.bedrag)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                        //passiva
-                                        sh.t.s.r.td(
-                                            [],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($['other value'].__decide(
-                                                    ($) => [sh.p.p($.id)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                        sh.t.s.r.td(
-                                            ["bedrag"],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($['other value'].__decide(
-                                                    ($) => [sh.p.p("" + $.value.bedrag)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                    ]
-                                )),
-                                [
-                                    sh.t.s.row(
-                                        ["grootboek_categorie"],
-                                        _p.optional.literal.not_set(),
-                                        [
-                                            sh.t.s.r.td(
-                                                ["indent"],
-                                                _p.optional.literal.not_set(),
-                                                []
-                                            ),
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(5),
-                                                [
-                                                    sh.f.span([sh.p.p("resultaat")])
-                                                ]
-                                            ),
-                                        ]
-                                    ),
-                                    sh.t.s.row(
-                                        ["zijde"],
-                                        _p.optional.literal.not_set(),
-                                        [
-                                            sh.t.s.r.td(
-                                                ["indent"],
-                                                _p.optional.literal.set(2),
-                                                []
-                                            ),
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(2),
-                                                [
-                                                    sh.f.span([sh.p.p("kosten")])
-                                                ]
-                                            ),
-                                            sh.t.s.r.td(
-                                                [],
-                                                _p.optional.literal.set(2),
-                                                [
-                                                    sh.f.span([sh.p.p("opbrengsten")])
-                                                ]
-                                            ),
-                                        ]
-                                    ),
-                                ],
-                                _p.list.from.list(
-                                    $.value.grootboekrekeningen.resultaat.kosten.__to_list(($, id) => ({
-                                        'value': $,
-                                        'id': id,
-                                    }))
-                                ).full_join(
-                                    $.value.grootboekrekeningen.resultaat.opbrengsten.__to_list(($, id) => ({
-                                        'value': $,
-                                        'id': id,
-                                    })),
-                                    (value, other_value) => ({
-                                        'value': value,
-                                        'other value': other_value,
-                                    })
-                                ).__l_map(($) => sh.t.s.row(
-                                    ["item"],
-                                    _p.optional.literal.not_set(),
-                                    [
-                                        sh.t.s.r.td(
-                                            ["indent"],
-                                            _p.optional.literal.set(2),
-                                            []
-                                        ),
-                                        //activa
-                                        sh.t.s.r.td(
-                                            [],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($.value.__decide(
-                                                    ($) => [sh.p.p($.id)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                        sh.t.s.r.td(
-                                            ["bedrag"],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($.value.__decide(
-                                                    ($) => [sh.p.p("" + $.value.bedrag)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                        //passiva
-                                        sh.t.s.r.td(
-                                            [],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($['other value'].__decide(
-                                                    ($) => [sh.p.p($.id)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                        sh.t.s.r.td(
-                                            ["bedrag"],
-                                            _p.optional.literal.not_set(),
-                                            [
-                                                sh.f.span($['other value'].__decide(
-                                                    ($) => [sh.p.p("" + $.value.bedrag)],
-                                                    () => []
-                                                ))
-                                            ]
-                                        ),
-                                    ]
-                                )),
-                                [
-                                    sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
-                                ]
-                            ]))
-                        )
-                    ]
+                                Domein(
+                                    $.value.grootboekrekeningen.balans,
+                                    {
+                                        'label': "balans",
+                                    }
+                                ),
+                                Domein(
+                                    $.value.grootboekrekeningen.resultaat,
+                                    {
+                                        'label': "resultaat",
+                                    }
+                                ),
+                            ]),
+                        )),
+                    ])
                 ),
             ])
         )
