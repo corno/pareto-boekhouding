@@ -331,7 +331,7 @@ export const $$: Signature = ($, abort, $p) => {
                                         [
                                             sh.t.s.r.td(
                                                 [],
-                                                _p.optional.literal.set(4),
+                                                _p.optional.literal.set(6),
                                                 [
                                                     sh.f.span([sh.p.p($.id)])
                                                 ]
@@ -351,49 +351,102 @@ export const $$: Signature = ($, abort, $p) => {
                                             ),
                                             sh.t.s.r.td(
                                                 [],
-                                                _p.optional.literal.set(3),
+                                                _p.optional.literal.set(5),
                                                 [
                                                     sh.f.span([sh.p.p("balans")])
                                                 ]
                                             ),
                                         ]
                                     ),
+                                    sh.t.s.row(
+                                        ["zijde"],
+                                        _p.optional.literal.not_set(),
+                                        [
+                                            sh.t.s.r.td(
+                                                ["indent"],
+                                                _p.optional.literal.set(2),
+                                                []
+                                            ),
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(2),
+                                                [
+                                                    sh.f.span([sh.p.p("activa")])
+                                                ]
+                                            ),
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(2),
+                                                [
+                                                    sh.f.span([sh.p.p("passiva")])
+                                                ]
+                                            ),
+                                        ]
+                                    ),
                                 ],
-                                $.value.grootboekrekeningen.balans.activa.__to_list(($, id) => ({
-                                    'value': $,
-                                    'id': id,
-                                })).__l_map(($) => sh.t.s.row(
+                                _p.list.from.list(
+                                    $.value.grootboekrekeningen.balans.activa.__to_list(($, id) => ({
+                                        'value': $,
+                                        'id': id,
+                                    }))
+                                ).full_join(
+                                    $.value.grootboekrekeningen.balans.passiva.__to_list(($, id) => ({
+                                        'value': $,
+                                        'id': id,
+                                    })),
+                                    (value, other_value) => ({
+                                        'value': value,
+                                        'other value': other_value,
+                                    })
+                                ).__l_map(($) => sh.t.s.row(
                                     ["item"],
                                     _p.optional.literal.not_set(),
                                     [
                                         sh.t.s.r.td(
                                             ["indent"],
-                                            // _p.decide.state($.value.bron.Stam, ($) => {
-                                            //     switch ($[0]) {
-                                                    
-                                            //         default: return _p.au($[0])
-                                            //     }
-                                            // }),
-                                            _p.optional.literal.not_set(),
+                                            _p.optional.literal.set(2),
                                             []
                                         ),
-                                        sh.t.s.r.td(
-                                            ["indent"],
-                                            _p.optional.literal.not_set(),
-                                            []
-                                        ),
+                                        //activa
                                         sh.t.s.r.td(
                                             [],
                                             _p.optional.literal.not_set(),
                                             [
-                                                sh.f.span([sh.p.p($.id)])
+                                                sh.f.span($.value.__decide(
+                                                    ($) => [sh.p.p($.id)],
+                                                    () => []
+                                                ))
                                             ]
                                         ),
                                         sh.t.s.r.td(
                                             ["bedrag"],
                                             _p.optional.literal.not_set(),
                                             [
-                                                sh.f.span([sh.p.p("123.45")])
+                                                sh.f.span($.value.__decide(
+                                                    ($) => [sh.p.p("" + $.value.bedrag)],
+                                                    () => []
+                                                ))
+                                            ]
+                                        ),
+                                        //passiva
+                                        sh.t.s.r.td(
+                                            [],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span($['other value'].__decide(
+                                                    ($) => [sh.p.p($.id)],
+                                                    () => []
+                                                ))
+                                            ]
+                                        ),
+                                        sh.t.s.r.td(
+                                            ["bedrag"],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span($['other value'].__decide(
+                                                    ($) => [sh.p.p("" + $.value.bedrag)],
+                                                    () => []
+                                                ))
                                             ]
                                         ),
                                     ]
@@ -410,43 +463,102 @@ export const $$: Signature = ($, abort, $p) => {
                                             ),
                                             sh.t.s.r.td(
                                                 [],
-                                                _p.optional.literal.set(3),
+                                                _p.optional.literal.set(5),
                                                 [
                                                     sh.f.span([sh.p.p("resultaat")])
                                                 ]
                                             ),
                                         ]
                                     ),
+                                    sh.t.s.row(
+                                        ["zijde"],
+                                        _p.optional.literal.not_set(),
+                                        [
+                                            sh.t.s.r.td(
+                                                ["indent"],
+                                                _p.optional.literal.set(2),
+                                                []
+                                            ),
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(2),
+                                                [
+                                                    sh.f.span([sh.p.p("kosten")])
+                                                ]
+                                            ),
+                                            sh.t.s.r.td(
+                                                [],
+                                                _p.optional.literal.set(2),
+                                                [
+                                                    sh.f.span([sh.p.p("opbrengsten")])
+                                                ]
+                                            ),
+                                        ]
+                                    ),
                                 ],
-                                $.value.grootboekrekeningen.resultaat.kosten.__to_list(($, id) => ({
-                                    'value': $,
-                                    'id': id,
-                                })).__l_map(($) => sh.t.s.row(
+                                _p.list.from.list(
+                                    $.value.grootboekrekeningen.resultaat.kosten.__to_list(($, id) => ({
+                                        'value': $,
+                                        'id': id,
+                                    }))
+                                ).full_join(
+                                    $.value.grootboekrekeningen.resultaat.opbrengsten.__to_list(($, id) => ({
+                                        'value': $,
+                                        'id': id,
+                                    })),
+                                    (value, other_value) => ({
+                                        'value': value,
+                                        'other value': other_value,
+                                    })
+                                ).__l_map(($) => sh.t.s.row(
                                     ["item"],
                                     _p.optional.literal.not_set(),
                                     [
                                         sh.t.s.r.td(
                                             ["indent"],
-                                            _p.optional.literal.not_set(),
+                                            _p.optional.literal.set(2),
                                             []
                                         ),
-                                        sh.t.s.r.td(
-                                            ["indent"],
-                                            _p.optional.literal.not_set(),
-                                            []
-                                        ),
+                                        //activa
                                         sh.t.s.r.td(
                                             [],
                                             _p.optional.literal.not_set(),
                                             [
-                                                sh.f.span([sh.p.p($.id)])
+                                                sh.f.span($.value.__decide(
+                                                    ($) => [sh.p.p($.id)],
+                                                    () => []
+                                                ))
                                             ]
                                         ),
                                         sh.t.s.r.td(
                                             ["bedrag"],
                                             _p.optional.literal.not_set(),
                                             [
-                                                sh.f.span([sh.p.p("123.45")])
+                                                sh.f.span($.value.__decide(
+                                                    ($) => [sh.p.p("" + $.value.bedrag)],
+                                                    () => []
+                                                ))
+                                            ]
+                                        ),
+                                        //passiva
+                                        sh.t.s.r.td(
+                                            [],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span($['other value'].__decide(
+                                                    ($) => [sh.p.p($.id)],
+                                                    () => []
+                                                ))
+                                            ]
+                                        ),
+                                        sh.t.s.r.td(
+                                            ["bedrag"],
+                                            _p.optional.literal.not_set(),
+                                            [
+                                                sh.f.span($['other value'].__decide(
+                                                    ($) => [sh.p.p("" + $.value.bedrag)],
+                                                    () => []
+                                                ))
                                             ]
                                         ),
                                     ]

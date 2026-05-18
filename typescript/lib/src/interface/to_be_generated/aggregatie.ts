@@ -23,6 +23,7 @@ export type Jaar = {
 
 export type Balans_Grootboekrekening = {
     'bron': d_boekhouding.Grootboekrekeningen.Balans.D
+    'bedrag': number
     'gerelateerde inkopen': _pi.Dictionary<{
         'bron': d_boekhouding.Handelstransacties.Inkopen.D
         'regels': _pi.Dictionary<Gerelateerde_Inkoop_Regel>
@@ -37,6 +38,7 @@ export type Gerelateerde_Inkoop_Regel = {
 
 export type Resultaat_Grootboekrekening = {
     'bron': d_boekhouding.Grootboekrekeningen.Resultaat.D
+    'bedrag': number
     'gerelateerde inkopen': _pi.Dictionary<{
         'bron': d_boekhouding.Handelstransacties.Inkopen.D
         'regels': _pi.Dictionary<Gerelateerde_Inkoop_Regel>

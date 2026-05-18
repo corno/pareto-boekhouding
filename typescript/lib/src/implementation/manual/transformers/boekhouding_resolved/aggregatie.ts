@@ -32,6 +32,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
         const balans_grootboekrekeningen = $.Grootboekrekeningen.Balans.__d_map(($, id): d_out.Balans_Grootboekrekening => {
             return {
                 'bron': $,
+                'bedrag': 123.23,
                 'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
 
                     const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.__d_map(($) => ({
@@ -58,6 +59,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
         })
         const resultaat_grootboekrekeningen = $.Grootboekrekeningen.Resultaat.__d_map(($, id) => ({
             'bron': $,
+                'bedrag': 123.23,
             'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
 
                 const regels: d_out.Gerelateerde_Inkoop_Regels = o_filter_relevant($.Regels.__d_map(($) => {
@@ -87,14 +89,13 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
             'bron': $,
             'grootboekrekeningen': {
                 'balans': {
-                    // 'activa': _p.dictionary.from.dictionary(balans_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'),
-                    // 'passiva': _p.dictionary.from.dictionary(balans_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'),
-                    'activa': balans_grootboekrekeningen,
-                    'passiva': balans_grootboekrekeningen,
+                    'activa': _p.dictionary.from.dictionary(balans_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'),
+                    'passiva': _p.dictionary.from.dictionary(balans_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'),
+
                 },
                 'resultaat': {
-                    'kosten': resultaat_grootboekrekeningen,
-                    'opbrengsten': resultaat_grootboekrekeningen,
+                    'kosten': _p.dictionary.from.dictionary(resultaat_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Kosten'),
+                    'opbrengsten': _p.dictionary.from.dictionary(resultaat_grootboekrekeningen).filter(($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'),
                 }
             },
         }
