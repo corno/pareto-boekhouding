@@ -21,9 +21,15 @@ export type Domein = {
 
 export type Domein_Zijde = {
     'label': string
-    'grootboekrekeningen': _pi.Dictionary<Grootboekrekening>
+    'hoofdcategorieen': _pi.Dictionary<{
+        'subcategorieen': _pi.Dictionary<{
+            'grootboekrekeningen': _pi.Dictionary<Grootboekrekening>
+            'totaal': number
+        }>
+        'totaal': number
+    }>
     'totaal': number
-    
+
 }
 
 export type Grootboekrekening = {

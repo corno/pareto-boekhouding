@@ -18,28 +18,29 @@ import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/impleme
 import * as t_deserialize_resolved_to_location from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/location"
 import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 import * as t_html_to_fountain_pen from "pareto-static-html/dist/implementation/manual/transformers/static_html/fountain_pen"
-import * as t_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
+import * as t_primitives_to_text from "../transformers/primitives/text"
 
 //shorthands
 import * as sh_fp from "pareto-fountain-pen/dist/shorthands/prose"
 import * as sh from "pareto-static-html/dist/shorthands/static_html"
+
+//data
+import { css } from "../../../data/css"
 
 
 const Bedrag = ($: number): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
     ["bedrag"],
     _p.optional.literal.not_set(),
     [
-        sh.f.span([sh.p.p("€ " + t_primitives_to_text.fractional_decimal($, { 'number of fractional digits': 2 }))])
+        sh.f.span([sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
+            $,
+            {
+                'number of fractional digits': 2,
+                'decimal separator character code': 44, // ','
+                'thousand separator character code': 46, // '.'
+            }
+        ))])
     ]
-)
-
-const Optioneel_Bedrag = ($: _pi.Optional_Value<number>): d_html.Flow_Element.table.sections.L.rows.L.cells.L => $.__decide(
-    ($) => Bedrag($),
-    () => sh.t.s.r.td(
-        ["missend-bedrag"],
-        _p.optional.literal.not_set(),
-        []
-    )
 )
 
 const Text = ($: string): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
@@ -58,14 +59,66 @@ const Span_Text = (text: string, number_of_cell: number): d_html.Flow_Element.ta
     ]
 )
 
-const Indent = (depth: number): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
-    ["indent"],
+const Span_Indent = (depth: number): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["span-indent"],
     _p.optional.literal.set(depth),
+    []
+)
+
+const Indent = (): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["indent"],
+    _p.optional.literal.not_set(),
+    []
+)
+
+const Indent_Blank = (): d_html.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+    ["indent blank"],
+    _p.optional.literal.not_set(),
     []
 )
 
 
 
+
+const Domein_Zijde = (
+    $: d_agg.Domein_Zijde,
+): _pi.List<d_html.Flow_Element.table.sections.L.rows.L.cells> => _p.list.from.dictionary(
+    $.hoofdcategorieen
+).flatten(($, id) => _p.list.nested_literal_old<d_html.Flow_Element.table.sections.L.rows.L.cells>([
+    [
+        _p.list.literal([
+            Span_Text(id, 3),
+            Span_Indent(2),
+            Bedrag($.totaal),
+        ])
+    ],
+    _p.list.from.dictionary(
+        $.subcategorieen
+    ).flatten(($, id) => _p.list.nested_literal_old<d_html.Flow_Element.table.sections.L.rows.L.cells>([
+        [
+            _p.list.literal([
+                Indent(),
+                Span_Text(id, 2),
+                Indent(),
+                Bedrag($.totaal),
+                Indent(),
+            ])
+        ],
+        _p.list.from.dictionary(
+            $.grootboekrekeningen
+        ).flatten(($, id) => _p.list.nested_literal_old<d_html.Flow_Element.table.sections.L.rows.L.cells>([
+            [
+                _p.list.literal([
+                    Indent(),
+                    Indent(),
+                    Text(id),
+                    Bedrag($.bedrag),
+                    Span_Indent(2),
+                ])
+            ]
+        ]))
+    ]))
+]))
 
 const Domein = (
     $: d_agg.Domein,
@@ -74,34 +127,30 @@ const Domein = (
     }
 ): d_html.Flow_Element.table.sections.L.rows => _p.list.nested_literal_old([
     [
-        sh.t.s.row(
-            ["grootboek_categorie"],
-            _p.optional.literal.not_set(),
-            [
-                Indent(2),
-                Span_Text($p.label, 5),
-            ]
-        ),
+        sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
         sh.t.s.row(
             ["domein"],
             _p.optional.literal.not_set(),
             [
-                Indent(2),
-                Span_Text($.links.label, 2),
-                Span_Text($.rechts.label, 2),
+                Indent_Blank(),
+                Span_Text($p.label, 13),
+            ]
+        ),
+        sh.t.s.row(
+            ["domein_zijde"],
+            _p.optional.literal.not_set(),
+            [
+                Indent_Blank(),
+                Indent_Blank(),
+                Span_Text($.links.label, 6),
+                Span_Text($.rechts.label, 6),
             ]
         ),
     ],
     _p.list.from.list(
-        $.links.grootboekrekeningen.__to_list(($, id) => ({
-            'value': $,
-            'id': id,
-        }))
+        Domein_Zijde($.links)
     ).full_join(
-        $.rechts.grootboekrekeningen.__to_list(($, id) => ({
-            'value': $,
-            'id': id,
-        })),
+        Domein_Zijde($.rechts),
         (value, other_value) => ({
             'links': value,
             'rechts': other_value,
@@ -109,31 +158,33 @@ const Domein = (
     ).__l_map(($) => sh.t.s.row(
         ["item"],
         _p.optional.literal.not_set(),
-        [
-            Indent(2),
-            //activa
-            Text($.links.__decide(
-                ($) => $.id,
-                () => ""
-            )),
-            Optioneel_Bedrag(_p.optional.from.optional($.links).map(($) => $.value.bedrag)),
-            //passiva
-            Text($.rechts.__decide(
-                ($) => $.id,
-                () => ""
-            )),
-            Optioneel_Bedrag(_p.optional.from.optional($['rechts']).map(($) => $.value.bedrag)),
-        ]
+        _p.list.nested_literal_old([
+            [
+                Indent_Blank(),
+                Indent_Blank(),
+            ],
+            $.links.__decide(
+                ($) => $,
+                () => _p.list.literal([Span_Indent(6)])
+            ),
+            $.rechts.__decide(
+                ($) => $,
+                () => _p.list.literal([Span_Indent(6)])
+            ),
+        ])
     )),
     [
         sh.t.s.row(
             ["totaal"],
             _p.optional.literal.not_set(),
             [
-                Indent(2),
+                Indent_Blank(),
+                Indent_Blank(),
                 Text("totaal"),
+                Span_Indent(4),
                 Bedrag($.links.totaal),
                 Text("totaal"),
+                Span_Indent(4),
                 Bedrag($.rechts.totaal),
             ]
         ),
@@ -162,341 +213,9 @@ export const $$: Signature = ($, abort, $p) => {
         )
     )
 
-    //temp
-    // x3.jaren.__d_map(($, id) => {
-    //     _p_log_debug_message(id, () => { })
-    //     _p_log_debug_message("  'balans'", () => { })
-    //     $.grootboekrekeningen.balans.__d_map(($, id) => {
-    //         _p_log_debug_message("    ${key}", () => { })
-    //         _p_log_debug_message("      'inkopen'", () => { })
-    //         $['gerelateerde inkopen'].__d_map(($, id) => {
-    //             _p_log_debug_message("        ${key}", () => { })
-    //         })
-    //     })
-    //     _p_log_debug_message("  'resultaat'", () => { })
-    //     $.grootboekrekeningen.resultaat.__d_map(($, id) => {
-    //         _p_log_debug_message("    ${key}", () => { })
-    //         _p_log_debug_message("      'inkopen'", () => { })
-    //         $['gerelateerde inkopen'].__d_map(($, id) => {
-    //             _p_log_debug_message("        ${key}", () => { })
-    //         })
-    //     })
-    // })
     return t_html_to_fountain_pen.Document(
         sh.document(
-            `
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                margin: 20px;
-                background-color: #f8f9fa;
-                color: #333;
-            }
-            
-            /* Remove spacing from nested p and div tags */
-            p {
-                margin: 0;
-                padding: 0;
-            }
-            
-            div {
-                margin: 0;
-                padding: 0;
-            }
-            
-            table {
-                border-collapse: collapse;
-                background-color: white;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                border-radius: 8px;
-                overflow: hidden;
-                margin: 5px 0;
-                table-layout: auto;
-                width: auto;
-            }
-            
-            thead {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-            }
-            
-            thead th {
-                padding: 1px 4px;
-                text-align: right;
-                font-weight: 600;
-                font-size: 14px;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-                border-right: 1px solid rgba(255, 255, 255, 0.3);
-                white-space: nowrap;
-                line-height: 1.1;
-            }
-            
-            /* Title row styling */
-            thead.title {
-                background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
-            }
-            
-            thead.title th {
-                font-size: 18px;
-                font-weight: 700;
-                text-align: center;
-                padding: 8px 12px;
-                letter-spacing: 1px;
-            }
-            
-            tbody tr {
-                transition: background-color 0.2s ease;
-            }
-            
-            tbody tr:nth-child(even) {
-                background-color: #f8f9fa;
-            }
-            
-            tbody tr:hover {
-                background-color: #e9ecef;
-            }
-            
-            tbody td {
-                padding: 1px 4px;
-                border-bottom: 1px solid #dee2e6;
-                border-right: 1px solid #dee2e6;
-                font-size: 13px;
-                white-space: nowrap;
-                line-height: 1.2;
-            }
-            
-            /* Indent cells for hierarchical structure */
-            td.indent {
-                width: 20px;
-                min-width: 20px;
-                max-width: 20px;
-                padding: 0;
-                background-color: transparent !important;
-                border: none !important;
-            }
-            
-            /* Right-align amount cells */
-            td.bedrag {
-                text-align: right;
-                font-variant-numeric: tabular-nums;
-            }
-            
-            /* Special styling for year rows */
-            tbody tr.jaar {
-                background-color: #2c3e50 !important;
-            }
-            
-            tbody tr.jaar td {
-                font-size: 16px;
-                font-weight: 700;
-                color: white !important;
-                padding: 4px 8px;
-                border-bottom: 2px solid #1a252f;
-            }
-            
-            /* Special styling for grootboek_categorie rows */
-            tbody tr.grootboek_categorie {
-                background-color: transparent;
-            }
-            
-            tbody tr.grootboek_categorie td:not(.indent) {
-                font-size: 14px;
-                font-weight: 600;
-                color: white !important;
-                padding: 3px 8px;
-                border-bottom: 2px solid #5568d3;
-                background-color: #667eea !important;
-            }
-            
-            tbody tr.domein {
-                background-color: transparent;
-            }
-            
-            tbody tr.domein td:not(.indent) {
-                font-size: 13px;
-                font-weight: 500;
-                color: #2c3e50 !important;
-                padding: 2px 8px;
-                border-bottom: 1px solid #b3c2f5;
-                background-color: #aab8f0 !important;
-            }
-            
-            /* Special styling for totaal (total) rows */
-            tbody tr.totaal td {
-                font-weight: 700;
-            }
-            
-            /* Indent cells in special rows should not have borders */
-            tbody tr.jaar td.indent,
-            tbody tr.grootboek_categorie td.indent,
-            tbody tr.domein td.indent {
-                border: none;
-                background-color: transparent;
-            }
-            
-            /* Margin rows as separators */
-            tr.margin {
-                height: 20px;
-                background-color: transparent;
-            }
-            
-            tr.margin td {
-                border: none;
-                padding: 0;
-            }
-            
-            div.jaar span {
-                font-size: 18px;
-                font-weight: 700;
-                color: #495057;
-            }
-            
-            div.categorie span {
-                font-size: 16px;
-                font-weight: 600;
-                color: #667eea;
-            }
-            
-            /* Responsive design */
-            @media (max-width: 1200px) {
-                table {
-                    font-size: 11px;
-                }
-                
-                thead th, tbody td {
-                    padding: 1px 4px;
-                }
-                
-                td.indent {
-                    width: 15px;
-                    min-width: 15px;
-                    max-width: 15px;
-                }
-            }
-            
-            @media (max-width: 768px) {
-                body {
-                    margin: 10px;
-                }
-                
-                table {
-                    font-size: 10px;
-                }
-                
-                thead th, tbody td {
-                    padding: 1px 3px;
-                }
-                
-                td.indent {
-                    width: 10px;
-                    min-width: 10px;
-                    max-width: 10px;
-                }
-            }
-            
-            /* Print styles */
-            @media print {
-                @page {
-                    size: A4 landscape;
-                    margin: 0.5in;
-                }
-                
-                body {
-                    background-color: white;
-                    margin: 0;
-                    font-size: 8px;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                table {
-                    box-shadow: none;
-                    border: 1px solid #000;
-                    width: auto;
-                    font-size: 7px;
-                    page-break-inside: auto;
-                }
-                
-                /* Keep each year group together on print */
-                tbody.jaar {
-                    page-break-inside: avoid;
-                    break-inside: avoid;
-                }
-                
-                thead {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-                    color: white !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                thead th {
-                    padding: 1px 2px;
-                    font-size: 6px;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                thead.title {
-                    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%) !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                thead.title th {
-                    font-size: 10px;
-                    padding: 4px 6px;
-                }
-                
-                tbody td {
-                    padding: 1px 2px;
-                    font-size: 6px;
-                    line-height: 1.1;
-                }
-                
-                tbody tr:nth-child(even) {
-                    background-color: #f8f9fa !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                tbody tr.jaar {
-                    background-color: #2c3e50 !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                tbody tr.jaar td {
-                    color: white !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                tbody tr.grootboek_categorie td:not(.indent) {
-                    background-color: #667eea !important;
-                    color: white !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                tbody tr.domein td:not(.indent) {
-                    background-color: #aab8f0 !important;
-                    color: #2c3e50 !important;
-                    -webkit-print-color-adjust: exact;
-                    print-color-adjust: exact;
-                }
-                
-                tr.totaal td {
-                    font-weight: 700;
-                }
-                
-                td.indent {
-                    width: 10px;
-                    min-width: 10px;
-                    max-width: 10px;
-                }
-            }
-            `,
+            css,
             sh.f.div([
                 sh.f.table(
                     [],
@@ -509,7 +228,7 @@ export const $$: Signature = ($, abort, $p) => {
                                     [
                                         sh.t.s.r.th(
                                             [],
-                                            _p.optional.literal.set(6),
+                                            _p.optional.literal.set(14),
                                             [
                                                 sh.f.span([sh.p.p("Jaarrekeningen")])
                                             ]
@@ -532,7 +251,7 @@ export const $$: Signature = ($, abort, $p) => {
                                         ["jaar"],
                                         _p.optional.literal.not_set(),
                                         [
-                                            Span_Text($.id, 6),
+                                            Span_Text($.id, 14),
                                         ]
                                     ),
                                 ],
