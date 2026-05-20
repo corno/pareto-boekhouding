@@ -1962,80 +1962,101 @@
                             `description`: _
                             `value`: | `dictionary` (
                                 `value`: | `dictionary` (
-                                    `value`: | `state` (
-                                        `options`: {
-                                            'Resultaat': (
-                                                `constraints`: _
-                                                `description`: _
-                                                `value`: | `component` (
-                                                    `type`: | `internal` 'Balans Resultaat Mutatie'
-                                                    `results`: _
+                                    `value`: | `group` {
+                                        'mutatie': (
+                                            `description`: _
+                                            `value`: | `reference` (
+                                                `referent`: (
+                                                    `module`: (
+                                                        `location`: | `internal` 'Jaarbeheer'
+                                                        `resulting module`: ~
+                                                    )
+                                                    `path`: (
+                                                        `tail`: [ | `group` 'Balans' | `group` 'Bankrekeningen' | `dictionary` ~ | `group` 'Mutaties' | `dictionary` ~ ]
+                                                        `resulting node`: ~
+                                                    )
                                                 )
+                                                `type`: | `derived` ~
                                             )
-                                            'Balans': (
-                                                `constraints`: _
-                                                `description`: _
-                                                `value`: | `state` (
-                                                    `options`: {
-                                                        'Informele rekening': (
-                                                            `constraints`: _
-                                                            `description`: _
-                                                            `value`: | `group` {
+                                        )
+                                        'type': (
+                                            `description`: _
+                                            `value`: | `state` (
+                                                `options`: {
+                                                    'Resultaat': (
+                                                        `constraints`: _
+                                                        `description`: _
+                                                        `value`: | `component` (
+                                                            `type`: | `internal` 'Balans Resultaat Mutatie'
+                                                            `results`: _
+                                                        )
+                                                    )
+                                                    'Balans': (
+                                                        `constraints`: _
+                                                        `description`: _
+                                                        `value`: | `state` (
+                                                            `options`: {
                                                                 'Informele rekening': (
+                                                                    `constraints`: _
                                                                     `description`: _
-                                                                    `value`: | `reference` (
-                                                                        `referent`: (
-                                                                            `module`: (
-                                                                                `location`: | `internal` 'Jaarbeheer'
-                                                                                `resulting module`: ~
-                                                                            )
-                                                                            `path`: (
-                                                                                `tail`: [ | `group` 'Balans' | `group` 'Informele rekeningen' ]
-                                                                                `resulting node`: ~
+                                                                    `value`: | `group` {
+                                                                        'Informele rekening': (
+                                                                            `description`: _
+                                                                            `value`: | `reference` (
+                                                                                `referent`: (
+                                                                                    `module`: (
+                                                                                        `location`: | `internal` 'Jaarbeheer'
+                                                                                        `resulting module`: ~
+                                                                                    )
+                                                                                    `path`: (
+                                                                                        `tail`: [ | `group` 'Balans' | `group` 'Informele rekeningen' ]
+                                                                                        `resulting node`: ~
+                                                                                    )
+                                                                                )
+                                                                                `type`: | `selected` (
+                                                                                    `dictionary`: ~
+                                                                                    `dependency`: | `acyclic` ~
+                                                                                    `results`: _
+                                                                                )
                                                                             )
                                                                         )
-                                                                        `type`: | `selected` (
-                                                                            `dictionary`: ~
-                                                                            `dependency`: | `acyclic` ~
-                                                                            `results`: _
-                                                                        )
-                                                                    )
+                                                                    }
                                                                 )
-                                                            }
-                                                        )
-                                                        'Verrekenpost': (
-                                                            `constraints`: _
-                                                            `description`: _
-                                                            `value`: | `group` {
                                                                 'Verrekenpost': (
+                                                                    `constraints`: _
                                                                     `description`: _
-                                                                    `value`: | `reference` (
-                                                                        `referent`: (
-                                                                            `module`: (
-                                                                                `location`: | `internal` 'Jaarbeheer'
-                                                                                `resulting module`: ~
-                                                                            )
-                                                                            `path`: (
-                                                                                `tail`: [ | `group` 'Balans' | `group` 'Verrekenposten' ]
-                                                                                `resulting node`: ~
+                                                                    `value`: | `group` {
+                                                                        'Verrekenpost': (
+                                                                            `description`: _
+                                                                            `value`: | `reference` (
+                                                                                `referent`: (
+                                                                                    `module`: (
+                                                                                        `location`: | `internal` 'Jaarbeheer'
+                                                                                        `resulting module`: ~
+                                                                                    )
+                                                                                    `path`: (
+                                                                                        `tail`: [ | `group` 'Balans' | `group` 'Verrekenposten' ]
+                                                                                        `resulting node`: ~
+                                                                                    )
+                                                                                )
+                                                                                `type`: | `selected` (
+                                                                                    `dictionary`: ~
+                                                                                    `dependency`: | `acyclic` ~
+                                                                                    `results`: _
+                                                                                )
                                                                             )
                                                                         )
-                                                                        `type`: | `selected` (
-                                                                            `dictionary`: ~
-                                                                            `dependency`: | `acyclic` ~
-                                                                            `results`: _
-                                                                        )
-                                                                    )
+                                                                    }
                                                                 )
                                                             }
+                                                            `results`: _
                                                         )
-                                                    }
-                                                    `results`: _
-                                                )
+                                                    )
+                                                }
+                                                `results`: _
                                             )
-                                        }
-                                        `results`: _
-                                    )
+                                        )
+                                    }
                                 )
                             )
                         )
@@ -4874,90 +4895,111 @@
                                     `definition`: ~
                                     `resolver`: | `dictionary` (
                                         `definition`: ~
-                                        `resolver`: | `state` (
-                                            `definition`: ~
-                                            `options`: {
-                                                'Resultaat': (
-                                                    `constraints`: {}
-                                                    `resolver`: | `component` (
-                                                        `definition`: ~
-                                                        `location`: | `internal` 'Balans Resultaat Mutatie'
-                                                        `signature`: ~
-                                                        `arguments`: * (
-                                                            `modules`: _
-                                                            `lookups`: _
+                                        `resolver`: | `group` {
+                                            'mutatie': (
+                                                `definition`: ~
+                                                `resolver`: | `reference` (
+                                                    `definition`: ~
+                                                    `type`: | `derived` (
+                                                        `value`: (
+                                                            `start`: | `linked entry` ~
+                                                            `tail`: (
+                                                                `path`: [ ]
+                                                                `resulting node`: ~
+                                                            )
+                                                            `resulting node`: ~
                                                         )
-                                                        `constraints`: {}
                                                     )
                                                 )
-                                                'Balans': (
-                                                    `constraints`: {}
-                                                    `resolver`: | `state` (
-                                                        `definition`: ~
-                                                        `options`: {
-                                                            'Verrekenpost': (
+                                            )
+                                            'type': (
+                                                `definition`: ~
+                                                `resolver`: | `state` (
+                                                    `definition`: ~
+                                                    `options`: {
+                                                        'Resultaat': (
+                                                            `constraints`: {}
+                                                            `resolver`: | `component` (
+                                                                `definition`: ~
+                                                                `location`: | `internal` 'Balans Resultaat Mutatie'
+                                                                `signature`: ~
+                                                                `arguments`: * (
+                                                                    `modules`: _
+                                                                    `lookups`: _
+                                                                )
                                                                 `constraints`: {}
-                                                                `resolver`: | `group` {
+                                                            )
+                                                        )
+                                                        'Balans': (
+                                                            `constraints`: {}
+                                                            `resolver`: | `state` (
+                                                                `definition`: ~
+                                                                `options`: {
                                                                     'Verrekenpost': (
-                                                                        `definition`: ~
-                                                                        `resolver`: | `reference` (
-                                                                            `definition`: ~
-                                                                            `type`: | `selected` (
+                                                                        `constraints`: {}
+                                                                        `resolver`: | `group` {
+                                                                            'Verrekenpost': (
                                                                                 `definition`: ~
-                                                                                `lookup`: (
-                                                                                    `type`: | `acyclic` | `resolved dictionary` (
-                                                                                        `selection`: (
-                                                                                            `start`: | `parameter` 'Jaarbeheer'
-                                                                                            `tail`: (
-                                                                                                `path`: [ | `group` 'Balans' | `group` 'Verrekenposten' ]
-                                                                                                `resulting node`: ~
+                                                                                `resolver`: | `reference` (
+                                                                                    `definition`: ~
+                                                                                    `type`: | `selected` (
+                                                                                        `definition`: ~
+                                                                                        `lookup`: (
+                                                                                            `type`: | `acyclic` | `resolved dictionary` (
+                                                                                                `selection`: (
+                                                                                                    `start`: | `parameter` 'Jaarbeheer'
+                                                                                                    `tail`: (
+                                                                                                        `path`: [ | `group` 'Balans' | `group` 'Verrekenposten' ]
+                                                                                                        `resulting node`: ~
+                                                                                                    )
+                                                                                                    `resulting node`: ~
+                                                                                                )
+                                                                                                `selected dictionary`: ~
                                                                                             )
-                                                                                            `resulting node`: ~
+                                                                                            `resulting dictionary`: ~
                                                                                         )
-                                                                                        `selected dictionary`: ~
+                                                                                        `constraints`: {}
                                                                                     )
-                                                                                    `resulting dictionary`: ~
                                                                                 )
-                                                                                `constraints`: {}
                                                                             )
-                                                                        )
+                                                                        }
                                                                     )
-                                                                }
-                                                            )
-                                                            'Informele rekening': (
-                                                                `constraints`: {}
-                                                                `resolver`: | `group` {
                                                                     'Informele rekening': (
-                                                                        `definition`: ~
-                                                                        `resolver`: | `reference` (
-                                                                            `definition`: ~
-                                                                            `type`: | `selected` (
+                                                                        `constraints`: {}
+                                                                        `resolver`: | `group` {
+                                                                            'Informele rekening': (
                                                                                 `definition`: ~
-                                                                                `lookup`: (
-                                                                                    `type`: | `acyclic` | `resolved dictionary` (
-                                                                                        `selection`: (
-                                                                                            `start`: | `parameter` 'Jaarbeheer'
-                                                                                            `tail`: (
-                                                                                                `path`: [ | `group` 'Balans' | `group` 'Informele rekeningen' ]
-                                                                                                `resulting node`: ~
+                                                                                `resolver`: | `reference` (
+                                                                                    `definition`: ~
+                                                                                    `type`: | `selected` (
+                                                                                        `definition`: ~
+                                                                                        `lookup`: (
+                                                                                            `type`: | `acyclic` | `resolved dictionary` (
+                                                                                                `selection`: (
+                                                                                                    `start`: | `parameter` 'Jaarbeheer'
+                                                                                                    `tail`: (
+                                                                                                        `path`: [ | `group` 'Balans' | `group` 'Informele rekeningen' ]
+                                                                                                        `resulting node`: ~
+                                                                                                    )
+                                                                                                    `resulting node`: ~
+                                                                                                )
+                                                                                                `selected dictionary`: ~
                                                                                             )
-                                                                                            `resulting node`: ~
+                                                                                            `resulting dictionary`: ~
                                                                                         )
-                                                                                        `selected dictionary`: ~
+                                                                                        `constraints`: {}
                                                                                     )
-                                                                                    `resulting dictionary`: ~
                                                                                 )
-                                                                                `constraints`: {}
                                                                             )
-                                                                        )
+                                                                        }
                                                                     )
                                                                 }
                                                             )
-                                                        }
-                                                    )
+                                                        )
+                                                    }
                                                 )
-                                            }
-                                        )
+                                            )
+                                        }
                                         `benchmark`: _
                                     )
                                     `benchmark`: * (

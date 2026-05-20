@@ -4190,128 +4190,137 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                         ).map(
                             ($, id) => ({
                                 'l entry': {
-                                    'l location': ['in main document', {
-                                        'start': {
-                                            'absolute': 42,
-                                            'relative': {
-                                                'line': 42,
-                                                'column': 42,
-                                            },
-                                        },
-                                        'end': {
-                                            'absolute': 42,
-                                            'relative': {
-                                                'line': 42,
-                                                'column': 42,
-                                            },
-                                        },
-                                    }],
-                                    'l state': _p.decide.state(
-                                        $,
-                                        ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state => {
-                                            switch ($[0]) {
-                                                case 'Resultaat':
-                                                    return _p.ss(
-                                                        $,
-                                                        ($) => ['Resultaat', Balans_Resultaat_Mutatie(
-                                                            $,
-                                                        )],
-                                                    )
-                                                case 'Balans':
-                                                    return _p.ss(
-                                                        $,
-                                                        ($) => ['Balans', {
-                                                            'l location': ['in main document', {
-                                                                'start': {
-                                                                    'absolute': 42,
-                                                                    'relative': {
-                                                                        'line': 42,
-                                                                        'column': 42,
-                                                                    },
-                                                                },
-                                                                'end': {
-                                                                    'absolute': 42,
-                                                                    'relative': {
-                                                                        'line': 42,
-                                                                        'column': 42,
-                                                                    },
-                                                                },
-                                                            }],
-                                                            'l state': _p.decide.state(
+                                    'mutatie': _p_change_context(
+                                        $['mutatie'],
+                                        ($) => null,
+                                    ),
+                                    'type': _p_change_context(
+                                        $['type'],
+                                        ($) => ({
+                                            'l location': ['in main document', {
+                                                'start': {
+                                                    'absolute': 42,
+                                                    'relative': {
+                                                        'line': 42,
+                                                        'column': 42,
+                                                    },
+                                                },
+                                                'end': {
+                                                    'absolute': 42,
+                                                    'relative': {
+                                                        'line': 42,
+                                                        'column': 42,
+                                                    },
+                                                },
+                                            }],
+                                            'l state': _p.decide.state(
+                                                $,
+                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.type_.l_state => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat':
+                                                            return _p.ss(
                                                                 $,
-                                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state.Balans.l_state => {
-                                                                    switch ($[0]) {
-                                                                        case 'Informele rekening':
-                                                                            return _p.ss(
-                                                                                $,
-                                                                                ($) => ['Informele rekening', {
-                                                                                    'Informele rekening': _p_change_context(
-                                                                                        $['Informele rekening'],
-                                                                                        ($) => ({
-                                                                                            'l location': ['in main document', {
-                                                                                                'start': {
-                                                                                                    'absolute': 42,
-                                                                                                    'relative': {
-                                                                                                        'line': 42,
-                                                                                                        'column': 42,
-                                                                                                    },
-                                                                                                },
-                                                                                                'end': {
-                                                                                                    'absolute': 42,
-                                                                                                    'relative': {
-                                                                                                        'line': 42,
-                                                                                                        'column': 42,
-                                                                                                    },
-                                                                                                },
-                                                                                            }],
-                                                                                            'l reference': $['l id'],
-                                                                                        }),
-                                                                                    ),
-                                                                                }],
-                                                                            )
-                                                                        case 'Verrekenpost':
-                                                                            return _p.ss(
-                                                                                $,
-                                                                                ($) => ['Verrekenpost', {
-                                                                                    'Verrekenpost': _p_change_context(
-                                                                                        $['Verrekenpost'],
-                                                                                        ($) => ({
-                                                                                            'l location': ['in main document', {
-                                                                                                'start': {
-                                                                                                    'absolute': 42,
-                                                                                                    'relative': {
-                                                                                                        'line': 42,
-                                                                                                        'column': 42,
-                                                                                                    },
-                                                                                                },
-                                                                                                'end': {
-                                                                                                    'absolute': 42,
-                                                                                                    'relative': {
-                                                                                                        'line': 42,
-                                                                                                        'column': 42,
-                                                                                                    },
-                                                                                                },
-                                                                                            }],
-                                                                                            'l reference': $['l id'],
-                                                                                        }),
-                                                                                    ),
-                                                                                }],
-                                                                            )
-                                                                        default:
-                                                                            return _p.au(
-                                                                                $[0],
-                                                                            )
-                                                                    }
-                                                                },
-                                                            ),
-                                                        }],
-                                                    )
-                                                default:
-                                                    return _p.au(
-                                                        $[0],
-                                                    )
-                                            }
-                                        },
+                                                                ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                    $,
+                                                                )],
+                                                            )
+                                                        case 'Balans':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ['Balans', {
+                                                                    'l location': ['in main document', {
+                                                                        'start': {
+                                                                            'absolute': 42,
+                                                                            'relative': {
+                                                                                'line': 42,
+                                                                                'column': 42,
+                                                                            },
+                                                                        },
+                                                                        'end': {
+                                                                            'absolute': 42,
+                                                                            'relative': {
+                                                                                'line': 42,
+                                                                                'column': 42,
+                                                                            },
+                                                                        },
+                                                                    }],
+                                                                    'l state': _p.decide.state(
+                                                                        $,
+                                                                        ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.type_.l_state.Balans.l_state => {
+                                                                            switch ($[0]) {
+                                                                                case 'Informele rekening':
+                                                                                    return _p.ss(
+                                                                                        $,
+                                                                                        ($) => ['Informele rekening', {
+                                                                                            'Informele rekening': _p_change_context(
+                                                                                                $['Informele rekening'],
+                                                                                                ($) => ({
+                                                                                                    'l location': ['in main document', {
+                                                                                                        'start': {
+                                                                                                            'absolute': 42,
+                                                                                                            'relative': {
+                                                                                                                'line': 42,
+                                                                                                                'column': 42,
+                                                                                                            },
+                                                                                                        },
+                                                                                                        'end': {
+                                                                                                            'absolute': 42,
+                                                                                                            'relative': {
+                                                                                                                'line': 42,
+                                                                                                                'column': 42,
+                                                                                                            },
+                                                                                                        },
+                                                                                                    }],
+                                                                                                    'l reference': $['l id'],
+                                                                                                }),
+                                                                                            ),
+                                                                                        }],
+                                                                                    )
+                                                                                case 'Verrekenpost':
+                                                                                    return _p.ss(
+                                                                                        $,
+                                                                                        ($) => ['Verrekenpost', {
+                                                                                            'Verrekenpost': _p_change_context(
+                                                                                                $['Verrekenpost'],
+                                                                                                ($) => ({
+                                                                                                    'l location': ['in main document', {
+                                                                                                        'start': {
+                                                                                                            'absolute': 42,
+                                                                                                            'relative': {
+                                                                                                                'line': 42,
+                                                                                                                'column': 42,
+                                                                                                            },
+                                                                                                        },
+                                                                                                        'end': {
+                                                                                                            'absolute': 42,
+                                                                                                            'relative': {
+                                                                                                                'line': 42,
+                                                                                                                'column': 42,
+                                                                                                            },
+                                                                                                        },
+                                                                                                    }],
+                                                                                                    'l reference': $['l id'],
+                                                                                                }),
+                                                                                            ),
+                                                                                        }],
+                                                                                    )
+                                                                                default:
+                                                                                    return _p.au(
+                                                                                        $[0],
+                                                                                    )
+                                                                            }
+                                                                        },
+                                                                    ),
+                                                                }],
+                                                            )
+                                                        default:
+                                                            return _p.au(
+                                                                $[0],
+                                                            )
+                                                    }
+                                                },
+                                            ),
+                                        }),
                                     ),
                                 },
                                 'l location': ['in main document', {

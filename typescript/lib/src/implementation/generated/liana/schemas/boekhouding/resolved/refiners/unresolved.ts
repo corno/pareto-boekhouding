@@ -3767,7 +3767,17 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                     $['l entry'],
                     ($) => _p_variables(
                         () => {
-
+                            const bankrekening = $p.Jaarbeheer.Balans.Bankrekeningen.__get_entry_deprecated(
+                                id,
+                                {
+                                    'no_such_entry': () => abort(
+                                        {
+                                            'type': ['lookup', ['no such entry', id]],
+                                            'location': $['l location'],
+                                        },
+                                    ),
+                                }
+                            )
                             // const var_referenced_entry = _pdev.implement_me(
                             //     "IM: referenced entry",
                             // )
@@ -3776,140 +3786,169 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                             ).resolve_static(
                                 ($, id, $a, $c): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_change_context(
                                     $['l entry'],
-                                    ($) => _p_variables(
-                                        () => {
+                                    ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => _p_variables(
+                                        (): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
 
-                                            const var_location = $['l location']
-                                            return _p.decide.state(
-                                                $['l state'],
-                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D => {
-                                                    switch ($[0]) {
-                                                        case 'Resultaat':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Resultaat', Balans_Resultaat_Mutatie(
-                                                                    $,
-                                                                    ($) => abort(
-                                                                        $,
-                                                                    ),
-                                                                    $l,
-                                                                    $p,
-                                                                )],
-                                                            )
-                                                        case 'Balans':
-                                                            return _p.ss(
-                                                                $,
-                                                                ($) => ['Balans', _p_variables(
-                                                                    () => {
-
-                                                                        const var_location = $['l location']
-                                                                        return _p.decide.state(
-                                                                            $['l state'],
-                                                                            ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.Balans => {
-                                                                                switch ($[0]) {
-                                                                                    case 'Verrekenpost':
-                                                                                        return _p.ss(
-                                                                                            $,
-                                                                                            ($) => ['Verrekenpost', _p.group.literal.resolve(
-                                                                                                () => {
-
-                                                                                                    const prop_Verrekenpost = _p_change_context(
-                                                                                                        $['Verrekenpost'],
-                                                                                                        ($) => ({
-                                                                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
-                                                                                                                $p['Jaarbeheer'].Balans.Verrekenposten,
-                                                                                                            ).get_entry(
-                                                                                                                $['l reference'],
-                                                                                                                {
-                                                                                                                    no_such_entry: () => abort(
-                                                                                                                        {
-                                                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                                            'location': $['l location'],
-                                                                                                                        },
-                                                                                                                    ),
-                                                                                                                    no_context_lookup: () => abort(
-                                                                                                                        {
-                                                                                                                            'type': ['lookup', ['no context lookup', null]],
-                                                                                                                            'location': $['l location'],
-                                                                                                                        },
-                                                                                                                    ),
-                                                                                                                    cycle_detected: () => abort(
-                                                                                                                        {
-                                                                                                                            'type': ['lookup', ['cycle detected', null]],
-                                                                                                                            'location': $['l location'],
-                                                                                                                        },
-                                                                                                                    ),
-                                                                                                                },
-                                                                                                            ),
-                                                                                                            'l id': $['l reference'],
-                                                                                                        }),
-                                                                                                    )
-                                                                                                    return {
-                                                                                                        'Verrekenpost': prop_Verrekenpost,
-                                                                                                    }
-                                                                                                },
-                                                                                            )],
-                                                                                        )
-                                                                                    case 'Informele rekening':
-                                                                                        return _p.ss(
-                                                                                            $,
-                                                                                            ($) => ['Informele rekening', _p.group.literal.resolve(
-                                                                                                () => {
-
-                                                                                                    const prop_Informele_rekening = _p_change_context(
-                                                                                                        $['Informele rekening'],
-                                                                                                        ($) => ({
-                                                                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
-                                                                                                                $p['Jaarbeheer'].Balans['Informele rekeningen'],
-                                                                                                            ).get_entry(
-                                                                                                                $['l reference'],
-                                                                                                                {
-                                                                                                                    no_such_entry: () => abort(
-                                                                                                                        {
-                                                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                                                            'location': $['l location'],
-                                                                                                                        },
-                                                                                                                    ),
-                                                                                                                    no_context_lookup: () => abort(
-                                                                                                                        {
-                                                                                                                            'type': ['lookup', ['no context lookup', null]],
-                                                                                                                            'location': $['l location'],
-                                                                                                                        },
-                                                                                                                    ),
-                                                                                                                    cycle_detected: () => abort(
-                                                                                                                        {
-                                                                                                                            'type': ['lookup', ['cycle detected', null]],
-                                                                                                                            'location': $['l location'],
-                                                                                                                        },
-                                                                                                                    ),
-                                                                                                                },
-                                                                                                            ),
-                                                                                                            'l id': $['l reference'],
-                                                                                                        }),
-                                                                                                    )
-                                                                                                    return {
-                                                                                                        'Informele rekening': prop_Informele_rekening,
-                                                                                                    }
-                                                                                                },
-                                                                                            )],
-                                                                                        )
-                                                                                    default:
-                                                                                        return _p.au(
-                                                                                            $[0],
-                                                                                        )
-                                                                                }
-                                                                            },
-                                                                        )
+                                            // const var_location = $['l location']
+                                            return {
+                                                'mutatie': bankrekening.Mutaties.__get_entry_deprecated(
+                                                    id,
+                                                    {
+                                                        'no_such_entry': () => abort(
+                                                            {
+                                                                'type': ['lookup', ['no such entry', id]],
+                                                                'location': ['in main document', {
+                                                                    'start': {
+                                                                        'absolute': 0,
+                                                                        'relative': {
+                                                                            'line': 0,
+                                                                            'column': 0
+                                                                        }
                                                                     },
-                                                                )],
-                                                            )
-                                                        default:
-                                                            return _p.au(
-                                                                $[0],
-                                                            )
+                                                                    'end': {
+                                                                        'absolute': 0,
+                                                                        'relative': {
+                                                                            'line': 0,
+                                                                            'column': 0
+                                                                        }
+                                                                    }
+                                                                }],
+                                                            },
+                                                        ),
                                                     }
-                                                },
-                                            )
+                                                ),
+                                                // 'mutatie': null,
+                                                'type': _p.decide.state(
+                                                    $.type['l state'],
+                                                    ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.type_ => {
+                                                        switch ($[0]) {
+                                                            case 'Resultaat':
+                                                                return _p.ss(
+                                                                    $,
+                                                                    ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                        $,
+                                                                        ($) => abort(
+                                                                            $,
+                                                                        ),
+                                                                        $l,
+                                                                        $p,
+                                                                    )],
+                                                                )
+                                                            case 'Balans':
+                                                                return _p.ss(
+                                                                    $,
+                                                                    ($) => ['Balans', _p_variables(
+                                                                        () => {
+
+                                                                            const var_location = $['l location']
+                                                                            return _p.decide.state(
+                                                                                $['l state'],
+                                                                                ($): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.D.D.type_.Balans => {
+                                                                                    switch ($[0]) {
+                                                                                        case 'Verrekenpost':
+                                                                                            return _p.ss(
+                                                                                                $,
+                                                                                                ($) => ['Verrekenpost', _p.group.literal.resolve(
+                                                                                                    () => {
+
+                                                                                                        const prop_Verrekenpost = _p_change_context(
+                                                                                                            $['Verrekenpost'],
+                                                                                                            ($) => ({
+                                                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
+                                                                                                                    $p['Jaarbeheer'].Balans.Verrekenposten,
+                                                                                                                ).get_entry(
+                                                                                                                    $['l reference'],
+                                                                                                                    {
+                                                                                                                        no_such_entry: () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        no_context_lookup: () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        cycle_detected: () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                    },
+                                                                                                                ),
+                                                                                                                'l id': $['l reference'],
+                                                                                                            }),
+                                                                                                        )
+                                                                                                        return {
+                                                                                                            'Verrekenpost': prop_Verrekenpost,
+                                                                                                        }
+                                                                                                    },
+                                                                                                )],
+                                                                                            )
+                                                                                        case 'Informele rekening':
+                                                                                            return _p.ss(
+                                                                                                $,
+                                                                                                ($) => ['Informele rekening', _p.group.literal.resolve(
+                                                                                                    () => {
+
+                                                                                                        const prop_Informele_rekening = _p_change_context(
+                                                                                                            $['Informele rekening'],
+                                                                                                            ($) => ({
+                                                                                                                'l entry': _p_sl.acyclic.from_resolved_dictionary(
+                                                                                                                    $p['Jaarbeheer'].Balans['Informele rekeningen'],
+                                                                                                                ).get_entry(
+                                                                                                                    $['l reference'],
+                                                                                                                    {
+                                                                                                                        no_such_entry: () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['no such entry', $['l reference']]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        no_context_lookup: () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['no context lookup', null]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        cycle_detected: () => abort(
+                                                                                                                            {
+                                                                                                                                'type': ['lookup', ['cycle detected', null]],
+                                                                                                                                'location': $['l location'],
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                    },
+                                                                                                                ),
+                                                                                                                'l id': $['l reference'],
+                                                                                                            }),
+                                                                                                        )
+                                                                                                        return {
+                                                                                                            'Informele rekening': prop_Informele_rekening,
+                                                                                                        }
+                                                                                                    },
+                                                                                                )],
+                                                                                            )
+                                                                                        default:
+                                                                                            return _p.au(
+                                                                                                $[0],
+                                                                                            )
+                                                                                    }
+                                                                                },
+                                                                            )
+                                                                        },
+                                                                    )],
+                                                                )
+                                                            default:
+                                                                return _p.au(
+                                                                    $[0],
+                                                                )
+                                                        }
+                                                    },
+                                                )
+                                            }
                                         },
                                     ),
                                 ),

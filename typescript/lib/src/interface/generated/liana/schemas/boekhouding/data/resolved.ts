@@ -1812,63 +1812,74 @@ export namespace Mutaties_ {
             
             export namespace D {
                 
-                export type Resultaat = Balans_Resultaat_Mutatie_
+                export type mutatie = Jaarbeheer_.Balans.Bankrekeningen.D.Mutaties.D
                 
-                export namespace Balans {
+                export namespace type_ {
                     
-                    export namespace Informele_rekening {
+                    export type Resultaat = Balans_Resultaat_Mutatie_
+                    
+                    export namespace Balans {
                         
                         export namespace Informele_rekening {
                             
-                            export type l_entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                            export namespace Informele_rekening {
+                                
+                                export type l_entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                                
+                                export type l_id = string
+                                
+                            }
                             
-                            export type l_id = string
+                            export type Informele_rekening = {
+                                readonly 'l entry': Informele_rekening.l_entry
+                                readonly 'l id': Informele_rekening.l_id
+                            }
                             
                         }
                         
                         export type Informele_rekening = {
-                            readonly 'l entry': Informele_rekening.l_entry
-                            readonly 'l id': Informele_rekening.l_id
+                            readonly 'Informele rekening': Informele_rekening.Informele_rekening
                         }
-                        
-                    }
-                    
-                    export type Informele_rekening = {
-                        readonly 'Informele rekening': Informele_rekening.Informele_rekening
-                    }
-                    
-                    export namespace Verrekenpost {
                         
                         export namespace Verrekenpost {
                             
-                            export type l_entry = Jaarbeheer_.Balans.Verrekenposten.D
+                            export namespace Verrekenpost {
+                                
+                                export type l_entry = Jaarbeheer_.Balans.Verrekenposten.D
+                                
+                                export type l_id = string
+                                
+                            }
                             
-                            export type l_id = string
+                            export type Verrekenpost = {
+                                readonly 'l entry': Verrekenpost.l_entry
+                                readonly 'l id': Verrekenpost.l_id
+                            }
                             
                         }
                         
                         export type Verrekenpost = {
-                            readonly 'l entry': Verrekenpost.l_entry
-                            readonly 'l id': Verrekenpost.l_id
+                            readonly 'Verrekenpost': Verrekenpost.Verrekenpost
                         }
                         
                     }
                     
-                    export type Verrekenpost = {
-                        readonly 'Verrekenpost': Verrekenpost.Verrekenpost
-                    }
+                    export type Balans = 
+                        | readonly ['Informele rekening', Balans.Informele_rekening]
+                        | readonly ['Verrekenpost', Balans.Verrekenpost]
                     
                 }
                 
-                export type Balans = 
-                    | readonly ['Informele rekening', Balans.Informele_rekening]
-                    | readonly ['Verrekenpost', Balans.Verrekenpost]
+                export type type_ = 
+                    | readonly ['Resultaat', type_.Resultaat]
+                    | readonly ['Balans', type_.Balans]
                 
             }
             
-            export type D = 
-                | readonly ['Resultaat', D.Resultaat]
-                | readonly ['Balans', D.Balans]
+            export type D = {
+                readonly 'mutatie': D.mutatie
+                readonly 'type': D.type_
+            }
             
         }
         

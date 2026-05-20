@@ -7937,6 +7937,60 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                         },
                                                     ),
                                                     'l entry': _p_change_context(
+                                                        v_unmarshalled_from_parse_tree.Verbose_Group(
+                                                            $,
+                                                            ($) => abort(
+                                                                $,
+                                                            ),
+                                                            {
+                                                                'expected properties': _p.dictionary.literal(
+                                                                    {
+                                                                        "mutatie": null,
+                                                                        "type": null,
+                                                                    },
+                                                                ),
+                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                            },
+                                                        ),
+                                                        ($) => _p_variables(
+                                                            () => {
+                                                                const var_verbose_group_range = v_parse_tree_to_location.Value(
+                                                                    $['value'],
+                                                                    {
+                                                                        'subdocument context': _p.optional.literal.not_set(),
+                                                                    },
+                                                                )
+                                                                return {
+                                                                    'mutatie': _p_change_context(
+                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                $,
+                                                                            ),
+                                                                            {
+                                                                                'id': 'mutatie',
+                                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                                            },
+                                                                        ),
+                                                                        ($) => v_unmarshalled_from_parse_tree.Nothing(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                $,
+                                                                            ),
+                                                                        ),
+                                                                    ),
+                                                                    'type': _p_change_context(
+                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                            $,
+                                                                            ($) => abort(
+                                                                                $,
+                                                                            ),
+                                                                            {
+                                                                                'id': 'type',
+                                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                                            },
+                                                                        ),
+                                                                        ($) => _p_change_context(
                                                         v_unmarshalled_from_parse_tree.State(
                                                             $,
                                                             ($) => abort(
@@ -7945,7 +7999,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                         ),
                                                         ($) => _p.decide.text(
                                                             $['option']['token']['value'],
-                                                            ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry => {
+                                                                                ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.type_ => {
                                                                 switch ($t) {
                                                                     case 'Resultaat':
                                                                         return _p_change_context(
@@ -7984,7 +8038,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                     ),
                                                                                     ($) => _p.decide.text(
                                                                                         $['option']['token']['value'],
-                                                                                        ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.l_state.Balans => {
+                                                                                                            ($t): t_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.type_.l_state.Balans => {
                                                                                             switch ($t) {
                                                                                                 case 'Informele rekening':
                                                                                                     return _p_change_context(
@@ -8150,6 +8204,11 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                 ),
                                                                             }],
                                                                         )
+                                                                }
+                                                            },
+                                                        ),
+                                                    ),
+                                                                    ),
                                                                 }
                                                             },
                                                         ),

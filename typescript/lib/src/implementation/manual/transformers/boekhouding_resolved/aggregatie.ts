@@ -50,13 +50,47 @@ export const escaped: _pi.Transformer_With_Parameter<
     ($) => $
 )
 
+
+const aggregeer_dictionary = <T, Context>(
+    dict: _pi.Dictionary<T>,
+    context: Context,
+    filter: ($: T, context: Context) => boolean,
+    get_value: ($: T) => number,
+): _pi.Dictionary<number> => {
+    return _p.dictionary.from.dictionary(
+        dict
+    ).filter(
+        ($) => filter($, context)
+    ).__d_map(
+        ($) => get_value($)
+    )
+}
+
+const aggregeer_dictionaries = (
+    $: {
+        [key: string]: _pi.Dictionary<number>
+    },
+): number => _p.number.integer.from.list(
+    _p.list.from.dictionary(
+        _p.dictionary.literal($)
+    ).convert(($) => _p.number.integer.from.list(
+        _p.list.from.dictionary(
+            $
+        ).convert(($) => $)
+    ).sum(
+        ($) => $
+    ))
+).sum(
+    ($) => $
+)
+
 export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
     'bron': $,
     'jaren': $.Jaren.__d_map(($) => {
         const bron_jaar = $
 
 
-        const Inkoop_regels = _p.dictionary.from.dictionary(
+        const inkoop_regels = _p.dictionary.from.dictionary(
             bron_jaar.Handelstransacties.Inkopen,
         ).flatten(
             ($) => $.Regels,
@@ -72,36 +106,153 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                 'duplicate_id': () => _p_unreachable_code_path("De naam wordt geescaped, dus er kunnen geen duplicates zijn"),
             }
         )
+        const verkoop_regels = _p.dictionary.from.dictionary(
+            bron_jaar.Handelstransacties.Verkopen,
+        ).flatten(
+            ($) => $.Regels,
+            (parent_id, child_id) => escaped(
+                parent_id,
+                {
+                    'character code': 0x3A, //colon
+                    'escape character code': 0x5C, //backslash
+                }
+            ) + ":" + child_id,
+            // (parent_id, child_id) => parent_id + ":" + child_id,
+            {
+                'duplicate_id': () => _p_unreachable_code_path("De naam wordt geescaped, dus er kunnen geen duplicates zijn"),
+            }
+        )
+
+        const bankrekening_mutatie_verwerkingen = _p.dictionary.from.dictionary(
+            bron_jaar.Mutaties['Bankrekening Mutatie Verwerkingen']
+        ).flatten(
+            ($) => $,
+            (parent_id, child_id) => parent_id + ":" + child_id,
+            {
+                'duplicate_id': () => _p_unreachable_code_path("De naam wordt geescaped, dus er kunnen geen duplicates zijn"),
+            }
+        )
+
+        const bankrekeningen_mutaties = _p.dictionary.from.dictionary(
+            bron_jaar.Jaarbeheer.Balans.Bankrekeningen
+        ).flatten(
+            ($) => $.Mutaties,
+            (parent_id, child_id) => parent_id + ":" + child_id,
+            {
+                'duplicate_id': () => _p_unreachable_code_path("De naam wordt geescaped, dus er kunnen geen duplicates zijn"),
+            }
+        )
+
+
+        const memoriaal_boekingen = _p.dictionary.from.dictionary(
+            bron_jaar.Mutaties['Memoriaal boekingen']
+        ).flatten(
+            ($) => $,
+            (parent_id, child_id) => parent_id + ":" + child_id,
+            {
+                'duplicate_id': () => _p_unreachable_code_path("De naam wordt geescaped, dus er kunnen geen duplicates zijn"),
+            }
+        )
+
+        const verrekenposten_mutaties = _p.dictionary.from.dictionary(
+            bron_jaar.Mutaties['Verrekenpost mutaties']
+        ).flatten(
+            ($) => $,
+            (parent_id, child_id) => parent_id + ":" + child_id,
+            {
+                'duplicate_id': () => _p_unreachable_code_path("De naam wordt geescaped, dus er kunnen geen duplicates zijn"),
+            }
+        )
+
+        const bankrekeningen = $.Jaarbeheer.Balans.Bankrekeningen
 
 
         const Balans_Grootboekrekeningen = ($: d_in.Grootboekrekeningen.Balans, label: string): d_out.Domein_Zijde => {
-            const p_grootboekrekeningen = $.__d_map(($, id) => {
+            const p_grootboekrekeningen = $.__d_map(($) => {
 
-                const inkoop_regels = _p.dictionary.from.dictionary(
-                    _p.dictionary.from.dictionary(Inkoop_regels).filter(($) => _p.decide.state($.Type, ($) => {
-                        return $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'].Grootboekrekening['l id'] === id)
-                    }))
-                ).map_optionally(($) => _p.decide.state($.Bedrag, ($): _pi.Optional_Value<number> => {
-                    switch ($[0]) {
-                        case 'Bekend': return _p.ss($, ($) => _p.optional.literal.set($['Bedrag inclusief geheven BTW']))
-                        default: return _p.au($[0])
-                    }
-                }))
 
                 return {
                     'hoofdcategorie': $.Stam.Hoofdcategorie['l id'],
                     'subcategorie': $.Stam.Subcategorie['l id'],
-                    'bedrag': _p.number.integer.from.list(
-                        _p.list.from.dictionary(inkoop_regels).convert(($) => $)
-                    ).sum(
-                        ($) => $
+                    'bedrag': aggregeer_dictionaries(
+                        {
+                            "inkoop regels": aggregeer_dictionary(
+                                inkoop_regels,
+                                $,
+                                ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'].Grootboekrekening['l entry'] === context)),
+                                ($) => _p.decide.state($.Bedrag, ($): number => {
+                                    switch ($[0]) {
+                                        case 'Bekend': return _p.ss($, ($) => $['Bedrag inclusief geheven BTW'])
+                                        default: return _p.au($[0])
+                                    }
+                                })
+                            ),
+                            "verkoop regels": aggregeer_dictionary(
+                                verkoop_regels,
+                                $,
+                                ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'].Grootboekrekening['l entry'] === context)),
+                                ($) => $['Bedrag exclusief BTW']
+                            ),
+                            "bankrekening mutatie verwerkingen": aggregeer_dictionary(
+                                bankrekening_mutatie_verwerkingen,
+                                $,
+                                ($, context) => _p.decide.state($.type, ($) => {
+                                    switch ($[0]) {
+                                        case 'Resultaat': return _p.ss($, ($) => false)
+                                        case 'Balans': return _p.ss($, ($) => _p.decide.state($, ($) => {
+                                            switch ($[0]) {
+                                                case 'Informele rekening': return _p.ss($, ($) => $['Informele rekening']['l entry'].Grootboekrekening['l entry'] === context)
+                                                case 'Verrekenpost': return _p.ss($, ($) => false)
+                                                default: return _p.au($[0])
+                                            }
+                                        }))
+                                        default: return _p.au($[0])
+                                    }
+                                }),
+                                ($) => $.mutatie.Bedrag
+                            ),
+                            "bankrekeningen": aggregeer_dictionary(
+                                bankrekeningen,
+                                $,
+                                ($, context) => $.Grootboekrekening['l entry'] === context,
+                                ($) =>
+                                    + _p.number.integer.from.list(
+                                        _p.list.from.dictionary(
+                                            $.Mutaties
+                                        ).convert(
+                                            ($) => $.Bedrag
+                                        )
+                                    ).sum(
+                                        ($) => $
+                                    )
+                                    + $.Beginsaldo
+                            ),
+                            // "verkopen": aggregeer_dictionary(
+                            //     bron_jaar.Handelstransacties.Verkopen,
+                            //     $,
+                            //     ($, context) => bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Inkoop saldo']['l entry'] === context,
+                            //     ($) => _p.number.natural.from.dictionary(
+                            //         $.Regels
+                            //     ).
+                            // )
+                            //jaren->grootboekrekening inkoopsaldo
+                            //jaren->grootboekrekening verkoopsaldo
+                            //jaren->grootboekrekening BTW periode saldo
+                            //jaren->grootboekrekening nog aan te geven BTW
+                            //jaren->resultaat dit jaar
+                            //jaren->grootboekrekening winstreserve
+                            //informele rekeningen
+
+                        }
                     ),
                 }
             })
             return {
                 'label': label,
-                'hoofdcategorieen': _p.dictionary.from.dictionary(p_grootboekrekeningen).group(($, id) => $.hoofdcategorie).__d_map(($) => {
-                    const subcategorieen = _p.dictionary.from.dictionary($).group(($, id) => $.subcategorie).__d_map(($) => ({
+                'hoofdcategorieen': _p.dictionary.from.dictionary(p_grootboekrekeningen).group(($) => $.hoofdcategorie).__d_map(($) => {
+                    const subcategorieen = _p.dictionary.from.dictionary(
+                        $
+                    ).group(($) => $.subcategorie).__d_map(($) => ({
                         'grootboekrekeningen': $,
                         'totaal': _p.number.integer.from.list(
                             _p.list.from.dictionary($).convert(($) => $)
@@ -126,22 +277,48 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
             }
         }
         const Resultaat_Grootboekrekeningen = ($: d_in.Grootboekrekeningen.Resultaat, label: string): d_out.Domein_Zijde => {
-            const p_grootboekrekeningen = $.__d_map(($, id) => {
-                const inkoop_regels = _p.dictionary.from.dictionary(
-                    _p.dictionary.from.dictionary(Inkoop_regels).filter(($) => _p.decide.state($.Type, ($) => $[0] === 'Kosten' && _p.ss($, ($) => $.Grootboekrekening['l id'] === id)))
-                ).map_optionally(($) => _p.decide.state($.Bedrag, ($): _pi.Optional_Value<number> => {
-                    switch ($[0]) {
-                        case 'Bekend': return _p.ss($, ($) => _p.optional.literal.set($['Bedrag inclusief geheven BTW']))
-                        default: return _p.au($[0])
-                    }
-                }))
+            const p_grootboekrekeningen = $.__d_map(($) => {
                 return {
                     'hoofdcategorie': $.Stam.Hoofdcategorie['l id'],
                     'subcategorie': $.Stam.Subcategorie['l id'],
-                    'bedrag': _p.number.integer.from.list(
-                        _p.list.from.dictionary(inkoop_regels).convert(($) => $)
-                    ).sum(
-                        ($) => $
+                    'bedrag': aggregeer_dictionaries(
+                        {
+                            "inkoop regels": aggregeer_dictionary(
+                                inkoop_regels,
+                                $,
+                                ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Kosten' && _p.ss($, ($) => $.Grootboekrekening['l entry'] === context)),
+                                ($) => _p.decide.state($.Bedrag, ($): number => {
+                                    switch ($[0]) {
+                                        case 'Bekend': return _p.ss($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
+                                        default: return _p.au($[0])
+                                    }
+                                })
+                            ),
+                            "verkoop regels": aggregeer_dictionary(
+                                verkoop_regels,
+                                $,
+                                ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Opbrengsten' && _p.ss($, ($) => $.Grootboekrekening['l entry'] === context)),
+                                ($) => $['Bedrag exclusief BTW']
+                            ),
+                            "memoriaal boekingen": aggregeer_dictionary(
+                                memoriaal_boekingen,
+                                $,
+                                ($, context) => $.Grootboekrekening['l entry'] === context,
+                                ($) => - $.Bedrag
+                            ),
+                            "BTW-afrondingen": aggregeer_dictionary( //FIXME
+                                bron_jaar.Jaarbeheer.Resultaat['BTW periodes'],
+                                $,
+                                ($, context) => bron_jaar.Jaarbeheer.Resultaat['Grootboekrekening voor BTW afrondingen']['l entry'] === context,
+                                ($) => _p.decide.state($.Status, ($) => {
+                                    switch ($[0]) {
+                                        case 'Aangegeven': return _p.ss($, ($) => $.Afronding)
+                                        case 'Openstaand':return _p.ss($, ($) => 0)
+                                        default: return _p.au($[0])
+                                    }
+                                })
+                            ),
+                        }
                     ),
                 }
             })
@@ -149,8 +326,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
 
             return {
                 'label': label,
-                'hoofdcategorieen': _p.dictionary.from.dictionary(p_grootboekrekeningen).group(($, id) => $.hoofdcategorie).__d_map(($) => {
-                    const subcategorieen = _p.dictionary.from.dictionary($).group(($, id) => $.subcategorie).__d_map(($) => ({
+                'hoofdcategorieen': _p.dictionary.from.dictionary(p_grootboekrekeningen).group(($) => $.hoofdcategorie).__d_map(($) => {
+                    const subcategorieen = _p.dictionary.from.dictionary($).group(($) => $.subcategorie).__d_map(($) => ({
                         'grootboekrekeningen': $,
                         'totaal': _p.number.integer.from.list(
                             _p.list.from.dictionary($).convert(($) => $)
@@ -167,47 +344,16 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => ({
                         )
                     }
                 }),
-                'totaal': _p.number.integer.from.list(_p.list.nested_literal_old([
-                    _p.list.from.dictionary(p_grootboekrekeningen).convert(($) => $.bedrag)
-                ])).sum(
+                'totaal': _p.number.integer.from.list(
+                    _p.list.nested_literal_old([
+                        _p.list.from.dictionary(p_grootboekrekeningen).convert(($) => $.bedrag)
+                    ])
+                ).sum(
                     ($) => $
                 ),
             }
         }
 
-        // const balans_grootboekrekeningen = $.Grootboekrekeningen.Balans.__d_map(($, id): d_out.Grootboekrekening => {
-        //     return {
-        //         'bedrag': 123.23,
-        //     }
-        // })
-        // const resultaat_grootboekrekeningen = $.Grootboekrekeningen.Resultaat.__d_map(($, id) => ({
-        //     // 'bron': $,
-        //     'bedrag': 123.23,
-        //     // 'gerelateerde inkopen': o_filter_relevant(bron_jaar.Handelstransacties.Inkopen.__d_map(($) => {
-
-        //     //     const regels = o_filter_relevant($.Regels.__d_map(($) => {
-        //     //         return {
-        //     //             'is relevant': _p.decide.state($.Type, ($) => {
-        //     //                 switch ($[0]) {
-        //     //                     case 'Balans': return _p.ss($, ($) => false)
-        //     //                     case 'Kosten': return _p.ss($, ($) => $.Grootboekrekening['l id'] === id)
-        //     //                     default: return _p.au($[0])
-        //     //                 }
-        //     //             }),
-        //     //             'entry': {
-        //     //                 'bron': $,
-        //     //             },
-        //     //         }
-        //     //     }))
-        //     //     return {
-        //     //         'is relevant': !(regels.__get_number_of_entries() === 0),
-        //     //         'entry': {
-        //     //             'bron': $,
-        //     //             'regels': regels
-        //     //         }
-        //     //     }
-        //     // })),
-        // }))
         return {
             'grootboekrekeningen': {
                 'balans': {
