@@ -1745,198 +1745,231 @@ export type Handelstransacties_ = {
 
 export namespace Mutaties_ {
     
-    export namespace Verrekenpost_mutaties {
+    export namespace Verrekenposten {
         
         export namespace D {
             
-            export namespace D {
+            export type Stam = Jaarbeheer_.Balans.Verrekenposten.D
+            
+            export namespace Mutaties {
                 
-                export type Bedrag = number
-                
-                export namespace Afhandeling {
+                export namespace D {
                     
-                    export type Resultaat = Balans_Resultaat_Mutatie_
+                    export type Bedrag = number
                     
-                    export namespace Balans {
+                    export namespace Afhandeling {
                         
-                        export namespace Informele_rekening {
+                        export type Resultaat = Balans_Resultaat_Mutatie_
+                        
+                        export namespace Balans {
                             
                             export namespace Informele_rekening {
                                 
-                                export type l_entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                                export namespace Informele_rekening {
+                                    
+                                    export type l_entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                                    
+                                    export type l_id = string
+                                    
+                                }
                                 
-                                export type l_id = string
+                                export type Informele_rekening = {
+                                    readonly 'l entry': Informele_rekening.l_entry
+                                    readonly 'l id': Informele_rekening.l_id
+                                }
                                 
                             }
                             
                             export type Informele_rekening = {
-                                readonly 'l entry': Informele_rekening.l_entry
-                                readonly 'l id': Informele_rekening.l_id
+                                readonly 'Informele rekening': Informele_rekening.Informele_rekening
                             }
                             
                         }
                         
-                        export type Informele_rekening = {
-                            readonly 'Informele rekening': Informele_rekening.Informele_rekening
-                        }
+                        export type Balans = 
+                            | readonly ['Informele rekening', Balans.Informele_rekening]
                         
                     }
                     
-                    export type Balans = 
-                        | readonly ['Informele rekening', Balans.Informele_rekening]
+                    export type Afhandeling = 
+                        | readonly ['Resultaat', Afhandeling.Resultaat]
+                        | readonly ['Balans', Afhandeling.Balans]
                     
                 }
                 
-                export type Afhandeling = 
-                    | readonly ['Resultaat', Afhandeling.Resultaat]
-                    | readonly ['Balans', Afhandeling.Balans]
+                export type D = {
+                    readonly 'Bedrag': D.Bedrag
+                    readonly 'Afhandeling': D.Afhandeling
+                }
                 
             }
             
-            export type D = {
-                readonly 'Bedrag': D.Bedrag
-                readonly 'Afhandeling': D.Afhandeling
-            }
+            export type Mutaties = _pi.Dictionary<Mutaties.D>
             
         }
         
-        export type D = _pi.Dictionary<D.D>
+        export type D = {
+            readonly 'Stam': D.Stam
+            readonly 'Mutaties': D.Mutaties
+        }
         
     }
     
-    export type Verrekenpost_mutaties = _pi.Dictionary<Verrekenpost_mutaties.D>
+    export type Verrekenposten = _pi.Dictionary<Verrekenposten.D>
     
-    export namespace Bankrekening_Mutatie_Verwerkingen {
+    export namespace Bankrekeningen {
         
         export namespace D {
             
-            export namespace D {
+            export type Stam = Jaarbeheer_.Balans.Bankrekeningen.D
+            
+            export namespace Mutatie_Verwerkingen {
                 
-                export type mutatie = Jaarbeheer_.Balans.Bankrekeningen.D.Mutaties.D
-                
-                export namespace type_ {
+                export namespace D {
                     
-                    export type Resultaat = Balans_Resultaat_Mutatie_
+                    export type Stam = Jaarbeheer_.Balans.Bankrekeningen.D.Mutaties.D
                     
-                    export namespace Balans {
+                    export namespace type_ {
                         
-                        export namespace Informele_rekening {
+                        export type Resultaat = Balans_Resultaat_Mutatie_
+                        
+                        export namespace Balans {
                             
                             export namespace Informele_rekening {
                                 
-                                export type l_entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                                export namespace Informele_rekening {
+                                    
+                                    export type l_entry = Jaarbeheer_.Balans.Informele_rekeningen.D
+                                    
+                                    export type l_id = string
+                                    
+                                }
                                 
-                                export type l_id = string
+                                export type Informele_rekening = {
+                                    readonly 'l entry': Informele_rekening.l_entry
+                                    readonly 'l id': Informele_rekening.l_id
+                                }
                                 
                             }
                             
                             export type Informele_rekening = {
-                                readonly 'l entry': Informele_rekening.l_entry
-                                readonly 'l id': Informele_rekening.l_id
+                                readonly 'Informele rekening': Informele_rekening.Informele_rekening
                             }
-                            
-                        }
-                        
-                        export type Informele_rekening = {
-                            readonly 'Informele rekening': Informele_rekening.Informele_rekening
-                        }
-                        
-                        export namespace Verrekenpost {
                             
                             export namespace Verrekenpost {
                                 
-                                export type l_entry = Jaarbeheer_.Balans.Verrekenposten.D
+                                export namespace Verrekenpost {
+                                    
+                                    export type l_entry = Jaarbeheer_.Balans.Verrekenposten.D
+                                    
+                                    export type l_id = string
+                                    
+                                }
                                 
-                                export type l_id = string
+                                export type Verrekenpost = {
+                                    readonly 'l entry': Verrekenpost.l_entry
+                                    readonly 'l id': Verrekenpost.l_id
+                                }
                                 
                             }
                             
                             export type Verrekenpost = {
-                                readonly 'l entry': Verrekenpost.l_entry
-                                readonly 'l id': Verrekenpost.l_id
+                                readonly 'Verrekenpost': Verrekenpost.Verrekenpost
                             }
                             
                         }
                         
-                        export type Verrekenpost = {
-                            readonly 'Verrekenpost': Verrekenpost.Verrekenpost
-                        }
+                        export type Balans = 
+                            | readonly ['Informele rekening', Balans.Informele_rekening]
+                            | readonly ['Verrekenpost', Balans.Verrekenpost]
                         
                     }
                     
-                    export type Balans = 
-                        | readonly ['Informele rekening', Balans.Informele_rekening]
-                        | readonly ['Verrekenpost', Balans.Verrekenpost]
+                    export type type_ = 
+                        | readonly ['Resultaat', type_.Resultaat]
+                        | readonly ['Balans', type_.Balans]
                     
                 }
                 
-                export type type_ = 
-                    | readonly ['Resultaat', type_.Resultaat]
-                    | readonly ['Balans', type_.Balans]
+                export type D = {
+                    readonly 'Stam': D.Stam
+                    readonly 'type': D.type_
+                }
                 
             }
             
-            export type D = {
-                readonly 'mutatie': D.mutatie
-                readonly 'type': D.type_
-            }
+            export type Mutatie_Verwerkingen = _pi.Dictionary<Mutatie_Verwerkingen.D>
             
         }
         
-        export type D = _pi.Dictionary<D.D>
+        export type D = {
+            readonly 'Stam': D.Stam
+            readonly 'Mutatie Verwerkingen': D.Mutatie_Verwerkingen
+        }
         
     }
     
-    export type Bankrekening_Mutatie_Verwerkingen = _pi.Dictionary<Bankrekening_Mutatie_Verwerkingen.D>
+    export type Bankrekeningen = _pi.Dictionary<Bankrekeningen.D>
     
-    export namespace Memoriaal_boekingen {
+    export namespace Overige_Balans_Items {
         
         export namespace D {
             
-            export namespace D {
+            export type Stam = Jaarbeheer_.Balans.Overige_balans_items.D
+            
+            export namespace Memoriaal_Boekingen {
                 
-                export type Bedrag = number
-                
-                export type Datum = number
-                
-                export type Omschrijving = string
-                
-                export namespace Grootboekrekening {
+                export namespace D {
                     
-                    export type l_entry = Grootboekrekeningen_.Resultaat.D
+                    export type Bedrag = number
                     
-                    export type l_id = string
+                    export type Datum = number
+                    
+                    export type Omschrijving = string
+                    
+                    export namespace Grootboekrekening {
+                        
+                        export type l_entry = Grootboekrekeningen_.Resultaat.D
+                        
+                        export type l_id = string
+                        
+                    }
+                    
+                    export type Grootboekrekening = {
+                        readonly 'l entry': Grootboekrekening.l_entry
+                        readonly 'l id': Grootboekrekening.l_id
+                    }
                     
                 }
                 
-                export type Grootboekrekening = {
-                    readonly 'l entry': Grootboekrekening.l_entry
-                    readonly 'l id': Grootboekrekening.l_id
+                export type D = {
+                    readonly 'Bedrag': D.Bedrag
+                    readonly 'Datum': D.Datum
+                    readonly 'Omschrijving': D.Omschrijving
+                    readonly 'Grootboekrekening': D.Grootboekrekening
                 }
                 
             }
             
-            export type D = {
-                readonly 'Bedrag': D.Bedrag
-                readonly 'Datum': D.Datum
-                readonly 'Omschrijving': D.Omschrijving
-                readonly 'Grootboekrekening': D.Grootboekrekening
-            }
+            export type Memoriaal_Boekingen = _pi.Dictionary<Memoriaal_Boekingen.D>
             
         }
         
-        export type D = _pi.Dictionary<D.D>
+        export type D = {
+            readonly 'Stam': D.Stam
+            readonly 'Memoriaal Boekingen': D.Memoriaal_Boekingen
+        }
         
     }
     
-    export type Memoriaal_boekingen = _pi.Dictionary<Memoriaal_boekingen.D>
+    export type Overige_Balans_Items = _pi.Dictionary<Overige_Balans_Items.D>
     
 }
 
 export type Mutaties_ = {
-    readonly 'Verrekenpost mutaties': Mutaties_.Verrekenpost_mutaties
-    readonly 'Bankrekening Mutatie Verwerkingen': Mutaties_.Bankrekening_Mutatie_Verwerkingen
-    readonly 'Memoriaal boekingen': Mutaties_.Memoriaal_boekingen
+    readonly 'Verrekenposten': Mutaties_.Verrekenposten
+    readonly 'Bankrekeningen': Mutaties_.Bankrekeningen
+    readonly 'Overige Balans Items': Mutaties_.Overige_Balans_Items
 }
 
 export namespace Jaren_ {

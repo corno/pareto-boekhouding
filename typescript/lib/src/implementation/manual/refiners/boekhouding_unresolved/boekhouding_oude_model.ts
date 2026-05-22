@@ -422,85 +422,97 @@ export const Jaren: signatures.Jaren = ($) => sh.dictionary($.Jaren.__d_map(($, 
     'Startdatum boekjaar': _p_change_context($['Startdatum boekjaar'], ($) => fix_date($)),
 })))
 export const Mutaties: signatures.Mutaties = ($, $p) => ({
-    'Bankrekening Mutatie Verwerkingen': _p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map(($) => sh.dictionary(_p.dictionary.from.dictionary(
-        $.Mutaties,
-    ).map_optionally(
-        ($) => _p.decide.state($.Status, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry> => {
-            switch ($[0]) {
-                case 'Nog te verwerken': return _p.ss($, ($) => _p.optional.literal.not_set())
-                case 'Verwerkt': return _p.ss($, ($) => _p.optional.literal.set({
-                    'mutatie': null,
-                    'type': _p.decide.state($.Afhandeling, ($): d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.type_ => {
-                        switch ($[0]) {
-                            case 'Informele rekening': return _p.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
-                                'Informele rekening': _p_change_context($['Informele rekening'], ($) => sh.reference($)),
-                            })])]))
+    'Bankrekeningen': _p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map(($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry => {
+        return {
+            'Stam': null,
+            'Mutatie Verwerkingen': sh.dictionary(_p.dictionary.from.dictionary(
+                $.Mutaties,
+            ).map_optionally(
+                ($) => _p.decide.state($.Status, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry> => {
+                    switch ($[0]) {
+                        case 'Nog te verwerken': return _p.ss($, ($) => _p.optional.literal.not_set())
+                        case 'Verwerkt': return _p.ss($, ($): _pi.Optional_Value<d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry> => _p.optional.literal.set({
+                            'Stam': null,
+                            'type': _p.decide.state($.Afhandeling, ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => {
+                                switch ($[0]) {
+                                    case 'Informele rekening': return _p.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
+                                        'Informele rekening': _p_change_context($['Informele rekening'], ($) => sh.reference($)),
+                                    })])]))
 
-                            case 'Verrekenpost': return _p.ss($, ($) => sh.state(['Balans', sh.state(['Verrekenpost', ({
-                                'Verrekenpost': _p_change_context($['Verrekenpost'], ($) => sh.reference($)),
-                            })])]))
+                                    case 'Verrekenpost': return _p.ss($, ($) => sh.state(['Balans', sh.state(['Verrekenpost', ({
+                                        'Verrekenpost': _p_change_context($['Verrekenpost'], ($) => sh.reference($)),
+                                    })])]))
 
-                            case 'BTW-periode': return _p.ss($, ($): d_out.Mutaties.Bankrekening_Mutatie_Verwerkingen.l_dictionary.D.l_entry.l_dictionary.D.l_entry.type_ => sh.state(['Resultaat', {
-                                'Jaar': $.Jaar === $p.jaar
-                                    ? _p.optional.literal.not_set()
-                                    : _p.optional.literal.set(sh.reference($.Jaar)),
-                                'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
-                            }]))
-                            case 'Inkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
-                                'Jaar': $.Jaar === $p.jaar
-                                    ? _p.optional.literal.not_set()
-                                    : _p.optional.literal.set(sh.reference($.Jaar)),
-                                'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
-                            }]))
-                            case 'Verkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
-                                'Jaar': $.Jaar === $p.jaar
-                                    ? _p.optional.literal.not_set()
-                                    : _p.optional.literal.set(sh.reference($.Jaar)),
-                                'type': sh.state(['Verkoop', sh.reference($['Verkoop'])])
-                            }]))
-                            default: return _p.au($[0])
-                        }
-                    })
-                }))
-                default: return _p.au($[0])
-            }
-        })))))),
-    'Memoriaal boekingen': _p_change_context($['Overige balans items'], ($) => sh.dictionary($.__d_map(($) => sh.dictionary($['Memoriaal boekingen'].__d_map(($) => ({
-        'Bedrag': _p_change_context($['Bedrag'], ($) => $),
-        'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
-        'Grootboekrekening': _p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
-        'Omschrijving': _p_change_context($['Omschrijving'], ($) => $),
-    })))))),
-    'Verrekenpost mutaties': _p_change_context($.Verrekenposten, ($) => sh.dictionary($.__d_map(($) => sh.dictionary($.Mutaties.__d_map(($) => ({
-        'Afhandeling': _p_change_context($['Afhandeling'], ($) => _p.decide.state($, ($): d_out.Mutaties.Verrekenpost_mutaties.l_dictionary.D.l_entry.l_dictionary.D.l_entry.Afhandeling => {
-            switch ($[0]) {
-                case 'Informele rekening': return _p.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
-                    'Informele rekening': _p_change_context($['Informele rekening'], ($) => sh.reference($)),
-                })])]))
+                                    case 'BTW-periode': return _p.ss($, ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => sh.state(['Resultaat', {
+                                        'Jaar': $.Jaar === $p.jaar
+                                            ? _p.optional.literal.not_set()
+                                            : _p.optional.literal.set(sh.reference($.Jaar)),
+                                        'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
+                                    }]))
+                                    case 'Inkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
+                                        'Jaar': $.Jaar === $p.jaar
+                                            ? _p.optional.literal.not_set()
+                                            : _p.optional.literal.set(sh.reference($.Jaar)),
+                                        'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
+                                    }]))
+                                    case 'Verkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
+                                        'Jaar': $.Jaar === $p.jaar
+                                            ? _p.optional.literal.not_set()
+                                            : _p.optional.literal.set(sh.reference($.Jaar)),
+                                        'type': sh.state(['Verkoop', sh.reference($['Verkoop'])])
+                                    }]))
+                                    default: return _p.au($[0])
+                                }
+                            })
+                        }))
+                        default: return _p.au($[0])
+                    }
+                })
+            ))
+        }
+    }))),
+    'Overige Balans Items': _p_change_context($['Overige balans items'], ($) => sh.dictionary($.__d_map(($): d_out.Mutaties.Overige_Balans_Items.l_dictionary.D.l_entry => ({
+        'Stam': null,
+        'Memoriaal Boekingen': sh.dictionary($['Memoriaal boekingen'].__d_map(($) => ({
+            'Bedrag': _p_change_context($['Bedrag'], ($) => $),
+            'Datum': _p_change_context($['Datum'], ($) => fix_date($)),
+            'Grootboekrekening': _p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
+            'Omschrijving': _p_change_context($['Omschrijving'], ($) => $),
+        })))
+    })))),
+    'Verrekenposten': _p_change_context($.Verrekenposten, ($) => sh.dictionary($.__d_map(($) => ({
+        'Stam': null,
+        'Mutaties': sh.dictionary($.Mutaties.__d_map(($): d_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry => ({
+            'Afhandeling': _p_change_context($['Afhandeling'], ($) => _p.decide.state($, ($) => {
+                switch ($[0]) {
+                    case 'Informele rekening': return _p.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
+                        'Informele rekening': _p_change_context($['Informele rekening'], ($) => sh.reference($)),
+                    })])]))
 
-                case 'BTW-periode': return _p.ss($, ($) => sh.state(['Resultaat', {
-                    'Jaar': $.Jaar === $p.jaar
-                        ? _p.optional.literal.not_set()
-                        : _p.optional.literal.set(sh.reference($.Jaar)),
-                    'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
-                }]))
-                case 'Inkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
-                    'Jaar': $.Jaar === $p.jaar
-                        ? _p.optional.literal.not_set()
-                        : _p.optional.literal.set(sh.reference($.Jaar)),
-                    'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
-                }]))
-                case 'Verkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
-                    'Jaar': $.Jaar === $p.jaar
-                        ? _p.optional.literal.not_set()
-                        : _p.optional.literal.set(sh.reference($.Jaar)),
-                    'type': sh.state(['Verkoop', sh.reference($['Verkoop'])])
-                }]))
-                default: return _p.au($[0])
-            }
-        })),
-        'Bedrag': _p_change_context($['Bedrag'], ($) => $),
-    })))))),
+                    case 'BTW-periode': return _p.ss($, ($) => sh.state(['Resultaat', {
+                        'Jaar': $.Jaar === $p.jaar
+                            ? _p.optional.literal.not_set()
+                            : _p.optional.literal.set(sh.reference($.Jaar)),
+                        'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
+                    }]))
+                    case 'Inkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
+                        'Jaar': $.Jaar === $p.jaar
+                            ? _p.optional.literal.not_set()
+                            : _p.optional.literal.set(sh.reference($.Jaar)),
+                        'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
+                    }]))
+                    case 'Verkoop': return _p.ss($, ($) => sh.state(['Resultaat', {
+                        'Jaar': $.Jaar === $p.jaar
+                            ? _p.optional.literal.not_set()
+                            : _p.optional.literal.set(sh.reference($.Jaar)),
+                        'type': sh.state(['Verkoop', sh.reference($['Verkoop'])])
+                    }]))
+                    default: return _p.au($[0])
+                }
+            })),
+            'Bedrag': _p_change_context($['Bedrag'], ($) => $),
+        })))
+    })))),
 })
 export const Overige_balans_item: signatures.Overige_balans_item = ($) => ({
     'Beginsaldo': _p_change_context($, ($) => $.Beginsaldo),

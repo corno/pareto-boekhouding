@@ -20,12 +20,12 @@ import * as sh from "pareto-static-html/dist/shorthands/static_html"
 import { css } from "../../../../data/css"
 
 
-const Bedrag = ($: number): d_out.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
+const Bedrag = ($: number, $p: { 'teken omkeren': boolean }): d_out.Flow_Element.table.sections.L.rows.L.cells.L => sh.t.s.r.td(
     ["bedrag"],
     _p.optional.literal.not_set(),
     [
         sh.f.span([sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
-            $,
+            $p['teken omkeren'] ? -$ : $,
             {
                 'number of fractional digits': 2,
                 'decimal separator character code': 44, // ','
@@ -74,43 +74,46 @@ const Indent_Blank = (): d_out.Flow_Element.table.sections.L.rows.L.cells.L => s
 
 const Domein_Zijde = (
     $: d_in.Domein_Zijde,
-): _pi.List<d_out.Flow_Element.table.sections.L.rows.L.cells> => _p.list.from.dictionary(
-    $.hoofdcategorieen
-).flatten(($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-    [
-        _p.list.literal([
-            Span_Text(id, 3),
-            Span_Indent(2),
-            Bedrag($.totaal),
-        ])
-    ],
-    _p.list.from.dictionary(
-        $.subcategorieen
+): _pi.List<d_out.Flow_Element.table.sections.L.rows.L.cells> => {
+    const teken_omkeren = $['teken omkeren']
+    return _p.list.from.dictionary(
+        $.hoofdcategorieen
     ).flatten(($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
         [
             _p.list.literal([
-                Indent(),
-                Span_Text(id, 2),
-                Indent(),
-                Bedrag($.totaal),
-                Indent(),
+                Span_Text(id, 3),
+                Span_Indent(2),
+                Bedrag($.totaal, { 'teken omkeren': teken_omkeren }),
             ])
         ],
         _p.list.from.dictionary(
-            $.grootboekrekeningen
+            $.subcategorieen
         ).flatten(($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
             [
                 _p.list.literal([
                     Indent(),
+                    Span_Text(id, 2),
                     Indent(),
-                    Text(id),
-                    Bedrag($.bedrag),
-                    Span_Indent(2),
+                    Bedrag($.totaal, { 'teken omkeren': teken_omkeren }),
+                    Indent(),
                 ])
-            ]
+            ],
+            _p.list.from.dictionary(
+                $.grootboekrekeningen
+            ).flatten(($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                [
+                    _p.list.literal([
+                        Indent(),
+                        Indent(),
+                        Text(id),
+                        Bedrag($.bedrag, { 'teken omkeren': teken_omkeren }),
+                        Span_Indent(2),
+                    ])
+                ]
+            ]))
         ]))
     ]))
-]))
+}
 
 const Domein = (
     $: d_in.Domein,
@@ -174,10 +177,10 @@ const Domein = (
                 Indent_Blank(),
                 Text("totaal"),
                 Span_Indent(4),
-                Bedrag($.links.totaal),
+                Bedrag($.links.totaal, { 'teken omkeren': true }),
                 Text("totaal"),
                 Span_Indent(4),
-                Bedrag($.rechts.totaal),
+                Bedrag($.rechts.totaal, { 'teken omkeren': false }),
             ]
         ),
     ]
@@ -226,15 +229,27 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
                                 ),
                             ],
                             Domein(
-                                $.value.grootboekrekeningen.balans,
-                                {
-                                    'label': "balans",
-                                }
-                            ),
-                            Domein(
-                                $.value.grootboekrekeningen.resultaat,
+                                $.value['resultaat rekeningen'],
                                 {
                                     'label': "resultaat",
+                                }
+                            ),
+                            [
+                                sh.t.s.row(
+                                    ["totaal"],
+                                    _p.optional.literal.not_set(),
+                                    [
+                                        Indent_Blank(),
+                                        Indent_Blank(),
+                                        Span_Text("winst voor belasting", 11),
+                                        Bedrag($.value['resultaat'], { 'teken omkeren': false }),
+                                    ]
+                                ),
+                            ],
+                            Domein(
+                                $.value['balans rekeningen'],
+                                {
+                                    'label': "balans",
                                 }
                             ),
                         ]),

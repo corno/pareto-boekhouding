@@ -2015,238 +2015,271 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
 
 export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
-        "Verrekenpost mutaties": _p_change_context(
-            $['Verrekenpost mutaties'],
+        "Verrekenposten": _p_change_context(
+            $['Verrekenposten'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['dictionary', _p.dictionary.from.dictionary(
-                    $,
-                ).map(
-                    ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                        {
-                            "Bedrag": _p_change_context(
-                                $['Bedrag'],
-                                ($) => ['text', {
-                                    'delimiter': ['none', null],
-                                    'value': v_primitives_to_text.fractional_decimal(
-                                        $,
-                                        {
-                                            'number of fractional digits': 2,
-                                        },
-                                    ),
-                                }],
-                            ),
-                            "Afhandeling": _p_change_context(
-                                $['Afhandeling'],
-                                ($) => ['state', _p.decide.state(
-                                    $,
-                                    ($): t_out.Value.state => {
-                                        switch ($[0]) {
-                                            case 'Resultaat':
-                                                return _p.ss(
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                    {
+                        "Stam": _p_change_context(
+                            $['Stam'],
+                            ($) => ['nothing', null],
+                        ),
+                        "Mutaties": _p_change_context(
+                            $['Mutaties'],
+                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                $,
+                            ).map(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                    {
+                                        "Bedrag": _p_change_context(
+                                            $['Bedrag'],
+                                            ($) => ['text', {
+                                                'delimiter': ['none', null],
+                                                'value': v_primitives_to_text.fractional_decimal(
                                                     $,
-                                                    ($) => ({
-                                                        'option': 'Resultaat',
-                                                        'value': Balans_Resultaat_Mutatie(
-                                                            $,
-                                                        ),
-                                                    }),
-                                                )
-                                            case 'Balans':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ({
-                                                        'option': 'Balans',
-                                                        'value': ['state', _p.decide.state(
-                                                            $,
-                                                            ($): t_out.Value.state => {
-                                                                switch ($[0]) {
-                                                                    case 'Informele rekening':
-                                                                        return _p.ss(
-                                                                            $,
-                                                                            ($) => ({
-                                                                                'option': 'Informele rekening',
-                                                                                'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                    {
-                                                                                        "Informele rekening": _p_change_context(
-                                                                                            $['Informele rekening'],
-                                                                                            ($) => ['text', {
-                                                                                                'delimiter': ['apostrophe', null],
-                                                                                                'value': $['l id'],
-                                                                                            }],
-                                                                                        ),
-                                                                                    },
-                                                                                )]],
-                                                                            }),
-                                                                        )
-                                                                    default:
-                                                                        return _p.au(
-                                                                            $[0],
-                                                                        )
-                                                                }
-                                                            },
-                                                        )],
-                                                    }),
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0],
-                                                )
-                                        }
+                                                    {
+                                                        'number of fractional digits': 2,
+                                                    },
+                                                ),
+                                            }],
+                                        ),
+                                        "Afhandeling": _p_change_context(
+                                            $['Afhandeling'],
+                                            ($) => ['state', _p.decide.state(
+                                                $,
+                                                ($): t_out.Value.state => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ({
+                                                                    'option': 'Resultaat',
+                                                                    'value': Balans_Resultaat_Mutatie(
+                                                                        $,
+                                                                    ),
+                                                                }),
+                                                            )
+                                                        case 'Balans':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ({
+                                                                    'option': 'Balans',
+                                                                    'value': ['state', _p.decide.state(
+                                                                        $,
+                                                                        ($): t_out.Value.state => {
+                                                                            switch ($[0]) {
+                                                                                case 'Informele rekening':
+                                                                                    return _p.ss(
+                                                                                        $,
+                                                                                        ($) => ({
+                                                                                            'option': 'Informele rekening',
+                                                                                            'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                                {
+                                                                                                    "Informele rekening": _p_change_context(
+                                                                                                        $['Informele rekening'],
+                                                                                                        ($) => ['text', {
+                                                                                                            'delimiter': ['apostrophe', null],
+                                                                                                            'value': $['l id'],
+                                                                                                        }],
+                                                                                                    ),
+                                                                                                },
+                                                                                            )]],
+                                                                                        }),
+                                                                                    )
+                                                                                default:
+                                                                                    return _p.au(
+                                                                                        $[0],
+                                                                                    )
+                                                                            }
+                                                                        },
+                                                                    )],
+                                                                }),
+                                                            )
+                                                        default:
+                                                            return _p.au(
+                                                                $[0],
+                                                            )
+                                                    }
+                                                },
+                                            )],
+                                        ),
                                     },
-                                )],
-                            ),
-                        },
-                    )]],
-                )],
+                                )]],
+                            )],
+                        ),
+                    },
+                )]],
             )],
         ),
-        "Bankrekening Mutatie Verwerkingen": _p_change_context(
-            $['Bankrekening Mutatie Verwerkingen'],
+        "Bankrekeningen": _p_change_context(
+            $['Bankrekeningen'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['dictionary', _p.dictionary.from.dictionary(
-                    $,
-                ).map(
-                    ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                        {
-                            "mutatie": _p_change_context(
-                                $['mutatie'],
-                                ($) => ['nothing', null],
-                            ),
-                            "type": _p_change_context(
-                                $['type'],
-                                ($) => ['state', _p.decide.state(
-                                    $,
-                                    ($): t_out.Value.state => {
-                                        switch ($[0]) {
-                                            case 'Resultaat':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ({
-                                                        'option': 'Resultaat',
-                                                        'value': Balans_Resultaat_Mutatie(
-                                                            $,
-                                                        ),
-                                                    }),
-                                                )
-                                            case 'Balans':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ({
-                                                        'option': 'Balans',
-                                                        'value': ['state', _p.decide.state(
-                                                            $,
-                                                            ($): t_out.Value.state => {
-                                                                switch ($[0]) {
-                                                                    case 'Informele rekening':
-                                                                        return _p.ss(
-                                                                            $,
-                                                                            ($) => ({
-                                                                                'option': 'Informele rekening',
-                                                                                'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                    {
-                                                                                        "Informele rekening": _p_change_context(
-                                                                                            $['Informele rekening'],
-                                                                                            ($) => ['text', {
-                                                                                                'delimiter': ['apostrophe', null],
-                                                                                                'value': $['l id'],
-                                                                                            }],
-                                                                                        ),
-                                                                                    },
-                                                                                )]],
-                                                                            }),
-                                                                        )
-                                                                    case 'Verrekenpost':
-                                                                        return _p.ss(
-                                                                            $,
-                                                                            ($) => ({
-                                                                                'option': 'Verrekenpost',
-                                                                                'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                                    {
-                                                                                        "Verrekenpost": _p_change_context(
-                                                                                            $['Verrekenpost'],
-                                                                                            ($) => ['text', {
-                                                                                                'delimiter': ['apostrophe', null],
-                                                                                                'value': $['l id'],
-                                                                                            }],
-                                                                                        ),
-                                                                                    },
-                                                                                )]],
-                                                                            }),
-                                                                        )
-                                                                    default:
-                                                                        return _p.au(
-                                                                            $[0],
-                                                                        )
-                                                                }
-                                                            },
-                                                        )],
-                                                    }),
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0],
-                                                )
-                                        }
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                    {
+                        "Stam": _p_change_context(
+                            $['Stam'],
+                            ($) => ['nothing', null],
+                        ),
+                        "Mutatie Verwerkingen": _p_change_context(
+                            $['Mutatie Verwerkingen'],
+                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                $,
+                            ).map(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                    {
+                                        "Stam": _p_change_context(
+                                            $['Stam'],
+                                            ($) => ['nothing', null],
+                                        ),
+                                        "type": _p_change_context(
+                                            $['type'],
+                                            ($) => ['state', _p.decide.state(
+                                                $,
+                                                ($): t_out.Value.state => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ({
+                                                                    'option': 'Resultaat',
+                                                                    'value': Balans_Resultaat_Mutatie(
+                                                                        $,
+                                                                    ),
+                                                                }),
+                                                            )
+                                                        case 'Balans':
+                                                            return _p.ss(
+                                                                $,
+                                                                ($) => ({
+                                                                    'option': 'Balans',
+                                                                    'value': ['state', _p.decide.state(
+                                                                        $,
+                                                                        ($): t_out.Value.state => {
+                                                                            switch ($[0]) {
+                                                                                case 'Informele rekening':
+                                                                                    return _p.ss(
+                                                                                        $,
+                                                                                        ($) => ({
+                                                                                            'option': 'Informele rekening',
+                                                                                            'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                                {
+                                                                                                    "Informele rekening": _p_change_context(
+                                                                                                        $['Informele rekening'],
+                                                                                                        ($) => ['text', {
+                                                                                                            'delimiter': ['apostrophe', null],
+                                                                                                            'value': $['l id'],
+                                                                                                        }],
+                                                                                                    ),
+                                                                                                },
+                                                                                            )]],
+                                                                                        }),
+                                                                                    )
+                                                                                case 'Verrekenpost':
+                                                                                    return _p.ss(
+                                                                                        $,
+                                                                                        ($) => ({
+                                                                                            'option': 'Verrekenpost',
+                                                                                            'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                                {
+                                                                                                    "Verrekenpost": _p_change_context(
+                                                                                                        $['Verrekenpost'],
+                                                                                                        ($) => ['text', {
+                                                                                                            'delimiter': ['apostrophe', null],
+                                                                                                            'value': $['l id'],
+                                                                                                        }],
+                                                                                                    ),
+                                                                                                },
+                                                                                            )]],
+                                                                                        }),
+                                                                                    )
+                                                                                default:
+                                                                                    return _p.au(
+                                                                                        $[0],
+                                                                                    )
+                                                                            }
+                                                                        },
+                                                                    )],
+                                                                }),
+                                                            )
+                                                        default:
+                                                            return _p.au(
+                                                                $[0],
+                                                            )
+                                                    }
+                                                },
+                                            )],
+                                        ),
                                     },
-                                )],
-                            ),
-                        },
-                    )]],
-                )],
+                                )]],
+                            )],
+                        ),
+                    },
+                )]],
             )],
         ),
-        "Memoriaal boekingen": _p_change_context(
-            $['Memoriaal boekingen'],
+        "Overige Balans Items": _p_change_context(
+            $['Overige Balans Items'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['dictionary', _p.dictionary.from.dictionary(
-                    $,
-                ).map(
-                    ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                        {
-                            "Bedrag": _p_change_context(
-                                $['Bedrag'],
-                                ($) => ['text', {
-                                    'delimiter': ['none', null],
-                                    'value': v_primitives_to_text.fractional_decimal(
-                                        $,
-                                        {
-                                            'number of fractional digits': 2,
-                                        },
-                                    ),
-                                }],
-                            ),
-                            "Datum": _p_change_context(
-                                $['Datum'],
-                                ($) => ['text', {
-                                    'delimiter': ['none', null],
-                                    'value': v_primitives_to_text.iso_date_udhr(
-                                        $,
-                                    ),
-                                }],
-                            ),
-                            "Omschrijving": _p_change_context(
-                                $['Omschrijving'],
-                                ($) => ['text', {
-                                    'delimiter': ['quote', null],
-                                    'value': $,
-                                }],
-                            ),
-                            "Grootboekrekening": _p_change_context(
-                                $['Grootboekrekening'],
-                                ($) => ['text', {
-                                    'delimiter': ['apostrophe', null],
-                                    'value': $['l id'],
-                                }],
-                            ),
-                        },
-                    )]],
-                )],
+                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                    {
+                        "Stam": _p_change_context(
+                            $['Stam'],
+                            ($) => ['nothing', null],
+                        ),
+                        "Memoriaal Boekingen": _p_change_context(
+                            $['Memoriaal Boekingen'],
+                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                $,
+                            ).map(
+                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                    {
+                                        "Bedrag": _p_change_context(
+                                            $['Bedrag'],
+                                            ($) => ['text', {
+                                                'delimiter': ['none', null],
+                                                'value': v_primitives_to_text.fractional_decimal(
+                                                    $,
+                                                    {
+                                                        'number of fractional digits': 2,
+                                                    },
+                                                ),
+                                            }],
+                                        ),
+                                        "Datum": _p_change_context(
+                                            $['Datum'],
+                                            ($) => ['text', {
+                                                'delimiter': ['none', null],
+                                                'value': v_primitives_to_text.iso_date_udhr(
+                                                    $,
+                                                ),
+                                            }],
+                                        ),
+                                        "Omschrijving": _p_change_context(
+                                            $['Omschrijving'],
+                                            ($) => ['text', {
+                                                'delimiter': ['quote', null],
+                                                'value': $,
+                                            }],
+                                        ),
+                                        "Grootboekrekening": _p_change_context(
+                                            $['Grootboekrekening'],
+                                            ($) => ['text', {
+                                                'delimiter': ['apostrophe', null],
+                                                'value': $['l id'],
+                                            }],
+                                        ),
+                                    },
+                                )]],
+                            )],
+                        ),
+                    },
+                )]],
             )],
         ),
     },

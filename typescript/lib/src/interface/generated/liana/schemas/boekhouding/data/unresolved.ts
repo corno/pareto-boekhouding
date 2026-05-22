@@ -2869,7 +2869,7 @@ export type Handelstransacties_ = {
 
 export namespace Mutaties_ {
     
-    export namespace Verrekenpost_mutaties {
+    export namespace Verrekenposten {
         
         export type l_location = i_location.Range
         
@@ -2881,101 +2881,112 @@ export namespace Mutaties_ {
                 
                 export namespace l_entry {
                     
-                    export type l_location = i_location.Range
+                    export type Stam = null
                     
-                    export namespace l_dictionary {
+                    export namespace Mutaties {
                         
-                        export namespace D {
+                        export type l_location = i_location.Range
+                        
+                        export namespace l_dictionary {
                             
-                            export type l_location = i_location.Range
-                            
-                            export namespace l_entry {
+                            export namespace D {
                                 
-                                export type Bedrag = number
+                                export type l_location = i_location.Range
                                 
-                                export namespace Afhandeling {
+                                export namespace l_entry {
                                     
-                                    export type l_location = i_location.Range
+                                    export type Bedrag = number
                                     
-                                    export namespace l_state {
+                                    export namespace Afhandeling {
                                         
-                                        export type Resultaat = Balans_Resultaat_Mutatie_
+                                        export type l_location = i_location.Range
                                         
-                                        export namespace Balans {
+                                        export namespace l_state {
                                             
-                                            export type l_location = i_location.Range
+                                            export type Resultaat = Balans_Resultaat_Mutatie_
                                             
-                                            export namespace l_state {
+                                            export namespace Balans {
                                                 
-                                                export namespace Informele_rekening {
+                                                export type l_location = i_location.Range
+                                                
+                                                export namespace l_state {
                                                     
                                                     export namespace Informele_rekening {
                                                         
-                                                        export type l_location = i_location.Range
+                                                        export namespace Informele_rekening {
+                                                            
+                                                            export type l_location = i_location.Range
+                                                            
+                                                            export type l_reference = string
+                                                            
+                                                        }
                                                         
-                                                        export type l_reference = string
+                                                        export type Informele_rekening = {
+                                                            readonly 'l location': Informele_rekening.l_location
+                                                            readonly 'l reference': Informele_rekening.l_reference
+                                                        }
                                                         
                                                     }
                                                     
                                                     export type Informele_rekening = {
-                                                        readonly 'l location': Informele_rekening.l_location
-                                                        readonly 'l reference': Informele_rekening.l_reference
+                                                        readonly 'Informele rekening': Informele_rekening.Informele_rekening
                                                     }
                                                     
                                                 }
                                                 
-                                                export type Informele_rekening = {
-                                                    readonly 'Informele rekening': Informele_rekening.Informele_rekening
-                                                }
+                                                export type l_state = 
+                                                    | readonly ['Informele rekening', l_state.Informele_rekening]
                                                 
                                             }
                                             
-                                            export type l_state = 
-                                                | readonly ['Informele rekening', l_state.Informele_rekening]
+                                            export type Balans = {
+                                                readonly 'l location': Balans.l_location
+                                                readonly 'l state': Balans.l_state
+                                            }
                                             
                                         }
                                         
-                                        export type Balans = {
-                                            readonly 'l location': Balans.l_location
-                                            readonly 'l state': Balans.l_state
-                                        }
+                                        export type l_state = 
+                                            | readonly ['Resultaat', l_state.Resultaat]
+                                            | readonly ['Balans', l_state.Balans]
                                         
                                     }
                                     
-                                    export type l_state = 
-                                        | readonly ['Resultaat', l_state.Resultaat]
-                                        | readonly ['Balans', l_state.Balans]
+                                    export type Afhandeling = {
+                                        readonly 'l location': Afhandeling.l_location
+                                        readonly 'l state': Afhandeling.l_state
+                                    }
                                     
                                 }
                                 
-                                export type Afhandeling = {
-                                    readonly 'l location': Afhandeling.l_location
-                                    readonly 'l state': Afhandeling.l_state
+                                export type l_entry = {
+                                    readonly 'Bedrag': l_entry.Bedrag
+                                    readonly 'Afhandeling': l_entry.Afhandeling
                                 }
                                 
                             }
                             
-                            export type l_entry = {
-                                readonly 'Bedrag': l_entry.Bedrag
-                                readonly 'Afhandeling': l_entry.Afhandeling
+                            export type D = {
+                                readonly 'l location': D.l_location
+                                readonly 'l entry': D.l_entry
                             }
                             
                         }
                         
-                        export type D = {
-                            readonly 'l location': D.l_location
-                            readonly 'l entry': D.l_entry
-                        }
+                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
                         
                     }
                     
-                    export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                    export type Mutaties = {
+                        readonly 'l location': Mutaties.l_location
+                        readonly 'l dictionary': Mutaties.l_dictionary
+                    }
                     
                 }
                 
                 export type l_entry = {
-                    readonly 'l location': l_entry.l_location
-                    readonly 'l dictionary': l_entry.l_dictionary
+                    readonly 'Stam': l_entry.Stam
+                    readonly 'Mutaties': l_entry.Mutaties
                 }
                 
             }
@@ -2991,12 +3002,12 @@ export namespace Mutaties_ {
         
     }
     
-    export type Verrekenpost_mutaties = {
-        readonly 'l location': Verrekenpost_mutaties.l_location
-        readonly 'l dictionary': Verrekenpost_mutaties.l_dictionary
+    export type Verrekenposten = {
+        readonly 'l location': Verrekenposten.l_location
+        readonly 'l dictionary': Verrekenposten.l_dictionary
     }
     
-    export namespace Bankrekening_Mutatie_Verwerkingen {
+    export namespace Bankrekeningen {
         
         export type l_location = i_location.Range
         
@@ -3008,123 +3019,134 @@ export namespace Mutaties_ {
                 
                 export namespace l_entry {
                     
-                    export type l_location = i_location.Range
+                    export type Stam = null
                     
-                    export namespace l_dictionary {
+                    export namespace Mutatie_Verwerkingen {
                         
-                        export namespace D {
+                        export type l_location = i_location.Range
+                        
+                        export namespace l_dictionary {
                             
-                            export type l_location = i_location.Range
-                            
-                            export namespace l_entry {
+                            export namespace D {
                                 
-                                export type mutatie = null
+                                export type l_location = i_location.Range
                                 
-                                export namespace type_ {
+                                export namespace l_entry {
                                     
-                                    export type l_location = i_location.Range
+                                    export type Stam = null
                                     
-                                    export namespace l_state {
+                                    export namespace type_ {
                                         
-                                        export type Resultaat = Balans_Resultaat_Mutatie_
+                                        export type l_location = i_location.Range
                                         
-                                        export namespace Balans {
+                                        export namespace l_state {
                                             
-                                            export type l_location = i_location.Range
+                                            export type Resultaat = Balans_Resultaat_Mutatie_
                                             
-                                            export namespace l_state {
+                                            export namespace Balans {
                                                 
-                                                export namespace Informele_rekening {
+                                                export type l_location = i_location.Range
+                                                
+                                                export namespace l_state {
                                                     
                                                     export namespace Informele_rekening {
                                                         
-                                                        export type l_location = i_location.Range
+                                                        export namespace Informele_rekening {
+                                                            
+                                                            export type l_location = i_location.Range
+                                                            
+                                                            export type l_reference = string
+                                                            
+                                                        }
                                                         
-                                                        export type l_reference = string
+                                                        export type Informele_rekening = {
+                                                            readonly 'l location': Informele_rekening.l_location
+                                                            readonly 'l reference': Informele_rekening.l_reference
+                                                        }
                                                         
                                                     }
                                                     
                                                     export type Informele_rekening = {
-                                                        readonly 'l location': Informele_rekening.l_location
-                                                        readonly 'l reference': Informele_rekening.l_reference
+                                                        readonly 'Informele rekening': Informele_rekening.Informele_rekening
                                                     }
-                                                    
-                                                }
-                                                
-                                                export type Informele_rekening = {
-                                                    readonly 'Informele rekening': Informele_rekening.Informele_rekening
-                                                }
-                                                
-                                                export namespace Verrekenpost {
                                                     
                                                     export namespace Verrekenpost {
                                                         
-                                                        export type l_location = i_location.Range
+                                                        export namespace Verrekenpost {
+                                                            
+                                                            export type l_location = i_location.Range
+                                                            
+                                                            export type l_reference = string
+                                                            
+                                                        }
                                                         
-                                                        export type l_reference = string
+                                                        export type Verrekenpost = {
+                                                            readonly 'l location': Verrekenpost.l_location
+                                                            readonly 'l reference': Verrekenpost.l_reference
+                                                        }
                                                         
                                                     }
                                                     
                                                     export type Verrekenpost = {
-                                                        readonly 'l location': Verrekenpost.l_location
-                                                        readonly 'l reference': Verrekenpost.l_reference
+                                                        readonly 'Verrekenpost': Verrekenpost.Verrekenpost
                                                     }
                                                     
                                                 }
                                                 
-                                                export type Verrekenpost = {
-                                                    readonly 'Verrekenpost': Verrekenpost.Verrekenpost
-                                                }
+                                                export type l_state = 
+                                                    | readonly ['Informele rekening', l_state.Informele_rekening]
+                                                    | readonly ['Verrekenpost', l_state.Verrekenpost]
                                                 
                                             }
                                             
-                                            export type l_state = 
-                                                | readonly ['Informele rekening', l_state.Informele_rekening]
-                                                | readonly ['Verrekenpost', l_state.Verrekenpost]
+                                            export type Balans = {
+                                                readonly 'l location': Balans.l_location
+                                                readonly 'l state': Balans.l_state
+                                            }
                                             
                                         }
                                         
-                                        export type Balans = {
-                                            readonly 'l location': Balans.l_location
-                                            readonly 'l state': Balans.l_state
-                                        }
+                                        export type l_state = 
+                                            | readonly ['Resultaat', l_state.Resultaat]
+                                            | readonly ['Balans', l_state.Balans]
                                         
                                     }
                                     
-                                    export type l_state = 
-                                        | readonly ['Resultaat', l_state.Resultaat]
-                                        | readonly ['Balans', l_state.Balans]
+                                    export type type_ = {
+                                        readonly 'l location': type_.l_location
+                                        readonly 'l state': type_.l_state
+                                    }
                                     
                                 }
                                 
-                                export type type_ = {
-                                    readonly 'l location': type_.l_location
-                                    readonly 'l state': type_.l_state
+                                export type l_entry = {
+                                    readonly 'Stam': l_entry.Stam
+                                    readonly 'type': l_entry.type_
                                 }
                                 
                             }
                             
-                            export type l_entry = {
-                                readonly 'mutatie': l_entry.mutatie
-                                readonly 'type': l_entry.type_
+                            export type D = {
+                                readonly 'l location': D.l_location
+                                readonly 'l entry': D.l_entry
                             }
                             
                         }
                         
-                        export type D = {
-                            readonly 'l location': D.l_location
-                            readonly 'l entry': D.l_entry
-                        }
+                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
                         
                     }
                     
-                    export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                    export type Mutatie_Verwerkingen = {
+                        readonly 'l location': Mutatie_Verwerkingen.l_location
+                        readonly 'l dictionary': Mutatie_Verwerkingen.l_dictionary
+                    }
                     
                 }
                 
                 export type l_entry = {
-                    readonly 'l location': l_entry.l_location
-                    readonly 'l dictionary': l_entry.l_dictionary
+                    readonly 'Stam': l_entry.Stam
+                    readonly 'Mutatie Verwerkingen': l_entry.Mutatie_Verwerkingen
                 }
                 
             }
@@ -3140,12 +3162,12 @@ export namespace Mutaties_ {
         
     }
     
-    export type Bankrekening_Mutatie_Verwerkingen = {
-        readonly 'l location': Bankrekening_Mutatie_Verwerkingen.l_location
-        readonly 'l dictionary': Bankrekening_Mutatie_Verwerkingen.l_dictionary
+    export type Bankrekeningen = {
+        readonly 'l location': Bankrekeningen.l_location
+        readonly 'l dictionary': Bankrekeningen.l_dictionary
     }
     
-    export namespace Memoriaal_boekingen {
+    export namespace Overige_Balans_Items {
         
         export type l_location = i_location.Range
         
@@ -3157,60 +3179,71 @@ export namespace Mutaties_ {
                 
                 export namespace l_entry {
                     
-                    export type l_location = i_location.Range
+                    export type Stam = null
                     
-                    export namespace l_dictionary {
+                    export namespace Memoriaal_Boekingen {
                         
-                        export namespace D {
+                        export type l_location = i_location.Range
+                        
+                        export namespace l_dictionary {
                             
-                            export type l_location = i_location.Range
-                            
-                            export namespace l_entry {
+                            export namespace D {
                                 
-                                export type Bedrag = number
+                                export type l_location = i_location.Range
                                 
-                                export type Datum = number
-                                
-                                export type Omschrijving = string
-                                
-                                export namespace Grootboekrekening {
+                                export namespace l_entry {
                                     
-                                    export type l_location = i_location.Range
+                                    export type Bedrag = number
                                     
-                                    export type l_reference = string
+                                    export type Datum = number
+                                    
+                                    export type Omschrijving = string
+                                    
+                                    export namespace Grootboekrekening {
+                                        
+                                        export type l_location = i_location.Range
+                                        
+                                        export type l_reference = string
+                                        
+                                    }
+                                    
+                                    export type Grootboekrekening = {
+                                        readonly 'l location': Grootboekrekening.l_location
+                                        readonly 'l reference': Grootboekrekening.l_reference
+                                    }
                                     
                                 }
                                 
-                                export type Grootboekrekening = {
-                                    readonly 'l location': Grootboekrekening.l_location
-                                    readonly 'l reference': Grootboekrekening.l_reference
+                                export type l_entry = {
+                                    readonly 'Bedrag': l_entry.Bedrag
+                                    readonly 'Datum': l_entry.Datum
+                                    readonly 'Omschrijving': l_entry.Omschrijving
+                                    readonly 'Grootboekrekening': l_entry.Grootboekrekening
                                 }
                                 
                             }
                             
-                            export type l_entry = {
-                                readonly 'Bedrag': l_entry.Bedrag
-                                readonly 'Datum': l_entry.Datum
-                                readonly 'Omschrijving': l_entry.Omschrijving
-                                readonly 'Grootboekrekening': l_entry.Grootboekrekening
+                            export type D = {
+                                readonly 'l location': D.l_location
+                                readonly 'l entry': D.l_entry
                             }
                             
                         }
                         
-                        export type D = {
-                            readonly 'l location': D.l_location
-                            readonly 'l entry': D.l_entry
-                        }
+                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
                         
                     }
                     
-                    export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                    export type Memoriaal_Boekingen = {
+                        readonly 'l location': Memoriaal_Boekingen.l_location
+                        readonly 'l dictionary': Memoriaal_Boekingen.l_dictionary
+                    }
                     
                 }
                 
                 export type l_entry = {
-                    readonly 'l location': l_entry.l_location
-                    readonly 'l dictionary': l_entry.l_dictionary
+                    readonly 'Stam': l_entry.Stam
+                    readonly 'Memoriaal Boekingen': l_entry.Memoriaal_Boekingen
                 }
                 
             }
@@ -3226,17 +3259,17 @@ export namespace Mutaties_ {
         
     }
     
-    export type Memoriaal_boekingen = {
-        readonly 'l location': Memoriaal_boekingen.l_location
-        readonly 'l dictionary': Memoriaal_boekingen.l_dictionary
+    export type Overige_Balans_Items = {
+        readonly 'l location': Overige_Balans_Items.l_location
+        readonly 'l dictionary': Overige_Balans_Items.l_dictionary
     }
     
 }
 
 export type Mutaties_ = {
-    readonly 'Verrekenpost mutaties': Mutaties_.Verrekenpost_mutaties
-    readonly 'Bankrekening Mutatie Verwerkingen': Mutaties_.Bankrekening_Mutatie_Verwerkingen
-    readonly 'Memoriaal boekingen': Mutaties_.Memoriaal_boekingen
+    readonly 'Verrekenposten': Mutaties_.Verrekenposten
+    readonly 'Bankrekeningen': Mutaties_.Bankrekeningen
+    readonly 'Overige Balans Items': Mutaties_.Overige_Balans_Items
 }
 
 export namespace Jaren_ {
