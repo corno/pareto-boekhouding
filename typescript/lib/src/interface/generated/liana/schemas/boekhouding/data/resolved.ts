@@ -28,9 +28,9 @@ export namespace Fiscaal_ {
             
             export namespace Zijde {
                 
-                export type Activa = null
+                export type Activa = symbol
                 
-                export type Passiva = null
+                export type Passiva = symbol
                 
             }
             
@@ -40,7 +40,7 @@ export namespace Fiscaal_ {
             
             export namespace Subcategorieen {
                 
-                export type D = null
+                export type D = symbol
                 
             }
             
@@ -63,9 +63,9 @@ export namespace Fiscaal_ {
             
             export namespace Zijde {
                 
-                export type Kosten = null
+                export type Kosten = symbol
                 
-                export type Opbrengsten = null
+                export type Opbrengsten = symbol
                 
             }
             
@@ -75,7 +75,7 @@ export namespace Fiscaal_ {
             
             export namespace Subcategorieen {
                 
-                export type D = null
+                export type D = symbol
                 
             }
             
@@ -123,9 +123,9 @@ export namespace Grootboek_Categorieen_ {
             
             export namespace Zijde {
                 
-                export type Activa = null
+                export type Activa = symbol
                 
-                export type Passiva = null
+                export type Passiva = symbol
                 
             }
             
@@ -191,9 +191,9 @@ export namespace Grootboek_Categorieen_ {
             
             export namespace Zijde {
                 
-                export type Kosten = null
+                export type Kosten = symbol
                 
-                export type Opbrengsten = null
+                export type Opbrengsten = symbol
                 
             }
             
@@ -279,7 +279,7 @@ export namespace Beheer_ {
                     readonly 'BTW-promillage': Ja.BTW$mi_promillage
                 }
                 
-                export type Nee = null
+                export type Nee = symbol
                 
             }
             
@@ -331,9 +331,9 @@ export namespace Beheer_ {
                 
                 export namespace Zijde {
                     
-                    export type Activa = null
+                    export type Activa = symbol
                     
-                    export type Passiva = null
+                    export type Passiva = symbol
                     
                 }
                 
@@ -410,7 +410,7 @@ export namespace Beheer_ {
                                 readonly 'Correctietype': Ja.Correctietype
                             }
                             
-                            export type Nee = null
+                            export type Nee = symbol
                             
                         }
                         
@@ -424,7 +424,7 @@ export namespace Beheer_ {
                         readonly 'Correctie op vennootschapsbelasting': Kosten.Correctie_op_vennootschapsbelasting
                     }
                     
-                    export type Opbrengsten = null
+                    export type Opbrengsten = symbol
                     
                 }
                 
@@ -455,7 +455,7 @@ export namespace Beheer_ {
         
         export namespace Bank {
             
-            export type D = null
+            export type D = symbol
             
         }
         
@@ -463,7 +463,7 @@ export namespace Beheer_ {
         
         export namespace Informeel {
             
-            export type D = null
+            export type D = symbol
             
         }
         
@@ -604,7 +604,7 @@ export namespace Beheer_ {
     
     export namespace Leveranciers {
         
-        export type D = null
+        export type D = symbol
         
     }
     
@@ -612,7 +612,7 @@ export namespace Beheer_ {
     
     export namespace Medewerkers {
         
-        export type D = null
+        export type D = symbol
         
     }
     
@@ -640,11 +640,11 @@ export namespace Grootboekrekeningen_ {
             
             export namespace Type {
                 
-                export type Bankrekening = null
+                export type Bankrekening = symbol
                 
-                export type Overig = null
+                export type Overig = symbol
                 
-                export type Informele_rekening = null
+                export type Informele_rekening = symbol
                 
             }
             
@@ -706,7 +706,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Salarisrondes {
             
-            export type D = null
+            export type D = symbol
             
         }
         
@@ -718,7 +718,7 @@ export namespace Jaarbeheer_ {
                 
                 export namespace _11$pe__BTW$mi_categorieen {
                     
-                    export type D = null
+                    export type D = symbol
                     
                 }
                 
@@ -760,7 +760,7 @@ export namespace Jaarbeheer_ {
                         readonly 'Datum': Aangegeven.Datum
                     }
                     
-                    export type Openstaand = null
+                    export type Openstaand = symbol
                     
                 }
                 
@@ -881,7 +881,7 @@ export namespace Jaarbeheer_ {
                 
                 export namespace Nieuw {
                     
-                    export type Ja = null
+                    export type Ja = symbol
                     
                     export namespace Nee {
                         
@@ -932,7 +932,7 @@ export namespace Jaarbeheer_ {
                 
                 export namespace Nieuw {
                     
-                    export type Ja = null
+                    export type Ja = symbol
                     
                     export namespace Nee {
                         
@@ -995,7 +995,7 @@ export namespace Jaarbeheer_ {
         
         export namespace Verrekenposten {
             
-            export type D = null
+            export type D = symbol
             
         }
         
@@ -1043,7 +1043,7 @@ export namespace Overige_balans_item_ {
     
     export namespace Nieuw {
         
-        export type Ja = null
+        export type Ja = symbol
         
         export namespace Nee {
             
@@ -1114,7 +1114,7 @@ export namespace Handelstransacties_ {
             
             export namespace Afhandeling {
                 
-                export type Mutaties = null
+                export type Mutaties = symbol
                 
                 export namespace Nog_te_betalen {
                     
@@ -1156,13 +1156,13 @@ export namespace Handelstransacties_ {
             
             export namespace BTW$mi_regime {
                 
-                export type Binnenland$cl__heffing_verlegd = null
+                export type Binnenland$cl__heffing_verlegd = symbol
                 
-                export type Geen_BTW_van_toepassing = null
+                export type Geen_BTW_van_toepassing = symbol
                 
-                export type Import_van_buiten_de_EU = null
+                export type Import_van_buiten_de_EU = symbol
                 
-                export type Intracommunautair = null
+                export type Intracommunautair = symbol
                 
                 export namespace Standaard {
                     
@@ -1206,9 +1206,9 @@ export namespace Handelstransacties_ {
                     readonly 'Document': Toegevoegd.Document
                 }
                 
-                export type Niet_van_toepassing = null
+                export type Niet_van_toepassing = symbol
                 
-                export type Ontbreekt = null
+                export type Ontbreekt = symbol
                 
             }
             
@@ -1309,7 +1309,7 @@ export namespace Handelstransacties_ {
             
             export namespace Type {
                 
-                export type Bonnetje = null
+                export type Bonnetje = symbol
                 
                 export namespace Inkoop_$po_met_crediteur$pc_ {
                     
@@ -1420,7 +1420,7 @@ export namespace Handelstransacties_ {
             
             export namespace Afhandeling {
                 
-                export type Mutaties = null
+                export type Mutaties = symbol
                 
                 export namespace Rekening_courant {
                     
@@ -1566,7 +1566,7 @@ export namespace Handelstransacties_ {
                     
                     export namespace BTW$mi_regime {
                         
-                        export type Intracommunautair = null
+                        export type Intracommunautair = symbol
                         
                         export namespace Standaard {
                             
@@ -1589,7 +1589,7 @@ export namespace Handelstransacties_ {
                             readonly 'BTW-categorie': Standaard.BTW$mi_categorie
                         }
                         
-                        export type Binnenland$cl__heffing_verlegd = null
+                        export type Binnenland$cl__heffing_verlegd = symbol
                         
                     }
                     
@@ -1623,7 +1623,7 @@ export namespace Handelstransacties_ {
                             readonly 'Opbrengst': Project.Opbrengst
                         }
                         
-                        export type Los = null
+                        export type Los = symbol
                         
                         export namespace Licentieovereenkomst {
                             
@@ -1978,9 +1978,9 @@ export namespace Jaren_ {
         
         export namespace Afgesloten {
             
-            export type Ja = null
+            export type Ja = symbol
             
-            export type Nee = null
+            export type Nee = symbol
             
         }
         
@@ -2094,7 +2094,7 @@ export type Balans_Resultaat_Mutatie_ = {
 
 export namespace Eerste_boekjaar_ {
     
-    export type Ja = null
+    export type Ja = symbol
     
     export namespace Nee {
         

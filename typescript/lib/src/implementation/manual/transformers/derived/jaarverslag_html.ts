@@ -8,17 +8,17 @@ export type Signature = cffc.Deserializer
 
 //data types
 import * as d_out from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
-import * as d_in from "../../../../interface/to_be_generated/aggregatie"
-import * as d_temp_aggratie_2 from "../../../../interface/to_be_generated/aggregatie_2"
+import * as d_in from "../../../../interface/to_be_generated/derived"
+import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggregatie_2"
 
 
 //dependencies
-import * as t_primitives_to_text from "../../transformers/primitives/text"
+import * as t_primitives_to_text from "../primitives/text"
 
 const integer_from_dictionary = <T>(
     dict: _pi.Dictionary<T>,
     get_value: ($: T) => number,
-): number => _p.number.integer.from.list(
+): number => _p.number.from.list(
     _p.list.from.dictionary(
         dict
     ).convert(($) => $)
@@ -86,7 +86,7 @@ const Indent_Blank = (): d_out.Flow_Element.table.sections.L.rows.L.cells.L => s
 
 
 const Domein_Zijde = (
-    $: d_temp_aggratie_2.Domein_Zijde,
+    $: d_temp_aggregatie_2.Domein_Zijde,
 ): _pi.List<d_out.Flow_Element.table.sections.L.rows.L.cells> => {
     const teken_omkeren = $['teken omkeren']
     return _p.list.from.dictionary(
@@ -129,7 +129,7 @@ const Domein_Zijde = (
 }
 
 const Domein = (
-    $: d_temp_aggratie_2.Domein,
+    $: d_temp_aggregatie_2.Domein,
     $p: {
         'label': string
     }
@@ -204,7 +204,7 @@ const Resultaat_Grootboekrekeningen = (
     $p: {
         'label': string
         'teken omkeren': boolean
-    }): d_temp_aggratie_2.Domein_Zijde => {
+    }): d_temp_aggregatie_2.Domein_Zijde => {
     const p_grootboekrekeningen = $.__d_map(($) => {
         return {
             'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
@@ -240,10 +240,73 @@ const Resultaat_Grootboekrekeningen = (
     }
 }
 
+const Balans_Grootboekrekeningen = (
+    $: d_in.Balans.Grootboek_Rekeningen,
+    $p: {
+        'label': string
+        'teken omkeren': boolean
+    }
+): d_temp_aggregatie_2.Domein_Zijde => {
+    const p_grootboekrekeningen = $.__d_map(($) => {
+
+
+        return {
+            'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
+            'subcategorie': $.bron.Stam.Subcategorie['l id'],
+            'bedrag': $.totaal,
+        }
+    })
+    return {
+        'label': $p.label,
+        'teken omkeren': $p['teken omkeren'],
+        'hoofdcategorieen': _p.dictionary.from.dictionary(p_grootboekrekeningen).group(($) => $.hoofdcategorie).__d_map(($) => {
+            const subcategorieen = _p.dictionary.from.dictionary(
+                $
+            ).group(($) => $.subcategorie).__d_map(($) => ({
+                'grootboekrekeningen': $,
+                'totaal': integer_from_dictionary(
+                    $,
+                    ($) => $.bedrag
+                )
+            }))
+            return {
+                'subcategorieen': subcategorieen,
+                'totaal': integer_from_dictionary(
+                    subcategorieen,
+                    ($) => $.totaal
+                )
+            }
+        }),
+        'totaal': integer_from_dictionary(
+            p_grootboekrekeningen,
+            ($) => $.bedrag
+        ),
+    }
+}
+
 export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
+    _p_log_debug_message("bankrekeningen", () => { })
     $.jaren.__d_map(($, jaar) => {
-        $.bankrekeningen.__d_map(($, bankrekening) => {
+        _p.dictionary.from.dictionary($.bankrekeningen).filter(($) => $.todo).__d_map(($, bankrekening) => {
             _p_log_debug_message(`${jaar}:${bankrekening}:${$.bron.Beginsaldo}:${$.mutaties}:${$.eindsaldo}:${$.overgenomen}:${$.openstaand}`, () => { })
+        })
+    })
+    _p_log_debug_message("verrekenposten", () => { })
+    $.jaren.__d_map(($, jaar) => {
+        _p.dictionary.from.dictionary($.verrekenposten).filter(($) => $.todo).__d_map(($, verrekenpost) => {
+            _p_log_debug_message(`${jaar}:${verrekenpost}:${$['eigen mutaties']}:${$['bankrekening mutaties']}:${$.saldo}`, () => { })
+        })
+    })
+    _p_log_debug_message("btw periodes", () => { })
+    $.jaren.__d_map(($, jaar) => {
+        _p.dictionary.from.dictionary($['btw periodes']).filter(($) => _p.decide.state($.status, ($) => {
+            switch ($[0]) {
+                case 'aangegeven': return _p.ss($, ($) => $['todo niet gelijk'])
+                case 'openstaand': return _p.ss($, ($) => false)
+                default: return _p.au($[0])
+            }
+        })).__d_map(($, btw_periode) => {
+            _p_log_debug_message(`${jaar}\t${btw_periode}\t${$.betalingen}\t${$.verrekeningen}\t${$.status[0] === 'aangegeven' ? $.status[1].bron.Bedrag : '-'}`, () => { })
         })
     })
     return sh.document(
@@ -289,8 +352,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
                             ],
                             Domein(
                                 {
-                                    'links': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['resultaat rekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Kosten'), { 'label': "kosten", 'teken omkeren': true }),
-                                    'rechts': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['resultaat rekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'), { 'label': "opbrengsten", 'teken omkeren': false }),
+                                    'links': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['resultaat grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Kosten'), { 'label': "kosten", 'teken omkeren': true }),
+                                    'rechts': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['resultaat grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'), { 'label': "opbrengsten", 'teken omkeren': false }),
                                 },
                                 {
                                     'label': "resultaat",
@@ -309,7 +372,11 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
                                 ),
                             ],
                             Domein(
-                                $.value['balans rekeningen'],
+                                {
+                                    'links': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['balans grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'), { 'label': "activa", 'teken omkeren': false }),
+                                    'rechts': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['balans grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'), { 'label': "passiva", 'teken omkeren': true }),
+
+                                },
                                 {
                                     'label': "balans",
                                 }

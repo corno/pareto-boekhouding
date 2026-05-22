@@ -7,13 +7,13 @@ export type Signature = cffc.Deserializer
 
 //dependencies
 import * as r_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters"
-import * as t_bh_to_aggregatie from "../transformers/boekhouding_resolved/aggregatie"
+import * as t_resolved_to_derived from "../transformers/boekhouding_resolved/derived"
 
 import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/fountain_pen"
 import * as t_deserialize_resolved_to_location from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/location"
 import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 import * as t_html_to_fountain_pen from "pareto-static-html/dist/implementation/manual/transformers/static_html/fountain_pen"
-import * as t_aggregatie_to_jaarverslag_html from "../transformers/aggregatie/jaarverslag_html"
+import * as t_aggregatie_to_jaarverslag_html from "../transformers/derived/jaarverslag_html"
 
 //shorthands
 import * as sh_fp from "pareto-fountain-pen/dist/shorthands/prose"
@@ -21,7 +21,7 @@ import * as sh_fp from "pareto-fountain-pen/dist/shorthands/prose"
 
 export const $$: Signature = ($, abort, $p) => t_html_to_fountain_pen.Document(
     t_aggregatie_to_jaarverslag_html.Root(
-        t_bh_to_aggregatie.Root(
+        t_resolved_to_derived.Root(
             r_boekhouding_resolved_from_loc.Root(
                 $,
                 ($) => abort(sh_fp.ph.composed([

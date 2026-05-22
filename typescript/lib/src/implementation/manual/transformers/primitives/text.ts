@@ -34,7 +34,7 @@ export const fractional_decimal: _pi.Transformer_With_Parameter<
         }
 
         // Split into integer and fractional parts
-        const integerPart = _p.number.integer.divide(
+        const integerPart = _p.number.from.number.divide(
             value,
             divisor,
             {
@@ -52,7 +52,7 @@ export const fractional_decimal: _pi.Transformer_With_Parameter<
                 while (temp > 0) {
                     const digit = temp % 10
                     $i['add item'](digit)
-                    temp = _p.number.integer.divide(
+                    temp = _p.number.from.number.divide(
                         temp,
                         10,
                         {
@@ -85,7 +85,7 @@ export const fractional_decimal: _pi.Transformer_With_Parameter<
             for (let i = 0; i < $p['number of fractional digits']; i++) {
                 const digit = temp % 10
                 $i['add item'](digit)
-                temp = _p.number.integer.divide(
+                temp = _p.number.from.number.divide(
                     temp,
                     10,
                     {
