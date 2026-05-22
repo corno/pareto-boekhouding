@@ -1,6 +1,7 @@
 import * as _pi from 'pareto-core/dist/interface'
 
 import * as d_boekhouding from "../generated/liana/schemas/boekhouding/data/resolved"
+import * as d_temp_aggregatie_2 from "../to_be_generated/aggregatie_2"
 
 export type Root = {
     'bron': d_boekhouding.Root
@@ -8,28 +9,18 @@ export type Root = {
 }
 
 export type Jaar = {
-    'resultaat rekeningen': Domein
+    'bankrekeningen': _pi.Dictionary<Bankrekening>
+    'resultaat rekeningen': Resultaat.Grootboek_Rekeningen
     'resultaat': number
-    'balans rekeningen': Domein
+    'balans rekeningen': d_temp_aggregatie_2.Domein
 }
 
-export type Domein = {
-    'links': Domein_Zijde
-    'rechts': Domein_Zijde
-}
-
-export type Domein_Zijde = {
-    'label': string
-    'teken omkeren': boolean
-    'hoofdcategorieen': _pi.Dictionary<{
-        'subcategorieen': _pi.Dictionary<{
-            'grootboekrekeningen': _pi.Dictionary<Grootboekrekening>
-            'totaal': number
-        }>
-        'totaal': number
-    }>
-    'totaal': number
-
+export type Bankrekening = {
+    'bron': d_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
+    'mutaties': number
+    'eindsaldo': number
+    'overgenomen': number
+    'openstaand': number
 }
 
 export namespace Resultaat {
@@ -45,8 +36,4 @@ export namespace Resultaat {
 
     export type Grootboek_Rekeningen = _pi.Dictionary<Grootboekrekening>
 
-}
-
-export type Grootboekrekening = {
-    'bedrag': number
 }
