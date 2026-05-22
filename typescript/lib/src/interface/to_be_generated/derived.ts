@@ -52,6 +52,8 @@ export type Btw_Periode = {
 
 export type Overige_Balans_Item = {
     'bron': d_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
+    'memoriaal mutaties': number
+    'saldo': number
 }
 
 export type Bankrekening = {
