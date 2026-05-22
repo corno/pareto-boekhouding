@@ -10,20 +10,10 @@ import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
 //data types
 import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 import * as d_out from "../../../../interface/to_be_generated/derived"
-import * as d_text from "pareto-fountain-pen/dist/interface/generated/liana/schemas/text/data"
 
 //dependencies
 
-const number_from_dictionary_sum = <T>(
-    dict: _pi.Dictionary<T>,
-    get_value: ($: T) => number,
-): number => _p.number.from.dictionary(
-    dict
-).sum(
-    ($) => get_value($)
-)
-
-const filter_dictionary = <T, Context>(
+const dictionary_from_dictionary_filter_with_context = <T, Context>(
     dict: _pi.Dictionary<T>,
     context: Context,
     filter: ($: T, context: Context) => boolean,
@@ -45,8 +35,9 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
             ).map(($) => {
                 return {
                     'bron': $,
-                    'totaal btw': number_from_dictionary_sum(
-                        $.Regels,
+                    'totaal btw': _p.number.from.dictionary(
+                        $.Regels
+                    ).sum(
                         ($) => _p.decide.state($.Bedrag, ($) => {
                             switch ($[0]) {
                                 case 'Bekend': return _p.ss($, ($) =>
@@ -57,8 +48,9 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                             }
                         })
                     ),
-                    'totaal ex btw': number_from_dictionary_sum(
-                        $.Regels,
+                    'totaal ex btw': _p.number.from.dictionary(
+                        $.Regels
+                    ).sum(
                         ($) => _p.decide.state($.Bedrag, ($) => {
                             switch ($[0]) {
                                 case 'Bekend': return _p.ss($, ($) => $['BTW-bedrag'])
@@ -73,8 +65,9 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
             ).map(($) => {
                 return {
                     'bron': $,
-                    'totaal btw': number_from_dictionary_sum(
-                        $.Regels,
+                    'totaal btw': _p.number.from.dictionary(
+                        $.Regels
+                    ).sum(
                         ($) => $['Bedrag exclusief BTW'] * _p.decide.state($['BTW-regime'], ($): number => {
                             switch ($[0]) {
                                 case 'Binnenland: heffing verlegd': return _p.ss($, ($) => 0)
@@ -90,22 +83,25 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                             }
                         })
                     ),
-                    'totaal ex btw': number_from_dictionary_sum(
-                        $.Regels,
+                    'totaal ex btw': _p.number.from.dictionary(
+                        $.Regels
+                    ).sum(
                         ($) => $['Bedrag exclusief BTW']
                     ),
                 }
             })
 
             const p_resultaat_rekeningen: d_out.Resultaat.Grootboek_Rekeningen = bron_jaar.Grootboekrekeningen.Resultaat.__d_map(($) => {
-                const p_inkopen = number_from_dictionary_sum(
-                    bron_jaar.Handelstransacties.Inkopen,
-                    ($inkoop) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_inkopen = _p.number.from.dictionary(
+                    bron_jaar.Handelstransacties.Inkopen
+                ).sum(
+                    ($inkoop) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $inkoop.Regels,
                             $,
                             ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Kosten' && _p.ss($, ($) => $.Grootboekrekening['l entry'] === context))
-                        ),
+                        )
+                    ).sum(
                         ($) => _p.decide.state($.Bedrag, ($): number => {
                             switch ($[0]) {
                                 case 'Bekend': return _p.ss($, ($) =>
@@ -117,34 +113,39 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                         })
                     )
                 )
-                const p_verkopen = number_from_dictionary_sum(
-                    bron_jaar.Handelstransacties.Verkopen,
-                    ($verkoop) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_verkopen = _p.number.from.dictionary(
+                    bron_jaar.Handelstransacties.Verkopen
+                ).sum(
+                    ($verkoop) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $verkoop.Regels,
                             $,
                             ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Opbrengsten' && _p.ss($, ($) => $.Grootboekrekening['l entry'] === context))
-                        ),
+                        )
+                    ).sum(
                         ($) => $['Bedrag exclusief BTW']
                     )
                 )
-                const p_memoriaal_boekingen = number_from_dictionary_sum(
-                    bron_jaar.Mutaties['Overige Balans Items'],
-                    ($item) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_memoriaal_boekingen = _p.number.from.dictionary(
+                    bron_jaar.Mutaties['Overige Balans Items']
+                ).sum(
+                    ($item) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $item['Memoriaal Boekingen'],
                             $,
                             ($, context) => $.Grootboekrekening['l entry'] === context
-                        ),
+                        )
+                    ).sum(
                         ($) => - $.Bedrag
                     )
                 )
-                const p_btw_afrondingen = number_from_dictionary_sum(
-                    filter_dictionary(
+                const p_btw_afrondingen = _p.number.from.dictionary(
+                    dictionary_from_dictionary_filter_with_context(
                         bron_jaar.Jaarbeheer.Resultaat['BTW periodes'],
                         $,
                         ($, context) => bron_jaar.Jaarbeheer.Resultaat['Grootboekrekening voor BTW afrondingen']['l entry'] === context
-                    ),
+                    )
+                ).sum(
                     ($) => _p.decide.state($.Status, ($) => {
                         switch ($[0]) {
                             case 'Aangegeven': return _p.ss($, ($) => $.Afronding)
@@ -166,20 +167,23 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                         + p_btw_afrondingen,
                 }
             })
-            const resultaat = number_from_dictionary_sum(
-                p_resultaat_rekeningen,
+            const resultaat = _p.number.from.dictionary(
+                p_resultaat_rekeningen
+            ).sum(
                 ($) => $.totaal
             )
 
             const p_balans_rekeningen: d_out.Balans.Grootboek_Rekeningen = bron_jaar.Grootboekrekeningen.Balans.__d_map(($) => {
-                const p_inkoop_regels = number_from_dictionary_sum(
-                    bron_jaar.Handelstransacties.Inkopen,
-                    ($inkoop) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_inkoop_regels = _p.number.from.dictionary(
+                    bron_jaar.Handelstransacties.Inkopen
+                ).sum(
+                    ($inkoop) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $inkoop.Regels,
                             $,
                             ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'].Grootboekrekening['l entry'] === context))
-                        ),
+                        )
+                    ).sum(
                         ($) => _p.decide.state($.Bedrag, ($): number => {
                             switch ($[0]) {
                                 case 'Bekend': return _p.ss($, ($) => $['Bedrag inclusief geheven BTW'])
@@ -188,22 +192,25 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                         })
                     )
                 )
-                const p_verkoop_regels = number_from_dictionary_sum(
-                    bron_jaar.Handelstransacties.Verkopen,
-                    ($verkoop) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_verkoop_regels = _p.number.from.dictionary(
+                    bron_jaar.Handelstransacties.Verkopen
+                ).sum(
+                    ($verkoop) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $verkoop.Regels,
                             $,
                             ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'].Grootboekrekening['l entry'] === context))
-                        ),
+                        )
+                    ).sum(
                         ($) => $['Bedrag exclusief BTW']
                     )
                 )
 
-                const p_bankrekening_mutatie_verwerkingen = number_from_dictionary_sum(
-                    bron_jaar.Mutaties.Bankrekeningen,
-                    ($bankrekening) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_bankrekening_mutatie_verwerkingen = _p.number.from.dictionary(
+                    bron_jaar.Mutaties.Bankrekeningen
+                ).sum(
+                    ($bankrekening) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $bankrekening['Mutatie Verwerkingen'],
                             $,
                             ($, context) => _p.decide.state($.type, ($) => {
@@ -219,20 +226,23 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                     default: return _p.au($[0])
                                 }
                             })
-                        ),
+                        )
+                    ).sum(
                         ($) => $.Stam.Bedrag
                     )
                 )
 
-                const p_bankrekeningen = number_from_dictionary_sum(
-                    filter_dictionary(
+                const p_bankrekeningen = _p.number.from.dictionary(
+                    dictionary_from_dictionary_filter_with_context(
                         bron_jaar.Jaarbeheer.Balans.Bankrekeningen,
                         $,
                         ($, context) => $.Grootboekrekening['l entry'] === context
-                    ),
+                    )
+                ).sum(
                     ($) =>
-                        + number_from_dictionary_sum(
-                            $.Mutaties,
+                        + _p.number.from.dictionary(
+                            $.Mutaties
+                        ).sum(
                             ($) => $.Bedrag
                         )
                         + $.Beginsaldo
@@ -272,18 +282,20 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
 
             const p_bankrekeningen = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Balans.Bankrekeningen).map(($) => {
                 const bron_bankrekening = $
-                const p_mutaties = number_from_dictionary_sum(
-                    $.Mutaties,
+                const p_mutaties = _p.number.from.dictionary(
+                    $.Mutaties
+                ).sum(
                     ($) => $.Bedrag
                 )
                 const p_eindsaldo =
                     + $.Beginsaldo
                     + p_mutaties
 
-                const p_overgenomen = number_from_dictionary_sum(
-                    bron_root.Jaren,
-                    ($) => number_from_dictionary_sum(
-                        filter_dictionary(
+                const p_overgenomen = _p.number.from.dictionary(
+                    bron_root.Jaren
+                ).sum(
+                    ($) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $.Jaarbeheer.Balans.Bankrekeningen,
                             bron_bankrekening,
                             ($, context) => _p.decide.state($.Nieuw, ($) => {
@@ -293,7 +305,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                     default: return _p.au($[0])
                                 }
                             })
-                        ),
+                        )
+                    ).sum(
                         ($) => $.Beginsaldo
                     )
                 )
@@ -314,45 +327,109 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                 bron_jaar.Jaarbeheer.Balans['Overige balans items']
             ).map(($) => {
                 const bron_overige_balans_item = $
-                const p_memoriaal_mutaties = number_from_dictionary_sum(
-                    filter_dictionary(
+                const p_memoriaal_mutaties = _p.number.from.dictionary(
+                    dictionary_from_dictionary_filter_with_context(
                         bron_jaar.Mutaties['Overige Balans Items'],
                         $,
                         ($, context) => $.Stam === context
-                    ),
-                    ($) => number_from_dictionary_sum(
-                        $['Memoriaal Boekingen'],
+                    )
+                ).sum(
+                    ($) => _p.number.from.dictionary(
+                        $['Memoriaal Boekingen']
+                    ).sum(
                         ($) => - $.Bedrag
                     )
 
                 )
+                const p_inkopen = _p.number.from.dictionary(
+                    bron_jaar.Handelstransacties.Inkopen
+                ).sum(
+                    ($inkoop) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
+                            $inkoop.Regels,
+                            bron_overige_balans_item,
+                            ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'] === context))
+                        )
+                    ).sum(
+                        ($) => _p.decide.state($.Bedrag, ($): number => {
+                            switch ($[0]) {
+                                case 'Bekend': return _p.ss($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
+                                default: return _p.au($[0])
+                            }
+                        })
+                    )
+                )
+                const p_verkopen = _p.number.from.dictionary(
+                    bron_jaar.Handelstransacties.Verkopen
+                ).sum(
+                    ($verkoop) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
+                            $verkoop.Regels,
+                            bron_overige_balans_item,
+                            ($, context) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'] === context))
+                        )
+                    ).sum(
+                        ($) => $['Bedrag exclusief BTW']
+                    )
+                )
+                const p_overgenomen = _p.number.from.dictionary(
+                    bron_root.Jaren
+                ).sum(
+                    ($) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
+                            $.Jaarbeheer.Balans['Overige balans items'],
+                            bron_overige_balans_item,
+                            ($, context) => _p.decide.state($.Nieuw, ($) => {
+                                switch ($[0]) {
+                                    case 'Ja': return _p.ss($, ($) => false)
+                                    case 'Nee': return _p.ss($, ($) => $['Balans item']['l entry'] === context)
+                                    default: return _p.au($[0])
+                                }
+                            })
+                        )
+                    ).sum(
+                        ($) => $.Beginsaldo
+                    )
+                )
+                const p_saldo =
+                    + $.Beginsaldo
+                    - p_memoriaal_mutaties
+                    + p_inkopen
+                    - p_verkopen
                 return {
                     'bron': $,
                     'memoriaal mutaties': p_memoriaal_mutaties,
-                    'saldo':
-                        + p_memoriaal_mutaties
-                        + $.Beginsaldo
+                    'inkopen': p_inkopen,
+                    'verkopen': p_verkopen,
+                    'overgenomen': p_overgenomen,
+                    'saldo': p_saldo,
+                    'todo': p_saldo !== p_overgenomen,
                 }
             })
 
 
             const p_verrekenposten = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Balans.Verrekenposten).map(($) => {
                 const bron_verrekenpost = $
-                const p_eigen_mutaties = number_from_dictionary_sum(
-                    filter_dictionary(
+                const p_eigen_mutaties = _p.number.from.dictionary(
+                    dictionary_from_dictionary_filter_with_context(
                         bron_jaar.Mutaties.Verrekenposten,
                         bron_verrekenpost,
                         ($, context) => $.Stam === context
-                    ),
-                    ($) => number_from_dictionary_sum(
-                        $.Mutaties,
+                    )
+                ).sum(
+                    ($) => _p.number.from.dictionary(
+                        $.Mutaties
+                    ).sum(
                         ($) => $.Bedrag
                     )
                 )
-                const p_bankrekening_mutaties = number_from_dictionary_sum(
-                    bron_jaar.Mutaties.Bankrekeningen,
-                    ($bankrekening) => number_from_dictionary_sum(
-                        filter_dictionary(
+
+
+                const p_bankrekening_mutaties = _p.number.from.dictionary(
+                    bron_jaar.Mutaties.Bankrekeningen
+                ).sum(
+                    ($bankrekening) => _p.number.from.dictionary(
+                        dictionary_from_dictionary_filter_with_context(
                             $bankrekening['Mutatie Verwerkingen'],
                             bron_verrekenpost,
                             ($, context) => _p.decide.state($.type, ($) => {
@@ -366,7 +443,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                     default: return false
                                 }
                             })
-                        ),
+                        )
+                    ).sum(
                         ($) => $.Stam.Bedrag
                     )
                 )
@@ -384,8 +462,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
 
             const p_btw_periodes: _pi.Dictionary<d_out.Btw_Periode> = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Resultaat['BTW periodes']).map(($) => {
                 const deze = $
-                const p_inkopen_x = number_from_dictionary_sum(
-                    filter_dictionary(
+                const p_inkopen_x = _p.number.from.dictionary(
+                    dictionary_from_dictionary_filter_with_context(
                         p_inkopen,
                         $,
                         ($, context) => _p.decide.state($.bron['BTW-regime'], ($) => {
@@ -394,24 +472,28 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                 default: return false
                             }
                         })
-                    ),
+                    )
+                ).sum(
                     ($) => $['totaal btw']
                 )
-                const p_verkopen_x = number_from_dictionary_sum(
-                    filter_dictionary(
+                const p_verkopen_x = _p.number.from.dictionary(
+                    dictionary_from_dictionary_filter_with_context(
                         p_verkopen,
                         $,
                         ($, context) => $.bron['BTW-periode']['l entry'] === context
-                    ),
+                    )
+                ).sum(
                     ($) => $['totaal btw']
                 )
 
-                const p_betalingen = number_from_dictionary_sum(
-                    bron_root.Jaren,
-                    ($) => number_from_dictionary_sum(
-                        $.Mutaties.Bankrekeningen,
-                        ($) => number_from_dictionary_sum(
-                            filter_dictionary(
+                const p_betalingen = _p.number.from.dictionary(
+                    bron_root.Jaren
+                ).sum(
+                    ($) => _p.number.from.dictionary(
+                        $.Mutaties.Bankrekeningen
+                    ).sum(
+                        ($) => _p.number.from.dictionary(
+                            dictionary_from_dictionary_filter_with_context(
                                 $['Mutatie Verwerkingen'],
                                 deze,
                                 ($, context) => _p.decide.state($.type, ($) => {
@@ -426,17 +508,20 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         default: return false
                                     }
                                 })
-                            ),
+                            )
+                        ).sum(
                             ($) => $.Stam.Bedrag
                         )
                     )
                 )
-                const p_verrekeningen = number_from_dictionary_sum(
-                    bron_root.Jaren,
-                    ($) => number_from_dictionary_sum(
-                        $.Mutaties.Verrekenposten,
-                        ($) => number_from_dictionary_sum(
-                            filter_dictionary(
+                const p_verrekeningen = _p.number.from.dictionary(
+                    bron_root.Jaren
+                ).sum(
+                    ($) => _p.number.from.dictionary(
+                        $.Mutaties.Verrekenposten
+                    ).sum(
+                        ($) => _p.number.from.dictionary(
+                            dictionary_from_dictionary_filter_with_context(
                                 $.Mutaties,
                                 deze,
                                 ($, context) => _p.decide.state($.Afhandeling, ($) => {
@@ -451,7 +536,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         default: return false
                                     }
                                 })
-                            ),
+                            )
+                        ).sum(
                             ($) => $.Bedrag
                         )
                     )

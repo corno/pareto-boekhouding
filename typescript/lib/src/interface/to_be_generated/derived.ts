@@ -53,7 +53,11 @@ export type Btw_Periode = {
 export type Overige_Balans_Item = {
     'bron': d_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
     'memoriaal mutaties': number
+    'inkopen': number
+    'verkopen': number
+    'overgenomen': number
     'saldo': number
+    'todo': boolean
 }
 
 export type Bankrekening = {

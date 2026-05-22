@@ -285,18 +285,21 @@ const Balans_Grootboekrekeningen = (
 }
 
 export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
+    _p_log_debug_message("", () => { })
     _p_log_debug_message("bankrekeningen", () => { })
     $.jaren.__d_map(($, jaar) => {
         _p.dictionary.from.dictionary($.bankrekeningen).filter(($) => $.todo).__d_map(($, bankrekening) => {
-            _p_log_debug_message(`${jaar}:${bankrekening}:${$.bron.Beginsaldo}:${$.mutaties}:${$.eindsaldo}:${$.overgenomen}:${$.openstaand}`, () => { })
+            _p_log_debug_message(`${jaar}\t${bankrekening}\t${$.bron.Beginsaldo}\t${$.mutaties}\t${$.eindsaldo}\t${$.overgenomen}\t${$.openstaand}`, () => { })
         })
     })
+    _p_log_debug_message("", () => { })
     _p_log_debug_message("verrekenposten", () => { })
     $.jaren.__d_map(($, jaar) => {
         _p.dictionary.from.dictionary($.verrekenposten).filter(($) => $.todo).__d_map(($, verrekenpost) => {
-            _p_log_debug_message(`${jaar}:${verrekenpost}:${$['eigen mutaties']}:${$['bankrekening mutaties']}:${$.saldo}`, () => { })
+            _p_log_debug_message(`${jaar}\t${verrekenpost}\t${$['eigen mutaties']}\t${$['bankrekening mutaties']}\t${$.saldo}`, () => { })
         })
     })
+    _p_log_debug_message("", () => { })
     _p_log_debug_message("btw periodes", () => { })
     $.jaren.__d_map(($, jaar) => {
         _p.dictionary.from.dictionary($['btw periodes']).filter(($) => _p.decide.state($.status, ($) => {
@@ -307,6 +310,13 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
             }
         })).__d_map(($, btw_periode) => {
             _p_log_debug_message(`${jaar}\t${btw_periode}\t${$.betalingen}\t${$.verrekeningen}\t${$.status[0] === 'aangegeven' ? $.status[1].bron.Bedrag : '-'}`, () => { })
+        })
+    })
+    _p_log_debug_message("", () => { })
+    _p_log_debug_message("overige balans items", () => { })
+    $.jaren.__d_map(($, jaar) => {
+        _p.dictionary.from.dictionary($['overige balans items']).filter(($) => $.todo).__d_map(($, overige_balans_item) => {
+            _p_log_debug_message(`${jaar}\t${overige_balans_item}\t${$.bron.Beginsaldo}\t${$['memoriaal mutaties']}\t${$.inkopen}\t${$.verkopen}\t${$.saldo}\t${$.overgenomen}`, () => { })
         })
     })
     return sh.document(
