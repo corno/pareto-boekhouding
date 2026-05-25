@@ -311,39 +311,39 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
     //         )
     //     })
     // })
-    _p_log_debug_message("", () => { })
-    _p_log_debug_message("verkopen", () => { })
-    $.jaren.__d_map(($, id_jaar) => {
-        _p.dictionary.from.dictionary($.handelstransacties.verkopen).filter(($) => true).__d_map(($, verkoop) => {
-            _p.dictionary.from.dictionary($.regels).filter(($) => true).__d_map(($, regel) => {
-            _p_log_debug_message(
-                `${id_jaar
-                }\t${verkoop
-                }\t${regel
-                }\t${$['btw bedrag'] / 100
-                }`,
-                () => { }
-            )
-        })
-        })
-    })
-    _p_log_debug_message("", () => { })
-    _p_log_debug_message("informele rekeningen", () => { })
-    $.jaren.__d_map(($, id_jaar) => {
-        _p.dictionary.from.dictionary($['informele rekeningen']).filter(($) => $.todo).__d_map(($, rekening) => {
-            _p_log_debug_message(
-                `${id_jaar
-                }\t${rekening
-                }\t${$.bron.Beginsaldo
-                }\t${$['mutatie totaal']
-                }\t${$.eindsaldo
-                }\t${$.overgenomen
-                }\t${$.openstaand
-                }`,
-                () => { }
-            )
-        })
-    })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("verkopen", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($.handelstransacties.verkopen).filter(($) => true).__d_map(($, verkoop) => {
+    //         _p.dictionary.from.dictionary($.regels).filter(($) => true).__d_map(($, regel) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${verkoop
+    //             }\t${regel
+    //             }\t${$['btw bedrag'] / 100
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    //     })
+    // })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("informele rekeningen", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($['informele rekeningen']).filter(($) => $.todo).__d_map(($, rekening) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${rekening
+    //             }\t${$.bron.Beginsaldo
+    //             }\t${$['mutatie totaal']
+    //             }\t${$.eindsaldo
+    //             }\t${$.overgenomen
+    //             }\t${$.openstaand
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    // })
     // _p_log_debug_message("", () => { })
     // _p_log_debug_message("verrekenposten", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
@@ -433,49 +433,49 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
     // })
     // _p_log_debug_message("", () => { })
     // _p_log_debug_message("balans grootboekrekeningen", () => { })
-    // _p_log_debug_message(
-    //     `;${"jaar"
-    //     };${"zijde"
-    //     };${"hoofdcategorie"
-    //     };${"subcategorie"
-    //     };${"grootboekrekening"
-    //     };${"postgroep"
-    //     };${"post"
-    //     };${"beginsaldo"
-    //     };${"mutaties"
-    //     };${"eindsaldo"
-    //     }`,
-    //     () => { }
-    // )
-    // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.jaarbeheer.balans.grootboekrekeningen).map(($, id_grootboekrekening) => {
-    //         const zijde = $.bron.Stam.Zijde[0]
-    //         const hoofdcategorie = $.bron.Stam.Hoofdcategorie['l id']
-    //         const subcategorie = $.bron.Stam.Subcategorie['l id']
-    //         _p.dictionary.from.dictionary(
-    //             _p.dictionary.from.dictionary($.postgroepen).map(($) => $)
-    //         ).map(($, id_postgroep) => {
-    //             _p.dictionary.from.dictionary(
-    //                 $.posten
-    //             ).map(($, id_post) => {
-    //                 _p_log_debug_message(
-    //                     `;${id_jaar
-    //                     };${zijde
-    //                     };${hoofdcategorie
-    //                     };${subcategorie
-    //                     };${id_grootboekrekening
-    //                     };${id_postgroep
-    //                     };${id_post
-    //                     };${$.beginsaldo
-    //                     };${$.mutaties
-    //                     };${$.beginsaldo + $.mutaties
-    //                     }`,
-    //                     () => { }
-    //                 )
-    //             })
-    //         })
-    //     })
-    // })
+    _p_log_debug_message(
+        `;${"jaar"
+        };${"zijde"
+        };${"hoofdcategorie"
+        };${"subcategorie"
+        };${"grootboekrekening"
+        };${"postgroep"
+        };${"post"
+        };${"beginsaldo"
+        };${"mutaties"
+        };${"eindsaldo"
+        }`,
+        () => { }
+    )
+    $.jaren.__d_map(($, id_jaar) => {
+        _p.dictionary.from.dictionary($.jaarbeheer.balans.grootboekrekeningen).map(($, id_grootboekrekening) => {
+            const zijde = $.bron.Stam.Zijde[0]
+            const hoofdcategorie = $.bron.Stam.Hoofdcategorie['l id']
+            const subcategorie = $.bron.Stam.Subcategorie['l id']
+            _p.dictionary.from.dictionary(
+                _p.dictionary.from.dictionary($.postgroepen).map(($) => $)
+            ).map(($, id_postgroep) => {
+                _p.dictionary.from.dictionary(
+                    $.posten
+                ).map(($, id_post) => {
+                    _p_log_debug_message(
+                        `;${id_jaar
+                        };${zijde
+                        };${hoofdcategorie
+                        };${subcategorie
+                        };${id_grootboekrekening
+                        };${id_postgroep
+                        };${id_post
+                        };${$.beginsaldo
+                        };${$.mutaties
+                        };${$.beginsaldo + $.mutaties
+                        }`,
+                        () => { }
+                    )
+                })
+            })
+        })
+    })
     return sh.document(
         css,
         sh.f.div([
