@@ -1308,7 +1308,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {},
+                                                                        {
+                                                                            "BTW-periode": _p_change_context(
+                                                                                $['BTW-periode'],
+                                                                                ($) => ['text', {
+                                                                                    'delimiter': ['quote', null],
+                                                                                    'value': $,
+                                                                                }],
+                                                                            ),
+                                                                        },
                                                                     )]],
                                                                 }),
                                                             )
@@ -1336,7 +1344,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Import van buiten de EU',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {},
+                                                                        {
+                                                                            "BTW-periode": _p_change_context(
+                                                                                $['BTW-periode'],
+                                                                                ($) => ['text', {
+                                                                                    'delimiter': ['quote', null],
+                                                                                    'value': $,
+                                                                                }],
+                                                                            ),
+                                                                        },
                                                                     )]],
                                                                 }),
                                                             )
@@ -1346,7 +1362,15 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
                                                                     'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                        {},
+                                                                        {
+                                                                            "BTW-periode": _p_change_context(
+                                                                                $['BTW-periode'],
+                                                                                ($) => ['text', {
+                                                                                    'delimiter': ['quote', null],
+                                                                                    'value': $,
+                                                                                }],
+                                                                            ),
+                                                                        },
                                                                     )]],
                                                                 }),
                                                             )

@@ -1253,37 +1253,10 @@ export namespace Grootboekrekeningen_ {
                     
                     export type Stam = null
                     
-                    export namespace Type {
-                        
-                        export type l_location = i_location.Range
-                        
-                        export namespace l_state {
-                            
-                            export type Bankrekening = null
-                            
-                            export type Overig = null
-                            
-                            export type Informele_rekening = null
-                            
-                        }
-                        
-                        export type l_state = 
-                            | readonly ['Bankrekening', l_state.Bankrekening]
-                            | readonly ['Overig', l_state.Overig]
-                            | readonly ['Informele rekening', l_state.Informele_rekening]
-                        
-                    }
-                    
-                    export type Type = {
-                        readonly 'l location': Type.l_location
-                        readonly 'l state': Type.l_state
-                    }
-                    
                 }
                 
                 export type l_entry = {
                     readonly 'Stam': l_entry.Stam
-                    readonly 'Type': l_entry.Type
                 }
                 
             }
@@ -1621,90 +1594,6 @@ export namespace Jaarbeheer_ {
         
         export type Beginsaldo_winstreserve = number
         
-        export namespace Informele_rekeningen {
-            
-            export type l_location = i_location.Range
-            
-            export namespace l_dictionary {
-                
-                export namespace D {
-                    
-                    export type l_location = i_location.Range
-                    
-                    export namespace l_entry {
-                        
-                        export type Beginsaldo = number
-                        
-                        export namespace Grootboekrekening {
-                            
-                            export type l_location = i_location.Range
-                            
-                            export type l_reference = string
-                            
-                        }
-                        
-                        export type Grootboekrekening = {
-                            readonly 'l location': Grootboekrekening.l_location
-                            readonly 'l reference': Grootboekrekening.l_reference
-                        }
-                        
-                        export namespace Nieuw {
-                            
-                            export type l_location = i_location.Range
-                            
-                            export namespace l_state {
-                                
-                                export type Ja = null
-                                
-                                export namespace Nee {
-                                    
-                                    export type Rekening = Verwijzing_naar_Informele_rekening_
-                                    
-                                }
-                                
-                                export type Nee = {
-                                    readonly 'Rekening': Nee.Rekening
-                                }
-                                
-                            }
-                            
-                            export type l_state = 
-                                | readonly ['Ja', l_state.Ja]
-                                | readonly ['Nee', l_state.Nee]
-                            
-                        }
-                        
-                        export type Nieuw = {
-                            readonly 'l location': Nieuw.l_location
-                            readonly 'l state': Nieuw.l_state
-                        }
-                        
-                    }
-                    
-                    export type l_entry = {
-                        readonly 'Beginsaldo': l_entry.Beginsaldo
-                        readonly 'Grootboekrekening': l_entry.Grootboekrekening
-                        readonly 'Nieuw': l_entry.Nieuw
-                    }
-                    
-                }
-                
-                export type D = {
-                    readonly 'l location': D.l_location
-                    readonly 'l entry': D.l_entry
-                }
-                
-            }
-            
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
-            
-        }
-        
-        export type Informele_rekeningen = {
-            readonly 'l location': Informele_rekeningen.l_location
-            readonly 'l dictionary': Informele_rekeningen.l_dictionary
-        }
-        
         export namespace Bankrekeningen {
             
             export type l_location = i_location.Range
@@ -1834,6 +1723,90 @@ export namespace Jaarbeheer_ {
             readonly 'l dictionary': Bankrekeningen.l_dictionary
         }
         
+        export namespace Informele_rekeningen {
+            
+            export type l_location = i_location.Range
+            
+            export namespace l_dictionary {
+                
+                export namespace D {
+                    
+                    export type l_location = i_location.Range
+                    
+                    export namespace l_entry {
+                        
+                        export type Beginsaldo = number
+                        
+                        export namespace Grootboekrekening {
+                            
+                            export type l_location = i_location.Range
+                            
+                            export type l_reference = string
+                            
+                        }
+                        
+                        export type Grootboekrekening = {
+                            readonly 'l location': Grootboekrekening.l_location
+                            readonly 'l reference': Grootboekrekening.l_reference
+                        }
+                        
+                        export namespace Nieuw {
+                            
+                            export type l_location = i_location.Range
+                            
+                            export namespace l_state {
+                                
+                                export type Ja = null
+                                
+                                export namespace Nee {
+                                    
+                                    export type Rekening = Verwijzing_naar_Informele_rekening_
+                                    
+                                }
+                                
+                                export type Nee = {
+                                    readonly 'Rekening': Nee.Rekening
+                                }
+                                
+                            }
+                            
+                            export type l_state = 
+                                | readonly ['Ja', l_state.Ja]
+                                | readonly ['Nee', l_state.Nee]
+                            
+                        }
+                        
+                        export type Nieuw = {
+                            readonly 'l location': Nieuw.l_location
+                            readonly 'l state': Nieuw.l_state
+                        }
+                        
+                    }
+                    
+                    export type l_entry = {
+                        readonly 'Beginsaldo': l_entry.Beginsaldo
+                        readonly 'Grootboekrekening': l_entry.Grootboekrekening
+                        readonly 'Nieuw': l_entry.Nieuw
+                    }
+                    
+                }
+                
+                export type D = {
+                    readonly 'l location': D.l_location
+                    readonly 'l entry': D.l_entry
+                }
+                
+            }
+            
+            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            
+        }
+        
+        export type Informele_rekeningen = {
+            readonly 'l location': Informele_rekeningen.l_location
+            readonly 'l dictionary': Informele_rekeningen.l_dictionary
+        }
+        
         export namespace Overige_balans_items {
             
             export type l_location = i_location.Range
@@ -1904,8 +1877,8 @@ export namespace Jaarbeheer_ {
         readonly 'Grootboekrekening voor Verkoop saldo': Balans.Grootboekrekening_voor_Verkoop_saldo
         readonly 'Beginsaldo nog aan te geven BTW': Balans.Beginsaldo_nog_aan_te_geven_BTW
         readonly 'Beginsaldo winstreserve': Balans.Beginsaldo_winstreserve
-        readonly 'Informele rekeningen': Balans.Informele_rekeningen
         readonly 'Bankrekeningen': Balans.Bankrekeningen
+        readonly 'Informele rekeningen': Balans.Informele_rekeningen
         readonly 'Overige balans items': Balans.Overige_balans_items
         readonly 'Verrekenposten': Balans.Verrekenposten
     }
@@ -2077,55 +2050,17 @@ export namespace Handelstransacties_ {
                         readonly 'l state': Afhandeling.l_state
                     }
                     
-                    export namespace BTW$mi_regime {
+                    export namespace BTW$mi_periode {
                         
                         export type l_location = i_location.Range
                         
-                        export namespace l_state {
-                            
-                            export type Binnenland$cl__heffing_verlegd = null
-                            
-                            export type Geen_BTW_van_toepassing = null
-                            
-                            export type Import_van_buiten_de_EU = null
-                            
-                            export type Intracommunautair = null
-                            
-                            export namespace Standaard {
-                                
-                                export namespace BTW$mi_periode {
-                                    
-                                    export type l_location = i_location.Range
-                                    
-                                    export type l_reference = string
-                                    
-                                }
-                                
-                                export type BTW$mi_periode = {
-                                    readonly 'l location': BTW$mi_periode.l_location
-                                    readonly 'l reference': BTW$mi_periode.l_reference
-                                }
-                                
-                            }
-                            
-                            export type Standaard = {
-                                readonly 'BTW-periode': Standaard.BTW$mi_periode
-                            }
-                            
-                        }
-                        
-                        export type l_state = 
-                            | readonly ['Binnenland: heffing verlegd', l_state.Binnenland$cl__heffing_verlegd]
-                            | readonly ['Geen BTW van toepassing', l_state.Geen_BTW_van_toepassing]
-                            | readonly ['Import van buiten de EU', l_state.Import_van_buiten_de_EU]
-                            | readonly ['Intracommunautair', l_state.Intracommunautair]
-                            | readonly ['Standaard', l_state.Standaard]
+                        export type l_reference = string
                         
                     }
                     
-                    export type BTW$mi_regime = {
-                        readonly 'l location': BTW$mi_regime.l_location
-                        readonly 'l state': BTW$mi_regime.l_state
+                    export type BTW$mi_periode = {
+                        readonly 'l location': BTW$mi_periode.l_location
+                        readonly 'l reference': BTW$mi_periode.l_reference
                     }
                     
                     export namespace Brondocument {
@@ -2403,7 +2338,7 @@ export namespace Handelstransacties_ {
                 
                 export type l_entry = {
                     readonly 'Afhandeling': l_entry.Afhandeling
-                    readonly 'BTW-regime': l_entry.BTW$mi_regime
+                    readonly 'BTW-periode': l_entry.BTW$mi_periode
                     readonly 'Brondocument': l_entry.Brondocument
                     readonly 'Datum': l_entry.Datum
                     readonly 'Regels': l_entry.Regels

@@ -651,29 +651,6 @@
                                             `type`: | `derived` ~
                                         )
                                     )
-                                    'Type': (
-                                        `description`: _
-                                        `value`: | `state` (
-                                            `options`: {
-                                                'Bankrekening': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
-                                                )
-                                                'Overig': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
-                                                )
-                                                'Informele rekening': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
-                                                )
-                                            }
-                                            `results`: _
-                                        )
-                                    )
                                 }
                             )
                         )
@@ -905,63 +882,6 @@
                                     `description`: _
                                     `value`: | `simple` | `global` 'Bedrag'
                                 )
-                                'Informele rekeningen': (
-                                    `description`: _
-                                    `value`: | `dictionary` (
-                                        `value`: | `group` {
-                                            'Beginsaldo': (
-                                                `description`: _
-                                                `value`: | `simple` | `global` 'Bedrag'
-                                            )
-                                            'Grootboekrekening': (
-                                                `description`: _
-                                                `value`: | `reference` (
-                                                    `referent`: (
-                                                        `module`: (
-                                                            `location`: | `internal` 'Grootboekrekeningen'
-                                                            `resulting module`: ~
-                                                        )
-                                                        `path`: (
-                                                            `tail`: [ | `group` 'Balans' ]
-                                                            `resulting node`: ~
-                                                        )
-                                                    )
-                                                    `type`: | `selected` (
-                                                        `dictionary`: ~
-                                                        `dependency`: | `acyclic` ~
-                                                        `results`: _
-                                                    )
-                                                )
-                                            )
-                                            'Nieuw': (
-                                                `description`: _
-                                                `value`: | `state` (
-                                                    `options`: {
-                                                        'Ja': (
-                                                            `constraints`: _
-                                                            `description`: _
-                                                            `value`: | `nothing` ~
-                                                        )
-                                                        'Nee': (
-                                                            `constraints`: _
-                                                            `description`: _
-                                                            `value`: | `group` {
-                                                                'Rekening': (
-                                                                    `description`: _
-                                                                    `value`: | `component` (
-                                                                        `type`: | `internal` 'Verwijzing naar Informele rekening'
-                                                                        `results`: _
-                                                                    )
-                                                                )
-                                                            }
-                                                        )
-                                                    }
-                                                    `results`: _
-                                                )
-                                            )
-                                        }
-                                    )
-                                )
                                 'Bankrekeningen': (
                                     `description`: _
                                     `value`: | `dictionary` (
@@ -1033,6 +953,63 @@
                                                             `value`: | `text` | `global` 'Omschrijving'
                                                         )
                                                     }
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Informele rekeningen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Beginsaldo': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Bedrag'
+                                            )
+                                            'Grootboekrekening': (
+                                                `description`: _
+                                                `value`: | `reference` (
+                                                    `referent`: (
+                                                        `module`: (
+                                                            `location`: | `internal` 'Grootboekrekeningen'
+                                                            `resulting module`: ~
+                                                        )
+                                                        `path`: (
+                                                            `tail`: [ | `group` 'Balans' ]
+                                                            `resulting node`: ~
+                                                        )
+                                                    )
+                                                    `type`: | `selected` (
+                                                        `dictionary`: ~
+                                                        `dependency`: | `acyclic` ~
+                                                        `results`: _
+                                                    )
+                                                )
+                                            )
+                                            'Nieuw': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Ja': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `nothing` ~
+                                                        )
+                                                        'Nee': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Rekening': (
+                                                                    `description`: _
+                                                                    `value`: | `component` (
+                                                                        `type`: | `internal` 'Verwijzing naar Informele rekening'
+                                                                        `results`: _
+                                                                    )
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
                                                 )
                                             )
                                         }
@@ -1217,58 +1194,24 @@
                                             `results`: _
                                         )
                                     )
-                                    'BTW-regime': (
+                                    'BTW-periode': (
                                         `description`: _
-                                        `value`: | `state` (
-                                            `options`: {
-                                                'Binnenland: heffing verlegd': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
+                                        `value`: | `reference` (
+                                            `referent`: (
+                                                `module`: (
+                                                    `location`: | `internal` 'Jaarbeheer'
+                                                    `resulting module`: ~
                                                 )
-                                                'Geen BTW van toepassing': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
+                                                `path`: (
+                                                    `tail`: [ | `group` 'Resultaat' | `group` 'BTW periodes' ]
+                                                    `resulting node`: ~
                                                 )
-                                                'Import van buiten de EU': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
-                                                )
-                                                'Intracommunautair': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `nothing` ~
-                                                )
-                                                'Standaard': (
-                                                    `constraints`: _
-                                                    `description`: _
-                                                    `value`: | `group` {
-                                                        'BTW-periode': (
-                                                            `description`: _
-                                                            `value`: | `reference` (
-                                                                `referent`: (
-                                                                    `module`: (
-                                                                        `location`: | `internal` 'Jaarbeheer'
-                                                                        `resulting module`: ~
-                                                                    )
-                                                                    `path`: (
-                                                                        `tail`: [ | `group` 'Resultaat' | `group` 'BTW periodes' ]
-                                                                        `resulting node`: ~
-                                                                    )
-                                                                )
-                                                                `type`: | `selected` (
-                                                                    `dictionary`: ~
-                                                                    `dependency`: | `acyclic` ~
-                                                                    `results`: _
-                                                                )
-                                                            )
-                                                        )
-                                                    }
-                                                )
-                                            }
-                                            `results`: _
+                                            )
+                                            `type`: | `selected` (
+                                                `dictionary`: ~
+                                                `dependency`: | `acyclic` ~
+                                                `results`: _
+                                            )
                                         )
                                     )
                                     'Brondocument': (
@@ -3265,26 +3208,6 @@
                                                 )
                                             )
                                         )
-                                        'Type': (
-                                            `definition`: ~
-                                            `resolver`: | `state` (
-                                                `definition`: ~
-                                                `options`: {
-                                                    'Bankrekening': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                    'Overig': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                    'Informele rekening': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                }
-                                            )
-                                        )
                                     }
                                     `benchmark`: * (
                                         `selection`: (
@@ -3999,57 +3922,28 @@
                                                 }
                                             )
                                         )
-                                        'BTW-regime': (
+                                        'BTW-periode': (
                                             `definition`: ~
-                                            `resolver`: | `state` (
+                                            `resolver`: | `reference` (
                                                 `definition`: ~
-                                                `options`: {
-                                                    'Binnenland: heffing verlegd': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                    'Geen BTW van toepassing': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                    'Import van buiten de EU': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                    'Intracommunautair': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `nothing` ~
-                                                    )
-                                                    'Standaard': (
-                                                        `constraints`: {}
-                                                        `resolver`: | `group` {
-                                                            'BTW-periode': (
-                                                                `definition`: ~
-                                                                `resolver`: | `reference` (
-                                                                    `definition`: ~
-                                                                    `type`: | `selected` (
-                                                                        `definition`: ~
-                                                                        `lookup`: (
-                                                                            `type`: | `acyclic` | `resolved dictionary` (
-                                                                                `selection`: (
-                                                                                    `start`: | `parameter` 'Jaarbeheer'
-                                                                                    `tail`: (
-                                                                                        `path`: [ | `group` 'Resultaat' | `group` 'BTW periodes' ]
-                                                                                        `resulting node`: ~
-                                                                                    )
-                                                                                    `resulting node`: ~
-                                                                                )
-                                                                                `selected dictionary`: ~
-                                                                            )
-                                                                            `resulting dictionary`: ~
-                                                                        )
-                                                                        `constraints`: {}
-                                                                    )
+                                                `type`: | `selected` (
+                                                    `definition`: ~
+                                                    `lookup`: (
+                                                        `type`: | `acyclic` | `resolved dictionary` (
+                                                            `selection`: (
+                                                                `start`: | `parameter` 'Jaarbeheer'
+                                                                `tail`: (
+                                                                    `path`: [ | `group` 'Resultaat' | `group` 'BTW periodes' ]
+                                                                    `resulting node`: ~
                                                                 )
+                                                                `resulting node`: ~
                                                             )
-                                                        }
+                                                            `selected dictionary`: ~
+                                                        )
+                                                        `resulting dictionary`: ~
                                                     )
-                                                }
+                                                    `constraints`: {}
+                                                )
                                             )
                                         )
                                         'Brondocument': (
@@ -6282,7 +6176,12 @@
                                                             'Binnenland: heffing verlegd': (
                                                                 `constraints`: _
                                                                 `description`: _
-                                                                `value`: | `group` {}
+                                                                `value`: | `group` {
+                                                                    'BTW-periode': (
+                                                                        `description`: _
+                                                                        `value`: | `text` | `global` 'Pseudo Reference'
+                                                                    )
+                                                                }
                                                             )
                                                             'Geen BTW van toepassing': (
                                                                 `constraints`: _
@@ -6297,12 +6196,22 @@
                                                             'Import van buiten de EU': (
                                                                 `constraints`: _
                                                                 `description`: _
-                                                                `value`: | `group` {}
+                                                                `value`: | `group` {
+                                                                    'BTW-periode': (
+                                                                        `description`: _
+                                                                        `value`: | `text` | `global` 'Pseudo Reference'
+                                                                    )
+                                                                }
                                                             )
                                                             'Intracommunautair': (
                                                                 `constraints`: _
                                                                 `description`: _
-                                                                `value`: | `group` {}
+                                                                `value`: | `group` {
+                                                                    'BTW-periode': (
+                                                                        `description`: _
+                                                                        `value`: | `text` | `global` 'Pseudo Reference'
+                                                                    )
+                                                                }
                                                             )
                                                             'Standaard': (
                                                                 `constraints`: _

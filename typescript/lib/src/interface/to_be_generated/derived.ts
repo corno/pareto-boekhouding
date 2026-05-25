@@ -8,17 +8,33 @@ export type Root = {
 }
 
 export type Jaar = {
+    'bron': d_boekhouding.Jaren.D
     'handelstransacties': {
         'inkopen': _pi.Dictionary<Inkoop>
         'verkopen': _pi.Dictionary<Verkoop>
     }
-    'btw periodes': _pi.Dictionary<Btw_Periode>
     'overige balans items': _pi.Dictionary<Overige_Balans_Item>
-    'bankrekeningen': _pi.Dictionary<Bankrekening>
-    'resultaat grootboekrekeningen': Resultaat.Grootboek_Rekeningen
-    'resultaat': number
-    'balans grootboekrekeningen': Balans.Grootboek_Rekeningen
+    'informele rekeningen': _pi.Dictionary<Informele_Rekening>
     'verrekenposten': _pi.Dictionary<Verreken_Post>
+    'crediteuren': Balans.Post
+    'debiteuren': Balans.Post
+    'bankrekeningen': _pi.Dictionary<Bankrekening>
+    'jaarbeheer': {
+        'resultaat': {
+            'btw periodes': _pi.Dictionary<Btw_Periode>
+            'eindsaldo nog aan te geven BTW': number
+            'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
+            'resultaat': number
+
+        },
+        'balans': {
+            'grootboekrekeningen': Balans.Grootboek_Rekeningen
+            'check balans': {
+                'begin': boolean
+                'eind': boolean
+            }
+        }
+    }
     // 'salarisrondes': _pi.Dictionary<Salarisronde>
 }
 
@@ -30,16 +46,27 @@ export type Inkoop = {
 
 export type Verkoop = {
     'bron': d_boekhouding.Handelstransacties.Verkopen.D
+    'regels': _pi.Dictionary<Verkoop_Regel>
     'totaal ex btw': number
     'totaal btw': number
 }
 
+export type Verkoop_Regel = {
+    'bron': d_boekhouding.Handelstransacties.Verkopen.D.Regels.D
+    'btw bedrag': number
+    'bedrag inclusief btw': number
+}
+
 export type Btw_Periode = {
     'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D
-    'inkopen': number
-    'verkopen': number
-    'betalingen': number
-    'verrekeningen': number
+    'mutaties': {
+        'inkopen': number
+        'verkopen': number
+    }
+    'afhandeling': {
+        'betalingen': number
+        'verrekeningen': number
+    }
     'status':
     | ['openstaand', {
         'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Openstaand
@@ -48,21 +75,40 @@ export type Btw_Periode = {
         'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Aangegeven
         'todo niet gelijk': boolean
     }]
+    'nog aan te geven': number
 }
 
 export type Overige_Balans_Item = {
     'bron': d_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
-    'memoriaal mutaties': number
-    'inkopen': number
-    'verkopen': number
+    'mutaties': {
+        'memoriaal boekingen': number
+        'inkopen': number
+        'verkopen': number
+        'totaal': number
+    }
+    'eindsaldo': number
     'overgenomen': number
-    'saldo': number
     'todo': boolean
 }
 
 export type Bankrekening = {
     'bron': d_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
     'mutaties': number
+    'eindsaldo': number
+    'overgenomen': number
+    'openstaand': number
+    'todo': boolean
+}
+
+export type Informele_Rekening = {
+    'bron': d_boekhouding.Jaarbeheer.Balans.Informele_rekeningen.D
+    'mutaties': {
+        'inkopen': number
+        'verkopen': number
+        'bankrekening mutatie verwerkingen': number
+        'verrekenpost mutaties': number
+    }
+    'mutatie totaal': number
     'eindsaldo': number
     'overgenomen': number
     'openstaand': number
@@ -82,24 +128,34 @@ export namespace Resultaat {
 
     export type Grootboekrekening = {
         'bron': d_boekhouding.Grootboekrekeningen.Resultaat.D
-        'inkopen': number
-        'verkopen': number
-        'memoriaal boekingen': number
-        'btw afrondingen': number
+        'postgroepen': _pi.Dictionary<Post_Groep>
         'totaal': number
     }
 
     export type Grootboek_Rekeningen = _pi.Dictionary<Grootboekrekening>
 
+    export type Post_Groep = {
+        'totaal': number
+    }
 }
 
 export namespace Balans {
 
     export type Grootboekrekening = {
         'bron': d_boekhouding.Grootboekrekeningen.Balans.D
-        'totaal': number
+        'postgroepen': _pi.Dictionary<Post_Groep>
+        'totaal': Post
     }
 
     export type Grootboek_Rekeningen = _pi.Dictionary<Grootboekrekening>
+
+    export type Post_Groep = {
+        posten: _pi.Dictionary<Post>
+    }
+
+    export type Post = {
+        'beginsaldo': number
+        'mutaties': number
+    }
 
 }

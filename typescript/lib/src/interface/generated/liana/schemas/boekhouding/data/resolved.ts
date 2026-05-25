@@ -638,26 +638,10 @@ export namespace Grootboekrekeningen_ {
             
             export type Stam = Beheer_.Grootboekrekeningen.Balans.D
             
-            export namespace Type {
-                
-                export type Bankrekening = symbol
-                
-                export type Overig = symbol
-                
-                export type Informele_rekening = symbol
-                
-            }
-            
-            export type Type = 
-                | readonly ['Bankrekening', Type.Bankrekening]
-                | readonly ['Overig', Type.Overig]
-                | readonly ['Informele rekening', Type.Informele_rekening]
-            
         }
         
         export type D = {
             readonly 'Stam': D.Stam
-            readonly 'Type': D.Type
         }
         
     }
@@ -860,57 +844,6 @@ export namespace Jaarbeheer_ {
         
         export type Beginsaldo_winstreserve = number
         
-        export namespace Informele_rekeningen {
-            
-            export namespace D {
-                
-                export type Beginsaldo = number
-                
-                export namespace Grootboekrekening {
-                    
-                    export type l_entry = Grootboekrekeningen_.Balans.D
-                    
-                    export type l_id = string
-                    
-                }
-                
-                export type Grootboekrekening = {
-                    readonly 'l entry': Grootboekrekening.l_entry
-                    readonly 'l id': Grootboekrekening.l_id
-                }
-                
-                export namespace Nieuw {
-                    
-                    export type Ja = symbol
-                    
-                    export namespace Nee {
-                        
-                        export type Rekening = Verwijzing_naar_Informele_rekening_
-                        
-                    }
-                    
-                    export type Nee = {
-                        readonly 'Rekening': Nee.Rekening
-                    }
-                    
-                }
-                
-                export type Nieuw = 
-                    | readonly ['Ja', Nieuw.Ja]
-                    | readonly ['Nee', Nieuw.Nee]
-                
-            }
-            
-            export type D = {
-                readonly 'Beginsaldo': D.Beginsaldo
-                readonly 'Grootboekrekening': D.Grootboekrekening
-                readonly 'Nieuw': D.Nieuw
-            }
-            
-        }
-        
-        export type Informele_rekeningen = _pi.Dictionary<Informele_rekeningen.D>
-        
         export namespace Bankrekeningen {
             
             export namespace D {
@@ -985,6 +918,57 @@ export namespace Jaarbeheer_ {
         
         export type Bankrekeningen = _pi.Dictionary<Bankrekeningen.D>
         
+        export namespace Informele_rekeningen {
+            
+            export namespace D {
+                
+                export type Beginsaldo = number
+                
+                export namespace Grootboekrekening {
+                    
+                    export type l_entry = Grootboekrekeningen_.Balans.D
+                    
+                    export type l_id = string
+                    
+                }
+                
+                export type Grootboekrekening = {
+                    readonly 'l entry': Grootboekrekening.l_entry
+                    readonly 'l id': Grootboekrekening.l_id
+                }
+                
+                export namespace Nieuw {
+                    
+                    export type Ja = symbol
+                    
+                    export namespace Nee {
+                        
+                        export type Rekening = Verwijzing_naar_Informele_rekening_
+                        
+                    }
+                    
+                    export type Nee = {
+                        readonly 'Rekening': Nee.Rekening
+                    }
+                    
+                }
+                
+                export type Nieuw = 
+                    | readonly ['Ja', Nieuw.Ja]
+                    | readonly ['Nee', Nieuw.Nee]
+                
+            }
+            
+            export type D = {
+                readonly 'Beginsaldo': D.Beginsaldo
+                readonly 'Grootboekrekening': D.Grootboekrekening
+                readonly 'Nieuw': D.Nieuw
+            }
+            
+        }
+        
+        export type Informele_rekeningen = _pi.Dictionary<Informele_rekeningen.D>
+        
         export namespace Overige_balans_items {
             
             export type D = Overige_balans_item_
@@ -1011,8 +995,8 @@ export namespace Jaarbeheer_ {
         readonly 'Grootboekrekening voor Verkoop saldo': Balans.Grootboekrekening_voor_Verkoop_saldo
         readonly 'Beginsaldo nog aan te geven BTW': Balans.Beginsaldo_nog_aan_te_geven_BTW
         readonly 'Beginsaldo winstreserve': Balans.Beginsaldo_winstreserve
-        readonly 'Informele rekeningen': Balans.Informele_rekeningen
         readonly 'Bankrekeningen': Balans.Bankrekeningen
+        readonly 'Informele rekeningen': Balans.Informele_rekeningen
         readonly 'Overige balans items': Balans.Overige_balans_items
         readonly 'Verrekenposten': Balans.Verrekenposten
     }
@@ -1154,45 +1138,18 @@ export namespace Handelstransacties_ {
                 | readonly ['Nog te betalen', Afhandeling.Nog_te_betalen]
                 | readonly ['Rekening courant', Afhandeling.Rekening_courant]
             
-            export namespace BTW$mi_regime {
+            export namespace BTW$mi_periode {
                 
-                export type Binnenland$cl__heffing_verlegd = symbol
+                export type l_entry = Jaarbeheer_.Resultaat.BTW_periodes.D
                 
-                export type Geen_BTW_van_toepassing = symbol
-                
-                export type Import_van_buiten_de_EU = symbol
-                
-                export type Intracommunautair = symbol
-                
-                export namespace Standaard {
-                    
-                    export namespace BTW$mi_periode {
-                        
-                        export type l_entry = Jaarbeheer_.Resultaat.BTW_periodes.D
-                        
-                        export type l_id = string
-                        
-                    }
-                    
-                    export type BTW$mi_periode = {
-                        readonly 'l entry': BTW$mi_periode.l_entry
-                        readonly 'l id': BTW$mi_periode.l_id
-                    }
-                    
-                }
-                
-                export type Standaard = {
-                    readonly 'BTW-periode': Standaard.BTW$mi_periode
-                }
+                export type l_id = string
                 
             }
             
-            export type BTW$mi_regime = 
-                | readonly ['Binnenland: heffing verlegd', BTW$mi_regime.Binnenland$cl__heffing_verlegd]
-                | readonly ['Geen BTW van toepassing', BTW$mi_regime.Geen_BTW_van_toepassing]
-                | readonly ['Import van buiten de EU', BTW$mi_regime.Import_van_buiten_de_EU]
-                | readonly ['Intracommunautair', BTW$mi_regime.Intracommunautair]
-                | readonly ['Standaard', BTW$mi_regime.Standaard]
+            export type BTW$mi_periode = {
+                readonly 'l entry': BTW$mi_periode.l_entry
+                readonly 'l id': BTW$mi_periode.l_id
+            }
             
             export namespace Brondocument {
                 
@@ -1403,7 +1360,7 @@ export namespace Handelstransacties_ {
         
         export type D = {
             readonly 'Afhandeling': D.Afhandeling
-            readonly 'BTW-regime': D.BTW$mi_regime
+            readonly 'BTW-periode': D.BTW$mi_periode
             readonly 'Brondocument': D.Brondocument
             readonly 'Datum': D.Datum
             readonly 'Regels': D.Regels

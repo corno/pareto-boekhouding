@@ -719,44 +719,6 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
                             $['Stam'],
                             ($) => ['nothing', null],
                         ),
-                        "Type": _p_change_context(
-                            $['Type'],
-                            ($) => ['state', _p.decide.state(
-                                $,
-                                ($): t_out.Value.state => {
-                                    switch ($[0]) {
-                                        case 'Bankrekening':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Bankrekening',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        case 'Overig':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Overig',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        case 'Informele rekening':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Informele rekening',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        default:
-                                            return _p.au(
-                                                $[0],
-                                            )
-                                    }
-                                },
-                            )],
-                        ),
                     },
                 )]],
             )],
@@ -976,75 +938,6 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                             ),
                         }],
                     ),
-                    "Informele rekeningen": _p_change_context(
-                        $['Informele rekeningen'],
-                        ($) => ['dictionary', _p.dictionary.from.dictionary(
-                            $,
-                        ).map(
-                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
-                                {
-                                    "Beginsaldo": _p_change_context(
-                                        $['Beginsaldo'],
-                                        ($) => ['text', {
-                                            'delimiter': ['none', null],
-                                            'value': v_primitives_to_text.fractional_decimal(
-                                                $,
-                                                {
-                                                    'number of fractional digits': 2,
-                                                },
-                                            ),
-                                        }],
-                                    ),
-                                    "Grootboekrekening": _p_change_context(
-                                        $['Grootboekrekening'],
-                                        ($) => ['text', {
-                                            'delimiter': ['apostrophe', null],
-                                            'value': $['l id'],
-                                        }],
-                                    ),
-                                    "Nieuw": _p_change_context(
-                                        $['Nieuw'],
-                                        ($) => ['state', _p.decide.state(
-                                            $,
-                                            ($): t_out.Value.state => {
-                                                switch ($[0]) {
-                                                    case 'Ja':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ({
-                                                                'option': 'Ja',
-                                                                'value': ['nothing', null],
-                                                            }),
-                                                        )
-                                                    case 'Nee':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ({
-                                                                'option': 'Nee',
-                                                                'value': ['group', ['verbose', _p.dictionary.literal(
-                                                                    {
-                                                                        "Rekening": _p_change_context(
-                                                                            $['Rekening'],
-                                                                            ($) => Verwijzing_naar_Informele_rekening(
-                                                                                $,
-                                                                            ),
-                                                                        ),
-                                                                    },
-                                                                )]],
-                                                            }),
-                                                        )
-                                                    default:
-                                                        return _p.au(
-                                                            $[0],
-                                                        )
-                                                }
-                                            },
-                                        )],
-                                    ),
-                                },
-                            )]],
-                        )],
-                    ),
                     "Bankrekeningen": _p_change_context(
                         $['Bankrekeningen'],
                         ($) => ['dictionary', _p.dictionary.from.dictionary(
@@ -1147,6 +1040,75 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                     ),
                                                 },
                                             )]],
+                                        )],
+                                    ),
+                                },
+                            )]],
+                        )],
+                    ),
+                    "Informele rekeningen": _p_change_context(
+                        $['Informele rekeningen'],
+                        ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            $,
+                        ).map(
+                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                {
+                                    "Beginsaldo": _p_change_context(
+                                        $['Beginsaldo'],
+                                        ($) => ['text', {
+                                            'delimiter': ['none', null],
+                                            'value': v_primitives_to_text.fractional_decimal(
+                                                $,
+                                                {
+                                                    'number of fractional digits': 2,
+                                                },
+                                            ),
+                                        }],
+                                    ),
+                                    "Grootboekrekening": _p_change_context(
+                                        $['Grootboekrekening'],
+                                        ($) => ['text', {
+                                            'delimiter': ['apostrophe', null],
+                                            'value': $['l id'],
+                                        }],
+                                    ),
+                                    "Nieuw": _p_change_context(
+                                        $['Nieuw'],
+                                        ($) => ['state', _p.decide.state(
+                                            $,
+                                            ($): t_out.Value.state => {
+                                                switch ($[0]) {
+                                                    case 'Ja':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ({
+                                                                'option': 'Ja',
+                                                                'value': ['nothing', null],
+                                                            }),
+                                                        )
+                                                    case 'Nee':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ({
+                                                                'option': 'Nee',
+                                                                'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    {
+                                                                        "Rekening": _p_change_context(
+                                                                            $['Rekening'],
+                                                                            ($) => Verwijzing_naar_Informele_rekening(
+                                                                                $,
+                                                                            ),
+                                                                        ),
+                                                                    },
+                                                                )]],
+                                                            }),
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0],
+                                                        )
+                                                }
+                                            },
                                         )],
                                     ),
                                 },
@@ -1320,69 +1282,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 },
                             )],
                         ),
-                        "BTW-regime": _p_change_context(
-                            $['BTW-regime'],
-                            ($) => ['state', _p.decide.state(
-                                $,
-                                ($): t_out.Value.state => {
-                                    switch ($[0]) {
-                                        case 'Binnenland: heffing verlegd':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Binnenland: heffing verlegd',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        case 'Geen BTW van toepassing':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Geen BTW van toepassing',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        case 'Import van buiten de EU':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Import van buiten de EU',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        case 'Intracommunautair':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Intracommunautair',
-                                                    'value': ['nothing', null],
-                                                }),
-                                            )
-                                        case 'Standaard':
-                                            return _p.ss(
-                                                $,
-                                                ($) => ({
-                                                    'option': 'Standaard',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
-                                                        {
-                                                            "BTW-periode": _p_change_context(
-                                                                $['BTW-periode'],
-                                                                ($) => ['text', {
-                                                                    'delimiter': ['apostrophe', null],
-                                                                    'value': $['l id'],
-                                                                }],
-                                                            ),
-                                                        },
-                                                    )]],
-                                                }),
-                                            )
-                                        default:
-                                            return _p.au(
-                                                $[0],
-                                            )
-                                    }
-                                },
-                            )],
+                        "BTW-periode": _p_change_context(
+                            $['BTW-periode'],
+                            ($) => ['text', {
+                                'delimiter': ['apostrophe', null],
+                                'value': $['l id'],
+                            }],
                         ),
                         "Brondocument": _p_change_context(
                             $['Brondocument'],

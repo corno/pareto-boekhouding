@@ -1,5 +1,6 @@
 import * as _pi from 'pareto-core/dist/interface'
 import * as _p from 'pareto-core/dist/assign'
+import _p_variables from 'pareto-core/dist/_p_variables'
 
 import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
@@ -19,27 +20,29 @@ import * as t_aggregatie_to_jaarverslag_html from "../transformers/derived/jaarv
 import * as sh_fp from "pareto-fountain-pen/dist/shorthands/prose"
 
 
-export const $$: Signature = ($, abort, $p) => t_html_to_fountain_pen.Document(
-    t_aggregatie_to_jaarverslag_html.Root(
-        t_resolved_to_derived.Root(
-            r_boekhouding_resolved_from_loc.Root(
-                $,
-                ($) => abort(sh_fp.ph.composed([
-                    sh_fp.ph.literal($p['document resource identifier']),
-                    sh_fp.ph.literal(":"),
-                    t_location_to_fountain_pen.Possible_Range(
-                        t_deserialize_resolved_to_location.Error($),
-                        {
-                            'character location reporting': ['one based', null],
-                        }
-                    ),
-                    sh_fp.ph.literal(": "),
-                    t_deserialize_resolved_to_fountain_pen.Error(
-                        $,
-                    )
-                ])),
-                $p
+export const $$: Signature = ($, abort, $p) => {
+    return t_html_to_fountain_pen.Document(
+        t_aggregatie_to_jaarverslag_html.Root(
+            t_resolved_to_derived.Root(
+                r_boekhouding_resolved_from_loc.Root(
+                    $,
+                    ($) => abort(sh_fp.ph.composed([
+                        sh_fp.ph.literal($p['document resource identifier']),
+                        sh_fp.ph.literal(":"),
+                        t_location_to_fountain_pen.Possible_Range(
+                            t_deserialize_resolved_to_location.Error($),
+                            {
+                                'character location reporting': ['one based', null],
+                            }
+                        ),
+                        sh_fp.ph.literal(": "),
+                        t_deserialize_resolved_to_fountain_pen.Error(
+                            $,
+                        )
+                    ])),
+                    $p
+                )
             )
         )
     )
-)
+}

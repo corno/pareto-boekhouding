@@ -37,6 +37,7 @@ export const fractional_decimal: _pi.Transformer_With_Parameter<
         const integerPart = _p.number.from.number.divide(
             value,
             divisor,
+            ['towards zero', null],
             {
                 divided_by_zero: () => _p_unreachable_code_path("the divisor is hardcoded to 10^fractionalDigits")
             }
@@ -55,6 +56,7 @@ export const fractional_decimal: _pi.Transformer_With_Parameter<
                     temp = _p.number.from.number.divide(
                         temp,
                         10,
+                        ['towards zero', null],
                         {
                             divided_by_zero: () => _p_unreachable_code_path("the divisor is hardcoded to 10")
                         }
@@ -88,6 +90,7 @@ export const fractional_decimal: _pi.Transformer_With_Parameter<
                 temp = _p.number.from.number.divide(
                     temp,
                     10,
+                    ['towards zero', null],
                     {
                         divided_by_zero: () => _p_unreachable_code_path("the divisor is hardcoded to 10")
                     }

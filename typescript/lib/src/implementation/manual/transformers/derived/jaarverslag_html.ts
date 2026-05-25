@@ -243,17 +243,26 @@ const Resultaat_Grootboekrekeningen = (
 const Balans_Grootboekrekeningen = (
     $: d_in.Balans.Grootboek_Rekeningen,
     $p: {
+        'type':
+        | ['begin', null]
+        | ['eind', null]
         'label': string
         'teken omkeren': boolean
     }
 ): d_temp_aggregatie_2.Domein_Zijde => {
     const p_grootboekrekeningen = $.__d_map(($) => {
-
+        const context = $
 
         return {
             'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
             'subcategorie': $.bron.Stam.Subcategorie['l id'],
-            'bedrag': $.totaal,
+            'bedrag': _p.decide.state($p.type, ($): number => {
+                switch ($[0]) {
+                    case 'begin': return _p.ss($, ($) => context.totaal.beginsaldo)
+                    case 'eind': return _p.ss($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
+                    default: return _p.au($[0])
+                }
+            }),
         }
     })
     return {
@@ -285,40 +294,188 @@ const Balans_Grootboekrekeningen = (
 }
 
 export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("bankrekeningen", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($.bankrekeningen).filter(($) => $.todo).__d_map(($, bankrekening) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${bankrekening
+    //             }\t${$.bron.Beginsaldo
+    //             }\t${$.mutaties
+    //             }\t${$.eindsaldo
+    //             }\t${$.overgenomen
+    //             }\t${$.openstaand
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    // })
     _p_log_debug_message("", () => { })
-    _p_log_debug_message("bankrekeningen", () => { })
-    $.jaren.__d_map(($, jaar) => {
-        _p.dictionary.from.dictionary($.bankrekeningen).filter(($) => $.todo).__d_map(($, bankrekening) => {
-            _p_log_debug_message(`${jaar}\t${bankrekening}\t${$.bron.Beginsaldo}\t${$.mutaties}\t${$.eindsaldo}\t${$.overgenomen}\t${$.openstaand}`, () => { })
+    _p_log_debug_message("verkopen", () => { })
+    $.jaren.__d_map(($, id_jaar) => {
+        _p.dictionary.from.dictionary($.handelstransacties.verkopen).filter(($) => true).__d_map(($, verkoop) => {
+            _p.dictionary.from.dictionary($.regels).filter(($) => true).__d_map(($, regel) => {
+            _p_log_debug_message(
+                `${id_jaar
+                }\t${verkoop
+                }\t${regel
+                }\t${$['btw bedrag'] / 100
+                }`,
+                () => { }
+            )
+        })
         })
     })
     _p_log_debug_message("", () => { })
-    _p_log_debug_message("verrekenposten", () => { })
-    $.jaren.__d_map(($, jaar) => {
-        _p.dictionary.from.dictionary($.verrekenposten).filter(($) => $.todo).__d_map(($, verrekenpost) => {
-            _p_log_debug_message(`${jaar}\t${verrekenpost}\t${$['eigen mutaties']}\t${$['bankrekening mutaties']}\t${$.saldo}`, () => { })
+    _p_log_debug_message("informele rekeningen", () => { })
+    $.jaren.__d_map(($, id_jaar) => {
+        _p.dictionary.from.dictionary($['informele rekeningen']).filter(($) => $.todo).__d_map(($, rekening) => {
+            _p_log_debug_message(
+                `${id_jaar
+                }\t${rekening
+                }\t${$.bron.Beginsaldo
+                }\t${$['mutatie totaal']
+                }\t${$.eindsaldo
+                }\t${$.overgenomen
+                }\t${$.openstaand
+                }`,
+                () => { }
+            )
         })
     })
-    _p_log_debug_message("", () => { })
-    _p_log_debug_message("btw periodes", () => { })
-    $.jaren.__d_map(($, jaar) => {
-        _p.dictionary.from.dictionary($['btw periodes']).filter(($) => _p.decide.state($.status, ($) => {
-            switch ($[0]) {
-                case 'aangegeven': return _p.ss($, ($) => $['todo niet gelijk'])
-                case 'openstaand': return _p.ss($, ($) => false)
-                default: return _p.au($[0])
-            }
-        })).__d_map(($, btw_periode) => {
-            _p_log_debug_message(`${jaar}\t${btw_periode}\t${$.betalingen}\t${$.verrekeningen}\t${$.status[0] === 'aangegeven' ? $.status[1].bron.Bedrag : '-'}`, () => { })
-        })
-    })
-    _p_log_debug_message("", () => { })
-    _p_log_debug_message("overige balans items", () => { })
-    $.jaren.__d_map(($, jaar) => {
-        _p.dictionary.from.dictionary($['overige balans items']).filter(($) => $.todo).__d_map(($, overige_balans_item) => {
-            _p_log_debug_message(`${jaar}\t${overige_balans_item}\t${$.bron.Beginsaldo}\t${$['memoriaal mutaties']}\t${$.inkopen}\t${$.verkopen}\t${$.saldo}\t${$.overgenomen}`, () => { })
-        })
-    })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("verrekenposten", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($.verrekenposten).filter(($) => $.todo).__d_map(($, verrekenpost) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${verrekenpost
+    //             }\t${$['eigen mutaties']
+    //             }\t${$['bankrekening mutaties']
+    //             }\t${$.saldo
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    // })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("btw periodes", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($.jaarbeheer.resultaat['btw periodes']).filter(($) => _p.decide.state($.status, ($) => {
+    //         switch ($[0]) {
+    //             case 'aangegeven': return _p.ss($, ($) => $['todo niet gelijk'])
+    //             case 'openstaand': return _p.ss($, ($) => false)
+    //             default: return _p.au($[0])
+    //         }
+    //     })).__d_map(($, btw_periode) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${btw_periode
+    //             }\t${$.afhandeling.betalingen
+    //             }\t${$.afhandeling.verrekeningen
+    //             }\t${$.status[0] === 'aangegeven' ? $.status[1].bron.Bedrag : '-'
+    //             }\t${$['nog aan te geven']
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    // })
+    // _p_log_debug_message("btw periodesxxxx", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($.jaarbeheer.resultaat['btw periodes']).filter(($) => true).__d_map(($, btw_periode) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${btw_periode
+    //             }\t${$.mutaties.inkopen
+    //             }\t${$.mutaties.verkopen
+    //             }\t${$.status[0] === 'aangegeven' ? $.status[1].bron.Bedrag : '-'
+    //             }\t${$['nog aan te geven']
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    // })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("overige balans items", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($['overige balans items']).filter(($) => $.todo).__d_map(($, overige_balans_item) => {
+    //         _p_log_debug_message(
+    //             `${id_jaar
+    //             }\t${overige_balans_item
+    //             }\t${$.bron.Beginsaldo
+    //             }\t${$.mutaties['memoriaal boekingen']
+    //             }\t${$.mutaties['inkopen']
+    //             }\t${$.mutaties['verkopen']
+    //             }\t${$.mutaties['totaal']
+    //             }\t${$.eindsaldo
+    //             }\t${$.overgenomen
+    //             }`,
+    //             () => { }
+    //         )
+    //     })
+    // })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("check balans begin", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     if ($.jaarbeheer.balans['check balans'].begin) {
+    //         _p_log_debug_message(
+    //             `${id_jaar}\tbegin\tfailed`, () => { })
+    //     }
+    // })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("check balans eind", () => { })
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     if ($.jaarbeheer.balans['check balans'].eind) {
+    //         _p_log_debug_message(
+    //             `${id_jaar}\teind\tfailed`, () => { })
+    //     }
+    // })
+    // _p_log_debug_message("", () => { })
+    // _p_log_debug_message("balans grootboekrekeningen", () => { })
+    // _p_log_debug_message(
+    //     `;${"jaar"
+    //     };${"zijde"
+    //     };${"hoofdcategorie"
+    //     };${"subcategorie"
+    //     };${"grootboekrekening"
+    //     };${"postgroep"
+    //     };${"post"
+    //     };${"beginsaldo"
+    //     };${"mutaties"
+    //     };${"eindsaldo"
+    //     }`,
+    //     () => { }
+    // )
+    // $.jaren.__d_map(($, id_jaar) => {
+    //     _p.dictionary.from.dictionary($.jaarbeheer.balans.grootboekrekeningen).map(($, id_grootboekrekening) => {
+    //         const zijde = $.bron.Stam.Zijde[0]
+    //         const hoofdcategorie = $.bron.Stam.Hoofdcategorie['l id']
+    //         const subcategorie = $.bron.Stam.Subcategorie['l id']
+    //         _p.dictionary.from.dictionary(
+    //             _p.dictionary.from.dictionary($.postgroepen).map(($) => $)
+    //         ).map(($, id_postgroep) => {
+    //             _p.dictionary.from.dictionary(
+    //                 $.posten
+    //             ).map(($, id_post) => {
+    //                 _p_log_debug_message(
+    //                     `;${id_jaar
+    //                     };${zijde
+    //                     };${hoofdcategorie
+    //                     };${subcategorie
+    //                     };${id_grootboekrekening
+    //                     };${id_postgroep
+    //                     };${id_post
+    //                     };${$.beginsaldo
+    //                     };${$.mutaties
+    //                     };${$.beginsaldo + $.mutaties
+    //                     }`,
+    //                     () => { }
+    //                 )
+    //             })
+    //         })
+    //     })
+    // })
     return sh.document(
         css,
         sh.f.div([
@@ -362,8 +519,18 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
                             ],
                             Domein(
                                 {
-                                    'links': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['resultaat grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Kosten'), { 'label': "kosten", 'teken omkeren': true }),
-                                    'rechts': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['resultaat grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'), { 'label': "opbrengsten", 'teken omkeren': false }),
+                                    'links': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'), { 'type': ['begin', null], 'label': "activa", 'teken omkeren': false }),
+                                    'rechts': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'), { 'type': ['begin', null], 'label': "passiva", 'teken omkeren': true }),
+
+                                },
+                                {
+                                    'label': "beginbalans",
+                                }
+                            ),
+                            Domein(
+                                {
+                                    'links': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Kosten'), { 'label': "kosten", 'teken omkeren': true }),
+                                    'rechts': Resultaat_Grootboekrekeningen(_p.dictionary.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'), { 'label': "opbrengsten", 'teken omkeren': false }),
                                 },
                                 {
                                     'label': "resultaat",
@@ -377,18 +544,18 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Document> = ($) => {
                                         Indent_Blank(),
                                         Indent_Blank(),
                                         Span_Text("winst voor belasting", 11),
-                                        Bedrag($.value['resultaat'], { 'teken omkeren': false }),
+                                        Bedrag($.value.jaarbeheer.resultaat['resultaat'], { 'teken omkeren': false }),
                                     ]
                                 ),
                             ],
                             Domein(
                                 {
-                                    'links': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['balans grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'), { 'label': "activa", 'teken omkeren': false }),
-                                    'rechts': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value['balans grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'), { 'label': "passiva", 'teken omkeren': true }),
+                                    'links': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Activa'), { 'type': ['eind', null], 'label': "activa", 'teken omkeren': false }),
+                                    'rechts': Balans_Grootboekrekeningen(_p.dictionary.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(($) => $.bron.Stam.Zijde[0] === 'Passiva'), { 'type': ['eind', null], 'label': "passiva", 'teken omkeren': true }),
 
                                 },
                                 {
-                                    'label': "balans",
+                                    'label': "eindbalans",
                                 }
                             ),
                         ]),

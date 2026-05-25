@@ -884,9 +884,13 @@ export namespace Root_ {
                         
                         export namespace Binnenland$cl__heffing_verlegd {
                             
+                            export type BTW$mi_periode = string
+                            
                         }
                         
-                        export type Binnenland$cl__heffing_verlegd = null
+                        export type Binnenland$cl__heffing_verlegd = {
+                            readonly 'BTW-periode': Binnenland$cl__heffing_verlegd.BTW$mi_periode
+                        }
                         
                         export namespace Geen_BTW_van_toepassing {
                             
@@ -900,15 +904,23 @@ export namespace Root_ {
                         
                         export namespace Import_van_buiten_de_EU {
                             
-                        }
-                        
-                        export type Import_van_buiten_de_EU = null
-                        
-                        export namespace Intracommunautair {
+                            export type BTW$mi_periode = string
                             
                         }
                         
-                        export type Intracommunautair = null
+                        export type Import_van_buiten_de_EU = {
+                            readonly 'BTW-periode': Import_van_buiten_de_EU.BTW$mi_periode
+                        }
+                        
+                        export namespace Intracommunautair {
+                            
+                            export type BTW$mi_periode = string
+                            
+                        }
+                        
+                        export type Intracommunautair = {
+                            readonly 'BTW-periode': Intracommunautair.BTW$mi_periode
+                        }
                         
                         export namespace Standaard {
                             

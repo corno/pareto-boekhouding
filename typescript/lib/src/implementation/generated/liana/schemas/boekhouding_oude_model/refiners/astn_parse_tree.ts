@@ -4416,7 +4416,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'expected properties': _p.dictionary.literal(
-                                                                                                                    {},
+                                                                                                                    {
+                                                                                                                        "BTW-periode": null,
+                                                                                                                    },
                                                                                                                 ),
                                                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                                                             },
@@ -4430,7 +4432,26 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         'subdocument context': _p.optional.literal.not_set(),
                                                                                                                     },
                                                                                                                 )
-                                                                                                                return null
+                                                                                                                return {
+                                                                                                                    'BTW-periode': _p_change_context(
+                                                                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                            {
+                                                                                                                                'id': 'BTW-periode',
+                                                                                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                        ),
+                                                                                                                    ),
+                                                                                                                }
                                                                                                             },
                                                                                                         ),
                                                                                                     )],
@@ -4497,7 +4518,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'expected properties': _p.dictionary.literal(
-                                                                                                                    {},
+                                                                                                                    {
+                                                                                                                        "BTW-periode": null,
+                                                                                                                    },
                                                                                                                 ),
                                                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                                                             },
@@ -4511,7 +4534,26 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         'subdocument context': _p.optional.literal.not_set(),
                                                                                                                     },
                                                                                                                 )
-                                                                                                                return null
+                                                                                                                return {
+                                                                                                                    'BTW-periode': _p_change_context(
+                                                                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                            {
+                                                                                                                                'id': 'BTW-periode',
+                                                                                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                        ),
+                                                                                                                    ),
+                                                                                                                }
                                                                                                             },
                                                                                                         ),
                                                                                                     )],
@@ -4527,7 +4569,9 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                             ),
                                                                                                             {
                                                                                                                 'expected properties': _p.dictionary.literal(
-                                                                                                                    {},
+                                                                                                                    {
+                                                                                                                        "BTW-periode": null,
+                                                                                                                    },
                                                                                                                 ),
                                                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                                                             },
@@ -4541,7 +4585,26 @@ export const Root: t_signatures.Root = ($, abort) => _p_change_context(
                                                                                                                         'subdocument context': _p.optional.literal.not_set(),
                                                                                                                     },
                                                                                                                 )
-                                                                                                                return null
+                                                                                                                return {
+                                                                                                                    'BTW-periode': _p_change_context(
+                                                                                                                        v_unmarshalled_from_parse_tree.Property(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                            {
+                                                                                                                                'id': 'BTW-periode',
+                                                                                                                                'subdocument context': _p.optional.literal.not_set(),
+                                                                                                                            },
+                                                                                                                        ),
+                                                                                                                        ($) => v_unmarshalled_from_parse_tree.Text(
+                                                                                                                            $,
+                                                                                                                            ($) => abort(
+                                                                                                                                $,
+                                                                                                                            ),
+                                                                                                                        ),
+                                                                                                                    ),
+                                                                                                                }
                                                                                                             },
                                                                                                         ),
                                                                                                     )],

@@ -1714,53 +1714,6 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                             $['Stam'],
                             ($) => null,
                         ),
-                        'Type': _p_change_context(
-                            $['Type'],
-                            ($) => ({
-                                'l location': ['in main document', {
-                                    'start': {
-                                        'absolute': 42,
-                                        'relative': {
-                                            'line': 42,
-                                            'column': 42,
-                                        },
-                                    },
-                                    'end': {
-                                        'absolute': 42,
-                                        'relative': {
-                                            'line': 42,
-                                            'column': 42,
-                                        },
-                                    },
-                                }],
-                                'l state': _p.decide.state(
-                                    $,
-                                    ($): t_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type.l_state => {
-                                        switch ($[0]) {
-                                            case 'Bankrekening':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Bankrekening', null],
-                                                )
-                                            case 'Overig':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Overig', null],
-                                                )
-                                            case 'Informele rekening':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Informele rekening', null],
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0],
-                                                )
-                                        }
-                                    },
-                                ),
-                            }),
-                        ),
                     },
                     'l location': ['in main document', {
                         'start': {
@@ -2223,126 +2176,6 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                 $['Beginsaldo winstreserve'],
                 ($) => $,
             ),
-            'Informele rekeningen': _p_change_context(
-                $['Informele rekeningen'],
-                ($) => ({
-                    'l location': ['in main document', {
-                        'start': {
-                            'absolute': 42,
-                            'relative': {
-                                'line': 42,
-                                'column': 42,
-                            },
-                        },
-                        'end': {
-                            'absolute': 42,
-                            'relative': {
-                                'line': 42,
-                                'column': 42,
-                            },
-                        },
-                    }],
-                    'l dictionary': _p.dictionary.from.dictionary(
-                        $,
-                    ).map(
-                        ($, id) => ({
-                            'l entry': {
-                                'Beginsaldo': _p_change_context(
-                                    $['Beginsaldo'],
-                                    ($) => $,
-                                ),
-                                'Grootboekrekening': _p_change_context(
-                                    $['Grootboekrekening'],
-                                    ($) => ({
-                                        'l location': ['in main document', {
-                                            'start': {
-                                                'absolute': 42,
-                                                'relative': {
-                                                    'line': 42,
-                                                    'column': 42,
-                                                },
-                                            },
-                                            'end': {
-                                                'absolute': 42,
-                                                'relative': {
-                                                    'line': 42,
-                                                    'column': 42,
-                                                },
-                                            },
-                                        }],
-                                        'l reference': $['l id'],
-                                    }),
-                                ),
-                                'Nieuw': _p_change_context(
-                                    $['Nieuw'],
-                                    ($) => ({
-                                        'l location': ['in main document', {
-                                            'start': {
-                                                'absolute': 42,
-                                                'relative': {
-                                                    'line': 42,
-                                                    'column': 42,
-                                                },
-                                            },
-                                            'end': {
-                                                'absolute': 42,
-                                                'relative': {
-                                                    'line': 42,
-                                                    'column': 42,
-                                                },
-                                            },
-                                        }],
-                                        'l state': _p.decide.state(
-                                            $,
-                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
-                                                switch ($[0]) {
-                                                    case 'Ja':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Ja', null],
-                                                        )
-                                                    case 'Nee':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Nee', {
-                                                                'Rekening': _p_change_context(
-                                                                    $['Rekening'],
-                                                                    ($) => Verwijzing_naar_Informele_rekening(
-                                                                        $,
-                                                                    ),
-                                                                ),
-                                                            }],
-                                                        )
-                                                    default:
-                                                        return _p.au(
-                                                            $[0],
-                                                        )
-                                                }
-                                            },
-                                        ),
-                                    }),
-                                ),
-                            },
-                            'l location': ['in main document', {
-                                'start': {
-                                    'absolute': 42,
-                                    'relative': {
-                                        'line': 42,
-                                        'column': 42,
-                                    },
-                                },
-                                'end': {
-                                    'absolute': 42,
-                                    'relative': {
-                                        'line': 42,
-                                        'column': 42,
-                                    },
-                                },
-                            }],
-                        }),
-                    ),
-                }),
-            ),
             'Bankrekeningen': _p_change_context(
                 $['Bankrekeningen'],
                 ($) => ({
@@ -2496,6 +2329,126 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                     },
                                                 }],
                                             }),
+                                        ),
+                                    }),
+                                ),
+                            },
+                            'l location': ['in main document', {
+                                'start': {
+                                    'absolute': 42,
+                                    'relative': {
+                                        'line': 42,
+                                        'column': 42,
+                                    },
+                                },
+                                'end': {
+                                    'absolute': 42,
+                                    'relative': {
+                                        'line': 42,
+                                        'column': 42,
+                                    },
+                                },
+                            }],
+                        }),
+                    ),
+                }),
+            ),
+            'Informele rekeningen': _p_change_context(
+                $['Informele rekeningen'],
+                ($) => ({
+                    'l location': ['in main document', {
+                        'start': {
+                            'absolute': 42,
+                            'relative': {
+                                'line': 42,
+                                'column': 42,
+                            },
+                        },
+                        'end': {
+                            'absolute': 42,
+                            'relative': {
+                                'line': 42,
+                                'column': 42,
+                            },
+                        },
+                    }],
+                    'l dictionary': _p.dictionary.from.dictionary(
+                        $,
+                    ).map(
+                        ($, id) => ({
+                            'l entry': {
+                                'Beginsaldo': _p_change_context(
+                                    $['Beginsaldo'],
+                                    ($) => $,
+                                ),
+                                'Grootboekrekening': _p_change_context(
+                                    $['Grootboekrekening'],
+                                    ($) => ({
+                                        'l location': ['in main document', {
+                                            'start': {
+                                                'absolute': 42,
+                                                'relative': {
+                                                    'line': 42,
+                                                    'column': 42,
+                                                },
+                                            },
+                                            'end': {
+                                                'absolute': 42,
+                                                'relative': {
+                                                    'line': 42,
+                                                    'column': 42,
+                                                },
+                                            },
+                                        }],
+                                        'l reference': $['l id'],
+                                    }),
+                                ),
+                                'Nieuw': _p_change_context(
+                                    $['Nieuw'],
+                                    ($) => ({
+                                        'l location': ['in main document', {
+                                            'start': {
+                                                'absolute': 42,
+                                                'relative': {
+                                                    'line': 42,
+                                                    'column': 42,
+                                                },
+                                            },
+                                            'end': {
+                                                'absolute': 42,
+                                                'relative': {
+                                                    'line': 42,
+                                                    'column': 42,
+                                                },
+                                            },
+                                        }],
+                                        'l state': _p.decide.state(
+                                            $,
+                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
+                                                switch ($[0]) {
+                                                    case 'Ja':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Ja', null],
+                                                        )
+                                                    case 'Nee':
+                                                        return _p.ss(
+                                                            $,
+                                                            ($) => ['Nee', {
+                                                                'Rekening': _p_change_context(
+                                                                    $['Rekening'],
+                                                                    ($) => Verwijzing_naar_Informele_rekening(
+                                                                        $,
+                                                                    ),
+                                                                ),
+                                                            }],
+                                                        )
+                                                    default:
+                                                        return _p.au(
+                                                            $[0],
+                                                        )
+                                                }
+                                            },
                                         ),
                                     }),
                                 ),
@@ -2848,8 +2801,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 ),
                             }),
                         ),
-                        'BTW-regime': _p_change_context(
-                            $['BTW-regime'],
+                        'BTW-periode': _p_change_context(
+                            $['BTW-periode'],
                             ($) => ({
                                 'l location': ['in main document', {
                                     'start': {
@@ -2867,65 +2820,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                         },
                                     },
                                 }],
-                                'l state': _p.decide.state(
-                                    $,
-                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
-                                        switch ($[0]) {
-                                            case 'Binnenland: heffing verlegd':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Binnenland: heffing verlegd', null],
-                                                )
-                                            case 'Geen BTW van toepassing':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Geen BTW van toepassing', null],
-                                                )
-                                            case 'Import van buiten de EU':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Import van buiten de EU', null],
-                                                )
-                                            case 'Intracommunautair':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Intracommunautair', null],
-                                                )
-                                            case 'Standaard':
-                                                return _p.ss(
-                                                    $,
-                                                    ($) => ['Standaard', {
-                                                        'BTW-periode': _p_change_context(
-                                                            $['BTW-periode'],
-                                                            ($) => ({
-                                                                'l location': ['in main document', {
-                                                                    'start': {
-                                                                        'absolute': 42,
-                                                                        'relative': {
-                                                                            'line': 42,
-                                                                            'column': 42,
-                                                                        },
-                                                                    },
-                                                                    'end': {
-                                                                        'absolute': 42,
-                                                                        'relative': {
-                                                                            'line': 42,
-                                                                            'column': 42,
-                                                                        },
-                                                                    },
-                                                                }],
-                                                                'l reference': $['l id'],
-                                                            }),
-                                                        ),
-                                                    }],
-                                                )
-                                            default:
-                                                return _p.au(
-                                                    $[0],
-                                                )
-                                        }
-                                    },
-                                ),
+                                'l reference': $['l id'],
                             }),
                         ),
                         'Brondocument': _p_change_context(

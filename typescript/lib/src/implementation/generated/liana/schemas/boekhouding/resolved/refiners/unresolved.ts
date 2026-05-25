@@ -1100,41 +1100,6 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                     ($) => _p.group.literal.resolve(
                         () => {
 
-                            const prop_Type = _p_change_context(
-                                $['Type'],
-                                ($) => _p_variables(
-                                    () => {
-
-                                        const var_location = $['l location']
-                                        return _p.decide.state(
-                                            $['l state'],
-                                            ($): t_out.Grootboekrekeningen.Balans.D.Type => {
-                                                switch ($[0]) {
-                                                    case 'Bankrekening':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Bankrekening', _p_create_symbol()],
-                                                        )
-                                                    case 'Overig':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Overig', _p_create_symbol()],
-                                                        )
-                                                    case 'Informele rekening':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Informele rekening', _p_create_symbol()],
-                                                        )
-                                                    default:
-                                                        return _p.au(
-                                                            $[0],
-                                                        )
-                                                }
-                                            },
-                                        )
-                                    },
-                                ),
-                            )
                             return {
                                 'Stam': $p.Beheer.Grootboekrekeningen.Balans.__get_entry_deprecated(
                                     id,
@@ -1142,12 +1107,26 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                                         no_such_entry: () => abort(
                                             {
                                                 'type': ['lookup', ['no such entry', id]],
-                                                'location': $.Type['l location'],
+                                                'location': ['in main document', {
+                                                    'start': {
+                                                        'absolute': 0,
+                                                        'relative': {
+                                                            'line': 0,
+                                                            'column': 0
+                                                        }
+                                                    },
+                                                    'end': {
+                                                        'absolute': 0,
+                                                        'relative': {
+                                                            'line': 0,
+                                                            'column': 0
+                                                        }
+                                                    }
+                                                }],
                                             },
                                         )
                                     }
                                 ),
-                                'Type': prop_Type,
                             }
                         },
                     ),
@@ -2121,7 +2100,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                 ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D => _p_change_context(
                     $['l entry'],
                     ($) => _p.group.literal.resolve(
-                        () => {
+                        (): t_out.Handelstransacties.Inkopen.D => {
 
                             const prop_Afhandeling = _p_change_context(
                                 $['Afhandeling'],
@@ -2199,89 +2178,91 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                 ),
                             )
 
-                            const prop_BTW$mi_regime = _p_change_context(
-                                $['BTW-regime'],
-                                ($) => _p_variables(
-                                    () => {
 
-                                        const var_location = $['l location']
-                                        return _p.decide.state(
-                                            $['l state'],
-                                            ($): t_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
-                                                switch ($[0]) {
-                                                    case 'Binnenland: heffing verlegd':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Binnenland: heffing verlegd', _p_create_symbol()],
-                                                        )
-                                                    case 'Geen BTW van toepassing':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Geen BTW van toepassing', _p_create_symbol()],
-                                                        )
-                                                    case 'Import van buiten de EU':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Import van buiten de EU', _p_create_symbol()],
-                                                        )
-                                                    case 'Intracommunautair':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Intracommunautair', _p_create_symbol()],
-                                                        )
-                                                    case 'Standaard':
-                                                        return _p.ss(
-                                                            $,
-                                                            ($) => ['Standaard', _p.group.literal.resolve(
-                                                                () => {
-
-                                                                    const prop_BTW$mi_periode = _p_change_context(
-                                                                        $['BTW-periode'],
-                                                                        ($) => ({
-                                                                            'l entry': _p_sl.acyclic.from_resolved_dictionary(
-                                                                                $p['Jaarbeheer'].Resultaat['BTW periodes'],
-                                                                            ).get_entry(
-                                                                                $['l reference'],
-                                                                                {
-                                                                                    no_such_entry: () => abort(
-                                                                                        {
-                                                                                            'type': ['lookup', ['no such entry', $['l reference']]],
-                                                                                            'location': $['l location'],
-                                                                                        },
-                                                                                    ),
-                                                                                    no_context_lookup: () => abort(
-                                                                                        {
-                                                                                            'type': ['lookup', ['no context lookup', null]],
-                                                                                            'location': $['l location'],
-                                                                                        },
-                                                                                    ),
-                                                                                    cycle_detected: () => abort(
-                                                                                        {
-                                                                                            'type': ['lookup', ['cycle detected', null]],
-                                                                                            'location': $['l location'],
-                                                                                        },
-                                                                                    ),
-                                                                                },
-                                                                            ),
-                                                                            'l id': $['l reference'],
-                                                                        }),
-                                                                    )
-                                                                    return {
-                                                                        'BTW-periode': prop_BTW$mi_periode,
-                                                                    }
-                                                                },
-                                                            )],
-                                                        )
-                                                    default:
-                                                        return _p.au(
-                                                            $[0],
-                                                        )
-                                                }
-                                            },
-                                        )
-                                    },
-                                ),
+                            const prop_BTW$mi_periode = _p_change_context(
+                                $['BTW-periode'],
+                                ($) => ({
+                                    'l entry': _p_sl.acyclic.from_resolved_dictionary(
+                                        $p['Jaarbeheer'].Resultaat['BTW periodes'],
+                                    ).get_entry(
+                                        $['l reference'],
+                                        {
+                                            no_such_entry: () => abort(
+                                                {
+                                                    'type': ['lookup', ['no such entry', $['l reference']]],
+                                                    'location': $['l location'],
+                                                },
+                                            ),
+                                            no_context_lookup: () => abort(
+                                                {
+                                                    'type': ['lookup', ['no context lookup', null]],
+                                                    'location': $['l location'],
+                                                },
+                                            ),
+                                            cycle_detected: () => abort(
+                                                {
+                                                    'type': ['lookup', ['cycle detected', null]],
+                                                    'location': $['l location'],
+                                                },
+                                            ),
+                                        },
+                                    ),
+                                    'l id': $['l reference'],
+                                }),
                             )
+
+                            // const prop_BTW$mi_regime = _p_change_context(
+                            //     $['BTW-regime'],
+                            //     ($) => _p_variables(
+                            //         () => {
+
+                            //             const var_location = $['l location']
+                            //             return _p.decide.state(
+                            //                 $['l state'],
+                            //                 ($): t_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
+                            //                     switch ($[0]) {
+                            //                         case 'Binnenland: heffing verlegd':
+                            //                             return _p.ss(
+                            //                                 $,
+                            //                                 ($) => ['Binnenland: heffing verlegd', _p_create_symbol()],
+                            //                             )
+                            //                         case 'Geen BTW van toepassing':
+                            //                             return _p.ss(
+                            //                                 $,
+                            //                                 ($) => ['Geen BTW van toepassing', _p_create_symbol()],
+                            //                             )
+                            //                         case 'Import van buiten de EU':
+                            //                             return _p.ss(
+                            //                                 $,
+                            //                                 ($) => ['Import van buiten de EU', _p_create_symbol()],
+                            //                             )
+                            //                         case 'Intracommunautair':
+                            //                             return _p.ss(
+                            //                                 $,
+                            //                                 ($) => ['Intracommunautair', _p_create_symbol()],
+                            //                             )
+                            //                         case 'Standaard':
+                            //                             return _p.ss(
+                            //                                 $,
+                            //                                 ($) => ['Standaard', _p.group.literal.resolve(
+                            //                                     () => {
+
+                            //                                         return {
+                            //                                             'BTW-periode': prop_BTW$mi_periode,
+                            //                                         }
+                            //                                     },
+                            //                                 )],
+                            //                             )
+                            //                         default:
+                            //                             return _p.au(
+                            //                                 $[0],
+                            //                             )
+                            //                     }
+                            //                 },
+                            //             )
+                            //         },
+                            //     ),
+                            // )
 
                             const prop_Brondocument = _p_change_context(
                                 $['Brondocument'],
@@ -2705,7 +2686,8 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             )
                             return {
                                 'Afhandeling': prop_Afhandeling,
-                                'BTW-regime': prop_BTW$mi_regime,
+                                'BTW-periode': prop_BTW$mi_periode,
+                                // 'BTW-regime': prop_BTW$mi_regime,
                                 'Brondocument': prop_Brondocument,
                                 'Datum': prop_Datum,
                                 'Regels': prop_Regels,

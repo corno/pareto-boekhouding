@@ -884,7 +884,12 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Binnenland: heffing verlegd':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Binnenland: heffing verlegd', null],
+                                                    ($) => ['Binnenland: heffing verlegd', {
+                                                        'BTW-periode': _p_change_context(
+                                                            $['BTW-periode'],
+                                                            ($) => $,
+                                                        ),
+                                                    }],
                                                 )
                                             case 'Geen BTW van toepassing':
                                                 return _p.ss(
@@ -899,12 +904,22 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Import van buiten de EU':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Import van buiten de EU', null],
+                                                    ($) => ['Import van buiten de EU', {
+                                                        'BTW-periode': _p_change_context(
+                                                            $['BTW-periode'],
+                                                            ($) => $,
+                                                        ),
+                                                    }],
                                                 )
                                             case 'Intracommunautair':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Intracommunautair', null],
+                                                    ($) => ['Intracommunautair', {
+                                                        'BTW-periode': _p_change_context(
+                                                            $['BTW-periode'],
+                                                            ($) => $,
+                                                        ),
+                                                    }],
                                                 )
                                             case 'Standaard':
                                                 return _p.ss(

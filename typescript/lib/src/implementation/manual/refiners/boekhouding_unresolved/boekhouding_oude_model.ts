@@ -156,14 +156,14 @@ export const Grootboek_Categorieen: signatures.Grootboek_Categorieen = ($) => ({
 export const Grootboekrekeningen: signatures.Grootboekrekeningen = ($) => ({
     'Balans': _p_change_context($['Balans grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
         'Stam': null,
-        'Type': _p_change_context($['Type'], ($) => _p.decide.state($, ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
-            switch ($[0]) {
-                case 'Bankrekening': return _p.ss($, ($) => sh.state(['Bankrekening', null]))
-                case 'Informele rekening': return _p.ss($, ($) => sh.state(['Informele rekening', null]))
-                case 'Overig': return _p.ss($, ($) => sh.state(['Overig', null]))
-                default: return _p.au($[0])
-            }
-        })),
+        // 'Type': _p_change_context($['Type'], ($) => _p.decide.state($, ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
+        //     switch ($[0]) {
+        //         case 'Bankrekening': return _p.ss($, ($) => sh.state(['Bankrekening', null]))
+        //         case 'Informele rekening': return _p.ss($, ($) => sh.state(['Informele rekening', null]))
+        //         case 'Overig': return _p.ss($, ($) => sh.state(['Overig', null]))
+        //         default: return _p.au($[0])
+        //     }
+        // })),
     })))),
     'Resultaat': _p_change_context($['Resultaat grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
         'Stam': null,
@@ -183,18 +183,29 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
                 default: return _p.au($[0])
             }
         })),
-        'BTW-regime': _p_change_context($['BTW-regime'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
+        'BTW-periode': _p_change_context($['BTW-regime'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_periode => {
             switch ($[0]) {
-                case 'Binnenland: heffing verlegd': return _p.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
-                case 'Geen BTW van toepassing': return _p.ss($, ($) => sh.state(['Geen BTW van toepassing', null]))
-                case 'Import van buiten de EU': return _p.ss($, ($) => sh.state(['Import van buiten de EU', null]))
-                case 'Intracommunautair': return _p.ss($, ($) => sh.state(['Intracommunautair', null]))
-                case 'Standaard': return _p.ss($, ($) => sh.state(['Standaard', ({
-                    'BTW-periode': _p_change_context($['BTW-periode'], ($) => sh.reference($)),
-                })]))
+                case 'Binnenland: heffing verlegd': return _p.ss($, ($) => _p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                case 'Geen BTW van toepassing': return _p.ss($, ($) => _p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                case 'Import van buiten de EU': return _p.ss($, ($) => _p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                case 'Intracommunautair': return _p.ss($, ($) => _p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                case 'Standaard': return _p.ss($, ($) => _p_change_context($['BTW-periode'], ($) => sh.reference($)))
                 default: return _p.au($[0])
             }
         })),
+
+        // 'BTW-regime': _p_change_context($['BTW-regime'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
+        //     switch ($[0]) {
+        //         case 'Binnenland: heffing verlegd': return _p.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
+        //         case 'Geen BTW van toepassing': return _p.ss($, ($) => sh.state(['Geen BTW van toepassing', null]))
+        //         case 'Import van buiten de EU': return _p.ss($, ($) => sh.state(['Import van buiten de EU', null]))
+        //         case 'Intracommunautair': return _p.ss($, ($) => sh.state(['Intracommunautair', null]))
+        //         case 'Standaard': return _p.ss($, ($) => sh.state(['Standaard', ({
+        //             'BTW-periode': _p_change_context($['BTW-periode'], ($) => sh.reference($)),
+        //         })]))
+        //         default: return _p.au($[0])
+        //     }
+        // })),
         'Brondocument': _p_change_context($['Brondocument'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
             switch ($[0]) {
                 case 'Niet van toepassing': return _p.ss($, ($) => sh.state(['Niet van toepassing', null]))
