@@ -222,7 +222,7 @@ div.categorie span {
 /* Print styles */
 @media print {
     @page {
-        size: A4 landscape;
+        size: A4 portrait;
         margin: 0.5in;
     }
     
@@ -240,6 +240,12 @@ div.categorie span {
         width: auto;
         font-size: 7px;
         page-break-inside: auto;
+    }
+    
+    /* Prevent all tbody elements from splitting across pages */
+    tbody {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
     
     /* Keep each year group together on print */
