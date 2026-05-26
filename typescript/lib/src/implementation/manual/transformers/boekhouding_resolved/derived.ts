@@ -10,7 +10,7 @@ import _p_unreachable_code_path from 'pareto-core/dist/_p_unreachable_code_path'
 
 //dependencies
 
-export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
+export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
     const bron_root = $
     return {
         'bron': $,
@@ -399,21 +399,8 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                 //     }
                 // )
 
-                const p_berekende_beginsaldo_nog_aan_te_geven_btw = bron_jaar['Eerste boekjaar'][0] !== 'Nee'
-                    ? 0
-                    : _p_cc(
-                        $al.get_entry(
-                            bron_jaar['Eerste boekjaar'][1]['Vorig boekjaar']['l id'],
-                            {
-                                'cycle_detected': () => _p_unreachable_code_path("Eerste boekjaar is 'Nee', dus er moet een vorig boekjaar zijn"),
-                                'no_context_lookup': () => _p_unreachable_code_path("??"),
-                                'no_such_entry': () => _p_unreachable_code_path("??"),
-                            }
-                        ),
-                        ($) => $.jaarbeheer.resultaat['eindsaldo nog aan te geven BTW']
-                    )
 
-                const p_btw_periodes: _pi.Dictionary<d_out.Btw_Periode> = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Resultaat['BTW periodes']).map(($) => {
+                const p_btw_periodes = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Resultaat['BTW periodes']).map(($): d_out.Btw_Periode => {
                     const context = $
                     const p_inkopen_x = _p.number.from.dictionary(
                         _p.dictionary.from.dictionary(
@@ -431,10 +418,14 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                             ($) => $.bron['BTW-periode']['l entry'] === context
                         )
                     ).sum(
-                        ($) => $['totaal btw']
+                        ($) => -$['totaal btw']
                     )
 
-                    const p_betalingen = _p.number.from.dictionary(
+                    const p_handelsmutaties =
+                        + p_inkopen_x
+                        + p_verkopen_x
+
+                    const p_bankrekening_mutaties = _p.number.from.dictionary(
                         bron_root.Jaren
                     ).sum(
                         ($) => _p.number.from.dictionary(
@@ -458,12 +449,12 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         })
                                     )
                                 ).sum(
-                                    ($) => $.Stam.Bedrag
+                                    ($) => -$.Stam.Bedrag
                                 )
                             }
                         )
                     )
-                    const p_verrekeningen = _p.number.from.dictionary(
+                    const p_verrekenpost_mutaties = _p.number.from.dictionary(
                         bron_root.Jaren
                     ).sum(
                         ($) => _p.number.from.dictionary(
@@ -487,25 +478,35 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         })
                                     )
                                 ).sum(
-                                    ($) => $.Bedrag
+                                    ($) => -$.Bedrag
                                 )
                             }
                         )
                     )
+                    // const p_mutaties_totaal =
+                    //     + p_inkopen_x
+                    //     + p_verkopen_x
+                    //     + p_bankrekening_mutaties
+                    //     + p_verrekenpost_mutaties
+
+                    const p_afhandelings_mutaties = + p_bankrekening_mutaties + p_verrekenpost_mutaties
 
                     const p_status: d_out.Btw_Periode['status'] = _p.decide.state($.Status, ($): d_out.Btw_Periode['status'] => {
                         switch ($[0]) {
-                            case 'Aangegeven': return _p.ss($, ($) => ['aangegeven', {
-                                'bron': $,
-                                'todo niet gelijk':
-                                    - $.Bedrag
-                                    !==
-                                    (
-                                        + p_verrekeningen
-                                        + p_betalingen
-                                    ),
-
-                            }])
+                            case 'Aangegeven': return _p.ss($, ($) => {
+                                const p_totaal_aangegeven_plus_afronding = + $.Bedrag + $.Afronding
+                                return ['aangegeven', {
+                                    'bron': $,
+                                    'totaal aangegeven + afronding': p_totaal_aangegeven_plus_afronding,
+                                    'todo niet volledig afgesloten':
+                                        p_afhandelings_mutaties
+                                        !==
+                                        - p_totaal_aangegeven_plus_afronding,
+                                    'te veel aangegeven':
+                                        + p_totaal_aangegeven_plus_afronding
+                                        + p_handelsmutaties,
+                                }]
+                            })
                             case 'Openstaand': return _p.ss($, ($) => ['openstaand', {
                                 'bron': $,
                             }])
@@ -513,49 +514,20 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                         }
                     })
 
-                    const p_nog_aan_te_geven =
-                        - p_inkopen_x
-                        + p_verkopen_x
-                        - _p.decide.state(p_status, ($): number => {
-                            switch ($[0]) {
-                                case 'aangegeven': return _p.ss($, ($) => $.bron.Bedrag + $.bron.Afronding)
-                                case 'openstaand': return _p.ss($, ($) => 0)
-                                default: return _p.au($[0])
-                            }
-                        })
 
                     return {
                         'bron': $,
-                        'mutaties': {
+                        'handelsmutaties': {
                             'inkopen': p_inkopen_x,
                             'verkopen': p_verkopen_x,
                         },
                         'afhandeling': {
-                            'betalingen': p_betalingen,
-                            'verrekeningen': p_verrekeningen,
+                            'betalingen': p_bankrekening_mutaties,
+                            'verrekeningen': p_verrekenpost_mutaties,
                         },
                         'status': p_status,
-                        'nog aan te geven': p_nog_aan_te_geven,
                     }
                 })
-
-                const p_eindsaldo_nog_aan_te_geven_btw =
-                    // + bron_jaar.Jaarbeheer.Balans['Beginsaldo nog aan te geven BTW']
-                    + p_berekende_beginsaldo_nog_aan_te_geven_btw
-                    + _p.number.from.dictionary(
-                        p_btw_periodes
-                    ).sum(
-                        ($) =>
-                            - $.mutaties.inkopen
-                            + $.mutaties.verkopen
-                            - _p.decide.state($.status, ($): number => {
-                                switch ($[0]) {
-                                    case 'aangegeven': return _p.ss($, ($) => $.bron.Bedrag)
-                                    case 'openstaand': return _p.ss($, ($) => 0)
-                                    default: return _p.au($[0])
-                                }
-                            })
-                    )
 
                 const p_bankrekeningen = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Balans.Bankrekeningen).map(($) => {
                     const bron_bankrekening = $
@@ -619,7 +591,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                 ($) => _p.number.from.dictionary(
                                     $['Memoriaal Boekingen']
                                 ).sum(
-                                    ($) => - $.Bedrag
+                                    ($) => $.Bedrag
                                 )
 
                             )
@@ -652,7 +624,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         ($) => _p.decide.state($.Type, ($) => $[0] === 'Balans' && _p.ss($, ($) => $['Balans item']['l entry'] === context))
                                     )
                                 ).sum(
-                                    ($) => $['Bedrag exclusief BTW']
+                                    ($) => - $['Bedrag exclusief BTW']
                                 )
                             )
                             return {
@@ -662,7 +634,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                 'totaal':
                                     + p_memoriaal_boekingen
                                     + p_inkopen
-                                    - p_verkopen
+                                    + p_verkopen
                             }
                         }
                     )
@@ -751,106 +723,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                     }
                 })
 
-                const p_crediteuren = _p_variables(
-                    (): d_out.Balans.Post => {
-                        const p_beginsaldo = bron_jaar['Eerste boekjaar'][0] === 'Ja'
-                            ? 0
-                            : _p_cc(
-                                $al.get_entry(
-                                    bron_jaar['Eerste boekjaar'][1]['Vorig boekjaar']['l id'],
-                                    {
-                                        'cycle_detected': () => _p_unreachable_code_path("Eerste boekjaar is 'Nee', dus er moet een vorig boekjaar zijn"),
-                                        'no_context_lookup': () => _p_unreachable_code_path("??"),
-                                        'no_such_entry': () => _p_unreachable_code_path("??"),
-                                    }
-                                ),
-                                ($) => $.crediteuren.beginsaldo + $.crediteuren.mutaties
-                            )
-                        const p_mutaties = _p_variables(
-
-                            (): number => {
-
-                                const p_inkopen = _p.number.from.dictionary(
-                                    bron_jaar.Handelstransacties.Inkopen
-                                ).sum(
-                                    ($) => _p.number.from.dictionary(
-                                        _p.dictionary.from.dictionary(
-                                            $.Regels
-                                        ).filter(
-                                            ($) => _p.decide.state($.Type, ($) => $[0] === 'Kosten')
-                                        )
-                                    ).sum(
-                                        ($) => _p.decide.state($.Bedrag, ($): number => {
-                                            switch ($[0]) {
-                                                case 'Bekend': return _p.ss($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
-                                                default: return _p.au($[0])
-                                            }
-                                        })
-                                    )
-                                )
-                                const p_betalingen = _p.number.from.dictionary(
-                                    bron_jaar.Mutaties.Bankrekeningen
-                                ).sum(
-                                    ($) => {
-                                        return _p.number.from.dictionary(
-                                            _p.dictionary.from.dictionary(
-                                                $['Mutatie Verwerkingen']
-                                            ).filter(
-                                                ($) => _p.decide.state($.type, ($) => {
-                                                    switch ($[0]) {
-                                                        case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($) => {
-                                                            switch ($[0]) {
-                                                                case 'Inkoop': return _p.ss($, ($) => true)
-                                                                default: return false
-                                                            }
-                                                        }))
-                                                        default: return false
-                                                    }
-                                                })
-                                            )
-                                        ).sum(
-                                            ($) => $.Stam.Bedrag
-                                        )
-                                    }
-                                )
-                                const p_verrekeningen = _p.number.from.dictionary(
-                                    bron_jaar.Mutaties.Verrekenposten
-                                ).sum(
-                                    ($) => {
-                                        return _p.number.from.dictionary(
-                                            _p.dictionary.from.dictionary(
-                                                $.Mutaties
-                                            ).filter(
-                                                ($) => _p.decide.state($.Afhandeling, ($) => {
-                                                    switch ($[0]) {
-                                                        case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($) => {
-                                                            switch ($[0]) {
-                                                                case 'Inkoop': return _p.ss($, ($) => true)
-                                                                default: return false
-                                                            }
-                                                        }))
-                                                        default: return false
-                                                    }
-                                                })
-                                            )
-                                        ).sum(
-                                            ($) => $.Bedrag
-                                        )
-                                    }
-                                )
-                                return + p_inkopen
-                                    - p_betalingen
-                                    - p_verrekeningen
-                            }
-                        )
-                        return {
-                            'beginsaldo': p_beginsaldo,
-                            'mutaties': p_mutaties,
-                        }
-                    }
-                )
-
-                const p_debiteuren = _p_variables(
+                const p_inkoopsaldo = _p_variables(
                     (): d_out.Balans.Post => {
                         const p_beginsaldo = bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
@@ -863,24 +736,25 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         'no_such_entry': () => _p_unreachable_code_path("??"),
                                     }
                                 ),
-                                ($) => $.debiteuren.beginsaldo + $.debiteuren.mutaties
+                                ($) => $.inkoopsaldo.beginsaldo + $.inkoopsaldo.mutaties
                             )
                         const p_mutaties = _p_variables(
 
                             (): number => {
 
-                                const p_verkopen_x = _p.number.from.dictionary(
-                                    p_verkopen
-                                ).sum(
-                                    ($) => _p.number.from.dictionary(
-                                        _p.dictionary.from.dictionary(
-                                            $.regels
-                                        ).filter(
-                                            ($) => _p.decide.state($.bron.Type, ($) => $[0] === 'Opbrengsten')
-                                        )
-                                    ).sum(
-                                        ($) => $['bedrag inclusief btw']
+                                const p_inkopen_x = _p.number.from.dictionary(
+                                    _p.dictionary.from.dictionary(
+                                        p_inkopen
+                                    ).filter(
+                                        ($) => _p.decide.state($.bron.Afhandeling, ($) => {
+                                            switch ($[0]) {
+                                                case 'Mutaties': return _p.ss($, ($) => true)
+                                                default: return false
+                                            }
+                                        })
                                     )
+                                ).sum(
+                                    ($) => - $['totaal ex btw'] - $['totaal btw']
                                 )
                                 const p_betalingen = _p.number.from.dictionary(
                                     bron_jaar.Mutaties.Bankrekeningen
@@ -903,7 +777,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                                 })
                                             )
                                         ).sum(
-                                            ($) => $.Stam.Bedrag
+                                            ($) => -$.Stam.Bedrag
                                         )
                                     }
                                 )
@@ -928,11 +802,11 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                                 })
                                             )
                                         ).sum(
-                                            ($) => $.Bedrag
+                                            ($) => -$.Bedrag
                                         )
                                     }
                                 )
-                                return + p_verkopen_x
+                                return + p_inkopen_x
                                     + p_betalingen
                                     + p_verrekeningen
                             }
@@ -940,6 +814,245 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                         return {
                             'beginsaldo': p_beginsaldo,
                             'mutaties': p_mutaties,
+                        }
+                    }
+                )
+
+                const p_verkoopsaldo = _p_variables(
+                    (): d_out.Balans.Post => {
+                        const p_beginsaldo = bron_jaar['Eerste boekjaar'][0] !== 'Nee'
+                            ? 0
+                            : _p_cc(
+                                $al.get_entry(
+                                    bron_jaar['Eerste boekjaar'][1]['Vorig boekjaar']['l id'],
+                                    {
+                                        'cycle_detected': () => _p_unreachable_code_path("Eerste boekjaar is 'Nee', dus er moet een vorig boekjaar zijn"),
+                                        'no_context_lookup': () => _p_unreachable_code_path("??"),
+                                        'no_such_entry': () => _p_unreachable_code_path("??"),
+                                    }
+                                ),
+                                ($) => $.verkoopsaldo.beginsaldo + $.verkoopsaldo.mutaties
+                            )
+                        const p_mutaties = _p_variables(
+
+                            (): number => {
+
+                                const p_verkopen_x = _p.number.from.dictionary(
+
+                                    _p.dictionary.from.dictionary(
+                                        p_verkopen
+                                    ).filter(
+                                        ($) => _p.decide.state($.bron.Afhandeling, ($) => {
+                                            switch ($[0]) {
+                                                case 'Mutaties': return _p.ss($, ($) => true)
+                                                default: return false
+                                            }
+                                        })
+                                    )).sum(
+                                        ($) => $['totaal ex btw'] + $['totaal btw']
+                                    )
+                                const p_bankrekening_mutaties = _p.number.from.dictionary(
+                                    bron_jaar.Mutaties.Bankrekeningen
+                                ).sum(
+                                    ($) => {
+                                        return _p.number.from.dictionary(
+                                            _p.dictionary.from.dictionary(
+                                                $['Mutatie Verwerkingen']
+                                            ).filter(
+                                                ($) => _p.decide.state($.type, ($) => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($) => {
+                                                            switch ($[0]) {
+                                                                case 'Verkoop': return _p.ss($, ($) => true)
+                                                                default: return false
+                                                            }
+                                                        }))
+                                                        default: return false
+                                                    }
+                                                })
+                                            )
+                                        ).sum(
+                                            ($) => -$.Stam.Bedrag
+                                        )
+                                    }
+                                )
+                                const p_verrekening_mutaties = _p.number.from.dictionary(
+                                    bron_jaar.Mutaties.Verrekenposten
+                                ).sum(
+                                    ($) => {
+                                        return _p.number.from.dictionary(
+                                            _p.dictionary.from.dictionary(
+                                                $.Mutaties
+                                            ).filter(
+                                                ($) => _p.decide.state($.Afhandeling, ($) => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($) => {
+                                                            switch ($[0]) {
+                                                                case 'Verkoop': return _p.ss($, ($) => true)
+                                                                default: return false
+                                                            }
+                                                        }))
+                                                        default: return false
+                                                    }
+                                                })
+                                            )
+                                        ).sum(
+                                            ($) => -$.Bedrag
+                                        )
+                                    }
+                                )
+                                return + p_verkopen_x
+                                    + p_bankrekening_mutaties
+                                    + p_verrekening_mutaties
+                            }
+                        )
+                        return {
+                            'beginsaldo': p_beginsaldo,
+                            'mutaties': p_mutaties,
+                        }
+                    }
+                )
+                const p_btw_te_veel_aangegeven = _p_variables(
+                    (): d_out.Balans.Post => {
+                        return {
+                            'beginsaldo': bron_jaar['Eerste boekjaar'][0] !== 'Nee'
+                                ? 0
+                                : _p_cc(
+                                    $al.get_entry(
+                                        bron_jaar['Eerste boekjaar'][1]['Vorig boekjaar']['l id'],
+                                        {
+                                            'cycle_detected': () => _p_unreachable_code_path("Eerste boekjaar is 'Nee', dus er moet een vorig boekjaar zijn"),
+                                            'no_context_lookup': () => _p_unreachable_code_path("??"),
+                                            'no_such_entry': () => _p_unreachable_code_path("??"),
+                                        }
+                                    ),
+                                    ($) => $.btw['te veel aangegeven'].beginsaldo + $.btw['te veel aangegeven'].mutaties
+                                ),
+                            'mutaties': _p.number.from.dictionary(
+                                p_btw_periodes
+                            ).sum(
+                                ($) => {
+                                    return _p.decide.state($.status, ($): number => {
+                                        switch ($[0]) {
+                                            case 'aangegeven': return _p.ss($, ($) => $['te veel aangegeven'])
+                                            case 'openstaand': return _p.ss($, ($) => 0)
+                                            default: return _p.au($[0])
+                                        }
+                                    })
+                                }
+                            ),
+                        }
+                    }
+                )
+                const p_btw_nog_aan_te_geven = _p_variables(
+                    (): d_out.Balans.Post => {
+                        return {
+                            'beginsaldo': bron_jaar['Eerste boekjaar'][0] !== 'Nee'
+                                ? 0
+                                : _p_cc(
+                                    $al.get_entry(
+                                        bron_jaar['Eerste boekjaar'][1]['Vorig boekjaar']['l id'],
+                                        {
+                                            'cycle_detected': () => _p_unreachable_code_path("Eerste boekjaar is 'Nee', dus er moet een vorig boekjaar zijn"),
+                                            'no_context_lookup': () => _p_unreachable_code_path("??"),
+                                            'no_such_entry': () => _p_unreachable_code_path("??"),
+                                        }
+                                    ),
+                                    ($) => $.btw['nog aan te geven'].beginsaldo + $.btw['nog aan te geven'].mutaties
+                                ),
+                            'mutaties': _p.number.from.dictionary(
+                                p_btw_periodes
+                            ).sum(
+                                ($) => {
+                                    const handels_mutaties = + $.handelsmutaties.inkopen + $.handelsmutaties.verkopen
+                                    return _p.decide.state($.status, ($): number => {
+                                        switch ($[0]) {
+                                            case 'aangegeven': return _p.ss($, ($) => 0)
+                                            case 'openstaand': return _p.ss($, ($) => handels_mutaties)
+                                            default: return _p.au($[0])
+                                        }
+                                    })
+                                }
+                            ),
+                        }
+                    }
+                )
+                const p_btw_openstaand = _p_variables(
+                    (): d_out.Balans.Post => {
+                        return {
+                            'beginsaldo': bron_jaar['Eerste boekjaar'][0] !== 'Nee'
+                                ? 0
+                                : _p_cc(
+                                    $al.get_entry(
+                                        bron_jaar['Eerste boekjaar'][1]['Vorig boekjaar']['l id'],
+                                        {
+                                            'cycle_detected': () => _p_unreachable_code_path("Eerste boekjaar is 'Nee', dus er moet een vorig boekjaar zijn"),
+                                            'no_context_lookup': () => _p_unreachable_code_path("??"),
+                                            'no_such_entry': () => _p_unreachable_code_path("??"),
+                                        }
+                                    ),
+                                    ($) => $.btw.openstaand.beginsaldo + $.btw.openstaand.mutaties
+                                ),
+                            'mutaties':
+                                + _p.number.from.dictionary(
+                                    bron_jaar.Mutaties.Bankrekeningen
+                                ).sum(
+                                    ($) => _p.number.from.dictionary(
+                                        _p.dictionary.from.dictionary(
+                                            $['Mutatie Verwerkingen']
+                                        ).filter(
+                                            ($) => _p.decide.state($.type, ($): boolean => {
+                                                switch ($[0]) {
+                                                    case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($): boolean => {
+                                                        switch ($[0]) {
+                                                            case 'BTW-periode': return _p.ss($, ($) => true)
+                                                            default: return false
+                                                        }
+                                                    }))
+                                                    default: return false
+                                                }
+                                            })
+                                        )
+                                    ).sum(
+                                        ($) => - $.Stam.Bedrag
+                                    )
+                                )
+                                + _p.number.from.dictionary(
+                                    bron_jaar.Mutaties.Verrekenposten
+                                ).sum(
+                                    ($) => _p.number.from.dictionary(
+                                        _p.dictionary.from.dictionary(
+                                            $.Mutaties
+                                        ).filter(
+                                            ($) => _p.decide.state($.Afhandeling, ($): boolean => {
+                                                switch ($[0]) {
+                                                    case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($): boolean => {
+                                                        switch ($[0]) {
+                                                            case 'BTW-periode': return _p.ss($, ($) => true)
+                                                            default: return false
+                                                        }
+                                                    }))
+                                                    default: return false
+                                                }
+                                            })
+                                        )
+                                    ).sum(
+                                        ($) => - $.Bedrag
+                                    )
+                                )
+                                + _p.number.from.dictionary(
+                                    p_btw_periodes
+                                ).sum(
+                                    ($) => {
+                                        return - _p.decide.state($.status, ($): number => {
+                                            switch ($[0]) {
+                                                case 'aangegeven': return _p.ss($, ($) => $.bron.Bedrag)
+                                                case 'openstaand': return _p.ss($, ($) => 0)
+                                                default: return _p.au($[0])
+                                            }
+                                        })
+                                    }
+                                ),
                         }
                     }
                 )
@@ -972,17 +1085,38 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         : _p.dictionary.literal({})
                                 },
 
-                                "crediteuren": {
+                                "inkoopsaldo": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Inkoop saldo']['l entry'] === context
                                         ? _p.dictionary.literal({
-                                            ".": p_crediteuren
+                                            ".": p_inkoopsaldo
                                         })
                                         : _p.dictionary.literal({}),
                                 },
-                                "debiteuren": {
+                                "verkoopsaldo": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Verkoop saldo']['l entry'] === context
                                         ? _p.dictionary.literal({
-                                            ".": p_debiteuren
+                                            ".": p_verkoopsaldo
+                                        })
+                                        : _p.dictionary.literal({}),
+                                },
+                                "btw te veel aangegeven": {
+                                    'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
+                                        ? _p.dictionary.literal({
+                                            ".": p_btw_te_veel_aangegeven
+                                        })
+                                        : _p.dictionary.literal({}),
+                                },
+                                "btw openstaand": {
+                                    'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
+                                        ? _p.dictionary.literal({
+                                            ".": p_btw_openstaand
+                                        })
+                                        : _p.dictionary.literal({}),
+                                },
+                                "btw nog aan te geven": {
+                                    'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
+                                        ? _p.dictionary.literal({
+                                            ".": p_btw_nog_aan_te_geven
                                         })
                                         : _p.dictionary.literal({}),
                                 },
@@ -1006,30 +1140,6 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                                         'mutaties': $['mutatie totaal'],
                                     }))
                                 },
-                                // "btw periodes": _p.optional.literal.set(_p_variables(
-                                //     (): d_out.Balans.Post => {
-                                //         const p_beginsaldo = 0
-                                //         const p_mutaties = 0
-
-
-
-                                //         // const p_btw_periodes_x = _p.number.from.dictionary(
-                                //         //     _p.dictionary.from.dictionary(
-                                //         //         p_btw_periodes
-                                //         //     ).filter(
-                                //         //         ($) => bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                //         //     )
-                                //         // ).sum(
-                                //         //     ($) =>
-                                //         //         - $.mutaties.inkopen
-                                //         //         + $.mutaties.verkopen
-                                //         // )
-                                //         return {
-                                //             'beginsaldo': p_beginsaldo,
-                                //             'mutaties': p_mutaties,
-                                //         }
-                                //     }
-                                // )),
                                 "overige balans items": {
                                     'posten': _p.dictionary.from.dictionary(
                                         p_overige_balans_items
@@ -1078,12 +1188,16 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($): d_out.Root => {
                     'informele rekeningen': p_informele_rekeningen,
                     'bankrekeningen': p_bankrekeningen,
                     'verrekenposten': p_verrekenposten,
-                    'crediteuren': p_crediteuren,
-                    'debiteuren': p_debiteuren,
+                    'inkoopsaldo': p_inkoopsaldo,
+                    'verkoopsaldo': p_verkoopsaldo,
+                    'btw': {
+                        'te veel aangegeven': p_btw_te_veel_aangegeven,
+                        'nog aan te geven': p_btw_nog_aan_te_geven,
+                        'openstaand': p_btw_openstaand,
+                    },
                     'jaarbeheer': {
                         'resultaat': {
                             'btw periodes': p_btw_periodes,
-                            'eindsaldo nog aan te geven BTW': p_eindsaldo_nog_aan_te_geven_btw,
                             'grootboekrekeningen': p_resultaat_grootboekrekeningen,
                             'resultaat': resultaat,
 

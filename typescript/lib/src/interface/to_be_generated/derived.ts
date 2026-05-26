@@ -16,13 +16,17 @@ export type Jaar = {
     'overige balans items': _pi.Dictionary<Overige_Balans_Item>
     'informele rekeningen': _pi.Dictionary<Informele_Rekening>
     'verrekenposten': _pi.Dictionary<Verreken_Post>
-    'crediteuren': Balans.Post
-    'debiteuren': Balans.Post
+    'inkoopsaldo': Balans.Post
+    'verkoopsaldo': Balans.Post
+    'btw': {
+        'te veel aangegeven': Balans.Post,
+        'nog aan te geven': Balans.Post,
+        'openstaand': Balans.Post,
+    }
     'bankrekeningen': _pi.Dictionary<Bankrekening>
     'jaarbeheer': {
         'resultaat': {
             'btw periodes': _pi.Dictionary<Btw_Periode>
-            'eindsaldo nog aan te geven BTW': number
             'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
             'resultaat': number
 
@@ -59,10 +63,11 @@ export type Verkoop_Regel = {
 
 export type Btw_Periode = {
     'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D
-    'mutaties': {
+    'handelsmutaties': {
         'inkopen': number
         'verkopen': number
     }
+    // 'mutaties totaal': number
     'afhandeling': {
         'betalingen': number
         'verrekeningen': number
@@ -73,9 +78,10 @@ export type Btw_Periode = {
     }]
     | ['aangegeven', {
         'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Aangegeven
-        'todo niet gelijk': boolean
+        'totaal aangegeven + afronding': number
+        'todo niet volledig afgesloten': boolean
+        'te veel aangegeven': number
     }]
-    'nog aan te geven': number
 }
 
 export type Overige_Balans_Item = {
