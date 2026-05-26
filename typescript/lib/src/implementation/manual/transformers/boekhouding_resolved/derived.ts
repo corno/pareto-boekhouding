@@ -334,72 +334,6 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                 })
 
 
-                // const btw_mutaties = _p_variables(
-
-                //     (): number => {
-
-                //         const p_btw_periodes_x = _p.number.from.dictionary(
-                //             p_btw_periodes
-                //         ).sum(
-                //             ($) => $.inkopensss
-                //         )
-                //         const p_betalingen = _p.number.from.dictionary(
-                //             $.Mutaties.Bankrekeningen
-                //         ).sum(
-                //             ($) => {
-                //                 return _p.number.from.dictionary(
-                //                     _p.dictionary.from.dictionary(
-                //                         $['Mutatie Verwerkingen']
-                //                     ).filter(
-                //                         ($) => _p.decide.state($.type, ($) => {
-                //                             switch ($[0]) {
-                //                                 case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($) => {
-                //                                     switch ($[0]) {
-                //                                         case 'Inkoop': return _p.ss($, ($) => true)
-                //                                         default: return false
-                //                                     }
-                //                                 }))
-                //                                 default: return false
-                //                             }
-                //                         })
-                //                     )
-                //                 ).sum(
-                //                     ($) => $.Stam.Bedrag
-                //                 )
-                //             }
-                //         )
-                //         const p_verrekeningen = _p.number.from.dictionary(
-                //             $.Mutaties.Verrekenposten
-                //         ).sum(
-                //             ($) => {
-                //                 return _p.number.from.dictionary(
-                //                     _p.dictionary.from.dictionary(
-                //                         $.Mutaties
-                //                     ).filter(
-                //                         ($) => _p.decide.state($.Afhandeling, ($) => {
-                //                             switch ($[0]) {
-                //                                 case 'Resultaat': return _p.ss($, ($) => _p.decide.state($.type, ($) => {
-                //                                     switch ($[0]) {
-                //                                         case 'Inkoop': return _p.ss($, ($) => true)
-                //                                         default: return false
-                //                                     }
-                //                                 }))
-                //                                 default: return false
-                //                             }
-                //                         })
-                //                     )
-                //                 ).sum(
-                //                     ($) => $.Bedrag
-                //                 )
-                //             }
-                //         )
-                //         return + p_inkopen
-                //             - p_betalingen
-                //             - p_verrekeningen
-                //     }
-                // )
-
-
                 const p_btw_periodes = _p.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Resultaat['BTW periodes']).map(($): d_out.Btw_Periode => {
                     const context = $
                     const p_inkopen_x = _p.number.from.dictionary(
@@ -1130,6 +1064,22 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                                         'mutaties': $.mutaties,
                                     }))
                                 },
+                                // "weg te boeken bankrekening mutaties": {
+                                //     'posten': _p.dictionary.from.dictionary(
+                                //         bron_jaar.Mutaties.Bankrekeningen
+                                //     ).map_optionally<number>(
+                                //         ($) => {
+                                //             const openstaand: number = xxxx
+
+                                //             return openstaand !== 0
+                                //                 ? _p.optional.literal.set(openstaand)
+                                //                 : _p.optional.literal.not_set()
+                                //         }
+                                //     ).__d_map(($) => ({
+                                //         'beginsaldo': 0,
+                                //         'mutaties': $,
+                                //     }))
+                                // },
                                 "informele rekeningen": {
                                     'posten': _p.dictionary.from.dictionary(
                                         p_informele_rekeningen
