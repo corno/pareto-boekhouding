@@ -9,7 +9,7 @@ export type Signature = cffc.Deserializer
 //data types
 import * as d_out from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
 import * as d_in from "../../../../interface/to_be_generated/derived"
-import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggregatie_2"
+import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggregatie"
 
 
 //dependencies
