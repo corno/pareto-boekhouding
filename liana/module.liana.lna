@@ -959,7 +959,7 @@
                                     )
                                 )
                                 'Informele rekeningen': (
-                                    `description`: _
+                                    `description`: * "rekening met tegenpartij"
                                     `value`: | `dictionary` (
                                         `value`: | `group` {
                                             'Beginsaldo': (
@@ -1016,7 +1016,7 @@
                                     )
                                 )
                                 'Overige balans items': (
-                                    `description`: _
+                                    `description`: * "items die geen bankrekening of informele rekening zijn, denk aan voorraad, reservering e.d."
                                     `value`: | `dictionary` (
                                         `value`: | `component` (
                                             `type`: | `internal` 'Overige balans item'
@@ -1873,7 +1873,7 @@
                                                                 `constraints`: _
                                                                 `description`: _
                                                                 `value`: | `component` (
-                                                                    `type`: | `internal` 'Balans Resultaat Mutatie'
+                                                                    `type`: | `internal` 'Rekening Mutatie'
                                                                     `results`: _
                                                                 )
                                                             )
@@ -1970,7 +1970,7 @@
                                                                 `constraints`: _
                                                                 `description`: _
                                                                 `value`: | `component` (
-                                                                    `type`: | `internal` 'Balans Resultaat Mutatie'
+                                                                    `type`: | `internal` 'Rekening Mutatie'
                                                                     `results`: _
                                                                 )
                                                             )
@@ -2172,7 +2172,7 @@
                         }
                     )
                 )
-                'Balans Resultaat Mutatie': (
+                'Rekening Mutatie': (
                     `root value`: | `group` {
                         'Jaar': (
                             `description`: _
@@ -2512,7 +2512,7 @@
                             )
                             `resolved parameters`: ~
                         )
-                        'Balans Resultaat Mutatie': (
+                        'Rekening Mutatie': (
                             `module`: ~
                             `parameters`: | `same as` 'Mutaties'
                             `resolved parameters`: ~
@@ -4655,7 +4655,7 @@
                             )
                         }
                     )
-                    'Balans Resultaat Mutatie': (
+                    'Rekening Mutatie': (
                         `signature`: ~
                         `root value resolver`: | `group` {
                             'Jaar': (
@@ -4799,7 +4799,7 @@
                                                                     `constraints`: {}
                                                                     `resolver`: | `component` (
                                                                         `definition`: ~
-                                                                        `location`: | `internal` 'Balans Resultaat Mutatie'
+                                                                        `location`: | `internal` 'Rekening Mutatie'
                                                                         `signature`: ~
                                                                         `arguments`: * (
                                                                             `modules`: _
@@ -4918,7 +4918,7 @@
                                                                     `constraints`: {}
                                                                     `resolver`: | `component` (
                                                                         `definition`: ~
-                                                                        `location`: | `internal` 'Balans Resultaat Mutatie'
+                                                                        `location`: | `internal` 'Rekening Mutatie'
                                                                         `signature`: ~
                                                                         `arguments`: * (
                                                                             `modules`: _
