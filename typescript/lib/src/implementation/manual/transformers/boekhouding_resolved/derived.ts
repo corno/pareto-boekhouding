@@ -895,17 +895,18 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                                     ($) => $.btw['nog aan te geven'].beginsaldo + $.btw['nog aan te geven'].mutaties
                                 ),
                             'mutaties': _p.number.from.dictionary(
-                                p_btw_periodes
+                                _p.dictionary.from.dictionary(
+                                    p_btw_periodes
+                                ).filter(($) => _p.decide.state($.status, ($): boolean => {
+                                    switch ($[0]) {
+                                        case 'openstaand': return _p.ss($, ($) => true)
+                                        default: return false
+                                    }
+                                }))
                             ).sum(
                                 ($) => {
-                                    const handels_mutaties = + $.handelsmutaties.inkopen + $.handelsmutaties.verkopen
-                                    return _p.decide.state($.status, ($): number => {
-                                        switch ($[0]) {
-                                            case 'aangegeven': return _p.ss($, ($) => 0)
-                                            case 'openstaand': return _p.ss($, ($) => handels_mutaties)
-                                            default: return _p.au($[0])
-                                        }
-                                    })
+                                    return + $.handelsmutaties.inkopen
+                                        + $.handelsmutaties.verkopen
                                 }
                             ),
                         }
