@@ -2838,7 +2838,7 @@ export namespace Mutaties_ {
                                         
                                         export namespace l_state {
                                             
-                                            export type Resultaat = Balans_Resultaat_Mutatie_
+                                            export type Resultaat = Rekening_Mutatie_
                                             
                                             export namespace Balans {
                                                 
@@ -2976,7 +2976,7 @@ export namespace Mutaties_ {
                                         
                                         export namespace l_state {
                                             
-                                            export type Resultaat = Balans_Resultaat_Mutatie_
+                                            export type Resultaat = Rekening_Mutatie_
                                             
                                             export namespace Balans {
                                                 
@@ -3284,7 +3284,7 @@ export type Jaren_ = {
     readonly 'l dictionary': Jaren_.l_dictionary
 }
 
-export namespace Balans_Resultaat_Mutatie_ {
+export namespace Rekening_Mutatie_ {
     
     export namespace Jaar {
         
@@ -3366,9 +3366,9 @@ export namespace Balans_Resultaat_Mutatie_ {
     
 }
 
-export type Balans_Resultaat_Mutatie_ = {
-    readonly 'Jaar': Balans_Resultaat_Mutatie_.Jaar
-    readonly 'type': Balans_Resultaat_Mutatie_.type_
+export type Rekening_Mutatie_ = {
+    readonly 'Jaar': Rekening_Mutatie_.Jaar
+    readonly 'type': Rekening_Mutatie_.type_
 }
 
 export namespace Eerste_boekjaar_ {
@@ -3426,6 +3426,6 @@ export {
     Handelstransacties_ as Handelstransacties, 
     Mutaties_ as Mutaties, 
     Jaren_ as Jaren, 
-    Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
+    Rekening_Mutatie_ as Rekening_Mutatie, 
     Eerste_boekjaar_ as Eerste_boekjaar, 
 }

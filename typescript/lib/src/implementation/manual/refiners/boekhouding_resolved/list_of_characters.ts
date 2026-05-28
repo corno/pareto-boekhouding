@@ -1,4 +1,5 @@
 import * as _pi from 'pareto-core/dist/interface'
+import _p_create_symbol from 'pareto-core/dist/_p_create_symbol'
 
 //data types
 import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
@@ -26,7 +27,7 @@ export const Root: Root = ($, abort, $p) => {
             $p
         ),
         ($) => abort(['resolve error', $]),
-        null,
-        null
+        _p_create_symbol(),
+        _p_create_symbol(),
     )
 }

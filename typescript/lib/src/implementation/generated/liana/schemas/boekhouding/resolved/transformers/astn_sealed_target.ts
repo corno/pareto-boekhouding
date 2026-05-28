@@ -1961,7 +1961,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Resultaat',
-                                                                    'value': Balans_Resultaat_Mutatie(
+                                                                    'value': Rekening_Mutatie(
                                                                         $,
                                                                     ),
                                                                 }),
@@ -2051,7 +2051,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Resultaat',
-                                                                    'value': Balans_Resultaat_Mutatie(
+                                                                    'value': Rekening_Mutatie(
                                                                         $,
                                                                     ),
                                                                 }),
@@ -2268,7 +2268,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', _p.dictionary.fro
     )]],
 )]
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', ['verbose', _p.dictionary.literal(
     {
         "Jaar": _p_change_context(
             $['Jaar'],

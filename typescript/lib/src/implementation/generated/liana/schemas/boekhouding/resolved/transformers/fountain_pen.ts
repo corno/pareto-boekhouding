@@ -79,8 +79,8 @@ export const Jaren: t_signatures.Jaren = ($) => v_serialize.Document(
     ),
 )
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($) => v_serialize.Document(
-    v_marshall.Balans_Resultaat_Mutatie(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => v_serialize.Document(
+    v_marshall.Rekening_Mutatie(
         $,
     ),
 )

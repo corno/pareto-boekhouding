@@ -3,6 +3,8 @@ import * as _p from 'pareto-core/dist/assign'
 
 import _p_change_context from 'pareto-core/dist/_p_change_context'
 
+import _p_create_symbol from 'pareto-core/dist/_p_create_symbol'
+
 import * as t_signatures from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/signatures/transformers/boilerplate_for_migrate"
 
 import * as t_out from "../../../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
@@ -13,7 +15,7 @@ export const Root: t_signatures.Root = ($) => ({
         ($) => _p.dictionary.from.dictionary(
             $,
         ).map(
-            ($, id) => null,
+            ($, id) => _p_create_symbol(),
         ),
     ),
     'Beheer': _p_change_context(
@@ -45,12 +47,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Activa':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Activa', null],
+                                                        ($) => ['Activa', _p_create_symbol()],
                                                     )
                                                 case 'Passiva':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Passiva', null],
+                                                        ($) => ['Passiva', _p_create_symbol()],
                                                     )
                                                 default:
                                                     return _p.au(
@@ -78,12 +80,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Activa':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Activa', null],
+                                                        ($) => ['Activa', _p_create_symbol()],
                                                     )
                                                 case 'Passiva':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Passiva', null],
+                                                        ($) => ['Passiva', _p_create_symbol()],
                                                     )
                                                 default:
                                                     return _p.au(
@@ -128,12 +130,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Activa':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Activa', null],
+                                                        ($) => ['Activa', _p_create_symbol()],
                                                     )
                                                 case 'Passiva':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Passiva', null],
+                                                        ($) => ['Passiva', _p_create_symbol()],
                                                     )
                                                 default:
                                                     return _p.au(
@@ -148,7 +150,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     ($) => _p.dictionary.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => null,
+                                        ($, id) => _p_create_symbol(),
                                     ),
                                 ),
                             }),
@@ -181,7 +183,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         case 'Nee':
                                             return _p.ss(
                                                 $,
-                                                ($) => ['Nee', null],
+                                                ($) => ['Nee', _p_create_symbol()],
                                             )
                                         default:
                                             return _p.au(
@@ -274,7 +276,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                             case 'Nee':
                                                                                 return _p.ss(
                                                                                     $,
-                                                                                    ($) => ['Nee', null],
+                                                                                    ($) => ['Nee', _p_create_symbol()],
                                                                                 )
                                                                             default:
                                                                                 return _p.au(
@@ -289,7 +291,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Opbrengsten':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Opbrengsten', null],
+                                                        ($) => ['Opbrengsten', _p_create_symbol()],
                                                     )
                                                 default:
                                                     return _p.au(
@@ -317,12 +319,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Kosten':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Kosten', null],
+                                                        ($) => ['Kosten', _p_create_symbol()],
                                                     )
                                                 case 'Opbrengsten':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Opbrengsten', null],
+                                                        ($) => ['Opbrengsten', _p_create_symbol()],
                                                     )
                                                 default:
                                                     return _p.au(
@@ -367,12 +369,12 @@ export const Root: t_signatures.Root = ($) => ({
                                                 case 'Kosten':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Kosten', null],
+                                                        ($) => ['Kosten', _p_create_symbol()],
                                                     )
                                                 case 'Opbrengsten':
                                                     return _p.ss(
                                                         $,
-                                                        ($) => ['Opbrengsten', null],
+                                                        ($) => ['Opbrengsten', _p_create_symbol()],
                                                     )
                                                 default:
                                                     return _p.au(
@@ -387,7 +389,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     ($) => _p.dictionary.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => null,
+                                        ($, id) => _p_create_symbol(),
                                     ),
                                 ),
                             }),
@@ -402,7 +404,7 @@ export const Root: t_signatures.Root = ($) => ({
         ($) => _p.dictionary.from.dictionary(
             $,
         ).map(
-            ($, id) => null,
+            ($, id) => _p_create_symbol(),
         ),
     ),
     'Jaren': _p_change_context(
@@ -420,12 +422,12 @@ export const Root: t_signatures.Root = ($) => ({
                                 case 'Ja':
                                     return _p.ss(
                                         $,
-                                        ($) => ['Ja', null],
+                                        ($) => ['Ja', _p_create_symbol()],
                                     )
                                 case 'Nee':
                                     return _p.ss(
                                         $,
-                                        ($) => ['Nee', null],
+                                        ($) => ['Nee', _p_create_symbol()],
                                     )
                                 default:
                                     return _p.au(
@@ -450,17 +452,17 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Bankrekening':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Bankrekening', null],
+                                                    ($) => ['Bankrekening', _p_create_symbol()],
                                                 )
                                             case 'Overig':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Overig', null],
+                                                    ($) => ['Overig', _p_create_symbol()],
                                                 )
                                             case 'Informele rekening':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Informele rekening', null],
+                                                    ($) => ['Informele rekening', _p_create_symbol()],
                                                 )
                                             default:
                                                 return _p.au(
@@ -514,7 +516,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Nog te verwerken':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Nog te verwerken', null],
+                                                                ($) => ['Nog te verwerken', _p_create_symbol()],
                                                             )
                                                         case 'Verwerkt':
                                                             return _p.ss(
@@ -618,7 +620,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Ja':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Ja', null],
+                                                    ($) => ['Ja', _p_create_symbol()],
                                                 )
                                             case 'Nee':
                                                 return _p.ss(
@@ -673,7 +675,7 @@ export const Root: t_signatures.Root = ($) => ({
                                 ($) => _p.dictionary.from.dictionary(
                                     $,
                                 ).map(
-                                    ($, id) => null,
+                                    ($, id) => _p_create_symbol(),
                                 ),
                             ),
                             'Documenten': _p_change_context(
@@ -722,7 +724,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Openstaand':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Openstaand', null],
+                                                    ($) => ['Openstaand', _p_create_symbol()],
                                                 )
                                             default:
                                                 return _p.au(
@@ -744,7 +746,7 @@ export const Root: t_signatures.Root = ($) => ({
                                 case 'Ja':
                                     return _p.ss(
                                         $,
-                                        ($) => ['Ja', null],
+                                        ($) => ['Ja', _p_create_symbol()],
                                     )
                                 case 'Nee':
                                     return _p.ss(
@@ -803,7 +805,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Ja':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Ja', null],
+                                                    ($) => ['Ja', _p_create_symbol()],
                                                 )
                                             case 'Nee':
                                                 return _p.ss(
@@ -855,7 +857,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Mutaties':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Mutaties', null],
+                                                    ($) => ['Mutaties', _p_create_symbol()],
                                                 )
                                             case 'Rekening courant':
                                                 return _p.ss(
@@ -960,17 +962,17 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Niet van toepassing':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Niet van toepassing', null],
+                                                    ($) => ['Niet van toepassing', _p_create_symbol()],
                                                 )
                                             case 'Ontbreekt':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Ontbreekt', null],
+                                                    ($) => ['Ontbreekt', _p_create_symbol()],
                                                 )
                                             case 'Nog toevoegen':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Nog toevoegen', null],
+                                                    ($) => ['Nog toevoegen', _p_create_symbol()],
                                                 )
                                             default:
                                                 return _p.au(
@@ -1068,7 +1070,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Bonnetje':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Bonnetje', null],
+                                                    ($) => ['Bonnetje', _p_create_symbol()],
                                                 )
                                             case 'Inkoop (met crediteur)':
                                                 return _p.ss(
@@ -1176,7 +1178,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Ja':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Ja', null],
+                                                    ($) => ['Ja', _p_create_symbol()],
                                                 )
                                             case 'Nee':
                                                 return _p.ss(
@@ -1208,7 +1210,7 @@ export const Root: t_signatures.Root = ($) => ({
                     ($) => _p.dictionary.from.dictionary(
                         $,
                     ).map(
-                        ($, id) => null,
+                        ($, id) => _p_create_symbol(),
                     ),
                 ),
                 'Salarisrondes': _p_change_context(
@@ -1216,7 +1218,7 @@ export const Root: t_signatures.Root = ($) => ({
                     ($) => _p.dictionary.from.dictionary(
                         $,
                     ).map(
-                        ($, id) => null,
+                        ($, id) => _p_create_symbol(),
                     ),
                 ),
                 'Startdatum boekjaar': _p_change_context(
@@ -1247,7 +1249,7 @@ export const Root: t_signatures.Root = ($) => ({
                                             case 'Mutaties':
                                                 return _p.ss(
                                                     $,
-                                                    ($) => ['Mutaties', null],
+                                                    ($) => ['Mutaties', _p_create_symbol()],
                                                 )
                                             case 'Rekening courant':
                                                 return _p.ss(
@@ -1362,7 +1364,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Intracommunautair':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Intracommunautair', null],
+                                                                ($) => ['Intracommunautair', _p_create_symbol()],
                                                             )
                                                         case 'Standaard':
                                                             return _p.ss(
@@ -1377,7 +1379,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Binnenland: heffing verlegd':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Binnenland: heffing verlegd', null],
+                                                                ($) => ['Binnenland: heffing verlegd', _p_create_symbol()],
                                                             )
                                                         default:
                                                             return _p.au(
@@ -1410,7 +1412,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         case 'Los':
                                                             return _p.ss(
                                                                 $,
-                                                                ($) => ['Los', null],
+                                                                ($) => ['Los', _p_create_symbol()],
                                                             )
                                                         case 'Licentieovereenkomst':
                                                             return _p.ss(
@@ -1656,7 +1658,7 @@ export const Root: t_signatures.Root = ($) => ({
         ($) => _p.dictionary.from.dictionary(
             $,
         ).map(
-            ($, id) => null,
+            ($, id) => _p_create_symbol(),
         ),
     ),
     'Medewerkers': _p_change_context(
@@ -1664,7 +1666,7 @@ export const Root: t_signatures.Root = ($) => ({
         ($) => _p.dictionary.from.dictionary(
             $,
         ).map(
-            ($, id) => null,
+            ($, id) => _p_create_symbol(),
         ),
     ),
 })

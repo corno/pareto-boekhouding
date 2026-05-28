@@ -187,7 +187,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $p) => v_unmarshall.Jaren(
     ),
 )
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($, abort, $p) => v_unmarshall.Balans_Resultaat_Mutatie(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort, $p) => v_unmarshall.Rekening_Mutatie(
     v_deserialize.Document(
         $,
         ($) => abort(

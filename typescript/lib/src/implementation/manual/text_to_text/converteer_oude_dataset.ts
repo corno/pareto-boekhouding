@@ -1,4 +1,5 @@
 import * as _pi from 'pareto-core/dist/interface'
+import _p_create_symbol from 'pareto-core/dist/_p_create_symbol'
 
 import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
@@ -55,7 +56,7 @@ export const $$: Signature = ($, abort, $p) => t_boekhouding_resolved_to_fp.Root
                 $,
             )
         ])),
-        null,
-        null,
+        _p_create_symbol(),
+        _p_create_symbol(),
     )
 )

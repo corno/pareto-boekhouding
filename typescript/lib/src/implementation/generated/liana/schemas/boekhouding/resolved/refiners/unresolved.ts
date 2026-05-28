@@ -1629,7 +1629,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
-                                                                                                null,
+                                                                                                _p_create_symbol(),
                                                                                                 {
                                                                                                     'Jaarbeheer': var_constraint_Niet_Nieuw['Vorig boekjaar']['l entry']['Jaarbeheer'],
                                                                                                 },
@@ -1764,7 +1764,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
-                                                                                                null,
+                                                                                                _p_create_symbol(),
                                                                                                 {
                                                                                                     'Jaarbeheer': var_constraint_Niet_Nieuw['Vorig boekjaar']['l entry']['Jaarbeheer'],
                                                                                                 },
@@ -3430,7 +3430,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
     },
 )
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort, $l, $p) => _p.group.literal.resolve(
     () => {
 
         const prop_Jaar = _p_change_context(
@@ -3487,7 +3487,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                     const var_location = $['l location']
                     return _p.decide.state(
                         $['l state'],
-                        ($): t_out.Balans_Resultaat_Mutatie.type_ => {
+                        ($): t_out.Rekening_Mutatie.type_ => {
                             switch ($[0]) {
                                 case 'Inkoop':
                                     return _p.ss(
@@ -3671,7 +3671,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                                                         case 'Resultaat':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                                ($) => ['Resultaat', Rekening_Mutatie(
                                                                                     $,
                                                                                     ($) => abort(
                                                                                         $,
@@ -3852,7 +3852,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                                                 case 'Resultaat':
                                                                     return _p.ss(
                                                                         $,
-                                                                        ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                        ($) => ['Resultaat', Rekening_Mutatie(
                                                                             $,
                                                                             ($) => abort(
                                                                                 $,
@@ -4220,7 +4220,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.fro
                         ($) => abort(
                             $,
                         ),
-                        null,
+                        _p_create_symbol(),
                         {
                             'Beheer': $p['Beheer'],
                         },
@@ -4237,7 +4237,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.fro
                         {
                             'Jaren': $a,
                         },
-                        null,
+                        _p_create_symbol(),
                     ),
                 )
 
@@ -4265,7 +4265,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.fro
                         ($) => abort(
                             $,
                         ),
-                        null,
+                        _p_create_symbol(),
                         {
                             'Beheer': $p['Beheer'],
                             'Grootboekrekeningen': prop_Grootboekrekeningen,
@@ -4316,8 +4316,8 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.literal.re
                 ($) => abort(
                     $,
                 ),
-                null,
-                null,
+                _p_create_symbol(),
+                _p_create_symbol(),
             ),
         )
 
@@ -4328,7 +4328,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.literal.re
                 ($) => abort(
                     $,
                 ),
-                null,
+                _p_create_symbol(),
                 {
                     'Fiscaal': prop_Fiscaal,
                 },
@@ -4342,7 +4342,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.literal.re
                 ($) => abort(
                     $,
                 ),
-                null,
+                _p_create_symbol(),
                 {
                     'Grootboek Categorieen': prop_Categorieen,
                 },
@@ -4356,7 +4356,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.literal.re
                 ($) => abort(
                     $,
                 ),
-                null,
+                _p_create_symbol(),
                 {
                     'Beheer': prop_Beheer,
                 },

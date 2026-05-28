@@ -9,7 +9,7 @@ export namespace Root_ {
             
         }
         
-        export type D = null
+        export type D = symbol
         
     }
     
@@ -33,13 +33,13 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Activa = null
+                        export type Activa = symbol
                         
                         export namespace Passiva {
                             
                         }
                         
-                        export type Passiva = null
+                        export type Passiva = symbol
                         
                     }
                     
@@ -69,13 +69,13 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Activa = null
+                        export type Activa = symbol
                         
                         export namespace Passiva {
                             
                         }
                         
-                        export type Passiva = null
+                        export type Passiva = symbol
                         
                     }
                     
@@ -123,13 +123,13 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Activa = null
+                        export type Activa = symbol
                         
                         export namespace Passiva {
                             
                         }
                         
-                        export type Passiva = null
+                        export type Passiva = symbol
                         
                     }
                     
@@ -143,7 +143,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type D = null
+                        export type D = symbol
                         
                     }
                     
@@ -188,7 +188,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Nee = null
+                    export type Nee = symbol
                     
                 }
                 
@@ -273,7 +273,7 @@ export namespace Root_ {
                                     
                                 }
                                 
-                                export type Nee = null
+                                export type Nee = symbol
                                 
                             }
                             
@@ -291,7 +291,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Opbrengsten = null
+                        export type Opbrengsten = symbol
                         
                     }
                     
@@ -321,13 +321,13 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Kosten = null
+                        export type Kosten = symbol
                         
                         export namespace Opbrengsten {
                             
                         }
                         
-                        export type Opbrengsten = null
+                        export type Opbrengsten = symbol
                         
                     }
                     
@@ -375,13 +375,13 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Kosten = null
+                        export type Kosten = symbol
                         
                         export namespace Opbrengsten {
                             
                         }
                         
-                        export type Opbrengsten = null
+                        export type Opbrengsten = symbol
                         
                     }
                     
@@ -395,7 +395,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type D = null
+                        export type D = symbol
                         
                     }
                     
@@ -437,7 +437,7 @@ export namespace Root_ {
             
         }
         
-        export type D = null
+        export type D = symbol
         
     }
     
@@ -453,13 +453,13 @@ export namespace Root_ {
                     
                 }
                 
-                export type Ja = null
+                export type Ja = symbol
                 
                 export namespace Nee {
                     
                 }
                 
-                export type Nee = null
+                export type Nee = symbol
                 
             }
             
@@ -477,19 +477,19 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Bankrekening = null
+                        export type Bankrekening = symbol
                         
                         export namespace Overig {
                             
                         }
                         
-                        export type Overig = null
+                        export type Overig = symbol
                         
                         export namespace Informele_rekening {
                             
                         }
                         
-                        export type Informele_rekening = null
+                        export type Informele_rekening = symbol
                         
                     }
                     
@@ -532,7 +532,7 @@ export namespace Root_ {
                                     
                                 }
                                 
-                                export type Nog_te_verwerken = null
+                                export type Nog_te_verwerken = symbol
                                 
                                 export namespace Verwerkt {
                                     
@@ -637,7 +637,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Ja = null
+                        export type Ja = symbol
                         
                         export namespace Nee {
                             
@@ -695,7 +695,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type D = null
+                        export type D = symbol
                         
                     }
                     
@@ -741,7 +741,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Openstaand = null
+                        export type Openstaand = symbol
                         
                     }
                     
@@ -768,7 +768,7 @@ export namespace Root_ {
                     
                 }
                 
-                export type Ja = null
+                export type Ja = symbol
                 
                 export namespace Nee {
                     
@@ -808,7 +808,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Ja = null
+                        export type Ja = symbol
                         
                         export namespace Nee {
                             
@@ -861,7 +861,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Mutaties = null
+                        export type Mutaties = symbol
                         
                         export namespace Rekening_courant {
                             
@@ -957,19 +957,19 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Niet_van_toepassing = null
+                        export type Niet_van_toepassing = symbol
                         
                         export namespace Ontbreekt {
                             
                         }
                         
-                        export type Ontbreekt = null
+                        export type Ontbreekt = symbol
                         
                         export namespace Nog_toevoegen {
                             
                         }
                         
-                        export type Nog_toevoegen = null
+                        export type Nog_toevoegen = symbol
                         
                     }
                     
@@ -1053,7 +1053,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Bonnetje = null
+                        export type Bonnetje = symbol
                         
                         export namespace Inkoop_$po_met_crediteur$pc_ {
                             
@@ -1163,7 +1163,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Ja = null
+                        export type Ja = symbol
                         
                         export namespace Nee {
                             
@@ -1203,7 +1203,7 @@ export namespace Root_ {
                     
                 }
                 
-                export type D = null
+                export type D = symbol
                 
             }
             
@@ -1215,7 +1215,7 @@ export namespace Root_ {
                     
                 }
                 
-                export type D = null
+                export type D = symbol
                 
             }
             
@@ -1243,7 +1243,7 @@ export namespace Root_ {
                             
                         }
                         
-                        export type Mutaties = null
+                        export type Mutaties = symbol
                         
                         export namespace Rekening_courant {
                             
@@ -1327,7 +1327,7 @@ export namespace Root_ {
                                     
                                 }
                                 
-                                export type Intracommunautair = null
+                                export type Intracommunautair = symbol
                                 
                                 export namespace Standaard {
                                     
@@ -1343,7 +1343,7 @@ export namespace Root_ {
                                     
                                 }
                                 
-                                export type Binnenland$cl__heffing_verlegd = null
+                                export type Binnenland$cl__heffing_verlegd = symbol
                                 
                             }
                             
@@ -1370,7 +1370,7 @@ export namespace Root_ {
                                     
                                 }
                                 
-                                export type Los = null
+                                export type Los = symbol
                                 
                                 export namespace Licentieovereenkomst {
                                     
@@ -1684,7 +1684,7 @@ export namespace Root_ {
             
         }
         
-        export type D = null
+        export type D = symbol
         
     }
     
@@ -1696,7 +1696,7 @@ export namespace Root_ {
             
         }
         
-        export type D = null
+        export type D = symbol
         
     }
     

@@ -295,11 +295,11 @@ export type Jaren_ = (
     },
 ) => Jaren_.O
 
-export namespace Balans_Resultaat_Mutatie_ {
+export namespace Rekening_Mutatie_ {
     
     export type I = i_in.List_of_Characters
     
-    export type O = i_out.Balans_Resultaat_Mutatie
+    export type O = i_out.Rekening_Mutatie
     
     export type E = i_generic.Error
     
@@ -311,13 +311,13 @@ export namespace Balans_Resultaat_Mutatie_ {
     
 }
 
-export type Balans_Resultaat_Mutatie_ = (
-    context: Balans_Resultaat_Mutatie_.I,
-    abort: _pi.Abort<Balans_Resultaat_Mutatie_.E>,
+export type Rekening_Mutatie_ = (
+    context: Rekening_Mutatie_.I,
+    abort: _pi.Abort<Rekening_Mutatie_.E>,
     parameters: {
-        readonly 'tab size': Balans_Resultaat_Mutatie_.P.tab_size
+        readonly 'tab size': Rekening_Mutatie_.P.tab_size
     },
-) => Balans_Resultaat_Mutatie_.O
+) => Rekening_Mutatie_.O
 
 export namespace Eerste_boekjaar_ {
     
@@ -356,6 +356,6 @@ export {
     Handelstransacties_ as Handelstransacties, 
     Mutaties_ as Mutaties, 
     Jaren_ as Jaren, 
-    Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
+    Rekening_Mutatie_ as Rekening_Mutatie, 
     Eerste_boekjaar_ as Eerste_boekjaar, 
 }

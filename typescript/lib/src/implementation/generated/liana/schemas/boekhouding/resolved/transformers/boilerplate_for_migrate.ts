@@ -3933,7 +3933,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                 case 'Resultaat':
                                                                     return _p.ss(
                                                                         $,
-                                                                        ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                        ($) => ['Resultaat', Rekening_Mutatie(
                                                                             $,
                                                                         )],
                                                                     )
@@ -4131,7 +4131,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                 case 'Resultaat':
                                                                     return _p.ss(
                                                                         $,
-                                                                        ($) => ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                        ($) => ['Resultaat', Rekening_Mutatie(
                                                                             $,
                                                                         )],
                                                                     )
@@ -4524,7 +4524,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
     ),
 })
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($) => ({
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ({
     'Jaar': _p_change_context(
         $['Jaar'],
         ($) => _p.optional.from.optional(
@@ -4572,7 +4572,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
             }],
             'l state': _p.decide.state(
                 $,
-                ($): t_out.Balans_Resultaat_Mutatie.type_.l_state => {
+                ($): t_out.Rekening_Mutatie.type_.l_state => {
                     switch ($[0]) {
                         case 'Inkoop':
                             return _p.ss(

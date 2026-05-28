@@ -24,8 +24,8 @@ export namespace Fiscaal_ {
 export type Fiscaal_ = (
     context: Fiscaal_.I,
     abort: _pi.Abort<Fiscaal_.E>,
-    lookups: null,
-    parameters: null,
+    lookups: symbol,
+    parameters: symbol,
 ) => Fiscaal_.O
 
 export namespace Grootboekrekeningen_ {
@@ -47,7 +47,7 @@ export namespace Grootboekrekeningen_ {
 export type Grootboekrekeningen_ = (
     context: Grootboekrekeningen_.I,
     abort: _pi.Abort<Grootboekrekeningen_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Beheer': Grootboekrekeningen_.P.Beheer
     },
@@ -72,7 +72,7 @@ export namespace Grootboek_Categorieen_ {
 export type Grootboek_Categorieen_ = (
     context: Grootboek_Categorieen_.I,
     abort: _pi.Abort<Grootboek_Categorieen_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Fiscaal': Grootboek_Categorieen_.P.Fiscaal
     },
@@ -97,7 +97,7 @@ export namespace Beheer_ {
 export type Beheer_ = (
     context: Beheer_.I,
     abort: _pi.Abort<Beheer_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Grootboek Categorieen': Beheer_.P.Grootboek_Categorieen
     },
@@ -194,7 +194,7 @@ export namespace Verwijzing_naar_Informele_rekening_ {
 export type Verwijzing_naar_Informele_rekening_ = (
     context: Verwijzing_naar_Informele_rekening_.I,
     abort: _pi.Abort<Verwijzing_naar_Informele_rekening_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Jaarbeheer': Verwijzing_naar_Informele_rekening_.P.Jaarbeheer
     },
@@ -219,7 +219,7 @@ export namespace Verwijzing_naar_Bankrekening_ {
 export type Verwijzing_naar_Bankrekening_ = (
     context: Verwijzing_naar_Bankrekening_.I,
     abort: _pi.Abort<Verwijzing_naar_Bankrekening_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Jaarbeheer': Verwijzing_naar_Bankrekening_.P.Jaarbeheer
     },
@@ -248,7 +248,7 @@ export namespace Handelstransacties_ {
 export type Handelstransacties_ = (
     context: Handelstransacties_.I,
     abort: _pi.Abort<Handelstransacties_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Beheer': Handelstransacties_.P.Beheer
         readonly 'Grootboekrekeningen': Handelstransacties_.P.Grootboekrekeningen
@@ -298,11 +298,11 @@ export type Mutaties_ = (
     },
 ) => Mutaties_.O
 
-export namespace Balans_Resultaat_Mutatie_ {
+export namespace Rekening_Mutatie_ {
     
-    export type I = i_unresolved.Balans_Resultaat_Mutatie
+    export type I = i_unresolved.Rekening_Mutatie
     
-    export type O = i_resolved.Balans_Resultaat_Mutatie
+    export type O = i_resolved.Rekening_Mutatie
     
     export type E = i_generic.Error
     
@@ -326,19 +326,19 @@ export namespace Balans_Resultaat_Mutatie_ {
     
 }
 
-export type Balans_Resultaat_Mutatie_ = (
-    context: Balans_Resultaat_Mutatie_.I,
-    abort: _pi.Abort<Balans_Resultaat_Mutatie_.E>,
+export type Rekening_Mutatie_ = (
+    context: Rekening_Mutatie_.I,
+    abort: _pi.Abort<Rekening_Mutatie_.E>,
     lookups: {
-        readonly 'Jaren': _pi.static_lookup.Acyclic<Balans_Resultaat_Mutatie_.L.Jaren>
+        readonly 'Jaren': _pi.static_lookup.Acyclic<Rekening_Mutatie_.L.Jaren>
     },
     parameters: {
-        readonly 'Beheer': Balans_Resultaat_Mutatie_.P.Beheer
-        readonly 'Grootboekrekeningen': Balans_Resultaat_Mutatie_.P.Grootboekrekeningen
-        readonly 'Jaarbeheer': Balans_Resultaat_Mutatie_.P.Jaarbeheer
-        readonly 'Handelstransacties': Balans_Resultaat_Mutatie_.P.Handelstransacties
+        readonly 'Beheer': Rekening_Mutatie_.P.Beheer
+        readonly 'Grootboekrekeningen': Rekening_Mutatie_.P.Grootboekrekeningen
+        readonly 'Jaarbeheer': Rekening_Mutatie_.P.Jaarbeheer
+        readonly 'Handelstransacties': Rekening_Mutatie_.P.Handelstransacties
     },
-) => Balans_Resultaat_Mutatie_.O
+) => Rekening_Mutatie_.O
 
 export namespace Jaren_ {
     
@@ -359,7 +359,7 @@ export namespace Jaren_ {
 export type Jaren_ = (
     context: Jaren_.I,
     abort: _pi.Abort<Jaren_.E>,
-    lookups: null,
+    lookups: symbol,
     parameters: {
         readonly 'Beheer': Jaren_.P.Beheer
     },
@@ -382,8 +382,8 @@ export namespace Root_ {
 export type Root_ = (
     context: Root_.I,
     abort: _pi.Abort<Root_.E>,
-    lookups: null,
-    parameters: null,
+    lookups: symbol,
+    parameters: symbol,
 ) => Root_.O
 
 export namespace Eerste_boekjaar_ {
@@ -412,7 +412,7 @@ export type Eerste_boekjaar_ = (
     lookups: {
         readonly 'Jaren': _pi.static_lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
     },
-    parameters: null,
+    parameters: symbol,
 ) => Eerste_boekjaar_.O
 
 export { 
@@ -426,7 +426,7 @@ export {
     Verwijzing_naar_Bankrekening_ as Verwijzing_naar_Bankrekening, 
     Handelstransacties_ as Handelstransacties, 
     Mutaties_ as Mutaties, 
-    Balans_Resultaat_Mutatie_ as Balans_Resultaat_Mutatie, 
+    Rekening_Mutatie_ as Rekening_Mutatie, 
     Jaren_ as Jaren, 
     Root_ as Root, 
     Eerste_boekjaar_ as Eerste_boekjaar, 

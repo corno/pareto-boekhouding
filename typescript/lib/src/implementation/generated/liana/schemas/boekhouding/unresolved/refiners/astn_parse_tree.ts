@@ -7536,7 +7536,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                                                                             },
                                                                                                                         ),
-                                                                                                                        'l state': ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                                                                        'l state': ['Resultaat', Rekening_Mutatie(
                                                                                                                             $,
                                                                                                                             ($) => abort(
                                                                                                                                 $,
@@ -7881,7 +7881,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => _p_change_context(
                                                                                                                                 'subdocument context': _p.optional.literal.not_set(),
                                                                                                                             },
                                                                                                                         ),
-                                                                                                                        'l state': ['Resultaat', Balans_Resultaat_Mutatie(
+                                                                                                                        'l state': ['Resultaat', Rekening_Mutatie(
                                                                                                                             $,
                                                                                                                             ($) => abort(
                                                                                                                                 $,
@@ -8612,7 +8612,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => _p_change_context(
     }),
 )
 
-export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = ($, abort) => _p_change_context(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort) => _p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -8693,7 +8693,7 @@ export const Balans_Resultaat_Mutatie: t_signatures.Balans_Resultaat_Mutatie = (
                         ),
                         ($) => _p.decide.text(
                             $['option']['token']['value'],
-                            ($t): t_out.Balans_Resultaat_Mutatie.type_ => {
+                            ($t): t_out.Rekening_Mutatie.type_ => {
                                 switch ($t) {
                                     case 'Inkoop':
                                         return _p_change_context(
