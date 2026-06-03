@@ -4,15 +4,74 @@ import _p_change_context from 'pareto-core/dist/_p_change_context'
 
 import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
 
+import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
 import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
-import * as signatures from "../../../../interface/signatures/refiners/boekhouding_unresolved/boekhouding_oude_model"
+
+export type Rekening_Mutatie = (
+    $$_: d_in.Root,
+) => d_out.Rekening_Mutatie
+
+export type Beheer = (
+    $$_: d_in.Root,
+) => d_out.Beheer
+
+export type Eerste_boekjaar = (
+    $$_: d_in.Root.Jaren.D.Eerste_boekjaar,
+) => d_out.Eerste_boekjaar
+
+export type Fiscaal = (
+    $$_: d_in.Root,
+) => d_out.Fiscaal
+
+export type Grootboek_Categorieen = (
+    $$_: d_in.Root,
+) => d_out.Grootboek_Categorieen
+
+export type Grootboekrekeningen = (
+    $$_: d_in.Root.Jaren.D,
+) => d_out.Grootboekrekeningen
+
+export type Handelstransacties = (
+    $$_: d_in.Root.Jaren.D,
+) => d_out.Handelstransacties
+
+export type Jaarbeheer = (
+    $$_: d_in.Root.Jaren.D,
+) => d_out.Jaarbeheer
+
+export type Jaren = (
+    $$_: d_in.Root,
+) => d_out.Jaren
+
+export type Mutaties = (
+    $$_: d_in.Root.Jaren.D,
+    $$_p: {
+        'jaar': string
+    },
+) => d_out.Mutaties
+
+export type Overige_balans_item = (
+    $$_: d_in.Root.Jaren.D.Overige_balans_items.D,
+) => d_out.Overige_balans_item
+
+export type Root = (
+    $$_: d_in.Root,
+) => d_out.Root
+
+export type Verwijzing_naar_Bankrekening = (
+    $$_: string,
+) => d_out.Verwijzing_naar_Bankrekening
+
+export type Verwijzing_naar_Informele_rekening = (
+    $$_: string,
+) => d_out.Verwijzing_naar_Informele_rekening
 
 
 const fix_date = ($: number) => {
     return $ - 2432895 // the date of the universal declaration of human rights (1948-12-10) in julian days, rounded down to the nearest day to avoid the strange noon changeover)
 }
 
-export const Beheer: signatures.Beheer = ($) => ({
+export const Beheer: Beheer = ($) => ({
     'BTW-categorieen': sh.dictionary(_p_change_context($.Beheer['BTW-categorieen'], ($) => $.__d_map(($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry => ({
         'BTW-heffing': _p_change_context($['BTW-heffing'], ($) => _p.decide.state($, ($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
             switch ($[0]) {
@@ -91,7 +150,7 @@ export const Beheer: signatures.Beheer = ($) => ({
         'Informeel': _p_change_context($['Informele rekeningen'], ($) => sh.dictionary($.__d_map(($) => null))),
     })),
 })
-export const Eerste_boekjaar: signatures.Eerste_boekjaar = ($) => _p.decide.state($, ($): d_out.Eerste_boekjaar => {
+export const Eerste_boekjaar: Eerste_boekjaar = ($) => _p.decide.state($, ($): d_out.Eerste_boekjaar => {
     switch ($[0]) {
         case 'Ja': return _p.ss($, ($) => sh.state(['Ja', null]))
         case 'Nee': return _p.ss($, ($) => sh.state(['Nee', ({
@@ -100,7 +159,7 @@ export const Eerste_boekjaar: signatures.Eerste_boekjaar = ($) => _p.decide.stat
         default: return _p.au($[0])
     }
 })
-export const Fiscaal: signatures.Fiscaal = ($) => ({
+export const Fiscaal: Fiscaal = ($) => ({
     'Balans Hoofdcategorieen': _p_change_context($.Beheer.Balans['Hoofdcategorieen fiscus'], ($) => sh.dictionary($.__d_map(($) => ({
         'Subcategorieen': _p_change_context($['Subcategorieen'], ($) => sh.dictionary($.__d_map(($) => null))),
         'Zijde': _p_change_context($['Zijde'], ($) => _p.decide.state($, ($): d_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
@@ -122,7 +181,7 @@ export const Fiscaal: signatures.Fiscaal = ($) => ({
         })),
     })))),
 })
-export const Grootboek_Categorieen: signatures.Grootboek_Categorieen = ($) => ({
+export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
     'Balans': _p_change_context($.Beheer.Balans.Hoofdcategorieen, ($) => sh.dictionary($.__d_map(($) => ({
         'Subcategorieen': _p_change_context($['Subcategorieen'], ($) => sh.dictionary($.__d_map(($) => ({
             'Hoofdcategorie fiscus': _p_change_context($['Hoofdcategorie fiscus'], ($) => sh.reference($)),
@@ -153,7 +212,7 @@ export const Grootboek_Categorieen: signatures.Grootboek_Categorieen = ($) => ({
         })),
     })))),
 })
-export const Grootboekrekeningen: signatures.Grootboekrekeningen = ($) => ({
+export const Grootboekrekeningen: Grootboekrekeningen = ($) => ({
     'Balans': _p_change_context($['Balans grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
         'Stam': null,
         // 'Type': _p_change_context($['Type'], ($) => _p.decide.state($, ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
@@ -169,7 +228,7 @@ export const Grootboekrekeningen: signatures.Grootboekrekeningen = ($) => ({
         'Stam': null,
     })))),
 })
-export const Handelstransacties: signatures.Handelstransacties = ($) => ({
+export const Handelstransacties: Handelstransacties = ($) => ({
     'Inkopen': _p_change_context($['Inkopen'], ($) => sh.dictionary($.__d_map(($) => ({
         'Afhandeling': _p_change_context($['Afhandeling'], ($) => _p.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
             switch ($[0]) {
@@ -332,7 +391,7 @@ export const Handelstransacties: signatures.Handelstransacties = ($) => ({
         })))),
     })))),
 })
-export const Jaarbeheer: signatures.Jaarbeheer = ($) => ({
+export const Jaarbeheer: Jaarbeheer = ($) => ({
     'Balans': _p_change_context($, ($) => ({
         'Bankrekeningen': _p_change_context($['Bankrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
             'Beginsaldo': _p_change_context($['Beginsaldo'], ($) => $),
@@ -404,7 +463,7 @@ export const Jaarbeheer: signatures.Jaarbeheer = ($) => ({
         'Salarisrondes': _p_change_context($['Salarisrondes'], ($) => sh.dictionary($.__d_map(($) => null))),
     })),
 })
-export const Jaren: signatures.Jaren = ($) => sh.dictionary($.Jaren.__d_map(($, id) => ({
+export const Jaren: Jaren = ($) => sh.dictionary($.Jaren.__d_map(($, id) => ({
     'Afgesloten': _p_change_context($['Afgesloten'], ($) => _p.decide.state($, ($): d_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
         switch ($[0]) {
             case 'Ja': return _p.ss($, ($) => sh.state(['Ja', null]))
@@ -432,7 +491,7 @@ export const Jaren: signatures.Jaren = ($) => sh.dictionary($.Jaren.__d_map(($, 
     )),
     'Startdatum boekjaar': _p_change_context($['Startdatum boekjaar'], ($) => fix_date($)),
 })))
-export const Mutaties: signatures.Mutaties = ($, $p) => ({
+export const Mutaties: Mutaties = ($, $p) => ({
     'Bankrekeningen': _p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map(($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry => {
         return {
             'Stam': null,
@@ -525,7 +584,7 @@ export const Mutaties: signatures.Mutaties = ($, $p) => ({
         })))
     })))),
 })
-export const Overige_balans_item: signatures.Overige_balans_item = ($) => ({
+export const Overige_balans_item: Overige_balans_item = ($) => ({
     'Beginsaldo': _p_change_context($, ($) => $.Beginsaldo),
     'Grootboekrekening': _p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
     'Nieuw': _p_change_context($['Nieuw'], ($) => _p.decide.state($, ($): d_out.Overige_balans_item.Nieuw => {
@@ -538,7 +597,7 @@ export const Overige_balans_item: signatures.Overige_balans_item = ($) => ({
         }
     })),
 })
-export const Root: signatures.Root = ($) => ({
+export const Root: Root = ($) => ({
     'Beheer': _p_change_context($, ($) => Beheer(
         $,
     )),
@@ -552,5 +611,5 @@ export const Root: signatures.Root = ($) => ({
         $,
     )),
 })
-export const Verwijzing_naar_Bankrekening: signatures.Verwijzing_naar_Bankrekening = ($) => sh.reference($)
-export const Verwijzing_naar_Informele_rekening: signatures.Verwijzing_naar_Informele_rekening = ($) => sh.reference($)
+export const Verwijzing_naar_Bankrekening: Verwijzing_naar_Bankrekening = ($) => sh.reference($)
+export const Verwijzing_naar_Informele_rekening: Verwijzing_naar_Informele_rekening = ($) => sh.reference($)
