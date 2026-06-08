@@ -11,22 +11,22 @@ export namespace commands {
     export type transform_file = _pi.Command_Procedure<
         resources_pareto.commands.main,
         {
-            'write file': resources_pareto.commands.write_file,
-            'log error': resources_pareto.commands.log_error,
+            'write file': resources_pareto.commands.fs_unrestricted_write_file,
+            'log error': resources_pareto.commands.stream_log_error,
         },
         {
-            'read file': resources_pareto.queries.read_file
+            'read file': resources_pareto.queries.fs_unrestricted_read_file
         }
     >
 
     export type stream_in_to_stream_out = _pi.Command_Procedure<
         resources_pareto.commands.main,
         {
-            'log error': resources_pareto.commands.log_error
-            'write to stdout': resources_pareto.commands.write_to_stdout
+            'log error': resources_pareto.commands.stream_log_error
+            'write to stdout': resources_pareto.commands.stream_write_to_stdout
         },
         {
-            'get instream data': resources_pareto.queries.get_instream_data,
+            'get instream data': resources_pareto.queries.stream_get_instream_data,
         }
     >
 
