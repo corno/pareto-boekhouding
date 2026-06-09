@@ -4,8 +4,6 @@ import * as _pn from 'pareto-host-nodejs'
 
 import { $$ as procedure } from "lib/dist/implementation/manual/commands/converteer_oude_dataset"
 
-import * as d_resources from "lib/dist/implementation/manual/commands/converteer_oude_dataset"
-
 _pn.run_main_command(
     ($r) => {
         return procedure(
@@ -16,6 +14,7 @@ _pn.run_main_command(
             {
                 'read file': $r['filesystem unrestricted'].queries['read file']
             },
+            null,
         )
     },
 )
