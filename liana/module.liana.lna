@@ -9,15 +9,22 @@
                 `text types`: {
                     'Bestandsnaam': (
                         `type`: | `single line` ~
+                        `link`: | `yes` (
+                            `path prefix`: "./data/"
+                            `path suffix`: ""
+                        )
                     )
                     'Wachtwoord': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                     'Benaming': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                     'Omschrijving': (
                         `type`: | `multi line` ~
+                        `link`: | `no` ~
                     )
                 }
                 `simple types`: {
@@ -5396,21 +5403,27 @@
                 `text types`: {
                     'Pseudo Reference': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                     'Bestandsnaam': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                     'Wachtwoord': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                     'Benaming': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                     'Omschrijving': (
                         `type`: | `multi line` ~
+                        `link`: | `no` ~
                     )
                     'text': (
                         `type`: | `single line` ~
+                        `link`: | `no` ~
                     )
                 }
                 `simple types`: {
