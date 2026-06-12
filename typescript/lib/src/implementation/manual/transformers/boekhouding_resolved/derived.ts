@@ -86,21 +86,25 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                             'bron': $,
                             'btw bedrag': btw_bedrag,
                             'bedrag inclusief btw': $['Bedrag exclusief BTW'] + btw_bedrag,
+                            
                         }
                     })
+                    const totaal_btw = _p.number.from.dictionary(
+                        p_regels
+                    ).sum(
+                        ($) => $['btw bedrag']
+                    )
+                    const totaal_ex_btw = _p.number.from.dictionary(
+                        p_regels
+                    ).sum(
+                        ($) => $.bron['Bedrag exclusief BTW']
+                    )
                     return {
                         'bron': $,
                         'regels': p_regels,
-                        'totaal btw': _p.number.from.dictionary(
-                            p_regels
-                        ).sum(
-                            ($) => $['btw bedrag']
-                        ),
-                        'totaal ex btw': _p.number.from.dictionary(
-                            p_regels
-                        ).sum(
-                            ($) => $.bron['Bedrag exclusief BTW']
-                        ),
+                        'totaal btw': totaal_btw,
+                        'totaal ex btw': totaal_ex_btw,
+                        'totaal inclusief btw': totaal_ex_btw + totaal_btw,
                     }
                 })
 
@@ -783,7 +787,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                                             }
                                         })
                                     )).sum(
-                                        ($) => $['totaal ex btw'] + $['totaal btw']
+                                        ($) => $['totaal inclusief btw']
                                     )
                                 const p_bankrekening_mutaties = _p.number.from.dictionary(
                                     bron_jaar.Mutaties.Bankrekeningen

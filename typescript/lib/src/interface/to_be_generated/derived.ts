@@ -53,6 +53,7 @@ export type Verkoop = {
     'regels': _pi.Dictionary<Verkoop_Regel>
     'totaal ex btw': number
     'totaal btw': number
+    'totaal inclusief btw': number
 }
 
 export type Verkoop_Regel = {
