@@ -68,7 +68,7 @@ export const Root: _pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                                     case 'Intracommunautair': return _p.ss($, ($) => 0)
                                     case 'Standaard': return _p.ss($, ($) => _p.decide.state($['BTW-categorie']['l entry']['BTW-heffing'], ($): number => {
                                         switch ($[0]) {
-                                            case 'Nee': return _p.ss($, ($) => 1000)
+                                            case 'Nee': return _p.ss($, ($) => 0)
                                             case 'Ja': return _p.ss($, ($) => ($['BTW-promillage']))
                                             default: return _p.au($[0])
                                         }
