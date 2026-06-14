@@ -2,7 +2,7 @@ import * as pt from 'pareto-core/dist/command'
 import * as pi from 'pareto-core/dist/interface'
 import p_text_from_list from 'pareto-core/dist/_p_text_from_list'
 
-import * as signatures from "../../../interface/signatures"
+import * as signatures from "../../../interface/commands"
 
 //data types
 import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_main"
@@ -32,7 +32,7 @@ export type Deserializer = pi.Refiner_With_Parameter<
 
 export type Creator = (
     deserializer: Deserializer,
-) => signatures.commands.transform_file
+) => signatures.procedures.transform_file
 
 
 export const $$: Creator = (deserializer) => pt.command_procedure(

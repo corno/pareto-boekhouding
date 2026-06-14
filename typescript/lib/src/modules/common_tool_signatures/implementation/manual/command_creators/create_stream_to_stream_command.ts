@@ -2,7 +2,7 @@ import * as pt from 'pareto-core/dist/command'
 import * as _px from 'pareto-core/dist/assign'
 import * as pi from 'pareto-core/dist/interface'
 
-import * as signatures from "../../../interface/signatures"
+import * as signatures from "../../../interface/commands"
 
 //data types
 import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_main"
@@ -17,7 +17,7 @@ type My_Error =
     | ['could not write to stdout', null]
 
 
-export const $$ = (func: pi.Refiner<string, d_fp.Phrase, string>): signatures.commands.stream_in_to_stream_out => {
+export const $$ = (func: pi.Refiner<string, d_fp.Phrase, string>): signatures.procedures.stream_in_to_stream_out => {
     return pt.command_procedure(
         ($d, $s, $q, $c) => [
 
