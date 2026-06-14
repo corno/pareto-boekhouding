@@ -1,4 +1,5 @@
 import * as _p from 'pareto-core/dist/command'
+import * as _px from 'pareto-core/dist/assign'
 import * as _pi from 'pareto-core/dist/interface'
 
 import * as signatures from "../../../interface/signatures"
@@ -18,12 +19,12 @@ type My_Error =
 
 export const $$ = (func: _pi.Refiner<string, d_fp.Phrase, string>): signatures.commands.stream_in_to_stream_out => {
     return _p.command_procedure(
-        ($p, $cr, $qr) => [
+        ($d, $s, $q, $c) => [
 
             _p.handle_error<d_main.Error, My_Error>(
                 [
                     _p.query(
-                        $qr['get instream data'](
+                        $q['get instream data'](
                             null,
                             ($): My_Error => ['could not read instream', null],
                         ),
@@ -32,24 +33,26 @@ export const $$ = (func: _pi.Refiner<string, d_fp.Phrase, string>): signatures.c
                             ($) => abort(['deserialization failed', $]),
                         ),
                         ($v) => [
-                            $cr['write to stdout'].execute(
-                                $v,
+                            $c['write to stdout'].execute(
+                                {
+                                    'data': $v,
+                                },
                                 ($): My_Error => ['could not write to stdout', null],
                             )
                         ]
                     )
                 ],
                 ($) => [
-                    $cr['log error'].execute(
+                    $c['log error'].execute(
                         {
                             'message': sh.pg.sentences([
                                 sh.sentence([
-                                    _p.decide.state($, ($): d_fp.Phrase => {
+                                    _px.decide.state($, ($): d_fp.Phrase => {
                                         switch ($[0]) {
-                                            case 'could not read instream': return _p.ss($, ($) => sh.ph.literal("could not read instream"))
-                                            case 'deserialization failed': return _p.ss($, ($) => $)
-                                            case 'could not write to stdout': return _p.ss($, ($) => sh.ph.literal("could not write to stdout"))
-                                            default: return _p.au($[0])
+                                            case 'could not read instream': return _px.ss($, ($) => sh.ph.literal("could not read instream"))
+                                            case 'deserialization failed': return _px.ss($, ($) => $)
+                                            case 'could not write to stdout': return _px.ss($, ($) => sh.ph.literal("could not write to stdout"))
+                                            default: return _px.au($[0])
                                         }
                                     })
                                 ])

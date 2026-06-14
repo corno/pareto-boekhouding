@@ -1,6 +1,6 @@
 import * as _pi from 'pareto-core/dist/interface'
 import * as _p from 'pareto-core/dist/assign'
-// import _p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
+import _p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
 
 import * as cffc from "../../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
@@ -15,7 +15,7 @@ import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggr
 //dependencies
 import * as t_primitives_to_text from "../primitives/text"
 
-const integer_from_dictionary = <T>(
+const integer_from_dictionary = <T extends _pi.Value>(
     dict: _pi.Dictionary<T>,
     get_value: ($: T) => number,
 ): number => _p.number.from.list(
@@ -581,6 +581,26 @@ export const Root: _pi.Transformer<
     //         })
     //     })
     // })
+
+    $.jaren.__d_map(($, id_jaar) => {
+        _p.dictionary.from.dictionary($.jaarbeheer.resultaat.grootboekrekeningen).map(($, id_grootboekrekening) => {
+            const zijde = $.bron.Stam.Zijde[0]
+            const hoofdcategorie = $.bron.Stam.Hoofdcategorie['l id']
+            const subcategorie = $.bron.Stam.Subcategorie['l id']
+            _p_log_debug_message(
+                `;${id_jaar
+                };${zijde
+                };${hoofdcategorie
+                };${subcategorie
+                };${id_grootboekrekening
+                };${$.totaal
+                }`,
+                () => { }
+            )
+            return null
+        })
+        return null
+    })
     return sh.document(
         css,
         sh.f.div([

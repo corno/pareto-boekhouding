@@ -1,4 +1,4 @@
-import * as _pi from 'pareto-core/dist/interface'
+import * as _pci from 'pareto-core/dist/command_interface'
 
 import * as resources_pareto from "pareto-resources/dist/interface/resources"
 import * as resources_pareto_stream from "pareto-stream/dist/interface/resources"
@@ -9,28 +9,28 @@ export namespace queries {
 
 export namespace commands {
 
-    export type transform_file = _pi.Command_Procedure<
+    export type transform_file = _pci.Command_Procedure<
         resources_pareto.resources.commands.main,
-        {
-            'write file': resources_pareto.filesystem_unrestricted.commands.write_file,
-            'log error': resources_pareto_stream.commands.log_error,
-        },
+        null,
         {
             'read file': resources_pareto.filesystem_unrestricted.queries.read_file
         },
-        null
+        {
+            'write file': resources_pareto.filesystem_unrestricted.commands.write_file,
+            'log error': resources_pareto_stream.commands.log_error,
+        }
     >
 
-    export type stream_in_to_stream_out = _pi.Command_Procedure<
+    export type stream_in_to_stream_out = _pci.Command_Procedure<
         resources_pareto.resources.commands.main,
-        {
-            'log error': resources_pareto_stream.commands.log_error
-            'write to stdout': resources_pareto_stream.commands.write_to_stdout
-        },
+        null,
         {
             'get instream data': resources_pareto_stream.queries.get_instream_data,
         },
-        null
+        {
+            'log error': resources_pareto_stream.commands.log_error
+            'write to stdout': resources_pareto_stream.commands.write_to_stdout
+        }
     >
 
 }

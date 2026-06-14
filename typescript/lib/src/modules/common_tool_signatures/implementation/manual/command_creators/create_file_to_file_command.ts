@@ -35,71 +35,72 @@ export type Creator = (
 ) => signatures.commands.transform_file
 
 
-export const $$: Creator = (deserializer) => _p.command_procedure(($p, $cr, $qr) => [
+export const $$: Creator = (deserializer) => _p.command_procedure(
+    ($d, $s, $q, $c) => [
 
-    _p.handle_error<d_main.Error, d_transform_file.Error>(
-        [
+        _p.handle_error<d_main.Error, d_transform_file.Error>(
+            [
 
-            _p.refine_without_error_transformation(
-                (abort) => r_file_in_file_out_from_main.Parameters($p, ($) => abort(['file in file out', ['command line arguments', $]])),
-                ($r) => [
+                _p.refine_without_error_transformation(
+                    (abort) => r_file_in_file_out_from_main.Parameters($d, ($) => abort(['file in file out', ['command line arguments', $]])),
+                    ($r) => [
 
-                    _p.query(
-                        $qr['read file'](
-                            $r.in,
-                            ($): d_transform_file.Error => {
-                                return ['file in file out', ['reading file', $]]
-                            }
-                        ),
-                        ($, abort) => ({
-                            'path': $r.out,
-                            'data': deserializer(
-                                $,
-                                ($) => abort(['processing', $]),
-                                {
-                                    'document resource identifier': t_path_to_text.Node_Path($r.in),
-                                    'tab size': 4,
-                                },
+                        _p.query(
+                            $q['read file'](
+                                $r.in,
+                                ($): d_transform_file.Error => {
+                                    return ['file in file out', ['reading file', $]]
+                                }
                             ),
-                        }),
-                        ($v) => [
-                            $cr['write file'].execute(
-                                {
-                                    'path': $v.path,
-                                    'data': t_fp_to_loc.Paragraph(
-                                        $v.data,
-                                        {
-                                            'indentation': "    ",
-                                            'newline': "\n",
-                                        }
-                                    )
-                                },
-                                ($) => {
-                                    return ['file in file out', ['writing file', $]]
-                                },
+                            ($, abort) => ({
+                                'path': $r.out,
+                                'data': deserializer(
+                                    $,
+                                    ($) => abort(['processing', $]),
+                                    {
+                                        'document resource identifier': t_path_to_text.Node_Path($r.in),
+                                        'tab size': 4,
+                                    },
+                                ),
+                            }),
+                            ($v) => [
+                                $c['write file'].execute(
+                                    {
+                                        'path': $v.path,
+                                        'data': t_fp_to_loc.Paragraph(
+                                            $v.data,
+                                            {
+                                                'indentation': "    ",
+                                                'newline': "\n",
+                                            }
+                                        )
+                                    },
+                                    ($) => {
+                                        return ['file in file out', ['writing file', $]]
+                                    },
 
-                            )
-                        ]
-                    )
-                ]
-            ),
-        ],
-        ($) => [
-            $cr['log error'].execute(
-                {
-                    'message': sh.pg.sentences([
-                        sh.sentence([
-                            t_transform_file_to_fountain_pen.My_Error($)
-                        ]),
-                    ])
-                },
-                ($) => ({
-                    'exit code': 2
-                })
-            )
-        ],
-        () => ({
-            'exit code': 1
-        }),
-    ),
-])
+                                )
+                            ]
+                        )
+                    ]
+                ),
+            ],
+            ($) => [
+                $c['log error'].execute(
+                    {
+                        'message': sh.pg.sentences([
+                            sh.sentence([
+                                t_transform_file_to_fountain_pen.My_Error($)
+                            ]),
+                        ])
+                    },
+                    ($) => ({
+                        'exit code': 2
+                    })
+                )
+            ],
+            () => ({
+                'exit code': 1
+            }),
+        ),
+    ])

@@ -5,7 +5,7 @@ import * as _pt from 'pareto-core/dist/assign'
 
 // import * as s_unmarshall from "astn-sealed/dist/implementation/schemas/deserialize_unresolved_model/serializers"
 
-import * as sh from "pareto-test/dist/temporary_testset_generator/shorthands"
+// import * as sh from "pareto-test/dist/temporary_testset_generator/shorthands"
 
 // import { $$ as schema_boekhouding_oude_model } from "./schemas/boekhouding_oude_model"
 // import { $$ as schema_boekhouding_resolved } from "./schemas/boekhouding_resolved"
