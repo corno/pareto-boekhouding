@@ -1,6 +1,4 @@
-import * as pt from 'pareto-core/dist/assign'
 import * as pi from 'pareto-core/dist/interface'
-import p_list_from_text from 'pareto-core/dist/_p_list_from_text'
 
 //data types
 import * as d_function from "../../../../../interface/to_be_generated/file_in_file_out"
