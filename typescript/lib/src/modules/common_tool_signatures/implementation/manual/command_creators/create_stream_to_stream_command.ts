@@ -1,6 +1,6 @@
-import * as _p from 'pareto-core/dist/command'
+import * as pt from 'pareto-core/dist/command'
 import * as _px from 'pareto-core/dist/assign'
-import * as _pi from 'pareto-core/dist/interface'
+import * as pi from 'pareto-core/dist/interface'
 
 import * as signatures from "../../../interface/signatures"
 
@@ -17,13 +17,13 @@ type My_Error =
     | ['could not write to stdout', null]
 
 
-export const $$ = (func: _pi.Refiner<string, d_fp.Phrase, string>): signatures.commands.stream_in_to_stream_out => {
-    return _p.command_procedure(
+export const $$ = (func: pi.Refiner<string, d_fp.Phrase, string>): signatures.commands.stream_in_to_stream_out => {
+    return pt.command_procedure(
         ($d, $s, $q, $c) => [
 
-            _p.handle_error<d_main.Error, My_Error>(
+            pt.handle_error<d_main.Error, My_Error>(
                 [
-                    _p.query(
+                    pt.query(
                         $q['get instream data'](
                             null,
                             ($): My_Error => ['could not read instream', null],

@@ -1,6 +1,6 @@
-import * as _pi from 'pareto-core/dist/interface'
-import * as _p from 'pareto-core/dist/assign'
-import _p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
+import * as pi from 'pareto-core/dist/interface'
+import * as pt from 'pareto-core/dist/assign'
+import p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
 
 import * as cffc from "../../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
@@ -15,11 +15,11 @@ import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggr
 //dependencies
 import * as t_primitives_to_text from "../primitives/text"
 
-const integer_from_dictionary = <T extends _pi.Value>(
-    dict: _pi.Dictionary<T>,
+const integer_from_dictionary = <T extends pi.Value>(
+    dict: pi.Dictionary<T>,
     get_value: ($: T) => number,
-): number => _p.number.from.list(
-    _p.list.from.dictionary(
+): number => pt.number.from.list(
+    pt.list.from.dictionary(
         dict
     ).convert(($) => $)
 ).sum(
@@ -33,7 +33,7 @@ import * as sh from "pareto-static-html/dist/shorthands/static_html"
 import { css } from "../../../../data/css"
 
 
-const Bedrag: _pi.Transformer_With_Parameter<
+const Bedrag: pi.Transformer_With_Parameter<
     number,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L,
     {
@@ -41,7 +41,7 @@ const Bedrag: _pi.Transformer_With_Parameter<
     }
 > = ($, $p) => sh.t.s.r.td(
     ["bedrag"],
-    _p.optional.literal.not_set(),
+    pt.optional.literal.not_set(),
     [
         sh.f.span([
             sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
@@ -56,18 +56,18 @@ const Bedrag: _pi.Transformer_With_Parameter<
     ]
 )
 
-const Text: _pi.Transformer<
+const Text: pi.Transformer<
     string,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["text"],
-    _p.optional.literal.not_set(),
+    pt.optional.literal.not_set(),
     [
         sh.f.span([sh.p.p($)])
     ]
 )
 
-const Colspan_Text: _pi.Transformer_With_Parameter<
+const Colspan_Text: pi.Transformer_With_Parameter<
     string,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L,
     {
@@ -75,55 +75,55 @@ const Colspan_Text: _pi.Transformer_With_Parameter<
     }
 > = ($, $p) => sh.t.s.r.td(
     ["span-text"],
-    _p.optional.literal.set($p['number of columns']),
+    pt.optional.literal.set($p['number of columns']),
     [
         sh.f.span([sh.p.p($)])
     ]
 )
 
-const Span_Indent: _pi.Transformer<
+const Span_Indent: pi.Transformer<
     number,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["span-indent"],
-    _p.optional.literal.set($),
+    pt.optional.literal.set($),
     []
 )
 
-const Indent: _pi.Transformer<
+const Indent: pi.Transformer<
     null,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["indent"],
-    _p.optional.literal.not_set(),
+    pt.optional.literal.not_set(),
     []
 )
 
-const Indent_Blank: _pi.Transformer<
+const Indent_Blank: pi.Transformer<
     null,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["indent blank"],
-    _p.optional.literal.not_set(),
+    pt.optional.literal.not_set(),
     []
 )
 
 
 
 
-const Domein_Zijde: _pi.Transformer<
+const Domein_Zijde: pi.Transformer<
     d_temp_aggregatie_2.Domein_Zijde,
-    _pi.List<d_out.Flow_Element.table.sections.L.rows.L.cells>
+    pi.List<d_out.Flow_Element.table.sections.L.rows.L.cells>
 > = ($) => {
 
     const teken_omkeren = $['teken omkeren']
 
-    return _p.list.from.dictionary(
+    return pt.list.from.dictionary(
         $.hoofdcategorieen
     ).flatten(
-        ($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+        ($, id) => pt.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
             [
-                _p.list.literal([
+                pt.list.literal([
                     Colspan_Text(
                         id,
                         {
@@ -139,12 +139,12 @@ const Domein_Zijde: _pi.Transformer<
                     ),
                 ])
             ],
-            _p.list.from.dictionary(
+            pt.list.from.dictionary(
                 $.subcategorieen
             ).flatten(
-                ($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                ($, id) => pt.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                     [
-                        _p.list.literal([
+                        pt.list.literal([
                             Indent(null),
                             Colspan_Text(
                                 id,
@@ -162,12 +162,12 @@ const Domein_Zijde: _pi.Transformer<
                             Indent(null),
                         ])
                     ],
-                    _p.list.from.dictionary(
+                    pt.list.from.dictionary(
                         $.grootboekrekeningen
                     ).flatten(
-                        ($, id) => _p.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                        ($, id) => pt.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                             [
-                                _p.list.literal([
+                                pt.list.literal([
                                     Indent(null),
                                     Indent(null),
                                     Text(id),
@@ -188,18 +188,18 @@ const Domein_Zijde: _pi.Transformer<
     )
 }
 
-const Domein: _pi.Transformer_With_Parameter<
+const Domein: pi.Transformer_With_Parameter<
     d_temp_aggregatie_2.Domein,
     d_out.Flow_Element.table.sections.L.rows,
     {
         'label': string
     }
-> = ($, $p) => _p.list.nested_literal_old([
+> = ($, $p) => pt.list.nested_literal_old([
     [
-        sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
+        sh.t.s.row(["margin"], pt.optional.literal.not_set(), []),
         sh.t.s.row(
             ["domein"],
-            _p.optional.literal.not_set(),
+            pt.optional.literal.not_set(),
             [
                 Indent_Blank(null),
                 Colspan_Text(
@@ -212,7 +212,7 @@ const Domein: _pi.Transformer_With_Parameter<
         ),
         sh.t.s.row(
             ["domein_zijde"],
-            _p.optional.literal.not_set(),
+            pt.optional.literal.not_set(),
             [
                 Indent_Blank(null),
                 Indent_Blank(null),
@@ -231,7 +231,7 @@ const Domein: _pi.Transformer_With_Parameter<
             ]
         ),
     ],
-    _p.list.from.list(
+    pt.list.from.list(
         Domein_Zijde($.links)
     ).full_join(
         Domein_Zijde($.rechts),
@@ -242,19 +242,19 @@ const Domein: _pi.Transformer_With_Parameter<
     ).__l_map(
         ($) => sh.t.s.row(
             ["item"],
-            _p.optional.literal.not_set(),
-            _p.list.nested_literal_old([
+            pt.optional.literal.not_set(),
+            pt.list.nested_literal_old([
                 [
                     Indent_Blank(null),
                     Indent_Blank(null),
                 ],
                 $.links.__decide(
                     ($) => $,
-                    () => _p.list.literal([Span_Indent(6)])
+                    () => pt.list.literal([Span_Indent(6)])
                 ),
                 $.rechts.__decide(
                     ($) => $,
-                    () => _p.list.literal([Span_Indent(6)])
+                    () => pt.list.literal([Span_Indent(6)])
                 ),
             ])
         )
@@ -262,7 +262,7 @@ const Domein: _pi.Transformer_With_Parameter<
     [
         sh.t.s.row(
             ["totaal"],
-            _p.optional.literal.not_set(),
+            pt.optional.literal.not_set(),
             [
                 Indent_Blank(null),
                 Indent_Blank(null),
@@ -281,7 +281,7 @@ const Domein: _pi.Transformer_With_Parameter<
     ]
 ])
 
-const Resultaat_Grootboekrekeningen: _pi.Transformer_With_Parameter<
+const Resultaat_Grootboekrekeningen: pi.Transformer_With_Parameter<
     d_in.Resultaat.Grootboek_Rekeningen,
     d_temp_aggregatie_2.Domein_Zijde,
     {
@@ -301,12 +301,12 @@ const Resultaat_Grootboekrekeningen: _pi.Transformer_With_Parameter<
     return {
         'label': $p.label,
         'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': _p.dictionary.from.dictionary(
+        'hoofdcategorieen': pt.dictionary.from.dictionary(
             p_grootboekrekeningen
         ).group(
             ($) => $.hoofdcategorie).__d_map(
                 ($) => {
-                    const subcategorieen = _p.dictionary.from.dictionary(
+                    const subcategorieen = pt.dictionary.from.dictionary(
                         $
                     ).group(
                         ($) => $.subcategorie
@@ -335,7 +335,7 @@ const Resultaat_Grootboekrekeningen: _pi.Transformer_With_Parameter<
     }
 }
 
-const Balans_Grootboekrekeningen: _pi.Transformer_With_Parameter<
+const Balans_Grootboekrekeningen: pi.Transformer_With_Parameter<
     d_in.Balans.Grootboek_Rekeningen,
     d_temp_aggregatie_2.Domein_Zijde,
     {
@@ -354,11 +354,11 @@ const Balans_Grootboekrekeningen: _pi.Transformer_With_Parameter<
             return {
                 'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
                 'subcategorie': $.bron.Stam.Subcategorie['l id'],
-                'bedrag': _p.decide.state($p.type, ($): number => {
+                'bedrag': pt.decide.state($p.type, ($): number => {
                     switch ($[0]) {
-                        case 'begin': return _p.ss($, ($) => context.totaal.beginsaldo)
-                        case 'eind': return _p.ss($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
-                        default: return _p.au($[0])
+                        case 'begin': return pt.ss($, ($) => context.totaal.beginsaldo)
+                        case 'eind': return pt.ss($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
+                        default: return pt.au($[0])
                     }
                 }),
             }
@@ -367,12 +367,12 @@ const Balans_Grootboekrekeningen: _pi.Transformer_With_Parameter<
     return {
         'label': $p.label,
         'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': _p.dictionary.from.dictionary(
+        'hoofdcategorieen': pt.dictionary.from.dictionary(
             p_grootboekrekeningen
         ).group(
             ($) => $.hoofdcategorie).__d_map(
                 ($) => {
-                    const subcategorieen = _p.dictionary.from.dictionary(
+                    const subcategorieen = pt.dictionary.from.dictionary(
                         $
                     ).group(
                         ($) => $.subcategorie
@@ -401,15 +401,15 @@ const Balans_Grootboekrekeningen: _pi.Transformer_With_Parameter<
     }
 }
 
-export const Root: _pi.Transformer<
+export const Root: pi.Transformer<
     d_in.Root,
     d_out.Document
 > = ($) => {
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("bankrekeningen", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("bankrekeningen", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.bankrekeningen).filter(($) => $.todo).__d_map(($, bankrekening) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($.bankrekeningen).filter(($) => $.todo).__d_map(($, bankrekening) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${bankrekening
     //             }\t${$.bron.Beginsaldo
@@ -422,12 +422,12 @@ export const Root: _pi.Transformer<
     //         )
     //     })
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("verkopen", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("verkopen", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.handelstransacties.verkopen).filter(($) => true).__d_map(($, verkoop) => {
-    //         _p.dictionary.from.dictionary($.regels).filter(($) => true).__d_map(($, regel) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($.handelstransacties.verkopen).filter(($) => true).__d_map(($, verkoop) => {
+    //         pt.dictionary.from.dictionary($.regels).filter(($) => true).__d_map(($, regel) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${verkoop
     //             }\t${regel
@@ -438,11 +438,11 @@ export const Root: _pi.Transformer<
     //     })
     //     })
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("informele rekeningen", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("informele rekeningen", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($['informele rekeningen']).filter(($) => $.todo).__d_map(($, rekening) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($['informele rekeningen']).filter(($) => $.todo).__d_map(($, rekening) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${rekening
     //             }\t${$.bron.Beginsaldo
@@ -455,11 +455,11 @@ export const Root: _pi.Transformer<
     //         )
     //     })
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("verrekenposten", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("verrekenposten", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.verrekenposten).filter(($) => $.todo).__d_map(($, verrekenpost) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($.verrekenposten).filter(($) => $.todo).__d_map(($, verrekenpost) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${verrekenpost
     //             }\t${$['eigen mutaties']
@@ -470,11 +470,11 @@ export const Root: _pi.Transformer<
     //         )
     //     })
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("btw periodes", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("btw periodes", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.jaarbeheer.resultaat['btw periodes']).filter(($) => true).__d_map(($, btw_periode) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($.jaarbeheer.resultaat['btw periodes']).filter(($) => true).__d_map(($, btw_periode) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${btw_periode
     //             }\t${$.afhandeling.betalingen
@@ -486,10 +486,10 @@ export const Root: _pi.Transformer<
     //         )
     //     })
     // })
-    // _p_log_debug_message("btw periodesxxxx", () => { })
+    // p_log_debug_message("btw periodesxxxx", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.jaarbeheer.resultaat['btw periodes']).filter(($) => true).__d_map(($, btw_periode) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($.jaarbeheer.resultaat['btw periodes']).filter(($) => true).__d_map(($, btw_periode) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${btw_periode
     //             }\t${$.mutaties.inkopen
@@ -501,11 +501,11 @@ export const Root: _pi.Transformer<
     //         )
     //     })
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("overige balans items", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("overige balans items", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($['overige balans items']).filter(($) => $.todo).__d_map(($, overige_balans_item) => {
-    //         _p_log_debug_message(
+    //     pt.dictionary.from.dictionary($['overige balans items']).filter(($) => $.todo).__d_map(($, overige_balans_item) => {
+    //         p_log_debug_message(
     //             `${id_jaar
     //             }\t${overige_balans_item
     //             }\t${$.bron.Beginsaldo
@@ -520,25 +520,25 @@ export const Root: _pi.Transformer<
     //         )
     //     })
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("check balans begin", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("check balans begin", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
     //     if ($.jaarbeheer.balans['check balans'].begin) {
-    //         _p_log_debug_message(
+    //         p_log_debug_message(
     //             `${id_jaar}\tbegin\tfailed`, () => { })
     //     }
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("check balans eind", () => { })
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("check balans eind", () => { })
     // $.jaren.__d_map(($, id_jaar) => {
     //     if ($.jaarbeheer.balans['check balans'].eind) {
-    //         _p_log_debug_message(
+    //         p_log_debug_message(
     //             `${id_jaar}\teind\tfailed`, () => { })
     //     }
     // })
-    // _p_log_debug_message("", () => { })
-    // _p_log_debug_message("balans grootboekrekeningen", () => { })
-    // _p_log_debug_message(
+    // p_log_debug_message("", () => { })
+    // p_log_debug_message("balans grootboekrekeningen", () => { })
+    // p_log_debug_message(
     //     `;${"jaar"
     //     };${"zijde"
     //     };${"hoofdcategorie"
@@ -553,17 +553,17 @@ export const Root: _pi.Transformer<
     //     () => { }
     // )
     // $.jaren.__d_map(($, id_jaar) => {
-    //     _p.dictionary.from.dictionary($.jaarbeheer.balans.grootboekrekeningen).map(($, id_grootboekrekening) => {
+    //     pt.dictionary.from.dictionary($.jaarbeheer.balans.grootboekrekeningen).map(($, id_grootboekrekening) => {
     //         const zijde = $.bron.Stam.Zijde[0]
     //         const hoofdcategorie = $.bron.Stam.Hoofdcategorie['l id']
     //         const subcategorie = $.bron.Stam.Subcategorie['l id']
-    //         _p.dictionary.from.dictionary(
-    //             _p.dictionary.from.dictionary($.postgroepen).map(($) => $)
+    //         pt.dictionary.from.dictionary(
+    //             pt.dictionary.from.dictionary($.postgroepen).map(($) => $)
     //         ).map(($, id_postgroep) => {
-    //             _p.dictionary.from.dictionary(
+    //             pt.dictionary.from.dictionary(
     //                 $.posten
     //             ).map(($, id_post) => {
-    //                 _p_log_debug_message(
+    //                 p_log_debug_message(
     //                     `;${id_jaar
     //                     };${zijde
     //                     };${hoofdcategorie
@@ -583,11 +583,11 @@ export const Root: _pi.Transformer<
     // })
 
     $.jaren.__d_map(($, id_jaar) => {
-        _p.dictionary.from.dictionary($.jaarbeheer.resultaat.grootboekrekeningen).map(($, id_grootboekrekening) => {
+        pt.dictionary.from.dictionary($.jaarbeheer.resultaat.grootboekrekeningen).map(($, id_grootboekrekening) => {
             const zijde = $.bron.Stam.Zijde[0]
             const hoofdcategorie = $.bron.Stam.Hoofdcategorie['l id']
             const subcategorie = $.bron.Stam.Subcategorie['l id']
-            _p_log_debug_message(
+            p_log_debug_message(
                 `;${id_jaar
                 };${zijde
                 };${hoofdcategorie
@@ -606,16 +606,16 @@ export const Root: _pi.Transformer<
         sh.f.div([
             sh.f.table(
                 [],
-                _p.list.nested_literal_old([
+                pt.list.nested_literal_old([
                     [
                         sh.t.header(["title"], [
                             sh.t.s.row(
                                 [],
-                                _p.optional.literal.not_set(),
+                                pt.optional.literal.not_set(),
                                 [
                                     sh.t.s.r.th(
                                         [],
-                                        _p.optional.literal.set(14),
+                                        pt.optional.literal.set(14),
                                         [
                                             sh.f.span([sh.p.p("Jaarrekeningen")])
                                         ]
@@ -624,7 +624,7 @@ export const Root: _pi.Transformer<
                             )
                         ]),
                     ],
-                    _p.list.from.list(
+                    pt.list.from.list(
                         $.jaren.__to_list(
                             ($, id) => ({
                                 'value': $,
@@ -633,12 +633,12 @@ export const Root: _pi.Transformer<
                         )
                     ).map(($) => sh.t.body(
                         ["jaar"],
-                        _p.list.nested_literal_old([
+                        pt.list.nested_literal_old([
                             [
-                                sh.t.s.row(["margin"], _p.optional.literal.not_set(), []),
+                                sh.t.s.row(["margin"], pt.optional.literal.not_set(), []),
                                 sh.t.s.row(
                                     ["jaar"],
-                                    _p.optional.literal.not_set(),
+                                    pt.optional.literal.not_set(),
                                     [
                                         Colspan_Text(
                                             $.id,
@@ -652,7 +652,7 @@ export const Root: _pi.Transformer<
                             Domein(
                                 {
                                     'links': Balans_Grootboekrekeningen(
-                                        _p.dictionary.from.dictionary(
+                                        pt.dictionary.from.dictionary(
                                             $.value.jaarbeheer.balans['grootboekrekeningen']
                                         ).filter(
                                             ($) => $.bron.Stam.Zijde[0] === 'Activa'
@@ -664,7 +664,7 @@ export const Root: _pi.Transformer<
                                         }
                                     ),
                                     'rechts': Balans_Grootboekrekeningen(
-                                        _p.dictionary.from.dictionary(
+                                        pt.dictionary.from.dictionary(
                                             $.value.jaarbeheer.balans['grootboekrekeningen']
                                         ).filter(
                                             ($) => $.bron.Stam.Zijde[0] === 'Passiva'
@@ -684,7 +684,7 @@ export const Root: _pi.Transformer<
                             Domein(
                                 {
                                     'links': Resultaat_Grootboekrekeningen(
-                                        _p.dictionary.from.dictionary(
+                                        pt.dictionary.from.dictionary(
                                             $.value.jaarbeheer.resultaat['grootboekrekeningen']
                                         ).filter(
                                             ($) => $.bron.Stam.Zijde[0] === 'Kosten'
@@ -695,7 +695,7 @@ export const Root: _pi.Transformer<
                                         }
                                     ),
                                     'rechts': Resultaat_Grootboekrekeningen(
-                                        _p.dictionary.from.dictionary(
+                                        pt.dictionary.from.dictionary(
                                             $.value.jaarbeheer.resultaat['grootboekrekeningen']
                                         ).filter(
                                             ($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'
@@ -713,7 +713,7 @@ export const Root: _pi.Transformer<
                             [
                                 sh.t.s.row(
                                     ["totaal"],
-                                    _p.optional.literal.not_set(),
+                                    pt.optional.literal.not_set(),
                                     [
                                         Indent_Blank(null),
                                         Indent_Blank(null),
@@ -735,7 +735,7 @@ export const Root: _pi.Transformer<
                             Domein(
                                 {
                                     'links': Balans_Grootboekrekeningen(
-                                        _p.dictionary.from.dictionary(
+                                        pt.dictionary.from.dictionary(
                                             $.value.jaarbeheer.balans['grootboekrekeningen']
                                         ).filter(
                                             ($) => $.bron.Stam.Zijde[0] === 'Activa'
@@ -747,7 +747,7 @@ export const Root: _pi.Transformer<
                                         }
                                     ),
                                     'rechts': Balans_Grootboekrekeningen(
-                                        _p.dictionary.from.dictionary(
+                                        pt.dictionary.from.dictionary(
                                             $.value.jaarbeheer.balans['grootboekrekeningen']
                                         ).filter(
                                             ($) => $.bron.Stam.Zijde[0] === 'Passiva'

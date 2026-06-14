@@ -1,5 +1,5 @@
-import * as _pi from 'pareto-core/dist/interface'
-import _p_create_symbol from 'pareto-core/dist/_p_create_symbol'
+import * as pi from 'pareto-core/dist/interface'
+import p_create_symbol from 'pareto-core/dist/_p_create_symbol'
 
 //data types
 import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
@@ -12,7 +12,7 @@ import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../ge
 import * as r_boekhouding_unresolved_from_loc from "../../../generated/liana/schemas/boekhouding/unresolved/refiners/list_of_characters"
 
 
-export type Root = _pi.Refiner_With_Parameter<
+export type Root = pi.Refiner_With_Parameter<
     d_out.Root,
     d_function.Error,
     d_in.List_of_Characters,
@@ -27,7 +27,7 @@ export const Root: Root = ($, abort, $p) => {
             $p
         ),
         ($) => abort(['resolve error', $]),
-        _p_create_symbol(),
-        _p_create_symbol(),
+        p_create_symbol(),
+        p_create_symbol(),
     )
 }

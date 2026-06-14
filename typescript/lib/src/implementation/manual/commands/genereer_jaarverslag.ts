@@ -1,4 +1,4 @@
-import * as _p from 'pareto-core/dist/command'
+import * as pt from 'pareto-core/dist/command'
 
 //dependencies
 import { $$ as create_file_transformer } from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
