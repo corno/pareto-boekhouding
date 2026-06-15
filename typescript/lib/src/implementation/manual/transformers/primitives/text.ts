@@ -1,4 +1,4 @@
-import * as pt from 'pareto-core/dist/implementation/transformer'
+import * as p_ from 'pareto-core/dist/implementation/transformer'
 import * as p_i from 'pareto-core/dist/interface/transformer'
 
 //data types
@@ -33,7 +33,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
         }
 
         // Split into integer and fractional parts
-        const integerPart = pt.number.from.number.divide(
+        const integerPart = p_.number.from.number.divide(
             value,
             divisor,
             ['towards zero', null],
@@ -52,7 +52,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
                 while (temp > 0) {
                     const digit = temp % 10
                     $i['add item'](digit)
-                    temp = pt.number.from.number.divide(
+                    temp = p_.number.from.number.divide(
                         temp,
                         10,
                         ['towards zero', null],
@@ -86,7 +86,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
             for (let i = 0; i < $p['number of fractional digits']; i++) {
                 const digit = temp % 10
                 $i['add item'](digit)
-                temp = pt.number.from.number.divide(
+                temp = p_.number.from.number.divide(
                     temp,
                     10,
                     ['towards zero', null],

@@ -216,12 +216,12 @@ export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
 export const Grootboekrekeningen: Grootboekrekeningen = ($) => ({
     'Balans': p_change_context($['Balans grootboekrekeningen'], ($) => sh.dictionary($.__d_map(($) => ({
         'Stam': null,
-        // 'Type': p_change_context($['Type'], ($) => pt.decide.state($, ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
+        // 'Type': p_change_context($['Type'], ($) => p_.decide.state($, ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
         //     switch ($[0]) {
-        //         case 'Bankrekening': return pt.ss($, ($) => sh.state(['Bankrekening', null]))
-        //         case 'Informele rekening': return pt.ss($, ($) => sh.state(['Informele rekening', null]))
-        //         case 'Overig': return pt.ss($, ($) => sh.state(['Overig', null]))
-        //         default: return pt.au($[0])
+        //         case 'Bankrekening': return p_.ss($, ($) => sh.state(['Bankrekening', null]))
+        //         case 'Informele rekening': return p_.ss($, ($) => sh.state(['Informele rekening', null]))
+        //         case 'Overig': return p_.ss($, ($) => sh.state(['Overig', null]))
+        //         default: return p_.au($[0])
         //     }
         // })),
     })))),
@@ -254,16 +254,16 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             }
         })),
 
-        // 'BTW-regime': p_change_context($['BTW-regime'], ($) => pt.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
+        // 'BTW-regime': p_change_context($['BTW-regime'], ($) => p_.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
         //     switch ($[0]) {
-        //         case 'Binnenland: heffing verlegd': return pt.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
-        //         case 'Geen BTW van toepassing': return pt.ss($, ($) => sh.state(['Geen BTW van toepassing', null]))
-        //         case 'Import van buiten de EU': return pt.ss($, ($) => sh.state(['Import van buiten de EU', null]))
-        //         case 'Intracommunautair': return pt.ss($, ($) => sh.state(['Intracommunautair', null]))
-        //         case 'Standaard': return pt.ss($, ($) => sh.state(['Standaard', ({
+        //         case 'Binnenland: heffing verlegd': return p_.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
+        //         case 'Geen BTW van toepassing': return p_.ss($, ($) => sh.state(['Geen BTW van toepassing', null]))
+        //         case 'Import van buiten de EU': return p_.ss($, ($) => sh.state(['Import van buiten de EU', null]))
+        //         case 'Intracommunautair': return p_.ss($, ($) => sh.state(['Intracommunautair', null]))
+        //         case 'Standaard': return p_.ss($, ($) => sh.state(['Standaard', ({
         //             'BTW-periode': p_change_context($['BTW-periode'], ($) => sh.reference($)),
         //         })]))
-        //         default: return pt.au($[0])
+        //         default: return p_.au($[0])
         //     }
         // })),
         'Brondocument': p_change_context($['Brondocument'], ($) => p_.decide.state($, ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
