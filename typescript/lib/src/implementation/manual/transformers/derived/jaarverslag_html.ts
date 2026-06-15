@@ -3,15 +3,10 @@ import * as pt from 'pareto-core/dist/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
 import * as p_i from 'pareto-core/dist/interface/transformer'
 
-import * as cffc from "../../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
-
-export type Signature = cffc.Deserializer
-
 //data types
 import * as d_out from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
 import * as d_in from "../../../../interface/to_be_generated/derived"
 import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggregatie"
-
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text"

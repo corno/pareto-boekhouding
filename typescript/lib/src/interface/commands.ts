@@ -22,4 +22,19 @@ export namespace procedures {
         }
     >
 
+    export type converteer_oude_dataset = p_ci.Command_Procedure<
+        resources_pareto.resources.commands.main,
+        {
+            'tab size': number,
+            'serialization parameters': d_serialize_prose.Parameters,
+        },
+        {
+            'read file': resources_pareto.filesystem_unrestricted.queries.read_file
+        },
+        {
+            'write file': resources_pareto.filesystem_unrestricted.commands.write_file,
+            'log error': resources_pareto_stream.commands.log_error,
+        }
+    >
+
 }

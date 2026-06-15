@@ -19,4 +19,13 @@ export namespace query_functions {
         null
     >
 
+    export type converteer_oude_dataset = p_qi.Query_Function<
+        queries_common.queries.process_file_data,
+        {
+            'tab size': number,
+            'serialization parameters': d_serialize_prose.Parameters,
+        },
+        null
+    >
+
 }
