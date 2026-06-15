@@ -5,7 +5,7 @@ import * as p_i from 'pareto-core/dist/interface/transformer'
 
 //data types
 import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
-import * as d_out from "../../../../interface/to_be_generated/derived"
+import * as d_out from "../../../../interface/data/derived"
 import p_unreachable_code_path from 'pareto-core/dist/implementation/specials/unreachable_code_path'
 
 //dependencies

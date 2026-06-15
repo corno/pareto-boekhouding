@@ -5,8 +5,8 @@ import * as p_i from 'pareto-core/dist/interface/transformer'
 
 //data types
 import * as d_out from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
-import * as d_in from "../../../../interface/to_be_generated/derived"
-import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggregatie"
+import * as d_in from "../../../../interface/data/derived"
+import * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie"
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text"
