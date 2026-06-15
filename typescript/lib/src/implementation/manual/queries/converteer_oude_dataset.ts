@@ -1,5 +1,6 @@
 import * as p_ from 'pareto-core/dist/implementation/query'
 import p_create_symbol from 'pareto-core/dist/implementation/specials/create_symbol'
+import p_super_query_result from 'pareto-core/dist/implementation/query/super_query_result'
 
 import * as signatures from "../../../interface/queries"
 
@@ -25,7 +26,7 @@ import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manua
 import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
 
 export const $$: signatures.query_functions.converteer_oude_dataset = p_.query_function(
-    ($d, $s, $q): p_.Query_Result<d_process_file_data.Result, d_process_file_data.Error> => p_.refine<d_boekhouding.Root_, d_fp.Phrase>(
+    ($d, $s, $q): p_.Query_Result<d_process_file_data.Result, d_process_file_data.Error> => p_super_query_result(p_.refine<d_boekhouding.Root_, d_fp.Phrase>(
         (abort) => r_boekhouding_resolved_from_boekhouding_unresolved.Root(
             r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
                 r_boekhouding_oude_model_from_loc.Root(
@@ -64,7 +65,7 @@ export const $$: signatures.query_functions.converteer_oude_dataset = p_.query_f
             p_create_symbol(),
             p_create_symbol(),
         )
-    ).transform(
+    )).transform(
         ($) => ({
             'data': t_fp_to_loc.Paragraph(
                 t_boekhouding_resolved_to_fp.Root(
