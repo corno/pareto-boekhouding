@@ -1,5 +1,5 @@
 
-import * as _pi from 'pareto-core/dist/interface'
+import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
 
 import * as i_generic from "liana-core/dist/interface/to_be_generated/deserialize"
 
@@ -25,7 +25,7 @@ export namespace Root_ {
 
 export type Root_ = (
     context: Root_.I,
-    abort: _pi.Abort<Root_.E>,
+    abort: p_i.Abort<Root_.E>,
     parameters: {
         readonly 'tab size': Root_.P.tab_size
     },
@@ -49,7 +49,7 @@ export namespace Bestandsnaam_ {
 
 export type Bestandsnaam_ = (
     context: Bestandsnaam_.I,
-    abort: _pi.Abort<Bestandsnaam_.E>,
+    abort: p_i.Abort<Bestandsnaam_.E>,
     parameters: {
         readonly 'tab size': Bestandsnaam_.P.tab_size
     },

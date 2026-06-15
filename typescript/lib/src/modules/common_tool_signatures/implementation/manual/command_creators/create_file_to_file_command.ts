@@ -1,5 +1,5 @@
-import * as p_ from 'pareto-core/dist/command'
-import * as pi from 'pareto-core/dist/interface'
+import * as p_ from 'pareto-core/dist/implementation/command'
+import * as p_ri from 'pareto-core/dist/interface/refiner'
 
 import * as signatures from "../../../interface/commands"
 
@@ -8,7 +8,6 @@ import * as d_main from "pareto-resources/dist/interface/to_be_generated/temp_ma
 import * as d_transform_file from "../../../interface/to_be_generated/transform_file"
 import * as d_loc from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
 import * as d_fp from "pareto-fountain-pen/dist/interface/generated/liana/schemas/prose/data"
-import * as d_deserialize from "astn-core/dist/interface/to_be_generated/deserialize"
 
 //dependencies
 import * as r_file_in_file_out_from_main from "../schemas/file_in_file_out/refiners/main"
@@ -19,7 +18,7 @@ import * as t_fp_to_loc from "pareto-fountain-pen/dist/implementation/manual/tra
 //shorthands
 import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
 
-export type Deserializer = pi.Refiner_With_Parameter<
+export type Deserializer = p_ri.Refiner_With_Parameter<
     d_fp.Paragraph,
     d_fp.Phrase,
     d_loc.List_of_Characters,

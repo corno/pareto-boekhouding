@@ -1,10 +1,10 @@
-import * as pi from 'pareto-core/dist/interface'
+import * as p_pi from 'pareto-core/dist/interface/production'
 
 //data types
 import * as d_function from "../../../../../interface/to_be_generated/file_in_file_out"
 import * as d_out from "pareto-resources/dist/interface/generated/liana/schemas/fs_unrestricted_path/data"
 
-export type Signature = pi.Production<d_out.Node_Path, d_function.Path_Error, string, null>
+export type Signature = p_pi.Production<d_out.Node_Path, d_function.Path_Error, string, null>
 
 //dependencies
 import * as r_node_path_from_text from "pareto-resources/dist/implementation/manual/refiners/path_unrestricted/text"

@@ -1,5 +1,6 @@
 
-import * as _pi from 'pareto-core/dist/interface'
+import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
+import * as p_di from 'pareto-core/dist/interface/data'
 
 import * as i_generic from "liana-core/dist/interface/to_be_generated/resolve"
 
@@ -23,7 +24,7 @@ export namespace Fiscaal_ {
 
 export type Fiscaal_ = (
     context: Fiscaal_.I,
-    abort: _pi.Abort<Fiscaal_.E>,
+    abort: p_i.Abort<Fiscaal_.E>,
     lookups: symbol,
     parameters: symbol,
 ) => Fiscaal_.O
@@ -46,7 +47,7 @@ export namespace Grootboekrekeningen_ {
 
 export type Grootboekrekeningen_ = (
     context: Grootboekrekeningen_.I,
-    abort: _pi.Abort<Grootboekrekeningen_.E>,
+    abort: p_i.Abort<Grootboekrekeningen_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Beheer': Grootboekrekeningen_.P.Beheer
@@ -71,7 +72,7 @@ export namespace Grootboek_Categorieen_ {
 
 export type Grootboek_Categorieen_ = (
     context: Grootboek_Categorieen_.I,
-    abort: _pi.Abort<Grootboek_Categorieen_.E>,
+    abort: p_i.Abort<Grootboek_Categorieen_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Fiscaal': Grootboek_Categorieen_.P.Fiscaal
@@ -96,7 +97,7 @@ export namespace Beheer_ {
 
 export type Beheer_ = (
     context: Beheer_.I,
-    abort: _pi.Abort<Beheer_.E>,
+    abort: p_i.Abort<Beheer_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Grootboek Categorieen': Beheer_.P.Grootboek_Categorieen
@@ -129,9 +130,9 @@ export namespace Jaarbeheer_ {
 
 export type Jaarbeheer_ = (
     context: Jaarbeheer_.I,
-    abort: _pi.Abort<Jaarbeheer_.E>,
+    abort: p_i.Abort<Jaarbeheer_.E>,
     lookups: {
-        readonly 'Jaren': _pi.static_lookup.Acyclic<Jaarbeheer_.L.Jaren>
+        readonly 'Jaren': p_di.static_lookup.Acyclic<Jaarbeheer_.L.Jaren>
     },
     parameters: {
         readonly 'Eerste boekjaar': Jaarbeheer_.P.Eerste_boekjaar
@@ -165,9 +166,9 @@ export namespace Overige_balans_item_ {
 
 export type Overige_balans_item_ = (
     context: Overige_balans_item_.I,
-    abort: _pi.Abort<Overige_balans_item_.E>,
+    abort: p_i.Abort<Overige_balans_item_.E>,
     lookups: {
-        readonly 'Jaren': _pi.static_lookup.Acyclic<Overige_balans_item_.L.Jaren>
+        readonly 'Jaren': p_di.static_lookup.Acyclic<Overige_balans_item_.L.Jaren>
     },
     parameters: {
         readonly 'Eerste boekjaar': Overige_balans_item_.P.Eerste_boekjaar
@@ -193,7 +194,7 @@ export namespace Verwijzing_naar_Informele_rekening_ {
 
 export type Verwijzing_naar_Informele_rekening_ = (
     context: Verwijzing_naar_Informele_rekening_.I,
-    abort: _pi.Abort<Verwijzing_naar_Informele_rekening_.E>,
+    abort: p_i.Abort<Verwijzing_naar_Informele_rekening_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Jaarbeheer': Verwijzing_naar_Informele_rekening_.P.Jaarbeheer
@@ -218,7 +219,7 @@ export namespace Verwijzing_naar_Bankrekening_ {
 
 export type Verwijzing_naar_Bankrekening_ = (
     context: Verwijzing_naar_Bankrekening_.I,
-    abort: _pi.Abort<Verwijzing_naar_Bankrekening_.E>,
+    abort: p_i.Abort<Verwijzing_naar_Bankrekening_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Jaarbeheer': Verwijzing_naar_Bankrekening_.P.Jaarbeheer
@@ -247,7 +248,7 @@ export namespace Handelstransacties_ {
 
 export type Handelstransacties_ = (
     context: Handelstransacties_.I,
-    abort: _pi.Abort<Handelstransacties_.E>,
+    abort: p_i.Abort<Handelstransacties_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Beheer': Handelstransacties_.P.Beheer
@@ -286,9 +287,9 @@ export namespace Mutaties_ {
 
 export type Mutaties_ = (
     context: Mutaties_.I,
-    abort: _pi.Abort<Mutaties_.E>,
+    abort: p_i.Abort<Mutaties_.E>,
     lookups: {
-        readonly 'Jaren': _pi.static_lookup.Acyclic<Mutaties_.L.Jaren>
+        readonly 'Jaren': p_di.static_lookup.Acyclic<Mutaties_.L.Jaren>
     },
     parameters: {
         readonly 'Beheer': Mutaties_.P.Beheer
@@ -328,9 +329,9 @@ export namespace Rekening_Mutatie_ {
 
 export type Rekening_Mutatie_ = (
     context: Rekening_Mutatie_.I,
-    abort: _pi.Abort<Rekening_Mutatie_.E>,
+    abort: p_i.Abort<Rekening_Mutatie_.E>,
     lookups: {
-        readonly 'Jaren': _pi.static_lookup.Acyclic<Rekening_Mutatie_.L.Jaren>
+        readonly 'Jaren': p_di.static_lookup.Acyclic<Rekening_Mutatie_.L.Jaren>
     },
     parameters: {
         readonly 'Beheer': Rekening_Mutatie_.P.Beheer
@@ -358,7 +359,7 @@ export namespace Jaren_ {
 
 export type Jaren_ = (
     context: Jaren_.I,
-    abort: _pi.Abort<Jaren_.E>,
+    abort: p_i.Abort<Jaren_.E>,
     lookups: symbol,
     parameters: {
         readonly 'Beheer': Jaren_.P.Beheer
@@ -381,7 +382,7 @@ export namespace Root_ {
 
 export type Root_ = (
     context: Root_.I,
-    abort: _pi.Abort<Root_.E>,
+    abort: p_i.Abort<Root_.E>,
     lookups: symbol,
     parameters: symbol,
 ) => Root_.O
@@ -408,9 +409,9 @@ export namespace Eerste_boekjaar_ {
 
 export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
-    abort: _pi.Abort<Eerste_boekjaar_.E>,
+    abort: p_i.Abort<Eerste_boekjaar_.E>,
     lookups: {
-        readonly 'Jaren': _pi.static_lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
+        readonly 'Jaren': p_di.static_lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
     },
     parameters: symbol,
 ) => Eerste_boekjaar_.O

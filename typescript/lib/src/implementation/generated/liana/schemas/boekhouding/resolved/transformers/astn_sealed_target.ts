@@ -1,9 +1,9 @@
 
 import * as _p from 'pareto-core/dist/assign'
 
-import _p_change_context from 'pareto-core/dist/_p_change_context'
+import _p_change_context from 'pareto-core/dist/implementation/specials/change_context'
 
-import _p_text_from_list from 'pareto-core/dist/_p_text_from_list'
+import _p_text_from_list from 'pareto-core/dist/implementation/specials/text_from_list'
 
 import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/signatures/resolved/transformers/astn_sealed_target"
 
@@ -11,7 +11,7 @@ import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_
 
 import * as v_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
 
-export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Fiscaal": _p_change_context(
             $['Fiscaal'],
@@ -40,14 +40,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.dictionar
     },
 )]]
 
-export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Balans Hoofdcategorieen": _p_change_context(
             $['Balans Hoofdcategorieen'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Zijde": _p_change_context(
                             $['Zijde'],
@@ -96,7 +96,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Zijde": _p_change_context(
                             $['Zijde'],
@@ -143,14 +143,14 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', _p.dic
     },
 )]]
 
-export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Correctietypes vennootschapsbelasting": _p_change_context(
             $['Correctietypes vennootschapsbelasting'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Te corrigeren promillage": _p_change_context(
                             $['Te corrigeren promillage'],
@@ -170,7 +170,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Zijde": _p_change_context(
                             $['Zijde'],
@@ -207,7 +207,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Hoofdcategorie fiscus": _p_change_context(
                                             $['Hoofdcategorie fiscus'],
@@ -236,7 +236,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Zijde": _p_change_context(
                             $['Zijde'],
@@ -273,7 +273,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Hoofdcategorie fiscus": _p_change_context(
                                             $['Hoofdcategorie fiscus'],
@@ -300,14 +300,14 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
     },
 )]]
 
-export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "BTW-categorieen": _p_change_context(
             $['BTW-categorieen'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "BTW-heffing": _p_change_context(
                             $['BTW-heffing'],
@@ -320,7 +320,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "BTW-promillage": _p_change_context(
                                                                 $['BTW-promillage'],
@@ -357,14 +357,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
         ),
         "Grootboekrekeningen": _p_change_context(
             $['Grootboekrekeningen'],
-            ($) => ['group', ['verbose', _p.dictionary.literal(
+            ($) => ['group', ['verbose', _p.literal.dictionary(
                 {
                     "Balans": _p_change_context(
                         $['Balans'],
                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                 {
                                     "Hoofdcategorie": _p_change_context(
                                         $['Hoofdcategorie'],
@@ -419,7 +419,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                 {
                                     "Hoofdcategorie": _p_change_context(
                                         $['Hoofdcategorie'],
@@ -446,7 +446,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Kosten',
-                                                                'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                'value': ['group', ['verbose', _p.literal.dictionary(
                                                                     {
                                                                         "Correctie op vennootschapsbelasting": _p_change_context(
                                                                             $['Correctie op vennootschapsbelasting'],
@@ -459,7 +459,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Ja',
-                                                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                                                         {
                                                                                                             "Correctietype": _p_change_context(
                                                                                                                 $['Correctietype'],
@@ -517,7 +517,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
         ),
         "Rekeningen": _p_change_context(
             $['Rekeningen'],
-            ($) => ['group', ['verbose', _p.dictionary.literal(
+            ($) => ['group', ['verbose', _p.literal.dictionary(
                 {
                     "Bank": _p_change_context(
                         $['Bank'],
@@ -543,7 +543,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Volledige naam": _p_change_context(
                             $['Volledige naam'],
@@ -568,21 +568,21 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Licentieovereenkomsten": _p_change_context(
                             $['Licentieovereenkomsten'],
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Periodes": _p_change_context(
                                             $['Periodes'],
                                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                                     {
                                                         "Bedrag": _p_change_context(
                                                             $['Bedrag'],
@@ -609,21 +609,21 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Offertes": _p_change_context(
                                             $['Offertes'],
                                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                                     {
                                                         "Opbrengsten": _p_change_context(
                                                             $['Opbrengsten'],
                                                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                                                 $,
                                                             ).map(
-                                                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                                                     {
                                                                         "Type": _p_change_context(
                                                                             $['Type'],
@@ -636,7 +636,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',
-                                                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                                                         {
                                                                                                             "Bedrag": _p_change_context(
                                                                                                                 $['Bedrag'],
@@ -706,14 +706,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', _p.dicti
     },
 )]]
 
-export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Balans": _p_change_context(
             $['Balans'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Stam": _p_change_context(
                             $['Stam'],
@@ -728,7 +728,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Stam": _p_change_context(
                             $['Stam'],
@@ -741,11 +741,11 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ['gr
     },
 )]]
 
-export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Resultaat": _p_change_context(
             $['Resultaat'],
-            ($) => ['group', ['verbose', _p.dictionary.literal(
+            ($) => ['group', ['verbose', _p.literal.dictionary(
                 {
                     "Grootboekrekening voor BTW afrondingen": _p_change_context(
                         $['Grootboekrekening voor BTW afrondingen'],
@@ -767,7 +767,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                 {
                                     "1. BTW-categorieen": _p_change_context(
                                         $['1. BTW-categorieen'],
@@ -782,7 +782,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                                             $,
                                         ).map(
-                                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                                 {
                                                     "Bestand": _p_change_context(
                                                         $['Bestand'],
@@ -813,7 +813,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Aangegeven',
-                                                                'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                'value': ['group', ['verbose', _p.literal.dictionary(
                                                                     {
                                                                         "Afronding": _p_change_context(
                                                                             $['Afronding'],
@@ -877,7 +877,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
         ),
         "Balans": _p_change_context(
             $['Balans'],
-            ($) => ['group', ['verbose', _p.dictionary.literal(
+            ($) => ['group', ['verbose', _p.literal.dictionary(
                 {
                     "Grootboekrekening voor nog aan te geven BTW": _p_change_context(
                         $['Grootboekrekening voor nog aan te geven BTW'],
@@ -943,7 +943,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                 {
                                     "Beginsaldo": _p_change_context(
                                         $['Beginsaldo'],
@@ -983,7 +983,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
-                                                                'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                'value': ['group', ['verbose', _p.literal.dictionary(
                                                                     {
                                                                         "Rekening": _p_change_context(
                                                                             $['Rekening'],
@@ -1008,7 +1008,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                                             $,
                                         ).map(
-                                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                                 {
                                                     "Bedrag": _p_change_context(
                                                         $['Bedrag'],
@@ -1051,7 +1051,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                         ($) => ['dictionary', _p.dictionary.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                 {
                                     "Beginsaldo": _p_change_context(
                                         $['Beginsaldo'],
@@ -1091,7 +1091,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
-                                                                'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                'value': ['group', ['verbose', _p.literal.dictionary(
                                                                     {
                                                                         "Rekening": _p_change_context(
                                                                             $['Rekening'],
@@ -1139,7 +1139,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
     },
 )]]
 
-export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Beginsaldo": _p_change_context(
             $['Beginsaldo'],
@@ -1179,7 +1179,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                                 $,
                                 ($) => ({
                                     'option': 'Nee',
-                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                         {
                                             "Balans item": _p_change_context(
                                                 $['Balans item'],
@@ -1213,14 +1213,14 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
     'value': $['l id'],
 }]
 
-export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Inkopen": _p_change_context(
             $['Inkopen'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Afhandeling": _p_change_context(
                             $['Afhandeling'],
@@ -1241,7 +1241,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nog te betalen',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Betalingstermijn": _p_change_context(
                                                                 $['Betalingstermijn'],
@@ -1261,7 +1261,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Rekening courant": _p_change_context(
                                                                 $['Rekening courant'],
@@ -1300,7 +1300,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Document": _p_change_context(
                                                                 $['Document'],
@@ -1351,7 +1351,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Bedrag": _p_change_context(
                                             $['Bedrag'],
@@ -1364,7 +1364,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bekend',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "BTW-bedrag": _p_change_context(
                                                                                 $['BTW-bedrag'],
@@ -1420,7 +1420,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "Balans item": _p_change_context(
                                                                                 $['Balans item'],
@@ -1438,7 +1438,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Kosten',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "Grootboekrekening": _p_change_context(
                                                                                 $['Grootboekrekening'],
@@ -1482,7 +1482,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Inkoop (met crediteur)',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Crediteur": _p_change_context(
                                                                 $['Crediteur'],
@@ -1507,7 +1507,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Loonheffing',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Ronde": _p_change_context(
                                                                 $['Ronde'],
@@ -1525,7 +1525,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Salaris',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Ronde": _p_change_context(
                                                                 $['Ronde'],
@@ -1562,7 +1562,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Afhandeling": _p_change_context(
                             $['Afhandeling'],
@@ -1583,7 +1583,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Rekening courant": _p_change_context(
                                                                 $['Rekening courant'],
@@ -1631,7 +1631,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Document": _p_change_context(
                                                                 $['Document'],
@@ -1670,7 +1670,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Project',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Project": _p_change_context(
                                                                 $['Project'],
@@ -1695,7 +1695,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($) => ({
                                                     'option': 'Licentieovereenkomst',
-                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                         {
                                                             "Overeenkomst": _p_change_context(
                                                                 $['Overeenkomst'],
@@ -1730,7 +1730,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "BTW-regime": _p_change_context(
                                             $['BTW-regime'],
@@ -1751,7 +1751,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Standaard',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "BTW-categorie": _p_change_context(
                                                                                 $['BTW-categorie'],
@@ -1803,7 +1803,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Project',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "Opbrengst": _p_change_context(
                                                                                 $['Opbrengst'],
@@ -1829,7 +1829,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "Periode": _p_change_context(
                                                                                 $['Periode'],
@@ -1868,7 +1868,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Opbrengsten',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "Grootboekrekening": _p_change_context(
                                                                                 $['Grootboekrekening'],
@@ -1886,7 +1886,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
-                                                                    'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
                                                                         {
                                                                             "Balans item": _p_change_context(
                                                                                 $['Balans item'],
@@ -1918,14 +1918,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
     },
 )]]
 
-export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Verrekenposten": _p_change_context(
             $['Verrekenposten'],
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Stam": _p_change_context(
                             $['Stam'],
@@ -1936,7 +1936,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Bedrag": _p_change_context(
                                             $['Bedrag'],
@@ -1980,7 +1980,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Informele rekening',
-                                                                                            'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
                                                                                                 {
                                                                                                     "Informele rekening": _p_change_context(
                                                                                                         $['Informele rekening'],
@@ -2023,7 +2023,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Stam": _p_change_context(
                             $['Stam'],
@@ -2034,7 +2034,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Stam": _p_change_context(
                                             $['Stam'],
@@ -2070,7 +2070,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Informele rekening',
-                                                                                            'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
                                                                                                 {
                                                                                                     "Informele rekening": _p_change_context(
                                                                                                         $['Informele rekening'],
@@ -2088,7 +2088,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Verrekenpost',
-                                                                                            'value': ['group', ['verbose', _p.dictionary.literal(
+                                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
                                                                                                 {
                                                                                                     "Verrekenpost": _p_change_context(
                                                                                                         $['Verrekenpost'],
@@ -2131,7 +2131,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
             ($) => ['dictionary', _p.dictionary.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                     {
                         "Stam": _p_change_context(
                             $['Stam'],
@@ -2142,7 +2142,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
                             ($) => ['dictionary', _p.dictionary.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.dictionary.literal(
+                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
                                     {
                                         "Bedrag": _p_change_context(
                                             $['Bedrag'],
@@ -2193,7 +2193,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', _p.d
 export const Jaren: t_signatures.Jaren = ($) => ['dictionary', _p.dictionary.from.dictionary(
     $,
 ).map(
-    ($, id) => ['group', ['verbose', _p.dictionary.literal(
+    ($, id) => ['group', ['verbose', _p.literal.dictionary(
         {
             "Afgesloten": _p_change_context(
                 $['Afgesloten'],
@@ -2268,7 +2268,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', _p.dictionary.fro
     )]],
 )]
 
-export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', ['verbose', _p.dictionary.literal(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', ['verbose', _p.literal.dictionary(
     {
         "Jaar": _p_change_context(
             $['Jaar'],
@@ -2348,7 +2348,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', _p
                     $,
                     ($) => ({
                         'option': 'Nee',
-                        'value': ['group', ['verbose', _p.dictionary.literal(
+                        'value': ['group', ['verbose', _p.literal.dictionary(
                             {
                                 "Vorig boekjaar": _p_change_context(
                                     $['Vorig boekjaar'],

@@ -1,5 +1,5 @@
 
-import * as _pi from 'pareto-core/dist/interface'
+import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
 
 import * as i_generic from "liana-core/dist/interface/to_be_generated/deserialize"
 
@@ -25,7 +25,7 @@ export namespace Root_ {
 
 export type Root_ = (
     context: Root_.I,
-    abort: _pi.Abort<Root_.E>,
+    abort: p_i.Abort<Root_.E>,
     parameters: {
         readonly 'tab size': Root_.P.tab_size
     },
@@ -49,7 +49,7 @@ export namespace Fiscaal_ {
 
 export type Fiscaal_ = (
     context: Fiscaal_.I,
-    abort: _pi.Abort<Fiscaal_.E>,
+    abort: p_i.Abort<Fiscaal_.E>,
     parameters: {
         readonly 'tab size': Fiscaal_.P.tab_size
     },
@@ -73,7 +73,7 @@ export namespace Grootboek_Categorieen_ {
 
 export type Grootboek_Categorieen_ = (
     context: Grootboek_Categorieen_.I,
-    abort: _pi.Abort<Grootboek_Categorieen_.E>,
+    abort: p_i.Abort<Grootboek_Categorieen_.E>,
     parameters: {
         readonly 'tab size': Grootboek_Categorieen_.P.tab_size
     },
@@ -97,7 +97,7 @@ export namespace Beheer_ {
 
 export type Beheer_ = (
     context: Beheer_.I,
-    abort: _pi.Abort<Beheer_.E>,
+    abort: p_i.Abort<Beheer_.E>,
     parameters: {
         readonly 'tab size': Beheer_.P.tab_size
     },
@@ -121,7 +121,7 @@ export namespace Grootboekrekeningen_ {
 
 export type Grootboekrekeningen_ = (
     context: Grootboekrekeningen_.I,
-    abort: _pi.Abort<Grootboekrekeningen_.E>,
+    abort: p_i.Abort<Grootboekrekeningen_.E>,
     parameters: {
         readonly 'tab size': Grootboekrekeningen_.P.tab_size
     },
@@ -145,7 +145,7 @@ export namespace Jaarbeheer_ {
 
 export type Jaarbeheer_ = (
     context: Jaarbeheer_.I,
-    abort: _pi.Abort<Jaarbeheer_.E>,
+    abort: p_i.Abort<Jaarbeheer_.E>,
     parameters: {
         readonly 'tab size': Jaarbeheer_.P.tab_size
     },
@@ -169,7 +169,7 @@ export namespace Overige_balans_item_ {
 
 export type Overige_balans_item_ = (
     context: Overige_balans_item_.I,
-    abort: _pi.Abort<Overige_balans_item_.E>,
+    abort: p_i.Abort<Overige_balans_item_.E>,
     parameters: {
         readonly 'tab size': Overige_balans_item_.P.tab_size
     },
@@ -193,7 +193,7 @@ export namespace Verwijzing_naar_Informele_rekening_ {
 
 export type Verwijzing_naar_Informele_rekening_ = (
     context: Verwijzing_naar_Informele_rekening_.I,
-    abort: _pi.Abort<Verwijzing_naar_Informele_rekening_.E>,
+    abort: p_i.Abort<Verwijzing_naar_Informele_rekening_.E>,
     parameters: {
         readonly 'tab size': Verwijzing_naar_Informele_rekening_.P.tab_size
     },
@@ -217,7 +217,7 @@ export namespace Verwijzing_naar_Bankrekening_ {
 
 export type Verwijzing_naar_Bankrekening_ = (
     context: Verwijzing_naar_Bankrekening_.I,
-    abort: _pi.Abort<Verwijzing_naar_Bankrekening_.E>,
+    abort: p_i.Abort<Verwijzing_naar_Bankrekening_.E>,
     parameters: {
         readonly 'tab size': Verwijzing_naar_Bankrekening_.P.tab_size
     },
@@ -241,7 +241,7 @@ export namespace Handelstransacties_ {
 
 export type Handelstransacties_ = (
     context: Handelstransacties_.I,
-    abort: _pi.Abort<Handelstransacties_.E>,
+    abort: p_i.Abort<Handelstransacties_.E>,
     parameters: {
         readonly 'tab size': Handelstransacties_.P.tab_size
     },
@@ -265,7 +265,7 @@ export namespace Mutaties_ {
 
 export type Mutaties_ = (
     context: Mutaties_.I,
-    abort: _pi.Abort<Mutaties_.E>,
+    abort: p_i.Abort<Mutaties_.E>,
     parameters: {
         readonly 'tab size': Mutaties_.P.tab_size
     },
@@ -289,7 +289,7 @@ export namespace Jaren_ {
 
 export type Jaren_ = (
     context: Jaren_.I,
-    abort: _pi.Abort<Jaren_.E>,
+    abort: p_i.Abort<Jaren_.E>,
     parameters: {
         readonly 'tab size': Jaren_.P.tab_size
     },
@@ -313,7 +313,7 @@ export namespace Rekening_Mutatie_ {
 
 export type Rekening_Mutatie_ = (
     context: Rekening_Mutatie_.I,
-    abort: _pi.Abort<Rekening_Mutatie_.E>,
+    abort: p_i.Abort<Rekening_Mutatie_.E>,
     parameters: {
         readonly 'tab size': Rekening_Mutatie_.P.tab_size
     },
@@ -337,7 +337,7 @@ export namespace Eerste_boekjaar_ {
 
 export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
-    abort: _pi.Abort<Eerste_boekjaar_.E>,
+    abort: p_i.Abort<Eerste_boekjaar_.E>,
     parameters: {
         readonly 'tab size': Eerste_boekjaar_.P.tab_size
     },

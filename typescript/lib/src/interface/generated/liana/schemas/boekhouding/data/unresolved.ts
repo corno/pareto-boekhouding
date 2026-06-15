@@ -1,5 +1,6 @@
 
-import * as _pi from 'pareto-core/dist/interface'
+import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
+import * as p_di from 'pareto-core/dist/interface/data'
 
 import * as i_location from "liana-core/dist/interface/to_be_generated/document_and_location"
 
@@ -80,7 +81,7 @@ export namespace Fiscaal_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -105,7 +106,7 @@ export namespace Fiscaal_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -170,7 +171,7 @@ export namespace Fiscaal_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -195,7 +196,7 @@ export namespace Fiscaal_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -242,7 +243,7 @@ export namespace Grootboek_Categorieen_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -340,7 +341,7 @@ export namespace Grootboek_Categorieen_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -365,7 +366,7 @@ export namespace Grootboek_Categorieen_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -463,7 +464,7 @@ export namespace Grootboek_Categorieen_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -488,7 +489,7 @@ export namespace Grootboek_Categorieen_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -565,7 +566,7 @@ export namespace Beheer_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -654,7 +655,7 @@ export namespace Beheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -789,7 +790,7 @@ export namespace Beheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -828,7 +829,7 @@ export namespace Beheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -858,7 +859,7 @@ export namespace Beheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -906,7 +907,7 @@ export namespace Beheer_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -968,7 +969,7 @@ export namespace Beheer_ {
                                             
                                         }
                                         
-                                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                                         
                                     }
                                     
@@ -992,7 +993,7 @@ export namespace Beheer_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -1083,7 +1084,7 @@ export namespace Beheer_ {
                                                             
                                                         }
                                                         
-                                                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                                                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                                                         
                                                     }
                                                     
@@ -1107,7 +1108,7 @@ export namespace Beheer_ {
                                             
                                         }
                                         
-                                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                                         
                                     }
                                     
@@ -1131,7 +1132,7 @@ export namespace Beheer_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -1156,7 +1157,7 @@ export namespace Beheer_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -1186,7 +1187,7 @@ export namespace Beheer_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -1216,7 +1217,7 @@ export namespace Beheer_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -1268,7 +1269,7 @@ export namespace Grootboekrekeningen_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -1306,7 +1307,7 @@ export namespace Grootboekrekeningen_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -1360,7 +1361,7 @@ export namespace Jaarbeheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -1402,7 +1403,7 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                             
                         }
                         
@@ -1440,7 +1441,7 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                             
                         }
                         
@@ -1506,7 +1507,7 @@ export namespace Jaarbeheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -1687,7 +1688,7 @@ export namespace Jaarbeheer_ {
                                 
                             }
                             
-                            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                             
                         }
                         
@@ -1714,7 +1715,7 @@ export namespace Jaarbeheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -1798,7 +1799,7 @@ export namespace Jaarbeheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -1828,7 +1829,7 @@ export namespace Jaarbeheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -1858,7 +1859,7 @@ export namespace Jaarbeheer_ {
                 
             }
             
-            export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+            export type l_dictionary = p_di.Dictionary<l_dictionary.D>
             
         }
         
@@ -2222,7 +2223,7 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -2354,7 +2355,7 @@ export namespace Handelstransacties_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -2755,7 +2756,7 @@ export namespace Handelstransacties_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -2786,7 +2787,7 @@ export namespace Handelstransacties_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -2908,7 +2909,7 @@ export namespace Mutaties_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -2933,7 +2934,7 @@ export namespace Mutaties_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -3068,7 +3069,7 @@ export namespace Mutaties_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -3093,7 +3094,7 @@ export namespace Mutaties_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -3165,7 +3166,7 @@ export namespace Mutaties_ {
                             
                         }
                         
-                        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+                        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
                         
                     }
                     
@@ -3190,7 +3191,7 @@ export namespace Mutaties_ {
             
         }
         
-        export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+        export type l_dictionary = p_di.Dictionary<l_dictionary.D>
         
     }
     
@@ -3275,7 +3276,7 @@ export namespace Jaren_ {
         
     }
     
-    export type l_dictionary = _pi.Dictionary<l_dictionary.D>
+    export type l_dictionary = p_di.Dictionary<l_dictionary.D>
     
 }
 
@@ -3303,7 +3304,7 @@ export namespace Rekening_Mutatie_ {
         
     }
     
-    export type Jaar = _pi.Optional_Value<Jaar.O>
+    export type Jaar = p_di.Optional_Value<Jaar.O>
     
     export namespace type_ {
         

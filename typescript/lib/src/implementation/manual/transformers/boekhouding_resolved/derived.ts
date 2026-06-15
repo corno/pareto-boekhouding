@@ -1,16 +1,16 @@
-import * as pi from 'pareto-core/dist/interface'
-import * as pt from 'pareto-core/dist/assign'
-import p_change_context from 'pareto-core/dist/_p_change_context'
-import p_variables from 'pareto-core/dist/_p_variables'
+import * as pt from 'pareto-core/dist/implementation/transformer'
+import p_change_context from 'pareto-core/dist/implementation/specials/change_context'
+import p_variables from 'pareto-core/dist/implementation/specials/variables'
+import * as p_i from 'pareto-core/dist/interface/transformer'
 
 //data types
 import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 import * as d_out from "../../../../interface/to_be_generated/derived"
-import p_unreachable_code_path from 'pareto-core/dist/_p_unreachable_code_path'
+import p_unreachable_code_path from 'pareto-core/dist/implementation/specials/unreachable_code_path'
 
 //dependencies
 
-export const Root: pi.Transformer<d_in.Root, d_out.Root> = ($) => {
+export const Root: p_i.Transformer<d_in.Root, d_out.Root> = ($) => {
     const bron_root = $
     return {
         'bron': $,
@@ -110,7 +110,7 @@ export const Root: pi.Transformer<d_in.Root, d_out.Root> = ($) => {
 
                 const p_resultaat_grootboekrekeningen: d_out.Resultaat.Grootboek_Rekeningen = bron_jaar.Grootboekrekeningen.Resultaat.__d_map(($): d_out.Resultaat.Grootboekrekening => {
                     const context = $
-                    const p_postgroepen = pt.dictionary.literal({
+                    const p_postgroepen = pt.literal.dictionary({
                         "inkopen": {
                             'totaal': pt.number.from.dictionary(
                                 bron_jaar.Handelstransacties.Inkopen
@@ -1002,62 +1002,62 @@ export const Root: pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                     const p_postgroepen: d_out.Balans.Grootboekrekening['postgroepen'] = p_variables(
                         (): d_out.Balans.Grootboekrekening['postgroepen'] => {
 
-                            return pt.dictionary.literal<d_out.Balans.Post_Groep>({
+                            return pt.literal.dictionary<d_out.Balans.Post_Groep>({
                                 "winstreserve": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor winstreserve']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": {
                                                 'beginsaldo': - bron_jaar.Jaarbeheer.Balans['Beginsaldo winstreserve'],
                                                 'mutaties': 0
                                             }
                                         })
-                                        : pt.dictionary.literal({})
+                                        : pt.literal.dictionary({})
                                 },
                                 "resultaat": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor resultaat dit jaar']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": {
                                                 'beginsaldo': 0,
                                                 'mutaties': - resultaat,
                                             }
                                         })
-                                        : pt.dictionary.literal({})
+                                        : pt.literal.dictionary({})
                                 },
 
                                 "inkoopsaldo": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Inkoop saldo']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": p_inkoopsaldo
                                         })
-                                        : pt.dictionary.literal({}),
+                                        : pt.literal.dictionary({}),
                                 },
                                 "verkoopsaldo": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Verkoop saldo']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": p_verkoopsaldo
                                         })
-                                        : pt.dictionary.literal({}),
+                                        : pt.literal.dictionary({}),
                                 },
                                 "btw te veel aangegeven": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": p_btw_te_veel_aangegeven
                                         })
-                                        : pt.dictionary.literal({}),
+                                        : pt.literal.dictionary({}),
                                 },
                                 "btw openstaand": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": p_btw_openstaand
                                         })
-                                        : pt.dictionary.literal({}),
+                                        : pt.literal.dictionary({}),
                                 },
                                 "btw nog aan te geven": {
                                     'posten': bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                        ? pt.dictionary.literal({
+                                        ? pt.literal.dictionary({
                                             ".": p_btw_nog_aan_te_geven
                                         })
-                                        : pt.dictionary.literal({}),
+                                        : pt.literal.dictionary({}),
                                 },
                                 "bankrekeningen": {
                                     'posten': pt.dictionary.from.dictionary(
@@ -1077,8 +1077,8 @@ export const Root: pi.Transformer<d_in.Root, d_out.Root> = ($) => {
                                 //             const openstaand: number = xxxx
 
                                 //             return openstaand !== 0
-                                //                 ? pt.optional.literal.set(openstaand)
-                                //                 : pt.optional.literal.not_set()
+                                //                 ? pt.literal.set(openstaand)
+                                //                 : pt.literal.not_set()
                                 //         }
                                 //     ).__d_map(($) => ({
                                 //         'beginsaldo': 0,

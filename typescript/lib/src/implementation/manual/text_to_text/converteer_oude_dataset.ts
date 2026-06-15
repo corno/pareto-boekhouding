@@ -1,5 +1,4 @@
-import * as pi from 'pareto-core/dist/interface'
-import p_create_symbol from 'pareto-core/dist/_p_create_symbol'
+import p_create_symbol from 'pareto-core/dist/implementation/specials/create_symbol'
 
 import * as cffc from "../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 

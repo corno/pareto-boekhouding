@@ -1,21 +1,21 @@
-import * as pi from 'pareto-core/dist/interface'
+import * as p_di from 'pareto-core/dist/interface/data'
 
 import * as d_boekhouding from "../generated/liana/schemas/boekhouding/data/resolved"
 
 export type Root = {
     'bron': d_boekhouding.Root
-    'jaren': pi.Dictionary<Jaar>
+    'jaren': p_di.Dictionary<Jaar>
 }
 
 export type Jaar = {
     'bron': d_boekhouding.Jaren.D
     'handelstransacties': {
-        'inkopen': pi.Dictionary<Inkoop>
-        'verkopen': pi.Dictionary<Verkoop>
+        'inkopen': p_di.Dictionary<Inkoop>
+        'verkopen': p_di.Dictionary<Verkoop>
     }
-    'overige balans items': pi.Dictionary<Overige_Balans_Item>
-    'informele rekeningen': pi.Dictionary<Informele_Rekening>
-    'verrekenposten': pi.Dictionary<Verreken_Post>
+    'overige balans items': p_di.Dictionary<Overige_Balans_Item>
+    'informele rekeningen': p_di.Dictionary<Informele_Rekening>
+    'verrekenposten': p_di.Dictionary<Verreken_Post>
     'inkoopsaldo': Balans.Post
     'verkoopsaldo': Balans.Post
     'btw': {
@@ -23,10 +23,10 @@ export type Jaar = {
         'nog aan te geven': Balans.Post,
         'openstaand': Balans.Post,
     }
-    'bankrekeningen': pi.Dictionary<Bankrekening>
+    'bankrekeningen': p_di.Dictionary<Bankrekening>
     'jaarbeheer': {
         'resultaat': {
-            'btw periodes': pi.Dictionary<Btw_Periode>
+            'btw periodes': p_di.Dictionary<Btw_Periode>
             'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
             'resultaat': number
 
@@ -39,7 +39,7 @@ export type Jaar = {
             }
         }
     }
-    // 'salarisrondes': pi.Dictionary<Salarisronde>
+    // 'salarisrondes': p_di.Dictionary<Salarisronde>
 }
 
 export type Inkoop = {
@@ -50,7 +50,7 @@ export type Inkoop = {
 
 export type Verkoop = {
     'bron': d_boekhouding.Handelstransacties.Verkopen.D
-    'regels': pi.Dictionary<Verkoop_Regel>
+    'regels': p_di.Dictionary<Verkoop_Regel>
     'totaal ex btw': number
     'totaal btw': number
     'totaal inclusief btw': number
@@ -135,11 +135,11 @@ export namespace Resultaat {
 
     export type Grootboekrekening = {
         'bron': d_boekhouding.Grootboekrekeningen.Resultaat.D
-        'postgroepen': pi.Dictionary<Post_Groep>
+        'postgroepen': p_di.Dictionary<Post_Groep>
         'totaal': number
     }
 
-    export type Grootboek_Rekeningen = pi.Dictionary<Grootboekrekening>
+    export type Grootboek_Rekeningen = p_di.Dictionary<Grootboekrekening>
 
     export type Post_Groep = {
         'totaal': number
@@ -150,14 +150,14 @@ export namespace Balans {
 
     export type Grootboekrekening = {
         'bron': d_boekhouding.Grootboekrekeningen.Balans.D
-        'postgroepen': pi.Dictionary<Post_Groep>
+        'postgroepen': p_di.Dictionary<Post_Groep>
         'totaal': Post
     }
 
-    export type Grootboek_Rekeningen = pi.Dictionary<Grootboekrekening>
+    export type Grootboek_Rekeningen = p_di.Dictionary<Grootboekrekening>
 
     export type Post_Groep = {
-        posten: pi.Dictionary<Post>
+        posten: p_di.Dictionary<Post>
     }
 
     export type Post = {

@@ -1,5 +1,6 @@
 
-import * as _pi from 'pareto-core/dist/interface'
+import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
+import * as p_di from 'pareto-core/dist/interface/data'
 
 export namespace Root_ {
     
@@ -13,7 +14,7 @@ export namespace Root_ {
         
     }
     
-    export type Bankrekeningen = _pi.Dictionary<Bankrekeningen.D>
+    export type Bankrekeningen = p_di.Dictionary<Bankrekeningen.D>
     
     export namespace Beheer {
         
@@ -57,7 +58,7 @@ export namespace Root_ {
                 
             }
             
-            export type Grootboekrekeningen = _pi.Dictionary<Grootboekrekeningen.D>
+            export type Grootboekrekeningen = p_di.Dictionary<Grootboekrekeningen.D>
             
             export namespace Hoofdcategorieen {
                 
@@ -100,7 +101,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Subcategorieen = _pi.Dictionary<Subcategorieen.D>
+                    export type Subcategorieen = p_di.Dictionary<Subcategorieen.D>
                     
                 }
                 
@@ -111,7 +112,7 @@ export namespace Root_ {
                 
             }
             
-            export type Hoofdcategorieen = _pi.Dictionary<Hoofdcategorieen.D>
+            export type Hoofdcategorieen = p_di.Dictionary<Hoofdcategorieen.D>
             
             export namespace Hoofdcategorieen_fiscus {
                 
@@ -147,7 +148,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Subcategorieen = _pi.Dictionary<Subcategorieen.D>
+                    export type Subcategorieen = p_di.Dictionary<Subcategorieen.D>
                     
                 }
                 
@@ -158,7 +159,7 @@ export namespace Root_ {
                 
             }
             
-            export type Hoofdcategorieen_fiscus = _pi.Dictionary<Hoofdcategorieen_fiscus.D>
+            export type Hoofdcategorieen_fiscus = p_di.Dictionary<Hoofdcategorieen_fiscus.D>
             
         }
         
@@ -204,7 +205,7 @@ export namespace Root_ {
             
         }
         
-        export type BTW$mi_categorieen = _pi.Dictionary<BTW$mi_categorieen.D>
+        export type BTW$mi_categorieen = p_di.Dictionary<BTW$mi_categorieen.D>
         
         export namespace Gebruikers {
             
@@ -223,7 +224,7 @@ export namespace Root_ {
             
         }
         
-        export type Gebruikers = _pi.Dictionary<Gebruikers.D>
+        export type Gebruikers = p_di.Dictionary<Gebruikers.D>
         
         export type Huidige_datum = number
         
@@ -243,7 +244,7 @@ export namespace Root_ {
                 
             }
             
-            export type Correctietypes_vennootschapsbelasting = _pi.Dictionary<Correctietypes_vennootschapsbelasting.D>
+            export type Correctietypes_vennootschapsbelasting = p_di.Dictionary<Correctietypes_vennootschapsbelasting.D>
             
             export namespace Grootboekrekeningen {
                 
@@ -309,7 +310,7 @@ export namespace Root_ {
                 
             }
             
-            export type Grootboekrekeningen = _pi.Dictionary<Grootboekrekeningen.D>
+            export type Grootboekrekeningen = p_di.Dictionary<Grootboekrekeningen.D>
             
             export namespace Hoofdcategorieen {
                 
@@ -352,7 +353,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Subcategorieen = _pi.Dictionary<Subcategorieen.D>
+                    export type Subcategorieen = p_di.Dictionary<Subcategorieen.D>
                     
                 }
                 
@@ -363,7 +364,7 @@ export namespace Root_ {
                 
             }
             
-            export type Hoofdcategorieen = _pi.Dictionary<Hoofdcategorieen.D>
+            export type Hoofdcategorieen = p_di.Dictionary<Hoofdcategorieen.D>
             
             export namespace Hoofdcategorieen_fiscus {
                 
@@ -399,7 +400,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Subcategorieen = _pi.Dictionary<Subcategorieen.D>
+                    export type Subcategorieen = p_di.Dictionary<Subcategorieen.D>
                     
                 }
                 
@@ -410,7 +411,7 @@ export namespace Root_ {
                 
             }
             
-            export type Hoofdcategorieen_fiscus = _pi.Dictionary<Hoofdcategorieen_fiscus.D>
+            export type Hoofdcategorieen_fiscus = p_di.Dictionary<Hoofdcategorieen_fiscus.D>
             
         }
         
@@ -441,7 +442,7 @@ export namespace Root_ {
         
     }
     
-    export type Informele_rekeningen = _pi.Dictionary<Informele_rekeningen.D>
+    export type Informele_rekeningen = p_di.Dictionary<Informele_rekeningen.D>
     
     export namespace Jaren {
         
@@ -506,7 +507,7 @@ export namespace Root_ {
                 
             }
             
-            export type Balans_grootboekrekeningen = _pi.Dictionary<Balans_grootboekrekeningen.D>
+            export type Balans_grootboekrekeningen = p_di.Dictionary<Balans_grootboekrekeningen.D>
             
             export namespace Bankrekeningen {
                 
@@ -629,7 +630,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Mutaties = _pi.Dictionary<Mutaties.D>
+                    export type Mutaties = p_di.Dictionary<Mutaties.D>
                     
                     export namespace Nieuw {
                         
@@ -669,7 +670,7 @@ export namespace Root_ {
                 
             }
             
-            export type Bankrekeningen = _pi.Dictionary<Bankrekeningen.D>
+            export type Bankrekeningen = p_di.Dictionary<Bankrekeningen.D>
             
             export type Beginsaldo_nog_aan_te_geven_BTW = number
             
@@ -699,7 +700,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type _11$pe__BTW$mi_categorieen = _pi.Dictionary<_11$pe__BTW$mi_categorieen.D>
+                    export type _11$pe__BTW$mi_categorieen = p_di.Dictionary<_11$pe__BTW$mi_categorieen.D>
                     
                     export namespace Documenten {
                         
@@ -715,7 +716,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Documenten = _pi.Dictionary<Documenten.D>
+                    export type Documenten = p_di.Dictionary<Documenten.D>
                     
                     export type Omschrijving = string
                     
@@ -760,7 +761,7 @@ export namespace Root_ {
                 
             }
             
-            export type BTW_periodes = _pi.Dictionary<BTW_periodes.D>
+            export type BTW_periodes = p_di.Dictionary<BTW_periodes.D>
             
             export namespace Eerste_boekjaar {
                 
@@ -839,7 +840,7 @@ export namespace Root_ {
                 
             }
             
-            export type Informele_rekeningen = _pi.Dictionary<Informele_rekeningen.D>
+            export type Informele_rekeningen = p_di.Dictionary<Informele_rekeningen.D>
             
             export namespace Inkopen {
                 
@@ -1045,7 +1046,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Regels = _pi.Dictionary<Regels.D>
+                    export type Regels = p_di.Dictionary<Regels.D>
                     
                     export namespace Type {
                         
@@ -1112,7 +1113,7 @@ export namespace Root_ {
                 
             }
             
-            export type Inkopen = _pi.Dictionary<Inkopen.D>
+            export type Inkopen = p_di.Dictionary<Inkopen.D>
             
             export namespace Inkoop_saldo {
                 
@@ -1155,7 +1156,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Memoriaal_boekingen = _pi.Dictionary<Memoriaal_boekingen.D>
+                    export type Memoriaal_boekingen = p_di.Dictionary<Memoriaal_boekingen.D>
                     
                     export namespace Nieuw {
                         
@@ -1195,7 +1196,7 @@ export namespace Root_ {
                 
             }
             
-            export type Overige_balans_items = _pi.Dictionary<Overige_balans_items.D>
+            export type Overige_balans_items = p_di.Dictionary<Overige_balans_items.D>
             
             export namespace Resultaat_grootboekrekeningen {
                 
@@ -1207,7 +1208,7 @@ export namespace Root_ {
                 
             }
             
-            export type Resultaat_grootboekrekeningen = _pi.Dictionary<Resultaat_grootboekrekeningen.D>
+            export type Resultaat_grootboekrekeningen = p_di.Dictionary<Resultaat_grootboekrekeningen.D>
             
             export namespace Salarisrondes {
                 
@@ -1219,7 +1220,7 @@ export namespace Root_ {
                 
             }
             
-            export type Salarisrondes = _pi.Dictionary<Salarisrondes.D>
+            export type Salarisrondes = p_di.Dictionary<Salarisrondes.D>
             
             export type Startdatum_boekjaar = number
             
@@ -1431,7 +1432,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Regels = _pi.Dictionary<Regels.D>
+                    export type Regels = p_di.Dictionary<Regels.D>
                     
                 }
                 
@@ -1448,7 +1449,7 @@ export namespace Root_ {
                 
             }
             
-            export type Verkopen = _pi.Dictionary<Verkopen.D>
+            export type Verkopen = p_di.Dictionary<Verkopen.D>
             
             export namespace Verrekenposten {
                 
@@ -1528,7 +1529,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Mutaties = _pi.Dictionary<Mutaties.D>
+                    export type Mutaties = p_di.Dictionary<Mutaties.D>
                     
                 }
                 
@@ -1538,7 +1539,7 @@ export namespace Root_ {
                 
             }
             
-            export type Verrekenposten = _pi.Dictionary<Verrekenposten.D>
+            export type Verrekenposten = p_di.Dictionary<Verrekenposten.D>
             
         }
         
@@ -1569,7 +1570,7 @@ export namespace Root_ {
         
     }
     
-    export type Jaren = _pi.Dictionary<Jaren.D>
+    export type Jaren = p_di.Dictionary<Jaren.D>
     
     export namespace Klanten {
         
@@ -1593,7 +1594,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Periodes = _pi.Dictionary<Periodes.D>
+                    export type Periodes = p_di.Dictionary<Periodes.D>
                     
                 }
                 
@@ -1603,7 +1604,7 @@ export namespace Root_ {
                 
             }
             
-            export type Licentieovereenkomsten = _pi.Dictionary<Licentieovereenkomsten.D>
+            export type Licentieovereenkomsten = p_di.Dictionary<Licentieovereenkomsten.D>
             
             export namespace Projecten {
                 
@@ -1645,7 +1646,7 @@ export namespace Root_ {
                                 
                             }
                             
-                            export type Opbrengsten = _pi.Dictionary<Opbrengsten.D>
+                            export type Opbrengsten = p_di.Dictionary<Opbrengsten.D>
                             
                         }
                         
@@ -1655,7 +1656,7 @@ export namespace Root_ {
                         
                     }
                     
-                    export type Offertes = _pi.Dictionary<Offertes.D>
+                    export type Offertes = p_di.Dictionary<Offertes.D>
                     
                 }
                 
@@ -1665,7 +1666,7 @@ export namespace Root_ {
                 
             }
             
-            export type Projecten = _pi.Dictionary<Projecten.D>
+            export type Projecten = p_di.Dictionary<Projecten.D>
             
         }
         
@@ -1676,7 +1677,7 @@ export namespace Root_ {
         
     }
     
-    export type Klanten = _pi.Dictionary<Klanten.D>
+    export type Klanten = p_di.Dictionary<Klanten.D>
     
     export namespace Leveranciers {
         
@@ -1688,7 +1689,7 @@ export namespace Root_ {
         
     }
     
-    export type Leveranciers = _pi.Dictionary<Leveranciers.D>
+    export type Leveranciers = p_di.Dictionary<Leveranciers.D>
     
     export namespace Medewerkers {
         
@@ -1700,7 +1701,7 @@ export namespace Root_ {
         
     }
     
-    export type Medewerkers = _pi.Dictionary<Medewerkers.D>
+    export type Medewerkers = p_di.Dictionary<Medewerkers.D>
     
 }
 

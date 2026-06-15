@@ -1,5 +1,3 @@
-import * as pi from 'pareto-core/dist/interface'
-import * as _pt from 'pareto-core/dist/assign'
 
 // import * as r_temp_static_html from "./schemas/boekhouding_oude_model"
 

@@ -1,20 +1,20 @@
 
 import * as _p from 'pareto-core/dist/assign'
-import _p_create_symbol from 'pareto-core/dist/_p_create_symbol'
+import _p_create_symbol from 'pareto-core/dist/implementation/specials/create_symbol'
 
-import _p_change_context from 'pareto-core/dist/_p_change_context'
+import _p_change_context from 'pareto-core/dist/implementation/specials/change_context'
 
-import * as _p_sl from 'pareto-core/dist/select_static_lookup'
+import * as _p_sl from 'pareto-core/dist/implementation/refiner/select_static_lookup'
 
-import _p_unreachable_code_path from 'pareto-core/dist/_p_unreachable_code_path'
+import _p_unreachable_code_path from 'pareto-core/dist/implementation/specials/unreachable_code_path'
 
-import _p_variables from 'pareto-core/dist/_p_variables'
+import _p_variables from 'pareto-core/dist/implementation/specials/variables'
 
 import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 
 import * as t_signatures from "../../../../../../../interface/generated/liana/schemas/boekhouding/signatures/resolved/refiners/unresolved"
 
-export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Balans_Hoofdcategorieen = _p_change_context(
@@ -24,7 +24,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.lite
             ).resolve_static(
                 ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Zijde = _p_change_context(
@@ -86,7 +86,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.lite
             ).resolve_static(
                 ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Zijde = _p_change_context(
@@ -147,7 +147,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => _p.group.lite
     },
 )
 
-export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Correctietypes_vennootschapsbelasting = _p_change_context(
@@ -157,7 +157,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
             ).resolve_static(
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Te_corrigeren_promillage = _p_change_context(
@@ -180,7 +180,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
             ).resolve_static(
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Zijde = _p_change_context(
@@ -221,7 +221,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D.Subcategorieen.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Hoofdcategorie_fiscus = _p_change_context(
@@ -313,7 +313,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
             ).resolve_static(
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Zijde = _p_change_context(
@@ -354,7 +354,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D.Subcategorieen.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Hoofdcategorie_fiscus = _p_change_context(
@@ -446,7 +446,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
     },
 )
 
-export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_BTW$mi_categorieen = _p_change_context(
@@ -456,7 +456,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
             ).resolve_static(
                 ($, id, $a, $c): t_out.Beheer.BTW$mi_categorieen.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_BTW$mi_heffing = _p_change_context(
@@ -472,7 +472,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                     case 'Ja':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Ja', _p.group.literal.resolve(
+                                                            ($) => ['Ja', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_BTW$mi_promillage = _p_change_context(
@@ -488,11 +488,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                     case 'Nee':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Nee', _p.group.literal.resolve(
-                                                                () => {
-                                                                    return _p_create_symbol()
-                                                                },
-                                                            )],
+                                                            ($) => ['Nee', _p_create_symbol()],
                                                         )
                                                     default:
                                                         return _p.au(
@@ -515,7 +511,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
 
         const prop_Grootboekrekeningen = _p_change_context(
             $['Grootboekrekeningen'],
-            ($) => _p.group.literal.resolve(
+            ($) => _p.literal.group_resolve(
                 () => {
 
                     const prop_Balans = _p_change_context(
@@ -525,7 +521,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                         ).resolve_static(
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Balans.D => _p_change_context(
                                 $['l entry'],
-                                ($) => _p.group.literal.resolve(
+                                ($) => _p.literal.group_resolve(
                                     () => {
 
                                         const prop_Hoofdcategorie = _p_change_context(
@@ -640,7 +636,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                         ).resolve_static(
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Resultaat.D => _p_change_context(
                                 $['l entry'],
-                                ($) => _p.group.literal.resolve(
+                                ($) => _p.literal.group_resolve(
                                     () => {
 
                                         const prop_Hoofdcategorie = _p_change_context(
@@ -720,7 +716,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                                 case 'Kosten':
                                                                     return _p.ss(
                                                                         $,
-                                                                        ($) => ['Kosten', _p.group.literal.resolve(
+                                                                        ($) => ['Kosten', _p.literal.group_resolve(
                                                                             () => {
 
                                                                                 const prop_Correctie_op_vennootschapsbelasting = _p_change_context(
@@ -736,7 +732,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                                                                         case 'Ja':
                                                                                                             return _p.ss(
                                                                                                                 $,
-                                                                                                                ($) => ['Ja', _p.group.literal.resolve(
+                                                                                                                ($) => ['Ja', _p.literal.group_resolve(
                                                                                                                     () => {
 
                                                                                                                         const prop_Correctietype = _p_change_context(
@@ -832,7 +828,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
 
         const prop_Rekeningen = _p_change_context(
             $['Rekeningen'],
-            ($) => _p.group.literal.resolve(
+            ($) => _p.literal.group_resolve(
                 () => {
 
                     const prop_Bank = _p_change_context(
@@ -873,7 +869,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
             ).resolve_static(
                 ($, id, $a, $c): t_out.Beheer.Gebruikers.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Volledige_naam = _p_change_context(
@@ -902,7 +898,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
             ).resolve_static(
                 ($, id, $a, $c): t_out.Beheer.Klanten.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             const prop_Licentieovereenkomsten = _p_change_context(
@@ -912,7 +908,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Periodes = _p_change_context(
@@ -922,7 +918,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                     ).resolve_static(
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D => _p_change_context(
                                                             $['l entry'],
-                                                            ($) => _p.group.literal.resolve(
+                                                            ($) => _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Bedrag = _p_change_context(
@@ -953,7 +949,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Offertes = _p_change_context(
@@ -963,7 +959,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                     ).resolve_static(
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D => _p_change_context(
                                                             $['l entry'],
-                                                            ($) => _p.group.literal.resolve(
+                                                            ($) => _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Opbrengsten = _p_change_context(
@@ -973,7 +969,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                                         ).resolve_static(
                                                                             ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D => _p_change_context(
                                                                                 $['l entry'],
-                                                                                ($) => _p.group.literal.resolve(
+                                                                                ($) => _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Type = _p_change_context(
@@ -989,7 +985,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
                                                                                                                 case 'Project':
                                                                                                                     return _p.ss(
                                                                                                                         $,
-                                                                                                                        ($) => ['Project', _p.group.literal.resolve(
+                                                                                                                        ($) => ['Project', _p.literal.group_resolve(
                                                                                                                             () => {
 
                                                                                                                                 const prop_Bedrag = _p_change_context(
@@ -1087,7 +1083,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => _p.group.litera
     },
 )
 
-export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Balans = _p_change_context(
@@ -1097,7 +1093,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
             ).resolve_static(
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Balans.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
 
                             return {
@@ -1179,12 +1175,12 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
     },
 )
 
-export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Resultaat = _p_change_context(
             $['Resultaat'],
-            ($) => _p.group.literal.resolve(
+            ($) => _p.literal.group_resolve(
                 () => {
 
                     const prop_Grootboekrekening_voor_BTW_afrondingen = _p_change_context(
@@ -1238,7 +1234,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                         ).resolve_static(
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D => _p_change_context(
                                 $['l entry'],
-                                ($) => _p.group.literal.resolve(
+                                ($) => _p.literal.group_resolve(
                                     () => {
 
                                         const prop_1$pe__BTW$mi_categorieen = _p_change_context(
@@ -1260,7 +1256,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                             ).resolve_static(
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D => _p_change_context(
                                                     $['l entry'],
-                                                    ($) => _p.group.literal.resolve(
+                                                    ($) => _p.literal.group_resolve(
                                                         () => {
 
                                                             const prop_Bestand = _p_change_context(
@@ -1294,7 +1290,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                 case 'Aangegeven':
                                                                     return _p.ss(
                                                                         $,
-                                                                        ($) => ['Aangegeven', _p.group.literal.resolve(
+                                                                        ($) => ['Aangegeven', _p.literal.group_resolve(
                                                                             () => {
 
                                                                                 const prop_Afronding = _p_change_context(
@@ -1356,7 +1352,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
 
         const prop_Balans = _p_change_context(
             $['Balans'],
-            ($) => _p.group.literal.resolve(
+            ($) => _p.literal.group_resolve(
                 () => {
 
                     const prop_Beginsaldo_nog_aan_te_geven_BTW = _p_change_context(
@@ -1536,7 +1532,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                         ).resolve_static(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Informele_rekeningen.D => _p_change_context(
                                 $['l entry'],
-                                ($) => _p.group.literal.resolve(
+                                ($) => _p.literal.group_resolve(
                                     () => {
 
                                         const prop_Beginsaldo = _p_change_context(
@@ -1619,7 +1615,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                                         }
                                                                                     },
                                                                                 )
-                                                                                return _p.group.literal.resolve(
+                                                                                return _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Rekening = _p_change_context(
@@ -1671,7 +1667,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                         ).resolve_static(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D => _p_change_context(
                                 $['l entry'],
-                                ($) => _p.group.literal.resolve(
+                                ($) => _p.literal.group_resolve(
                                     () => {
 
                                         const prop_Beginsaldo = _p_change_context(
@@ -1754,7 +1750,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                                                                         }
                                                                                     },
                                                                                 )
-                                                                                return _p.group.literal.resolve(
+                                                                                return _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Rekening = _p_change_context(
@@ -1796,7 +1792,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
                                             ).resolve_static(
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D => _p_change_context(
                                                     $['l entry'],
-                                                    ($) => _p.group.literal.resolve(
+                                                    ($) => _p.literal.group_resolve(
                                                         () => {
 
                                                             const prop_Bedrag = _p_change_context(
@@ -1888,7 +1884,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => _p.grou
     },
 )
 
-export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Beginsaldo = _p_change_context(
@@ -1971,7 +1967,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                                                         }
                                                     },
                                                 )
-                                                return _p.group.literal.resolve(
+                                                return _p.literal.group_resolve(
                                                     () => {
 
                                                         const prop_Balans_item = _p_change_context(
@@ -2089,7 +2085,7 @@ export const Verwijzing_naar_Bankrekening: t_signatures.Verwijzing_naar_Bankreke
     'l id': $['l reference'],
 })
 
-export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Inkopen = _p_change_context(
@@ -2099,7 +2095,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
             ).resolve_static(
                 ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         (): t_out.Handelstransacties.Inkopen.D => {
 
                             const prop_Afhandeling = _p_change_context(
@@ -2127,7 +2123,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Rekening courant':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Rekening courant', _p.group.literal.resolve(
+                                                            ($) => ['Rekening courant', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Rekening_courant = _p_change_context(
@@ -2244,7 +2240,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             //                         case 'Standaard':
                             //                             return _p.ss(
                             //                                 $,
-                            //                                 ($) => ['Standaard', _p.group.literal.resolve(
+                            //                                 ($) => ['Standaard', _p.literal.group_resolve(
                             //                                     () => {
 
                             //                                         return {
@@ -2277,7 +2273,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Toegevoegd':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Toegevoegd', _p.group.literal.resolve(
+                                                            ($) => ['Toegevoegd', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Document = _p_change_context(
@@ -2323,7 +2319,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D.Regels.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Bedrag = _p_change_context(
@@ -2339,7 +2335,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Bekend':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Bekend', _p.group.literal.resolve(
+                                                                                ($) => ['Bekend', _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_BTW$mi_bedrag = _p_change_context(
@@ -2387,7 +2383,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Balans':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Balans', _p.group.literal.resolve(
+                                                                                ($) => ['Balans', _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Balans_item = _p_change_context(
@@ -2430,7 +2426,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Kosten':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Kosten', _p.group.literal.resolve(
+                                                                                ($) => ['Kosten', _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Grootboekrekening = _p_change_context(
@@ -2509,7 +2505,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Inkoop (met crediteur)':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Inkoop (met crediteur)', _p.group.literal.resolve(
+                                                            ($) => ['Inkoop (met crediteur)', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Crediteur = _p_change_context(
@@ -2558,7 +2554,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Loonheffing':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Loonheffing', _p.group.literal.resolve(
+                                                            ($) => ['Loonheffing', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Ronde = _p_change_context(
@@ -2601,7 +2597,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Salaris':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Salaris', _p.group.literal.resolve(
+                                                            ($) => ['Salaris', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Ronde = _p_change_context(
@@ -2706,7 +2702,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
             ).resolve_static(
                 ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D => _p_change_context(
                     $['l entry'],
-                    ($) => _p.group.literal.resolve(
+                    ($) => _p.literal.group_resolve(
                         () => {
                             const prop_Datum = _p_change_context(
                                 $['Datum'],
@@ -2763,7 +2759,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Toegevoegd':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Toegevoegd', _p.group.literal.resolve(
+                                                            ($) => ['Toegevoegd', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Document = _p_change_context(
@@ -2832,7 +2828,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Project':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Project', _p.group.literal.resolve(
+                                                            ($) => ['Project', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Project = _p_change_context(
@@ -2908,7 +2904,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Licentieovereenkomst':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Licentieovereenkomst', _p.group.literal.resolve(
+                                                            ($) => ['Licentieovereenkomst', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Overeenkomst = _p_change_context(
@@ -2979,7 +2975,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Rekening courant':
                                                         return _p.ss(
                                                             $,
-                                                            ($) => ['Rekening courant', _p.group.literal.resolve(
+                                                            ($) => ['Rekening courant', _p.literal.group_resolve(
                                                                 () => {
 
                                                                     const prop_Rekening_courant = _p_change_context(
@@ -3037,7 +3033,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D.Regels.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_BTW$mi_regime = _p_change_context(
@@ -3058,7 +3054,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Standaard':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Standaard', _p.group.literal.resolve(
+                                                                                ($) => ['Standaard', _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_BTW$mi_categorie = _p_change_context(
@@ -3157,7 +3153,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                                 }
                                                                                             },
                                                                                         )
-                                                                                        return _p.group.literal.resolve(
+                                                                                        return _p.literal.group_resolve(
                                                                                             () => {
 
                                                                                                 const prop_Opbrengst = _p_change_context(
@@ -3232,7 +3228,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                                                 }
                                                                                             },
                                                                                         )
-                                                                                        return _p.group.literal.resolve(
+                                                                                        return _p.literal.group_resolve(
                                                                                             () => {
 
                                                                                                 const prop_Periode = _p_change_context(
@@ -3303,7 +3299,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Opbrengsten':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Opbrengsten', _p.group.literal.resolve(
+                                                                                ($) => ['Opbrengsten', _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Grootboekrekening = _p_change_context(
@@ -3346,7 +3342,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Balans':
                                                                             return _p.ss(
                                                                                 $,
-                                                                                ($) => ['Balans', _p.group.literal.resolve(
+                                                                                ($) => ['Balans', _p.literal.group_resolve(
                                                                                     () => {
 
                                                                                         const prop_Balans_item = _p_change_context(
@@ -3430,7 +3426,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
     },
 )
 
-export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Jaar = _p_change_context(
@@ -3602,7 +3598,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort, $l, $p
     },
 )
 
-export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.literal.group_resolve(
     (): t_out.Mutaties => {
 
         const prop_Verrekenposten: t_out.Mutaties.Verrekenposten = _p_change_context(
@@ -3650,7 +3646,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Mutaties.Verrekenposten.D.Mutaties.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Bedrag = _p_change_context(
@@ -3694,7 +3690,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                                                                                     case 'Informele rekening':
                                                                                                         return _p.ss(
                                                                                                             $,
-                                                                                                            ($) => ['Informele rekening', _p.group.literal.resolve(
+                                                                                                            ($) => ['Informele rekening', _p.literal.group_resolve(
                                                                                                                 () => {
 
                                                                                                                     const prop_Informele_rekening = _p_change_context(
@@ -3875,7 +3871,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                                                                             case 'Verrekenpost':
                                                                                                 return _p.ss(
                                                                                                     $,
-                                                                                                    ($) => ['Verrekenpost', _p.group.literal.resolve(
+                                                                                                    ($) => ['Verrekenpost', _p.literal.group_resolve(
                                                                                                         () => {
 
                                                                                                             const prop_Verrekenpost = _p_change_context(
@@ -3918,7 +3914,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                                                                             case 'Informele rekening':
                                                                                                 return _p.ss(
                                                                                                     $,
-                                                                                                    ($) => ['Informele rekening', _p.group.literal.resolve(
+                                                                                                    ($) => ['Informele rekening', _p.literal.group_resolve(
                                                                                                         () => {
 
                                                                                                             const prop_Informele_rekening = _p_change_context(
@@ -4032,7 +4028,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => _p.group.li
                                 ).resolve_static(
                                     ($, id, $a, $c): t_out.Mutaties.Overige_Balans_Items.D.Memoriaal_Boekingen.D => _p_change_context(
                                         $['l entry'],
-                                        ($) => _p.group.literal.resolve(
+                                        ($) => _p.literal.group_resolve(
                                             () => {
 
                                                 const prop_Bedrag = _p_change_context(
@@ -4121,7 +4117,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
                     case 'Nee':
                         return _p.ss(
                             $,
-                            ($) => ['Nee', _p.group.literal.resolve(
+                            ($) => ['Nee', _p.literal.group_resolve(
                                 () => {
 
                                     const prop_Vorig_boekjaar = _p_change_context(
@@ -4174,7 +4170,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.fro
 ).resolve_static(
     ($, id, $a, $c): t_out.Jaren.D => _p_change_context(
         $['l entry'],
-        ($) => _p.group.literal.resolve(
+        ($) => _p.literal.group_resolve(
             () => {
 
                 const prop_Afgesloten = _p_change_context(
@@ -4306,7 +4302,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => _p.dictionary.fro
     ),
 )
 
-export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.group.literal.resolve(
+export const Root: t_signatures.Root = ($, abort, $l, $p) => _p.literal.group_resolve(
     () => {
 
         const prop_Fiscaal = _p_change_context(

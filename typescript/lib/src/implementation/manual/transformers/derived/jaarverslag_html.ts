@@ -1,6 +1,7 @@
-import * as pi from 'pareto-core/dist/interface'
-import * as pt from 'pareto-core/dist/assign'
+import * as p_di from 'pareto-core/dist/interface/data'
+import * as pt from 'pareto-core/dist/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
+import * as p_i from 'pareto-core/dist/interface/transformer'
 
 import * as cffc from "../../../../modules/common_tool_signatures/implementation/manual/command_creators/create_file_to_file_command"
 
@@ -15,8 +16,8 @@ import * as d_temp_aggregatie_2 from "../../../../interface/to_be_generated/aggr
 //dependencies
 import * as t_primitives_to_text from "../primitives/text"
 
-const integer_from_dictionary = <T extends pi.Value>(
-    dict: pi.Dictionary<T>,
+const integer_from_dictionary = <T extends p_di.Value>(
+    dict: p_di.Dictionary<T>,
     get_value: ($: T) => number,
 ): number => pt.number.from.list(
     pt.list.from.dictionary(
@@ -33,7 +34,7 @@ import * as sh from "pareto-static-html/dist/shorthands/static_html"
 import { css } from "../../../../data/css"
 
 
-const Bedrag: pi.Transformer_With_Parameter<
+const Bedrag: p_i.Transformer_With_Parameter<
     number,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L,
     {
@@ -41,10 +42,10 @@ const Bedrag: pi.Transformer_With_Parameter<
     }
 > = ($, $p) => sh.t.s.r.td(
     ["bedrag"],
-    pt.optional.literal.not_set(),
+    pt.literal.not_set(),
     [
         sh.f.span([
-            sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
+            sh.p_.p_("€ " + t_primitives_to_text.fractional_decimal(
                 $p['teken omkeren'] ? -$ : $,
                 {
                     'number of fractional digits': 2,
@@ -56,18 +57,18 @@ const Bedrag: pi.Transformer_With_Parameter<
     ]
 )
 
-const Text: pi.Transformer<
+const Text: p_i.Transformer<
     string,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["text"],
-    pt.optional.literal.not_set(),
+    pt.literal.not_set(),
     [
-        sh.f.span([sh.p.p($)])
+        sh.f.span([sh.p_.p_($)])
     ]
 )
 
-const Colspan_Text: pi.Transformer_With_Parameter<
+const Colspan_Text: p_i.Transformer_With_Parameter<
     string,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L,
     {
@@ -75,45 +76,45 @@ const Colspan_Text: pi.Transformer_With_Parameter<
     }
 > = ($, $p) => sh.t.s.r.td(
     ["span-text"],
-    pt.optional.literal.set($p['number of columns']),
+    pt.literal.set($p['number of columns']),
     [
-        sh.f.span([sh.p.p($)])
+        sh.f.span([sh.p_.p_($)])
     ]
 )
 
-const Span_Indent: pi.Transformer<
+const Span_Indent: p_i.Transformer<
     number,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["span-indent"],
-    pt.optional.literal.set($),
+    pt.literal.set($),
     []
 )
 
-const Indent: pi.Transformer<
+const Indent: p_i.Transformer<
     null,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["indent"],
-    pt.optional.literal.not_set(),
+    pt.literal.not_set(),
     []
 )
 
-const Indent_Blank: pi.Transformer<
+const Indent_Blank: p_i.Transformer<
     null,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
     ["indent blank"],
-    pt.optional.literal.not_set(),
+    pt.literal.not_set(),
     []
 )
 
 
 
 
-const Domein_Zijde: pi.Transformer<
+const Domein_Zijde: p_i.Transformer<
     d_temp_aggregatie_2.Domein_Zijde,
-    pi.List<d_out.Flow_Element.table.sections.L.rows.L.cells>
+    p_di.List<d_out.Flow_Element.table.sections.L.rows.L.cells>
 > = ($) => {
 
     const teken_omkeren = $['teken omkeren']
@@ -121,9 +122,9 @@ const Domein_Zijde: pi.Transformer<
     return pt.list.from.dictionary(
         $.hoofdcategorieen
     ).flatten(
-        ($, id) => pt.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+        ($, id) => pt.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
             [
-                pt.list.literal([
+                pt.literal.list([
                     Colspan_Text(
                         id,
                         {
@@ -142,9 +143,9 @@ const Domein_Zijde: pi.Transformer<
             pt.list.from.dictionary(
                 $.subcategorieen
             ).flatten(
-                ($, id) => pt.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                ($, id) => pt.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                     [
-                        pt.list.literal([
+                        pt.literal.list([
                             Indent(null),
                             Colspan_Text(
                                 id,
@@ -165,9 +166,9 @@ const Domein_Zijde: pi.Transformer<
                     pt.list.from.dictionary(
                         $.grootboekrekeningen
                     ).flatten(
-                        ($, id) => pt.list.nested_literal_old<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                        ($, id) => pt.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                             [
-                                pt.list.literal([
+                                pt.literal.list([
                                     Indent(null),
                                     Indent(null),
                                     Text(id),
@@ -188,18 +189,18 @@ const Domein_Zijde: pi.Transformer<
     )
 }
 
-const Domein: pi.Transformer_With_Parameter<
+const Domein: p_i.Transformer_With_Parameter<
     d_temp_aggregatie_2.Domein,
     d_out.Flow_Element.table.sections.L.rows,
     {
         'label': string
     }
-> = ($, $p) => pt.list.nested_literal_old([
+> = ($, $p) => pt.literal.nested_list([
     [
-        sh.t.s.row(["margin"], pt.optional.literal.not_set(), []),
+        sh.t.s.row(["margin"], pt.literal.not_set(), []),
         sh.t.s.row(
             ["domein"],
-            pt.optional.literal.not_set(),
+            pt.literal.not_set(),
             [
                 Indent_Blank(null),
                 Colspan_Text(
@@ -212,7 +213,7 @@ const Domein: pi.Transformer_With_Parameter<
         ),
         sh.t.s.row(
             ["domein_zijde"],
-            pt.optional.literal.not_set(),
+            pt.literal.not_set(),
             [
                 Indent_Blank(null),
                 Indent_Blank(null),
@@ -242,19 +243,19 @@ const Domein: pi.Transformer_With_Parameter<
     ).__l_map(
         ($) => sh.t.s.row(
             ["item"],
-            pt.optional.literal.not_set(),
-            pt.list.nested_literal_old([
+            pt.literal.not_set(),
+            pt.literal.nested_list([
                 [
                     Indent_Blank(null),
                     Indent_Blank(null),
                 ],
                 $.links.__decide(
                     ($) => $,
-                    () => pt.list.literal([Span_Indent(6)])
+                    () => pt.literal.list([Span_Indent(6)])
                 ),
                 $.rechts.__decide(
                     ($) => $,
-                    () => pt.list.literal([Span_Indent(6)])
+                    () => pt.literal.list([Span_Indent(6)])
                 ),
             ])
         )
@@ -262,7 +263,7 @@ const Domein: pi.Transformer_With_Parameter<
     [
         sh.t.s.row(
             ["totaal"],
-            pt.optional.literal.not_set(),
+            pt.literal.not_set(),
             [
                 Indent_Blank(null),
                 Indent_Blank(null),
@@ -281,7 +282,7 @@ const Domein: pi.Transformer_With_Parameter<
     ]
 ])
 
-const Resultaat_Grootboekrekeningen: pi.Transformer_With_Parameter<
+const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
     d_in.Resultaat.Grootboek_Rekeningen,
     d_temp_aggregatie_2.Domein_Zijde,
     {
@@ -335,7 +336,7 @@ const Resultaat_Grootboekrekeningen: pi.Transformer_With_Parameter<
     }
 }
 
-const Balans_Grootboekrekeningen: pi.Transformer_With_Parameter<
+const Balans_Grootboekrekeningen: p_i.Transformer_With_Parameter<
     d_in.Balans.Grootboek_Rekeningen,
     d_temp_aggregatie_2.Domein_Zijde,
     {
@@ -401,7 +402,7 @@ const Balans_Grootboekrekeningen: pi.Transformer_With_Parameter<
     }
 }
 
-export const Root: pi.Transformer<
+export const Root: p_i.Transformer<
     d_in.Root,
     d_out.Document
 > = ($) => {
@@ -606,18 +607,18 @@ export const Root: pi.Transformer<
         sh.f.div([
             sh.f.table(
                 [],
-                pt.list.nested_literal_old([
+                pt.literal.nested_list([
                     [
                         sh.t.header(["title"], [
                             sh.t.s.row(
                                 [],
-                                pt.optional.literal.not_set(),
+                                pt.literal.not_set(),
                                 [
                                     sh.t.s.r.th(
                                         [],
-                                        pt.optional.literal.set(14),
+                                        pt.literal.set(14),
                                         [
-                                            sh.f.span([sh.p.p("Jaarrekeningen")])
+                                            sh.f.span([sh.p_.p_("Jaarrekeningen")])
                                         ]
                                     )
                                 ]
@@ -633,12 +634,12 @@ export const Root: pi.Transformer<
                         )
                     ).map(($) => sh.t.body(
                         ["jaar"],
-                        pt.list.nested_literal_old([
+                        pt.literal.nested_list([
                             [
-                                sh.t.s.row(["margin"], pt.optional.literal.not_set(), []),
+                                sh.t.s.row(["margin"], pt.literal.not_set(), []),
                                 sh.t.s.row(
                                     ["jaar"],
-                                    pt.optional.literal.not_set(),
+                                    pt.literal.not_set(),
                                     [
                                         Colspan_Text(
                                             $.id,
@@ -713,7 +714,7 @@ export const Root: pi.Transformer<
                             [
                                 sh.t.s.row(
                                     ["totaal"],
-                                    pt.optional.literal.not_set(),
+                                    pt.literal.not_set(),
                                     [
                                         Indent_Blank(null),
                                         Indent_Blank(null),

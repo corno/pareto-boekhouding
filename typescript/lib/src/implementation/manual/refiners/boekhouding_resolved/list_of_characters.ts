@@ -1,5 +1,5 @@
-import * as pi from 'pareto-core/dist/interface'
-import p_create_symbol from 'pareto-core/dist/_p_create_symbol'
+import * as p_i from 'pareto-core/dist/interface/refiner'
+import p_create_symbol from 'pareto-core/dist/implementation/specials/create_symbol'
 
 //data types
 import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
@@ -12,7 +12,7 @@ import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../ge
 import * as r_boekhouding_unresolved_from_loc from "../../../generated/liana/schemas/boekhouding/unresolved/refiners/list_of_characters"
 
 
-export type Root = pi.Refiner_With_Parameter<
+export type Root = p_i.Refiner_With_Parameter<
     d_out.Root,
     d_function.Error,
     d_in.List_of_Characters,
