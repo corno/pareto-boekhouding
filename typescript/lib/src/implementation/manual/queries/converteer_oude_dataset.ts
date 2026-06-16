@@ -5,7 +5,6 @@ import p_super_query_result from 'pareto-core/dist/implementation/query/super_qu
 import * as signatures from "../../../interface/queries"
 
 //data  types
-import * as d_process_file_data from "pareto-common/dist/interface/to_be_generated/process_file_data"
 import * as d_boekhouding from "../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 import * as d_fp from "pareto-fountain-pen/dist/interface/generated/liana/schemas/prose/data"
 import * as t_path_to_text from "pareto-resources/dist/implementation/manual/transformers/unrestricted_path/text"
@@ -26,7 +25,7 @@ import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manua
 import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
 
 export const $$: signatures.query_functions.converteer_oude_dataset = p_.query_function(
-    ($d, $s, $q): p_.Query_Result<d_process_file_data.Result, d_process_file_data.Error> => p_super_query_result(p_.refine<d_boekhouding.Root_, d_fp.Phrase>(
+    ($d, $s, $q) => p_super_query_result(p_.refine<d_boekhouding.Root_, d_fp.Phrase>(
         (abort) => r_boekhouding_resolved_from_boekhouding_unresolved.Root(
             r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
                 r_boekhouding_oude_model_from_loc.Root(
