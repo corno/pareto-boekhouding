@@ -40,7 +40,7 @@ const Bedrag: p_i.Transformer_With_Parameter<
     p_.literal.not_set(),
     [
         sh.f.span([
-            sh.p_.p_("€ " + t_primitives_to_text.fractional_decimal(
+            sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
                 $p['teken omkeren'] ? -$ : $,
                 {
                     'number of fractional digits': 2,
@@ -59,7 +59,7 @@ const Text: p_i.Transformer<
     ["text"],
     p_.literal.not_set(),
     [
-        sh.f.span([sh.p_.p_($)])
+        sh.f.span([sh.p.p($)])
     ]
 )
 
@@ -73,7 +73,7 @@ const Colspan_Text: p_i.Transformer_With_Parameter<
     ["span-text"],
     p_.literal.set($p['number of columns']),
     [
-        sh.f.span([sh.p_.p_($)])
+        sh.f.span([sh.p.p($)])
     ]
 )
 
@@ -613,7 +613,7 @@ export const Root: p_i.Transformer<
                                         [],
                                         p_.literal.set(14),
                                         [
-                                            sh.f.span([sh.p_.p_("Jaarrekeningen")])
+                                            sh.f.span([sh.p.p("Jaarrekeningen")])
                                         ]
                                     )
                                 ]

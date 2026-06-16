@@ -4,7 +4,7 @@ import p_create_symbol from 'pareto-core/dist/implementation/specials/create_sym
 //data types
 import * as d_in from "pareto-fountain-pen/dist/interface/generated/liana/schemas/list_of_characters/data"
 import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
-import * as d_function from "liana-core/dist/interface/to_be_generated/deserialize_resolved"
+import * as d_function from "liana-core/dist/interface/data/deserialize_resolved"
 
 //dependencies
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
