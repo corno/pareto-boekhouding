@@ -30,4 +30,5 @@ export const $$: interface_.procedures.genereer_jaarverslag = p_.command_procedu
             },
             ($): d_main.Error => $
         ),
-    ])
+    ]
+)
