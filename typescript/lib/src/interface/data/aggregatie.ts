@@ -1,4 +1,4 @@
-import * as p_di from 'pareto-core/dist/interface/data'
+import * as p_ from 'pareto-core/dist/interface/data'
 
 
 export type Domein = {
@@ -9,9 +9,9 @@ export type Domein = {
 export type Domein_Zijde = {
     'label': string
     'teken omkeren': boolean
-    'hoofdcategorieen': p_di.Dictionary<{
-        'subcategorieen': p_di.Dictionary<{
-            'grootboekrekeningen': p_di.Dictionary<Grootboekrekening>
+    'hoofdcategorieen': p_.Dictionary<{
+        'subcategorieen': p_.Dictionary<{
+            'grootboekrekeningen': p_.Dictionary<Grootboekrekening>
             'totaal': number
         }>
         'totaal': number

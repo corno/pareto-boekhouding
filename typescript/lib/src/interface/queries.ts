@@ -1,4 +1,4 @@
-import * as p_qi from 'pareto-core/dist/interface/query'
+import * as p_ from 'pareto-core/dist/interface/query'
 
 import * as queries_common from "pareto-common/dist/interface/queries"
 
@@ -10,7 +10,7 @@ export namespace queries {
 
 export namespace query_functions {
 
-    export type genereer_jaarverslag = p_qi.Query_Function<
+    export type genereer_jaarverslag = p_.Query_Function<
         queries_common.queries.process_file_data,
         {
             'tab size': number,
@@ -19,7 +19,7 @@ export namespace query_functions {
         null
     >
 
-    export type converteer_oude_dataset = p_qi.Query_Function<
+    export type converteer_oude_dataset = p_.Query_Function<
         queries_common.queries.process_file_data,
         {
             'tab size': number,
