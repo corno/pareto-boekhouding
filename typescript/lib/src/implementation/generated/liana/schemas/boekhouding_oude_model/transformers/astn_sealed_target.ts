@@ -1,7 +1,11 @@
 
-import * as _p from 'pareto-core/dist/assign'
+import * as p_ from 'pareto-core/dist/implementation/transformer'
+import * as p_di from 'pareto-core/dist/interface/data'
+const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
+const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => $.__decide(assign, otherwise)
+const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
-import _p_change_context from 'pareto-core/dist/implementation/specials/change_context'
+import p_change_context from 'pareto-core/dist/implementation/specials/change_context'
 
 import _p_text_from_list from 'pareto-core/dist/implementation/specials/text_from_list'
 
@@ -11,75 +15,75 @@ import * as t_out from "astn-core/dist/interface/generated/liana/schemas/sealed_
 
 import * as v_primitives_to_text from "liana-core/dist/implementation/manual/transformers/primitives/text"
 
-export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.dictionary(
+export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.dictionary(
     {
-        "Bankrekeningen": _p_change_context(
+        "Bankrekeningen": p_change_context(
             $['Bankrekeningen'],
-            ($) => ['dictionary', _p.dictionary.from.dictionary(
+            ($) => ['dictionary', p_.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
         ),
-        "Beheer": _p_change_context(
+        "Beheer": p_change_context(
             $['Beheer'],
-            ($) => ['group', ['verbose', _p.literal.dictionary(
+            ($) => ['group', ['verbose', p_.literal.dictionary(
                 {
-                    "Balans": _p_change_context(
+                    "Balans": p_change_context(
                         $['Balans'],
-                        ($) => ['group', ['verbose', _p.literal.dictionary(
+                        ($) => ['group', ['verbose', p_.literal.dictionary(
                             {
-                                "Grootboekrekeningen": _p_change_context(
+                                "Grootboekrekeningen": p_change_context(
                                     $['Grootboekrekeningen'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Hoofdcategorie": _p_change_context(
+                                                "Hoofdcategorie": p_change_context(
                                                     $['Hoofdcategorie'],
                                                     ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
                                                     }],
                                                 ),
-                                                "Subcategorie": _p_change_context(
+                                                "Subcategorie": p_change_context(
                                                     $['Subcategorie'],
                                                     ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
                                                     }],
                                                 ),
-                                                "Zijde": _p_change_context(
+                                                "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', _p.decide.state(
+                                                    ($) => ['state', p_decide_state(
                                                         $,
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Activa',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 case 'Passiva':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Passiva',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 default:
-                                                                    return _p.au(
+                                                                    return p_.au(
                                                                         $[0],
                                                                     )
                                                             }
@@ -90,62 +94,62 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                         )]],
                                     )],
                                 ),
-                                "Hoofdcategorieen": _p_change_context(
+                                "Hoofdcategorieen": p_change_context(
                                     $['Hoofdcategorieen'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Zijde": _p_change_context(
+                                                "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', _p.decide.state(
+                                                    ($) => ['state', p_decide_state(
                                                         $,
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Activa',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 case 'Passiva':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Passiva',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 default:
-                                                                    return _p.au(
+                                                                    return p_.au(
                                                                         $[0],
                                                                     )
                                                             }
                                                         },
                                                     )],
                                                 ),
-                                                "Subcategorieen": _p_change_context(
+                                                "Subcategorieen": p_change_context(
                                                     $['Subcategorieen'],
-                                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                                    ($) => ['dictionary', p_.from.dictionary(
                                                         $,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                             {
-                                                                "Hoofdcategorie fiscus": _p_change_context(
+                                                                "Hoofdcategorie fiscus": p_change_context(
                                                                     $['Hoofdcategorie fiscus'],
                                                                     ($) => ['text', {
                                                                         'delimiter': ['quote', null],
                                                                         'value': $,
                                                                     }],
                                                                 ),
-                                                                "Subcategorie fiscus": _p_change_context(
+                                                                "Subcategorie fiscus": p_change_context(
                                                                     $['Subcategorie fiscus'],
                                                                     ($) => ['text', {
                                                                         'delimiter': ['quote', null],
@@ -160,53 +164,53 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                         )]],
                                     )],
                                 ),
-                                "Hoofdcategorieen fiscus": _p_change_context(
+                                "Hoofdcategorieen fiscus": p_change_context(
                                     $['Hoofdcategorieen fiscus'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Zijde": _p_change_context(
+                                                "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', _p.decide.state(
+                                                    ($) => ['state', p_decide_state(
                                                         $,
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Activa',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 case 'Passiva':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Passiva',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 default:
-                                                                    return _p.au(
+                                                                    return p_.au(
                                                                         $[0],
                                                                     )
                                                             }
                                                         },
                                                     )],
                                                 ),
-                                                "Subcategorieen": _p_change_context(
+                                                "Subcategorieen": p_change_context(
                                                     $['Subcategorieen'],
-                                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                                    ($) => ['dictionary', p_.from.dictionary(
                                                         $,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                             {},
                                                         )]],
                                                     )],
@@ -218,27 +222,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                             },
                         )]],
                     ),
-                    "BTW-categorieen": _p_change_context(
+                    "BTW-categorieen": p_change_context(
                         $['BTW-categorieen'],
-                        ($) => ['dictionary', _p.dictionary.from.dictionary(
+                        ($) => ['dictionary', p_.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                            ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                 {
-                                    "BTW-heffing": _p_change_context(
+                                    "BTW-heffing": p_change_context(
                                         $['BTW-heffing'],
-                                        ($) => ['state', _p.decide.state(
+                                        ($) => ['state', p_decide_state(
                                             $,
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
-                                                        return _p.ss(
+                                                        return p_.ss(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Ja',
-                                                                'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                'value': ['group', ['verbose', p_.literal.dictionary(
                                                                     {
-                                                                        "BTW-promillage": _p_change_context(
+                                                                        "BTW-promillage": p_change_context(
                                                                             $['BTW-promillage'],
                                                                             ($) => ['text', {
                                                                                 'delimiter': ['none', null],
@@ -252,17 +256,17 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                             }),
                                                         )
                                                     case 'Nee':
-                                                        return _p.ss(
+                                                        return p_.ss(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
-                                                                'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                'value': ['group', ['verbose', p_.literal.dictionary(
                                                                     {},
                                                                 )]],
                                                             }),
                                                         )
                                                     default:
-                                                        return _p.au(
+                                                        return p_.au(
                                                             $[0],
                                                         )
                                                 }
@@ -273,21 +277,21 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                             )]],
                         )],
                     ),
-                    "Gebruikers": _p_change_context(
+                    "Gebruikers": p_change_context(
                         $['Gebruikers'],
-                        ($) => ['dictionary', _p.dictionary.from.dictionary(
+                        ($) => ['dictionary', p_.from.dictionary(
                             $,
                         ).map(
-                            ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                            ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                 {
-                                    "Volledige naam": _p_change_context(
+                                    "Volledige naam": p_change_context(
                                         $['Volledige naam'],
                                         ($) => ['text', {
                                             'delimiter': ['quote', null],
                                             'value': $,
                                         }],
                                     ),
-                                    "Wachtwoord": _p_change_context(
+                                    "Wachtwoord": p_change_context(
                                         $['Wachtwoord'],
                                         ($) => ['text', {
                                             'delimiter': ['quote', null],
@@ -298,7 +302,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                             )]],
                         )],
                     ),
-                    "Huidige datum": _p_change_context(
+                    "Huidige datum": p_change_context(
                         $['Huidige datum'],
                         ($) => ['text', {
                             'delimiter': ['none', null],
@@ -307,18 +311,18 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                             ),
                         }],
                     ),
-                    "Resultaat": _p_change_context(
+                    "Resultaat": p_change_context(
                         $['Resultaat'],
-                        ($) => ['group', ['verbose', _p.literal.dictionary(
+                        ($) => ['group', ['verbose', p_.literal.dictionary(
                             {
-                                "Correctietypes vennootschapsbelasting": _p_change_context(
+                                "Correctietypes vennootschapsbelasting": p_change_context(
                                     $['Correctietypes vennootschapsbelasting'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Te corrigeren promillage": _p_change_context(
+                                                "Te corrigeren promillage": p_change_context(
                                                     $['Te corrigeren promillage'],
                                                     ($) => ['text', {
                                                         'delimiter': ['none', null],
@@ -331,54 +335,54 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                         )]],
                                     )],
                                 ),
-                                "Grootboekrekeningen": _p_change_context(
+                                "Grootboekrekeningen": p_change_context(
                                     $['Grootboekrekeningen'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Hoofdcategorie": _p_change_context(
+                                                "Hoofdcategorie": p_change_context(
                                                     $['Hoofdcategorie'],
                                                     ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
                                                     }],
                                                 ),
-                                                "Subcategorie": _p_change_context(
+                                                "Subcategorie": p_change_context(
                                                     $['Subcategorie'],
                                                     ($) => ['text', {
                                                         'delimiter': ['quote', null],
                                                         'value': $,
                                                     }],
                                                 ),
-                                                "Zijde": _p_change_context(
+                                                "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', _p.decide.state(
+                                                    ($) => ['state', p_decide_state(
                                                         $,
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Kosten',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {
-                                                                                    "Correctie op vennootschapsbelasting": _p_change_context(
+                                                                                    "Correctie op vennootschapsbelasting": p_change_context(
                                                                                         $['Correctie op vennootschapsbelasting'],
-                                                                                        ($) => ['state', _p.decide.state(
+                                                                                        ($) => ['state', p_decide_state(
                                                                                             $,
                                                                                             ($): t_out.Value.state => {
                                                                                                 switch ($[0]) {
                                                                                                     case 'Ja':
-                                                                                                        return _p.ss(
+                                                                                                        return p_.ss(
                                                                                                             $,
                                                                                                             ($) => ({
                                                                                                                 'option': 'Ja',
-                                                                                                                'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                     {
-                                                                                                                        "Correctietype": _p_change_context(
+                                                                                                                        "Correctietype": p_change_context(
                                                                                                                             $['Correctietype'],
                                                                                                                             ($) => ['text', {
                                                                                                                                 'delimiter': ['quote', null],
@@ -390,17 +394,17 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                             }),
                                                                                                         )
                                                                                                     case 'Nee':
-                                                                                                        return _p.ss(
+                                                                                                        return p_.ss(
                                                                                                             $,
                                                                                                             ($) => ({
                                                                                                                 'option': 'Nee',
-                                                                                                                'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                     {},
                                                                                                                 )]],
                                                                                                             }),
                                                                                                         )
                                                                                                     default:
-                                                                                                        return _p.au(
+                                                                                                        return p_.au(
                                                                                                             $[0],
                                                                                                         )
                                                                                                 }
@@ -412,17 +416,17 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 default:
-                                                                    return _p.au(
+                                                                    return p_.au(
                                                                         $[0],
                                                                     )
                                                             }
@@ -433,62 +437,62 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                         )]],
                                     )],
                                 ),
-                                "Hoofdcategorieen": _p_change_context(
+                                "Hoofdcategorieen": p_change_context(
                                     $['Hoofdcategorieen'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Zijde": _p_change_context(
+                                                "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', _p.decide.state(
+                                                    ($) => ['state', p_decide_state(
                                                         $,
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Kosten',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 default:
-                                                                    return _p.au(
+                                                                    return p_.au(
                                                                         $[0],
                                                                     )
                                                             }
                                                         },
                                                     )],
                                                 ),
-                                                "Subcategorieen": _p_change_context(
+                                                "Subcategorieen": p_change_context(
                                                     $['Subcategorieen'],
-                                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                                    ($) => ['dictionary', p_.from.dictionary(
                                                         $,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                             {
-                                                                "Hoofdcategorie fiscus": _p_change_context(
+                                                                "Hoofdcategorie fiscus": p_change_context(
                                                                     $['Hoofdcategorie fiscus'],
                                                                     ($) => ['text', {
                                                                         'delimiter': ['quote', null],
                                                                         'value': $,
                                                                     }],
                                                                 ),
-                                                                "Subcategorie fiscus": _p_change_context(
+                                                                "Subcategorie fiscus": p_change_context(
                                                                     $['Subcategorie fiscus'],
                                                                     ($) => ['text', {
                                                                         'delimiter': ['quote', null],
@@ -503,53 +507,53 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                         )]],
                                     )],
                                 ),
-                                "Hoofdcategorieen fiscus": _p_change_context(
+                                "Hoofdcategorieen fiscus": p_change_context(
                                     $['Hoofdcategorieen fiscus'],
-                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                    ($) => ['dictionary', p_.from.dictionary(
                                         $,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                             {
-                                                "Zijde": _p_change_context(
+                                                "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', _p.decide.state(
+                                                    ($) => ['state', p_decide_state(
                                                         $,
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Kosten',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return _p.ss(
+                                                                    return p_.ss(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
-                                                                            'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                            'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                 {},
                                                                             )]],
                                                                         }),
                                                                     )
                                                                 default:
-                                                                    return _p.au(
+                                                                    return p_.au(
                                                                         $[0],
                                                                     )
                                                             }
                                                         },
                                                     )],
                                                 ),
-                                                "Subcategorieen": _p_change_context(
+                                                "Subcategorieen": p_change_context(
                                                     $['Subcategorieen'],
-                                                    ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                                    ($) => ['dictionary', p_.from.dictionary(
                                                         $,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                             {},
                                                         )]],
                                                     )],
@@ -564,102 +568,102 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                 },
             )]],
         ),
-        "Informele rekeningen": _p_change_context(
+        "Informele rekeningen": p_change_context(
             $['Informele rekeningen'],
-            ($) => ['dictionary', _p.dictionary.from.dictionary(
+            ($) => ['dictionary', p_.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
         ),
-        "Jaren": _p_change_context(
+        "Jaren": p_change_context(
             $['Jaren'],
-            ($) => ['dictionary', _p.dictionary.from.dictionary(
+            ($) => ['dictionary', p_.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                     {
-                        "Afgesloten": _p_change_context(
+                        "Afgesloten": p_change_context(
                             $['Afgesloten'],
-                            ($) => ['state', _p.decide.state(
+                            ($) => ['state', p_decide_state(
                                 $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja':
-                                            return _p.ss(
+                                            return p_.ss(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
-                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                         {},
                                                     )]],
                                                 }),
                                             )
                                         case 'Nee':
-                                            return _p.ss(
+                                            return p_.ss(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nee',
-                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                         {},
                                                     )]],
                                                 }),
                                             )
                                         default:
-                                            return _p.au(
+                                            return p_.au(
                                                 $[0],
                                             )
                                     }
                                 },
                             )],
                         ),
-                        "Balans grootboekrekeningen": _p_change_context(
+                        "Balans grootboekrekeningen": p_change_context(
                             $['Balans grootboekrekeningen'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Type": _p_change_context(
+                                        "Type": p_change_context(
                                             $['Type'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bankrekening':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bankrekening',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Overig':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Overig',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Informele rekening':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Informele rekening',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
@@ -670,14 +674,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Bankrekeningen": _p_change_context(
+                        "Bankrekeningen": p_change_context(
                             $['Bankrekeningen'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Beginsaldo": _p_change_context(
+                                        "Beginsaldo": p_change_context(
                                             $['Beginsaldo'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
@@ -686,21 +690,21 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 ),
                                             }],
                                         ),
-                                        "Grootboekrekening": _p_change_context(
+                                        "Grootboekrekening": p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        "Mutaties": _p_change_context(
+                                        "Mutaties": p_change_context(
                                             $['Mutaties'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Bedrag": _p_change_context(
+                                                        "Bedrag": p_change_context(
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -709,7 +713,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 ),
                                                             }],
                                                         ),
-                                                        "Datum": _p_change_context(
+                                                        "Datum": p_change_context(
                                                             $['Datum'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -718,57 +722,57 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 ),
                                                             }],
                                                         ),
-                                                        "Omschrijving": _p_change_context(
+                                                        "Omschrijving": p_change_context(
                                                             $['Omschrijving'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
                                                             }],
                                                         ),
-                                                        "Status": _p_change_context(
+                                                        "Status": p_change_context(
                                                             $['Status'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Nog te verwerken':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Nog te verwerken',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {},
                                                                                     )]],
                                                                                 }),
                                                                             )
                                                                         case 'Verwerkt':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Verwerkt',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Afhandeling": _p_change_context(
+                                                                                            "Afhandeling": p_change_context(
                                                                                                 $['Afhandeling'],
-                                                                                                ($) => ['state', _p.decide.state(
+                                                                                                ($) => ['state', p_decide_state(
                                                                                                     $,
                                                                                                     ($): t_out.Value.state => {
                                                                                                         switch ($[0]) {
                                                                                                             case 'Inkoop':
-                                                                                                                return _p.ss(
+                                                                                                                return p_.ss(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Inkoop',
-                                                                                                                        'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                        'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                             {
-                                                                                                                                "Jaar": _p_change_context(
+                                                                                                                                "Jaar": p_change_context(
                                                                                                                                     $['Jaar'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
                                                                                                                                     }],
                                                                                                                                 ),
-                                                                                                                                "Inkoop": _p_change_context(
+                                                                                                                                "Inkoop": p_change_context(
                                                                                                                                     $['Inkoop'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
@@ -780,13 +784,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'Verrekenpost':
-                                                                                                                return _p.ss(
+                                                                                                                return p_.ss(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Verrekenpost',
-                                                                                                                        'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                        'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                             {
-                                                                                                                                "Verrekenpost": _p_change_context(
+                                                                                                                                "Verrekenpost": p_change_context(
                                                                                                                                     $['Verrekenpost'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
@@ -798,20 +802,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'BTW-periode':
-                                                                                                                return _p.ss(
+                                                                                                                return p_.ss(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'BTW-periode',
-                                                                                                                        'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                        'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                             {
-                                                                                                                                "Jaar": _p_change_context(
+                                                                                                                                "Jaar": p_change_context(
                                                                                                                                     $['Jaar'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
                                                                                                                                     }],
                                                                                                                                 ),
-                                                                                                                                "BTW-periode": _p_change_context(
+                                                                                                                                "BTW-periode": p_change_context(
                                                                                                                                     $['BTW-periode'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
@@ -823,20 +827,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'Verkoop':
-                                                                                                                return _p.ss(
+                                                                                                                return p_.ss(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Verkoop',
-                                                                                                                        'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                        'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                             {
-                                                                                                                                "Jaar": _p_change_context(
+                                                                                                                                "Jaar": p_change_context(
                                                                                                                                     $['Jaar'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
                                                                                                                                         'value': $,
                                                                                                                                     }],
                                                                                                                                 ),
-                                                                                                                                "Verkoop": _p_change_context(
+                                                                                                                                "Verkoop": p_change_context(
                                                                                                                                     $['Verkoop'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
@@ -848,13 +852,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'Informele rekening':
-                                                                                                                return _p.ss(
+                                                                                                                return p_.ss(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Informele rekening',
-                                                                                                                        'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                                        'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                                             {
-                                                                                                                                "Informele rekening": _p_change_context(
+                                                                                                                                "Informele rekening": p_change_context(
                                                                                                                                     $['Informele rekening'],
                                                                                                                                     ($) => ['text', {
                                                                                                                                         'delimiter': ['quote', null],
@@ -866,7 +870,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             default:
-                                                                                                                return _p.au(
+                                                                                                                return p_.au(
                                                                                                                     $[0],
                                                                                                                 )
                                                                                                         }
@@ -878,7 +882,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -889,37 +893,37 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 )]],
                                             )],
                                         ),
-                                        "Nieuw": _p_change_context(
+                                        "Nieuw": p_change_context(
                                             $['Nieuw'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ja',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Nee':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nee',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Jaar": _p_change_context(
+                                                                            "Jaar": p_change_context(
                                                                                 $['Jaar'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
                                                                                 }],
                                                                             ),
-                                                                            "Rekening": _p_change_context(
+                                                                            "Rekening": p_change_context(
                                                                                 $['Rekening'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -931,7 +935,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
@@ -942,7 +946,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Beginsaldo nog aan te geven BTW": _p_change_context(
+                        "Beginsaldo nog aan te geven BTW": p_change_context(
                             $['Beginsaldo nog aan te geven BTW'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
@@ -951,7 +955,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 ),
                             }],
                         ),
-                        "Beginsaldo winstreserve": _p_change_context(
+                        "Beginsaldo winstreserve": p_change_context(
                             $['Beginsaldo winstreserve'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
@@ -960,11 +964,11 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 ),
                             }],
                         ),
-                        "BTW periode saldo": _p_change_context(
+                        "BTW periode saldo": p_change_context(
                             $['BTW periode saldo'],
-                            ($) => ['group', ['verbose', _p.literal.dictionary(
+                            ($) => ['group', ['verbose', p_.literal.dictionary(
                                 {
-                                    "Grootboekrekening": _p_change_context(
+                                    "Grootboekrekening": p_change_context(
                                         $['Grootboekrekening'],
                                         ($) => ['text', {
                                             'delimiter': ['quote', null],
@@ -974,31 +978,31 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 },
                             )]],
                         ),
-                        "BTW periodes": _p_change_context(
+                        "BTW periodes": p_change_context(
                             $['BTW periodes'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "1. BTW-categorieen": _p_change_context(
+                                        "1. BTW-categorieen": p_change_context(
                                             $['1. BTW-categorieen'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {},
                                                 )]],
                                             )],
                                         ),
-                                        "Documenten": _p_change_context(
+                                        "Documenten": p_change_context(
                                             $['Documenten'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Bestand": _p_change_context(
+                                                        "Bestand": p_change_context(
                                                             $['Bestand'],
                                                             ($) => Bestandsnaam(
                                                                 $,
@@ -1008,27 +1012,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 )]],
                                             )],
                                         ),
-                                        "Omschrijving": _p_change_context(
+                                        "Omschrijving": p_change_context(
                                             $['Omschrijving'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        "Status": _p_change_context(
+                                        "Status": p_change_context(
                                             $['Status'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Aangegeven':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Aangegeven',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Afronding": _p_change_context(
+                                                                            "Afronding": p_change_context(
                                                                                 $['Afronding'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
@@ -1037,7 +1041,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                     ),
                                                                                 }],
                                                                             ),
-                                                                            "Bedrag": _p_change_context(
+                                                                            "Bedrag": p_change_context(
                                                                                 $['Bedrag'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
@@ -1046,7 +1050,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                     ),
                                                                                 }],
                                                                             ),
-                                                                            "Datum": _p_change_context(
+                                                                            "Datum": p_change_context(
                                                                                 $['Datum'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
@@ -1060,17 +1064,17 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Openstaand':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Openstaand',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
@@ -1081,30 +1085,30 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Eerste boekjaar": _p_change_context(
+                        "Eerste boekjaar": p_change_context(
                             $['Eerste boekjaar'],
-                            ($) => ['state', _p.decide.state(
+                            ($) => ['state', p_decide_state(
                                 $,
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja':
-                                            return _p.ss(
+                                            return p_.ss(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
-                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                         {},
                                                     )]],
                                                 }),
                                             )
                                         case 'Nee':
-                                            return _p.ss(
+                                            return p_.ss(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nee',
-                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                         {
-                                                            "Vorig boekjaar": _p_change_context(
+                                                            "Vorig boekjaar": p_change_context(
                                                                 $['Vorig boekjaar'],
                                                                 ($) => ['text', {
                                                                     'delimiter': ['quote', null],
@@ -1116,49 +1120,49 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 }),
                                             )
                                         default:
-                                            return _p.au(
+                                            return p_.au(
                                                 $[0],
                                             )
                                     }
                                 },
                             )],
                         ),
-                        "Grootboekrekening voor BTW afrondingen": _p_change_context(
+                        "Grootboekrekening voor BTW afrondingen": p_change_context(
                             $['Grootboekrekening voor BTW afrondingen'],
                             ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
                             }],
                         ),
-                        "Grootboekrekening voor nog aan te geven BTW": _p_change_context(
+                        "Grootboekrekening voor nog aan te geven BTW": p_change_context(
                             $['Grootboekrekening voor nog aan te geven BTW'],
                             ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
                             }],
                         ),
-                        "Grootboekrekening voor resultaat dit jaar": _p_change_context(
+                        "Grootboekrekening voor resultaat dit jaar": p_change_context(
                             $['Grootboekrekening voor resultaat dit jaar'],
                             ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
                             }],
                         ),
-                        "Grootboekrekening voor winstreserve": _p_change_context(
+                        "Grootboekrekening voor winstreserve": p_change_context(
                             $['Grootboekrekening voor winstreserve'],
                             ($) => ['text', {
                                 'delimiter': ['quote', null],
                                 'value': $,
                             }],
                         ),
-                        "Informele rekeningen": _p_change_context(
+                        "Informele rekeningen": p_change_context(
                             $['Informele rekeningen'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Beginsaldo": _p_change_context(
+                                        "Beginsaldo": p_change_context(
                                             $['Beginsaldo'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
@@ -1167,44 +1171,44 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 ),
                                             }],
                                         ),
-                                        "Grootboekrekening": _p_change_context(
+                                        "Grootboekrekening": p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        "Nieuw": _p_change_context(
+                                        "Nieuw": p_change_context(
                                             $['Nieuw'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ja',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Nee':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nee',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Jaar": _p_change_context(
+                                                                            "Jaar": p_change_context(
                                                                                 $['Jaar'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
                                                                                 }],
                                                                             ),
-                                                                            "Rekening": _p_change_context(
+                                                                            "Rekening": p_change_context(
                                                                                 $['Rekening'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1216,7 +1220,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
@@ -1227,27 +1231,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Inkopen": _p_change_context(
+                        "Inkopen": p_change_context(
                             $['Inkopen'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Afhandeling": _p_change_context(
+                                        "Afhandeling": p_change_context(
                                             $['Afhandeling'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Nog te betalen':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nog te betalen',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Betalingstermijn": _p_change_context(
+                                                                            "Betalingstermijn": p_change_context(
                                                                                 $['Betalingstermijn'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['none', null],
@@ -1261,23 +1265,23 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Mutaties':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Rekening courant':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Rekening courant',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Rekening courant": _p_change_context(
+                                                                            "Rekening courant": p_change_context(
                                                                                 $['Rekening courant'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1289,27 +1293,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
                                                 },
                                             )],
                                         ),
-                                        "BTW-regime": _p_change_context(
+                                        "BTW-regime": p_change_context(
                                             $['BTW-regime'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Binnenland: heffing verlegd':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "BTW-periode": _p_change_context(
+                                                                            "BTW-periode": p_change_context(
                                                                                 $['BTW-periode'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1321,13 +1325,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Geen BTW van toepassing':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Geen BTW van toepassing',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "BTW-periode": _p_change_context(
+                                                                            "BTW-periode": p_change_context(
                                                                                 $['BTW-periode'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1339,13 +1343,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Import van buiten de EU':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Import van buiten de EU',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "BTW-periode": _p_change_context(
+                                                                            "BTW-periode": p_change_context(
                                                                                 $['BTW-periode'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1357,13 +1361,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Intracommunautair':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "BTW-periode": _p_change_context(
+                                                                            "BTW-periode": p_change_context(
                                                                                 $['BTW-periode'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1375,13 +1379,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Standaard':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Standaard',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "BTW-periode": _p_change_context(
+                                                                            "BTW-periode": p_change_context(
                                                                                 $['BTW-periode'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1393,27 +1397,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
                                                 },
                                             )],
                                         ),
-                                        "Brondocument": _p_change_context(
+                                        "Brondocument": p_change_context(
                                             $['Brondocument'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Toegevoegd':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Toegevoegd',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Document": _p_change_context(
+                                                                            "Document": p_change_context(
                                                                                 $['Document'],
                                                                                 ($) => Bestandsnaam(
                                                                                     $,
@@ -1424,44 +1428,44 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Niet van toepassing':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Niet van toepassing',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Ontbreekt':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ontbreekt',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Nog toevoegen':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nog toevoegen',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
                                                 },
                                             )],
                                         ),
-                                        "Datum": _p_change_context(
+                                        "Datum": p_change_context(
                                             $['Datum'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
@@ -1470,27 +1474,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 ),
                                             }],
                                         ),
-                                        "Regels": _p_change_context(
+                                        "Regels": p_change_context(
                                             $['Regels'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Bedrag": _p_change_context(
+                                                        "Bedrag": p_change_context(
                                                             $['Bedrag'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Bekend':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Bekend',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "BTW-bedrag": _p_change_context(
+                                                                                            "BTW-bedrag": p_change_context(
                                                                                                 $['BTW-bedrag'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['none', null],
@@ -1499,7 +1503,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                     ),
                                                                                                 }],
                                                                                             ),
-                                                                                            "Bedrag inclusief geheven BTW": _p_change_context(
+                                                                                            "Bedrag inclusief geheven BTW": p_change_context(
                                                                                                 $['Bedrag inclusief geheven BTW'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['none', null],
@@ -1513,34 +1517,34 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
                                                                 },
                                                             )],
                                                         ),
-                                                        "Omschrijving": _p_change_context(
+                                                        "Omschrijving": p_change_context(
                                                             $['Omschrijving'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
                                                             }],
                                                         ),
-                                                        "Type": _p_change_context(
+                                                        "Type": p_change_context(
                                                             $['Type'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Balans':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Balans',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Balans item": _p_change_context(
+                                                                                            "Balans item": p_change_context(
                                                                                                 $['Balans item'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -1552,13 +1556,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Kosten':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Kosten',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Grootboekrekening": _p_change_context(
+                                                                                            "Grootboekrekening": p_change_context(
                                                                                                 $['Grootboekrekening'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -1570,7 +1574,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -1581,37 +1585,37 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 )]],
                                             )],
                                         ),
-                                        "Type": _p_change_context(
+                                        "Type": p_change_context(
                                             $['Type'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bonnetje':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bonnetje',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Inkoop (met crediteur)':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Inkoop (met crediteur)',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Crediteur": _p_change_context(
+                                                                            "Crediteur": p_change_context(
                                                                                 $['Crediteur'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
                                                                                 }],
                                                                             ),
-                                                                            "Factuurnummer": _p_change_context(
+                                                                            "Factuurnummer": p_change_context(
                                                                                 $['Factuurnummer'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1623,13 +1627,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Loonheffing':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Loonheffing',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Ronde": _p_change_context(
+                                                                            "Ronde": p_change_context(
                                                                                 $['Ronde'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1641,20 +1645,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Salaris':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Salaris',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Ronde": _p_change_context(
+                                                                            "Ronde": p_change_context(
                                                                                 $['Ronde'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
                                                                                 }],
                                                                             ),
-                                                                            "Medewerker": _p_change_context(
+                                                                            "Medewerker": p_change_context(
                                                                                 $['Medewerker'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1666,7 +1670,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
@@ -1677,11 +1681,11 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Inkoop saldo": _p_change_context(
+                        "Inkoop saldo": p_change_context(
                             $['Inkoop saldo'],
-                            ($) => ['group', ['verbose', _p.literal.dictionary(
+                            ($) => ['group', ['verbose', p_.literal.dictionary(
                                 {
-                                    "Grootboekrekening": _p_change_context(
+                                    "Grootboekrekening": p_change_context(
                                         $['Grootboekrekening'],
                                         ($) => ['text', {
                                             'delimiter': ['quote', null],
@@ -1691,14 +1695,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 },
                             )]],
                         ),
-                        "Overige balans items": _p_change_context(
+                        "Overige balans items": p_change_context(
                             $['Overige balans items'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Beginsaldo": _p_change_context(
+                                        "Beginsaldo": p_change_context(
                                             $['Beginsaldo'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
@@ -1707,21 +1711,21 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 ),
                                             }],
                                         ),
-                                        "Grootboekrekening": _p_change_context(
+                                        "Grootboekrekening": p_change_context(
                                             $['Grootboekrekening'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        "Memoriaal boekingen": _p_change_context(
+                                        "Memoriaal boekingen": p_change_context(
                                             $['Memoriaal boekingen'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Bedrag": _p_change_context(
+                                                        "Bedrag": p_change_context(
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -1730,7 +1734,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 ),
                                                             }],
                                                         ),
-                                                        "Datum": _p_change_context(
+                                                        "Datum": p_change_context(
                                                             $['Datum'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -1739,14 +1743,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 ),
                                                             }],
                                                         ),
-                                                        "Grootboekrekening": _p_change_context(
+                                                        "Grootboekrekening": p_change_context(
                                                             $['Grootboekrekening'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
                                                             }],
                                                         ),
-                                                        "Omschrijving": _p_change_context(
+                                                        "Omschrijving": p_change_context(
                                                             $['Omschrijving'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['quote', null],
@@ -1757,37 +1761,37 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 )]],
                                             )],
                                         ),
-                                        "Nieuw": _p_change_context(
+                                        "Nieuw": p_change_context(
                                             $['Nieuw'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ja',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Nee':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nee',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Jaar": _p_change_context(
+                                                                            "Jaar": p_change_context(
                                                                                 $['Jaar'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
                                                                                 }],
                                                                             ),
-                                                                            "Balans item": _p_change_context(
+                                                                            "Balans item": p_change_context(
                                                                                 $['Balans item'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1799,7 +1803,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
@@ -1810,27 +1814,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Resultaat grootboekrekeningen": _p_change_context(
+                        "Resultaat grootboekrekeningen": p_change_context(
                             $['Resultaat grootboekrekeningen'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {},
                                 )]],
                             )],
                         ),
-                        "Salarisrondes": _p_change_context(
+                        "Salarisrondes": p_change_context(
                             $['Salarisrondes'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {},
                                 )]],
                             )],
                         ),
-                        "Startdatum boekjaar": _p_change_context(
+                        "Startdatum boekjaar": p_change_context(
                             $['Startdatum boekjaar'],
                             ($) => ['text', {
                                 'delimiter': ['none', null],
@@ -1839,11 +1843,11 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 ),
                             }],
                         ),
-                        "Verkoop saldo": _p_change_context(
+                        "Verkoop saldo": p_change_context(
                             $['Verkoop saldo'],
-                            ($) => ['group', ['verbose', _p.literal.dictionary(
+                            ($) => ['group', ['verbose', p_.literal.dictionary(
                                 {
-                                    "Grootboekrekening": _p_change_context(
+                                    "Grootboekrekening": p_change_context(
                                         $['Grootboekrekening'],
                                         ($) => ['text', {
                                             'delimiter': ['quote', null],
@@ -1853,37 +1857,37 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 },
                             )]],
                         ),
-                        "Verkopen": _p_change_context(
+                        "Verkopen": p_change_context(
                             $['Verkopen'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Afhandeling": _p_change_context(
+                                        "Afhandeling": p_change_context(
                                             $['Afhandeling'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Mutaties':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {},
                                                                     )]],
                                                                 }),
                                                             )
                                                         case 'Rekening courant':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Rekening courant',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Rekening courant": _p_change_context(
+                                                                            "Rekening courant": p_change_context(
                                                                                 $['Rekening courant'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1895,14 +1899,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
                                                 },
                                             )],
                                         ),
-                                        "Betalingstermijn": _p_change_context(
+                                        "Betalingstermijn": p_change_context(
                                             $['Betalingstermijn'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
@@ -1911,27 +1915,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 ),
                                             }],
                                         ),
-                                        "BTW-periode": _p_change_context(
+                                        "BTW-periode": p_change_context(
                                             $['BTW-periode'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        "Brondocument": _p_change_context(
+                                        "Brondocument": p_change_context(
                                             $['Brondocument'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Toegevoegd':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Toegevoegd',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Document": _p_change_context(
+                                                                            "Document": p_change_context(
                                                                                 $['Document'],
                                                                                 ($) => Bestandsnaam(
                                                                                     $,
@@ -1942,34 +1946,34 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
                                                 },
                                             )],
                                         ),
-                                        "Contracttype": _p_change_context(
+                                        "Contracttype": p_change_context(
                                             $['Contracttype'],
-                                            ($) => ['state', _p.decide.state(
+                                            ($) => ['state', p_decide_state(
                                                 $,
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Project':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Project',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Project": _p_change_context(
+                                                                            "Project": p_change_context(
                                                                                 $['Project'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
                                                                                     'value': $,
                                                                                 }],
                                                                             ),
-                                                                            "Offerte": _p_change_context(
+                                                                            "Offerte": p_change_context(
                                                                                 $['Offerte'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1981,13 +1985,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         case 'Licentieovereenkomst':
-                                                            return _p.ss(
+                                                            return p_.ss(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
-                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                         {
-                                                                            "Overeenkomst": _p_change_context(
+                                                                            "Overeenkomst": p_change_context(
                                                                                 $['Overeenkomst'],
                                                                                 ($) => ['text', {
                                                                                     'delimiter': ['quote', null],
@@ -1999,14 +2003,14 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 }),
                                                             )
                                                         default:
-                                                            return _p.au(
+                                                            return p_.au(
                                                                 $[0],
                                                             )
                                                     }
                                                 },
                                             )],
                                         ),
-                                        "Datum": _p_change_context(
+                                        "Datum": p_change_context(
                                             $['Datum'],
                                             ($) => ['text', {
                                                 'delimiter': ['none', null],
@@ -2015,44 +2019,44 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                 ),
                                             }],
                                         ),
-                                        "Debiteur": _p_change_context(
+                                        "Debiteur": p_change_context(
                                             $['Debiteur'],
                                             ($) => ['text', {
                                                 'delimiter': ['quote', null],
                                                 'value': $,
                                             }],
                                         ),
-                                        "Regels": _p_change_context(
+                                        "Regels": p_change_context(
                                             $['Regels'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "BTW-regime": _p_change_context(
+                                                        "BTW-regime": p_change_context(
                                                             $['BTW-regime'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Intracommunautair':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Intracommunautair',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {},
                                                                                     )]],
                                                                                 }),
                                                                             )
                                                                         case 'Standaard':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Standaard',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "BTW-categorie": _p_change_context(
+                                                                                            "BTW-categorie": p_change_context(
                                                                                                 $['BTW-categorie'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2064,24 +2068,24 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Binnenland: heffing verlegd':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Binnenland: heffing verlegd',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {},
                                                                                     )]],
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
                                                                 },
                                                             )],
                                                         ),
-                                                        "Bedrag exclusief BTW": _p_change_context(
+                                                        "Bedrag exclusief BTW": p_change_context(
                                                             $['Bedrag exclusief BTW'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -2090,20 +2094,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 ),
                                                             }],
                                                         ),
-                                                        "Contracttype": _p_change_context(
+                                                        "Contracttype": p_change_context(
                                                             $['Contracttype'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Project':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Project',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Opbrengst": _p_change_context(
+                                                                                            "Opbrengst": p_change_context(
                                                                                                 $['Opbrengst'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2115,23 +2119,23 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Los':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Los',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {},
                                                                                     )]],
                                                                                 }),
                                                                             )
                                                                         case 'Licentieovereenkomst':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Licentieovereenkomst',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Periode": _p_change_context(
+                                                                                            "Periode": p_change_context(
                                                                                                 $['Periode'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2143,34 +2147,34 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
                                                                 },
                                                             )],
                                                         ),
-                                                        "Omschrijving": _p_change_context(
+                                                        "Omschrijving": p_change_context(
                                                             $['Omschrijving'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['quote', null],
                                                                 'value': $,
                                                             }],
                                                         ),
-                                                        "Type": _p_change_context(
+                                                        "Type": p_change_context(
                                                             $['Type'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Opbrengsten':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Opbrengsten',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Grootboekrekening": _p_change_context(
+                                                                                            "Grootboekrekening": p_change_context(
                                                                                                 $['Grootboekrekening'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2182,13 +2186,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Balans':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Balans',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Balans item": _p_change_context(
+                                                                                            "Balans item": p_change_context(
                                                                                                 $['Balans item'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2200,7 +2204,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -2215,21 +2219,21 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Verrekenposten": _p_change_context(
+                        "Verrekenposten": p_change_context(
                             $['Verrekenposten'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Mutaties": _p_change_context(
+                                        "Mutaties": p_change_context(
                                             $['Mutaties'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Bedrag": _p_change_context(
+                                                        "Bedrag": p_change_context(
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -2238,27 +2242,27 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                 ),
                                                             }],
                                                         ),
-                                                        "Afhandeling": _p_change_context(
+                                                        "Afhandeling": p_change_context(
                                                             $['Afhandeling'],
-                                                            ($) => ['state', _p.decide.state(
+                                                            ($) => ['state', p_decide_state(
                                                                 $,
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Inkoop':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Inkoop',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Jaar": _p_change_context(
+                                                                                            "Jaar": p_change_context(
                                                                                                 $['Jaar'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
                                                                                                 }],
                                                                                             ),
-                                                                                            "Inkoop": _p_change_context(
+                                                                                            "Inkoop": p_change_context(
                                                                                                 $['Inkoop'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2270,13 +2274,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Informele rekening':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Informele rekening',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Informele rekening": _p_change_context(
+                                                                                            "Informele rekening": p_change_context(
                                                                                                 $['Informele rekening'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2288,20 +2292,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Verkoop':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Verkoop',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Jaar": _p_change_context(
+                                                                                            "Jaar": p_change_context(
                                                                                                 $['Jaar'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
                                                                                                 }],
                                                                                             ),
-                                                                                            "Verkoop": _p_change_context(
+                                                                                            "Verkoop": p_change_context(
                                                                                                 $['Verkoop'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2313,20 +2317,20 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'BTW-periode':
-                                                                            return _p.ss(
+                                                                            return p_.ss(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'BTW-periode',
-                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                         {
-                                                                                            "Jaar": _p_change_context(
+                                                                                            "Jaar": p_change_context(
                                                                                                 $['Jaar'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
                                                                                                     'value': $,
                                                                                                 }],
                                                                                             ),
-                                                                                            "BTW-periode": _p_change_context(
+                                                                                            "BTW-periode": p_change_context(
                                                                                                 $['BTW-periode'],
                                                                                                 ($) => ['text', {
                                                                                                     'delimiter': ['quote', null],
@@ -2338,7 +2342,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                 }),
                                                                             )
                                                                         default:
-                                                                            return _p.au(
+                                                                            return p_.au(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -2357,28 +2361,28 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                 )]],
             )],
         ),
-        "Klanten": _p_change_context(
+        "Klanten": p_change_context(
             $['Klanten'],
-            ($) => ['dictionary', _p.dictionary.from.dictionary(
+            ($) => ['dictionary', p_.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                     {
-                        "Licentieovereenkomsten": _p_change_context(
+                        "Licentieovereenkomsten": p_change_context(
                             $['Licentieovereenkomsten'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Periodes": _p_change_context(
+                                        "Periodes": p_change_context(
                                             $['Periodes'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Bedrag": _p_change_context(
+                                                        "Bedrag": p_change_context(
                                                             $['Bedrag'],
                                                             ($) => ['text', {
                                                                 'delimiter': ['none', null],
@@ -2395,41 +2399,41 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                 )]],
                             )],
                         ),
-                        "Projecten": _p_change_context(
+                        "Projecten": p_change_context(
                             $['Projecten'],
-                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                            ($) => ['dictionary', p_.from.dictionary(
                                 $,
                             ).map(
-                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                     {
-                                        "Offertes": _p_change_context(
+                                        "Offertes": p_change_context(
                                             $['Offertes'],
-                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                            ($) => ['dictionary', p_.from.dictionary(
                                                 $,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                     {
-                                                        "Opbrengsten": _p_change_context(
+                                                        "Opbrengsten": p_change_context(
                                                             $['Opbrengsten'],
-                                                            ($) => ['dictionary', _p.dictionary.from.dictionary(
+                                                            ($) => ['dictionary', p_.from.dictionary(
                                                                 $,
                                                             ).map(
-                                                                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                                                                     {
-                                                                        "Type": _p_change_context(
+                                                                        "Type": p_change_context(
                                                                             $['Type'],
-                                                                            ($) => ['state', _p.decide.state(
+                                                                            ($) => ['state', p_decide_state(
                                                                                 $,
                                                                                 ($): t_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Project':
-                                                                                            return _p.ss(
+                                                                                            return p_.ss(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',
-                                                                                                    'value': ['group', ['verbose', _p.literal.dictionary(
+                                                                                                    'value': ['group', ['verbose', p_.literal.dictionary(
                                                                                                         {
-                                                                                                            "Bedrag": _p_change_context(
+                                                                                                            "Bedrag": p_change_context(
                                                                                                                 $['Bedrag'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
@@ -2438,7 +2442,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                                     ),
                                                                                                                 }],
                                                                                                             ),
-                                                                                                            "Betaaldatum": _p_change_context(
+                                                                                                            "Betaaldatum": p_change_context(
                                                                                                                 $['Betaaldatum'],
                                                                                                                 ($) => ['text', {
                                                                                                                     'delimiter': ['none', null],
@@ -2452,7 +2456,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                                                                                                 }),
                                                                                             )
                                                                                         default:
-                                                                                            return _p.au(
+                                                                                            return p_.au(
                                                                                                 $[0],
                                                                                             )
                                                                                     }
@@ -2475,22 +2479,22 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
                 )]],
             )],
         ),
-        "Leveranciers": _p_change_context(
+        "Leveranciers": p_change_context(
             $['Leveranciers'],
-            ($) => ['dictionary', _p.dictionary.from.dictionary(
+            ($) => ['dictionary', p_.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
         ),
-        "Medewerkers": _p_change_context(
+        "Medewerkers": p_change_context(
             $['Medewerkers'],
-            ($) => ['dictionary', _p.dictionary.from.dictionary(
+            ($) => ['dictionary', p_.from.dictionary(
                 $,
             ).map(
-                ($, id) => ['group', ['verbose', _p.literal.dictionary(
+                ($, id) => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
@@ -2498,16 +2502,16 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', _p.literal.d
     },
 )]]
 
-export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['group', ['verbose', _p.literal.dictionary(
+export const Bestandsnaam: t_signatures.Bestandsnaam = ($) => ['group', ['verbose', p_.literal.dictionary(
     {
-        "stem": _p_change_context(
+        "stem": p_change_context(
             $['stem'],
             ($) => ['text', {
                 'delimiter': ['quote', null],
                 'value': $,
             }],
         ),
-        "extension": _p_change_context(
+        "extension": p_change_context(
             $['extension'],
             ($) => ['text', {
                 'delimiter': ['quote', null],

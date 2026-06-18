@@ -33,8 +33,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
         }
 
         // Split into integer and fractional parts
-        const integerPart = p_.number.from.number.divide(
-            value,
+        const integerPart = p_.from.number(value).divide(
             divisor,
             ['towards zero', null],
             {
@@ -52,8 +51,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
                 while (temp > 0) {
                     const digit = temp % 10
                     $i['add item'](digit)
-                    temp = p_.number.from.number.divide(
-                        temp,
+                    temp = p_.from.number(temp).divide(
                         10,
                         ['towards zero', null],
                         {
@@ -65,7 +63,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
         })
 
         // Add integer part (reverse order) with thousand separators
-        const digitCount = integerDigits.__get_number_of_items()
+        const digitCount =  p_.from.list(integerDigits).amount_of_items()
         for (let j = digitCount - 1; j >= 0; j--) {
             $i['add item'](48 + integerDigits.__deprecated_get_possible_item_at(j).__decide(
                 ($) => $,
@@ -86,8 +84,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
             for (let i = 0; i < $p['number of fractional digits']; i++) {
                 const digit = temp % 10
                 $i['add item'](digit)
-                temp = p_.number.from.number.divide(
-                    temp,
+                temp = p_.from.number(temp).divide(
                     10,
                     ['towards zero', null],
                     {
@@ -98,7 +95,7 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
         })
 
         // Add fractional part (reverse order)
-        for (let j = fractionalDigits_list.__get_number_of_items() - 1; j >= 0; j--) {
+        for (let j  = p_.from.list(fractionalDigits_list).amount_of_items() - 1; j >= 0; j--) {
             $i['add item'](48 + fractionalDigits_list.__deprecated_get_possible_item_at(j).__decide(
                 ($) => $,
                 () => p_unreachable_code_path("index cannot be out of bounds")
