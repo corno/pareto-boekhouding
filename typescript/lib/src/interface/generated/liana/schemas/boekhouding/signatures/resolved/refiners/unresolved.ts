@@ -1,6 +1,7 @@
 
 import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
 import * as p_di from 'pareto-core/dist/interface/data'
+import * as p_ri from 'pareto-core/dist/interface/refiner'
 
 import * as i_generic from "liana-core/dist/interface/data/resolve"
 
@@ -132,7 +133,7 @@ export type Jaarbeheer_ = (
     context: Jaarbeheer_.I,
     abort: p_i.Abort<Jaarbeheer_.E>,
     lookups: {
-        readonly 'Jaren': p_di.static_lookup.Acyclic<Jaarbeheer_.L.Jaren>
+        readonly 'Jaren': p_ri.lookup.Acyclic<Jaarbeheer_.L.Jaren>
     },
     parameters: {
         readonly 'Eerste boekjaar': Jaarbeheer_.P.Eerste_boekjaar
@@ -168,7 +169,7 @@ export type Overige_balans_item_ = (
     context: Overige_balans_item_.I,
     abort: p_i.Abort<Overige_balans_item_.E>,
     lookups: {
-        readonly 'Jaren': p_di.static_lookup.Acyclic<Overige_balans_item_.L.Jaren>
+        readonly 'Jaren': p_ri.lookup.Acyclic<Overige_balans_item_.L.Jaren>
     },
     parameters: {
         readonly 'Eerste boekjaar': Overige_balans_item_.P.Eerste_boekjaar
@@ -289,7 +290,7 @@ export type Mutaties_ = (
     context: Mutaties_.I,
     abort: p_i.Abort<Mutaties_.E>,
     lookups: {
-        readonly 'Jaren': p_di.static_lookup.Acyclic<Mutaties_.L.Jaren>
+        readonly 'Jaren': p_ri.lookup.Acyclic<Mutaties_.L.Jaren>
     },
     parameters: {
         readonly 'Beheer': Mutaties_.P.Beheer
@@ -331,7 +332,7 @@ export type Rekening_Mutatie_ = (
     context: Rekening_Mutatie_.I,
     abort: p_i.Abort<Rekening_Mutatie_.E>,
     lookups: {
-        readonly 'Jaren': p_di.static_lookup.Acyclic<Rekening_Mutatie_.L.Jaren>
+        readonly 'Jaren': p_ri.lookup.Acyclic<Rekening_Mutatie_.L.Jaren>
     },
     parameters: {
         readonly 'Beheer': Rekening_Mutatie_.P.Beheer
@@ -411,7 +412,7 @@ export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
     abort: p_i.Abort<Eerste_boekjaar_.E>,
     lookups: {
-        readonly 'Jaren': p_di.static_lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
+        readonly 'Jaren': p_ri.lookup.Acyclic<Eerste_boekjaar_.L.Jaren>
     },
     parameters: symbol,
 ) => Eerste_boekjaar_.O

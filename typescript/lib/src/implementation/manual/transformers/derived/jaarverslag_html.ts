@@ -17,7 +17,9 @@ const integer_from_dictionary = <T extends p_di.Value>(
 ): number => p_.number.from.list(
     p_.list.from.dictionary(
         dict
-    ).convert(($) => $)
+    ).convert(
+        ($) => $
+    )
 ).sum(
     ($) => get_value($)
 )

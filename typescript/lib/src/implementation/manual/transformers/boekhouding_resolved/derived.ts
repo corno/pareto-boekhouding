@@ -16,7 +16,7 @@ export const Root: p_i.Transformer<d_in.Root, d_out.Root> = ($) => {
         'bron': $,
         'jaren': p_.dictionary.from.dictionary(
             $.Jaren
-        ).resolve_static(
+        ).resolve_refiner(
             ($, id, $al): d_out.Jaar => {
                 const bron_jaar = $
 
@@ -86,7 +86,7 @@ export const Root: p_i.Transformer<d_in.Root, d_out.Root> = ($) => {
                             'bron': $,
                             'btw bedrag': btw_bedrag,
                             'bedrag inclusief btw': $['Bedrag exclusief BTW'] + btw_bedrag,
-                            
+
                         }
                     })
                     const totaal_btw = p_.number.from.dictionary(
@@ -199,7 +199,9 @@ export const Root: p_i.Transformer<d_in.Root, d_out.Root> = ($) => {
                 ).sum(
                     ($) => $.totaal
                 )
-                const p_informele_rekeningen = p_.dictionary.from.dictionary(bron_jaar.Jaarbeheer.Balans['Informele rekeningen']).map(($): d_out.Informele_Rekening => {
+                const p_informele_rekeningen = p_.dictionary.from.dictionary(
+                    bron_jaar.Jaarbeheer.Balans['Informele rekeningen']
+                ).map(($): d_out.Informele_Rekening => {
                     const context = $
 
 
