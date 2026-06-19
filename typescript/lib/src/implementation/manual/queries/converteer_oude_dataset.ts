@@ -1,5 +1,5 @@
 import * as p_ from 'pareto-core/dist/implementation/query'
-import p_create_symbol from 'pareto-core/dist/implementation/specials/create_symbol'
+
 import p_super_query_result from 'pareto-core/dist/implementation/query/super_query_result'
 
 import * as interface_ from "../../../interface/queries"
@@ -61,8 +61,8 @@ export const $$: interface_.query_functions.converteer_oude_dataset = p_.query_f
                     $,
                 )
             ])),
-            p_create_symbol(),
-            p_create_symbol(),
+            p_.literal.nothing(),
+            p_.literal.nothing(),
         )
     )).transform(
         ($) => ({

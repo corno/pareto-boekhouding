@@ -1,7 +1,7 @@
 import * as p_ from 'pareto-core/dist/implementation/refiner'
 import * as p_temp from 'pareto-core/dist/implementation/transformer'
 import * as p_di from 'pareto-core/dist/interface/data'
-import p_change_context from 'pareto-core/dist/implementation/specials/change_context'
+import p_change_context from 'pareto-core/dist/implementation/refiner/specials/change_context'
 
 import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
 

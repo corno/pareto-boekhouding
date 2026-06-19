@@ -3,9 +3,9 @@ import * as p_i from 'pareto-core/dist/interface/transformer'
 
 //data types
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/text/data"
-import p_list_build_deprecated from 'pareto-core/dist/implementation/specials/list_build_deprecated'
-import p_text_from_list from 'pareto-core/dist/implementation/specials/text_from_list'
-import p_unreachable_code_path from 'pareto-core/dist/implementation/specials/unreachable_code_path'
+import p_list_build_deprecated from 'pareto-core/dist/implementation/refiner/specials/list_build_deprecated'
+import p_text_from_list from 'pareto-core/dist/implementation/transformer/specials/text_from_list'
+import p_unreachable_code_path from 'pareto-core/dist/implementation/transformer/specials/unreachable_code_path'
 
 
 export const fractional_decimal: p_i.Transformer_With_Parameter<

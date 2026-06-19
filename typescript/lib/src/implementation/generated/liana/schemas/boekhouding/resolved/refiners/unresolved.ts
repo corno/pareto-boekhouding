@@ -4,15 +4,13 @@ import * as p_di from 'pareto-core/dist/interface/data'
 const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => $.__decide(assign, otherwise)
 const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
-import _p_create_symbol from 'pareto-core/dist/implementation/specials/create_symbol'
 
-import p_change_context from 'pareto-core/dist/implementation/specials/change_context'
+
+import p_change_context from 'pareto-core/dist/implementation/refiner/specials/change_context'
 
 import * as _p_sl from 'pareto-core/dist/implementation/refiner/select_lookup'
 
-import _p_unreachable_code_path from 'pareto-core/dist/implementation/specials/unreachable_code_path'
-
-import p_variables from 'pareto-core/dist/implementation/specials/variables'
+import p_variables from 'pareto-core/dist/implementation/refiner/specials/variables'
 
 import * as t_out from "../../../../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 
@@ -44,12 +42,12 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
                                                     case 'Activa':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Activa', _p_create_symbol()],
+                                                            ($) => ['Activa', p_.literal.nothing()],
                                                         )
                                                     case 'Passiva':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Passiva', _p_create_symbol()],
+                                                            ($) => ['Passiva', p_.literal.nothing()],
                                                         )
                                                     default:
                                                         return p_.au(
@@ -69,7 +67,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen.D => p_change_context(
                                         $['l entry'],
-                                        ($) => _p_create_symbol(),
+                                        ($) => p_.literal.nothing(),
                                     ),
                                 ),
                             )
@@ -106,12 +104,12 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
                                                     case 'Kosten':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Kosten', _p_create_symbol()],
+                                                            ($) => ['Kosten', p_.literal.nothing()],
                                                         )
                                                     case 'Opbrengsten':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Opbrengsten', _p_create_symbol()],
+                                                            ($) => ['Opbrengsten', p_.literal.nothing()],
                                                         )
                                                     default:
                                                         return p_.au(
@@ -131,7 +129,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen.D => p_change_context(
                                         $['l entry'],
-                                        ($) => _p_create_symbol(),
+                                        ($) => p_.literal.nothing(),
                                     ),
                                 ),
                             )
@@ -200,12 +198,12 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                     case 'Activa':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Activa', _p_create_symbol()],
+                                                            ($) => ['Activa', p_.literal.nothing()],
                                                         )
                                                     case 'Passiva':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Passiva', _p_create_symbol()],
+                                                            ($) => ['Passiva', p_.literal.nothing()],
                                                         )
                                                     default:
                                                         return p_.au(
@@ -333,12 +331,12 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                     case 'Kosten':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Kosten', _p_create_symbol()],
+                                                            ($) => ['Kosten', p_.literal.nothing()],
                                                         )
                                                     case 'Opbrengsten':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Opbrengsten', _p_create_symbol()],
+                                                            ($) => ['Opbrengsten', p_.literal.nothing()],
                                                         )
                                                     default:
                                                         return p_.au(
@@ -492,7 +490,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
                                                     case 'Nee':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Nee', _p_create_symbol()],
+                                                            ($) => ['Nee', p_.literal.nothing()],
                                                         )
                                                     default:
                                                         return p_.au(
@@ -605,12 +603,12 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
                                                                 case 'Activa':
                                                                     return p_.ss(
                                                                         $,
-                                                                        ($) => ['Activa', _p_create_symbol()],
+                                                                        ($) => ['Activa', p_.literal.nothing()],
                                                                     )
                                                                 case 'Passiva':
                                                                     return p_.ss(
                                                                         $,
-                                                                        ($) => ['Passiva', _p_create_symbol()],
+                                                                        ($) => ['Passiva', p_.literal.nothing()],
                                                                     )
                                                                 default:
                                                                     return p_.au(
@@ -779,7 +777,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
                                                                                                         case 'Nee':
                                                                                                             return p_.ss(
                                                                                                                 $,
-                                                                                                                ($) => ['Nee', _p_create_symbol()],
+                                                                                                                ($) => ['Nee', p_.literal.nothing()],
                                                                                                             )
                                                                                                         default:
                                                                                                             return p_.au(
@@ -800,7 +798,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
                                                                 case 'Opbrengsten':
                                                                     return p_.ss(
                                                                         $,
-                                                                        ($) => ['Opbrengsten', _p_create_symbol()],
+                                                                        ($) => ['Opbrengsten', p_.literal.nothing()],
                                                                     )
                                                                 default:
                                                                     return p_.au(
@@ -842,7 +840,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
                         ).resolve(
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Bank.D => p_change_context(
                                 $['l entry'],
-                                ($) => _p_create_symbol(),
+                                ($) => p_.literal.nothing(),
                             ),
                         ),
                     )
@@ -854,7 +852,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
                         ).resolve(
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Informeel.D => p_change_context(
                                 $['l entry'],
-                                ($) => _p_create_symbol(),
+                                ($) => p_.literal.nothing(),
                             ),
                         ),
                     )
@@ -1059,7 +1057,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.Leveranciers.D => p_change_context(
                     $['l entry'],
-                    ($) => _p_create_symbol(),
+                    ($) => p_.literal.nothing(),
                 ),
             ),
         )
@@ -1071,7 +1069,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.Medewerkers.D => p_change_context(
                     $['l entry'],
-                    ($) => _p_create_symbol(),
+                    ($) => p_.literal.nothing(),
                 ),
             ),
         )
@@ -1226,7 +1224,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.Salarisrondes.D => p_change_context(
                                 $['l entry'],
-                                ($) => _p_create_symbol(),
+                                ($) => p_.literal.nothing(),
                             ),
                         ),
                     )
@@ -1248,7 +1246,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                                             ).resolve(
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen.D => p_change_context(
                                                     $['l entry'],
-                                                    ($) => _p_create_symbol(),
+                                                    ($) => p_.literal.nothing(),
                                                 ),
                                             ),
                                         )
@@ -1322,7 +1320,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                                                                 case 'Openstaand':
                                                                     return p_.ss(
                                                                         $,
-                                                                        ($) => ['Openstaand', _p_create_symbol()],
+                                                                        ($) => ['Openstaand', p_.literal.nothing()],
                                                                     )
                                                                 default:
                                                                     return p_.au(
@@ -1589,7 +1587,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                                                                 case 'Ja':
                                                                     return p_.ss(
                                                                         $,
-                                                                        ($) => ['Ja', _p_create_symbol()],
+                                                                        ($) => ['Ja', p_.literal.nothing()],
                                                                     )
                                                                 case 'Nee':
                                                                     return p_.ss(
@@ -1629,7 +1627,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
-                                                                                                _p_create_symbol(),
+                                                                                                p_.literal.nothing(),
                                                                                                 {
                                                                                                     'Jaarbeheer': var_constraint_Niet_Nieuw['Vorig boekjaar']['l entry']['Jaarbeheer'],
                                                                                                 },
@@ -1724,7 +1722,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                                                                 case 'Ja':
                                                                     return p_.ss(
                                                                         $,
-                                                                        ($) => ['Ja', _p_create_symbol()],
+                                                                        ($) => ['Ja', p_.literal.nothing()],
                                                                     )
                                                                 case 'Nee':
                                                                     return p_.ss(
@@ -1764,7 +1762,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                                                                                                 ($) => abort(
                                                                                                     $,
                                                                                                 ),
-                                                                                                _p_create_symbol(),
+                                                                                                p_.literal.nothing(),
                                                                                                 {
                                                                                                     'Jaarbeheer': var_constraint_Niet_Nieuw['Vorig boekjaar']['l entry']['Jaarbeheer'],
                                                                                                 },
@@ -1861,7 +1859,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Verrekenposten.D => p_change_context(
                                 $['l entry'],
-                                ($) => _p_create_symbol(),
+                                ($) => p_.literal.nothing(),
                             ),
                         ),
                     )
@@ -1941,7 +1939,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort, 
                                 case 'Ja':
                                     return p_.ss(
                                         $,
-                                        ($) => ['Ja', _p_create_symbol()],
+                                        ($) => ['Ja', p_.literal.nothing()],
                                     )
                                 case 'Nee':
                                     return p_.ss(
@@ -2115,7 +2113,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Mutaties':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Mutaties', _p_create_symbol()],
+                                                            ($) => ['Mutaties', p_.literal.nothing()],
                                                         )
                                                     case 'Nog te betalen':
                                                         return p_.ss(
@@ -2224,22 +2222,22 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                             //                         case 'Binnenland: heffing verlegd':
                             //                             return p_.ss(
                             //                                 $,
-                            //                                 ($) => ['Binnenland: heffing verlegd', _p_create_symbol()],
+                            //                                 ($) => ['Binnenland: heffing verlegd', p_.literal.nothing()],
                             //                             )
                             //                         case 'Geen BTW van toepassing':
                             //                             return p_.ss(
                             //                                 $,
-                            //                                 ($) => ['Geen BTW van toepassing', _p_create_symbol()],
+                            //                                 ($) => ['Geen BTW van toepassing', p_.literal.nothing()],
                             //                             )
                             //                         case 'Import van buiten de EU':
                             //                             return p_.ss(
                             //                                 $,
-                            //                                 ($) => ['Import van buiten de EU', _p_create_symbol()],
+                            //                                 ($) => ['Import van buiten de EU', p_.literal.nothing()],
                             //                             )
                             //                         case 'Intracommunautair':
                             //                             return p_.ss(
                             //                                 $,
-                            //                                 ($) => ['Intracommunautair', _p_create_symbol()],
+                            //                                 ($) => ['Intracommunautair', p_.literal.nothing()],
                             //                             )
                             //                         case 'Standaard':
                             //                             return p_.ss(
@@ -2293,12 +2291,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Niet van toepassing':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Niet van toepassing', _p_create_symbol()],
+                                                            ($) => ['Niet van toepassing', p_.literal.nothing()],
                                                         )
                                                     case 'Ontbreekt':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Ontbreekt', _p_create_symbol()],
+                                                            ($) => ['Ontbreekt', p_.literal.nothing()],
                                                         )
                                                     default:
                                                         return p_.au(
@@ -2504,7 +2502,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Bonnetje':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Bonnetje', _p_create_symbol()],
+                                                            ($) => ['Bonnetje', p_.literal.nothing()],
                                                         )
                                                     case 'Inkoop (met crediteur)':
                                                         return p_.ss(
@@ -2974,7 +2972,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                     case 'Mutaties':
                                                         return p_.ss(
                                                             $,
-                                                            ($) => ['Mutaties', _p_create_symbol()],
+                                                            ($) => ['Mutaties', p_.literal.nothing()],
                                                         )
                                                     case 'Rekening courant':
                                                         return p_.ss(
@@ -3053,7 +3051,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Intracommunautair':
                                                                             return p_.ss(
                                                                                 $,
-                                                                                ($) => ['Intracommunautair', _p_create_symbol()],
+                                                                                ($) => ['Intracommunautair', p_.literal.nothing()],
                                                                             )
                                                                         case 'Standaard':
                                                                             return p_.ss(
@@ -3101,7 +3099,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Binnenland: heffing verlegd':
                                                                             return p_.ss(
                                                                                 $,
-                                                                                ($) => ['Binnenland: heffing verlegd', _p_create_symbol()],
+                                                                                ($) => ['Binnenland: heffing verlegd', p_.literal.nothing()],
                                                                             )
                                                                         default:
                                                                             return p_.au(
@@ -3202,7 +3200,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
                                                                         case 'Los':
                                                                             return p_.ss(
                                                                                 $,
-                                                                                ($) => ['Los', _p_create_symbol()],
+                                                                                ($) => ['Los', p_.literal.nothing()],
                                                                             )
                                                                         case 'Licentieovereenkomst':
                                                                             return p_.ss(
@@ -4116,7 +4114,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
                     case 'Ja':
                         return p_.ss(
                             $,
-                            ($) => ['Ja', _p_create_symbol()],
+                            ($) => ['Ja', p_.literal.nothing()],
                         )
                     case 'Nee':
                         return p_.ss(
@@ -4190,12 +4188,12 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => p_.from.dictionar
                                         case 'Ja':
                                             return p_.ss(
                                                 $,
-                                                ($) => ['Ja', _p_create_symbol()],
+                                                ($) => ['Ja', p_.literal.nothing()],
                                             )
                                         case 'Nee':
                                             return p_.ss(
                                                 $,
-                                                ($) => ['Nee', _p_create_symbol()],
+                                                ($) => ['Nee', p_.literal.nothing()],
                                             )
                                         default:
                                             return p_.au(
@@ -4220,7 +4218,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => p_.from.dictionar
                         ($) => abort(
                             $,
                         ),
-                        _p_create_symbol(),
+                        p_.literal.nothing(),
                         {
                             'Beheer': $p['Beheer'],
                         },
@@ -4237,7 +4235,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => p_.from.dictionar
                         {
                             'Jaren': $a,
                         },
-                        _p_create_symbol(),
+                        p_.literal.nothing(),
                     ),
                 )
 
@@ -4265,7 +4263,7 @@ export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => p_.from.dictionar
                         ($) => abort(
                             $,
                         ),
-                        _p_create_symbol(),
+                        p_.literal.nothing(),
                         {
                             'Beheer': $p['Beheer'],
                             'Grootboekrekeningen': prop_Grootboekrekeningen,
@@ -4316,8 +4314,8 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => p_.literal.group_re
                 ($) => abort(
                     $,
                 ),
-                _p_create_symbol(),
-                _p_create_symbol(),
+                p_.literal.nothing(),
+                p_.literal.nothing(),
             ),
         )
 
@@ -4328,7 +4326,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => p_.literal.group_re
                 ($) => abort(
                     $,
                 ),
-                _p_create_symbol(),
+                p_.literal.nothing(),
                 {
                     'Fiscaal': prop_Fiscaal,
                 },
@@ -4342,7 +4340,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => p_.literal.group_re
                 ($) => abort(
                     $,
                 ),
-                _p_create_symbol(),
+                p_.literal.nothing(),
                 {
                     'Grootboek Categorieen': prop_Categorieen,
                 },
@@ -4356,7 +4354,7 @@ export const Root: t_signatures.Root = ($, abort, $l, $p) => p_.literal.group_re
                 ($) => abort(
                     $,
                 ),
-                _p_create_symbol(),
+                p_.literal.nothing(),
                 {
                     'Beheer': prop_Beheer,
                 },

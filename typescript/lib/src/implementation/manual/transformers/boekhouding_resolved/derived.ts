@@ -1,13 +1,13 @@
 import * as p_ from 'pareto-core/dist/implementation/transformer'
 import * as p_temp from 'pareto-core/dist/implementation/refiner'
-import p_change_context from 'pareto-core/dist/implementation/specials/change_context'
-import p_variables from 'pareto-core/dist/implementation/specials/variables'
+import p_change_context from 'pareto-core/dist/implementation/refiner/specials/change_context'
+import p_variables from 'pareto-core/dist/implementation/transformer/specials/variables'
 import * as p_i from 'pareto-core/dist/interface/transformer'
 
 //data types
 import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved"
 import * as d_out from "../../../../interface/data/derived"
-import p_unreachable_code_path from 'pareto-core/dist/implementation/specials/unreachable_code_path'
+import p_unreachable_code_path from 'pareto-core/dist/implementation/transformer/specials/unreachable_code_path'
 
 //dependencies
 
