@@ -8,7 +8,7 @@ const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
 import p_change_context from 'pareto-core/dist/implementation/refiner/specials/change_context'
 
-import * as _p_sl from 'pareto-core/dist/implementation/refiner/select_lookup'
+import * as _p_sl from 'pareto-core/dist/implementation/refiner/specials/lookup'
 
 import p_variables from 'pareto-core/dist/implementation/refiner/specials/variables'
 
