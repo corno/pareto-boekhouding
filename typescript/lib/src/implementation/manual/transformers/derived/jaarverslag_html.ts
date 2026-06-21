@@ -141,7 +141,7 @@ const Domein_Zijde: p_i.Transformer<
                 $.subcategorieen
             ).flatten_to_list(
                 ($, id) => p_.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-                    [
+                    p_.literal.list([
                         p_.literal.list([
                             Indent(null),
                             Colspan_Text(
@@ -159,25 +159,23 @@ const Domein_Zijde: p_i.Transformer<
                             ),
                             Indent(null),
                         ])
-                    ],
+                    ]),
                     p_.from.dictionary(
                         $.grootboekrekeningen
                     ).flatten_to_list(
-                        ($, id) => p_.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-                            [
-                                p_.literal.list([
-                                    Indent(null),
-                                    Indent(null),
-                                    Text(id),
-                                    Bedrag(
-                                        $.bedrag,
-                                        {
-                                            'teken omkeren': teken_omkeren
-                                        }
-                                    ),
-                                    Span_Indent(2),
-                                ])
-                            ]
+                        ($, id) => p_.literal.list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                            p_.literal.list([
+                                Indent(null),
+                                Indent(null),
+                                Text(id),
+                                Bedrag(
+                                    $.bedrag,
+                                    {
+                                        'teken omkeren': teken_omkeren
+                                    }
+                                ),
+                                Span_Indent(2),
+                            ])
                         ])
                     )
                 ])
@@ -193,7 +191,7 @@ const Domein: p_i.Transformer_With_Parameter<
         'label': string
     }
 > = ($, $p) => p_.literal.nested_list([
-    [
+    p_.literal.list([
         sh.t.s.row(["margin"], p_.literal.not_set(), []),
         sh.t.s.row(
             ["domein"],
@@ -228,7 +226,7 @@ const Domein: p_i.Transformer_With_Parameter<
                 ),
             ]
         ),
-    ],
+    ]),
     p_.from.list(
         Domein_Zijde($.links)
     ).full_join(
@@ -242,10 +240,10 @@ const Domein: p_i.Transformer_With_Parameter<
             ["item"],
             p_.literal.not_set(),
             p_.literal.nested_list([
-                [
+                p_.literal.list([
                     Indent_Blank(null),
                     Indent_Blank(null),
-                ],
+                ]),
                 $.links.__decide(
                     ($) => $,
                     () => p_.literal.list([Span_Indent(6)])
@@ -257,7 +255,7 @@ const Domein: p_i.Transformer_With_Parameter<
             ])
         )
     ),
-    [
+    p_.literal.list([
         sh.t.s.row(
             ["totaal"],
             p_.literal.not_set(),
@@ -276,7 +274,7 @@ const Domein: p_i.Transformer_With_Parameter<
                 }),
             ]
         ),
-    ]
+    ])
 ])
 
 const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
@@ -605,7 +603,7 @@ export const Root: p_i.Transformer<
             sh.f.table(
                 [],
                 p_.literal.nested_list([
-                    [
+                    p_.literal.list([
                         sh.t.header(["title"], [
                             sh.t.s.row(
                                 [],
@@ -621,7 +619,7 @@ export const Root: p_i.Transformer<
                                 ]
                             )
                         ]),
-                    ],
+                    ]),
                     p_.from.list(
                         p_.from.dictionary($.jaren).convert_to_list(
                             ($, id) => ({
@@ -632,7 +630,7 @@ export const Root: p_i.Transformer<
                     ).map(($) => sh.t.body(
                         ["jaar"],
                         p_.literal.nested_list([
-                            [
+                            p_.literal.list([
                                 sh.t.s.row(["margin"], p_.literal.not_set(), []),
                                 sh.t.s.row(
                                     ["jaar"],
@@ -646,7 +644,7 @@ export const Root: p_i.Transformer<
                                         ),
                                     ]
                                 ),
-                            ],
+                            ]),
                             Domein(
                                 {
                                     'links': Balans_Grootboekrekeningen(
@@ -708,7 +706,7 @@ export const Root: p_i.Transformer<
                                     'label': "resultaat",
                                 }
                             ),
-                            [
+                            p_.literal.list([
                                 sh.t.s.row(
                                     ["totaal"],
                                     p_.literal.not_set(),
@@ -729,7 +727,7 @@ export const Root: p_i.Transformer<
                                         ),
                                     ]
                                 ),
-                            ],
+                            ]),
                             Domein(
                                 {
                                     'links': Balans_Grootboekrekeningen(
