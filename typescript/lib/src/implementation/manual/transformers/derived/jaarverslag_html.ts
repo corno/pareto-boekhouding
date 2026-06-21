@@ -120,7 +120,7 @@ const Domein_Zijde: p_i.Transformer<
         $.hoofdcategorieen
     ).flatten_to_list(
         ($, id) => p_.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-            [
+            p_.literal.list([
                 p_.literal.list([
                     Colspan_Text(
                         id,
@@ -136,7 +136,7 @@ const Domein_Zijde: p_i.Transformer<
                         }
                     ),
                 ])
-            ],
+            ]),
             p_.from.dictionary(
                 $.subcategorieen
             ).flatten_to_list(
