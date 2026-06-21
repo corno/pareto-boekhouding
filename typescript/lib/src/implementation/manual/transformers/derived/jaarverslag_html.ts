@@ -119,7 +119,7 @@ const Domein_Zijde: p_i.Transformer<
     return p_.from.dictionary(
         $.hoofdcategorieen
     ).flatten_to_list(
-        ($, id) => p_.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+        ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
             p_.literal.list([
                 p_.literal.list([
                     Colspan_Text(
@@ -140,7 +140,7 @@ const Domein_Zijde: p_i.Transformer<
             p_.from.dictionary(
                 $.subcategorieen
             ).flatten_to_list(
-                ($, id) => p_.literal.nested_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                     p_.literal.list([
                         p_.literal.list([
                             Indent(null),
@@ -190,7 +190,7 @@ const Domein: p_i.Transformer_With_Parameter<
     {
         'label': string
     }
-> = ($, $p) => p_.literal.nested_list([
+> = ($, $p) => p_.literal.segmented_list([
     p_.literal.list([
         sh.t.s.row(["margin"], p_.literal.not_set(), []),
         sh.t.s.row(
@@ -239,7 +239,7 @@ const Domein: p_i.Transformer_With_Parameter<
         ($) => sh.t.s.row(
             ["item"],
             p_.literal.not_set(),
-            p_.literal.nested_list([
+            p_.literal.segmented_list([
                 p_.literal.list([
                     Indent_Blank(null),
                     Indent_Blank(null),
@@ -603,7 +603,7 @@ export const Root: p_i.Transformer<
         sh.f.div([
             sh.f.table(
                 [],
-                p_.literal.nested_list([
+                p_.literal.segmented_list([
                     p_.literal.list([
                         sh.t.header(["title"], [
                             sh.t.s.row(
@@ -630,7 +630,7 @@ export const Root: p_i.Transformer<
                         )
                     ).map(($) => sh.t.body(
                         ["jaar"],
-                        p_.literal.nested_list([
+                        p_.literal.segmented_list([
                             p_.literal.list([
                                 sh.t.s.row(["margin"], p_.literal.not_set(), []),
                                 sh.t.s.row(
