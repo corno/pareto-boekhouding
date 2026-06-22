@@ -21,8 +21,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
 
         const prop_Balans_Hoofdcategorieen = p_change_context(
             $['Balans Hoofdcategorieen'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D => p_change_context(
                     $['l entry'],
@@ -62,8 +61,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
 
                             const prop_Subcategorieen = p_change_context(
                                 $['Subcategorieen'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Fiscaal.Balans_Hoofdcategorieen.D.Subcategorieen.D => p_change_context(
                                         $['l entry'],
@@ -83,8 +81,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
 
         const prop_Resultaat_Hoofdcategorieen = p_change_context(
             $['Resultaat Hoofdcategorieen'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D => p_change_context(
                     $['l entry'],
@@ -124,8 +121,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort, $l, $p) => p_.literal.gr
 
                             const prop_Subcategorieen = p_change_context(
                                 $['Subcategorieen'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Subcategorieen.D => p_change_context(
                                         $['l entry'],
@@ -154,8 +150,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
 
         const prop_Correctietypes_vennootschapsbelasting = p_change_context(
             $['Correctietypes vennootschapsbelasting'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Correctietypes_vennootschapsbelasting.D => p_change_context(
                     $['l entry'],
@@ -177,8 +172,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
 
         const prop_Balans = p_change_context(
             $['Balans'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D => p_change_context(
                     $['l entry'],
@@ -218,8 +212,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
 
                             const prop_Subcategorieen = p_change_context(
                                 $['Subcategorieen'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Balans.D.Subcategorieen.D => p_change_context(
                                         $['l entry'],
@@ -310,8 +303,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
 
         const prop_Resultaat = p_change_context(
             $['Resultaat'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D => p_change_context(
                     $['l entry'],
@@ -351,8 +343,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
 
                             const prop_Subcategorieen = p_change_context(
                                 $['Subcategorieen'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Grootboek_Categorieen.Resultaat.D.Subcategorieen.D => p_change_context(
                                         $['l entry'],
@@ -453,8 +444,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
         const prop_BTW$mi_categorieen = p_change_context(
             $['BTW-categorieen'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.BTW$mi_categorieen.D => p_change_context(
                     $['l entry'],
@@ -518,8 +508,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                     const prop_Balans = p_change_context(
                         $['Balans'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Balans.D => p_change_context(
                                 $['l entry'],
@@ -633,8 +622,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                     const prop_Resultaat = p_change_context(
                         $['Resultaat'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Beheer.Grootboekrekeningen.Resultaat.D => p_change_context(
                                 $['l entry'],
@@ -835,8 +823,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                     const prop_Bank = p_change_context(
                         $['Bank'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Bank.D => p_change_context(
                                 $['l entry'],
@@ -847,8 +834,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                     const prop_Informeel = p_change_context(
                         $['Informeel'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Beheer.Rekeningen.Informeel.D => p_change_context(
                                 $['l entry'],
@@ -866,8 +852,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
         const prop_Gebruikers = p_change_context(
             $['Gebruikers'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.Gebruikers.D => p_change_context(
                     $['l entry'],
@@ -895,8 +880,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
         const prop_Klanten = p_change_context(
             $['Klanten'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.Klanten.D => p_change_context(
                     $['l entry'],
@@ -905,8 +889,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                             const prop_Licentieovereenkomsten = p_change_context(
                                 $['Licentieovereenkomsten'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D => p_change_context(
                                         $['l entry'],
@@ -915,8 +898,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                                                 const prop_Periodes = p_change_context(
                                                     $['Periodes'],
-                                                    ($) => p_.from.dictionary(
-                                                        $['l dictionary'],
+                                                    ($) => p_.from.dictionary($['l dictionary'],
                                                     ).resolve(
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Licentieovereenkomsten.D.Periodes.D => p_change_context(
                                                             $['l entry'],
@@ -946,8 +928,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                             const prop_Projecten = p_change_context(
                                 $['Projecten'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D => p_change_context(
                                         $['l entry'],
@@ -956,8 +937,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                                                 const prop_Offertes = p_change_context(
                                                     $['Offertes'],
-                                                    ($) => p_.from.dictionary(
-                                                        $['l dictionary'],
+                                                    ($) => p_.from.dictionary($['l dictionary'],
                                                     ).resolve(
                                                         ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D => p_change_context(
                                                             $['l entry'],
@@ -966,8 +946,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
                                                                     const prop_Opbrengsten = p_change_context(
                                                                         $['Opbrengsten'],
-                                                                        ($) => p_.from.dictionary(
-                                                                            $['l dictionary'],
+                                                                        ($) => p_.from.dictionary($['l dictionary'],
                                                                         ).resolve(
                                                                             ($, id, $a, $c): t_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D => p_change_context(
                                                                                 $['l entry'],
@@ -1052,8 +1031,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
         const prop_Leveranciers = p_change_context(
             $['Leveranciers'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.Leveranciers.D => p_change_context(
                     $['l entry'],
@@ -1064,8 +1042,7 @@ export const Beheer: t_signatures.Beheer = ($, abort, $l, $p) => p_.literal.grou
 
         const prop_Medewerkers = p_change_context(
             $['Medewerkers'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Beheer.Medewerkers.D => p_change_context(
                     $['l entry'],
@@ -1090,8 +1067,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
 
         const prop_Balans = p_change_context(
             $['Balans'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Balans.D => p_change_context(
                     $['l entry'],
@@ -1134,8 +1110,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
 
         const prop_Resultaat = p_change_context(
             $['Resultaat'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Resultaat.D => p_change_context(
                     $['l entry'],
@@ -1219,8 +1194,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                     const prop_Salarisrondes = p_change_context(
                         $['Salarisrondes'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.Salarisrondes.D => p_change_context(
                                 $['l entry'],
@@ -1231,8 +1205,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                     const prop_BTW_periodes = p_change_context(
                         $['BTW periodes'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D => p_change_context(
                                 $['l entry'],
@@ -1241,8 +1214,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                                         const prop_1$pe__BTW$mi_categorieen = p_change_context(
                                             $['1. BTW-categorieen'],
-                                            ($) => p_.from.dictionary(
-                                                $['l dictionary'],
+                                            ($) => p_.from.dictionary($['l dictionary'],
                                             ).resolve(
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D._11$pe__BTW$mi_categorieen.D => p_change_context(
                                                     $['l entry'],
@@ -1253,8 +1225,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                                         const prop_Documenten = p_change_context(
                                             $['Documenten'],
-                                            ($) => p_.from.dictionary(
-                                                $['l dictionary'],
+                                            ($) => p_.from.dictionary($['l dictionary'],
                                             ).resolve(
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Resultaat.BTW_periodes.D.Documenten.D => p_change_context(
                                                     $['l entry'],
@@ -1529,8 +1500,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                     const prop_Informele_rekeningen = p_change_context(
                         $['Informele rekeningen'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Informele_rekeningen.D => p_change_context(
                                 $['l entry'],
@@ -1664,8 +1634,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                     const prop_Bankrekeningen = p_change_context(
                         $['Bankrekeningen'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D => p_change_context(
                                 $['l entry'],
@@ -1789,8 +1758,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                                         const prop_Mutaties = p_change_context(
                                             $['Mutaties'],
-                                            ($) => p_.from.dictionary(
-                                                $['l dictionary'],
+                                            ($) => p_.from.dictionary($['l dictionary'],
                                             ).resolve(
                                                 ($, id, $a, $c): t_out.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D => p_change_context(
                                                     $['l entry'],
@@ -1835,8 +1803,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                     const prop_Overige_balans_items = p_change_context(
                         $['Overige balans items'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Overige_balans_items.D => p_change_context(
                                 $['l entry'],
@@ -1854,8 +1821,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort, $l, $p) => p_.lite
 
                     const prop_Verrekenposten = p_change_context(
                         $['Verrekenposten'],
-                        ($) => p_.from.dictionary(
-                            $['l dictionary'],
+                        ($) => p_.from.dictionary($['l dictionary'],
                         ).resolve(
                             ($, id, $a, $c): t_out.Jaarbeheer.Balans.Verrekenposten.D => p_change_context(
                                 $['l entry'],
@@ -2092,8 +2058,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
 
         const prop_Inkopen = p_change_context(
             $['Inkopen'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D => p_change_context(
                     $['l entry'],
@@ -2316,8 +2281,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
 
                             const prop_Regels = p_change_context(
                                 $['Regels'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Handelstransacties.Inkopen.D.Regels.D => p_change_context(
                                         $['l entry'],
@@ -2699,8 +2663,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
 
         const prop_Verkopen = p_change_context(
             $['Verkopen'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D => p_change_context(
                     $['l entry'],
@@ -3030,8 +2993,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort, $l
 
                             const prop_Regels = p_change_context(
                                 $['Regels'],
-                                ($) => p_.from.dictionary(
-                                    $['l dictionary'],
+                                ($) => p_.from.dictionary($['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Handelstransacties.Verkopen.D.Regels.D => p_change_context(
                                         $['l entry'],
@@ -3433,8 +3395,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort, $l, $p
 
         const prop_Jaar = p_change_context(
             $['Jaar'],
-            ($) => p_.from.optional(
-                $,
+            ($) => p_.from.optional($,
             ).map(
                 ($) => ({
                     'l entry': $l['Jaren'].get_entry(
@@ -3605,8 +3566,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
 
         const prop_Verrekenposten: t_out.Mutaties.Verrekenposten = p_change_context(
             $['Verrekenposten'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Mutaties.Verrekenposten.D => p_change_context(
                     $['l entry'],
@@ -3643,8 +3603,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                                         )
                                     }
                                 ),
-                                'Mutaties': p_.from.dictionary(
-                                    $.Mutaties['l dictionary'],
+                                'Mutaties': p_.from.dictionary($.Mutaties['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Mutaties.Verrekenposten.D.Mutaties.D => p_change_context(
                                         $['l entry'],
@@ -3769,8 +3728,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
 
         const prop_Bankrekeningen: t_out.Mutaties.Bankrekeningen = p_change_context(
             $['Bankrekeningen'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Mutaties.Bankrekeningen.D => p_change_context(
                     $['l entry'],
@@ -3807,8 +3765,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                             // )
                             return {
                                 'Stam': $v_bankrekening,
-                                'Mutatie Verwerkingen': p_.from.dictionary(
-                                    $['Mutatie Verwerkingen']['l dictionary'],
+                                'Mutatie Verwerkingen': p_.from.dictionary($['Mutatie Verwerkingen']['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D => p_change_context(
                                         $['l entry'],
@@ -3987,8 +3944,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
 
         const prop_Overige_Balans_Items = p_change_context(
             $['Overige Balans Items'],
-            ($) => p_.from.dictionary(
-                $['l dictionary'],
+            ($) => p_.from.dictionary($['l dictionary'],
             ).resolve(
                 ($, id, $a, $c): t_out.Mutaties.Overige_Balans_Items.D => p_change_context(
                     $['l entry'],
@@ -4025,8 +3981,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                                         ),
                                     }
                                 ),
-                                'Memoriaal Boekingen': p_.from.dictionary(
-                                    $['Memoriaal Boekingen']['l dictionary'],
+                                'Memoriaal Boekingen': p_.from.dictionary($['Memoriaal Boekingen']['l dictionary'],
                                 ).resolve(
                                     ($, id, $a, $c): t_out.Mutaties.Overige_Balans_Items.D.Memoriaal_Boekingen.D => p_change_context(
                                         $['l entry'],
@@ -4167,8 +4122,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort, $l, $p) 
     },
 )
 
-export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => p_.from.dictionary(
-    $['l dictionary'],
+export const Jaren: t_signatures.Jaren = ($, abort, $l, $p) => p_.from.dictionary($['l dictionary'],
 ).resolve(
     ($, id, $a, $c): t_out.Jaren.D => p_change_context(
         $['l entry'],

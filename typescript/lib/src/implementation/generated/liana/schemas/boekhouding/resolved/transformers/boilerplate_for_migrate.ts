@@ -58,8 +58,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -124,8 +123,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': null,
@@ -189,8 +187,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -255,8 +252,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': null,
@@ -323,8 +319,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -372,8 +367,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -438,8 +432,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -548,8 +541,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -614,8 +606,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -727,8 +718,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -822,8 +812,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': {
@@ -953,8 +942,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': {
@@ -1155,8 +1143,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
@@ -1199,8 +1186,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
@@ -1245,8 +1231,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -1298,8 +1283,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -1322,8 +1306,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -1346,8 +1329,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                             },
                                                         },
                                                     }],
-                                                    'l dictionary': p_.from.dictionary(
-                                                        $,
+                                                    'l dictionary': p_.from.dictionary($,
                                                     ).map(
                                                         ($, id) => ({
                                                             'l entry': {
@@ -1416,8 +1398,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -1440,8 +1421,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                             },
                                                         },
                                                     }],
-                                                    'l dictionary': p_.from.dictionary(
-                                                        $,
+                                                    'l dictionary': p_.from.dictionary($,
                                                     ).map(
                                                         ($, id) => ({
                                                             'l entry': {
@@ -1464,8 +1444,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                 },
                                                                             },
                                                                         }],
-                                                                        'l dictionary': p_.from.dictionary(
-                                                                            $,
+                                                                        'l dictionary': p_.from.dictionary($,
                                                                         ).map(
                                                                             ($, id) => ({
                                                                                 'l entry': {
@@ -1618,8 +1597,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': null,
@@ -1662,8 +1640,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': null,
@@ -1709,8 +1686,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -1758,8 +1734,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -1835,8 +1810,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
@@ -1879,8 +1853,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': {
@@ -1903,8 +1876,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                 },
                                             },
                                         }],
-                                        'l dictionary': p_.from.dictionary(
-                                            $,
+                                        'l dictionary': p_.from.dictionary($,
                                         ).map(
                                             ($, id) => ({
                                                 'l entry': null,
@@ -1947,8 +1919,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                 },
                                             },
                                         }],
-                                        'l dictionary': p_.from.dictionary(
-                                            $,
+                                        'l dictionary': p_.from.dictionary($,
                                         ).map(
                                             ($, id) => ({
                                                 'l entry': {
@@ -2199,8 +2170,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': {
@@ -2298,8 +2268,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                 },
                                             },
                                         }],
-                                        'l dictionary': p_.from.dictionary(
-                                            $,
+                                        'l dictionary': p_.from.dictionary($,
                                         ).map(
                                             ($, id) => ({
                                                 'l entry': {
@@ -2376,8 +2345,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': {
@@ -2496,8 +2464,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': Overige_balans_item(
@@ -2542,8 +2509,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                             },
                         },
                     }],
-                    'l dictionary': p_.from.dictionary(
-                        $,
+                    'l dictionary': p_.from.dictionary($,
                     ).map(
                         ($, id) => ({
                             'l entry': null,
@@ -2725,8 +2691,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -2902,8 +2867,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -3253,8 +3217,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -3546,8 +3509,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -3874,8 +3836,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -3902,8 +3863,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -4072,8 +4032,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -4100,8 +4059,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -4298,8 +4256,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                     },
                 },
             }],
-            'l dictionary': p_.from.dictionary(
-                $,
+            'l dictionary': p_.from.dictionary($,
             ).map(
                 ($, id) => ({
                     'l entry': {
@@ -4326,8 +4283,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                         },
                                     },
                                 }],
-                                'l dictionary': p_.from.dictionary(
-                                    $,
+                                'l dictionary': p_.from.dictionary($,
                                 ).map(
                                     ($, id) => ({
                                         'l entry': {
@@ -4426,8 +4382,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
             },
         },
     }],
-    'l dictionary': p_.from.dictionary(
-        $,
+    'l dictionary': p_.from.dictionary($,
     ).map(
         ($, id) => ({
             'l entry': {
@@ -4531,8 +4486,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
 export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ({
     'Jaar': p_change_context(
         $['Jaar'],
-        ($) => p_.from.optional(
-            $,
+        ($) => p_.from.optional($,
         ).map(
             ($) => ({
                 'l location': ['in main document', {
