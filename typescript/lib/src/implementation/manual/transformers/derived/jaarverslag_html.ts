@@ -286,7 +286,7 @@ const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
     }
 > = ($, $p) => {
 
-    const p_grootboekrekeningen = p_.from.dictionary($).map(
+    const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => ({
             'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
             'subcategorie': $.bron.Stam.Subcategorie['l id'],
@@ -297,36 +297,34 @@ const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
     return {
         'label': $p.label,
         'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': p_.from.dictionary(p_.from.dictionary(
-            p_grootboekrekeningen
+        'hoofdcategorieen': p_.from.dictionary(
+            $p_grootboekrekeningen
         ).group(
-            ($) => $.hoofdcategorie
-        )).map(
-                ($) => {
-                    const subcategorieen = p_.from.dictionary(p_.from.dictionary(
-                        $
-                    ).group(
-                        ($) => $.subcategorie
-                    )).map(
-                        ($) => ({
-                            'grootboekrekeningen': $,
-                            'totaal': integer_from_dictionary(
-                                $,
-                                ($) => $.bedrag
-                            )
-                        })
-                    )
-                    return {
-                        'subcategorieen': subcategorieen,
+            ($) => $.hoofdcategorie,
+            ($) => {
+                const subcategorieen = p_.from.dictionary(
+                    $
+                ).group(
+                    ($) => $.subcategorie,
+                    ($) => ({
+                        'grootboekrekeningen': $,
                         'totaal': integer_from_dictionary(
-                            subcategorieen,
-                            ($) => $.totaal
+                            $,
+                            ($) => $.bedrag
                         )
-                    }
+                    })
+                )
+                return {
+                    'subcategorieen': subcategorieen,
+                    'totaal': integer_from_dictionary(
+                        subcategorieen,
+                        ($) => $.totaal
+                    )
                 }
-            ),
+            },
+        ),
         'totaal': integer_from_dictionary(
-            p_grootboekrekeningen,
+            $p_grootboekrekeningen,
             ($) => $.bedrag
         ),
     }
@@ -343,7 +341,7 @@ const Balans_Grootboekrekeningen: p_i.Transformer_With_Parameter<
         'teken omkeren': boolean
     }
 > = ($, $p) => {
-    const p_grootboekrekeningen = $.__d_map_deprecated(
+    const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => {
 
             const context = $
@@ -365,34 +363,33 @@ const Balans_Grootboekrekeningen: p_i.Transformer_With_Parameter<
         'label': $p.label,
         'teken omkeren': $p['teken omkeren'],
         'hoofdcategorieen': p_.from.dictionary(
-            p_grootboekrekeningen
+            $p_grootboekrekeningen
         ).group(
-            ($) => $.hoofdcategorie).__d_map_deprecated(
-                ($) => {
-                    const subcategorieen = p_.from.dictionary(
-                        $
-                    ).group(
-                        ($) => $.subcategorie
-                    ).__d_map_deprecated(
-                        ($) => ({
-                            'grootboekrekeningen': $,
-                            'totaal': integer_from_dictionary(
-                                $,
-                                ($) => $.bedrag
-                            )
-                        })
-                    )
-                    return {
-                        'subcategorieen': subcategorieen,
+            ($) => $.hoofdcategorie,
+            ($) => {
+                const $p_subcategorieen = p_.from.dictionary(
+                    $
+                ).group(
+                    ($) => $.subcategorie,
+                    ($) => ({
+                        'grootboekrekeningen': $,
                         'totaal': integer_from_dictionary(
-                            subcategorieen,
-                            ($) => $.totaal
+                            $,
+                            ($) => $.bedrag
                         )
-                    }
+                    })
+                )
+                return {
+                    'subcategorieen': $p_subcategorieen,
+                    'totaal': integer_from_dictionary(
+                        $p_subcategorieen,
+                        ($) => $.totaal
+                    )
                 }
-            ),
+            }
+        ),
         'totaal': integer_from_dictionary(
-            p_grootboekrekeningen,
+            $p_grootboekrekeningen,
             ($) => $.bedrag
         ),
     }

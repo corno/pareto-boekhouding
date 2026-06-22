@@ -73,7 +73,7 @@ const fix_date = ($: number) => {
 }
 
 export const Beheer: Beheer = ($) => ({
-    'BTW-categorieen': sh.dictionary(p_change_context($.Beheer['BTW-categorieen'], ($) => $.__d_map_deprecated(($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry => ({
+    'BTW-categorieen': sh.dictionary(p_change_context($.Beheer['BTW-categorieen'], ($) => p_.from.dictionary($).map(($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry => ({
         'BTW-heffing': p_change_context($['BTW-heffing'], ($) => p_.from.state($).decide(($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
             switch ($[0]) {
                 case 'Ja': return p_.ss($, ($) => sh.state(['Ja', ({
@@ -84,12 +84,12 @@ export const Beheer: Beheer = ($) => ({
             }
         })),
     })))),
-    'Gebruikers': sh.dictionary(p_change_context($.Beheer['Gebruikers'], ($) => $.__d_map_deprecated(($) => ({
+    'Gebruikers': sh.dictionary(p_change_context($.Beheer['Gebruikers'], ($) => p_.from.dictionary($).map(($) => ({
         'Volledige naam': p_change_context($['Volledige naam'], ($) => $),
         'Wachtwoord': p_change_context($['Wachtwoord'], ($) => $),
     })))),
     'Grootboekrekeningen': p_change_context($, ($): d_out.Beheer.Grootboekrekeningen => ({
-        'Balans': sh.dictionary(p_change_context($.Beheer['Balans'].Grootboekrekeningen, ($) => $.__d_map_deprecated(($) => ({
+        'Balans': sh.dictionary(p_change_context($.Beheer['Balans'].Grootboekrekeningen, ($) => p_.from.dictionary($).map(($) => ({
             'Hoofdcategorie': p_change_context($['Hoofdcategorie'], ($) => sh.reference($)),
             'Subcategorie': p_change_context($['Subcategorie'], ($) => sh.reference($)),
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(($): d_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
@@ -100,7 +100,7 @@ export const Beheer: Beheer = ($) => ({
                 }
             })),
         })))),
-        'Resultaat': sh.dictionary(p_change_context($.Beheer['Resultaat'].Grootboekrekeningen, ($) => $.__d_map_deprecated(($) => ({
+        'Resultaat': sh.dictionary(p_change_context($.Beheer['Resultaat'].Grootboekrekeningen, ($) => p_.from.dictionary($).map(($) => ({
             'Hoofdcategorie': p_change_context($['Hoofdcategorie'], ($) => sh.reference($)),
             'Subcategorie': p_change_context($['Subcategorie'], ($) => sh.reference($)),
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(($): d_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
@@ -122,15 +122,15 @@ export const Beheer: Beheer = ($) => ({
             })),
         })))),
     })),
-    'Klanten': sh.dictionary(p_change_context($['Klanten'], ($) => $.__d_map_deprecated(($) => ({
-        'Licentieovereenkomsten': p_change_context($['Licentieovereenkomsten'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-            'Periodes': p_change_context($['Periodes'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Klanten': sh.dictionary(p_change_context($['Klanten'], ($) => p_.from.dictionary($).map(($) => ({
+        'Licentieovereenkomsten': p_change_context($['Licentieovereenkomsten'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+            'Periodes': p_change_context($['Periodes'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
                 'Bedrag': p_change_context($['Bedrag'], ($) => $),
             })))),
         })))),
-        'Projecten': p_change_context($['Projecten'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-            'Offertes': p_change_context($['Offertes'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-                'Opbrengsten': p_change_context($['Opbrengsten'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+        'Projecten': p_change_context($['Projecten'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+            'Offertes': p_change_context($['Offertes'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+                'Opbrengsten': p_change_context($['Opbrengsten'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
                     'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(($): d_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
                         switch ($[0]) {
                             case 'Project': return p_.ss($, ($) => sh.state(['Project', ({
@@ -144,11 +144,11 @@ export const Beheer: Beheer = ($) => ({
             })))),
         })))),
     })))),
-    'Leveranciers': sh.dictionary(p_change_context($['Leveranciers'], ($) => $.__d_map_deprecated(($) => null))),
-    'Medewerkers': sh.dictionary(p_change_context($['Medewerkers'], ($) => $.__d_map_deprecated(($) => null))),
+    'Leveranciers': sh.dictionary(p_change_context($['Leveranciers'], ($) => p_.from.dictionary($).map(($) => null))),
+    'Medewerkers': sh.dictionary(p_change_context($['Medewerkers'], ($) => p_.from.dictionary($).map(($) => null))),
     'Rekeningen': p_change_context($, ($) => ({
-        'Bank': p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
-        'Informeel': p_change_context($['Informele rekeningen'], ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
+        'Bank': p_change_context($.Bankrekeningen, ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
+        'Informeel': p_change_context($['Informele rekeningen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
     })),
 })
 export const Eerste_boekjaar: Eerste_boekjaar = ($) => p_.from.state($).decide(($): d_out.Eerste_boekjaar => {
@@ -161,8 +161,8 @@ export const Eerste_boekjaar: Eerste_boekjaar = ($) => p_.from.state($).decide((
     }
 })
 export const Fiscaal: Fiscaal = ($) => ({
-    'Balans Hoofdcategorieen': p_change_context($.Beheer.Balans['Hoofdcategorieen fiscus'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
+    'Balans Hoofdcategorieen': p_change_context($.Beheer.Balans['Hoofdcategorieen fiscus'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
         'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(($): d_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
             switch ($[0]) {
                 case 'Activa': return p_.ss($, ($) => sh.state(['Activa', null]))
@@ -171,8 +171,8 @@ export const Fiscaal: Fiscaal = ($) => ({
             }
         })),
     })))),
-    'Resultaat Hoofdcategorieen': sh.dictionary(p_change_context($.Beheer.Resultaat['Hoofdcategorieen fiscus'], ($) => $.__d_map_deprecated(($) => ({
-        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
+    'Resultaat Hoofdcategorieen': sh.dictionary(p_change_context($.Beheer.Resultaat['Hoofdcategorieen fiscus'], ($) => p_.from.dictionary($).map(($) => ({
+        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
         'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(($): d_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
             switch ($[0]) {
                 case 'Kosten': return p_.ss($, ($) => sh.state(['Kosten', null]))
@@ -183,8 +183,8 @@ export const Fiscaal: Fiscaal = ($) => ({
     })))),
 })
 export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
-    'Balans': p_change_context($.Beheer.Balans.Hoofdcategorieen, ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Balans': p_change_context($.Beheer.Balans.Hoofdcategorieen, ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
             'Hoofdcategorie fiscus': p_change_context($['Hoofdcategorie fiscus'], ($) => sh.reference($)),
             'Subcategorie fiscus': p_change_context($['Subcategorie fiscus'], ($) => sh.reference($)),
         })))),
@@ -196,11 +196,11 @@ export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
             }
         })),
     })))),
-    'Correctietypes vennootschapsbelasting': p_change_context($.Beheer.Resultaat['Correctietypes vennootschapsbelasting'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Correctietypes vennootschapsbelasting': p_change_context($.Beheer.Resultaat['Correctietypes vennootschapsbelasting'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
         'Te corrigeren promillage': p_change_context($['Te corrigeren promillage'], ($) => $),
     })))),
-    'Resultaat': p_change_context($.Beheer['Resultaat'].Hoofdcategorieen, ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Resultaat': p_change_context($.Beheer['Resultaat'].Hoofdcategorieen, ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+        'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
             'Hoofdcategorie fiscus': p_change_context($['Hoofdcategorie fiscus'], ($) => sh.reference($)),
             'Subcategorie fiscus': p_change_context($['Subcategorie fiscus'], ($) => sh.reference($)),
         })))),
@@ -214,7 +214,7 @@ export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
     })))),
 })
 export const Grootboekrekeningen: Grootboekrekeningen = ($) => ({
-    'Balans': p_change_context($['Balans grootboekrekeningen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Balans': p_change_context($['Balans grootboekrekeningen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
         'Stam': null,
         // 'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
         //     switch ($[0]) {
@@ -225,12 +225,12 @@ export const Grootboekrekeningen: Grootboekrekeningen = ($) => ({
         //     }
         // })),
     })))),
-    'Resultaat': p_change_context($['Resultaat grootboekrekeningen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Resultaat': p_change_context($['Resultaat grootboekrekeningen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
         'Stam': null,
     })))),
 })
 export const Handelstransacties: Handelstransacties = ($) => ({
-    'Inkopen': p_change_context($['Inkopen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Inkopen': p_change_context($['Inkopen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
         'Afhandeling': p_change_context($['Afhandeling'], ($) => p_.from.state($).decide(($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
             switch ($[0]) {
                 case 'Mutaties': return p_.ss($, ($) => sh.state(['Mutaties', null]))
@@ -278,7 +278,7 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             }
         })),
         'Datum': p_change_context($['Datum'], ($) => fix_date($)),
-        'Regels': p_change_context($['Regels'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+        'Regels': p_change_context($['Regels'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
             'Bedrag': p_change_context($['Bedrag'], ($) => p_.from.state($).decide(($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                 switch ($[0]) {
                     case 'Bekend': return p_.ss($, ($) => sh.state(['Bekend', ({
@@ -319,7 +319,7 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             }
         })),
     })))),
-    'Verkopen': p_change_context($['Verkopen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Verkopen': p_change_context($['Verkopen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
         'Afhandeling': p_change_context($['Afhandeling'], ($) => p_.from.state($).decide(($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
             switch ($[0]) {
                 case 'Mutaties': return p_.ss($, ($) => sh.state(['Mutaties', null]))
@@ -353,7 +353,7 @@ export const Handelstransacties: Handelstransacties = ($) => ({
         })),
         'Datum': p_change_context($['Datum'], ($) => fix_date($)),
         'Debiteur': p_change_context($['Debiteur'], ($) => sh.reference($)),
-        'Regels': p_change_context($['Regels'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+        'Regels': p_change_context($['Regels'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
             'BTW-regime': p_change_context($['BTW-regime'], ($) => p_.from.state($).decide(($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
                 switch ($[0]) {
                     case 'Binnenland: heffing verlegd': return p_.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
@@ -394,10 +394,10 @@ export const Handelstransacties: Handelstransacties = ($) => ({
 })
 export const Jaarbeheer: Jaarbeheer = ($) => ({
     'Balans': p_change_context($, ($) => ({
-        'Bankrekeningen': p_change_context($['Bankrekeningen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+        'Bankrekeningen': p_change_context($['Bankrekeningen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
             'Beginsaldo': p_change_context($['Beginsaldo'], ($) => $),
             'Grootboekrekening': p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
-            'Mutaties': p_change_context($['Mutaties'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+            'Mutaties': p_change_context($['Mutaties'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
                 'Bedrag': p_change_context($['Bedrag'], ($) => $),
                 'Datum': p_change_context($['Datum'], ($) => fix_date($)),
                 'Omschrijving': p_change_context($['Omschrijving'], ($) => $),
@@ -421,7 +421,7 @@ export const Jaarbeheer: Jaarbeheer = ($) => ({
         'Grootboekrekening voor nog aan te geven BTW': p_change_context($['Grootboekrekening voor nog aan te geven BTW'], ($) => sh.reference($)),
         'Grootboekrekening voor resultaat dit jaar': p_change_context($['Grootboekrekening voor resultaat dit jaar'], ($) => sh.reference($)),
         'Grootboekrekening voor winstreserve': p_change_context($['Grootboekrekening voor winstreserve'], ($) => sh.reference($)),
-        'Informele rekeningen': p_change_context($['Informele rekeningen'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+        'Informele rekeningen': p_change_context($['Informele rekeningen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
             'Beginsaldo': p_change_context($['Beginsaldo'], ($) => $),
             'Grootboekrekening': p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
             'Nieuw': p_change_context($['Nieuw'], ($) => p_.from.state($).decide(($): d_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
@@ -436,15 +436,15 @@ export const Jaarbeheer: Jaarbeheer = ($) => ({
                 }
             })),
         })))),
-        'Overige balans items': p_change_context($['Overige balans items'], ($) => sh.dictionary($.__d_map_deprecated(($) => Overige_balans_item(
+        'Overige balans items': p_change_context($['Overige balans items'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => Overige_balans_item(
             $,
         )))),
-        'Verrekenposten': p_change_context($['Verrekenposten'], ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
+        'Verrekenposten': p_change_context($['Verrekenposten'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
     })),
     'Resultaat': p_change_context($, ($) => ({
-        'BTW periodes': p_change_context($['BTW periodes'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
-            '1. BTW-categorieen': p_change_context($['1. BTW-categorieen'], ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
-            'Documenten': p_change_context($['Documenten'], ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+        'BTW periodes': p_change_context($['BTW periodes'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
+            '1. BTW-categorieen': p_change_context($['1. BTW-categorieen'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
+            'Documenten': p_change_context($['Documenten'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
                 'Bestand': p_change_context($['Bestand'], ($) => $.stem + "." + $.extension),
             })))),
             'Omschrijving': p_change_context($['Omschrijving'], ($) => $),
@@ -461,10 +461,10 @@ export const Jaarbeheer: Jaarbeheer = ($) => ({
             })),
         })))),
         'Grootboekrekening voor BTW afrondingen': p_change_context($['Grootboekrekening voor BTW afrondingen'], ($) => sh.reference($)),
-        'Salarisrondes': p_change_context($['Salarisrondes'], ($) => sh.dictionary($.__d_map_deprecated(($) => null))),
+        'Salarisrondes': p_change_context($['Salarisrondes'], ($) => sh.dictionary(p_.from.dictionary($).map(($) => null))),
     })),
 })
-export const Jaren: Jaren = ($) => sh.dictionary($.Jaren.__d_map_deprecated(($, id) => ({
+export const Jaren: Jaren = ($) => sh.dictionary(p_.from.dictionary($.Jaren).map(($, id) => ({
     'Afgesloten': p_change_context($['Afgesloten'], ($) => p_.from.state($).decide(($): d_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
         switch ($[0]) {
             case 'Ja': return p_.ss($, ($) => sh.state(['Ja', null]))
@@ -493,7 +493,7 @@ export const Jaren: Jaren = ($) => sh.dictionary($.Jaren.__d_map_deprecated(($, 
     'Startdatum boekjaar': p_change_context($['Startdatum boekjaar'], ($) => fix_date($)),
 })))
 export const Mutaties: Mutaties = ($, $p) => ({
-    'Bankrekeningen': p_change_context($.Bankrekeningen, ($) => sh.dictionary($.__d_map_deprecated(($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry => {
+    'Bankrekeningen': p_change_context($.Bankrekeningen, ($) => sh.dictionary(p_.from.dictionary($).map(($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry => {
         return {
             'Stam': null,
             'Mutatie Verwerkingen': sh.dictionary(p_temp.from.dictionary(
@@ -542,18 +542,18 @@ export const Mutaties: Mutaties = ($, $p) => ({
             ))
         }
     }))),
-    'Overige Balans Items': p_change_context($['Overige balans items'], ($) => sh.dictionary($.__d_map_deprecated(($): d_out.Mutaties.Overige_Balans_Items.l_dictionary.D.l_entry => ({
+    'Overige Balans Items': p_change_context($['Overige balans items'], ($) => sh.dictionary(p_.from.dictionary($).map(($): d_out.Mutaties.Overige_Balans_Items.l_dictionary.D.l_entry => ({
         'Stam': null,
-        'Memoriaal Boekingen': sh.dictionary($['Memoriaal boekingen'].__d_map_deprecated(($) => ({
+        'Memoriaal Boekingen': sh.dictionary(p_.from.dictionary($['Memoriaal boekingen']).map(($) => ({
             'Bedrag': p_change_context($['Bedrag'], ($) => $),
             'Datum': p_change_context($['Datum'], ($) => fix_date($)),
             'Grootboekrekening': p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
             'Omschrijving': p_change_context($['Omschrijving'], ($) => $),
         })))
     })))),
-    'Verrekenposten': p_change_context($.Verrekenposten, ($) => sh.dictionary($.__d_map_deprecated(($) => ({
+    'Verrekenposten': p_change_context($.Verrekenposten, ($) => sh.dictionary(p_.from.dictionary($).map(($) => ({
         'Stam': null,
-        'Mutaties': sh.dictionary($.Mutaties.__d_map_deprecated(($): d_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry => ({
+        'Mutaties': sh.dictionary(p_.from.dictionary($.Mutaties).map(($): d_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry => ({
             'Afhandeling': p_change_context($['Afhandeling'], ($) => p_.from.state($).decide(($) => {
                 switch ($[0]) {
                     case 'Informele rekening': return p_.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
