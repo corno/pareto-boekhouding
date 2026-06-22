@@ -3776,7 +3776,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                     $['l entry'],
                     ($) => p_variables(
                         (): t_out.Mutaties.Bankrekeningen.D => {
-                            const bankrekening = p_.from.dictionary($p.Jaarbeheer.Balans.Bankrekeningen).get_entry(
+                            const $v_bankrekening = p_.from.dictionary($p.Jaarbeheer.Balans.Bankrekeningen).get_entry(
                                 id,
                                 {
                                     'no_such_entry': () => abort(
@@ -3806,7 +3806,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                             //     "IM: referenced entry",
                             // )
                             return {
-                                'Stam': bankrekening,
+                                'Stam': $v_bankrekening,
                                 'Mutatie Verwerkingen': p_.from.dictionary(
                                     $['Mutatie Verwerkingen']['l dictionary'],
                                 ).resolve(
@@ -3817,7 +3817,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
 
                                                 // const var_location = $['l location']
                                                 return {
-                                                    'Stam': p_.from.dictionary(bankrekening.Mutaties).get_entry(
+                                                    'Stam': p_.from.dictionary($v_bankrekening.Mutaties).get_entry(
                                                         id,
                                                         {
                                                             'no_such_entry': () => abort(
