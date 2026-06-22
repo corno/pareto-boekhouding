@@ -1099,7 +1099,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                         () => {
 
                             return {
-                                'Stam': $p.Beheer.Grootboekrekeningen.Balans.__get_entry_deprecated(
+                                'Stam': p_.from.dictionary($p.Beheer.Grootboekrekeningen.Balans).get_entry(
                                     id,
                                     {
                                         no_such_entry: () => abort(
@@ -1140,7 +1140,7 @@ export const Grootboekrekeningen: t_signatures.Grootboekrekeningen = ($, abort, 
                 ($, id, $a, $c): t_out.Grootboekrekeningen.Resultaat.D => p_change_context(
                     $['l entry'],
                     ($) => ({
-                        'Stam': $p.Beheer.Grootboekrekeningen.Resultaat.__get_entry_deprecated(
+                        'Stam': p_.from.dictionary($p.Beheer.Grootboekrekeningen.Resultaat).get_entry(
                             id,
                             {
                                 no_such_entry: () => abort(
@@ -3617,7 +3617,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                             //     "IM: referenced entry",
                             // )
                             return {
-                                'Stam': $p.Jaarbeheer.Balans.Verrekenposten.__get_entry_deprecated(
+                                'Stam': p_.from.dictionary($p.Jaarbeheer.Balans.Verrekenposten).get_entry(
                                     id,
                                     {
                                         no_such_entry: () => abort(
@@ -3776,7 +3776,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                     $['l entry'],
                     ($) => p_variables(
                         (): t_out.Mutaties.Bankrekeningen.D => {
-                            const bankrekening = $p.Jaarbeheer.Balans.Bankrekeningen.__get_entry_deprecated(
+                            const bankrekening = p_.from.dictionary($p.Jaarbeheer.Balans.Bankrekeningen).get_entry(
                                 id,
                                 {
                                     'no_such_entry': () => abort(
@@ -3817,7 +3817,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
 
                                                 // const var_location = $['l location']
                                                 return {
-                                                    'Stam': bankrekening.Mutaties.__get_entry_deprecated(
+                                                    'Stam': p_.from.dictionary(bankrekening.Mutaties).get_entry(
                                                         id,
                                                         {
                                                             'no_such_entry': () => abort(
@@ -3999,7 +3999,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort, $l, $p) => p_.literal.
                             //     "IM: referenced entry",
                             // )
                             return {
-                                'Stam': $p.Jaarbeheer.Balans['Overige balans items'].__get_entry_deprecated(
+                                'Stam': p_.from.dictionary($p.Jaarbeheer.Balans['Overige balans items']).get_entry(
                                     id,
                                     {
                                         'no_such_entry': () => abort(
