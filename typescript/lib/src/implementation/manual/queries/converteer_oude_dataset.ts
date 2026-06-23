@@ -22,7 +22,7 @@ import * as t_boekhouding_resolved_to_fp from "../../generated/liana/schemas/boe
 import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
+import * as sh from "pareto-fountain-pen/dist/shorthands/prose/deprecated"
 
 export const $$: interface_.query_functions.converteer_oude_dataset = p_.query_function(
     ($d, $s, $q) => p_super_query_result(p_.e.refine<d_boekhouding.Root_, d_fp.Phrase>(

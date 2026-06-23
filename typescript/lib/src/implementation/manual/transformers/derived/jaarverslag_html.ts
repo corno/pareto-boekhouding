@@ -16,14 +16,14 @@ const integer_from_dictionary = <T extends p_di.Value>(
     get_value: ($: T) => number,
 ): number => p_.from.list(
     p_.from.dictionary(dict).convert_to_list(
-    ($) => $
-)
+        ($) => $
+    )
 ).sum(
     ($) => get_value($)
 )
 
 //shorthands
-import * as sh from "pareto-static-html/dist/shorthands/static_html"
+import * as sh from "pareto-static-html/dist/shorthands/static_html/target"
 
 //data
 import { css } from "../../../../data/css"
@@ -36,31 +36,35 @@ const Bedrag: p_i.Transformer_With_Parameter<
         'teken omkeren': boolean
     }
 > = ($, $p) => sh.t.s.r.td(
-    ["bedrag"],
+    p_.literal.list(["bedrag"]),
     p_.literal.not_set(),
-    [
-        sh.f.span([
-            sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
-                $p['teken omkeren'] ? -$ : $,
-                {
-                    'number of fractional digits': 2,
-                    'decimal separator character code': 44, // ','
-                    'thousand separator character code': 46, // '.'
-                }
-            ))
-        ])
-    ]
+    p_.literal.list([
+        sh.f.span(
+            p_.literal.list([
+                sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
+                    $p['teken omkeren'] ? -$ : $,
+                    {
+                        'number of fractional digits': 2,
+                        'decimal separator character code': 44, // ','
+                        'thousand separator character code': 46, // '.'
+                    }
+                ))
+            ])
+        )
+    ])
 )
 
 const Text: p_i.Transformer<
     string,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
-    ["text"],
+    p_.literal.list(["text"]),
     p_.literal.not_set(),
-    [
-        sh.f.span([sh.p.p($)])
-    ]
+    p_.literal.list([
+        sh.f.span(
+            p_.literal.list([sh.p.p($)])
+        )
+    ])
 )
 
 const Colspan_Text: p_i.Transformer_With_Parameter<
@@ -70,38 +74,40 @@ const Colspan_Text: p_i.Transformer_With_Parameter<
         'number of columns': number
     }
 > = ($, $p) => sh.t.s.r.td(
-    ["span-text"],
+    p_.literal.list(["span-text"]),
     p_.literal.set($p['number of columns']),
-    [
-        sh.f.span([sh.p.p($)])
-    ]
+    p_.literal.list([
+        sh.f.span(
+            p_.literal.list([sh.p.p($)])
+        )
+    ])
 )
 
 const Span_Indent: p_i.Transformer<
     number,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
-    ["span-indent"],
+    p_.literal.list(["span-indent"]),
     p_.literal.set($),
-    []
+    p_.literal.list([])
 )
 
 const Indent: p_i.Transformer<
     null,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
-    ["indent"],
+    p_.literal.list(["indent"]),
     p_.literal.not_set(),
-    []
+    p_.literal.list([])
 )
 
 const Indent_Blank: p_i.Transformer<
     null,
     d_out.Flow_Element.table.sections.L.rows.L.cells.L
 > = ($) => sh.t.s.r.td(
-    ["indent blank"],
+    p_.literal.list(["indent blank"]),
     p_.literal.not_set(),
-    []
+    p_.literal.list([])
 )
 
 
@@ -184,11 +190,15 @@ const Domein: p_i.Transformer_With_Parameter<
     }
 > = ($, $p) => p_.literal.segmented_list([
     p_.literal.list([
-        sh.t.s.row(["margin"], p_.literal.not_set(), []),
         sh.t.s.row(
-            ["domein"],
+            p_.literal.list(["margin"]),
             p_.literal.not_set(),
-            [
+            p_.literal.list([])
+        ),
+        sh.t.s.row(
+            p_.literal.list(["domein"]),
+            p_.literal.not_set(),
+            p_.literal.list([
                 Indent_Blank(null),
                 Colspan_Text(
                     $p.label,
@@ -196,12 +206,12 @@ const Domein: p_i.Transformer_With_Parameter<
                         'number of columns': 13
                     }
                 ),
-            ]
+            ])
         ),
         sh.t.s.row(
-            ["domein_zijde"],
+            p_.literal.list(["domein_zijde"]),
             p_.literal.not_set(),
-            [
+            p_.literal.list([
                 Indent_Blank(null),
                 Indent_Blank(null),
                 Colspan_Text(
@@ -216,7 +226,7 @@ const Domein: p_i.Transformer_With_Parameter<
                         'number of columns': 6
                     }
                 ),
-            ]
+            ])
         ),
     ]),
     p_.from.list(
@@ -231,7 +241,7 @@ const Domein: p_i.Transformer_With_Parameter<
         )
     ).map(
         ($) => sh.t.s.row(
-            ["item"],
+            p_.literal.list(["item"]),
             p_.literal.not_set(),
             p_.literal.segmented_list([
                 p_.literal.list([
@@ -251,9 +261,9 @@ const Domein: p_i.Transformer_With_Parameter<
     ),
     p_.literal.list([
         sh.t.s.row(
-            ["totaal"],
+            p_.literal.list(["totaal"]),
             p_.literal.not_set(),
-            [
+            p_.literal.list([
                 Indent_Blank(null),
                 Indent_Blank(null),
                 Text("totaal"),
@@ -266,7 +276,7 @@ const Domein: p_i.Transformer_With_Parameter<
                 Bedrag($.rechts.totaal, {
                     'teken omkeren': false
                 }),
-            ]
+            ])
         ),
     ])
 ])
@@ -614,160 +624,171 @@ export const Root: p_i.Transformer<
         })
     return sh.document(
         css,
-        sh.f.div([
-            sh.f.table(
-                [],
-                p_.literal.segmented_list([
-                    p_.literal.list([
-                        sh.t.header(["title"], [
-                            sh.t.s.row(
-                                [],
-                                p_.literal.not_set(),
-                                [
-                                    sh.t.s.r.th(
-                                        [],
-                                        p_.literal.set(14),
-                                        [
-                                            sh.f.span([sh.p.p("Jaarrekeningen")])
-                                        ]
+        sh.f.div(
+            p_.literal.list([
+                sh.f.table(
+                    p_.literal.list([]),
+                    p_.literal.segmented_list([
+                        p_.literal.list([
+                            sh.t.header(
+                                p_.literal.list(["title"]),
+                                p_.literal.list([
+                                    sh.t.s.row(
+                                        p_.literal.list([]),
+                                        p_.literal.not_set(),
+                                        p_.literal.list([
+                                            sh.t.s.r.th(
+                                                p_.literal.list([]),
+                                                p_.literal.set(14),
+                                                p_.literal.list([
+                                                    sh.f.span(
+                                                        p_.literal.list([sh.p.p("Jaarrekeningen")])
+                                                    )
+                                                ])
+                                            )
+                                        ])
                                     )
-                                ]
-                            )
+                                ])
+                            ),
                         ]),
-                    ]),
-                    p_.from.list(
-                        p_.from.dictionary($.jaren).convert_to_list(
-                        ($, id) => ({
-                            'value': $,
-                            'id': id,
-                        })
-                    )
-                    ).map(
-                        ($) => sh.t.body(
-                            ["jaar"],
-                            p_.literal.segmented_list([
-                                p_.literal.list([
-                                    sh.t.s.row(["margin"], p_.literal.not_set(), []),
-                                    sh.t.s.row(
-                                        ["jaar"],
-                                        p_.literal.not_set(),
-                                        [
-                                            Colspan_Text(
-                                                $.id,
+                        p_.from.list(
+                            p_.from.dictionary($.jaren).convert_to_list(
+                                ($, id) => ({
+                                    'value': $,
+                                    'id': id,
+                                })
+                            )
+                        ).map(
+                            ($) => sh.t.body(
+                                p_.literal.list(["jaar"]),
+                                p_.literal.segmented_list([
+                                    p_.literal.list([
+                                        sh.t.s.row(
+                                            p_.literal.list(["margin"]),
+                                            p_.literal.not_set(),
+                                            p_.literal.list([])
+                                        ),
+                                        sh.t.s.row(
+                                            p_.literal.list(["jaar"]),
+                                            p_.literal.not_set(),
+                                            p_.literal.list([
+                                                Colspan_Text(
+                                                    $.id,
+                                                    {
+                                                        'number of columns': 14
+                                                    }
+                                                ),
+                                            ])
+                                        ),
+                                    ]),
+                                    Domein(
+                                        {
+                                            'links': Balans_Grootboekrekeningen(
+                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
+                                                    ($) => $.bron.Stam.Zijde[0] === 'Activa'
+                                                ),
                                                 {
-                                                    'number of columns': 14
-                                                }
-                                            ),
-                                        ]
-                                    ),
-                                ]),
-                                Domein(
-                                    {
-                                        'links': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                ($) => $.bron.Stam.Zijde[0] === 'Activa'
-                                            ),
-                                            {
-                                                'type': ['begin', null],
-                                                'label': "activa",
-                                                'teken omkeren': false
-                                            }
-                                        ),
-                                        'rechts': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                ($) => $.bron.Stam.Zijde[0] === 'Passiva'
-                                            ),
-                                            {
-                                                'type': ['begin', null],
-                                                'label': "passiva",
-                                                'teken omkeren': true
-                                            }
-                                        ),
-
-                                    },
-                                    {
-                                        'label': "beginbalans",
-                                    }
-                                ),
-                                Domein(
-                                    {
-                                        'links': Resultaat_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
-                                                ($) => $.bron.Stam.Zijde[0] === 'Kosten'
-                                            ),
-                                            {
-                                                'label': "kosten",
-                                                'teken omkeren': true
-                                            }
-                                        ),
-                                        'rechts': Resultaat_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
-                                                ($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'
-                                            ),
-                                            {
-                                                'label': "opbrengsten",
-                                                'teken omkeren': false
-                                            }
-                                        ),
-                                    },
-                                    {
-                                        'label': "resultaat",
-                                    }
-                                ),
-                                p_.literal.list([
-                                    sh.t.s.row(
-                                        ["totaal"],
-                                        p_.literal.not_set(),
-                                        [
-                                            Indent_Blank(null),
-                                            Indent_Blank(null),
-                                            Colspan_Text(
-                                                "winst voor belasting",
-                                                {
-                                                    'number of columns': 11
-                                                }
-                                            ),
-                                            Bedrag(
-                                                $.value.jaarbeheer.resultaat['resultaat'],
-                                                {
+                                                    'type': ['begin', null],
+                                                    'label': "activa",
                                                     'teken omkeren': false
                                                 }
                                             ),
-                                        ]
+                                            'rechts': Balans_Grootboekrekeningen(
+                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
+                                                    ($) => $.bron.Stam.Zijde[0] === 'Passiva'
+                                                ),
+                                                {
+                                                    'type': ['begin', null],
+                                                    'label': "passiva",
+                                                    'teken omkeren': true
+                                                }
+                                            ),
+
+                                        },
+                                        {
+                                            'label': "beginbalans",
+                                        }
+                                    ),
+                                    Domein(
+                                        {
+                                            'links': Resultaat_Grootboekrekeningen(
+                                                p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
+                                                    ($) => $.bron.Stam.Zijde[0] === 'Kosten'
+                                                ),
+                                                {
+                                                    'label': "kosten",
+                                                    'teken omkeren': true
+                                                }
+                                            ),
+                                            'rechts': Resultaat_Grootboekrekeningen(
+                                                p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
+                                                    ($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'
+                                                ),
+                                                {
+                                                    'label': "opbrengsten",
+                                                    'teken omkeren': false
+                                                }
+                                            ),
+                                        },
+                                        {
+                                            'label': "resultaat",
+                                        }
+                                    ),
+                                    p_.literal.list([
+                                        sh.t.s.row(
+                                            p_.literal.list(["totaal"]),
+                                            p_.literal.not_set(),
+                                            p_.literal.list([
+                                                Indent_Blank(null),
+                                                Indent_Blank(null),
+                                                Colspan_Text(
+                                                    "winst voor belasting",
+                                                    {
+                                                        'number of columns': 11
+                                                    }
+                                                ),
+                                                Bedrag(
+                                                    $.value.jaarbeheer.resultaat['resultaat'],
+                                                    {
+                                                        'teken omkeren': false
+                                                    }
+                                                ),
+                                            ])
+                                        ),
+                                    ]),
+                                    Domein(
+                                        {
+                                            'links': Balans_Grootboekrekeningen(
+                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
+                                                    ($) => $.bron.Stam.Zijde[0] === 'Activa'
+                                                ),
+                                                {
+                                                    'type': ['eind', null],
+                                                    'label': "activa",
+                                                    'teken omkeren': false
+                                                }
+                                            ),
+                                            'rechts': Balans_Grootboekrekeningen(
+                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
+                                                    ($) => $.bron.Stam.Zijde[0] === 'Passiva'
+                                                ),
+                                                {
+                                                    'type': ['eind', null],
+                                                    'label': "passiva",
+                                                    'teken omkeren': true
+                                                }
+                                            ),
+
+                                        },
+                                        {
+                                            'label': "eindbalans",
+                                        }
                                     ),
                                 ]),
-                                Domein(
-                                    {
-                                        'links': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                ($) => $.bron.Stam.Zijde[0] === 'Activa'
-                                            ),
-                                            {
-                                                'type': ['eind', null],
-                                                'label': "activa",
-                                                'teken omkeren': false
-                                            }
-                                        ),
-                                        'rechts': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                ($) => $.bron.Stam.Zijde[0] === 'Passiva'
-                                            ),
-                                            {
-                                                'type': ['eind', null],
-                                                'label': "passiva",
-                                                'teken omkeren': true
-                                            }
-                                        ),
-
-                                    },
-                                    {
-                                        'label': "eindbalans",
-                                    }
-                                ),
-                            ]),
-                        )),
-                ])
-            ),
-        ])
+                            )),
+                    ])
+                ),
+            ])
+        )
     )
 }

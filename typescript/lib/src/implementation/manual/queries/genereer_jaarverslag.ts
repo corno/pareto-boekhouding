@@ -19,7 +19,7 @@ import * as t_aggregatie_to_jaarverslag_html from "../transformers/derived/jaarv
 import * as t_path_to_text from "pareto-resources/dist/implementation/manual/transformers/unrestricted_path/text"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/dist/shorthands/prose"
+import * as sh from "pareto-fountain-pen/dist/shorthands/prose/deprecated"
 
 export const $$: interface_.query_functions.genereer_jaarverslag = p_.query_function(
     ($d, $s, $q) => p_super_query_result(p_.e.refine<d_boekhouding.Root_, d_fp.Phrase>(
