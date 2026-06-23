@@ -14,10 +14,10 @@ import * as t_primitives_to_text from "../primitives/text"
 const integer_from_dictionary = <T extends p_di.Value>(
     dict: p_di.Dictionary<T>,
     get_value: ($: T) => number,
-): number => p_.from.list(p_.from.dictionary(dict
-    ).convert_to_list(
-        ($) => $
-    )
+): number => p_.from.list(
+    p_.from.dictionary(dict).convert_to_list(
+    ($) => $
+)
 ).sum(
     ($) => get_value($)
 )
@@ -114,8 +114,7 @@ const Domein_Zijde: p_i.Transformer<
 
     const teken_omkeren = $['teken omkeren']
 
-    return p_.from.dictionary($.hoofdcategorieen
-    ).flatten_to_list(
+    return p_.from.dictionary($.hoofdcategorieen).flatten_to_list(
         ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
             p_.literal.list([
                 p_.literal.list([
@@ -134,8 +133,7 @@ const Domein_Zijde: p_i.Transformer<
                     ),
                 ])
             ]),
-            p_.from.dictionary($.subcategorieen
-            ).flatten_to_list(
+            p_.from.dictionary($.subcategorieen).flatten_to_list(
                 ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                     p_.literal.list([
                         p_.literal.list([
@@ -156,8 +154,7 @@ const Domein_Zijde: p_i.Transformer<
                             Indent(null),
                         ])
                     ]),
-                    p_.from.dictionary($.grootboekrekeningen
-                    ).flatten_to_list(
+                    p_.from.dictionary($.grootboekrekeningen).flatten_to_list(
                         ($, id) => p_.literal.list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
                             p_.literal.list([
                                 Indent(null),
@@ -222,14 +219,17 @@ const Domein: p_i.Transformer_With_Parameter<
             ]
         ),
     ]),
-    p_.from.list(p_.from.list(Domein_Zijde($.links)
-    ).full_join(
-        Domein_Zijde($.rechts),
-        (value, other_value) => ({
-            'links': value,
-            'rechts': other_value,
-        })
-    )).map(
+    p_.from.list(
+        p_.from.list(
+            Domein_Zijde($.links)
+        ).full_join(
+            Domein_Zijde($.rechts),
+            (value, other_value) => ({
+                'links': value,
+                'rechts': other_value,
+            })
+        )
+    ).map(
         ($) => sh.t.s.row(
             ["item"],
             p_.literal.not_set(),
@@ -291,12 +291,10 @@ const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
     return {
         'label': $p.label,
         'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen
-        ).group(
+        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen).group(
             ($) => $.hoofdcategorie,
             ($) => {
-                const subcategorieen = p_.from.dictionary($
-                ).group(
+                const subcategorieen = p_.from.dictionary($).group(
                     ($) => $.subcategorie,
                     ($) => ({
                         'grootboekrekeningen': $,
@@ -355,12 +353,10 @@ const Balans_Grootboekrekeningen: p_i.Transformer_With_Parameter<
     return {
         'label': $p.label,
         'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen
-        ).group(
+        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen).group(
             ($) => $.hoofdcategorie,
             ($) => {
-                const $p_subcategorieen = p_.from.dictionary($
-                ).group(
+                const $p_subcategorieen = p_.from.dictionary($).group(
                     ($) => $.subcategorie,
                     ($) => ({
                         'grootboekrekeningen': $,
@@ -639,12 +635,13 @@ export const Root: p_i.Transformer<
                             )
                         ]),
                     ]),
-                    p_.from.list(p_.from.dictionary($.jaren).convert_to_list(
-                            ($, id) => ({
-                                'value': $,
-                                'id': id,
-                            })
-                        )
+                    p_.from.list(
+                        p_.from.dictionary($.jaren).convert_to_list(
+                        ($, id) => ({
+                            'value': $,
+                            'id': id,
+                        })
+                    )
                     ).map(
                         ($) => sh.t.body(
                             ["jaar"],
@@ -667,8 +664,7 @@ export const Root: p_i.Transformer<
                                 Domein(
                                     {
                                         'links': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']
-                                            ).filter(
+                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
                                                 ($) => $.bron.Stam.Zijde[0] === 'Activa'
                                             ),
                                             {
@@ -678,8 +674,7 @@ export const Root: p_i.Transformer<
                                             }
                                         ),
                                         'rechts': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']
-                                            ).filter(
+                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
                                                 ($) => $.bron.Stam.Zijde[0] === 'Passiva'
                                             ),
                                             {
@@ -697,8 +692,7 @@ export const Root: p_i.Transformer<
                                 Domein(
                                     {
                                         'links': Resultaat_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']
-                                            ).filter(
+                                            p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
                                                 ($) => $.bron.Stam.Zijde[0] === 'Kosten'
                                             ),
                                             {
@@ -707,8 +701,7 @@ export const Root: p_i.Transformer<
                                             }
                                         ),
                                         'rechts': Resultaat_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']
-                                            ).filter(
+                                            p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
                                                 ($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'
                                             ),
                                             {
@@ -746,8 +739,7 @@ export const Root: p_i.Transformer<
                                 Domein(
                                     {
                                         'links': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']
-                                            ).filter(
+                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
                                                 ($) => $.bron.Stam.Zijde[0] === 'Activa'
                                             ),
                                             {
@@ -757,8 +749,7 @@ export const Root: p_i.Transformer<
                                             }
                                         ),
                                         'rechts': Balans_Grootboekrekeningen(
-                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']
-                                            ).filter(
+                                            p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
                                                 ($) => $.bron.Stam.Zijde[0] === 'Passiva'
                                             ),
                                             {

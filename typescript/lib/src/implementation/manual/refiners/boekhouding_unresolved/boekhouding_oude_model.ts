@@ -564,8 +564,7 @@ export const Mutaties: Mutaties = ($, $p) => ({
         ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry => {
             return {
                 'Stam': null,
-                'Mutatie Verwerkingen': sh.dictionary(p_temp.from.dictionary($.Mutaties,
-                ).map_optionally(
+                'Mutatie Verwerkingen': sh.dictionary(p_temp.from.dictionary($.Mutaties).map_optionally(
                     ($) => p_.from.state($.Status).decide(
                         ($): p_di.Optional_Value<d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry> => {
                             switch ($[0]) {
