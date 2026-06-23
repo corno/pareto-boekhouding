@@ -11,7 +11,9 @@ import $p_unreachable_code_path from 'pareto-core/dist/implementation/transforme
 
 //dependencies
 
-export const Root: p_i.Transformer<d_in.Root, d_out.Root> = ($) => {
+export const Root: p_i.Transformer<
+d_in.Root, d_out.Root
+> = ($) => {
     const bron_root = $
     return {
         'bron': $,
