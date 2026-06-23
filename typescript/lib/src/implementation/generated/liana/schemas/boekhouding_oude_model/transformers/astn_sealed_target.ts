@@ -21,7 +21,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
             $['Bankrekeningen'],
             ($) => ['dictionary', p_.from.dictionary($,
             ).map(
-                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
@@ -38,7 +38,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Grootboekrekeningen'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Hoofdcategorie": p_change_context(
                                                     $['Hoofdcategorie'],
@@ -96,7 +96,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Hoofdcategorieen'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
@@ -136,7 +136,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', p_.from.dictionary($,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                             {
                                                                 "Hoofdcategorie fiscus": p_change_context(
                                                                     $['Hoofdcategorie fiscus'],
@@ -164,7 +164,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Hoofdcategorieen fiscus'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
@@ -204,7 +204,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', p_.from.dictionary($,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                             {},
                                                         )]],
                                                     )],
@@ -220,7 +220,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                         $['BTW-categorieen'],
                         ($) => ['dictionary', p_.from.dictionary($,
                         ).map(
-                            ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                            ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                 {
                                     "BTW-heffing": p_change_context(
                                         $['BTW-heffing'],
@@ -274,7 +274,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                         $['Gebruikers'],
                         ($) => ['dictionary', p_.from.dictionary($,
                         ).map(
-                            ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                            ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                 {
                                     "Volledige naam": p_change_context(
                                         $['Volledige naam'],
@@ -311,7 +311,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Correctietypes vennootschapsbelasting'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Te corrigeren promillage": p_change_context(
                                                     $['Te corrigeren promillage'],
@@ -330,7 +330,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Grootboekrekeningen'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Hoofdcategorie": p_change_context(
                                                     $['Hoofdcategorie'],
@@ -431,7 +431,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Hoofdcategorieen'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
@@ -471,7 +471,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', p_.from.dictionary($,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                             {
                                                                 "Hoofdcategorie fiscus": p_change_context(
                                                                     $['Hoofdcategorie fiscus'],
@@ -499,7 +499,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     $['Hoofdcategorieen fiscus'],
                                     ($) => ['dictionary', p_.from.dictionary($,
                                     ).map(
-                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
@@ -539,7 +539,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                     $['Subcategorieen'],
                                                     ($) => ['dictionary', p_.from.dictionary($,
                                                     ).map(
-                                                        ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                        ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                             {},
                                                         )]],
                                                     )],
@@ -558,7 +558,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
             $['Informele rekeningen'],
             ($) => ['dictionary', p_.from.dictionary($,
             ).map(
-                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
@@ -567,7 +567,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
             $['Jaren'],
             ($) => ['dictionary', p_.from.dictionary($,
             ).map(
-                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                     {
                         "Afgesloten": p_change_context(
                             $['Afgesloten'],
@@ -607,7 +607,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Balans grootboekrekeningen'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Type": p_change_context(
                                             $['Type'],
@@ -661,7 +661,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Bankrekeningen'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Beginsaldo": p_change_context(
                                             $['Beginsaldo'],
@@ -683,7 +683,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             $['Mutaties'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Bedrag": p_change_context(
                                                             $['Bedrag'],
@@ -963,13 +963,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['BTW periodes'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "1. BTW-categorieen": p_change_context(
                                             $['1. BTW-categorieen'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {},
                                                 )]],
                                             )],
@@ -978,7 +978,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             $['Documenten'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Bestand": p_change_context(
                                                             $['Bestand'],
@@ -1137,7 +1137,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Informele rekeningen'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Beginsaldo": p_change_context(
                                             $['Beginsaldo'],
@@ -1212,7 +1212,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Inkopen'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Afhandeling": p_change_context(
                                             $['Afhandeling'],
@@ -1454,7 +1454,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             $['Regels'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Bedrag": p_change_context(
                                                             $['Bedrag'],
@@ -1674,7 +1674,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Overige balans items'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Beginsaldo": p_change_context(
                                             $['Beginsaldo'],
@@ -1696,7 +1696,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             $['Memoriaal boekingen'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Bedrag": p_change_context(
                                                             $['Bedrag'],
@@ -1791,7 +1791,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Resultaat grootboekrekeningen'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {},
                                 )]],
                             )],
@@ -1800,7 +1800,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Salarisrondes'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {},
                                 )]],
                             )],
@@ -1832,7 +1832,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Verkopen'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Afhandeling": p_change_context(
                                             $['Afhandeling'],
@@ -2000,7 +2000,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             $['Regels'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "BTW-regime": p_change_context(
                                                             $['BTW-regime'],
@@ -2192,13 +2192,13 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Verrekenposten'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Mutaties": p_change_context(
                                             $['Mutaties'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Bedrag": p_change_context(
                                                             $['Bedrag'],
@@ -2332,19 +2332,19 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
             $['Klanten'],
             ($) => ['dictionary', p_.from.dictionary($,
             ).map(
-                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                     {
                         "Licentieovereenkomsten": p_change_context(
                             $['Licentieovereenkomsten'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Periodes": p_change_context(
                                             $['Periodes'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Bedrag": p_change_context(
                                                             $['Bedrag'],
@@ -2367,19 +2367,19 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                             $['Projecten'],
                             ($) => ['dictionary', p_.from.dictionary($,
                             ).map(
-                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                     {
                                         "Offertes": p_change_context(
                                             $['Offertes'],
                                             ($) => ['dictionary', p_.from.dictionary($,
                                             ).map(
-                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                     {
                                                         "Opbrengsten": p_change_context(
                                                             $['Opbrengsten'],
                                                             ($) => ['dictionary', p_.from.dictionary($,
                                                             ).map(
-                                                                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                                                                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                                                                     {
                                                                         "Type": p_change_context(
                                                                             $['Type'],
@@ -2444,7 +2444,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
             $['Leveranciers'],
             ($) => ['dictionary', p_.from.dictionary($,
             ).map(
-                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
@@ -2453,7 +2453,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
             $['Medewerkers'],
             ($) => ['dictionary', p_.from.dictionary($,
             ).map(
-                ($, id) => ['group', ['verbose', p_.literal.dictionary(
+                ($, id): t_out.Value => ['group', ['verbose', p_.literal.dictionary(
                     {},
                 )]],
             )],
