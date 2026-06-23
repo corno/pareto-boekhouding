@@ -30,37 +30,39 @@ export const $$: interface_.query_functions.converteer_oude_dataset = p_.query_f
             r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
                 r_boekhouding_oude_model_from_loc.Root(
                     $d.data,
-                    ($) => abort(sh.ph.composed([
-                        sh.ph.literal(t_path_to_text.Node_Path($d.path)),
-                        sh.ph.literal(":"),
-                        t_location_to_fountain_pen.Possible_Range(
-                            t_deserialize_parse_tree_to_location.Error($),
-                            {
-                                'character location reporting': ['one based', null],
-                            }
-                        ),
-                        sh.ph.literal(": "),
-                        t_deserialize_parse_tree_to_fountain_pen.Error(
-                            $,
-                        )
-                    ])),
+                    ($) => abort(
+                        sh.ph.composed([
+                            sh.ph.literal(t_path_to_text.Node_Path($d.path)),
+                            sh.ph.literal(":"),
+                            t_location_to_fountain_pen.Possible_Range(
+                                t_deserialize_parse_tree_to_location.Error($),
+                                {
+                                    'character location reporting': ['one based', null],
+                                }
+                            ),
+                            sh.ph.literal(": "),
+                            t_deserialize_parse_tree_to_fountain_pen.Error(
+                                $,
+                            )
+                        ])),
                     $s
                 )
             ),
-            ($) => abort(sh.ph.composed([
-                sh.ph.literal(t_path_to_text.Node_Path($d.path)),
-                sh.ph.literal(":"),
-                t_location_to_fountain_pen.Range(
-                    t_deserialize_resolve_to_location.Error($),
-                    {
-                        'character location reporting': ['one based', null],
-                    }
-                ),
-                sh.ph.literal(": "),
-                t_deserialize_resolve_to_fountain_pen.Error(
-                    $,
-                )
-            ])),
+            ($) => abort(
+                sh.ph.composed([
+                    sh.ph.literal(t_path_to_text.Node_Path($d.path)),
+                    sh.ph.literal(":"),
+                    t_location_to_fountain_pen.Range(
+                        t_deserialize_resolve_to_location.Error($),
+                        {
+                            'character location reporting': ['one based', null],
+                        }
+                    ),
+                    sh.ph.literal(": "),
+                    t_deserialize_resolve_to_fountain_pen.Error(
+                        $,
+                    )
+                ])),
             p_.literal.nothing(),
             p_.literal.nothing(),
         )

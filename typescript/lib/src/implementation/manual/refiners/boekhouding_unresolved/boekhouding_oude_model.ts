@@ -585,19 +585,22 @@ export const Mutaties: Mutaties = ($, $p) => ({
                                                 case 'BTW-periode': return p_.ss($, ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => sh.state(['Resultaat', {
                                                     'Jaar': $.Jaar === $p.jaar
                                                         ? p_.literal.not_set()
-                                                        : p_.literal.set(sh.reference($.Jaar)),
+                                                        : p_.literal.set(
+sh.reference($.Jaar)),
                                                     'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
                                                 }]))
                                                 case 'Inkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
                                                     'Jaar': $.Jaar === $p.jaar
                                                         ? p_.literal.not_set()
-                                                        : p_.literal.set(sh.reference($.Jaar)),
+                                                        : p_.literal.set(
+sh.reference($.Jaar)),
                                                     'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
                                                 }]))
                                                 case 'Verkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
                                                     'Jaar': $.Jaar === $p.jaar
                                                         ? p_.literal.not_set()
-                                                        : p_.literal.set(sh.reference($.Jaar)),
+                                                        : p_.literal.set(
+sh.reference($.Jaar)),
                                                     'type': sh.state(['Verkoop', sh.reference($['Verkoop'])])
                                                 }]))
                                                 default: return p_.au($[0])
@@ -636,19 +639,22 @@ export const Mutaties: Mutaties = ($, $p) => ({
                                 case 'BTW-periode': return p_.ss($, ($) => sh.state(['Resultaat', {
                                     'Jaar': $.Jaar === $p.jaar
                                         ? p_.literal.not_set()
-                                        : p_.literal.set(sh.reference($.Jaar)),
+                                        : p_.literal.set(
+sh.reference($.Jaar)),
                                     'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
                                 }]))
                                 case 'Inkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
                                     'Jaar': $.Jaar === $p.jaar
                                         ? p_.literal.not_set()
-                                        : p_.literal.set(sh.reference($.Jaar)),
+                                        : p_.literal.set(
+sh.reference($.Jaar)),
                                     'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
                                 }]))
                                 case 'Verkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
                                     'Jaar': $.Jaar === $p.jaar
                                         ? p_.literal.not_set()
-                                        : p_.literal.set(sh.reference($.Jaar)),
+                                        : p_.literal.set(
+sh.reference($.Jaar)),
                                     'type': sh.state(['Verkoop', sh.reference($['Verkoop'])])
                                 }]))
                                 default: return p_.au($[0])

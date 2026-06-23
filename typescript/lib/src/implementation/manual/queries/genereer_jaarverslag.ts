@@ -25,7 +25,8 @@ export const $$: interface_.query_functions.genereer_jaarverslag = p_.query_func
     ($d, $s, $q) => p_super_query_result(p_.e.refine<d_boekhouding.Root_, d_fp.Phrase>(
         (abort) => r_boekhouding_resolved_from_loc.Root(
             $d.data,
-            ($) => abort(sh.ph.composed([
+            ($) => abort(
+sh.ph.composed([
                 sh.ph.literal(t_path_to_text.Node_Path($d.path)),
                 sh.ph.literal(":"),
                 t_location_to_fountain_pen.Possible_Range(
