@@ -1001,7 +1001,7 @@ d_in.Root, d_out.Root
                                     //                 ? p_.literal.set(openstaand)
                                     //                 : p_.literal.not_set()
                                     //         }
-                                    //     ).__d_ map_deprecated(
+                                    //     ).__d_ map_ deprecated(
                                     // ($) => ({
                                     //         'beginsaldo': 0,
                                     //         'mutaties': $,
