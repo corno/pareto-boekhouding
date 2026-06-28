@@ -186,7 +186,7 @@ export const Fiscaal: Fiscaal = ($) => ({
             'Subcategorieen': p_change_context($['Subcategorieen'], ($) => sh.dictionary(p_.from.dictionary($).map(
                 ($) => null))),
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
-                ($): d_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
+                ($) => {
                     switch ($[0]) {
                         case 'Activa': return p_.ss($, ($) => sh.state(['Activa', null]))
                         case 'Passiva': return p_.ss($, ($) => sh.state(['Passiva', null]))
