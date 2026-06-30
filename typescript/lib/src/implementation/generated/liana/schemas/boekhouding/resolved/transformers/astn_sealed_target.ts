@@ -59,7 +59,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', p_.lit
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Activa':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Activa',
@@ -67,7 +67,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', p_.lit
                                                 }),
                                             )
                                         case 'Passiva':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Passiva',
@@ -106,7 +106,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', p_.lit
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Kosten':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Kosten',
@@ -114,7 +114,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', p_.lit
                                                 }),
                                             )
                                         case 'Opbrengsten':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Opbrengsten',
@@ -177,7 +177,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Activa':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Activa',
@@ -185,7 +185,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                 }),
                                             )
                                         case 'Passiva':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Passiva',
@@ -241,7 +241,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Kosten':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Kosten',
@@ -249,7 +249,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                                 }),
                                             )
                                         case 'Opbrengsten':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Opbrengsten',
@@ -310,7 +310,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
@@ -330,7 +330,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                 }),
                                             )
                                         case 'Nee':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nee',
@@ -380,7 +380,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Activa':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Activa',
@@ -388,7 +388,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                             }),
                                                         )
                                                     case 'Passiva':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Passiva',
@@ -434,7 +434,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Kosten':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Kosten',
@@ -447,7 +447,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                 ($): t_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Ja':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Ja',
@@ -465,7 +465,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                                 }),
                                                                                             )
                                                                                         case 'Nee':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Nee',
@@ -485,7 +485,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                             }),
                                                         )
                                                     case 'Opbrengsten':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Opbrengsten',
@@ -615,7 +615,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                 ($): t_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Project':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',
@@ -784,7 +784,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Aangegeven':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Aangegeven',
@@ -828,7 +828,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                             }),
                                                         )
                                                     case 'Openstaand':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Openstaand',
@@ -945,7 +945,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Ja',
@@ -953,7 +953,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                             }),
                                                         )
                                                     case 'Nee':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
@@ -1051,7 +1051,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Ja',
@@ -1059,7 +1059,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                             }),
                                                         )
                                                     case 'Nee':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
@@ -1137,7 +1137,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                 ($): t_out.Value.state => {
                     switch ($[0]) {
                         case 'Ja':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Ja',
@@ -1145,7 +1145,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                                 }),
                             )
                         case 'Nee':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Nee',
@@ -1198,7 +1198,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Mutaties':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Mutaties',
@@ -1206,7 +1206,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Nog te betalen':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nog te betalen',
@@ -1226,7 +1226,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Rekening courant':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
@@ -1265,7 +1265,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Toegevoegd':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
@@ -1283,7 +1283,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Niet van toepassing':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Niet van toepassing',
@@ -1291,7 +1291,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Ontbreekt':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ontbreekt',
@@ -1328,7 +1328,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bekend':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bekend',
@@ -1384,7 +1384,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Balans':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -1402,7 +1402,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 }),
                                                             )
                                                         case 'Kosten':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Kosten',
@@ -1438,7 +1438,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Bonnetje':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Bonnetje',
@@ -1446,7 +1446,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Inkoop (met crediteur)':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Inkoop (met crediteur)',
@@ -1471,7 +1471,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Loonheffing':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Loonheffing',
@@ -1489,7 +1489,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Salaris':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Salaris',
@@ -1538,7 +1538,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Mutaties':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Mutaties',
@@ -1546,7 +1546,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Rekening courant':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
@@ -1594,7 +1594,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Toegevoegd':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
@@ -1633,7 +1633,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Project':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Project',
@@ -1658,7 +1658,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 }),
                                             )
                                         case 'Licentieovereenkomst':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Licentieovereenkomst',
@@ -1705,7 +1705,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Intracommunautair':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
@@ -1713,7 +1713,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 }),
                                                             )
                                                         case 'Standaard':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Standaard',
@@ -1731,7 +1731,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 }),
                                                             )
                                                         case 'Binnenland: heffing verlegd':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
@@ -1765,7 +1765,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Project':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Project',
@@ -1783,7 +1783,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 }),
                                                             )
                                                         case 'Los':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Los',
@@ -1791,7 +1791,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 }),
                                                             )
                                                         case 'Licentieovereenkomst':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
@@ -1830,7 +1830,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Opbrengsten':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Opbrengsten',
@@ -1848,7 +1848,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                 }),
                                                             )
                                                         case 'Balans':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -1921,7 +1921,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Resultaat':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Resultaat',
@@ -1931,7 +1931,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                 }),
                                                             )
                                                         case 'Balans':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -1940,7 +1940,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                         ($): t_out.Value.state => {
                                                                             switch ($[0]) {
                                                                                 case 'Informele rekening':
-                                                                                    return p_.ss(
+                                                                                    return p_.option(
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Informele rekening',
@@ -2009,7 +2009,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Resultaat':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Resultaat',
@@ -2019,7 +2019,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                 }),
                                                             )
                                                         case 'Balans':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -2028,7 +2028,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                         ($): t_out.Value.state => {
                                                                             switch ($[0]) {
                                                                                 case 'Informele rekening':
-                                                                                    return p_.ss(
+                                                                                    return p_.option(
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Informele rekening',
@@ -2046,7 +2046,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                                         }),
                                                                                     )
                                                                                 case 'Verrekenpost':
-                                                                                    return p_.ss(
+                                                                                    return p_.option(
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Verrekenpost',
@@ -2161,7 +2161,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', p_.from.dictionar
                     ($): t_out.Value.state => {
                         switch ($[0]) {
                             case 'Ja':
-                                return p_.ss(
+                                return p_.option(
                                     $,
                                     ($) => ({
                                         'option': 'Ja',
@@ -2169,7 +2169,7 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', p_.from.dictionar
                                     }),
                                 )
                             case 'Nee':
-                                return p_.ss(
+                                return p_.option(
                                     $,
                                     ($) => ({
                                         'option': 'Nee',
@@ -2247,7 +2247,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                 ($): t_out.Value.state => {
                     switch ($[0]) {
                         case 'Inkoop':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Inkoop',
@@ -2258,7 +2258,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                                 }),
                             )
                         case 'Verkoop':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Verkoop',
@@ -2269,7 +2269,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                                 }),
                             )
                         case 'BTW-periode':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'BTW-periode',
@@ -2295,7 +2295,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', p_
     ($): t_out.Value.state => {
         switch ($[0]) {
             case 'Ja':
-                return p_.ss(
+                return p_.option(
                     $,
                     ($) => ({
                         'option': 'Ja',
@@ -2303,7 +2303,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', p_
                     }),
                 )
             case 'Nee':
-                return p_.ss(
+                return p_.option(
                     $,
                     ($) => ({
                         'option': 'Nee',

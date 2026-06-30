@@ -352,8 +352,8 @@ const Balans_Grootboekrekeningen: p_i.Transformer_With_Parameter<
                 'bedrag': p_.from.state($p.type).decide(
                     ($): number => {
                         switch ($[0]) {
-                            case 'begin': return p_.ss($, ($) => context.totaal.beginsaldo)
-                            case 'eind': return p_.ss($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
+                            case 'begin': return p_.option($, ($) => context.totaal.beginsaldo)
+                            case 'eind': return p_.option($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
                             default: return p_.au($[0])
                         }
                     }),

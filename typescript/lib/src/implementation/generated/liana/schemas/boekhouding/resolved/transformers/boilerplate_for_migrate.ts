@@ -86,12 +86,12 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     ($): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Activa':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Activa', null],
                                                 )
                                             case 'Passiva':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Passiva', null],
                                                 )
@@ -215,12 +215,12 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                     ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Kosten':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Kosten', null],
                                                 )
                                             case 'Opbrengsten':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Opbrengsten', null],
                                                 )
@@ -395,12 +395,12 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     ($): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Activa':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Activa', null],
                                                 )
                                             case 'Passiva':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Passiva', null],
                                                 )
@@ -569,12 +569,12 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                     ($): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Kosten':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Kosten', null],
                                                 )
                                             case 'Opbrengsten':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Opbrengsten', null],
                                                 )
@@ -746,7 +746,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                     ($): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing.l_state => {
                                         switch ($[0]) {
                                             case 'Ja':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Ja', {
                                                         'BTW-promillage': p_change_context(
@@ -756,7 +756,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                     }],
                                                 )
                                             case 'Nee':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Nee', null],
                                                 )
@@ -884,12 +884,12 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             ($): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
                                                 switch ($[0]) {
                                                     case 'Activa':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Activa', null],
                                                         )
                                                     case 'Passiva':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Passiva', null],
                                                         )
@@ -1014,7 +1014,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                             ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
                                                 switch ($[0]) {
                                                     case 'Kosten':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Kosten', {
                                                                 'Correctie op vennootschapsbelasting': p_change_context(
@@ -1041,7 +1041,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                             ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting.l_state => {
                                                                                 switch ($[0]) {
                                                                                     case 'Ja':
-                                                                                        return p_.ss(
+                                                                                        return p_.option(
                                                                                             $,
                                                                                             ($) => ['Ja', {
                                                                                                 'Correctietype': p_change_context(
@@ -1069,7 +1069,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                             }],
                                                                                         )
                                                                                     case 'Nee':
-                                                                                        return p_.ss(
+                                                                                        return p_.option(
                                                                                             $,
                                                                                             ($) => ['Nee', null],
                                                                                         )
@@ -1085,7 +1085,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                             }],
                                                         )
                                                     case 'Opbrengsten':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Opbrengsten', null],
                                                         )
@@ -1472,7 +1472,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                                 ($): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type.l_state => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Project':
-                                                                                                            return p_.ss(
+                                                                                                            return p_.option(
                                                                                                                 $,
                                                                                                                 ($) => ['Project', {
                                                                                                                     'Bedrag': p_change_context(
@@ -1976,7 +1976,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status.l_state => {
                                                 switch ($[0]) {
                                                     case 'Aangegeven':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Aangegeven', {
                                                                 'Afronding': p_change_context(
@@ -1994,7 +1994,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                                             }],
                                                         )
                                                     case 'Openstaand':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Openstaand', null],
                                                         )
@@ -2224,12 +2224,12 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             ($): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Ja', null],
                                                         )
                                                     case 'Nee':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Nee', {
                                                                 'Rekening': p_change_context(
@@ -2399,12 +2399,12 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                             ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Ja', null],
                                                         )
                                                     case 'Nee':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ['Nee', {
                                                                 'Rekening': p_change_context(
@@ -2588,12 +2588,12 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
                 ($): t_out.Overige_balans_item.Nieuw.l_state => {
                     switch ($[0]) {
                         case 'Ja':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ['Ja', null],
                             )
                         case 'Nee':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ['Nee', {
                                     'Balans item': p_change_context(
@@ -2719,12 +2719,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                         switch ($[0]) {
                                             case 'Mutaties':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Mutaties', null],
                                                 )
                                             case 'Nog te betalen':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Nog te betalen', {
                                                         'Betalingstermijn': p_change_context(
@@ -2734,7 +2734,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                 )
                                             case 'Rekening courant':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Rekening courant', {
                                                         'Rekening courant': p_change_context(
@@ -2816,7 +2816,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Toegevoegd', {
                                                         'Document': p_change_context(
@@ -2826,12 +2826,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                 )
                                             case 'Niet van toepassing':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Niet van toepassing', null],
                                                 )
                                             case 'Ontbreekt':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Ontbreekt', null],
                                                 )
@@ -2895,7 +2895,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Bekend':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Bekend', {
                                                                             'BTW-bedrag': p_change_context(
@@ -2945,7 +2945,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Balans':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Balans', {
                                                                             'Balans item': p_change_context(
@@ -2973,7 +2973,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                         }],
                                                                     )
                                                                 case 'Kosten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Kosten', {
                                                                             'Grootboekrekening': p_change_context(
@@ -3054,12 +3054,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type.l_state => {
                                         switch ($[0]) {
                                             case 'Bonnetje':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Bonnetje', null],
                                                 )
                                             case 'Inkoop (met crediteur)':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Inkoop (met crediteur)', {
                                                         'Crediteur': p_change_context(
@@ -3091,7 +3091,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                 )
                                             case 'Loonheffing':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Loonheffing', {
                                                         'Ronde': p_change_context(
@@ -3119,7 +3119,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                 )
                                             case 'Salaris':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Salaris', {
                                                         'Ronde': p_change_context(
@@ -3245,12 +3245,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                         switch ($[0]) {
                                             case 'Mutaties':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Mutaties', null],
                                                 )
                                             case 'Rekening courant':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Rekening courant', {
                                                         'Rekening courant': p_change_context(
@@ -3336,7 +3336,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Toegevoegd', {
                                                         'Document': p_change_context(
@@ -3400,7 +3400,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                     ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype.l_state => {
                                         switch ($[0]) {
                                             case 'Project':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Project', {
                                                         'Project': p_change_context(
@@ -3450,7 +3450,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                 )
                                             case 'Licentieovereenkomst':
-                                                return p_.ss(
+                                                return p_.option(
                                                     $,
                                                     ($) => ['Licentieovereenkomst', {
                                                         'Overeenkomst': p_change_context(
@@ -3537,12 +3537,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Intracommunautair':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Intracommunautair', null],
                                                                     )
                                                                 case 'Standaard':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Standaard', {
                                                                             'BTW-categorie': p_change_context(
@@ -3570,7 +3570,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                         }],
                                                                     )
                                                                 case 'Binnenland: heffing verlegd':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Binnenland: heffing verlegd', null],
                                                                     )
@@ -3611,7 +3611,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Project':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Project', {
                                                                             'Opbrengst': p_change_context(
@@ -3639,12 +3639,12 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                         }],
                                                                     )
                                                                 case 'Los':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Los', null],
                                                                     )
                                                                 case 'Licentieovereenkomst':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Licentieovereenkomst', {
                                                                             'Periode': p_change_context(
@@ -3708,7 +3708,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                         ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Opbrengsten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Opbrengsten', {
                                                                             'Grootboekrekening': p_change_context(
@@ -3736,7 +3736,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                                         }],
                                                                     )
                                                                 case 'Balans':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Balans', {
                                                                             'Balans item': p_change_context(
@@ -3895,14 +3895,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                         ($): t_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Resultaat':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Resultaat', Rekening_Mutatie(
                                                                             $,
                                                                         )],
                                                                     )
                                                                 case 'Balans':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Balans', {
                                                                             'l location': ['in main document', {
@@ -3926,7 +3926,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                 ($): t_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state.Balans.l_state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Informele rekening':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ['Informele rekening', {
                                                                                                     'Informele rekening': p_change_context(
@@ -4091,14 +4091,14 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                         ($): t_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Resultaat':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Resultaat', Rekening_Mutatie(
                                                                             $,
                                                                         )],
                                                                     )
                                                                 case 'Balans':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ['Balans', {
                                                                             'l location': ['in main document', {
@@ -4122,7 +4122,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                 ($): t_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state.Balans.l_state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Informele rekening':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ['Informele rekening', {
                                                                                                     'Informele rekening': p_change_context(
@@ -4150,7 +4150,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                                                 }],
                                                                                             )
                                                                                         case 'Verrekenpost':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ['Verrekenpost', {
                                                                                                     'Verrekenpost': p_change_context(
@@ -4410,12 +4410,12 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                             ($): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten.l_state => {
                                 switch ($[0]) {
                                     case 'Ja':
-                                        return p_.ss(
+                                        return p_.option(
                                             $,
                                             ($) => ['Ja', null],
                                         )
                                     case 'Nee':
-                                        return p_.ss(
+                                        return p_.option(
                                             $,
                                             ($) => ['Nee', null],
                                         )
@@ -4533,7 +4533,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ({
                 ($): t_out.Rekening_Mutatie.type_.l_state => {
                     switch ($[0]) {
                         case 'Inkoop':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ['Inkoop', {
                                     'l location': ['in main document', {
@@ -4556,7 +4556,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ({
                                 }],
                             )
                         case 'Verkoop':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ['Verkoop', {
                                     'l location': ['in main document', {
@@ -4579,7 +4579,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ({
                                 }],
                             )
                         case 'BTW-periode':
-                            return p_.ss(
+                            return p_.option(
                                 $,
                                 ($) => ['BTW-periode', {
                                     'l location': ['in main document', {
@@ -4634,12 +4634,12 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
         ($): t_out.Eerste_boekjaar.l_state => {
             switch ($[0]) {
                 case 'Ja':
-                    return p_.ss(
+                    return p_.option(
                         $,
                         ($) => ['Ja', null],
                     )
                 case 'Nee':
-                    return p_.ss(
+                    return p_.option(
                         $,
                         ($) => ['Nee', {
                             'Vorig boekjaar': p_change_context(

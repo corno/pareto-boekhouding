@@ -61,7 +61,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Activa',
@@ -71,7 +71,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Passiva':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Passiva',
@@ -105,7 +105,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Activa',
@@ -115,7 +115,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Passiva':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Passiva',
@@ -173,7 +173,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Activa',
@@ -183,7 +183,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Passiva':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Passiva',
@@ -229,7 +229,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             ($): t_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Ja',
@@ -249,7 +249,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                             }),
                                                         )
                                                     case 'Nee':
-                                                        return p_.ss(
+                                                        return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
@@ -353,7 +353,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Kosten',
@@ -366,7 +366,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                             ($): t_out.Value.state => {
                                                                                                 switch ($[0]) {
                                                                                                     case 'Ja':
-                                                                                                        return p_.ss(
+                                                                                                        return p_.option(
                                                                                                             $,
                                                                                                             ($) => ({
                                                                                                                 'option': 'Ja',
@@ -384,7 +384,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                                             }),
                                                                                                         )
                                                                                                     case 'Nee':
-                                                                                                        return p_.ss(
+                                                                                                        return p_.option(
                                                                                                             $,
                                                                                                             ($) => ({
                                                                                                                 'option': 'Nee',
@@ -406,7 +406,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
@@ -440,7 +440,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Kosten',
@@ -450,7 +450,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
@@ -508,7 +508,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ($): t_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Kosten',
@@ -518,7 +518,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                         }),
                                                                     )
                                                                 case 'Opbrengsten':
-                                                                    return p_.ss(
+                                                                    return p_.option(
                                                                         $,
                                                                         ($) => ({
                                                                             'option': 'Opbrengsten',
@@ -576,7 +576,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
@@ -586,7 +586,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 }),
                                             )
                                         case 'Nee':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nee',
@@ -616,7 +616,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bankrekening':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bankrekening',
@@ -626,7 +626,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Overig':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Overig',
@@ -636,7 +636,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Informele rekening':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Informele rekening',
@@ -717,7 +717,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Nog te verwerken':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Nog te verwerken',
@@ -727,7 +727,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Verwerkt':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Verwerkt',
@@ -740,7 +740,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                                     ($): t_out.Value.state => {
                                                                                                         switch ($[0]) {
                                                                                                             case 'Inkoop':
-                                                                                                                return p_.ss(
+                                                                                                                return p_.option(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Inkoop',
@@ -765,7 +765,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'Verrekenpost':
-                                                                                                                return p_.ss(
+                                                                                                                return p_.option(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Verrekenpost',
@@ -783,7 +783,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'BTW-periode':
-                                                                                                                return p_.ss(
+                                                                                                                return p_.option(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'BTW-periode',
@@ -808,7 +808,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'Verkoop':
-                                                                                                                return p_.ss(
+                                                                                                                return p_.option(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Verkoop',
@@ -833,7 +833,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                                                     }),
                                                                                                                 )
                                                                                                             case 'Informele rekening':
-                                                                                                                return p_.ss(
+                                                                                                                return p_.option(
                                                                                                                     $,
                                                                                                                     ($) => ({
                                                                                                                         'option': 'Informele rekening',
@@ -881,7 +881,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ja',
@@ -891,7 +891,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Nee':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nee',
@@ -1004,7 +1004,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Aangegeven':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Aangegeven',
@@ -1042,7 +1042,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Openstaand':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Openstaand',
@@ -1070,7 +1070,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                 ($): t_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
@@ -1080,7 +1080,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 }),
                                             )
                                         case 'Nee':
-                                            return p_.ss(
+                                            return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nee',
@@ -1162,7 +1162,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ja',
@@ -1172,7 +1172,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Nee':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nee',
@@ -1221,7 +1221,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Nog te betalen':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nog te betalen',
@@ -1241,7 +1241,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Mutaties':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
@@ -1251,7 +1251,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Rekening courant':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Rekening courant',
@@ -1283,7 +1283,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Binnenland: heffing verlegd':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
@@ -1301,7 +1301,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Geen BTW van toepassing':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Geen BTW van toepassing',
@@ -1319,7 +1319,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Import van buiten de EU':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Import van buiten de EU',
@@ -1337,7 +1337,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Intracommunautair':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
@@ -1355,7 +1355,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Standaard':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Standaard',
@@ -1387,7 +1387,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Toegevoegd':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Toegevoegd',
@@ -1404,7 +1404,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Niet van toepassing':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Niet van toepassing',
@@ -1414,7 +1414,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Ontbreekt':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ontbreekt',
@@ -1424,7 +1424,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Nog toevoegen':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nog toevoegen',
@@ -1463,7 +1463,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Bekend':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Bekend',
@@ -1513,7 +1513,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Balans':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Balans',
@@ -1531,7 +1531,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Kosten':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Kosten',
@@ -1567,7 +1567,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bonnetje':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bonnetje',
@@ -1577,7 +1577,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Inkoop (met crediteur)':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Inkoop (met crediteur)',
@@ -1602,7 +1602,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Loonheffing':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Loonheffing',
@@ -1620,7 +1620,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Salaris':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Salaris',
@@ -1741,7 +1741,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Ja',
@@ -1751,7 +1751,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Nee':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Nee',
@@ -1841,7 +1841,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Mutaties':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Mutaties',
@@ -1851,7 +1851,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Rekening courant':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Rekening courant',
@@ -1899,7 +1899,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Toegevoegd':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Toegevoegd',
@@ -1930,7 +1930,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ($): t_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Project':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Project',
@@ -1955,7 +1955,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 }),
                                                             )
                                                         case 'Licentieovereenkomst':
-                                                            return p_.ss(
+                                                            return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
@@ -2009,7 +2009,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Intracommunautair':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Intracommunautair',
@@ -2019,7 +2019,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Standaard':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Standaard',
@@ -2037,7 +2037,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Binnenland: heffing verlegd':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Binnenland: heffing verlegd',
@@ -2070,7 +2070,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Project':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Project',
@@ -2088,7 +2088,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Los':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Los',
@@ -2098,7 +2098,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Licentieovereenkomst':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Licentieovereenkomst',
@@ -2137,7 +2137,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Opbrengsten':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Opbrengsten',
@@ -2155,7 +2155,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Balans':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Balans',
@@ -2216,7 +2216,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                 ($): t_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Inkoop':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Inkoop',
@@ -2241,7 +2241,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Informele rekening':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Informele rekening',
@@ -2259,7 +2259,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'Verkoop':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'Verkoop',
@@ -2284,7 +2284,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 }),
                                                                             )
                                                                         case 'BTW-periode':
-                                                                            return p_.ss(
+                                                                            return p_.option(
                                                                                 $,
                                                                                 ($) => ({
                                                                                     'option': 'BTW-periode',
@@ -2388,7 +2388,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 ($): t_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Project':
-                                                                                            return p_.ss(
+                                                                                            return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',

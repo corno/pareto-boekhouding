@@ -20,12 +20,12 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
     const old_imp = p_text_from_list(
         p_list_build_deprecated<number>(
             ($i) => {
-                let value = $
+                let $v_value = $
 
                 // Handle negative numbers
-                if (value < 0) {
+                if ($v_value < 0) {
                     $i['add item'](45) // '-'
-                    value = -value
+                    $v_value = -$v_value
                 }
 
                 // Calculate the divisor for the fractional part (10^fractionalDigits)
@@ -35,14 +35,14 @@ export const fractional_decimal: p_i.Transformer_With_Parameter<
                 }
 
                 // Split into integer and fractional parts
-                const integerPart = p_.from.number(value).divide(
+                const integerPart = p_.from.number($v_value).divide(
                     divisor,
                     ['towards zero', null],
                     {
                         divided_by_zero: () => p_unreachable_code_path("the divisor is hardcoded to 10^fractionalDigits")
                     }
                 )
-                const fractionalPart = value % divisor
+                const fractionalPart = $v_value % divisor
 
                 // Generate integer part digits
                 const integerDigits = p_list_build_deprecated<number>(

@@ -78,10 +78,10 @@ export const Beheer: Beheer = ($) => ({
             'BTW-heffing': p_change_context($['BTW-heffing'], ($) => p_.from.state($).decide(
                 ($): d_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
                     switch ($[0]) {
-                        case 'Ja': return p_.ss($, ($) => sh.state(['Ja', ({
+                        case 'Ja': return p_.option($, ($) => sh.state(['Ja', ({
                             'BTW-promillage': p_change_context($['BTW-promillage'], ($) => $),
                         })]))
-                        case 'Nee': return p_.ss($, ($) => sh.state(['Nee', null]))
+                        case 'Nee': return p_.option($, ($) => sh.state(['Nee', null]))
                         default: return p_.au($[0])
                     }
                 })),
@@ -99,8 +99,8 @@ export const Beheer: Beheer = ($) => ({
                 'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
                     ($): d_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
                         switch ($[0]) {
-                            case 'Activa': return p_.ss($, ($) => sh.state(['Activa', null]))
-                            case 'Passiva': return p_.ss($, ($) => sh.state(['Passiva', null]))
+                            case 'Activa': return p_.option($, ($) => sh.state(['Activa', null]))
+                            case 'Passiva': return p_.option($, ($) => sh.state(['Passiva', null]))
                             default: return p_.au($[0])
                         }
                     })),
@@ -112,19 +112,19 @@ export const Beheer: Beheer = ($) => ({
                 'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
                     ($): d_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                         switch ($[0]) {
-                            case 'Kosten': return p_.ss($, ($) => sh.state(['Kosten', ({
+                            case 'Kosten': return p_.option($, ($) => sh.state(['Kosten', ({
                                 'Correctie op vennootschapsbelasting': p_change_context($['Correctie op vennootschapsbelasting'], ($) => p_.from.state($).decide(
                                     ($): d_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting => {
                                         switch ($[0]) {
-                                            case 'Ja': return p_.ss($, ($) => sh.state(['Ja', ({
+                                            case 'Ja': return p_.option($, ($) => sh.state(['Ja', ({
                                                 'Correctietype': p_change_context($['Correctietype'], ($) => sh.reference($)),
                                             })]))
-                                            case 'Nee': return p_.ss($, ($) => sh.state(['Nee', null]))
+                                            case 'Nee': return p_.option($, ($) => sh.state(['Nee', null]))
                                             default: return p_.au($[0])
                                         }
                                     })),
                             })]))
-                            case 'Opbrengsten': return p_.ss($, ($) => sh.state(['Opbrengsten', null]))
+                            case 'Opbrengsten': return p_.option($, ($) => sh.state(['Opbrengsten', null]))
                             default: return p_.au($[0])
                         }
                     })),
@@ -148,7 +148,7 @@ export const Beheer: Beheer = ($) => ({
                                     'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(
                                         ($): d_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
                                             switch ($[0]) {
-                                                case 'Project': return p_.ss($, ($) => sh.state(['Project', ({
+                                                case 'Project': return p_.option($, ($) => sh.state(['Project', ({
                                                     'Bedrag': p_change_context($['Bedrag'], ($) => $),
                                                     'Betaaldatum': p_change_context($['Betaaldatum'], ($) => fix_date($)),
                                                 })]))
@@ -173,8 +173,8 @@ export const Beheer: Beheer = ($) => ({
 export const Eerste_boekjaar: Eerste_boekjaar = ($) => p_.from.state($).decide(
     ($): d_out.Eerste_boekjaar => {
         switch ($[0]) {
-            case 'Ja': return p_.ss($, ($) => sh.state(['Ja', null]))
-            case 'Nee': return p_.ss($, ($) => sh.state(['Nee', ({
+            case 'Ja': return p_.option($, ($) => sh.state(['Ja', null]))
+            case 'Nee': return p_.option($, ($) => sh.state(['Nee', ({
                 'Vorig boekjaar': p_change_context($['Vorig boekjaar'], ($) => sh.reference($)),
             })]))
             default: return p_.au($[0])
@@ -188,8 +188,8 @@ export const Fiscaal: Fiscaal = ($) => ({
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
                 ($) => {
                     switch ($[0]) {
-                        case 'Activa': return p_.ss($, ($) => sh.state(['Activa', null]))
-                        case 'Passiva': return p_.ss($, ($) => sh.state(['Passiva', null]))
+                        case 'Activa': return p_.option($, ($) => sh.state(['Activa', null]))
+                        case 'Passiva': return p_.option($, ($) => sh.state(['Passiva', null]))
                         default: return p_.au($[0])
                     }
                 })),
@@ -201,8 +201,8 @@ export const Fiscaal: Fiscaal = ($) => ({
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
                 ($): d_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                     switch ($[0]) {
-                        case 'Kosten': return p_.ss($, ($) => sh.state(['Kosten', null]))
-                        case 'Opbrengsten': return p_.ss($, ($) => sh.state(['Opbrengsten', null]))
+                        case 'Kosten': return p_.option($, ($) => sh.state(['Kosten', null]))
+                        case 'Opbrengsten': return p_.option($, ($) => sh.state(['Opbrengsten', null]))
                         default: return p_.au($[0])
                     }
                 })),
@@ -219,8 +219,8 @@ export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
                 ($): d_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde => {
                     switch ($[0]) {
-                        case 'Activa': return p_.ss($, ($) => sh.state(['Activa', null]))
-                        case 'Passiva': return p_.ss($, ($) => sh.state(['Passiva', null]))
+                        case 'Activa': return p_.option($, ($) => sh.state(['Activa', null]))
+                        case 'Passiva': return p_.option($, ($) => sh.state(['Passiva', null]))
                         default: return p_.au($[0])
                     }
                 })),
@@ -239,8 +239,8 @@ export const Grootboek_Categorieen: Grootboek_Categorieen = ($) => ({
             'Zijde': p_change_context($['Zijde'], ($) => p_.from.state($).decide(
                 ($): d_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                     switch ($[0]) {
-                        case 'Kosten': return p_.ss($, ($) => sh.state(['Kosten', null]))
-                        case 'Opbrengsten': return p_.ss($, ($) => sh.state(['Opbrengsten', null]))
+                        case 'Kosten': return p_.option($, ($) => sh.state(['Kosten', null]))
+                        case 'Opbrengsten': return p_.option($, ($) => sh.state(['Opbrengsten', null]))
                         default: return p_.au($[0])
                     }
                 })),
@@ -253,9 +253,9 @@ export const Grootboekrekeningen: Grootboekrekeningen = ($) => ({
             // 'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(
             // ($): d_out.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Type => {
             //     switch ($[0]) {
-            //         case 'Bankrekening': return p_.ss($, ($) => sh.state(['Bankrekening', null]))
-            //         case 'Informele rekening': return p_.ss($, ($) => sh.state(['Informele rekening', null]))
-            //         case 'Overig': return p_.ss($, ($) => sh.state(['Overig', null]))
+            //         case 'Bankrekening': return p_.option($, ($) => sh.state(['Bankrekening', null]))
+            //         case 'Informele rekening': return p_.option($, ($) => sh.state(['Informele rekening', null]))
+            //         case 'Overig': return p_.option($, ($) => sh.state(['Overig', null]))
             //         default: return p_.au($[0])
             //     }
             // })),
@@ -271,11 +271,11 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'Afhandeling': p_change_context($['Afhandeling'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
                     switch ($[0]) {
-                        case 'Mutaties': return p_.ss($, ($) => sh.state(['Mutaties', null]))
-                        case 'Nog te betalen': return p_.ss($, ($) => sh.state(['Nog te betalen', {
+                        case 'Mutaties': return p_.option($, ($) => sh.state(['Mutaties', null]))
+                        case 'Nog te betalen': return p_.option($, ($) => sh.state(['Nog te betalen', {
                             'Betalingstermijn': p_change_context($['Betalingstermijn'], ($) => $),
                         }]))
-                        case 'Rekening courant': return p_.ss($, ($) => sh.state(['Rekening courant', ({
+                        case 'Rekening courant': return p_.option($, ($) => sh.state(['Rekening courant', ({
                             'Rekening courant': p_change_context($['Rekening courant'], ($) => sh.reference($)),
                         })]))
                         default: return p_.au($[0])
@@ -284,11 +284,11 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'BTW-periode': p_change_context($['BTW-regime'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_periode => {
                     switch ($[0]) {
-                        case 'Binnenland: heffing verlegd': return p_.ss($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
-                        case 'Geen BTW van toepassing': return p_.ss($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
-                        case 'Import van buiten de EU': return p_.ss($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
-                        case 'Intracommunautair': return p_.ss($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
-                        case 'Standaard': return p_.ss($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                        case 'Binnenland: heffing verlegd': return p_.option($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                        case 'Geen BTW van toepassing': return p_.option($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                        case 'Import van buiten de EU': return p_.option($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                        case 'Intracommunautair': return p_.option($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
+                        case 'Standaard': return p_.option($, ($) => p_change_context($['BTW-periode'], ($) => sh.reference($)))
                         default: return p_.au($[0])
                     }
                 })),
@@ -296,11 +296,11 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             // 'BTW-regime': p_change_context($['BTW-regime'], ($) => p_.from.state($).decide(
             // ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.BTW$mi_regime => {
             //     switch ($[0]) {
-            //         case 'Binnenland: heffing verlegd': return p_.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
-            //         case 'Geen BTW van toepassing': return p_.ss($, ($) => sh.state(['Geen BTW van toepassing', null]))
-            //         case 'Import van buiten de EU': return p_.ss($, ($) => sh.state(['Import van buiten de EU', null]))
-            //         case 'Intracommunautair': return p_.ss($, ($) => sh.state(['Intracommunautair', null]))
-            //         case 'Standaard': return p_.ss($, ($) => sh.state(['Standaard', ({
+            //         case 'Binnenland: heffing verlegd': return p_.option($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
+            //         case 'Geen BTW van toepassing': return p_.option($, ($) => sh.state(['Geen BTW van toepassing', null]))
+            //         case 'Import van buiten de EU': return p_.option($, ($) => sh.state(['Import van buiten de EU', null]))
+            //         case 'Intracommunautair': return p_.option($, ($) => sh.state(['Intracommunautair', null]))
+            //         case 'Standaard': return p_.option($, ($) => sh.state(['Standaard', ({
             //             'BTW-periode': p_change_context($['BTW-periode'], ($) => sh.reference($)),
             //         })]))
             //         default: return p_.au($[0])
@@ -309,12 +309,12 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'Brondocument': p_change_context($['Brondocument'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
                     switch ($[0]) {
-                        case 'Niet van toepassing': return p_.ss($, ($) => sh.state(['Niet van toepassing', null]))
-                        case 'Ontbreekt': return p_.ss($, ($) => sh.state(['Ontbreekt', null]))
-                        case 'Toegevoegd': return p_.ss($, ($) => sh.state(['Toegevoegd', ({
+                        case 'Niet van toepassing': return p_.option($, ($) => sh.state(['Niet van toepassing', null]))
+                        case 'Ontbreekt': return p_.option($, ($) => sh.state(['Ontbreekt', null]))
+                        case 'Toegevoegd': return p_.option($, ($) => sh.state(['Toegevoegd', ({
                             'Document': p_change_context($['Document'], ($) => $.stem + "." + $.extension),
                         })]))
-                        case 'Nog toevoegen': return p_.ss($, ($) => sh.state(['Ontbreekt', null]))//FIXME!!!!
+                        case 'Nog toevoegen': return p_.option($, ($) => sh.state(['Ontbreekt', null]))//FIXME!!!!
                         default: return p_.au($[0])
                     }
                 })),
@@ -324,7 +324,7 @@ export const Handelstransacties: Handelstransacties = ($) => ({
                     'Bedrag': p_change_context($['Bedrag'], ($) => p_.from.state($).decide(
                         ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                             switch ($[0]) {
-                                case 'Bekend': return p_.ss($, ($) => sh.state(['Bekend', ({
+                                case 'Bekend': return p_.option($, ($) => sh.state(['Bekend', ({
                                     'BTW-bedrag': p_change_context($['BTW-bedrag'], ($) => $),
                                     'Bedrag inclusief geheven BTW': p_change_context($['Bedrag inclusief geheven BTW'], ($) => $),
                                 })]))
@@ -335,10 +335,10 @@ export const Handelstransacties: Handelstransacties = ($) => ({
                     'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(
                         ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                             switch ($[0]) {
-                                case 'Balans': return p_.ss($, ($) => sh.state(['Balans', ({
+                                case 'Balans': return p_.option($, ($) => sh.state(['Balans', ({
                                     'Balans item': p_change_context($['Balans item'], ($) => sh.reference($)),
                                 })]))
-                                case 'Kosten': return p_.ss($, ($) => sh.state(['Kosten', ({
+                                case 'Kosten': return p_.option($, ($) => sh.state(['Kosten', ({
                                     'Grootboekrekening': p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
                                 })]))
                                 default: return p_.au($[0])
@@ -348,15 +348,15 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type => {
                     switch ($[0]) {
-                        case 'Bonnetje': return p_.ss($, ($) => sh.state(['Bonnetje', null]))
-                        case 'Inkoop (met crediteur)': return p_.ss($, ($) => sh.state(['Inkoop (met crediteur)', ({
+                        case 'Bonnetje': return p_.option($, ($) => sh.state(['Bonnetje', null]))
+                        case 'Inkoop (met crediteur)': return p_.option($, ($) => sh.state(['Inkoop (met crediteur)', ({
                             'Crediteur': p_change_context($['Crediteur'], ($) => sh.reference($)),
                             'Factuurnummer': p_change_context($['Factuurnummer'], ($) => $),
                         })]))
-                        case 'Loonheffing': return p_.ss($, ($) => sh.state(['Loonheffing', ({
+                        case 'Loonheffing': return p_.option($, ($) => sh.state(['Loonheffing', ({
                             'Ronde': p_change_context($['Ronde'], ($) => sh.reference($)),
                         })]))
-                        case 'Salaris': return p_.ss($, ($) => sh.state(['Salaris', ({
+                        case 'Salaris': return p_.option($, ($) => sh.state(['Salaris', ({
                             'Medewerker': p_change_context($['Medewerker'], ($) => sh.reference($)),
                             'Ronde': p_change_context($['Ronde'], ($) => sh.reference($)),
                         })]))
@@ -369,8 +369,8 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'Afhandeling': p_change_context($['Afhandeling'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
                     switch ($[0]) {
-                        case 'Mutaties': return p_.ss($, ($) => sh.state(['Mutaties', null]))
-                        case 'Rekening courant': return p_.ss($, ($) => sh.state(['Rekening courant', ({
+                        case 'Mutaties': return p_.option($, ($) => sh.state(['Mutaties', null]))
+                        case 'Rekening courant': return p_.option($, ($) => sh.state(['Rekening courant', ({
                             'Rekening courant': p_change_context($['Rekening courant'], ($) => sh.reference($)),
                         })]))
                         default: return p_.au($[0])
@@ -381,7 +381,7 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'Brondocument': p_change_context($['Brondocument'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
                     switch ($[0]) {
-                        case 'Toegevoegd': return p_.ss($, ($) => sh.state(['Toegevoegd', ({
+                        case 'Toegevoegd': return p_.option($, ($) => sh.state(['Toegevoegd', ({
                             'Document': p_change_context($['Document'], ($) => $.stem + "." + $.extension),
                         })]))
                         default: return p_.au($[0])
@@ -390,10 +390,10 @@ export const Handelstransacties: Handelstransacties = ($) => ({
             'Contracttype': p_change_context($['Contracttype'], ($) => p_.from.state($).decide(
                 ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype => {
                     switch ($[0]) {
-                        case 'Licentieovereenkomst': return p_.ss($, ($) => sh.state(['Licentieovereenkomst', ({
+                        case 'Licentieovereenkomst': return p_.option($, ($) => sh.state(['Licentieovereenkomst', ({
                             'Overeenkomst': p_change_context($['Overeenkomst'], ($) => sh.reference($)),
                         })]))
-                        case 'Project': return p_.ss($, ($) => sh.state(['Project', ({
+                        case 'Project': return p_.option($, ($) => sh.state(['Project', ({
                             'Offerte': p_change_context($['Offerte'], ($) => sh.reference($)),
                             'Project': p_change_context($['Project'], ($) => sh.reference($)),
                         })]))
@@ -407,9 +407,9 @@ export const Handelstransacties: Handelstransacties = ($) => ({
                     'BTW-regime': p_change_context($['BTW-regime'], ($) => p_.from.state($).decide(
                         ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
                             switch ($[0]) {
-                                case 'Binnenland: heffing verlegd': return p_.ss($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
-                                case 'Intracommunautair': return p_.ss($, ($) => sh.state(['Intracommunautair', null]))
-                                case 'Standaard': return p_.ss($, ($) => sh.state(['Standaard', ({
+                                case 'Binnenland: heffing verlegd': return p_.option($, ($) => sh.state(['Binnenland: heffing verlegd', null]))
+                                case 'Intracommunautair': return p_.option($, ($) => sh.state(['Intracommunautair', null]))
+                                case 'Standaard': return p_.option($, ($) => sh.state(['Standaard', ({
                                     'BTW-categorie': p_change_context($['BTW-categorie'], ($) => sh.reference($)),
                                 })]))
                                 default: return p_.au($[0])
@@ -419,11 +419,11 @@ export const Handelstransacties: Handelstransacties = ($) => ({
                     'Contracttype': p_change_context($['Contracttype'], ($) => p_.from.state($).decide(
                         ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype => {
                             switch ($[0]) {
-                                case 'Licentieovereenkomst': return p_.ss($, ($) => sh.state(['Licentieovereenkomst', ({
+                                case 'Licentieovereenkomst': return p_.option($, ($) => sh.state(['Licentieovereenkomst', ({
                                     'Periode': p_change_context($['Periode'], ($) => sh.reference($)),
                                 })]))
-                                case 'Los': return p_.ss($, ($) => sh.state(['Los', null]))
-                                case 'Project': return p_.ss($, ($) => sh.state(['Project', ({
+                                case 'Los': return p_.option($, ($) => sh.state(['Los', null]))
+                                case 'Project': return p_.option($, ($) => sh.state(['Project', ({
                                     'Opbrengst': p_change_context($['Opbrengst'], ($) => sh.reference($)),
                                 })]))
                                 default: return p_.au($[0])
@@ -433,10 +433,10 @@ export const Handelstransacties: Handelstransacties = ($) => ({
                     'Type': p_change_context($['Type'], ($) => p_.from.state($).decide(
                         ($): d_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                             switch ($[0]) {
-                                case 'Balans': return p_.ss($, ($) => sh.state(['Balans', ({
+                                case 'Balans': return p_.option($, ($) => sh.state(['Balans', ({
                                     'Balans item': p_change_context($['Balans item'], ($) => sh.reference($)),
                                 })]))
-                                case 'Opbrengsten': return p_.ss($, ($) => sh.state(['Opbrengsten', ({
+                                case 'Opbrengsten': return p_.option($, ($) => sh.state(['Opbrengsten', ({
                                     'Grootboekrekening': p_change_context($['Grootboekrekening'], ($) => sh.reference($)),
                                 })]))
                                 default: return p_.au($[0])
@@ -460,8 +460,8 @@ export const Jaarbeheer: Jaarbeheer = ($) => ({
                 'Nieuw': p_change_context($['Nieuw'], ($) => p_.from.state($).decide(
                     ($): d_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
                         switch ($[0]) {
-                            case 'Ja': return p_.ss($, ($) => sh.state(['Ja', null]))
-                            case 'Nee': return p_.ss($, ($) => sh.state(['Nee', ({
+                            case 'Ja': return p_.option($, ($) => sh.state(['Ja', null]))
+                            case 'Nee': return p_.option($, ($) => sh.state(['Nee', ({
                                 'Rekening': p_change_context($['Rekening'], ($) => Verwijzing_naar_Bankrekening(
                                     $,
                                 )),
@@ -484,8 +484,8 @@ export const Jaarbeheer: Jaarbeheer = ($) => ({
                 'Nieuw': p_change_context($['Nieuw'], ($) => p_.from.state($).decide(
                     ($): d_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
                         switch ($[0]) {
-                            case 'Ja': return p_.ss($, ($) => sh.state(['Ja', null]))
-                            case 'Nee': return p_.ss($, ($) => sh.state(['Nee', ({
+                            case 'Ja': return p_.option($, ($) => sh.state(['Ja', null]))
+                            case 'Nee': return p_.option($, ($) => sh.state(['Nee', ({
                                 'Rekening': p_change_context($['Rekening'], ($) => Verwijzing_naar_Informele_rekening(
                                     $,
                                 )),
@@ -514,12 +514,12 @@ export const Jaarbeheer: Jaarbeheer = ($) => ({
                 'Status': p_change_context($['Status'], ($) => p_.from.state($).decide(
                     ($): d_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
                         switch ($[0]) {
-                            case 'Aangegeven': return p_.ss($, ($) => sh.state(['Aangegeven', ({
+                            case 'Aangegeven': return p_.option($, ($) => sh.state(['Aangegeven', ({
                                 'Afronding': p_change_context($['Afronding'], ($) => $),
                                 'Bedrag': p_change_context($['Bedrag'], ($) => $),
                                 'Datum': p_change_context($['Datum'], ($) => fix_date($)),
                             })]))
-                            case 'Openstaand': return p_.ss($, ($) => sh.state(['Openstaand', null]))
+                            case 'Openstaand': return p_.option($, ($) => sh.state(['Openstaand', null]))
                             default: return p_.au($[0])
                         }
                     })),
@@ -534,8 +534,8 @@ export const Jaren: Jaren = ($) => sh.dictionary(p_.from.dictionary($.Jaren).map
         'Afgesloten': p_change_context($['Afgesloten'], ($) => p_.from.state($).decide(
             ($): d_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
                 switch ($[0]) {
-                    case 'Ja': return p_.ss($, ($) => sh.state(['Ja', null]))
-                    case 'Nee': return p_.ss($, ($) => sh.state(['Nee', null]))
+                    case 'Ja': return p_.option($, ($) => sh.state(['Ja', null]))
+                    case 'Nee': return p_.option($, ($) => sh.state(['Nee', null]))
                     default: return p_.au($[0])
                 }
             })),
@@ -568,35 +568,35 @@ export const Mutaties: Mutaties = ($, $p) => ({
                     ($) => p_.from.state($.Status).decide(
                         ($): p_di.Optional_Value<d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry> => {
                             switch ($[0]) {
-                                case 'Nog te verwerken': return p_.ss($, ($) => p_.literal.not_set())
-                                case 'Verwerkt': return p_.ss($, ($): p_di.Optional_Value<d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry> => p_.literal.set({
+                                case 'Nog te verwerken': return p_.option($, ($) => p_.literal.not_set())
+                                case 'Verwerkt': return p_.option($, ($): p_di.Optional_Value<d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry> => p_.literal.set({
                                     'Stam': null,
                                     'type': p_.from.state($.Afhandeling).decide(
                                         ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => {
                                             switch ($[0]) {
-                                                case 'Informele rekening': return p_.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
+                                                case 'Informele rekening': return p_.option($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
                                                     'Informele rekening': p_change_context($['Informele rekening'], ($) => sh.reference($)),
                                                 })])]))
 
-                                                case 'Verrekenpost': return p_.ss($, ($) => sh.state(['Balans', sh.state(['Verrekenpost', ({
+                                                case 'Verrekenpost': return p_.option($, ($) => sh.state(['Balans', sh.state(['Verrekenpost', ({
                                                     'Verrekenpost': p_change_context($['Verrekenpost'], ($) => sh.reference($)),
                                                 })])]))
 
-                                                case 'BTW-periode': return p_.ss($, ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => sh.state(['Resultaat', {
+                                                case 'BTW-periode': return p_.option($, ($): d_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => sh.state(['Resultaat', {
                                                     'Jaar': $.Jaar === $p.jaar
                                                         ? p_.literal.not_set()
                                                         : p_.literal.set(
 sh.reference($.Jaar)),
                                                     'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
                                                 }]))
-                                                case 'Inkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
+                                                case 'Inkoop': return p_.option($, ($) => sh.state(['Resultaat', {
                                                     'Jaar': $.Jaar === $p.jaar
                                                         ? p_.literal.not_set()
                                                         : p_.literal.set(
 sh.reference($.Jaar)),
                                                     'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
                                                 }]))
-                                                case 'Verkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
+                                                case 'Verkoop': return p_.option($, ($) => sh.state(['Resultaat', {
                                                     'Jaar': $.Jaar === $p.jaar
                                                         ? p_.literal.not_set()
                                                         : p_.literal.set(
@@ -632,25 +632,25 @@ sh.reference($.Jaar)),
                     'Afhandeling': p_change_context($['Afhandeling'], ($) => p_.from.state($).decide(
                         ($) => {
                             switch ($[0]) {
-                                case 'Informele rekening': return p_.ss($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
+                                case 'Informele rekening': return p_.option($, ($) => sh.state(['Balans', sh.state(['Informele rekening', ({
                                     'Informele rekening': p_change_context($['Informele rekening'], ($) => sh.reference($)),
                                 })])]))
 
-                                case 'BTW-periode': return p_.ss($, ($) => sh.state(['Resultaat', {
+                                case 'BTW-periode': return p_.option($, ($) => sh.state(['Resultaat', {
                                     'Jaar': $.Jaar === $p.jaar
                                         ? p_.literal.not_set()
                                         : p_.literal.set(
 sh.reference($.Jaar)),
                                     'type': sh.state(['BTW-periode', sh.reference($['BTW-periode'])])
                                 }]))
-                                case 'Inkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
+                                case 'Inkoop': return p_.option($, ($) => sh.state(['Resultaat', {
                                     'Jaar': $.Jaar === $p.jaar
                                         ? p_.literal.not_set()
                                         : p_.literal.set(
 sh.reference($.Jaar)),
                                     'type': sh.state(['Inkoop', sh.reference($['Inkoop'])])
                                 }]))
-                                case 'Verkoop': return p_.ss($, ($) => sh.state(['Resultaat', {
+                                case 'Verkoop': return p_.option($, ($) => sh.state(['Resultaat', {
                                     'Jaar': $.Jaar === $p.jaar
                                         ? p_.literal.not_set()
                                         : p_.literal.set(
@@ -670,8 +670,8 @@ export const Overige_balans_item: Overige_balans_item = ($) => ({
     'Nieuw': p_change_context($['Nieuw'], ($) => p_.from.state($).decide(
         ($): d_out.Overige_balans_item.Nieuw => {
             switch ($[0]) {
-                case 'Ja': return p_.ss($, ($) => sh.state(['Ja', null]))
-                case 'Nee': return p_.ss($, ($) => sh.state(['Nee', ({
+                case 'Ja': return p_.option($, ($) => sh.state(['Ja', null]))
+                case 'Nee': return p_.option($, ($) => sh.state(['Nee', ({
                     'Balans item': p_change_context($['Balans item'], ($) => sh.reference($)),
                 })]))
                 default: return p_.au($[0])

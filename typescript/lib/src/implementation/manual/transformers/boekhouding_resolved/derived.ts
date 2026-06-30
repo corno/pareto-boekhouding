@@ -14,7 +14,7 @@ import $p_unreachable_code_path from 'pareto-core/dist/implementation/transforme
 export const Root: p_i.Transformer<
 d_in.Root, d_out.Root
 > = ($) => {
-    const bron_root = $
+    const $v_bron_root = $
     return {
         'bron': $,
         'jaren': p_temp.from.dictionary($.Jaren
@@ -30,7 +30,7 @@ d_in.Root, d_out.Root
                                 ($) => p_.from.state($.Bedrag).decide(
                                     ($) => {
                                         switch ($[0]) {
-                                            case 'Bekend': return p_.ss($, ($) =>
+                                            case 'Bekend': return p_.option($, ($) =>
                                                 // + $['Bedrag inclusief geheven BTW']
                                                 + $['BTW-bedrag']
                                             )
@@ -42,7 +42,7 @@ d_in.Root, d_out.Root
                                 ($) => p_.from.state($.Bedrag).decide(
                                     ($) => {
                                         switch ($[0]) {
-                                            case 'Bekend': return p_.ss($, ($) =>
+                                            case 'Bekend': return p_.option($, ($) =>
                                                 + $['Bedrag inclusief geheven BTW']
                                                 - $['BTW-bedrag']
                                             )
@@ -62,13 +62,13 @@ d_in.Root, d_out.Root
                                     $['Bedrag exclusief BTW'] * p_.from.state($['BTW-regime']).decide(
                                         ($): number => {
                                             switch ($[0]) {
-                                                case 'Binnenland: heffing verlegd': return p_.ss($, ($) => 0)
-                                                case 'Intracommunautair': return p_.ss($, ($) => 0)
-                                                case 'Standaard': return p_.ss($, ($) => p_.from.state($['BTW-categorie']['l entry']['BTW-heffing']).decide(
+                                                case 'Binnenland: heffing verlegd': return p_.option($, ($) => 0)
+                                                case 'Intracommunautair': return p_.option($, ($) => 0)
+                                                case 'Standaard': return p_.option($, ($) => p_.from.state($['BTW-categorie']['l entry']['BTW-heffing']).decide(
                                                     ($): number => {
                                                         switch ($[0]) {
-                                                            case 'Nee': return p_.ss($, ($) => 0)
-                                                            case 'Ja': return p_.ss($, ($) => ($['BTW-promillage']))
+                                                            case 'Nee': return p_.option($, ($) => 0)
+                                                            case 'Ja': return p_.option($, ($) => ($['BTW-promillage']))
                                                             default: return p_.au($[0])
                                                         }
                                                     }))
@@ -113,13 +113,13 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.dictionary(
                                         p_.from.dictionary($.Regels).filter(
                                             ($) => p_.from.state($.Type).decide(
-                                                ($) => $[0] === 'Kosten' && p_.ss($, ($) => $.Grootboekrekening['l entry'] === context))
+                                                ($) => $[0] === 'Kosten' && p_.option($, ($) => $.Grootboekrekening['l entry'] === context))
                                         )
                                     ).sum(
                                         ($) => p_.from.state($.Bedrag).decide(
                                             ($): number => {
                                                 switch ($[0]) {
-                                                    case 'Bekend': return p_.ss($, ($) =>
+                                                    case 'Bekend': return p_.option($, ($) =>
                                                         - $['Bedrag inclusief geheven BTW']
                                                         + $['BTW-bedrag']
                                                     )
@@ -134,7 +134,7 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.dictionary(
                                         p_.from.dictionary($.Regels).filter(
                                             ($) => p_.from.state($.Type).decide(
-                                                ($) => $[0] === 'Opbrengsten' && p_.ss($, ($) => $.Grootboekrekening['l entry'] === context))
+                                                ($) => $[0] === 'Opbrengsten' && p_.option($, ($) => $.Grootboekrekening['l entry'] === context))
                                         )
                                     ).sum(
                                         ($) => $['Bedrag exclusief BTW']
@@ -161,8 +161,8 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.state($.Status).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Aangegeven': return p_.ss($, ($) => $.Afronding)
-                                                case 'Openstaand': return p_.ss($, ($) => 0)
+                                                case 'Aangegeven': return p_.option($, ($) => $.Afronding)
+                                                case 'Openstaand': return p_.option($, ($) => 0)
                                                 default: return p_.au($[0])
                                             }
                                         })
@@ -193,10 +193,10 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.state($.type).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return p_.ss($, ($) => p_.from.state($).decide(
+                                                case 'Balans': return p_.option($, ($) => p_.from.state($).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Informele rekening': return p_.ss($, ($) => $['Informele rekening']['l entry'] === context)
+                                                            case 'Informele rekening': return p_.option($, ($) => $['Informele rekening']['l entry'] === context)
                                                             default: return false
                                                         }
                                                     }))
@@ -214,10 +214,10 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.state($.Afhandeling).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return p_.ss($, ($) => p_.from.state($).decide(
+                                                case 'Balans': return p_.option($, ($) => p_.from.state($).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Informele rekening': return p_.ss($, ($) => $['Informele rekening']['l entry'] === context)
+                                                            case 'Informele rekening': return p_.option($, ($) => $['Informele rekening']['l entry'] === context)
                                                             default: return false
                                                         }
                                                     }))
@@ -234,7 +234,7 @@ d_in.Root, d_out.Root
                                 ($) => p_.from.state($.bron.Afhandeling).decide(
                                     ($) => {
                                         switch ($[0]) {
-                                            case 'Rekening courant': return p_.ss($, ($) => $['Rekening courant']['l entry'] === context)
+                                            case 'Rekening courant': return p_.option($, ($) => $['Rekening courant']['l entry'] === context)
                                             default: return false
                                         }
                                     })
@@ -244,7 +244,7 @@ d_in.Root, d_out.Root
                                 ($) => p_.from.state($.Bedrag).decide(
                                     ($): number => {
                                         switch ($[0]) {
-                                            case 'Bekend': return p_.ss($, ($) => - $['Bedrag inclusief geheven BTW'])
+                                            case 'Bekend': return p_.option($, ($) => - $['Bedrag inclusief geheven BTW'])
                                             default: return 0
                                         }
                                     })
@@ -255,7 +255,7 @@ d_in.Root, d_out.Root
                                 ($) => p_.from.state($.bron.Afhandeling).decide(
                                     ($) => {
                                         switch ($[0]) {
-                                            case 'Rekening courant': return p_.ss($, ($) => $['Rekening courant']['l entry'] === context)
+                                            case 'Rekening courant': return p_.option($, ($) => $['Rekening courant']['l entry'] === context)
                                             default: return false
                                         }
                                     })
@@ -274,13 +274,13 @@ d_in.Root, d_out.Root
 
                         const $p_eindsaldo = $.Beginsaldo + $p_mutaties
 
-                        const $p_overgenomen = p_.from.dictionary(bron_root.Jaren).sum(
+                        const $p_overgenomen = p_.from.dictionary($v_bron_root.Jaren).sum(
                             ($) => p_.from.dictionary(
                                 p_.from.dictionary($.Jaarbeheer.Balans['Informele rekeningen']).filter(
                                     ($) => p_.from.state($.Nieuw).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Nee': return p_.ss($, ($) => $.Rekening['l entry'] === context)
+                                                case 'Nee': return p_.option($, ($) => $.Rekening['l entry'] === context)
                                                 default: return false
                                             }
                                         })
@@ -332,7 +332,7 @@ d_in.Root, d_out.Root
                             + $p_inkopen_x
                             + $p_verkopen_x
 
-                        const $p_bankrekening_mutaties = p_.from.dictionary(bron_root.Jaren).sum(
+                        const $p_bankrekening_mutaties = p_.from.dictionary($v_bron_root.Jaren).sum(
                             ($) => p_.from.dictionary($.Mutaties.Bankrekeningen).sum(
                                 ($) => {
                                     return p_.from.dictionary(
@@ -340,10 +340,10 @@ d_in.Root, d_out.Root
                                             ($) => p_.from.state($.type).decide(
                                                 ($) => {
                                                     switch ($[0]) {
-                                                        case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                             ($) => {
                                                                 switch ($[0]) {
-                                                                    case 'BTW-periode': return p_.ss($, ($) => $['l entry'] === context)
+                                                                    case 'BTW-periode': return p_.option($, ($) => $['l entry'] === context)
                                                                     default: return false
                                                                 }
                                                             }))
@@ -357,17 +357,17 @@ d_in.Root, d_out.Root
                                 }
                             )
                         )
-                        const $p_verrekenpost_mutaties = p_.from.dictionary(bron_root.Jaren).sum(
+                        const $p_verrekenpost_mutaties = p_.from.dictionary($v_bron_root.Jaren).sum(
                             ($) => p_.from.dictionary($.Mutaties.Verrekenposten).sum(
                                 ($) => p_.from.dictionary(
                                     p_.from.dictionary($.Mutaties).filter(
                                         ($) => p_.from.state($.Afhandeling).decide(
                                             ($) => {
                                                 switch ($[0]) {
-                                                    case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                    case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                         ($) => {
                                                             switch ($[0]) {
-                                                                case 'BTW-periode': return p_.ss($, ($) => $['l entry'] === context)
+                                                                case 'BTW-periode': return p_.option($, ($) => $['l entry'] === context)
                                                                 default: return false
                                                             }
                                                         }))
@@ -391,7 +391,7 @@ d_in.Root, d_out.Root
                         const $p_status: d_out.Btw_Periode['status'] = p_.from.state($.Status).decide(
                             ($): d_out.Btw_Periode['status'] => {
                                 switch ($[0]) {
-                                    case 'Aangegeven': return p_.ss($, ($) => {
+                                    case 'Aangegeven': return p_.option($, ($) => {
                                         const $p_totaal_aangegeven_plus_afronding = + $.Bedrag + $.Afronding
                                         return ['aangegeven', {
                                             'bron': $,
@@ -405,7 +405,7 @@ d_in.Root, d_out.Root
                                                 + $p_handelsmutaties,
                                         }]
                                     })
-                                    case 'Openstaand': return p_.ss($, ($) => ['openstaand', {
+                                    case 'Openstaand': return p_.option($, ($) => ['openstaand', {
                                         'bron': $,
                                     }])
                                     default: return p_.au($[0])
@@ -438,14 +438,14 @@ d_in.Root, d_out.Root
                             + $p_mutaties
 
                         const context = bron_bankrekening
-                        const $p_overgenomen = p_.from.dictionary(bron_root.Jaren).sum(
+                        const $p_overgenomen = p_.from.dictionary($v_bron_root.Jaren).sum(
                             ($) => p_.from.dictionary(
                                 p_.from.dictionary($.Jaarbeheer.Balans.Bankrekeningen).filter(
                                     ($) => p_.from.state($.Nieuw).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Ja': return p_.ss($, ($) => false)
-                                                case 'Nee': return p_.ss($, ($) => $.Rekening['l entry'] === context)
+                                                case 'Ja': return p_.option($, ($) => false)
+                                                case 'Nee': return p_.option($, ($) => $.Rekening['l entry'] === context)
                                                 default: return p_.au($[0])
                                             }
                                         })
@@ -488,13 +488,13 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.dictionary(
                                         p_.from.dictionary($.Regels).filter(
                                             ($) => p_.from.state($.Type).decide(
-                                                ($) => $[0] === 'Balans' && p_.ss($, ($) => $['Balans item']['l entry'] === context))
+                                                ($) => $[0] === 'Balans' && p_.option($, ($) => $['Balans item']['l entry'] === context))
                                         )
                                     ).sum(
                                         ($) => p_.from.state($.Bedrag).decide(
                                             ($): number => {
                                                 switch ($[0]) {
-                                                    case 'Bekend': return p_.ss($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
+                                                    case 'Bekend': return p_.option($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
                                                     default: return p_.au($[0])
                                                 }
                                             })
@@ -505,7 +505,7 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.dictionary(
                                         p_.from.dictionary($.Regels).filter(
                                             ($) => p_.from.state($.Type).decide(
-                                                ($) => $[0] === 'Balans' && p_.ss($, ($) => $['Balans item']['l entry'] === context))
+                                                ($) => $[0] === 'Balans' && p_.option($, ($) => $['Balans item']['l entry'] === context))
                                         )
                                     ).sum(
                                         ($) => - $['Bedrag exclusief BTW']
@@ -522,14 +522,14 @@ d_in.Root, d_out.Root
                                 }
                             }
                         )
-                        const $p_overgenomen = p_.from.dictionary(bron_root.Jaren).sum(
+                        const $p_overgenomen = p_.from.dictionary($v_bron_root.Jaren).sum(
                             ($) => p_.from.dictionary(
                                 p_.from.dictionary($.Jaarbeheer.Balans['Overige balans items']).filter(
                                     ($) => p_.from.state($.Nieuw).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Ja': return p_.ss($, ($) => false)
-                                                case 'Nee': return p_.ss($, ($) => $['Balans item']['l entry'] === context)
+                                                case 'Ja': return p_.option($, ($) => false)
+                                                case 'Nee': return p_.option($, ($) => $['Balans item']['l entry'] === context)
                                                 default: return p_.au($[0])
                                             }
                                         })
@@ -572,10 +572,10 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.state($.type).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'Balans': return p_.ss($, ($) => p_.from.state($).decide(
+                                                case 'Balans': return p_.option($, ($) => p_.from.state($).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Verrekenpost': return p_.ss($, ($) => $.Verrekenpost['l entry'] === context)
+                                                            case 'Verrekenpost': return p_.option($, ($) => $.Verrekenpost['l entry'] === context)
                                                             default: return false
                                                         }
                                                     }))
@@ -623,7 +623,7 @@ d_in.Root, d_out.Root
                                         ($) => p_.from.state($.bron.Afhandeling).decide(
                                             ($) => {
                                                 switch ($[0]) {
-                                                    case 'Mutaties': return p_.ss($, ($) => true)
+                                                    case 'Mutaties': return p_.option($, ($) => true)
                                                     default: return false
                                                 }
                                             })
@@ -638,10 +638,10 @@ d_in.Root, d_out.Root
                                                 ($) => p_.from.state($.type).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                            case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                                 ($) => {
                                                                     switch ($[0]) {
-                                                                        case 'Inkoop': return p_.ss($, ($) => true)
+                                                                        case 'Inkoop': return p_.option($, ($) => true)
                                                                         default: return false
                                                                     }
                                                                 }))
@@ -661,10 +661,10 @@ d_in.Root, d_out.Root
                                                 ($) => p_.from.state($.Afhandeling).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                            case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                                 ($) => {
                                                                     switch ($[0]) {
-                                                                        case 'Inkoop': return p_.ss($, ($) => true)
+                                                                        case 'Inkoop': return p_.option($, ($) => true)
                                                                         default: return false
                                                                     }
                                                                 }))
@@ -713,7 +713,7 @@ d_in.Root, d_out.Root
                                         ($) => p_.from.state($.bron.Afhandeling).decide(
                                             ($) => {
                                                 switch ($[0]) {
-                                                    case 'Mutaties': return p_.ss($, ($) => true)
+                                                    case 'Mutaties': return p_.option($, ($) => true)
                                                     default: return false
                                                 }
                                             })
@@ -727,10 +727,10 @@ d_in.Root, d_out.Root
                                                 ($) => p_.from.state($.type).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                            case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                                 ($) => {
                                                                     switch ($[0]) {
-                                                                        case 'Verkoop': return p_.ss($, ($) => true)
+                                                                        case 'Verkoop': return p_.option($, ($) => true)
                                                                         default: return false
                                                                     }
                                                                 }))
@@ -750,10 +750,10 @@ d_in.Root, d_out.Root
                                                 ($) => p_.from.state($.Afhandeling).decide(
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                            case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                                 ($) => {
                                                                     switch ($[0]) {
-                                                                        case 'Verkoop': return p_.ss($, ($) => true)
+                                                                        case 'Verkoop': return p_.option($, ($) => true)
                                                                         default: return false
                                                                     }
                                                                 }))
@@ -798,8 +798,8 @@ d_in.Root, d_out.Root
                                     return p_.from.state($.status).decide(
                                         ($): number => {
                                             switch ($[0]) {
-                                                case 'aangegeven': return p_.ss($, ($) => $['te veel aangegeven'])
-                                                case 'openstaand': return p_.ss($, ($) => 0)
+                                                case 'aangegeven': return p_.option($, ($) => $['te veel aangegeven'])
+                                                case 'openstaand': return p_.option($, ($) => 0)
                                                 default: return p_.au($[0])
                                             }
                                         })
@@ -829,7 +829,7 @@ d_in.Root, d_out.Root
                                     ($) => p_.from.state($.status).decide(
                                         ($): boolean => {
                                             switch ($[0]) {
-                                                case 'openstaand': return p_.ss($, ($) => true)
+                                                case 'openstaand': return p_.option($, ($) => true)
                                                 default: return false
                                             }
                                         }))
@@ -865,10 +865,10 @@ d_in.Root, d_out.Root
                                             ($) => p_.from.state($.type).decide(
                                                 ($): boolean => {
                                                     switch ($[0]) {
-                                                        case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                             ($): boolean => {
                                                                 switch ($[0]) {
-                                                                    case 'BTW-periode': return p_.ss($, ($) => true)
+                                                                    case 'BTW-periode': return p_.option($, ($) => true)
                                                                     default: return false
                                                                 }
                                                             }))
@@ -886,10 +886,10 @@ d_in.Root, d_out.Root
                                             ($) => p_.from.state($.Afhandeling).decide(
                                                 ($): boolean => {
                                                     switch ($[0]) {
-                                                        case 'Resultaat': return p_.ss($, ($) => p_.from.state($.type).decide(
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                             ($): boolean => {
                                                                 switch ($[0]) {
-                                                                    case 'BTW-periode': return p_.ss($, ($) => true)
+                                                                    case 'BTW-periode': return p_.option($, ($) => true)
                                                                     default: return false
                                                                 }
                                                             }))
@@ -906,8 +906,8 @@ d_in.Root, d_out.Root
                                         return - p_.from.state($.status).decide(
                                             ($): number => {
                                                 switch ($[0]) {
-                                                    case 'aangegeven': return p_.ss($, ($) => $.bron.Bedrag)
-                                                    case 'openstaand': return p_.ss($, ($) => 0)
+                                                    case 'aangegeven': return p_.option($, ($) => $.bron.Bedrag)
+                                                    case 'openstaand': return p_.option($, ($) => 0)
                                                     default: return p_.au($[0])
                                                 }
                                             })
