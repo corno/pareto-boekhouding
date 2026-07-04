@@ -11,9 +11,9 @@ import * as d_fp from "pareto-fountain-pen/dist/interface/generated/liana/schema
 import * as r_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters"
 import * as t_resolved_to_derived from "../transformers/boekhouding_resolved/derived"
 
-import * as t_deserialize_resolved_to_fountain_pen from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/fountain_pen"
+import * as t_deserialize_resolved_to_prose from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/fountain_pen"
 import * as t_deserialize_resolved_to_location from "liana-core/dist/implementation/manual/transformers/deserialize_resolved/location"
-import * as t_location_to_fountain_pen from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
+import * as t_location_to_prose from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 import * as t_html_to_list_of_characters from "pareto-static-html/dist/implementation/manual/transformers/static_html/list_of_characters"
 import * as t_aggregatie_to_jaarverslag_html from "../transformers/derived/jaarverslag_html"
 import * as t_path_to_text from "pareto-resources/dist/implementation/manual/transformers/unrestricted_path/text"
@@ -29,14 +29,14 @@ export const $$: interface_.query_functions.genereer_jaarverslag = p_.query_func
 sh.ph.composed([
                 sh.ph.literal(t_path_to_text.Node_Path($d.path)),
                 sh.ph.literal(":"),
-                t_location_to_fountain_pen.Possible_Range(
+                t_location_to_prose.Possible_Range(
                     t_deserialize_resolved_to_location.Error($),
                     {
                         'character location reporting': ['one based', null],
                     }
                 ),
                 sh.ph.literal(": "),
-                t_deserialize_resolved_to_fountain_pen.Error(
+                t_deserialize_resolved_to_prose.Error(
                     $,
                 )
             ])),
