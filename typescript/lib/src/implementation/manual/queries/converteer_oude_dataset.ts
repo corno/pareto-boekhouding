@@ -18,7 +18,7 @@ import * as t_deserialize_parse_tree_to_location from "liana-core/dist/implement
 import * as t_deserialize_resolve_to_prose from "liana-core/dist/implementation/manual/transformers/resolve/fountain_pen"
 import * as t_deserialize_resolve_to_location from "liana-core/dist/implementation/manual/transformers/resolve/location"
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved"
-import * as t_boekhouding_resolved_to_fp from "../../generated/liana/schemas/boekhouding/resolved/transformers/fountain_pen"
+import * as t_boekhouding_resolved_to_prose from "../../generated/liana/schemas/boekhouding/resolved/transformers/fountain_pen"
 import * as t_location_to_prose from "astn-core/dist/implementation/manual/transformers/location/fountain_pen"
 
 //shorthands
@@ -69,7 +69,7 @@ export const $$: interface_.query_functions.converteer_oude_dataset = p_.query_f
     )).transform(
         ($) => ({
             'data': t_fp_to_loc.Paragraph(
-                t_boekhouding_resolved_to_fp.Root(
+                t_boekhouding_resolved_to_prose.Root(
                     $
                 ),
                 $s['serialization parameters']
