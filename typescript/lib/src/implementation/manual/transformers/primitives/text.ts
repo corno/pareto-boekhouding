@@ -7,16 +7,23 @@ import p_unreachable_code_path from 'pareto-core/dist/implementation/transformer
 //data types
 import * as d_out from "pareto-fountain-pen/dist/interface/generated/liana/schemas/text/data"
 
-
-export const fractional_decimal: p_i.Transformer_With_Parameter<
-    number,
-    d_out.Text,
-    {
+export namespace d_function {
+    export type Parameters = {
         'number of fractional digits': number
         'decimal separator character code': number
         'thousand separator character code': number
     }
-> = ($, $p) => {
+}
+
+export namespace interface_ {
+    export type fractional_decimal = p_i.Transformer_With_Parameter<
+        number,
+        d_out.Text,
+        d_function.Parameters
+    >
+}
+
+export const fractional_decimal: interface_.fractional_decimal = ($, $p) => {
     const old_imp = p_text_from_list(
         p_list_build_deprecated<number>(
             ($i) => {

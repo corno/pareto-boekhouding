@@ -8,10 +8,81 @@ import * as d_out from "pareto-static-html/dist/interface/generated/liana/schema
 import * as d_in from "../../../../interface/data/derived"
 import * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie"
 
+export namespace interface_ {
+    export type Balans_Grootboekrekeningen = p_i.Transformer_With_Parameter<
+
+        d_in.Balans.Grootboek_Rekeningen,
+        d_temp_aggregatie_2.Domein_Zijde,
+        {
+            'type':
+            | ['begin', null]
+            | ['eind', null]
+            'label': string
+            'teken omkeren': boolean
+        }
+    >
+    export type Bedrag = p_i.Transformer_With_Parameter<
+        number,
+        d_out.Flow_Element.table.sections.L.rows.L.cells.L,
+        {
+            'teken omkeren': boolean
+        }
+    >
+    export type Colspan_Text = p_i.Transformer_With_Parameter<
+        string,
+        d_out.Flow_Element.table.sections.L.rows.L.cells.L,
+        {
+            'number of columns': number
+        }
+    >
+    export type Domein = p_i.Transformer_With_Parameter<
+        d_temp_aggregatie_2.Domein,
+        d_out.Flow_Element.table.sections.L.rows,
+        {
+            'label': string
+        }
+    >
+    export type Domein_Zijde = p_i.Transformer<
+
+        d_temp_aggregatie_2.Domein_Zijde,
+        p_di.List<d_out.Flow_Element.table.sections.L.rows.L.cells>
+    >
+    export type Indent = p_i.Transformer<
+        null,
+        d_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+    export type Indent_Blank = p_i.Transformer<
+        null,
+        d_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+    export type Resultaat_Grootboekrekeningen = p_i.Transformer_With_Parameter<
+
+        d_in.Resultaat.Grootboek_Rekeningen,
+        d_temp_aggregatie_2.Domein_Zijde,
+        {
+            'label': string
+            'teken omkeren': boolean
+        }
+    >
+    export type Root = p_i.Transformer<
+
+        d_in.Root,
+        d_out.Document
+    >
+    export type Span_Indent = p_i.Transformer<
+        number,
+        d_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+    export type Text = p_i.Transformer<
+        string,
+        d_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+}
+
 //dependencies
 import * as t_primitives_to_text from "../primitives/text"
 
-const integer_from_dictionary = <T extends p_di.Value>(
+const temp_integer_from_dictionary = <T extends p_di.Value>(
     dict: p_di.Dictionary<T>,
     get_value: ($: T) => number,
 ): number => p_.from.list(
@@ -29,13 +100,60 @@ import * as sh from "pareto-static-html/dist/shorthands/static_html/target"
 import { css } from "../../../../data/css"
 
 
-const Bedrag: p_i.Transformer_With_Parameter<
-    number,
-    d_out.Flow_Element.table.sections.L.rows.L.cells.L,
-    {
-        'teken omkeren': boolean
+
+const Balans_Grootboekrekeningen: interface_.Balans_Grootboekrekeningen = ($, $p) => {
+    const $p_grootboekrekeningen = p_.from.dictionary($).map(
+        ($) => {
+
+            const context = $
+
+            return {
+                'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
+                'subcategorie': $.bron.Stam.Subcategorie['l id'],
+                'bedrag': p_.from.state($p.type).decide(
+                    ($): number => {
+                        switch ($[0]) {
+                            case 'begin': return p_.option($, ($) => context.totaal.beginsaldo)
+                            case 'eind': return p_.option($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
+                            default: return p_.au($[0])
+                        }
+                    }),
+            }
+        }
+    )
+    return {
+        'label': $p.label,
+        'teken omkeren': $p['teken omkeren'],
+        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen).group(
+            ($) => $.hoofdcategorie,
+            ($) => {
+                const $p_subcategorieen = p_.from.dictionary($).group(
+                    ($) => $.subcategorie,
+                    ($) => ({
+                        'grootboekrekeningen': $,
+                        'totaal': temp_integer_from_dictionary(
+                            $,
+                            ($) => $.bedrag
+                        )
+                    })
+                )
+                return {
+                    'subcategorieen': $p_subcategorieen,
+                    'totaal': temp_integer_from_dictionary(
+                        $p_subcategorieen,
+                        ($) => $.totaal
+                    )
+                }
+            }
+        ),
+        'totaal': temp_integer_from_dictionary(
+            $p_grootboekrekeningen,
+            ($) => $.bedrag
+        ),
     }
-> = ($, $p) => sh.t.s.r.td(
+}
+
+const Bedrag: interface_.Bedrag = ($, $p) => sh.t.s.r.td(
     p_.literal.list(["bedrag"]),
     p_.literal.not_set(),
     p_.literal.list([
@@ -54,26 +172,7 @@ const Bedrag: p_i.Transformer_With_Parameter<
     ])
 )
 
-const Text: p_i.Transformer<
-    string,
-    d_out.Flow_Element.table.sections.L.rows.L.cells.L
-> = ($) => sh.t.s.r.td(
-    p_.literal.list(["text"]),
-    p_.literal.not_set(),
-    p_.literal.list([
-        sh.f.span(
-            p_.literal.list([sh.p.p($)])
-        )
-    ])
-)
-
-const Colspan_Text: p_i.Transformer_With_Parameter<
-    string,
-    d_out.Flow_Element.table.sections.L.rows.L.cells.L,
-    {
-        'number of columns': number
-    }
-> = ($, $p) => sh.t.s.r.td(
+const Colspan_Text: interface_.Colspan_Text = ($, $p) => sh.t.s.r.td(
     p_.literal.list(["span-text"]),
     p_.literal.set($p['number of columns']),
     p_.literal.list([
@@ -83,112 +182,7 @@ const Colspan_Text: p_i.Transformer_With_Parameter<
     ])
 )
 
-const Span_Indent: p_i.Transformer<
-    number,
-    d_out.Flow_Element.table.sections.L.rows.L.cells.L
-> = ($) => sh.t.s.r.td(
-    p_.literal.list(["span-indent"]),
-    p_.literal.set($),
-    p_.literal.list([])
-)
-
-const Indent: p_i.Transformer<
-    null,
-    d_out.Flow_Element.table.sections.L.rows.L.cells.L
-> = ($) => sh.t.s.r.td(
-    p_.literal.list(["indent"]),
-    p_.literal.not_set(),
-    p_.literal.list([])
-)
-
-const Indent_Blank: p_i.Transformer<
-    null,
-    d_out.Flow_Element.table.sections.L.rows.L.cells.L
-> = ($) => sh.t.s.r.td(
-    p_.literal.list(["indent blank"]),
-    p_.literal.not_set(),
-    p_.literal.list([])
-)
-
-
-
-
-const Domein_Zijde: p_i.Transformer<
-    d_temp_aggregatie_2.Domein_Zijde,
-    p_di.List<d_out.Flow_Element.table.sections.L.rows.L.cells>
-> = ($) => {
-
-    const teken_omkeren = $['teken omkeren']
-
-    return p_.from.dictionary($.hoofdcategorieen).flatten_to_list(
-        ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-            p_.literal.list([
-                p_.literal.list([
-                    Colspan_Text(
-                        id,
-                        {
-                            'number of columns': 3
-                        }
-                    ),
-                    Span_Indent(2),
-                    Bedrag(
-                        $.totaal,
-                        {
-                            'teken omkeren': teken_omkeren
-                        }
-                    ),
-                ])
-            ]),
-            p_.from.dictionary($.subcategorieen).flatten_to_list(
-                ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-                    p_.literal.list([
-                        p_.literal.list([
-                            Indent(null),
-                            Colspan_Text(
-                                id,
-                                {
-                                    'number of columns': 2
-                                }
-                            ),
-                            Indent(null),
-                            Bedrag(
-                                $.totaal,
-                                {
-                                    'teken omkeren': teken_omkeren
-                                }
-                            ),
-                            Indent(null),
-                        ])
-                    ]),
-                    p_.from.dictionary($.grootboekrekeningen).flatten_to_list(
-                        ($, id) => p_.literal.list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
-                            p_.literal.list([
-                                Indent(null),
-                                Indent(null),
-                                Text(id),
-                                Bedrag(
-                                    $.bedrag,
-                                    {
-                                        'teken omkeren': teken_omkeren
-                                    }
-                                ),
-                                Span_Indent(2),
-                            ])
-                        ])
-                    )
-                ])
-            )
-        ])
-    )
-}
-
-const Domein: p_i.Transformer_With_Parameter<
-    d_temp_aggregatie_2.Domein,
-    d_out.Flow_Element.table.sections.L.rows,
-    {
-        'label': string
-    }
-> = ($, $p) => p_.literal.segmented_list([
+const Domein: interface_.Domein = ($, $p) => p_.literal.segmented_list([
     p_.literal.list([
         sh.t.s.row(
             p_.literal.list(["margin"]),
@@ -281,14 +275,85 @@ const Domein: p_i.Transformer_With_Parameter<
     ])
 ])
 
-const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
-    d_in.Resultaat.Grootboek_Rekeningen,
-    d_temp_aggregatie_2.Domein_Zijde,
-    {
-        'label': string
-        'teken omkeren': boolean
-    }
-> = ($, $p) => {
+const Domein_Zijde: interface_.Domein_Zijde = ($) => {
+
+    const teken_omkeren = $['teken omkeren']
+
+    return p_.from.dictionary($.hoofdcategorieen).flatten_to_list(
+        ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+            p_.literal.list([
+                p_.literal.list([
+                    Colspan_Text(
+                        id,
+                        {
+                            'number of columns': 3
+                        }
+                    ),
+                    Span_Indent(2),
+                    Bedrag(
+                        $.totaal,
+                        {
+                            'teken omkeren': teken_omkeren
+                        }
+                    ),
+                ])
+            ]),
+            p_.from.dictionary($.subcategorieen).flatten_to_list(
+                ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                    p_.literal.list([
+                        p_.literal.list([
+                            Indent(null),
+                            Colspan_Text(
+                                id,
+                                {
+                                    'number of columns': 2
+                                }
+                            ),
+                            Indent(null),
+                            Bedrag(
+                                $.totaal,
+                                {
+                                    'teken omkeren': teken_omkeren
+                                }
+                            ),
+                            Indent(null),
+                        ])
+                    ]),
+                    p_.from.dictionary($.grootboekrekeningen).flatten_to_list(
+                        ($, id) => p_.literal.list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                            p_.literal.list([
+                                Indent(null),
+                                Indent(null),
+                                Text(id),
+                                Bedrag(
+                                    $.bedrag,
+                                    {
+                                        'teken omkeren': teken_omkeren
+                                    }
+                                ),
+                                Span_Indent(2),
+                            ])
+                        ])
+                    )
+                ])
+            )
+        ])
+    )
+}
+
+const Indent: interface_.Indent = ($) => sh.t.s.r.td(
+    p_.literal.list(["indent"]),
+    p_.literal.not_set(),
+    p_.literal.list([])
+)
+
+const Indent_Blank: interface_.Indent_Blank = ($) => sh.t.s.r.td(
+    p_.literal.list(["indent blank"]),
+    p_.literal.not_set(),
+    p_.literal.list([])
+)
+
+const Resultaat_Grootboekrekeningen: interface_.Resultaat_Grootboekrekeningen = ($, $p) => {
 
     const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => ({
@@ -308,7 +373,7 @@ const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
                     ($) => $.subcategorie,
                     ($) => ({
                         'grootboekrekeningen': $,
-                        'totaal': integer_from_dictionary(
+                        'totaal': temp_integer_from_dictionary(
                             $,
                             ($) => $.bedrag
                         )
@@ -316,86 +381,21 @@ const Resultaat_Grootboekrekeningen: p_i.Transformer_With_Parameter<
                 )
                 return {
                     'subcategorieen': subcategorieen,
-                    'totaal': integer_from_dictionary(
+                    'totaal': temp_integer_from_dictionary(
                         subcategorieen,
                         ($) => $.totaal
                     )
                 }
             },
         ),
-        'totaal': integer_from_dictionary(
+        'totaal': temp_integer_from_dictionary(
             $p_grootboekrekeningen,
             ($) => $.bedrag
         ),
     }
 }
 
-const Balans_Grootboekrekeningen: p_i.Transformer_With_Parameter<
-    d_in.Balans.Grootboek_Rekeningen,
-    d_temp_aggregatie_2.Domein_Zijde,
-    {
-        'type':
-        | ['begin', null]
-        | ['eind', null]
-        'label': string
-        'teken omkeren': boolean
-    }
-> = ($, $p) => {
-    const $p_grootboekrekeningen = p_.from.dictionary($).map(
-        ($) => {
-
-            const context = $
-
-            return {
-                'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
-                'subcategorie': $.bron.Stam.Subcategorie['l id'],
-                'bedrag': p_.from.state($p.type).decide(
-                    ($): number => {
-                        switch ($[0]) {
-                            case 'begin': return p_.option($, ($) => context.totaal.beginsaldo)
-                            case 'eind': return p_.option($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
-                            default: return p_.au($[0])
-                        }
-                    }),
-            }
-        }
-    )
-    return {
-        'label': $p.label,
-        'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen).group(
-            ($) => $.hoofdcategorie,
-            ($) => {
-                const $p_subcategorieen = p_.from.dictionary($).group(
-                    ($) => $.subcategorie,
-                    ($) => ({
-                        'grootboekrekeningen': $,
-                        'totaal': integer_from_dictionary(
-                            $,
-                            ($) => $.bedrag
-                        )
-                    })
-                )
-                return {
-                    'subcategorieen': $p_subcategorieen,
-                    'totaal': integer_from_dictionary(
-                        $p_subcategorieen,
-                        ($) => $.totaal
-                    )
-                }
-            }
-        ),
-        'totaal': integer_from_dictionary(
-            $p_grootboekrekeningen,
-            ($) => $.bedrag
-        ),
-    }
-}
-
-export const Root: p_i.Transformer<
-    d_in.Root,
-    d_out.Document
-> = ($) => {
+export const Root: interface_.Root = ($) => {
     // p_log_debug_message("", () => { })
     // p_log_debug_message("bankrekeningen", () => { })
     // $.jaren.__ d_map_deprecated(
@@ -792,3 +792,19 @@ export const Root: p_i.Transformer<
         )
     )
 }
+
+const Span_Indent: interface_.Span_Indent = ($) => sh.t.s.r.td(
+    p_.literal.list(["span-indent"]),
+    p_.literal.set($),
+    p_.literal.list([])
+)
+
+const Text: interface_.Text = ($) => sh.t.s.r.td(
+    p_.literal.list(["text"]),
+    p_.literal.not_set(),
+    p_.literal.list([
+        sh.f.span(
+            p_.literal.list([sh.p.p($)])
+        )
+    ])
+)

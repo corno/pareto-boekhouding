@@ -9,12 +9,16 @@ import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding
 import * as d_out from "../../../../interface/data/derived"
 import $p_unreachable_code_path from 'pareto-core/dist/implementation/transformer/specials/unreachable_code_path'
 
+export namespace interface_ {
+    export type Root = p_i.Transformer<
+        d_in.Root,
+        d_out.Root
+    >
+}
+
 //dependencies
 
-export const Root: p_i.Transformer<
-    d_in.Root,
-    d_out.Root
-> = ($) => {
+export const Root: interface_.Root = ($) => {
     const $v_bron_root = $
     return {
         'bron': $,
