@@ -1,6 +1,6 @@
 
-import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
-import * as p_di from 'pareto-core/dist/interface/data'
+import * as p_i from 'pareto-core/interface/__internal/Abort'
+import * as p_di from 'pareto-core/interface/data'
 
 export namespace Root_ {
     
@@ -2081,7 +2081,7 @@ export type Eerste_boekjaar_ =
     | readonly ['Ja', Eerste_boekjaar_.Ja]
     | readonly ['Nee', Eerste_boekjaar_.Nee]
 
-export { 
+export type { 
     Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 

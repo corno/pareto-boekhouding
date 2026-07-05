@@ -1,12 +1,12 @@
-import * as p_ from 'pareto-core/dist/implementation/refiner'
-import * as p_temp from 'pareto-core/dist/implementation/transformer'
-import * as p_di from 'pareto-core/dist/interface/data'
-import p_change_context from 'pareto-core/dist/implementation/refiner/specials/change_context'
+import * as p_ from 'pareto-core/implementation/refiner'
+import * as p_temp from 'pareto-core/implementation/transformer'
+import * as p_di from 'pareto-core/interface/data'
+import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
 
-import * as sh from 'pareto-core-shorthands/dist/unresolved_data'
+import * as sh from 'pareto-core-shorthands/unresolved_data'
 
-import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding_oude_model/data"
-import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved"
+import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding_oude_model/data.js"
+import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved.js"
 
 export type Rekening_Mutatie = (
     $$_: d_in.Root,

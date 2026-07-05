@@ -1,9 +1,9 @@
 
-import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
+import * as p_i from 'pareto-core/interface/__internal/Abort'
 
-import * as i_out from "../../../data/unresolved"
+import * as i_out from "../../../data/unresolved.js"
 
-import * as i_in from "../../../data/resolved"
+import * as i_in from "../../../data/resolved.js"
 
 export namespace Root_ {
     
@@ -229,7 +229,7 @@ export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
 ) => Eerste_boekjaar_.O
 
-export { 
+export type { 
     Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 

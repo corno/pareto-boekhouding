@@ -1,12 +1,12 @@
-import * as p_di from 'pareto-core/dist/interface/data'
-import * as p_ from 'pareto-core/dist/implementation/transformer'
-import p_log_debug_message from 'pareto-core-dev/dist/log_debug_message'
-import * as p_i from 'pareto-core/dist/interface/transformer'
+import * as p_di from 'pareto-core/interface/data'
+import * as p_ from 'pareto-core/implementation/transformer'
+import p_log_debug_message from 'pareto-core-dev/log_debug_message'
+import * as p_i from 'pareto-core/interface/transformer'
 
 //data types
-import * as d_out from "pareto-static-html/dist/interface/generated/liana/schemas/static-html/data"
-import * as d_in from "../../../../interface/data/derived"
-import * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie"
+import * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
+import * as d_in from "../../../../interface/data/derived.js"
+import * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie.js"
 
 export namespace interface_ {
     export type Balans_Grootboekrekeningen = p_i.Transformer_With_Parameter<
@@ -80,7 +80,7 @@ export namespace interface_ {
 }
 
 //dependencies
-import * as t_primitives_to_text from "../primitives/text"
+import * as t_primitives_to_text from "../primitives/text.js"
 
 const temp_integer_from_dictionary = <T extends p_di.Value>(
     dict: p_di.Dictionary<T>,
@@ -94,10 +94,10 @@ const temp_integer_from_dictionary = <T extends p_di.Value>(
 )
 
 //shorthands
-import * as sh from "pareto-static-html/dist/shorthands/static_html/target"
+import * as sh from "pareto-static-html/shorthands/static_html/target"
 
 //data
-import { css } from "../../../../data/css"
+import { css } from "../../../../data/css.js"
 
 
 

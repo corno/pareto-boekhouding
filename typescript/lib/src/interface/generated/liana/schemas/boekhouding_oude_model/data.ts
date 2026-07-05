@@ -1,6 +1,6 @@
 
-import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
-import * as p_di from 'pareto-core/dist/interface/data'
+import * as p_i from 'pareto-core/interface/__internal/Abort'
+import * as p_di from 'pareto-core/interface/data'
 
 export namespace Root_ {
     
@@ -1728,7 +1728,7 @@ export type Bestandsnaam_ = {
     readonly 'extension': Bestandsnaam_.extension
 }
 
-export { 
+export type { 
     Root_ as Root, 
     Bestandsnaam_ as Bestandsnaam, 
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/env -S node --enable-source-maps
 
-import * as p_h from 'pareto-host-nodejs'
+import * as p_h from 'pareto-host-nodejs/index'
 
-import { $$ as procedure } from "lib/dist/implementation/manual/commands/converteer_oude_dataset"
+import { $$ as procedure } from "lib/implementation/manual/commands/converteer_oude_dataset"
 
 p_h.run_main_command(
     ($r) => {

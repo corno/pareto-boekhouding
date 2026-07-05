@@ -1,8 +1,8 @@
 
-import * as p_i from 'pareto-core/dist/interface/__internal/Abort'
-import * as p_di from 'pareto-core/dist/interface/data'
+import * as p_i from 'pareto-core/interface/__internal/Abort'
+import * as p_di from 'pareto-core/interface/data'
 
-import * as i_location from "liana-core/dist/interface/data/document_and_location"
+import * as i_location from "liana-core/interface/data/document_and_location"
 
 export namespace Root_ {
     
@@ -3414,7 +3414,7 @@ export type Eerste_boekjaar_ = {
     readonly 'l state': Eerste_boekjaar_.l_state
 }
 
-export { 
+export type { 
     Root_ as Root, 
     Fiscaal_ as Fiscaal, 
     Grootboek_Categorieen_ as Grootboek_Categorieen, 

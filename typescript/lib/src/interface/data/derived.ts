@@ -1,6 +1,6 @@
-import * as p_ from 'pareto-core/dist/interface/data'
+import * as p_ from 'pareto-core/interface/data'
 
-import * as d_boekhouding from "../generated/liana/schemas/boekhouding/data/resolved"
+import * as d_boekhouding from "../generated/liana/schemas/boekhouding/data/resolved.js"
 
 export type Root = {
     'bron': d_boekhouding.Root
