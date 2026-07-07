@@ -7,7 +7,7 @@ import * as query_actions_pareto_filesystem_unrestricted_api from "pareto-filesy
 
 import * as d_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
 
-export type genereer_jaarverslag = p_.Command_Procedure<
+export type genereer_jaarverslag = p_.Command<
     command_actions_pareto_application_api.main,
     {
         'tab size': number,
@@ -22,7 +22,7 @@ export type genereer_jaarverslag = p_.Command_Procedure<
     }
 >
 
-export type converteer_oude_dataset = p_.Command_Procedure<
+export type converteer_oude_dataset = p_.Command<
     command_actions_pareto_application_api.main,
     {
         'tab size': number,

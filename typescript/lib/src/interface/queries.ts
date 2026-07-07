@@ -5,7 +5,7 @@ import * as query_actions_pareto_common from "pareto-common/interface/query_acti
 import * as d_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
 
 
-export type genereer_jaarverslag = p_.Query_Function<
+export type genereer_jaarverslag = p_.Query<
     query_actions_pareto_common.process_file_data,
     {
         'tab size': number,
@@ -14,7 +14,7 @@ export type genereer_jaarverslag = p_.Query_Function<
     null
 >
 
-export type converteer_oude_dataset = p_.Query_Function<
+export type converteer_oude_dataset = p_.Query<
     query_actions_pareto_common.process_file_data,
     {
         'tab size': number,
