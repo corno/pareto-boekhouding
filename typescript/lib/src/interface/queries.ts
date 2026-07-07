@@ -1,31 +1,24 @@
 import * as p_ from 'pareto-core/interface/query'
 
-import * as queries_common from "pareto-common/interface/queries"
+import * as query_actions_pareto_common from "pareto-common/interface/query_actions"
 
 import * as d_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
 
-export namespace queries {
 
-}
+export type genereer_jaarverslag = p_.Query_Function<
+    query_actions_pareto_common.process_file_data,
+    {
+        'tab size': number,
+        'serialization parameters': d_serialize_prose.Parameters,
+    },
+    null
+>
 
-export namespace query_functions {
-
-    export type genereer_jaarverslag = p_.Query_Function<
-        queries_common.queries.process_file_data,
-        {
-            'tab size': number,
-            'serialization parameters': d_serialize_prose.Parameters,
-        },
-        null
-    >
-
-    export type converteer_oude_dataset = p_.Query_Function<
-        queries_common.queries.process_file_data,
-        {
-            'tab size': number,
-            'serialization parameters': d_serialize_prose.Parameters,
-        },
-        null
-    >
-
-}
+export type converteer_oude_dataset = p_.Query_Function<
+    query_actions_pareto_common.process_file_data,
+    {
+        'tab size': number,
+        'serialization parameters': d_serialize_prose.Parameters,
+    },
+    null
+>

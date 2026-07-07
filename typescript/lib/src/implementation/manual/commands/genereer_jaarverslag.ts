@@ -9,7 +9,7 @@ import * as d_main from "pareto-application-api/interface/data/main"
 import * as c_file_to_file from "pareto-common/implementation/manual/commands/file_to_file"
 import * as q_genereer_jaarverslag from "../queries/genereer_jaarverslag.js"
 
-export const $$: interface_.procedures.genereer_jaarverslag = p_.command_procedure(
+export const $$: interface_.genereer_jaarverslag = p_.command(
     ($d, $s, $q, $c) => [
         c_file_to_file.$$(
             null,

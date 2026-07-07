@@ -6,7 +6,7 @@ import * as interface_ from "../../../interface/commands.js"
 import * as c_file_to_file from "pareto-common/implementation/manual/commands/file_to_file"
 import * as q_genereer_jaarverslag from "../queries/converteer_oude_dataset.js"
 
-export const $$: interface_.procedures.converteer_oude_dataset = p_.command_procedure(
+export const $$: interface_.converteer_oude_dataset = p_.command(
     ($d, $s, $q, $c) => [
         c_file_to_file.$$(
             null,

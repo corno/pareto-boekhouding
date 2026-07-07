@@ -24,7 +24,7 @@ import * as t_location_to_prose from "astn-core/implementation/manual/transforme
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
-export const $$: interface_.query_functions.converteer_oude_dataset = p_.query_function(
+export const $$: interface_.converteer_oude_dataset = p_.query(
     ($d, $s, $q) => p_super_query_result(p_.e.refine<d_boekhouding.Root_, d_prose.Phrase>(
         (abort) => r_boekhouding_resolved_from_boekhouding_unresolved.Root(
             r_boekhouding_unresolved_from_boekhouding_oude_model.Root(

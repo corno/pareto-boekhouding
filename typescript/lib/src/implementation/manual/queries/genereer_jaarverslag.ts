@@ -22,7 +22,7 @@ import * as t_path_to_text from "pareto-resources/implementation/manual/transfor
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
-export const $$: interface_.query_functions.genereer_jaarverslag = p_.query_function(
+export const $$: interface_.genereer_jaarverslag = p_.query(
     ($d, $s, $q) => p_super_query_result(p_.e.refine<d_boekhouding.Root_, d_prose.Phrase>(
         (abort) => r_boekhouding_resolved_from_loc.Root(
             $d.data,
