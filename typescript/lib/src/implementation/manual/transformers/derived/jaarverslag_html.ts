@@ -115,7 +115,7 @@ const Balans_Grootboekrekeningen: interface_.Balans_Grootboekrekeningen = ($, $p
                         switch ($[0]) {
                             case 'begin': return p_.option($, ($) => context.totaal.beginsaldo)
                             case 'eind': return p_.option($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
-                            default: return p_.au($[0])
+                            default: return p_.exhaustive($[0])
                         }
                     }),
             }

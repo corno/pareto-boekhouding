@@ -39,7 +39,7 @@ export const Root: interface_.Root = ($) => {
                                                 // + $['Bedrag inclusief geheven BTW']
                                                 + $['BTW-bedrag']
                                             )
-                                            default: return p_.au($[0])
+                                            default: return p_.exhaustive($[0])
                                         }
                                     })
                             ),
@@ -51,7 +51,7 @@ export const Root: interface_.Root = ($) => {
                                                 + $['Bedrag inclusief geheven BTW']
                                                 - $['BTW-bedrag']
                                             )
-                                            default: return p_.au($[0])
+                                            default: return p_.exhaustive($[0])
                                         }
                                     })
                             ),
@@ -74,10 +74,10 @@ export const Root: interface_.Root = ($) => {
                                                         switch ($[0]) {
                                                             case 'Nee': return p_.option($, ($) => 0)
                                                             case 'Ja': return p_.option($, ($) => ($['BTW-promillage']))
-                                                            default: return p_.au($[0])
+                                                            default: return p_.exhaustive($[0])
                                                         }
                                                     }))
-                                                default: return p_.au($[0])
+                                                default: return p_.exhaustive($[0])
                                             }
                                         })
                                 ).divide(
@@ -128,7 +128,7 @@ export const Root: interface_.Root = ($) => {
                                                         - $['Bedrag inclusief geheven BTW']
                                                         + $['BTW-bedrag']
                                                     )
-                                                    default: return p_.au($[0])
+                                                    default: return p_.exhaustive($[0])
                                                 }
                                             })
                                     )
@@ -168,7 +168,7 @@ export const Root: interface_.Root = ($) => {
                                             switch ($[0]) {
                                                 case 'Aangegeven': return p_.option($, ($) => $.Afronding)
                                                 case 'Openstaand': return p_.option($, ($) => 0)
-                                                default: return p_.au($[0])
+                                                default: return p_.exhaustive($[0])
                                             }
                                         })
                                 )
@@ -413,7 +413,7 @@ export const Root: interface_.Root = ($) => {
                                     case 'Openstaand': return p_.option($, ($) => ['openstaand', {
                                         'bron': $,
                                     }])
-                                    default: return p_.au($[0])
+                                    default: return p_.exhaustive($[0])
                                 }
                             })
 
@@ -451,7 +451,7 @@ export const Root: interface_.Root = ($) => {
                                             switch ($[0]) {
                                                 case 'Ja': return p_.option($, ($) => false)
                                                 case 'Nee': return p_.option($, ($) => $.Rekening['l entry'] === context)
-                                                default: return p_.au($[0])
+                                                default: return p_.exhaustive($[0])
                                             }
                                         })
                                 )
@@ -500,7 +500,7 @@ export const Root: interface_.Root = ($) => {
                                             ($): number => {
                                                 switch ($[0]) {
                                                     case 'Bekend': return p_.option($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
-                                                    default: return p_.au($[0])
+                                                    default: return p_.exhaustive($[0])
                                                 }
                                             })
                                     )
@@ -535,7 +535,7 @@ export const Root: interface_.Root = ($) => {
                                             switch ($[0]) {
                                                 case 'Ja': return p_.option($, ($) => false)
                                                 case 'Nee': return p_.option($, ($) => $['Balans item']['l entry'] === context)
-                                                default: return p_.au($[0])
+                                                default: return p_.exhaustive($[0])
                                             }
                                         })
                                 )
@@ -805,7 +805,7 @@ export const Root: interface_.Root = ($) => {
                                             switch ($[0]) {
                                                 case 'aangegeven': return p_.option($, ($) => $['te veel aangegeven'])
                                                 case 'openstaand': return p_.option($, ($) => 0)
-                                                default: return p_.au($[0])
+                                                default: return p_.exhaustive($[0])
                                             }
                                         })
                                 }
@@ -913,7 +913,7 @@ export const Root: interface_.Root = ($) => {
                                                 switch ($[0]) {
                                                     case 'aangegeven': return p_.option($, ($) => $.bron.Bedrag)
                                                     case 'openstaand': return p_.option($, ($) => 0)
-                                                    default: return p_.au($[0])
+                                                    default: return p_.exhaustive($[0])
                                                 }
                                             })
                                     }
