@@ -1,5 +1,5 @@
 import type * as p_di from 'pareto-core/interface/data'
-import * as p_ from 'pareto-core/implementation/transformer'
+
 import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 import type * as p_i from 'pareto-core/interface/transformer'
 
@@ -8,7 +8,7 @@ import type * as d_out from "pareto-static-html/interface/generated/liana/schema
 import type * as d_in from "../../../data/derived.js"
 import type * as d_temp_aggregatie_2 from "../../../data/aggregatie.js"
 
-export namespace interface_ {
+
     export type Balans_Grootboekrekeningen = p_i.Transformer_With_Parameter<
 
         d_in.Balans.Grootboek_Rekeningen,
@@ -77,4 +77,4 @@ export namespace interface_ {
         string,
         d_out.Flow_Element.table.sections.L.rows.L.cells.L
     >
-}
+

@@ -5,7 +5,7 @@ import type * as d_in from "pareto-fountain-pen/interface/generated/liana/schema
 import type * as d_out from "../../../generated/liana/schemas/boekhouding/data/resolved.js"
 import type * as d_function from "liana-core/interface/data/deserialize_resolved"
 
-export namespace interface_ {
+
 
     export type Root = p_i.Refiner_With_Parameter<
         d_out.Root,
@@ -13,4 +13,4 @@ export namespace interface_ {
         d_in.List_of_Characters,
         d_function.Parameters
     >
-}
+

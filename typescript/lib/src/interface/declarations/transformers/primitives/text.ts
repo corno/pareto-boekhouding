@@ -1,4 +1,4 @@
-import * as p_ from 'pareto-core/implementation/transformer'
+
 import type * as p_i from 'pareto-core/interface/transformer'
 import p_list_build_deprecated from 'pareto-core/implementation/refiner/specials/list_build_deprecated'
 import p_text_from_list from 'pareto-core/implementation/transformer/specials/text_from_list'
@@ -13,12 +13,12 @@ export namespace d_function {
         'decimal separator character code': number
         'thousand separator character code': number
     }
+
 }
 
-export namespace interface_ {
-    export type fractional_decimal = p_i.Transformer_With_Parameter<
-        number,
-        d_out.Text,
-        d_function.Parameters
-    >
-}
+export type fractional_decimal = p_i.Transformer_With_Parameter<
+    number,
+    d_out.Text,
+    d_function.Parameters
+>
+
