@@ -1,4 +1,4 @@
-import type * as p_i from 'pareto-core/interface/refiner'
+import type * as p_ from 'pareto-core/interface/refiner'
 
 //data types
 import type * as d_in from "pareto-fountain-pen/interface/generated/liana/schemas/list_of_characters/data"
@@ -7,7 +7,7 @@ import type * as d_function from "liana-core/interface/data/deserialize_resolved
 
 
 
-    export type Root = p_i.Refiner_With_Parameter<
+    export type Root = p_.Refiner_With_Parameter<
         d_out.Root,
         d_function.Error,
         d_in.List_of_Characters,
