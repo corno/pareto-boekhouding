@@ -7,10 +7,10 @@ import type * as d_function from "liana-core/interface/data/deserialize_resolved
 
 
 
-    export type Root = p_.Refiner_With_Parameter<
-        d_out.Root,
-        d_function.Error,
-        d_in.List_of_Characters,
-        d_function.Parameters
-    >
+export type Root = p_.Refiner_With_Parameter<
+    d_out.Root,
+    d_function.Error,
+    d_in.List_of_Characters,
+    d_function.Parameters
+>
 

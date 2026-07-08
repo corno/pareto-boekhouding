@@ -6,8 +6,8 @@ import type * as d_in from "../../../generated/liana/schemas/boekhouding/data/re
 import type * as d_out from "../../../data/derived.js"
 
 
-    export type Root = p_.Transformer<
-        d_in.Root,
-        d_out.Root
-    >
+export type Root = p_.Transformer<
+    d_in.Root,
+    d_out.Root
+>
 
