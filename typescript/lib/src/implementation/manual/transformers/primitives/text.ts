@@ -22,6 +22,7 @@ export namespace interface_ {
         d_function.Parameters
     >
 }
+import * as temp_interface_ from "../../../../interface/declarations/transformers/primitives/text.js"
 
 export const fractional_decimal: interface_.fractional_decimal = ($, $p) => {
     const old_imp = p_text_from_list(

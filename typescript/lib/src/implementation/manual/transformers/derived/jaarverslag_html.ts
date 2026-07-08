@@ -78,6 +78,7 @@ export namespace interface_ {
         d_out.Flow_Element.table.sections.L.rows.L.cells.L
     >
 }
+import * as temp_interface_ from "../../../../interface/declarations/transformers/derived/jaarverslag_html.js"
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text.js"

@@ -22,6 +22,7 @@ export namespace interface_ {
         d_function.Parameters
     >
 }
+import * as temp_interface_ from "../../../../interface/declarations/refiners/boekhouding_resolved/list_of_characters.js"
 
 export const Root: interface_.Root = ($, abort, $p) => {
     return r_boekhouding_resolved_from_boekhouding_unresolved.Root(

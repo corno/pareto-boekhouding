@@ -68,6 +68,7 @@ export namespace interface_ {
         $$_: string,
     ) => d_out.Verwijzing_naar_Informele_rekening
 }
+import * as temp_interface_ from "../../../../interface/declarations/refiners/boekhouding_unresolved/boekhouding_oude_model.js"
 
 const fix_date = ($: number) => {
     return $ - 2432895 // the date of the universal declaration of human rights (1948-12-10) in julian days, rounded down to the nearest day to avoid the strange noon changeover)
