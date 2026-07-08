@@ -1,7 +1,7 @@
-import * as p_di from 'pareto-core/interface/data'
+import type * as p_di from 'pareto-core/interface/data'
 import * as p_ from 'pareto-core/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/log_debug_message'
-import * as p_i from 'pareto-core/interface/transformer'
+import type * as p_i from 'pareto-core/interface/transformer'
 
 //data types
 import type * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
