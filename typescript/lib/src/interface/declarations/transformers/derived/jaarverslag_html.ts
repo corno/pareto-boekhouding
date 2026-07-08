@@ -5,8 +5,8 @@ import type * as p_i from 'pareto-core/interface/transformer'
 
 //data types
 import type * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
-import type * as d_in from "../../../../interface/data/derived.js"
-import type * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie.js"
+import type * as d_in from "../../../data/derived.js"
+import type * as d_temp_aggregatie_2 from "../../../data/aggregatie.js"
 
 export namespace interface_ {
     export type Balans_Grootboekrekeningen = p_i.Transformer_With_Parameter<

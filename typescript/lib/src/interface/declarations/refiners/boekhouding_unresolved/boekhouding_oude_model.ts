@@ -5,8 +5,8 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 
 import * as sh from 'pareto-core-shorthands/unresolved_data'
 
-import type * as d_in from "../../../../interface/generated/liana/schemas/boekhouding_oude_model/data.js"
-import type * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved.js"
+import type * as d_in from "../../../generated/liana/schemas/boekhouding_oude_model/data.js"
+import type * as d_out from "../../../generated/liana/schemas/boekhouding/data/unresolved.js"
 
 export namespace interface_ {
     export type Rekening_Mutatie = (
