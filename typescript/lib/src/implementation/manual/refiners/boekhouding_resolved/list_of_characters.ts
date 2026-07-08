@@ -3,9 +3,9 @@ import * as p_i from 'pareto-core/interface/refiner'
 
 
 //data types
-import * as d_in from "pareto-fountain-pen/interface/generated/liana/schemas/list_of_characters/data"
-import * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved.js"
-import * as d_function from "liana-core/interface/data/deserialize_resolved"
+import type * as d_in from "pareto-fountain-pen/interface/generated/liana/schemas/list_of_characters/data"
+import type * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved.js"
+import type * as d_function from "liana-core/interface/data/deserialize_resolved"
 
 //dependencies
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved.js"

@@ -4,9 +4,9 @@ import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 import * as p_i from 'pareto-core/interface/transformer'
 
 //data types
-import * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
-import * as d_in from "../../../../interface/data/derived.js"
-import * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie.js"
+import type * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
+import type * as d_in from "../../../../interface/data/derived.js"
+import type * as d_temp_aggregatie_2 from "../../../../interface/data/aggregatie.js"
 
 export namespace interface_ {
     export type Balans_Grootboekrekeningen = p_i.Transformer_With_Parameter<

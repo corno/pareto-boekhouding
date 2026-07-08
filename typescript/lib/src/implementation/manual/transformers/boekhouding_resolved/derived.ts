@@ -6,8 +6,8 @@ import p_variables from 'pareto-core/implementation/transformer/specials/variabl
 import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
 
 //data types
-import * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved.js"
-import * as d_out from "../../../../interface/data/derived.js"
+import type * as d_in from "../../../../interface/generated/liana/schemas/boekhouding/data/resolved.js"
+import type * as d_out from "../../../../interface/data/derived.js"
 
 export namespace interface_ {
     export type Root = p_i.Transformer<

@@ -5,8 +5,8 @@ import p_super_query_result from 'pareto-core/implementation/query/super_query_r
 import * as interface_ from "../../../interface/declarations/queries.js"
 
 //data  types
-import * as d_boekhouding from "../../../interface/generated/liana/schemas/boekhouding/data/resolved.js"
-import * as d_prose from "pareto-fountain-pen/interface/generated/liana/schemas/prose/data"
+import type * as d_boekhouding from "../../../interface/generated/liana/schemas/boekhouding/data/resolved.js"
+import type * as d_prose from "pareto-fountain-pen/interface/generated/liana/schemas/prose/data"
 import * as t_path_to_text from "pareto-resources/implementation/manual/transformers/unrestricted_path/text"
 
 //dependencies
