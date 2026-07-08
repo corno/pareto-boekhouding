@@ -1,9 +1,4 @@
 
-import * as p_temp from 'pareto-core/implementation/transformer'
-import type * as p_di from 'pareto-core/interface/data'
-import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
-
-import * as sh from 'pareto-core-shorthands/unresolved_data'
 
 import type * as d_in from "../../../generated/liana/schemas/boekhouding_oude_model/data.js"
 import type * as d_out from "../../../generated/liana/schemas/boekhouding/data/unresolved.js"
