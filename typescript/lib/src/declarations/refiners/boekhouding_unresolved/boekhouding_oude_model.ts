@@ -1,7 +1,7 @@
 
 
-import type * as d_in from "../../../generated/liana/schemas/boekhouding_oude_model/data.js"
-import type * as d_out from "../../../generated/liana/schemas/boekhouding/data/unresolved.js"
+import type * as d_in from "../../../interface/generated/liana/schemas/boekhouding_oude_model/data.js"
+import type * as d_out from "../../../interface/generated/liana/schemas/boekhouding/data/unresolved.js"
 
 
 export type Rekening_Mutatie = (

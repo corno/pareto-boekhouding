@@ -3,7 +3,7 @@ import * as p_temp from 'pareto-core/implementation/transformer'
 import type * as p_di from 'pareto-core/interface/data'
 import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
 
-import type * as interface_ from "../../../../interface/declarations/refiners/boekhouding_unresolved/boekhouding_oude_model.js"
+import type * as interface_ from "../../../../declarations/refiners/boekhouding_unresolved/boekhouding_oude_model.js"
 
 //data types
 import type * as d_out from "../../../../interface/generated/liana/schemas/boekhouding/data/unresolved.js"

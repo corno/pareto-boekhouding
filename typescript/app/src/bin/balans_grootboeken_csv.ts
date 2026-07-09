@@ -6,7 +6,7 @@ import * as rs_filesystem_unrestricted from "pareto-resource-filesystem-unrestri
 import * as rs_stream from "pareto-resource-stream/index"
 
 import { $$ as c_command } from "pareto-common/implementation/manual/commands/file_to_file"
-import { $$ as q_query } from "lib/implementation/manual/queries/converteer_oude_dataset"
+import { $$ as q_query } from "lib/implementation/manual/queries/balans_grootboeken_csv"
 
 p_h.run_main_command(
     () => {

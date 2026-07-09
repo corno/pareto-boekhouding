@@ -4,7 +4,7 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 import p_variables from 'pareto-core/implementation/transformer/specials/variables'
 import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
 
-import type * as interface_ from "../../../../interface/declarations/transformers/boekhouding_resolved/derived.js"
+import type * as interface_ from "../../../../declarations/transformers/boekhouding_resolved/derived.js"
 
 //data types
 import type * as d_out from "../../../../interface/data/derived.js"

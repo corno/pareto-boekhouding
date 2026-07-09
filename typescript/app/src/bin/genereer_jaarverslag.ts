@@ -5,20 +5,25 @@ import * as p_h from 'pareto-host-nodejs/index'
 import * as rs_filesystem_unrestricted from "pareto-resource-filesystem-unrestricted/index"
 import * as rs_stream from "pareto-resource-stream/index"
 
-import { $$ as procedure } from "lib/implementation/manual/commands/genereer_jaarverslag"
+import { $$ as c_command } from "pareto-common/implementation/manual/commands/file_to_file"
+import { $$ as q_query } from "lib/implementation/manual/queries/genereer_jaarverslag"
 
 p_h.run_main_command(
     () => {
-        return procedure(
-            {
-                'serialization parameters': {
-                    'indentation': "   ",
-                    'newline': "\n",
-                },
-                'tab size': 4,
-            },
+        return c_command(
+            null,
             {
                 'read file': rs_filesystem_unrestricted.$.queries['read file'],
+                'process data': q_query(
+                    {
+                        'tab size': 4,
+                        'serialization parameters': {
+                            'indentation': "   ",
+                            'newline': "\n",
+                        },
+                    },
+                    null
+                ),
             },
             {
                 'write file': rs_filesystem_unrestricted.$.commands['write file'],

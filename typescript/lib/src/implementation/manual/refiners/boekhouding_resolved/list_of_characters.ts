@@ -1,6 +1,6 @@
 import * as p_ from 'pareto-core/implementation/refiner'
 
-import type * as interface_ from "../../../../interface/declarations/refiners/boekhouding_resolved/list_of_characters.js"
+import type * as interface_ from "../../../../declarations/refiners/boekhouding_resolved/list_of_characters.js"
 
 //dependencies
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../generated/liana/schemas/boekhouding/resolved/refiners/unresolved.js"
