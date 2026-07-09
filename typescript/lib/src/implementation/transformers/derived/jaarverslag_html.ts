@@ -2,7 +2,7 @@ import type * as p_di from 'pareto-core/interface/data'
 import * as p_ from 'pareto-core/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 
-import type * as interface_ from "../../../../declarations/transformers/derived/jaarverslag_html.js"
+import type * as interface_ from "../../../declarations/transformers/derived/jaarverslag_html.js"
 
 //data types
 import type * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
@@ -25,7 +25,7 @@ const temp_integer_from_dictionary = <T extends p_di.Value>(
 import * as sh from "pareto-static-html/shorthands/static_html/target"
 
 //data
-import { css } from "../../../../data/css.js"
+import { css } from "../../../data/css.js"
 
 
 
