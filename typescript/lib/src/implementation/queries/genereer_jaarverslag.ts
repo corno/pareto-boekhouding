@@ -52,7 +52,10 @@ export const $$: interface_.genereer_jaarverslag = p_.query(
                     t_aggregatie_to_jaarverslag_html.Root(
                         t_resolved_to_derived.Root(
                             $
-                        )
+                        ),
+                        {
+                            'css': $s['css'],
+                        }
                     )
                 ),
                 {

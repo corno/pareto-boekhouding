@@ -64,10 +64,13 @@ export type Resultaat_Grootboekrekeningen = p_.Transformer_With_Parameter<
         'teken omkeren': boolean
     }
 >
-export type Root = p_.Transformer<
+export type Root = p_.Transformer_With_Parameter<
 
     d_in.Root,
-    d_out.Document
+    d_out.Document,
+    {
+        'css': string
+    }
 >
 export type Span_Indent = p_.Transformer<
     number,

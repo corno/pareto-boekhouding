@@ -8,6 +8,8 @@ import * as rs_stream from "pareto-resource-stream/index"
 import { $$ as c_command } from "pareto-common/implementation/manual/commands/file_to_file"
 import { $$ as q_query } from "lib/implementation/queries/genereer_jaarverslag"
 
+import { css as data_css } from "../data/css.js"
+
 p_h.run_main_command(
     () => {
         return c_command(
@@ -21,6 +23,7 @@ p_h.run_main_command(
                             'indentation': "   ",
                             'newline': "\n",
                         },
+                        'css': data_css,
                     },
                     null
                 ),

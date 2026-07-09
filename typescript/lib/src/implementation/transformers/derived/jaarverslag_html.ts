@@ -24,10 +24,6 @@ const temp_integer_from_dictionary = <T extends p_di.Value>(
 //shorthands
 import * as sh from "pareto-static-html/shorthands/static_html/target"
 
-//data
-import { css } from "../../../data/css.js"
-
-
 
 const Balans_Grootboekrekeningen: interface_.Balans_Grootboekrekeningen = ($, $p) => {
     const $p_grootboekrekeningen = p_.from.dictionary($).map(
@@ -323,7 +319,7 @@ const Resultaat_Grootboekrekeningen: interface_.Resultaat_Grootboekrekeningen = 
     }
 }
 
-export const Root: interface_.Root = ($) => {
+export const Root: interface_.Root = ($, $p) => {
     // p_log_debug_message("", () => { })
     // p_log_debug_message("bankrekeningen", () => { })
     // $.jaren.__ d_map_deprecated(
@@ -551,7 +547,7 @@ export const Root: interface_.Root = ($) => {
             return null
         })
     return sh.document(
-        css,
+        $p.css,
         sh.f.div(
             p_.literal.list([
                 sh.f.table(

@@ -11,7 +11,11 @@ type temp_parameters = {
 
 export type genereer_jaarverslag = p_.Query_Implementation<
     query_interfaces_pareto_common.process_file_data,
-    temp_parameters,
+    {
+        'tab size': number,
+        'serialization parameters': d_serialize_prose.Parameters,
+        'css': string
+    },
     null
 >
 
