@@ -13,7 +13,7 @@ import * as t_signatures from "../../../declarations/transformers/foo/astn_seale
 
 import * as t_out from "astn-core/interface/generated/liana/schemas/sealed_target/data"
 
-import * as v_primitives_to_text from "liana-core/implementation/manual/transformers/primitives/text"
+import * as v_primitives_to_text from "liana-core/implementation/transformers/primitives/text"
 
 export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.dictionary(
     {

@@ -15,9 +15,9 @@ import * as t_signatures from "../../../declarations/refiners/foo/astn_parse_tre
 
 import * as t_out from "../../../interface/data/unresolved.js"
 
-import * as v_unmarshalled_from_parse_tree from "liana-core/implementation/manual/refiners/unmarshalled/astn_parse_tree"
+import * as v_unmarshalled_from_parse_tree from "liana-core/implementation/refiners/unmarshalled/astn_parse_tree"
 
-import * as v_parse_tree_to_location from "liana-core/implementation/manual/transformers/parse_tree/start_token_range"
+import * as v_parse_tree_to_location from "liana-core/implementation/transformers/parse_tree/start_token_range"
 
 export const Root: t_signatures.Root = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
