@@ -56,14 +56,18 @@ export const fractional_decimal: interface_.fractional_decimal = ($, $p) => {
 
                 // Add integer part (reverse order) with thousand separators
                 const digitCount = p_.from.list(integerDigits).amount_of_items()
+                const thousandSeparatorCode = p_.from.optional($p['thousand separator character code']).decide(
+                    ($) => $,
+                    () => null
+                )
                 for (let j = digitCount - 1; j >= 0; j--) {
                     $i['add item'](48 + p_.from.optional(integerDigits.__deprecated_get_possible_item_at(j)).decide(
                         ($) => $,
                         () => p_unreachable_code_path("index cannot be out of bounds")
                     ))
                     // Add thousand separator after every 3 digits (except at the end)
-                    if (j > 0 && j % 3 === 0) {
-                        $i['add item']($p['thousand separator character code'])
+                    if (j > 0 && j % 3 === 0 && thousandSeparatorCode !== null) {
+                        $i['add item'](thousandSeparatorCode)
                     }
                 }
 

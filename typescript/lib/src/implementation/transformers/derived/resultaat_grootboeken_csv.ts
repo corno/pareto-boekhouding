@@ -28,8 +28,8 @@ export const Root: interface_.Root = ($) => sh.CSV(
                             $.totaal,
                             {
                                 'number of fractional digits': 2,
-                                'decimal separator character code': 44, // ','
-                                'thousand separator character code': 46, // '.'
+                                'decimal separator character code': 46, // '.'
+                                'thousand separator character code': p_.literal.not_set()
                             }
                         ),
                     ]))

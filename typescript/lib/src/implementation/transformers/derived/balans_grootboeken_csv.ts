@@ -40,16 +40,16 @@ export const Root: interface_.Root = ($) => sh.CSV(
                             $.totaal.beginsaldo,
                             {
                                 'number of fractional digits': 2,
-                                'decimal separator character code': 44, // ','
-                                'thousand separator character code': 46, // '.'
+                                'decimal separator character code': 46, // '.'
+                                'thousand separator character code': p_.literal.not_set()
                             }
                         ),
                         t_primitives_to_text.fractional_decimal(
                             $.totaal.beginsaldo + $.totaal.mutaties,
                             {
                                 'number of fractional digits': 2,
-                                'decimal separator character code': 44, // ','
-                                'thousand separator character code': 46, // '.'
+                                'decimal separator character code': 46, // ','
+                                'thousand separator character code': p_.literal.not_set()
                             }
                         ),
                     ]))

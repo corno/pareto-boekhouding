@@ -92,7 +92,7 @@ const Bedrag: interface_.Bedrag = ($, $p) => sh.t.s.r.td(
                     {
                         'number of fractional digits': 2,
                         'decimal separator character code': 44, // ','
-                        'thousand separator character code': 46, // '.'
+                        'thousand separator character code': p_.literal.set(46) // '.'
                     }
                 ))
             ])
