@@ -16,12 +16,12 @@ export type Jaar = {
     'overige balans items': p_.Dictionary<Overige_Balans_Item>
     'informele rekeningen': p_.Dictionary<Informele_Rekening>
     'verrekenposten': p_.Dictionary<Verreken_Post>
-    'inkoopsaldo': Balans.Post
-    'verkoopsaldo': Balans.Post
+    'inkoopsaldo': Balans.Samenvatting
+    'verkoopsaldo': Balans.Samenvatting
     'btw': {
-        'te veel aangegeven': Balans.Post,
-        'nog aan te geven': Balans.Post,
-        'openstaand': Balans.Post,
+        'te veel aangegeven': Balans.Samenvatting,
+        'nog aan te geven': Balans.Samenvatting,
+        'openstaand': Balans.Samenvatting,
     }
     'bankrekeningen': p_.Dictionary<Bankrekening>
     'jaarbeheer': {
@@ -135,13 +135,14 @@ export namespace Resultaat {
 
     export type Grootboekrekening = {
         'bron': d_boekhouding.Grootboekrekeningen.Resultaat.D
-        'postgroepen': p_.Dictionary<Post_Groep>
+        'dagboeken': p_.Dictionary<Dagboek>
         'totaal': number
     }
 
     export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
 
-    export type Post_Groep = {
+    export type Dagboek = {
+        // 'boekingen': p_.Dictionary<number>
         'totaal': number
     }
 }
@@ -150,17 +151,17 @@ export namespace Balans {
 
     export type Grootboekrekening = {
         'bron': d_boekhouding.Grootboekrekeningen.Balans.D
-        'postgroepen': p_.Dictionary<Post_Groep>
-        'totaal': Post
+        'dagboeken': p_.Dictionary<Dagboek>
+        'totaal': Samenvatting
     }
 
     export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
 
-    export type Post_Groep = {
-        posten: p_.Dictionary<Post>
+    export type Dagboek = {
+        'boekingen': p_.Dictionary<Samenvatting>
     }
 
-    export type Post = {
+    export type Samenvatting = {
         'beginsaldo': number
         'mutaties': number
     }

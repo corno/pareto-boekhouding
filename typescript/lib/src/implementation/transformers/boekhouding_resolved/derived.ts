@@ -105,7 +105,7 @@ export const Root: interface_.Root = ($) => {
                 const $p_resultaat_grootboekrekeningen: d_out.Resultaat.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Resultaat).map(
                     ($): d_out.Resultaat.Grootboekrekening => {
                         const context = $
-                        const $p_postgroepen = p_.literal.dictionary({
+                        const $p_dagboeken = p_.literal.dictionary<d_out.Resultaat.Dagboek>({
                             "inkopen": {
                                 'totaal': p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).sum(
                                     ($) => p_.from.dictionary(
@@ -171,8 +171,8 @@ export const Root: interface_.Root = ($) => {
 
                         return {
                             'bron': $,
-                            'postgroepen': $p_postgroepen,
-                            'totaal': p_.from.dictionary($p_postgroepen).sum(
+                            'dagboeken': $p_dagboeken,
+                            'totaal': p_.from.dictionary($p_dagboeken).sum(
                                 ($) => $.totaal
                             )
                         }
@@ -598,7 +598,7 @@ export const Root: interface_.Root = ($) => {
                     })
 
                 const $p_inkoopsaldo = p_variables(
-                    (): d_out.Balans.Post => {
+                    (): d_out.Balans.Samenvatting => {
                         const $p_beginsaldo = $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
                             : p_change_context(
@@ -688,7 +688,7 @@ export const Root: interface_.Root = ($) => {
                 )
 
                 const $p_verkoopsaldo = p_variables(
-                    (): d_out.Balans.Post => {
+                    (): d_out.Balans.Samenvatting => {
                         const $p_beginsaldo = $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
                             : p_change_context(
@@ -776,7 +776,7 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
                 const $p_btw_te_veel_aangegeven = p_variables(
-                    (): d_out.Balans.Post => {
+                    (): d_out.Balans.Samenvatting => {
                         return {
                             'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                                 ? 0
@@ -807,7 +807,7 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
                 const $p_btw_nog_aan_te_geven = p_variables(
-                    (): d_out.Balans.Post => {
+                    (): d_out.Balans.Samenvatting => {
                         return {
                             'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                                 ? 0
@@ -841,7 +841,7 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
                 const $p_btw_openstaand = p_variables(
-                    (): d_out.Balans.Post => {
+                    (): d_out.Balans.Samenvatting => {
                         return {
                             'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                                 ? 0
@@ -919,12 +919,12 @@ export const Root: interface_.Root = ($) => {
                     ($): d_out.Balans.Grootboekrekening => {
                         const context = $
 
-                        const $p_postgroepen: d_out.Balans.Grootboekrekening['postgroepen'] = p_variables(
-                            (): d_out.Balans.Grootboekrekening['postgroepen'] => {
+                        const $p_dagboeken: d_out.Balans.Grootboekrekening['dagboeken'] = p_variables(
+                            (): d_out.Balans.Grootboekrekening['dagboeken'] => {
 
-                                return p_.literal.dictionary<d_out.Balans.Post_Groep>({
+                                return p_.literal.dictionary<d_out.Balans.Dagboek>({
                                     "winstreserve": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor winstreserve']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor winstreserve']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": {
                                                     'beginsaldo': - $v_bron_jaar.Jaarbeheer.Balans['Beginsaldo winstreserve'],
@@ -934,7 +934,7 @@ export const Root: interface_.Root = ($) => {
                                             : p_.literal.dictionary({})
                                     },
                                     "resultaat": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor resultaat dit jaar']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor resultaat dit jaar']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": {
                                                     'beginsaldo': 0,
@@ -945,42 +945,42 @@ export const Root: interface_.Root = ($) => {
                                     },
 
                                     "inkoopsaldo": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Inkoop saldo']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Inkoop saldo']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": $p_inkoopsaldo
                                             })
                                             : p_.literal.dictionary({}),
                                     },
                                     "verkoopsaldo": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Verkoop saldo']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Verkoop saldo']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": $p_verkoopsaldo
                                             })
                                             : p_.literal.dictionary({}),
                                     },
                                     "btw te veel aangegeven": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": $p_btw_te_veel_aangegeven
                                             })
                                             : p_.literal.dictionary({}),
                                     },
                                     "btw openstaand": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": $p_btw_openstaand
                                             })
                                             : p_.literal.dictionary({}),
                                     },
                                     "btw nog aan te geven": {
-                                        'posten': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
+                                        'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
                                             ? p_.literal.dictionary({
                                                 ".": $p_btw_nog_aan_te_geven
                                             })
                                             : p_.literal.dictionary({}),
                                     },
                                     "bankrekeningen": {
-                                        'posten': p_.from.dictionary($p_bankrekeningen).map_optionally(
+                                        'boekingen': p_.from.dictionary($p_bankrekeningen).map_optionally(
                                             ($) => $.bron.Grootboekrekening['l entry'] === context
                                                 ? p_.literal.set({
                                                     'beginsaldo': $.bron.Beginsaldo,
@@ -1006,7 +1006,7 @@ export const Root: interface_.Root = ($) => {
                                     //     }))
                                     // },
                                     "informele rekeningen": {
-                                        'posten': p_.from.dictionary(
+                                        'boekingen': p_.from.dictionary(
                                             p_.from.dictionary($p_informele_rekeningen).filter(
                                                 ($) => $.bron.Grootboekrekening['l entry'] === context
                                             )
@@ -1018,7 +1018,7 @@ export const Root: interface_.Root = ($) => {
                                         )
                                     },
                                     "overige balans items": {
-                                        'posten': p_.from.dictionary(
+                                        'boekingen': p_.from.dictionary(
                                             p_.from.dictionary($p_overige_balans_items).filter(
                                                 ($) => $.bron.Grootboekrekening['l entry'] === context
                                             )
@@ -1033,15 +1033,15 @@ export const Root: interface_.Root = ($) => {
                         )
                         return {
                             'bron': $,
-                            'postgroepen': $p_postgroepen,
+                            'dagboeken': $p_dagboeken,
                             'totaal': {
-                                'beginsaldo': p_.from.dictionary($p_postgroepen).sum(
-                                    ($) => p_.from.dictionary($.posten).sum(
+                                'beginsaldo': p_.from.dictionary($p_dagboeken).sum(
+                                    ($) => p_.from.dictionary($.boekingen).sum(
                                         ($) => $.beginsaldo
                                     )
                                 ),
-                                'mutaties': p_.from.dictionary($p_postgroepen).sum(
-                                    ($) => p_.from.dictionary($.posten).sum(
+                                'mutaties': p_.from.dictionary($p_dagboeken).sum(
+                                    ($) => p_.from.dictionary($.boekingen).sum(
                                         ($) => $.mutaties
                                     )
                                 ),
