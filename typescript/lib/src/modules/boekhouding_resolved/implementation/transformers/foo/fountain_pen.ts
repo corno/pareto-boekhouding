@@ -1,7 +1,7 @@
 
 import * as p_ from 'pareto-core/implementation/transformer'
 
-import * as t_signatures from "../../declarations/transformers/fountain_pen.js"
+import * as t_signatures from "../../../declarations/transformers/foo/fountain_pen.js"
 
 import * as v_serialize from "astn-core/implementation/manual/transformers/sealed_target/prose"
 

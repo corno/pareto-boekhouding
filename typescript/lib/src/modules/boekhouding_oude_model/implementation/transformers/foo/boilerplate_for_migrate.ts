@@ -9,9 +9,9 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 
 
 
-import * as t_signatures from "../../declarations/transformers/boilerplate_for_migrate.js"
+import * as t_signatures from "../../../declarations/transformers/foo/boilerplate_for_migrate.js"
 
-import * as t_out from "../../../boekhouding_oude_model/interface/data/data.js"
+import * as t_out from "../../../interface/data/data.js"
 
 export const Root: t_signatures.Root = ($) => ({
     'Bankrekeningen': p_change_context(

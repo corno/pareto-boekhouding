@@ -1,7 +1,7 @@
 
 import * as p_ from 'pareto-core/implementation/refiner'
 
-import * as t_signatures from "../../declarations/refiners/list_of_characters.js"
+import * as t_signatures from "../../../declarations/refiners/foo/list_of_characters.js"
 
 import * as v_deserialize from "astn-core/implementation/manual/refiners/parse_tree/list_of_characters"
 

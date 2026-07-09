@@ -1,23 +1,21 @@
 
 import * as p_i from 'pareto-core/interface/__internal/Abort'
 
-import * as i_generic from "liana-core/interface/data/deserialize"
+import * as i_generic from "liana-core/interface/data/unmarshall"
 
-import * as i_in from "pareto-fountain-pen/interface/generated/liana/schemas/list_of_characters/data"
+import * as i_out from "../../../interface/data/data.js"
 
-import * as i_out from "../../interface/data/data.js"
+import * as i_in from "astn-core/interface/generated/liana/schemas/parse_tree/data"
 
 export namespace Root_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.Value
     
     export type O = i_out.Root
     
     export type E = i_generic.Error
     
     export namespace P {
-        
-        export type tab_size = number
         
     }
     
@@ -26,22 +24,17 @@ export namespace Root_ {
 export type Root_ = (
     context: Root_.I,
     abort: p_i.Abort<Root_.E>,
-    parameters: {
-        readonly 'tab size': Root_.P.tab_size
-    },
 ) => Root_.O
 
 export namespace Bestandsnaam_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.Value
     
     export type O = i_out.Bestandsnaam
     
     export type E = i_generic.Error
     
     export namespace P {
-        
-        export type tab_size = number
         
     }
     
@@ -50,9 +43,6 @@ export namespace Bestandsnaam_ {
 export type Bestandsnaam_ = (
     context: Bestandsnaam_.I,
     abort: p_i.Abort<Bestandsnaam_.E>,
-    parameters: {
-        readonly 'tab size': Bestandsnaam_.P.tab_size
-    },
 ) => Bestandsnaam_.O
 
 export type { 

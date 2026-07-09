@@ -5,9 +5,9 @@ import * as p_ri from 'pareto-core/interface/refiner'
 
 import * as i_generic from "liana-core/interface/data/resolve"
 
-import * as i_resolved from "../../interface/data/resolved.js"
+import * as i_resolved from "../../../interface/data/resolved.js"
 
-import * as i_unresolved from "../../../boekhouding_unresolved/interface/data/unresolved.js"
+import * as i_unresolved from "../../../../boekhouding_unresolved/interface/data/unresolved.js"
 
 export namespace Fiscaal_ {
     

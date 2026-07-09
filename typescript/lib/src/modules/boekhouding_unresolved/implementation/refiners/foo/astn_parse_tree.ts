@@ -11,9 +11,9 @@ import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_f
 
 import p_variables from 'pareto-core/implementation/refiner/specials/variables'
 
-import * as t_signatures from "../../declarations/refiners/astn_parse_tree.js"
+import * as t_signatures from "../../../declarations/refiners/foo/astn_parse_tree.js"
 
-import * as t_out from "../../interface/data/unresolved.js"
+import * as t_out from "../../../interface/data/unresolved.js"
 
 import * as v_unmarshalled_from_parse_tree from "liana-core/implementation/manual/refiners/unmarshalled/astn_parse_tree"
 

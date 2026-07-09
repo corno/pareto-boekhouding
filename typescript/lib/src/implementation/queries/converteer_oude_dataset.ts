@@ -9,10 +9,10 @@ import type * as d_boekhouding from "../../modules/boekhouding_resolved/interfac
 import type * as d_prose from "pareto-fountain-pen/interface/generated/liana/schemas/prose/data"
 
 //dependencies
-import * as r_boekhouding_oude_model_from_loc from "../../modules/boekhouding_oude_model/implementation/refiners/list_of_characters.js"
-import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../modules/boekhouding_resolved/implementation/refiners/unresolved.js"
+import * as r_boekhouding_oude_model_from_loc from "../../modules/boekhouding_oude_model/implementation/refiners/foo/list_of_characters.js"
+import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../modules/boekhouding_resolved/implementation/refiners/foo/unresolved.js"
 import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../refiners/boekhouding_unresolved/boekhouding_oude_model.js"
-import * as t_boekhouding_resolved_to_prose from "../../modules/boekhouding_resolved/implementation/transformers/fountain_pen.js"
+import * as t_boekhouding_resolved_to_prose from "../../modules/boekhouding_resolved/implementation/transformers/foo/fountain_pen.js"
 import * as t_deserialize_parse_tree_to_location from "liana-core/implementation/manual/transformers/deserialize/location"
 import * as t_deserialize_parse_tree_to_prose from "liana-core/implementation/manual/transformers/deserialize/prose"
 import * as t_deserialize_resolve_to_location from "liana-core/implementation/manual/transformers/resolve/location"
