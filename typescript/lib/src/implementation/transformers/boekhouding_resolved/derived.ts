@@ -8,6 +8,7 @@ import type * as interface_ from "../../../declarations/transformers/boekhouding
 
 //data types
 import type * as d_out from "../../../interface/data/derived.js"
+import type * as d_in from "../../../modules/boekhouding_resolved/interface/data/resolved.js"
 
 //dependencies
 
@@ -425,8 +426,10 @@ export const Root: interface_.Root = ($) => {
                         }
                     })
 
-                const $p_bankrekeningen = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans.Bankrekeningen).map(
-                    ($) => {
+                const $p_bankrekeningen = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans.Bankrekeningen).join(
+                    $v_bron_jaar.Mutaties.Bankrekeningen,
+                    ($, other): d_out.Bankrekening => {
+                        const verwerking_bron = other
                         const bron_bankrekening = $
                         const $p_mutaties = p_.from.dictionary($.Mutaties).sum(
                             ($) => $.Bedrag
@@ -457,7 +460,19 @@ export const Root: interface_.Root = ($) => {
                             - $p_overgenomen
                         return {
                             'bron': $,
-                            'mutaties': $p_mutaties,
+                            'verwerking bron': verwerking_bron,
+                            'mutaties': p_.from.dictionary($.Mutaties).join(
+                                p_.from.optional(verwerking_bron).decide<d_in.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen>(
+                                    ($): d_in.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen => $['Mutatie Verwerkingen'],
+                                    () => p_.literal.dictionary({}),
+                                ),
+                                ($, other) => ({
+                                    'bron': $,
+                                    'verwerking bron': other,
+
+                                })
+                            ),
+                            'mutaties totaal': $p_mutaties,
                             'eindsaldo': $p_eindsaldo,
                             'overgenomen': $p_overgenomen,
                             'openstaand': $p_openstaand,
@@ -984,7 +999,7 @@ export const Root: interface_.Root = ($) => {
                                             ($) => $.bron.Grootboekrekening['l entry'] === context
                                                 ? p_.literal.set({
                                                     'beginsaldo': $.bron.Beginsaldo,
-                                                    'mutaties': $.mutaties,
+                                                    'mutaties': $['mutaties totaal'],
                                                 })
                                                 : p_.literal.not_set()
                                         )

@@ -100,11 +100,18 @@ export type Overige_Balans_Item = {
 
 export type Bankrekening = {
     'bron': d_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
-    'mutaties': number
+    'verwerking bron': p_.Optional_Value<d_boekhouding.Mutaties.Bankrekeningen.D> /** als de bankrekening ook is aangemaakt in de verwerkeringen is deze hier beschikbaar */
+    'mutaties': p_.Dictionary<Bankrekening_Mutatie>
+    'mutaties totaal': number
     'eindsaldo': number
     'overgenomen': number
     'openstaand': number
     'todo': boolean
+}
+
+export type Bankrekening_Mutatie = {
+    'bron': d_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D
+    'verwerking bron': p_.Optional_Value<d_boekhouding.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D> /** als de mutatie is verwerkt, dan is de verwerking hier beschkbaar */
 }
 
 export type Informele_Rekening = {
