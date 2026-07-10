@@ -2,7 +2,7 @@ import type * as p_di from 'pareto-core/interface/data'
 import * as p_ from 'pareto-core/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 
-import type * as interface_ from "../../../declarations/transformers/derived/jaarverslag_html.js"
+import type * as interface_ from "../../../declarations/transformers/aggregatie/jaarverslag_html.js"
 
 //data types
 import type * as d_out from "pareto-static-html/interface/data/static_html"

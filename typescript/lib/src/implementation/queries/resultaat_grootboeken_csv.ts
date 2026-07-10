@@ -8,7 +8,7 @@ import type * as interface_ from "../../declarations/queries.js"
 import * as t_resolved_to_derived from "../transformers/boekhouding_resolved/derived.js"
 import * as t_prose_to_list_of_characters from "pareto-fountain-pen/implementation/transformers/prose/list_of_characters"
 import * as t_csv_to_prose from "pareto-csv/implementation/transformers/csv/prose"
-import * as t_aggregatie_to_resultaat_grootboeken_csv from "../transformers/derived/resultaat_grootboeken_csv.js"
+import * as t_aggregatie_to_resultaat_grootboeken_csv from "../transformers/aggregatie/resultaat_grootboeken_csv.js"
 
 import { $$ as q_load } from "./load_resolved.js"
 
