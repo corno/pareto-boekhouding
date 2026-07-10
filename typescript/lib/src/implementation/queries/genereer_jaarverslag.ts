@@ -5,7 +5,7 @@ import type * as interface_ from "../../declarations/queries.js"
 
 //data  types
 import type * as d_boekhouding from "../../modules/boekhouding_resolved/interface/data/resolved.js"
-import type * as d_prose from "pareto-fountain-pen/interface/generated/liana/schemas/prose/data"
+import type * as d_prose from "pareto-fountain-pen/interface/data/prose"
 
 //dependencies
 import * as r_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters.js"

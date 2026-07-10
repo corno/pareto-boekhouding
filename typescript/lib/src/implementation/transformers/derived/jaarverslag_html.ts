@@ -5,7 +5,7 @@ import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 import type * as interface_ from "../../../declarations/transformers/derived/jaarverslag_html.js"
 
 //data types
-import type * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
+import type * as d_out from "pareto-static-html/interface/data/static_html"
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text.js"

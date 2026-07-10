@@ -4,7 +4,7 @@ import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 import type * as p_ from 'pareto-core/interface/transformer'
 
 //data types
-import type * as d_out from "pareto-static-html/interface/generated/liana/schemas/static-html/data"
+import type * as d_out from "pareto-static-html/interface/data/static_html"
 import type * as d_in from "../../../interface/data/derived.js"
 import type * as d_temp_aggregatie_2 from "../../../interface/data/aggregatie.js"
 
