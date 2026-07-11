@@ -3,10 +3,10 @@ import * as p_ from 'pareto-core/implementation/transformer'
 import type * as interface_ from "../../../declarations/transformers/aggregatie/todo.js"
 
 //data types
-import * as d_tree from "../../../modules/helpers/interface/data/tree.js"
+import * as d_tree from "../../../submodules/helpers/interface/data/tree.js"
 
 //dependencies
-import * as t_tree_to_phrase from "../../../modules/helpers/implementation/transformers/tree/phrase.js"
+import * as t_tree_to_phrase from "../../../submodules/helpers/implementation/transformers/tree/phrase.js"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/target"

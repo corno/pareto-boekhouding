@@ -6,7 +6,7 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 import type * as interface_ from "../../../declarations/refiners/boekhouding_unresolved/boekhouding_oude_model.js"
 
 //data types
-import type * as d_out from "../../../modules/boekhouding_unresolved/interface/data/unresolved.js"
+import type * as d_out from "../../../submodules/boekhouding_unresolved/interface/data/unresolved.js"
 
 //shorthands
 import * as sh from "pareto-core-shorthands/unresolved_data"

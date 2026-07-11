@@ -3,8 +3,8 @@ import * as p_ from 'pareto-core/implementation/refiner'
 import type * as interface_ from "../../../declarations/refiners/boekhouding_resolved/list_of_characters.js"
 
 //dependencies
-import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../modules/boekhouding_resolved/implementation/refiners/foo/unresolved.js"
-import * as r_boekhouding_unresolved_from_loc from "../../../modules/boekhouding_unresolved/implementation/refiners/foo/list_of_characters.js"
+import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../submodules/boekhouding_resolved/implementation/refiners/foo/unresolved.js"
+import * as r_boekhouding_unresolved_from_loc from "../../../submodules/boekhouding_unresolved/implementation/refiners/foo/list_of_characters.js"
 
 export const Root: interface_.Root = ($, abort, $p) => {
     return r_boekhouding_resolved_from_boekhouding_unresolved.Root(

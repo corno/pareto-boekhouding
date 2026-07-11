@@ -5,14 +5,14 @@ import p_super_query_result from 'pareto-core/implementation/query/super_query_r
 import type * as interface_ from "../../declarations/queries.js"
 
 //data  types
-import type * as d_boekhouding from "../../modules/boekhouding_resolved/interface/data/resolved.js"
+import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/data/resolved.js"
 import type * as d_prose from "pareto-fountain-pen/interface/data/prose"
 
 //dependencies
-import * as r_boekhouding_oude_model_from_loc from "../../modules/boekhouding_oude_model/implementation/refiners/foo/list_of_characters.js"
-import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../modules/boekhouding_resolved/implementation/refiners/foo/unresolved.js"
+import * as r_boekhouding_oude_model_from_loc from "../../submodules/boekhouding_oude_model/implementation/refiners/foo/list_of_characters.js"
+import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../submodules/boekhouding_resolved/implementation/refiners/foo/unresolved.js"
 import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../refiners/boekhouding_unresolved/boekhouding_oude_model.js"
-import * as t_boekhouding_resolved_to_prose from "../../modules/boekhouding_resolved/implementation/transformers/foo/fountain_pen.js"
+import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_resolved/implementation/transformers/foo/fountain_pen.js"
 import * as t_deserialize_parse_tree_to_location from "liana-core/implementation/transformers/deserialize/location"
 import * as t_deserialize_parse_tree_to_prose from "liana-core/implementation/transformers/deserialize/prose"
 import * as t_deserialize_resolve_to_location from "liana-core/implementation/transformers/resolve/location"
