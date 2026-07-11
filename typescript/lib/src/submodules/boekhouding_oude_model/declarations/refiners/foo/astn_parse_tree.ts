@@ -3,7 +3,7 @@ import * as p_i from 'pareto-core/interface/__internal/Abort'
 
 import * as i_generic from "liana-core/interface/data/unmarshall"
 
-import * as i_out from "../../../interface/data/data.js"
+import * as i_out from "../../../interface/schemas/data.js"
 
 import * as i_in from "astn-core/interface/data/parse_tree"
 

@@ -5,7 +5,7 @@ import p_super_query_result from 'pareto-core/implementation/query/super_query_r
 import type * as interface_ from "../../declarations/queries.js"
 
 //data  types
-import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/data/resolved.js"
+import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 import type * as d_prose from "pareto-fountain-pen/interface/data/prose"
 
 //dependencies

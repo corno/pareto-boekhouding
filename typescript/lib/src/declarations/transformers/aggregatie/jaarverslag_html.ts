@@ -4,8 +4,8 @@ import type * as p_ from 'pareto-core/interface/transformer'
 
 //data types
 import type * as d_out from "pareto-static-html/interface/data/static_html"
-import type * as d_in from "../../../interface/data/derived.js"
-import type * as d_temp_aggregatie_2 from "../../../interface/data/aggregatie.js"
+import type * as d_in from "../../../interface/schemas/derived.js"
+import type * as d_temp_aggregatie_2 from "../../../interface/schemas/aggregatie.js"
 
 
 export type Balans_Grootboekrekeningen = p_.Transformer_With_Parameter<

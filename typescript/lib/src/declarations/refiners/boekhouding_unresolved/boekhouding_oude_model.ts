@@ -1,7 +1,7 @@
 
 
-import type * as d_in from "../../../submodules/boekhouding_oude_model/interface/data/data.js"
-import type * as d_out from "../../../submodules/boekhouding_unresolved/interface/data/unresolved.js"
+import type * as d_in from "../../../submodules/boekhouding_oude_model/interface/schemas/data.js"
+import type * as d_out from "../../../submodules/boekhouding_unresolved/interface/schemas/unresolved.js"
 
 
 export type Rekening_Mutatie = (

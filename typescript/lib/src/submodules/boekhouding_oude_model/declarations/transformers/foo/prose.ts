@@ -1,7 +1,7 @@
 
 import * as p_i from 'pareto-core/interface/__internal/Abort'
 
-import * as i_in from "../../../interface/data/data.js"
+import * as i_in from "../../../interface/schemas/data.js"
 
 import * as i_out from "pareto-fountain-pen/interface/data/prose"
 

@@ -1,6 +1,6 @@
 import * as p_ from 'pareto-core/interface/data'
 
-import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/data/resolved.js"
+import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 
 export type Root = {
     'bron': d_boekhouding.Root

@@ -7,8 +7,8 @@ import p_unreachable_code_path from 'pareto-core/implementation/transformer/spec
 import type * as interface_ from "../../../declarations/transformers/boekhouding_resolved/derived.js"
 
 //data types
-import type * as d_out from "../../../interface/data/derived.js"
-import type * as d_in from "../../../submodules/boekhouding_resolved/interface/data/resolved.js"
+import type * as d_out from "../../../interface/schemas/derived.js"
+import type * as d_in from "../../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 
 //dependencies
 

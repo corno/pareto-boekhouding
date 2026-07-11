@@ -3,7 +3,7 @@ import * as p_ from 'pareto-core/interface/query_implementation'
 import type * as query_interfaces_pareto_common from "pareto-common/interface/queries"
 import type * as d_path from "pareto-resources/interface/data/fs_unrestricted_path"
 import type * as d_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
-import type * as d_boekhouding from "../submodules/boekhouding_resolved/interface/data/resolved.js"
+import type * as d_boekhouding from "../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 import type * as d_loc from "pareto-fountain-pen/interface/data/list_of_characters"
 import type * as d_prose from "pareto-fountain-pen/interface/data/prose"
 
