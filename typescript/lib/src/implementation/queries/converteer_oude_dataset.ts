@@ -5,8 +5,8 @@ import p_super_query_result from 'pareto-core/implementation/query/super_query_r
 import type * as interface_ from "../../declarations/queries.js"
 
 //data  types
-import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
-import type * as d_prose from "pareto-fountain-pen/interface/data/prose"
+import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
+import type * as s_prose from "pareto-fountain-pen/interface/data/prose"
 
 //dependencies
 import * as r_boekhouding_oude_model_from_loc from "../../submodules/boekhouding_oude_model/implementation/refiners/foo/list_of_characters.js"
@@ -25,7 +25,7 @@ import * as t_path_to_text from "pareto-resources/implementation/transformers/un
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
 export const $$: interface_.converteer_oude_dataset = p_.query(
-    ($d, $s, $q) => p_super_query_result(p_.e.refine<d_boekhouding.Root_, d_prose.Phrase>(
+    ($d, $s, $q) => p_super_query_result(p_.e.refine<s_boekhouding.Root_, s_prose.Phrase>(
         (abort) => r_boekhouding_resolved_from_boekhouding_unresolved.Root(
             r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
                 r_boekhouding_oude_model_from_loc.Root(

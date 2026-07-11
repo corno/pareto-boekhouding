@@ -1,65 +1,65 @@
 
 
-import type * as d_in from "../../../submodules/boekhouding_oude_model/interface/schemas/data.js"
-import type * as d_out from "../../../submodules/boekhouding_unresolved/interface/schemas/unresolved.js"
+import type * as s_in from "../../../submodules/boekhouding_oude_model/interface/schemas/data.js"
+import type * as s_out from "../../../submodules/boekhouding_unresolved/interface/schemas/unresolved.js"
 
 
 export type Rekening_Mutatie = (
-    $$_: d_in.Root,
-) => d_out.Rekening_Mutatie
+    $$_: s_in.Root,
+) => s_out.Rekening_Mutatie
 
 export type Beheer = (
-    $$_: d_in.Root,
-) => d_out.Beheer
+    $$_: s_in.Root,
+) => s_out.Beheer
 
 export type Eerste_boekjaar = (
-    $$_: d_in.Root.Jaren.D.Eerste_boekjaar,
-) => d_out.Eerste_boekjaar
+    $$_: s_in.Root.Jaren.D.Eerste_boekjaar,
+) => s_out.Eerste_boekjaar
 
 export type Fiscaal = (
-    $$_: d_in.Root,
-) => d_out.Fiscaal
+    $$_: s_in.Root,
+) => s_out.Fiscaal
 
 export type Grootboek_Categorieen = (
-    $$_: d_in.Root,
-) => d_out.Grootboek_Categorieen
+    $$_: s_in.Root,
+) => s_out.Grootboek_Categorieen
 
 export type Grootboekrekeningen = (
-    $$_: d_in.Root.Jaren.D,
-) => d_out.Grootboekrekeningen
+    $$_: s_in.Root.Jaren.D,
+) => s_out.Grootboekrekeningen
 
 export type Handelstransacties = (
-    $$_: d_in.Root.Jaren.D,
-) => d_out.Handelstransacties
+    $$_: s_in.Root.Jaren.D,
+) => s_out.Handelstransacties
 
 export type Jaarbeheer = (
-    $$_: d_in.Root.Jaren.D,
-) => d_out.Jaarbeheer
+    $$_: s_in.Root.Jaren.D,
+) => s_out.Jaarbeheer
 
 export type Jaren = (
-    $$_: d_in.Root,
-) => d_out.Jaren
+    $$_: s_in.Root,
+) => s_out.Jaren
 
 export type Mutaties = (
-    $$_: d_in.Root.Jaren.D,
+    $$_: s_in.Root.Jaren.D,
     $$pt: {
         'jaar': string
     },
-) => d_out.Mutaties
+) => s_out.Mutaties
 
 export type Overige_balans_item = (
-    $$_: d_in.Root.Jaren.D.Overige_balans_items.D,
-) => d_out.Overige_balans_item
+    $$_: s_in.Root.Jaren.D.Overige_balans_items.D,
+) => s_out.Overige_balans_item
 
 export type Root = (
-    $$_: d_in.Root,
-) => d_out.Root
+    $$_: s_in.Root,
+) => s_out.Root
 
 export type Verwijzing_naar_Bankrekening = (
     $$_: string,
-) => d_out.Verwijzing_naar_Bankrekening
+) => s_out.Verwijzing_naar_Bankrekening
 
 export type Verwijzing_naar_Informele_rekening = (
     $$_: string,
-) => d_out.Verwijzing_naar_Informele_rekening
+) => s_out.Verwijzing_naar_Informele_rekening
 

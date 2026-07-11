@@ -1,14 +1,14 @@
 import * as p_ from 'pareto-core/interface/data'
 
-import type * as d_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
+import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 
 export type Root = {
-    'bron': d_boekhouding.Root
+    'bron': s_boekhouding.Root
     'jaren': p_.Dictionary<Jaar>
 }
 
 export type Jaar = {
-    'bron': d_boekhouding.Jaren.D
+    'bron': s_boekhouding.Jaren.D
     'handelstransacties': {
         'inkopen': p_.Dictionary<Inkoop>
         'verkopen': p_.Dictionary<Verkoop>
@@ -43,13 +43,13 @@ export type Jaar = {
 }
 
 export type Inkoop = {
-    'bron': d_boekhouding.Handelstransacties.Inkopen.D
+    'bron': s_boekhouding.Handelstransacties.Inkopen.D
     'totaal ex btw': number
     'totaal btw': number
 }
 
 export type Verkoop = {
-    'bron': d_boekhouding.Handelstransacties.Verkopen.D
+    'bron': s_boekhouding.Handelstransacties.Verkopen.D
     'regels': p_.Dictionary<Verkoop_Regel>
     'totaal ex btw': number
     'totaal btw': number
@@ -57,13 +57,13 @@ export type Verkoop = {
 }
 
 export type Verkoop_Regel = {
-    'bron': d_boekhouding.Handelstransacties.Verkopen.D.Regels.D
+    'bron': s_boekhouding.Handelstransacties.Verkopen.D.Regels.D
     'btw bedrag': number
     'bedrag inclusief btw': number
 }
 
 export type Btw_Periode = {
-    'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D
+    'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D
     'handelsmutaties': {
         'inkopen': number
         'verkopen': number
@@ -75,10 +75,10 @@ export type Btw_Periode = {
     }
     'status':
     | ['openstaand', {
-        'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Openstaand
+        'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Openstaand
     }]
     | ['aangegeven', {
-        'bron': d_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Aangegeven
+        'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Aangegeven
         'totaal aangegeven + afronding': number
         'todo niet volledig afgesloten': boolean
         'te veel aangegeven': number
@@ -86,7 +86,7 @@ export type Btw_Periode = {
 }
 
 export type Overige_Balans_Item = {
-    'bron': d_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
+    'bron': s_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
     'mutaties': {
         'memoriaal boekingen': number
         'inkopen': number
@@ -99,8 +99,8 @@ export type Overige_Balans_Item = {
 }
 
 export type Bankrekening = {
-    'bron': d_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
-    'verwerking bron': p_.Optional_Value<d_boekhouding.Mutaties.Bankrekeningen.D> /** als de bankrekening ook is aangemaakt in de verwerkeringen is deze hier beschikbaar */
+    'bron': s_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
+    'verwerking bron': p_.Optional_Value<s_boekhouding.Mutaties.Bankrekeningen.D> /** als de bankrekening ook is aangemaakt in de verwerkeringen is deze hier beschikbaar */
     'mutaties': p_.Dictionary<Bankrekening_Mutatie>
     'mutaties totaal': number
     'eindsaldo': number
@@ -110,12 +110,12 @@ export type Bankrekening = {
 }
 
 export type Bankrekening_Mutatie = {
-    'bron': d_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D
-    'verwerking bron': p_.Optional_Value<d_boekhouding.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D> /** als de mutatie is verwerkt, dan is de verwerking hier beschkbaar */
+    'bron': s_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D.Mutaties.D
+    'verwerking bron': p_.Optional_Value<s_boekhouding.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D> /** als de mutatie is verwerkt, dan is de verwerking hier beschkbaar */
 }
 
 export type Informele_Rekening = {
-    'bron': d_boekhouding.Jaarbeheer.Balans.Informele_rekeningen.D
+    'bron': s_boekhouding.Jaarbeheer.Balans.Informele_rekeningen.D
     'mutaties': {
         'inkopen': number
         'verkopen': number
@@ -130,7 +130,7 @@ export type Informele_Rekening = {
 }
 
 export type Verreken_Post = {
-    'bron': d_boekhouding.Jaarbeheer.Balans.Verrekenposten.D
+    'bron': s_boekhouding.Jaarbeheer.Balans.Verrekenposten.D
     'eigen mutaties': number
     'bankrekening mutaties': number
     'saldo': number
@@ -141,7 +141,7 @@ export type Verreken_Post = {
 export namespace Resultaat {
 
     export type Grootboekrekening = {
-        'bron': d_boekhouding.Grootboekrekeningen.Resultaat.D
+        'bron': s_boekhouding.Grootboekrekeningen.Resultaat.D
         'dagboeken': p_.Dictionary<Dagboek>
         'totaal': number
     }
@@ -157,7 +157,7 @@ export namespace Resultaat {
 export namespace Balans {
 
     export type Grootboekrekening = {
-        'bron': d_boekhouding.Grootboekrekeningen.Balans.D
+        'bron': s_boekhouding.Grootboekrekeningen.Balans.D
         'dagboeken': p_.Dictionary<Dagboek>
         'totaal': Samenvatting
     }

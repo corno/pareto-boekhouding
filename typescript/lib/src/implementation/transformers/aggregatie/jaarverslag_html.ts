@@ -5,7 +5,7 @@ import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 import type * as interface_ from "../../../declarations/transformers/aggregatie/jaarverslag_html.js"
 
 //data types
-import type * as d_out from "pareto-static-html/interface/data/static_html"
+import type * as s_out from "pareto-static-html/interface/data/static_html"
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text.js"
@@ -204,7 +204,7 @@ const Domein_Zijde: interface_.Domein_Zijde = ($) => {
     const teken_omkeren = $['teken omkeren']
 
     return p_.from.dictionary($.hoofdcategorieen).flatten_to_list(
-        ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+        ($, id) => p_.literal.segmented_list<s_out.Flow_Element.table.sections.L.rows.L.cells>([
             p_.literal.list([
                 p_.literal.list([
                     Colspan_Text(
@@ -223,7 +223,7 @@ const Domein_Zijde: interface_.Domein_Zijde = ($) => {
                 ])
             ]),
             p_.from.dictionary($.subcategorieen).flatten_to_list(
-                ($, id) => p_.literal.segmented_list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                ($, id) => p_.literal.segmented_list<s_out.Flow_Element.table.sections.L.rows.L.cells>([
                     p_.literal.list([
                         p_.literal.list([
                             Indent(null),
@@ -244,7 +244,7 @@ const Domein_Zijde: interface_.Domein_Zijde = ($) => {
                         ])
                     ]),
                     p_.from.dictionary($.grootboekrekeningen).flatten_to_list(
-                        ($, id) => p_.literal.list<d_out.Flow_Element.table.sections.L.rows.L.cells>([
+                        ($, id) => p_.literal.list<s_out.Flow_Element.table.sections.L.rows.L.cells>([
                             p_.literal.list([
                                 Indent(null),
                                 Indent(null),

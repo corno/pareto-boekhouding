@@ -7,8 +7,8 @@ import p_unreachable_code_path from 'pareto-core/implementation/transformer/spec
 import type * as interface_ from "../../../declarations/transformers/boekhouding_resolved/derived.js"
 
 //data types
-import type * as d_out from "../../../interface/schemas/derived.js"
-import type * as d_in from "../../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
+import type * as s_out from "../../../interface/schemas/derived.js"
+import type * as s_in from "../../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 
 //dependencies
 
@@ -18,10 +18,10 @@ export const Root: interface_.Root = ($) => {
         'bron': $,
         'jaren': p_temp.from.dictionary($.Jaren
         ).resolve(
-            ($, id, $al): d_out.Jaar => {
+            ($, id, $al): s_out.Jaar => {
                 const $v_bron_jaar = $
 
-                const $p_inkopen: d_out.Jaar['handelstransacties']['inkopen'] = p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).map(
+                const $p_inkopen: s_out.Jaar['handelstransacties']['inkopen'] = p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).map(
                     ($) => {
                         return {
                             'bron': $,
@@ -51,11 +51,11 @@ export const Root: interface_.Root = ($) => {
                             ),
                         }
                     })
-                const $p_verkopen: d_out.Jaar['handelstransacties']['verkopen'] = p_.from.dictionary($v_bron_jaar.Handelstransacties.Verkopen).map(
+                const $p_verkopen: s_out.Jaar['handelstransacties']['verkopen'] = p_.from.dictionary($v_bron_jaar.Handelstransacties.Verkopen).map(
                     ($) => {
 
                         const $p_regels = p_.from.dictionary($.Regels).map(
-                            ($): d_out.Verkoop_Regel => {
+                            ($): s_out.Verkoop_Regel => {
 
                                 const btw_bedrag = p_.from.number(
                                     $['Bedrag exclusief BTW'] * p_.from.state($['BTW-regime']).decide(
@@ -103,10 +103,10 @@ export const Root: interface_.Root = ($) => {
                         }
                     })
 
-                const $p_resultaat_grootboekrekeningen: d_out.Resultaat.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Resultaat).map(
-                    ($): d_out.Resultaat.Grootboekrekening => {
+                const $p_resultaat_grootboekrekeningen: s_out.Resultaat.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Resultaat).map(
+                    ($): s_out.Resultaat.Grootboekrekening => {
                         const context = $
-                        const $p_dagboeken = p_.literal.dictionary<d_out.Resultaat.Dagboek>({
+                        const $p_dagboeken = p_.literal.dictionary<s_out.Resultaat.Dagboek>({
                             "inkopen": {
                                 'totaal': p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).sum(
                                     ($) => p_.from.dictionary(
@@ -182,7 +182,7 @@ export const Root: interface_.Root = ($) => {
                     ($) => $.totaal
                 )
                 const $p_informele_rekeningen = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans['Informele rekeningen']).map(
-                    ($): d_out.Informele_Rekening => {
+                    ($): s_out.Informele_Rekening => {
                         const context = $
 
 
@@ -310,7 +310,7 @@ export const Root: interface_.Root = ($) => {
 
 
                 const $p_btw_periodes = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Resultaat['BTW periodes']).map(
-                    ($): d_out.Btw_Periode => {
+                    ($): s_out.Btw_Periode => {
                         const context = $
                         const $p_inkopen_x = p_.from.dictionary(
                             p_.from.dictionary($p_inkopen).filter(
@@ -387,8 +387,8 @@ export const Root: interface_.Root = ($) => {
 
                         const $p_afhandelings_mutaties = + $p_bankrekening_mutaties + $p_verrekenpost_mutaties
 
-                        const $p_status: d_out.Btw_Periode['status'] = p_.from.state($.Status).decide(
-                            ($): d_out.Btw_Periode['status'] => {
+                        const $p_status: s_out.Btw_Periode['status'] = p_.from.state($.Status).decide(
+                            ($): s_out.Btw_Periode['status'] => {
                                 switch ($[0]) {
                                     case 'Aangegeven': return p_.option($, ($) => {
                                         const $p_totaal_aangegeven_plus_afronding = + $.Bedrag + $.Afronding
@@ -428,7 +428,7 @@ export const Root: interface_.Root = ($) => {
 
                 const $p_bankrekeningen = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans.Bankrekeningen).join(
                     $v_bron_jaar.Mutaties.Bankrekeningen,
-                    ($, other): d_out.Bankrekening => {
+                    ($, other): s_out.Bankrekening => {
                         const verwerking_bron = other
                         const bron_bankrekening = $
                         const $p_mutaties = p_.from.dictionary($.Mutaties).sum(
@@ -462,8 +462,8 @@ export const Root: interface_.Root = ($) => {
                             'bron': $,
                             'verwerking bron': verwerking_bron,
                             'mutaties': p_.from.dictionary($.Mutaties).join(
-                                p_.from.optional(verwerking_bron).decide<d_in.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen>(
-                                    ($): d_in.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen => $['Mutatie Verwerkingen'],
+                                p_.from.optional(verwerking_bron).decide<s_in.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen>(
+                                    ($): s_in.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen => $['Mutatie Verwerkingen'],
                                     () => p_.literal.dictionary({}),
                                 ),
                                 ($, other) => ({
@@ -481,12 +481,12 @@ export const Root: interface_.Root = ($) => {
                     })
 
 
-                const $p_overige_balans_items: d_out.Jaar['overige balans items'] = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans['Overige balans items']).map(
-                    ($): d_out.Overige_Balans_Item => {
+                const $p_overige_balans_items: s_out.Jaar['overige balans items'] = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans['Overige balans items']).map(
+                    ($): s_out.Overige_Balans_Item => {
                         const context = $
 
                         const $p_mutaties = p_variables(
-                            (): d_out.Overige_Balans_Item['mutaties'] => {
+                            (): s_out.Overige_Balans_Item['mutaties'] => {
                                 const $p_memoriaal_boekingen = p_.from.dictionary(
                                     p_.from.dictionary($v_bron_jaar.Mutaties['Overige Balans Items']).filter(
                                         ($) => $.Stam === context
@@ -613,7 +613,7 @@ export const Root: interface_.Root = ($) => {
                     })
 
                 const $p_inkoopsaldo = p_variables(
-                    (): d_out.Balans.Samenvatting => {
+                    (): s_out.Balans.Samenvatting => {
                         const $p_beginsaldo = $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
                             : p_change_context(
@@ -703,7 +703,7 @@ export const Root: interface_.Root = ($) => {
                 )
 
                 const $p_verkoopsaldo = p_variables(
-                    (): d_out.Balans.Samenvatting => {
+                    (): s_out.Balans.Samenvatting => {
                         const $p_beginsaldo = $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
                             : p_change_context(
@@ -791,7 +791,7 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
                 const $p_btw_te_veel_aangegeven = p_variables(
-                    (): d_out.Balans.Samenvatting => {
+                    (): s_out.Balans.Samenvatting => {
                         return {
                             'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                                 ? 0
@@ -822,7 +822,7 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
                 const $p_btw_nog_aan_te_geven = p_variables(
-                    (): d_out.Balans.Samenvatting => {
+                    (): s_out.Balans.Samenvatting => {
                         return {
                             'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                                 ? 0
@@ -856,7 +856,7 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
                 const $p_btw_openstaand = p_variables(
-                    (): d_out.Balans.Samenvatting => {
+                    (): s_out.Balans.Samenvatting => {
                         return {
                             'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                                 ? 0
@@ -930,14 +930,14 @@ export const Root: interface_.Root = ($) => {
                     }
                 )
 
-                const $p_balans_grootboekrekeningen: d_out.Balans.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Balans).map(
-                    ($): d_out.Balans.Grootboekrekening => {
+                const $p_balans_grootboekrekeningen: s_out.Balans.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Balans).map(
+                    ($): s_out.Balans.Grootboekrekening => {
                         const context = $
 
-                        const $p_dagboeken: d_out.Balans.Grootboekrekening['dagboeken'] = p_variables(
-                            (): d_out.Balans.Grootboekrekening['dagboeken'] => {
+                        const $p_dagboeken: s_out.Balans.Grootboekrekening['dagboeken'] = p_variables(
+                            (): s_out.Balans.Grootboekrekening['dagboeken'] => {
 
-                                return p_.literal.dictionary<d_out.Balans.Dagboek>({
+                                return p_.literal.dictionary<s_out.Balans.Dagboek>({
                                     "winstreserve": {
                                         'boekingen': $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor winstreserve']['l entry'] === context
                                             ? p_.literal.dictionary({
