@@ -1,7 +1,8 @@
 import * as p_ from 'pareto-core/implementation/query'
 import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
-import type * as interface_ from "../../declarations/queries.js"
+import type * as s_loc from "pareto-fountain-pen/interface/data/list_of_characters"
+import type * as s_path from "pareto-resources/interface/data/fs_unrestricted_path"
 
 //data  types
 import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
@@ -18,7 +19,20 @@ import * as t_path_to_text from "pareto-resources/implementation/transformers/un
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
-export const $$: interface_.load_resolved = p_.query(
+export const $$: p_.Query_Implementation<
+    p_.Query_Interface<
+        s_boekhouding.Root_,
+        s_prose.Phrase,
+        {
+            'data': s_loc.List_of_Characters,
+            'path': s_path.Node_Path,
+        }
+    >,
+    {
+        'tab size': number,
+    },
+    null
+> = p_.query(
     ($d, $s, $q) => p_super_query_result(p_.e.refine<s_boekhouding.Root_, s_prose.Phrase>(
         (abort) => r_boekhouding_resolved_from_loc.Root(
             $d.data,

@@ -1,7 +1,8 @@
 import * as p_ from 'pareto-core/implementation/query'
 import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
-import type * as interface_ from "../../declarations/queries.js"
+import type * as query_interfaces_pareto_common from "pareto-common/interface/queries"
+import type * as s_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
 
 
 //dependencies
@@ -12,7 +13,14 @@ import * as t_aggregatie_to_balans_grootboeken_csv from "../transformers/aggrega
 
 import { $$ as q_load } from "./load_resolved.js"
 
-export const $$: interface_.balans_grootboeken_csv = p_.query(
+export const $$: p_.Query_Implementation<
+    query_interfaces_pareto_common.process_file_data,
+    {
+        'tab size': number,
+        'serialization parameters': s_serialize_prose.Parameters,
+    },
+    null
+> = p_.query(
     ($d, $s, $q) => p_super_query_result(
         q_load(
             {

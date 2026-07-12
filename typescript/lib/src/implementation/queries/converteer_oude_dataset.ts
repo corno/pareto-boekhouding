@@ -2,7 +2,8 @@ import * as p_ from 'pareto-core/implementation/query'
 
 import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
-import type * as interface_ from "../../declarations/queries.js"
+import type * as query_interfaces_pareto_common from "pareto-common/interface/queries"
+import type * as s_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
 
 //data  types
 import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
@@ -24,7 +25,14 @@ import * as t_path_to_text from "pareto-resources/implementation/transformers/un
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
-export const $$: interface_.converteer_oude_dataset = p_.query(
+export const $$: p_.Query_Implementation<
+    query_interfaces_pareto_common.process_file_data,
+    {
+        'tab size': number,
+        'serialization parameters': s_serialize_prose.Parameters,
+    },
+    null
+> = p_.query(
     ($d, $s, $q) => p_super_query_result(p_.e.refine<s_boekhouding.Root_, s_prose.Phrase>(
         (abort) => r_boekhouding_resolved_from_boekhouding_unresolved.Root(
             r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
