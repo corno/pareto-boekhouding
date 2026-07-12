@@ -2,7 +2,7 @@ import type * as p_di from 'pareto-core/interface/data'
 
 import type * as p_ from 'pareto-core/interface/transformer'
 
-//data types
+//schemas
 import type * as s_out from "pareto-static-html/interface/data/static_html"
 import type * as s_in from "../../../interface/schemas/derived.js"
 import type * as s_temp_aggregatie_2 from "../../../interface/schemas/aggregatie.js"

@@ -3,7 +3,7 @@ import * as p_ from 'pareto-core/implementation/transformer'
 
 import type * as interface_ from "../../../declarations/transformers/aggregatie/balans_grootboeken_csv.js"
 
-//data types
+//schemas
 import type * as s_out from "pareto-csv/interface/data/csv"
 
 //dependencies

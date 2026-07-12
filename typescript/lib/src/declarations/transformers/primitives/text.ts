@@ -2,7 +2,7 @@
 import type * as p_ from 'pareto-core/interface/transformer'
 import * as p_di from 'pareto-core/interface/data'
 
-//data types
+//schemas
 import type * as s_out from "pareto-fountain-pen/interface/data/text"
 
 export namespace s_function {

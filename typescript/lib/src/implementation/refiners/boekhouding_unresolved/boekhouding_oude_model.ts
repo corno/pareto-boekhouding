@@ -5,7 +5,7 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 
 import type * as interface_ from "../../../declarations/refiners/boekhouding_unresolved/boekhouding_oude_model.js"
 
-//data types
+//schemas
 import type * as s_out from "../../../submodules/boekhouding_unresolved/interface/schemas/unresolved.js"
 
 //shorthands

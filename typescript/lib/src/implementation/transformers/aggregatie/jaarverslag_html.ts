@@ -4,7 +4,7 @@ import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 
 import type * as interface_ from "../../../declarations/transformers/aggregatie/jaarverslag_html.js"
 
-//data types
+//schemas
 import type * as s_out from "pareto-static-html/interface/data/static_html"
 
 //dependencies

@@ -2,7 +2,7 @@ import * as p_ from 'pareto-core/implementation/transformer'
 
 import type * as interface_ from "../../../declarations/transformers/aggregatie/todo.js"
 
-//data types
+//schemas
 import * as s_tree from "../../../submodules/helpers/interface/schemas/tree.js"
 
 //dependencies
