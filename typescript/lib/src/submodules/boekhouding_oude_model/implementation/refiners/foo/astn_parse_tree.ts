@@ -1,6 +1,6 @@
 
 import * as p_ from 'pareto-core/implementation/refiner'
-import * as p_di from 'pareto-core/interface/data'
+import * as p_di from 'pareto-core/interface/schema'
 const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
 const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
@@ -15,7 +15,7 @@ import p_variables from 'pareto-core/implementation/refiner/specials/variables'
 
 import * as t_signatures from "../../../declarations/refiners/foo/astn_parse_tree.js"
 
-import * as t_out from "../../../interface/schemas/data.js"
+import * as s_out from "../../../interface/schemas/data.js"
 
 import * as v_unmarshalled_from_parse_tree from "liana-core/implementation/refiners/unmarshalled/astn_parse_tree"
 
@@ -288,7 +288,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                             ),
                                                                                             ($) => p_decide_text(
                                                                                                 $['option']['token']['value'],
-                                                                                                ($t): t_out.Root.Beheer.Balans.Grootboekrekeningen.D.Zijde => {
+                                                                                                ($t): s_out.Root.Beheer.Balans.Grootboekrekeningen.D.Zijde => {
                                                                                                     switch ($t) {
                                                                                                         case 'Activa':
                                                                                                             return p_change_context(
@@ -443,7 +443,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                             ),
                                                                                             ($) => p_decide_text(
                                                                                                 $['option']['token']['value'],
-                                                                                                ($t): t_out.Root.Beheer.Balans.Hoofdcategorieen.D.Zijde => {
+                                                                                                ($t): s_out.Root.Beheer.Balans.Hoofdcategorieen.D.Zijde => {
                                                                                                     switch ($t) {
                                                                                                         case 'Activa':
                                                                                                             return p_change_context(
@@ -690,7 +690,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                             ),
                                                                                             ($) => p_decide_text(
                                                                                                 $['option']['token']['value'],
-                                                                                                ($t): t_out.Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde => {
+                                                                                                ($t): s_out.Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde => {
                                                                                                     switch ($t) {
                                                                                                         case 'Activa':
                                                                                                             return p_change_context(
@@ -901,7 +901,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                         ),
                                                                         ($) => p_decide_text(
                                                                             $['option']['token']['value'],
-                                                                            ($t): t_out.Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
+                                                                            ($t): s_out.Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                                                                 switch ($t) {
                                                                                     case 'Ja':
                                                                                         return p_change_context(
@@ -1348,7 +1348,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                             ),
                                                                                             ($) => p_decide_text(
                                                                                                 $['option']['token']['value'],
-                                                                                                ($t): t_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde => {
+                                                                                                ($t): s_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde => {
                                                                                                     switch ($t) {
                                                                                                         case 'Kosten':
                                                                                                             return p_change_context(
@@ -1398,7 +1398,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                                                         ),
                                                                                                                                         ($) => p_decide_text(
                                                                                                                                             $['option']['token']['value'],
-                                                                                                                                            ($t): t_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
+                                                                                                                                            ($t): s_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                                                                 switch ($t) {
                                                                                                                                                     case 'Ja':
                                                                                                                                                         return p_change_context(
@@ -1626,7 +1626,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                             ),
                                                                                             ($) => p_decide_text(
                                                                                                 $['option']['token']['value'],
-                                                                                                ($t): t_out.Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde => {
+                                                                                                ($t): s_out.Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde => {
                                                                                                     switch ($t) {
                                                                                                         case 'Kosten':
                                                                                                             return p_change_context(
@@ -1873,7 +1873,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                             ),
                                                                                             ($) => p_decide_text(
                                                                                                 $['option']['token']['value'],
-                                                                                                ($t): t_out.Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde => {
+                                                                                                ($t): s_out.Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde => {
                                                                                                     switch ($t) {
                                                                                                         case 'Kosten':
                                                                                                             return p_change_context(
@@ -2162,7 +2162,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                     ),
                                                     ($) => p_decide_text(
                                                         $['option']['token']['value'],
-                                                        ($t): t_out.Root.Jaren.D.Afgesloten => {
+                                                        ($t): s_out.Root.Jaren.D.Afgesloten => {
                                                             switch ($t) {
                                                                 case 'Ja':
                                                                     return p_change_context(
@@ -2309,7 +2309,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Balans_grootboekrekeningen.D.Type => {
+                                                                                    ($t): s_out.Root.Jaren.D.Balans_grootboekrekeningen.D.Type => {
                                                                                         switch ($t) {
                                                                                             case 'Bankrekening':
                                                                                                 return p_change_context(
@@ -2649,7 +2649,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Nog te verwerken':
                                                                                                                             return p_change_context(
@@ -2729,7 +2729,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                                                                         ),
                                                                                                                                                         ($) => p_decide_text(
                                                                                                                                                             $['option']['token']['value'],
-                                                                                                                                                            ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.Verwerkt.Afhandeling => {
+                                                                                                                                                            ($t): s_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.Verwerkt.Afhandeling => {
                                                                                                                                                                 switch ($t) {
                                                                                                                                                                     case 'Inkoop':
                                                                                                                                                                         return p_change_context(
@@ -3109,7 +3109,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Bankrekeningen.D.Nieuw => {
+                                                                                    ($t): s_out.Root.Jaren.D.Bankrekeningen.D.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
                                                                                                 return p_change_context(
@@ -3552,7 +3552,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.BTW_periodes.D.Status => {
+                                                                                    ($t): s_out.Root.Jaren.D.BTW_periodes.D.Status => {
                                                                                         switch ($t) {
                                                                                             case 'Aangegeven':
                                                                                                 return p_change_context(
@@ -3729,7 +3729,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                     ),
                                                     ($) => p_decide_text(
                                                         $['option']['token']['value'],
-                                                        ($t): t_out.Root.Jaren.D.Eerste_boekjaar => {
+                                                        ($t): s_out.Root.Jaren.D.Eerste_boekjaar => {
                                                             switch ($t) {
                                                                 case 'Ja':
                                                                     return p_change_context(
@@ -4011,7 +4011,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Informele_rekeningen.D.Nieuw => {
+                                                                                    ($t): s_out.Root.Jaren.D.Informele_rekeningen.D.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
                                                                                                 return p_change_context(
@@ -4210,7 +4210,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
+                                                                                    ($t): s_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
                                                                                         switch ($t) {
                                                                                             case 'Nog te betalen':
                                                                                                 return p_change_context(
@@ -4385,7 +4385,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.BTW$mi_regime => {
+                                                                                    ($t): s_out.Root.Jaren.D.Inkopen.D.BTW$mi_regime => {
                                                                                         switch ($t) {
                                                                                             case 'Binnenland: heffing verlegd':
                                                                                                 return p_change_context(
@@ -4679,7 +4679,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Brondocument => {
+                                                                                    ($t): s_out.Root.Jaren.D.Inkopen.D.Brondocument => {
                                                                                         switch ($t) {
                                                                                             case 'Toegevoegd':
                                                                                                 return p_change_context(
@@ -4931,7 +4931,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Inkopen.D.Regels.D.Bedrag => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Inkopen.D.Regels.D.Bedrag => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Bekend':
                                                                                                                             return p_change_context(
@@ -5066,7 +5066,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Inkopen.D.Regels.D.Type => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Inkopen.D.Regels.D.Type => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Balans':
                                                                                                                             return p_change_context(
@@ -5214,7 +5214,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Inkopen.D.Type => {
+                                                                                    ($t): s_out.Root.Jaren.D.Inkopen.D.Type => {
                                                                                         switch ($t) {
                                                                                             case 'Bonnetje':
                                                                                                 return p_change_context(
@@ -5769,7 +5769,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Overige_balans_items.D.Nieuw => {
+                                                                                    ($t): s_out.Root.Jaren.D.Overige_balans_items.D.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
                                                                                                 return p_change_context(
@@ -6155,7 +6155,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Afhandeling => {
+                                                                                    ($t): s_out.Root.Jaren.D.Verkopen.D.Afhandeling => {
                                                                                         switch ($t) {
                                                                                             case 'Mutaties':
                                                                                                 return p_change_context(
@@ -6315,7 +6315,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Brondocument => {
+                                                                                    ($t): s_out.Root.Jaren.D.Verkopen.D.Brondocument => {
                                                                                         switch ($t) {
                                                                                             case 'Toegevoegd':
                                                                                                 return p_change_context(
@@ -6405,7 +6405,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Root.Jaren.D.Verkopen.D.Contracttype => {
+                                                                                    ($t): s_out.Root.Jaren.D.Verkopen.D.Contracttype => {
                                                                                         switch ($t) {
                                                                                             case 'Project':
                                                                                                 return p_change_context(
@@ -6657,7 +6657,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Intracommunautair':
                                                                                                                             return p_change_context(
@@ -6829,7 +6829,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.Contracttype => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Verkopen.D.Regels.D.Contracttype => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Project':
                                                                                                                             return p_change_context(
@@ -7018,7 +7018,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Verkopen.D.Regels.D.Type => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Verkopen.D.Regels.D.Type => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Opbrengsten':
                                                                                                                             return p_change_context(
@@ -7292,7 +7292,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                             ),
                                                                                                             ($) => p_decide_text(
                                                                                                                 $['option']['token']['value'],
-                                                                                                                ($t): t_out.Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling => {
+                                                                                                                ($t): s_out.Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling => {
                                                                                                                     switch ($t) {
                                                                                                                         case 'Inkoop':
                                                                                                                             return p_change_context(
@@ -7938,7 +7938,7 @@ export const Root: t_signatures.Root = ($, abort) => p_change_context(
                                                                                                                                         ),
                                                                                                                                         ($) => p_decide_text(
                                                                                                                                             $['option']['token']['value'],
-                                                                                                                                            ($t): t_out.Root.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
+                                                                                                                                            ($t): s_out.Root.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                                                                                 switch ($t) {
                                                                                                                                                     case 'Project':
                                                                                                                                                         return p_change_context(

@@ -1,4 +1,4 @@
-import * as p_ from 'pareto-core/interface/data'
+import * as p_ from 'pareto-core/interface/schema'
 
 import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
 

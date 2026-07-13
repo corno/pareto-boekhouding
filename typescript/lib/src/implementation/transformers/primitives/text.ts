@@ -3,9 +3,26 @@ import p_list_build_deprecated from 'pareto-core/implementation/refiner/specials
 import p_text_from_list from 'pareto-core/implementation/transformer/specials/text_from_list'
 import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
 
-import type * as interface_ from "../../../declarations/transformers/primitives/text.js"
+import * as p_di from 'pareto-core/interface/schema'
+import * as s_out from "../../../interface/schemas/text.js"
+namespace s_parameters {
 
-export const fractional_decimal: interface_.fractional_decimal = ($, $p) => {
+    export type Parameters = {
+        readonly 'number of fractional digits': number
+        readonly 'decimal separator character code': number
+        readonly 'thousand separator character code': p_di.Optional_Value<number>
+    }
+
+}
+namespace declarations {
+    export type fractional_decimal = p_.Transformer_With_Parameter<
+        number,
+        s_out.Text,
+        s_parameters.Parameters
+    >
+}
+
+export const fractional_decimal: declarations.fractional_decimal = ($, $p) => {
     const old_imp = p_text_from_list(
         p_list_build_deprecated<number>(
             ($i) => {

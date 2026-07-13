@@ -4,15 +4,20 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 import p_variables from 'pareto-core/implementation/transformer/specials/variables'
 import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
 
-import type * as interface_ from "../../../declarations/transformers/boekhouding_resolved/derived.js"
-
 //schemas
-import type * as s_out from "../../../interface/schemas/derived.js"
 import type * as s_in from "../../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
+import type * as s_out from "../../../interface/schemas/derived.js"
+
+namespace declarations {
+    export type Root = p_.Transformer<
+        s_in.Root,
+        s_out.Root
+    >
+}
 
 //dependencies
 
-export const Root: interface_.Root = ($) => {
+export const Root: declarations.Root = ($) => {
     const $v_bron_root = $
     return {
         'bron': $,

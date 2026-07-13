@@ -1,12 +1,12 @@
 import * as p_ from 'pareto-core/implementation/refiner'
 import * as p_temp from 'pareto-core/implementation/transformer'
-import type * as p_di from 'pareto-core/interface/data'
+import type * as p_di from 'pareto-core/interface/schema'
 import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
 
 import type * as interface_ from "../../../declarations/refiners/boekhouding_unresolved/boekhouding_oude_model.js"
 
 //schemas
-import type * as s_out from "../../../submodules/boekhouding_unresolved/interface/schemas/unresolved.js"
+import * as s_out from "../../../interface/schemas/boekhouding_unresolved.js"
 
 //shorthands
 import * as sh from "pareto-core-shorthands/unresolved_data"

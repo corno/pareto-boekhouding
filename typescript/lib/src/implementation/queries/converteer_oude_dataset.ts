@@ -3,11 +3,11 @@ import * as p_ from 'pareto-core/implementation/query'
 import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
 import type * as query_interfaces_pareto_common from "pareto-common/interface/queries"
-import type * as s_serialize_prose from "pareto-fountain-pen/interface/data/prose_serialize"
+import type * as s_serialize_prose from "../../interface/schemas/prose_serialize.js"
 
 //data  types
 import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
-import type * as s_prose from "pareto-fountain-pen/interface/data/prose"
+import type * as s_prose from "../../interface/schemas/prose.js"
 
 //dependencies
 import * as r_boekhouding_oude_model_from_loc from "../../submodules/boekhouding_oude_model/implementation/refiners/foo/list_of_characters.js"
@@ -26,7 +26,7 @@ import * as t_path_to_text from "pareto-resources/implementation/transformers/un
 import * as sh from "pareto-fountain-pen/shorthands/prose/deprecated"
 
 export const $$: p_.Query_Implementation<
-    query_interfaces_pareto_common.process_file_data,
+    query_interfaces_pareto_common.file_in_file_out,
     {
         'tab size': number,
         'serialization parameters': s_serialize_prose.Parameters,

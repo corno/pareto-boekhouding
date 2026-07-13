@@ -1,7 +1,68 @@
 
 import * as p_ from 'pareto-core/implementation/transformer'
 
-import * as t_signatures from "../../../declarations/transformers/foo/fountain_pen.js"
+//schemas
+import type * as s_in from "../../../interface/schemas/resolved.js"
+import type * as s_out from "../../../interface/schemas/prose.js"
+
+namespace t_signatures {
+    export type Root = p_.Transformer<
+        s_in.Root,
+        s_out.Paragraph
+    >
+    export type Fiscaal = p_.Transformer<
+        s_in.Fiscaal,
+        s_out.Paragraph
+    >
+    export type Grootboek_Categorieen = p_.Transformer<
+        s_in.Grootboek_Categorieen,
+        s_out.Paragraph
+    >
+    export type Beheer = p_.Transformer<
+        s_in.Beheer,
+        s_out.Paragraph
+    >
+    export type Grootboekrekeningen = p_.Transformer<
+        s_in.Grootboekrekeningen,
+        s_out.Paragraph
+    >
+    export type Jaarbeheer = p_.Transformer<
+        s_in.Jaarbeheer,
+        s_out.Paragraph
+    >
+    export type Overige_balans_item = p_.Transformer<
+        s_in.Overige_balans_item,
+        s_out.Paragraph
+    >
+    export type Verwijzing_naar_Informele_rekening = p_.Transformer<
+        s_in.Verwijzing_naar_Informele_rekening,
+        s_out.Paragraph
+    >
+    export type Verwijzing_naar_Bankrekening = p_.Transformer<
+        s_in.Verwijzing_naar_Bankrekening,
+        s_out.Paragraph
+    >
+    export type Handelstransacties = p_.Transformer<
+        s_in.Handelstransacties,
+        s_out.Paragraph
+    >
+    export type Mutaties = p_.Transformer<
+        s_in.Mutaties,
+        s_out.Paragraph
+    >
+    export type Jaren = p_.Transformer<
+        s_in.Jaren,
+        s_out.Paragraph
+    >
+    export type Rekening_Mutatie = p_.Transformer<
+        s_in.Rekening_Mutatie,
+        s_out.Paragraph
+    >
+    export type Eerste_boekjaar = p_.Transformer<
+        s_in.Eerste_boekjaar,
+        s_out.Paragraph
+    >
+}
 
 import * as v_serialize from "astn-core/implementation/transformers/sealed_target/prose"
 

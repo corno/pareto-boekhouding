@@ -1,6 +1,6 @@
 
 import * as p_ from 'pareto-core/implementation/refiner'
-import * as p_di from 'pareto-core/interface/data'
+import * as p_di from 'pareto-core/interface/schema'
 const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
 const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
@@ -13,7 +13,7 @@ import p_variables from 'pareto-core/implementation/refiner/specials/variables'
 
 import * as t_signatures from "../../../declarations/refiners/foo/astn_parse_tree.js"
 
-import * as t_out from "../../../interface/schemas/unresolved.js"
+import * as s_out from "../../../interface/schemas/unresolved.js"
 
 import * as v_unmarshalled_from_parse_tree from "liana-core/implementation/refiners/unmarshalled/astn_parse_tree"
 
@@ -233,7 +233,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => p_change_context(
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
+                                                                ($t): s_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Activa':
                                                                             return p_change_context(
@@ -428,7 +428,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($, abort) => p_change_context(
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
+                                                                ($t): s_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Kosten':
                                                                             return p_change_context(
@@ -748,7 +748,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde => {
+                                                                ($t): s_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Activa':
                                                                             return p_change_context(
@@ -1019,7 +1019,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($, abo
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde => {
+                                                                ($t): s_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Kosten':
                                                                             return p_change_context(
@@ -1325,7 +1325,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => p_change_context(
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
+                                                                ($t): s_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
                                                                     switch ($t) {
                                                                         case 'Ja':
                                                                             return p_change_context(
@@ -1607,7 +1607,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
+                                                                                    ($t): s_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                                                         switch ($t) {
                                                                                             case 'Activa':
                                                                                                 return p_change_context(
@@ -1807,7 +1807,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => p_change_context(
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
+                                                                                    ($t): s_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                                                         switch ($t) {
                                                                                             case 'Kosten':
                                                                                                 return p_change_context(
@@ -1864,7 +1864,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => p_change_context(
                                                                                                                                 ),
                                                                                                                                 ($) => p_decide_text(
                                                                                                                                     $['option']['token']['value'],
-                                                                                                                                    ($t): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting => {
+                                                                                                                                    ($t): s_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                                                         switch ($t) {
                                                                                                                                             case 'Ja':
                                                                                                                                                 return p_change_context(
@@ -2704,7 +2704,7 @@ export const Beheer: t_signatures.Beheer = ($, abort) => p_change_context(
                                                                                                                                                                         ),
                                                                                                                                                                         ($) => p_decide_text(
                                                                                                                                                                             $['option']['token']['value'],
-                                                                                                                                                                            ($t): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
+                                                                                                                                                                            ($t): s_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
                                                                                                                                                                                 switch ($t) {
                                                                                                                                                                                     case 'Project':
                                                                                                                                                                                         return p_change_context(
@@ -3535,7 +3535,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => p_change_contex
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
+                                                                                    ($t): s_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
                                                                                         switch ($t) {
                                                                                             case 'Aangegeven':
                                                                                                 return p_change_context(
@@ -4058,7 +4058,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => p_change_contex
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
+                                                                                    ($t): s_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
                                                                                                 return p_change_context(
@@ -4434,7 +4434,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($, abort) => p_change_contex
                                                                                 ),
                                                                                 ($) => p_decide_text(
                                                                                     $['option']['token']['value'],
-                                                                                    ($t): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
+                                                                                    ($t): s_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
                                                                                                 return p_change_context(
@@ -4742,7 +4742,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($, abort) 
                         ),
                         ($) => p_decide_text(
                             $['option']['token']['value'],
-                            ($t): t_out.Overige_balans_item.Nieuw => {
+                            ($t): s_out.Overige_balans_item.Nieuw => {
                                 switch ($t) {
                                     case 'Ja':
                                         return p_change_context(
@@ -4994,7 +4994,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
+                                                                ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                                     switch ($t) {
                                                                         case 'Mutaties':
                                                                             return p_change_context(
@@ -5207,7 +5207,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
+                                                                ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
                                                                     switch ($t) {
                                                                         case 'Toegevoegd':
                                                                             return p_change_context(
@@ -5427,7 +5427,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
+                                                                                                    ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                                                                                                         switch ($t) {
                                                                                                             case 'Bekend':
                                                                                                                 return p_change_context(
@@ -5574,7 +5574,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
+                                                                                                    ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                                                         switch ($t) {
                                                                                                             case 'Balans':
                                                                                                                 return p_change_context(
@@ -5756,7 +5756,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type => {
+                                                                ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type => {
                                                                     switch ($t) {
                                                                         case 'Bonnetje':
                                                                             return p_change_context(
@@ -6138,7 +6138,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
+                                                                ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                                     switch ($t) {
                                                                         case 'Mutaties':
                                                                             return p_change_context(
@@ -6310,7 +6310,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
+                                                                ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
                                                                     switch ($t) {
                                                                         case 'Toegevoegd':
                                                                             return p_change_context(
@@ -6434,7 +6434,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                             ),
                                                             ($) => p_decide_text(
                                                                 $['option']['token']['value'],
-                                                                ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype => {
+                                                                ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype => {
                                                                     switch ($t) {
                                                                         case 'Project':
                                                                             return p_change_context(
@@ -6722,7 +6722,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
+                                                                                                    ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
                                                                                                         switch ($t) {
                                                                                                             case 'Intracommunautair':
                                                                                                                 return p_change_context(
@@ -6888,7 +6888,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype => {
+                                                                                                    ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype => {
                                                                                                         switch ($t) {
                                                                                                             case 'Project':
                                                                                                                 return p_change_context(
@@ -7097,7 +7097,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($, abort) =>
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
+                                                                                                    ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                                                         switch ($t) {
                                                                                                             case 'Opbrengsten':
                                                                                                                 return p_change_context(
@@ -7488,7 +7488,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => p_change_context(
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling => {
+                                                                                                    ($t): s_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling => {
                                                                                                         switch ($t) {
                                                                                                             case 'Resultaat':
                                                                                                                 return p_change_context(
@@ -7527,7 +7527,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => p_decide_text(
                                                                                                                                 $['option']['token']['value'],
-                                                                                                                                ($t): t_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state.Balans => {
+                                                                                                                                ($t): s_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state.Balans => {
                                                                                                                                     switch ($t) {
                                                                                                                                         case 'Informele rekening':
                                                                                                                                             return p_change_context(
@@ -7831,7 +7831,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => p_change_context(
                                                                                                 ),
                                                                                                 ($) => p_decide_text(
                                                                                                     $['option']['token']['value'],
-                                                                                                    ($t): t_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => {
+                                                                                                    ($t): s_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => {
                                                                                                         switch ($t) {
                                                                                                             case 'Resultaat':
                                                                                                                 return p_change_context(
@@ -7870,7 +7870,7 @@ export const Mutaties: t_signatures.Mutaties = ($, abort) => p_change_context(
                                                                                                                             ),
                                                                                                                             ($) => p_decide_text(
                                                                                                                                 $['option']['token']['value'],
-                                                                                                                                ($t): t_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state.Balans => {
+                                                                                                                                ($t): s_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state.Balans => {
                                                                                                                                     switch ($t) {
                                                                                                                                         case 'Informele rekening':
                                                                                                                                             return p_change_context(
@@ -8395,7 +8395,7 @@ export const Jaren: t_signatures.Jaren = ($, abort) => p_change_context(
                                         ),
                                         ($) => p_decide_text(
                                             $['option']['token']['value'],
-                                            ($t): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
+                                            ($t): s_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
                                                 switch ($t) {
                                                     case 'Ja':
                                                         return p_change_context(
@@ -8651,7 +8651,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($, abort) => p_c
                         ),
                         ($) => p_decide_text(
                             $['option']['token']['value'],
-                            ($t): t_out.Rekening_Mutatie.type_ => {
+                            ($t): s_out.Rekening_Mutatie.type_ => {
                                 switch ($t) {
                                     case 'Inkoop':
                                         return p_change_context(
@@ -8762,7 +8762,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($, abort) => p_cha
     ),
     ($) => p_decide_text(
         $['option']['token']['value'],
-        ($t): t_out.Eerste_boekjaar => {
+        ($t): s_out.Eerste_boekjaar => {
             switch ($t) {
                 case 'Ja':
                     return p_change_context(

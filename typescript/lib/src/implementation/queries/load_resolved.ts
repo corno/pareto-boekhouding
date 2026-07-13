@@ -1,12 +1,12 @@
 import * as p_ from 'pareto-core/implementation/query'
 import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
-import type * as s_loc from "pareto-fountain-pen/interface/data/list_of_characters"
-import type * as s_path from "pareto-resources/interface/data/fs_unrestricted_path"
+import type * as s_loc from "../../interface/schemas/list_of_characters.js"
+import type * as s_path from "../../interface/schemas/fs_unrestricted_path.js"
 
 //data  types
 import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
-import type * as s_prose from "pareto-fountain-pen/interface/data/prose"
+import type * as s_prose from "../../interface/schemas/prose.js"
 
 //dependencies
 import * as r_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters.js"

@@ -1,7 +1,19 @@
-
 import * as p_ from 'pareto-core/implementation/transformer'
 
-import * as t_signatures from "../../../declarations/transformers/foo/prose.js"
+//schemas
+import type * as s_in from "../../../interface/schemas/data.js"
+import type * as s_out from "../../../interface/schemas/prose.js"
+
+namespace t_signatures {
+    export type Root = p_.Transformer<
+        s_in.Root,
+        s_out.Paragraph
+    >
+    export type Bestandsnaam = p_.Transformer<
+        s_in.Bestandsnaam,
+        s_out.Paragraph
+    >
+}
 
 import * as v_serialize from "astn-core/implementation/transformers/sealed_target/prose"
 

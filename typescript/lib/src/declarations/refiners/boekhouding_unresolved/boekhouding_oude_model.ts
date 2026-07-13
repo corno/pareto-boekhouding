@@ -1,8 +1,7 @@
 
-
+//schemas
 import type * as s_in from "../../../submodules/boekhouding_oude_model/interface/schemas/data.js"
-import type * as s_out from "../../../submodules/boekhouding_unresolved/interface/schemas/unresolved.js"
-
+import type * as s_out from "../../../interface/schemas/boekhouding_unresolved.js"
 
 export type Rekening_Mutatie = (
     $$_: s_in.Root,

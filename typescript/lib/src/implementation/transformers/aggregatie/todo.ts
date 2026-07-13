@@ -1,6 +1,15 @@
 import * as p_ from 'pareto-core/implementation/transformer'
 
-import type * as interface_ from "../../../declarations/transformers/aggregatie/todo.js"
+//schemas
+import type * as s_in from "../../../interface/schemas/derived.js"
+import type * as s_out from "../../../interface/schemas/prose.js"
+
+namespace declarations {
+    export type Root = p_.Transformer<
+        s_in.Root,
+        s_out.Paragraph
+    >
+}
 
 //schemas
 import * as s_tree from "../../../submodules/helpers/interface/schemas/tree.js"
@@ -11,7 +20,7 @@ import * as t_tree_to_phrase from "../../../submodules/helpers/implementation/tr
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/prose/target"
 
-export const Root: interface_.Root = ($) => sh.pg.sentences(
+export const Root: declarations.Root = ($) => sh.pg.sentences(
     t_tree_to_phrase.Node(
         p_.from.dictionary($.jaren).map(
             ($) => p_.literal.dictionary({

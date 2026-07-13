@@ -1,11 +1,85 @@
-import type * as p_di from 'pareto-core/interface/data'
+import type * as p_di from 'pareto-core/interface/schema'
 import * as p_ from 'pareto-core/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 
-import type * as interface_ from "../../../declarations/transformers/aggregatie/jaarverslag_html.js"
+//schemas
+import type * as s_in from "../../../interface/schemas/derived.js"
+import type * as s_temp_aggregatie_2 from "../../../interface/schemas/aggregatie.js"
+import type * as s_out from "../../../interface/schemas/static_html.js"
+
+namespace declarations {
+    export type Balans_Grootboekrekeningen = p_.Transformer_With_Parameter<
+        s_in.Balans.Grootboek_Rekeningen,
+        s_temp_aggregatie_2.Domein_Zijde,
+        {
+        'type':
+        | ['begin',
+        null]
+        | ['eind',
+        null]
+        'label': string
+        'teken omkeren': boolean
+    }
+    >
+    export type Bedrag = p_.Transformer_With_Parameter<
+        number,
+        s_out.Flow_Element.table.sections.L.rows.L.cells.L,
+        {
+        'teken omkeren': boolean
+    }
+    >
+    export type Colspan_Text = p_.Transformer_With_Parameter<
+        string,
+        s_out.Flow_Element.table.sections.L.rows.L.cells.L,
+        {
+        'number of columns': number
+    }
+    >
+    export type Domein = p_.Transformer_With_Parameter<
+        s_temp_aggregatie_2.Domein,
+        s_out.Flow_Element.table.sections.L.rows,
+        {
+        'label': string
+    }
+    >
+    export type Domein_Zijde = p_.Transformer<
+        s_temp_aggregatie_2.Domein_Zijde,
+        p_di.List<s_out.Flow_Element.table.sections.L.rows.L.cells>
+    >
+    export type Indent = p_.Transformer<
+        null,
+        s_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+    export type Indent_Blank = p_.Transformer<
+        null,
+        s_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+    export type Resultaat_Grootboekrekeningen = p_.Transformer_With_Parameter<
+        s_in.Resultaat.Grootboek_Rekeningen,
+        s_temp_aggregatie_2.Domein_Zijde,
+        {
+        'label': string
+        'teken omkeren': boolean
+    }
+    >
+    export type Root = p_.Transformer_With_Parameter<
+        s_in.Root,
+        s_out.Document,
+        {
+        'css': string
+    }
+    >
+    export type Span_Indent = p_.Transformer<
+        number,
+        s_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+    export type Text = p_.Transformer<
+        string,
+        s_out.Flow_Element.table.sections.L.rows.L.cells.L
+    >
+}
 
 //schemas
-import type * as s_out from "pareto-static-html/interface/data/static_html"
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text.js"
@@ -25,7 +99,7 @@ const temp_integer_from_dictionary = <T extends p_di.Value>(
 import * as sh from "pareto-static-html/shorthands/static_html/target"
 
 
-const Balans_Grootboekrekeningen: interface_.Balans_Grootboekrekeningen = ($, $p) => {
+const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen = ($, $p) => {
     const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => {
 
@@ -77,7 +151,7 @@ const Balans_Grootboekrekeningen: interface_.Balans_Grootboekrekeningen = ($, $p
     }
 }
 
-const Bedrag: interface_.Bedrag = ($, $p) => sh.t.s.r.td(
+const Bedrag: declarations.Bedrag = ($, $p) => sh.t.s.r.td(
     p_.literal.list(["bedrag"]),
     p_.literal.not_set(),
     p_.literal.list([
@@ -96,7 +170,7 @@ const Bedrag: interface_.Bedrag = ($, $p) => sh.t.s.r.td(
     ])
 )
 
-const Colspan_Text: interface_.Colspan_Text = ($, $p) => sh.t.s.r.td(
+const Colspan_Text: declarations.Colspan_Text = ($, $p) => sh.t.s.r.td(
     p_.literal.list(["span-text"]),
     p_.literal.set($p['number of columns']),
     p_.literal.list([
@@ -106,7 +180,7 @@ const Colspan_Text: interface_.Colspan_Text = ($, $p) => sh.t.s.r.td(
     ])
 )
 
-const Domein: interface_.Domein = ($, $p) => p_.literal.segmented_list([
+const Domein: declarations.Domein = ($, $p) => p_.literal.segmented_list([
     p_.literal.list([
         sh.t.s.row(
             p_.literal.list(["margin"]),
@@ -199,7 +273,7 @@ const Domein: interface_.Domein = ($, $p) => p_.literal.segmented_list([
     ])
 ])
 
-const Domein_Zijde: interface_.Domein_Zijde = ($) => {
+const Domein_Zijde: declarations.Domein_Zijde = ($) => {
 
     const teken_omkeren = $['teken omkeren']
 
@@ -265,19 +339,19 @@ const Domein_Zijde: interface_.Domein_Zijde = ($) => {
     )
 }
 
-const Indent: interface_.Indent = ($) => sh.t.s.r.td(
+const Indent: declarations.Indent = ($) => sh.t.s.r.td(
     p_.literal.list(["indent"]),
     p_.literal.not_set(),
     p_.literal.list([])
 )
 
-const Indent_Blank: interface_.Indent_Blank = ($) => sh.t.s.r.td(
+const Indent_Blank: declarations.Indent_Blank = ($) => sh.t.s.r.td(
     p_.literal.list(["indent blank"]),
     p_.literal.not_set(),
     p_.literal.list([])
 )
 
-const Resultaat_Grootboekrekeningen: interface_.Resultaat_Grootboekrekeningen = ($, $p) => {
+const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekrekeningen = ($, $p) => {
 
     const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => ({
@@ -319,7 +393,7 @@ const Resultaat_Grootboekrekeningen: interface_.Resultaat_Grootboekrekeningen = 
     }
 }
 
-export const Root: interface_.Root = ($, $p) => {
+export const Root: declarations.Root = ($, $p) => {
     return sh.document(
         $p.css,
         sh.f.div(
@@ -491,13 +565,13 @@ export const Root: interface_.Root = ($, $p) => {
     )
 }
 
-const Span_Indent: interface_.Span_Indent = ($) => sh.t.s.r.td(
+const Span_Indent: declarations.Span_Indent = ($) => sh.t.s.r.td(
     p_.literal.list(["span-indent"]),
     p_.literal.set($),
     p_.literal.list([])
 )
 
-const Text: interface_.Text = ($) => sh.t.s.r.td(
+const Text: declarations.Text = ($) => sh.t.s.r.td(
     p_.literal.list(["text"]),
     p_.literal.not_set(),
     p_.literal.list([

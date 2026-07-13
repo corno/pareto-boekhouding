@@ -1,10 +1,16 @@
-import type * as p_di from 'pareto-core/interface/data'
+import type * as p_di from 'pareto-core/interface/schema'
 import * as p_ from 'pareto-core/implementation/transformer'
 
-import type * as interface_ from "../../../declarations/transformers/aggregatie/balans_grootboeken_csv.js"
-
 //schemas
-import type * as s_out from "pareto-csv/interface/data/csv"
+import type * as s_in from "../../../interface/schemas/derived.js"
+import * as s_out from "../../../interface/schemas/csv.js"
+
+namespace declarations {
+    export type Root = p_.Transformer<
+        s_in.Root,
+        s_out.CSV
+    >
+}
 
 //dependencies
 import * as t_primitives_to_text from "../primitives/text.js"
@@ -23,7 +29,7 @@ const temp_integer_from_dictionary = <T extends p_di.Value>(
 //shorthands
 import * as sh from "pareto-csv/shorthands/csv/target"
 
-export const Root: interface_.Root = ($) => sh.CSV(
+export const Root: declarations.Root = ($) => sh.CSV(
     p_.literal.set(sh.row(p_.literal.list([
         "jaar", "grootboekrekening", "begin", "eind",
     ]))),

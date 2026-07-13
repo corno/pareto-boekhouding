@@ -1,15 +1,73 @@
 
 import * as p_ from 'pareto-core/implementation/transformer'
-import * as p_di from 'pareto-core/interface/data'
+import * as p_di from 'pareto-core/interface/schema'
 const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
 const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
 import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
 
-import * as t_signatures from "../../../declarations/transformers/foo/boilerplate_for_migrate.js"
+import type * as s_in from "../../../interface/schemas/resolved.js"
+namespace t_signatures {
+    export type Root = p_.Transformer<
+        s_in.Root,
+        s_out.Root
+    >
+    export type Fiscaal = p_.Transformer<
+        s_in.Fiscaal,
+        s_out.Fiscaal
+    >
+    export type Grootboek_Categorieen = p_.Transformer<
+        s_in.Grootboek_Categorieen,
+        s_out.Grootboek_Categorieen
+    >
+    export type Beheer = p_.Transformer<
+        s_in.Beheer,
+        s_out.Beheer
+    >
+    export type Grootboekrekeningen = p_.Transformer<
+        s_in.Grootboekrekeningen,
+        s_out.Grootboekrekeningen
+    >
+    export type Jaarbeheer = p_.Transformer<
+        s_in.Jaarbeheer,
+        s_out.Jaarbeheer
+    >
+    export type Overige_balans_item = p_.Transformer<
+        s_in.Overige_balans_item,
+        s_out.Overige_balans_item
+    >
+    export type Verwijzing_naar_Informele_rekening = p_.Transformer<
+        s_in.Verwijzing_naar_Informele_rekening,
+        s_out.Verwijzing_naar_Informele_rekening
+    >
+    export type Verwijzing_naar_Bankrekening = p_.Transformer<
+        s_in.Verwijzing_naar_Bankrekening,
+        s_out.Verwijzing_naar_Bankrekening
+    >
+    export type Handelstransacties = p_.Transformer<
+        s_in.Handelstransacties,
+        s_out.Handelstransacties
+    >
+    export type Mutaties = p_.Transformer<
+        s_in.Mutaties,
+        s_out.Mutaties
+    >
+    export type Jaren = p_.Transformer<
+        s_in.Jaren,
+        s_out.Jaren
+    >
+    export type Rekening_Mutatie = p_.Transformer<
+        s_in.Rekening_Mutatie,
+        s_out.Rekening_Mutatie
+    >
+    export type Eerste_boekjaar = p_.Transformer<
+        s_in.Eerste_boekjaar,
+        s_out.Eerste_boekjaar
+    >
+}
 
-import * as t_out from "../../../../boekhouding_unresolved/interface/schemas/unresolved.js"
+import * as s_out from "../../../../boekhouding_unresolved/interface/schemas/unresolved.js"
 
 export const Root: t_signatures.Root = ($) => ({
     'Fiscaal': p_change_context(
@@ -83,7 +141,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
+                                    ($): s_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Activa':
                                                 return p_.option(
@@ -212,7 +270,7 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
+                                    ($): s_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Kosten':
                                                 return p_.option(
@@ -392,7 +450,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
+                                    ($): s_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Activa':
                                                 return p_.option(
@@ -566,7 +624,7 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
+                                    ($): s_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
                                         switch ($[0]) {
                                             case 'Kosten':
                                                 return p_.option(
@@ -743,7 +801,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing.l_state => {
+                                    ($): s_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing.l_state => {
                                         switch ($[0]) {
                                             case 'Ja':
                                                 return p_.option(
@@ -881,7 +939,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         }],
                                         'l state': p_decide_state(
                                             $,
-                                            ($): t_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
+                                            ($): s_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde.l_state => {
                                                 switch ($[0]) {
                                                     case 'Activa':
                                                         return p_.option(
@@ -1011,7 +1069,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                         }],
                                         'l state': p_decide_state(
                                             $,
-                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
+                                            ($): s_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state => {
                                                 switch ($[0]) {
                                                     case 'Kosten':
                                                         return p_.option(
@@ -1038,7 +1096,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                         }],
                                                                         'l state': p_decide_state(
                                                                             $,
-                                                                            ($): t_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting.l_state => {
+                                                                            ($): s_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting.l_state => {
                                                                                 switch ($[0]) {
                                                                                     case 'Ja':
                                                                                         return p_.option(
@@ -1469,7 +1527,7 @@ export const Beheer: t_signatures.Beheer = ($) => ({
                                                                                             }],
                                                                                             'l state': p_decide_state(
                                                                                                 $,
-                                                                                                ($): t_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type.l_state => {
+                                                                                                ($): s_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type.l_state => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Project':
                                                                                                             return p_.option(
@@ -1973,7 +2031,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         }],
                                         'l state': p_decide_state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status.l_state => {
+                                            ($): s_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status.l_state => {
                                                 switch ($[0]) {
                                                     case 'Aangegeven':
                                                         return p_.option(
@@ -2221,7 +2279,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         }],
                                         'l state': p_decide_state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
+                                            ($): s_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return p_.option(
@@ -2396,7 +2454,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ({
                                         }],
                                         'l state': p_decide_state(
                                             $,
-                                            ($): t_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
+                                            ($): s_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw.l_state => {
                                                 switch ($[0]) {
                                                     case 'Ja':
                                                         return p_.option(
@@ -2585,7 +2643,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ({
             }],
             'l state': p_decide_state(
                 $,
-                ($): t_out.Overige_balans_item.Nieuw.l_state => {
+                ($): s_out.Overige_balans_item.Nieuw.l_state => {
                     switch ($[0]) {
                         case 'Ja':
                             return p_.option(
@@ -2716,7 +2774,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
+                                    ($): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                         switch ($[0]) {
                                             case 'Mutaties':
                                                 return p_.option(
@@ -2813,7 +2871,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
+                                    ($): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
                                                 return p_.option(
@@ -2892,7 +2950,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag.l_state => {
+                                                        ($): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Bekend':
                                                                     return p_.option(
@@ -2942,7 +3000,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
+                                                        ($): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Balans':
                                                                     return p_.option(
@@ -3051,7 +3109,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type.l_state => {
+                                    ($): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type.l_state => {
                                         switch ($[0]) {
                                             case 'Bonnetje':
                                                 return p_.option(
@@ -3242,7 +3300,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
+                                    ($): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                         switch ($[0]) {
                                             case 'Mutaties':
                                                 return p_.option(
@@ -3333,7 +3391,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
+                                    ($): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument.l_state => {
                                         switch ($[0]) {
                                             case 'Toegevoegd':
                                                 return p_.option(
@@ -3397,7 +3455,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                 }],
                                 'l state': p_decide_state(
                                     $,
-                                    ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype.l_state => {
+                                    ($): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype.l_state => {
                                         switch ($[0]) {
                                             case 'Project':
                                                 return p_.option(
@@ -3534,7 +3592,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
+                                                        ($): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Intracommunautair':
                                                                     return p_.option(
@@ -3608,7 +3666,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype.l_state => {
+                                                        ($): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Project':
                                                                     return p_.option(
@@ -3705,7 +3763,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
+                                                        ($): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Opbrengsten':
                                                                     return p_.option(
@@ -3892,7 +3950,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state => {
+                                                        ($): s_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Resultaat':
                                                                     return p_.option(
@@ -3923,7 +3981,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                             }],
                                                                             'l state': p_decide_state(
                                                                                 $,
-                                                                                ($): t_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state.Balans.l_state => {
+                                                                                ($): s_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state.Balans.l_state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Informele rekening':
                                                                                             return p_.option(
@@ -4088,7 +4146,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                     }],
                                                     'l state': p_decide_state(
                                                         $,
-                                                        ($): t_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state => {
+                                                        ($): s_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state => {
                                                             switch ($[0]) {
                                                                 case 'Resultaat':
                                                                     return p_.option(
@@ -4119,7 +4177,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ({
                                                                             }],
                                                                             'l state': p_decide_state(
                                                                                 $,
-                                                                                ($): t_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state.Balans.l_state => {
+                                                                                ($): s_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state.Balans.l_state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Informele rekening':
                                                                                             return p_.option(
@@ -4407,7 +4465,7 @@ export const Jaren: t_signatures.Jaren = ($) => ({
                         }],
                         'l state': p_decide_state(
                             $,
-                            ($): t_out.Jaren.l_dictionary.D.l_entry.Afgesloten.l_state => {
+                            ($): s_out.Jaren.l_dictionary.D.l_entry.Afgesloten.l_state => {
                                 switch ($[0]) {
                                     case 'Ja':
                                         return p_.option(
@@ -4530,7 +4588,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ({
             }],
             'l state': p_decide_state(
                 $,
-                ($): t_out.Rekening_Mutatie.type_.l_state => {
+                ($): s_out.Rekening_Mutatie.type_.l_state => {
                     switch ($[0]) {
                         case 'Inkoop':
                             return p_.option(
@@ -4631,7 +4689,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ({
     }],
     'l state': p_decide_state(
         $,
-        ($): t_out.Eerste_boekjaar.l_state => {
+        ($): s_out.Eerste_boekjaar.l_state => {
             switch ($[0]) {
                 case 'Ja':
                     return p_.option(
