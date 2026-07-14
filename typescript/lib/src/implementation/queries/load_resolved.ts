@@ -24,7 +24,7 @@ export const $$: p_.Query_Implementation<
         s_boekhouding.Root_,
         s_prose.Phrase,
         {
-            'data': s_loc.List_of_Characters,
+            'data': s_loc.List_Of_Characters,
             'path': s_path.Node_Path,
         }
     >,

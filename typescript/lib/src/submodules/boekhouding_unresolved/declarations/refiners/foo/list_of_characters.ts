@@ -9,7 +9,7 @@ import * as i_out from "../../../interface/schemas/unresolved.js"
 
 export namespace Root_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Root
     
@@ -33,7 +33,7 @@ export type Root_ = (
 
 export namespace Fiscaal_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Fiscaal
     
@@ -57,7 +57,7 @@ export type Fiscaal_ = (
 
 export namespace Grootboek_Categorieen_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Grootboek_Categorieen
     
@@ -81,7 +81,7 @@ export type Grootboek_Categorieen_ = (
 
 export namespace Beheer_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Beheer
     
@@ -105,7 +105,7 @@ export type Beheer_ = (
 
 export namespace Grootboekrekeningen_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Grootboekrekeningen
     
@@ -129,7 +129,7 @@ export type Grootboekrekeningen_ = (
 
 export namespace Jaarbeheer_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Jaarbeheer
     
@@ -153,7 +153,7 @@ export type Jaarbeheer_ = (
 
 export namespace Overige_balans_item_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Overige_balans_item
     
@@ -177,7 +177,7 @@ export type Overige_balans_item_ = (
 
 export namespace Verwijzing_naar_Informele_rekening_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Verwijzing_naar_Informele_rekening
     
@@ -201,7 +201,7 @@ export type Verwijzing_naar_Informele_rekening_ = (
 
 export namespace Verwijzing_naar_Bankrekening_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Verwijzing_naar_Bankrekening
     
@@ -225,7 +225,7 @@ export type Verwijzing_naar_Bankrekening_ = (
 
 export namespace Handelstransacties_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Handelstransacties
     
@@ -249,7 +249,7 @@ export type Handelstransacties_ = (
 
 export namespace Mutaties_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Mutaties
     
@@ -273,7 +273,7 @@ export type Mutaties_ = (
 
 export namespace Jaren_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Jaren
     
@@ -297,7 +297,7 @@ export type Jaren_ = (
 
 export namespace Rekening_Mutatie_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Rekening_Mutatie
     
@@ -321,7 +321,7 @@ export type Rekening_Mutatie_ = (
 
 export namespace Eerste_boekjaar_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Eerste_boekjaar
     

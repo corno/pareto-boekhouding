@@ -9,7 +9,7 @@ import * as i_out from "../../../interface/schemas/data.js"
 
 export namespace Root_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Root
     
@@ -33,7 +33,7 @@ export type Root_ = (
 
 export namespace Bestandsnaam_ {
     
-    export type I = i_in.List_of_Characters
+    export type I = i_in.List_Of_Characters
     
     export type O = i_out.Bestandsnaam
     
