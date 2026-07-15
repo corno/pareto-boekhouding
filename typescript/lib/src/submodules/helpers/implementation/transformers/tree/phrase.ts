@@ -15,7 +15,7 @@ import * as sh from "pareto-fountain-pen/shorthands/prose_extended/target"
 export const Node: declarations.Node = ($) => p_.from.dictionary($).convert_to_list(
     ($, id) => sh.sentence(
         p_.literal.list([
-            sh.ph.literal(id),
+            sh.ph.text(id),
             sh.ph.indent(sh.pg.sentences(
                 Node($)
             )),
