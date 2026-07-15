@@ -12,7 +12,7 @@ import type * as s_file_in_file_out from "pareto-common/interface/schemas/file_i
 import * as r_boekhouding_oude_model_from_loc from "../../submodules/boekhouding_oude_model/implementation/refiners/unconstrained/list_of_characters.js"
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../submodules/boekhouding_resolved/implementation/refiners/resolved/unresolved.js"
 import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../refiners/boekhouding_unresolved/boekhouding_oude_model.js"
-import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_resolved/implementation/serializers/resolved.js"
+import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_resolved/implementation/transformers/resolved/paragraph.js"
 // import * as t_deserialize_parse_tree_to_location from "liana-core/_implementation/transformers/deserialize/location"
 // import * as t_deserialize_parse_tree_to_prose from "liana-core/_implementation/serializers/document_unmarshalling"
 // import * as t_deserialize_resolve_to_location from "liana-core/implementation/transformers/resolve/location"
