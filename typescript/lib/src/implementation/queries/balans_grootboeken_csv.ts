@@ -6,7 +6,7 @@ import type * as query_interfaces_pareto_common from "pareto-common/interface/qu
 
 //dependencies
 import * as t_resolved_to_derived from "../transformers/boekhouding_resolved/derived.js"
-import * as t_csv_to_prose from "pareto-csv/implementation/serializers/csv"
+import * as t_csv_to_paragraph from "pareto-csv/implementation/transformers/csv/paragraph"
 import * as t_aggregatie_to_balans_grootboeken_csv from "../transformers/aggregatie/balans_grootboeken_csv.js"
 
 import { $$ as q_load } from "./load_resolved.js"
@@ -30,7 +30,7 @@ export const $$: p_.Query_Implementation<
         )
     ).transform(
         ($) => ({
-            'paragraph': t_csv_to_prose.CSV(
+            'paragraph': t_csv_to_paragraph.CSV(
                 t_aggregatie_to_balans_grootboeken_csv.Root(
                     t_resolved_to_derived.Root(
                         $

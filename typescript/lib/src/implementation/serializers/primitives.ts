@@ -14,15 +14,13 @@ namespace s_parameters {
 
 }
 namespace declarations {
-    export type fractional_decimal = p_.Phrase_Serializer_With_Parameter<
+    export type fractional_decimal = p_.Serializer_With_Parameter<
         number,
         s_parameters.Parameters
     >
 }
 
-import * as sh from "pareto-fountain-pen/shorthands/prose_simple/deprecated"
-
-export const fractional_decimal: declarations.fractional_decimal = ($, $p) => sh.ph.list_of_characters(
+export const fractional_decimal: declarations.fractional_decimal = ($, $p) => p_.ph.list_of_characters(
     p_list_build_deprecated<number>(
         ($i) => {
             let $v_value = $

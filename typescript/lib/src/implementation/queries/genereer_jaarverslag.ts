@@ -7,7 +7,7 @@ import type * as query_interfaces_pareto_common from "pareto-common/interface/qu
 //dependencies
 import * as t_resolved_to_derived from "../transformers/boekhouding_resolved/derived.js"
 
-import * as t_html_to_prose from "pareto-static-html/_implementation/serializers/static_html"
+import * as t_html_to_paragraph from "pareto-static-html/_implementation/transformers/static_html/paragraph"
 import * as t_aggregatie_to_jaarverslag_html from "../transformers/aggregatie/jaarverslag_html.js"
 
 import { $$ as q_load } from "./load_resolved.js"
@@ -32,7 +32,7 @@ export const $$: p_.Query_Implementation<
         )
     ).transform(
         ($) => ({
-            'paragraph': t_html_to_prose.Document(
+            'paragraph': t_html_to_paragraph.Document(
                 t_aggregatie_to_jaarverslag_html.Root(
                     t_resolved_to_derived.Root(
                         $

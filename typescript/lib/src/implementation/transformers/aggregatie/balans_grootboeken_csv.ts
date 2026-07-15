@@ -42,29 +42,21 @@ export const Root: declarations.Root = ($) => sh.CSV(
                     sh.row(p_.literal.list([
                         $v_jaar,
                         id,
-                        p_s.text_from_phrase(
-                            ser_primitives.fractional_decimal(
-                                $.totaal.beginsaldo,
-                                {
-                                    'number of fractional digits': 2,
-                                    'decimal separator character code': 46, // '.'
-                                    'thousand separator character code': p_.literal.not_set()
-                                }
-                            ),
-                            "",
-                            ""
+                        ser_primitives.fractional_decimal(
+                            $.totaal.beginsaldo,
+                            {
+                                'number of fractional digits': 2,
+                                'decimal separator character code': 46, // '.'
+                                'thousand separator character code': p_.literal.not_set()
+                            }
                         ),
-                        p_s.text_from_phrase(
-                            ser_primitives.fractional_decimal(
-                                $.totaal.beginsaldo + $.totaal.mutaties,
-                                {
-                                    'number of fractional digits': 2,
-                                    'decimal separator character code': 46, // ','
-                                    'thousand separator character code': p_.literal.not_set()
-                                }
-                            ),
-                            "",
-                            ""
+                        ser_primitives.fractional_decimal(
+                            $.totaal.beginsaldo + $.totaal.mutaties,
+                            {
+                                'number of fractional digits': 2,
+                                'decimal separator character code': 46, // ','
+                                'thousand separator character code': p_.literal.not_set()
+                            }
                         ),
                     ]))
                 ])

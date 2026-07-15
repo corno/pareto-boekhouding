@@ -11,14 +11,11 @@ namespace declarations {
     >
 }
 
-//schemas
-import * as s_tree from "../../../submodules/helpers/interface/schemas/tree.js"
-
 //dependencies
 import * as t_tree_to_phrase from "../../../submodules/helpers/implementation/transformers/tree/phrase.js"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/prose_extended/target"
+import * as sh from "pareto-fountain-pen/shorthands/paragraph/target"
 
 export const Root: declarations.Root = ($) => sh.pg.sentences(
     t_tree_to_phrase.Node(

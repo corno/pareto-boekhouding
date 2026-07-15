@@ -34,18 +34,14 @@ export const Root: declarations.Root = ($) => sh.CSV(
                     sh.row(p_.literal.list([
                         $v_jaar,
                         id,
-                        p_s.text_from_phrase(
-                            t_primitives_to_text.fractional_decimal(
-                                $.totaal,
-                                {
-                                    'number of fractional digits': 2,
-                                    'decimal separator character code': 46, // '.'
-                                    'thousand separator character code': p_.literal.not_set()
-                                }
-                            ),
-                            "",
-                            "",
-                        )
+                        t_primitives_to_text.fractional_decimal(
+                            $.totaal,
+                            {
+                                'number of fractional digits': 2,
+                                'decimal separator character code': 46, // '.'
+                                'thousand separator character code': p_.literal.not_set()
+                            }
+                        ),
                     ]))
                 ])
             )

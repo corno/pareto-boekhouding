@@ -13,22 +13,15 @@ import * as r_boekhouding_oude_model_from_loc from "../../submodules/boekhouding
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../submodules/boekhouding_resolved/implementation/refiners/resolved/unresolved.js"
 import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../refiners/boekhouding_unresolved/boekhouding_oude_model.js"
 import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_resolved/implementation/transformers/resolved/paragraph.js"
-// import * as t_deserialize_parse_tree_to_location from "liana-core/_implementation/transformers/deserialize/location"
-// import * as t_deserialize_parse_tree_to_prose from "liana-core/_implementation/serializers/document_unmarshalling"
-// import * as t_deserialize_resolve_to_location from "liana-core/implementation/transformers/resolve/location"
-// import * as t_deserialize_resolve_to_prose from "liana-core/implementation/transformers/resolve/prose"
-// import * as t_location_to_prose from "astn-core/implementation/transformers/location/prose"
-// import * as t_path_to_text from "pareto-resources/implementation/transformers/unrestricted_path/text"
-import * as ser_path from "pareto-resources/implementation/serializers/unrestricted_path"
 
 import * as ser_unresolved_document_deserialization from "liana-core/_implementation/serializers/unresolved_document_deserialization"
 import * as t_unresolved_document_deserialization_to_location from "liana-core/_implementation/transformers/unresolved_document_deserialization/location"
-import * as t_location_to_prose from "astn-core/_implementation/serializers/location"
-import * as t_path_to_text from "pareto-resources/implementation/serializers/unrestricted_path"
+import * as ser_location from "astn-core/_implementation/serializers/location"
+import * as ser_path from "pareto-resources/implementation/serializers/unrestricted_path"
 import * as ser_resolving from "liana-core/_implementation/serializers/resolving"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/prose_simple/deprecated"
+import * as sh from "pareto-fountain-pen/shorthands/paragraph/deprecated"
 
 export const $$: p_.Query_Implementation<
     query_interfaces_pareto_common.file_in_file_out,
@@ -44,18 +37,22 @@ export const $$: p_.Query_Implementation<
                     $d.data,
                     ($) => abort(
                         {
-                            'phrase': sh.ph.composed([
-                                t_path_to_text.Node_Path($d.path),
-                                sh.ph.literal(":"),
-                                t_location_to_prose.Possible_Range(
-                                    t_unresolved_document_deserialization_to_location.Error($),
-                                    {
-                                        'character location reporting': ['one based', null],
-                                    }
+                            'message': sh.ph.composed([
+                                sh.ph.text(ser_path.Node_Path($d.path)),
+                                sh.ph.text(":"),
+                                sh.ph.text(
+                                    ser_location.Possible_Range(
+                                        t_unresolved_document_deserialization_to_location.Error($),
+                                        {
+                                            'character location reporting': ['one based', null],
+                                        }
+                                    )
                                 ),
-                                sh.ph.literal(": "),
-                                ser_unresolved_document_deserialization.Error(
-                                    $,
+                                sh.ph.text(": "),
+                                sh.ph.text(
+                                    ser_unresolved_document_deserialization.Error(
+                                        $,
+                                    )
                                 )
                             ])
                         }
@@ -65,18 +62,22 @@ export const $$: p_.Query_Implementation<
             ),
             ($) => abort(
                 {
-                    'phrase': sh.ph.composed([
-                        ser_path.Node_Path($d.path),
-                        sh.ph.literal(":"),
-                        t_location_to_prose.Range(
-                            $.location,
-                            {
-                                'character location reporting': ['one based', null],
-                            }
+                    'message': sh.ph.composed([
+                        sh.ph.text(ser_path.Node_Path($d.path)),
+                        sh.ph.text(":"),
+                        sh.ph.text(
+                            ser_location.Range(
+                                $.location,
+                                {
+                                    'character location reporting': ['one based', null],
+                                }
+                            )
                         ),
-                        sh.ph.literal(": "),
-                        ser_resolving.Error(
-                            $,
+                        sh.ph.text(": "),
+                        sh.ph.text(
+                            ser_resolving.Error(
+                                $,
+                            )
                         )
                     ])
                 }
