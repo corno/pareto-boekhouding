@@ -46,14 +46,14 @@ export const $$: p_.Query_Implementation<
                         {
                             'phrase': sh.ph.composed([
                                 t_path_to_text.Node_Path($d.path),
-                                sh.ph.text(":"),
+                                sh.ph.literal(":"),
                                 t_location_to_prose.Possible_Range(
                                     t_unresolved_document_deserialization_to_location.Error($),
                                     {
                                         'character location reporting': ['one based', null],
                                     }
                                 ),
-                                sh.ph.text(": "),
+                                sh.ph.literal(": "),
                                 ser_unresolved_document_deserialization.Error(
                                     $,
                                 )
@@ -67,14 +67,14 @@ export const $$: p_.Query_Implementation<
                 {
                     'phrase': sh.ph.composed([
                         ser_path.Node_Path($d.path),
-                        sh.ph.text(":"),
+                        sh.ph.literal(":"),
                         t_location_to_prose.Range(
                             $.location,
                             {
                                 'character location reporting': ['one based', null],
                             }
                         ),
-                        sh.ph.text(": "),
+                        sh.ph.literal(": "),
                         ser_resolving.Error(
                             $,
                         )

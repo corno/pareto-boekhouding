@@ -14,7 +14,7 @@ p_h.run_main_command(
     () => {
         return c_command(
             {
-                'indentation': "   ",
+                'indentation': "    ",
                 'newline': "\n",
             },
             {
