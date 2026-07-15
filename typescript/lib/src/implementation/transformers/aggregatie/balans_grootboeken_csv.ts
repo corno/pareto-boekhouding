@@ -1,5 +1,6 @@
 import type * as p_di from 'pareto-core/interface/schema'
 import * as p_ from 'pareto-core/implementation/transformer'
+import * as p_s from 'pareto-core/implementation/serializer'
 
 //schemas
 import type * as s_in from "../../../interface/schemas/derived.js"
@@ -13,7 +14,7 @@ namespace declarations {
 }
 
 //dependencies
-import * as t_primitives_to_text from "../primitives/text.js"
+import * as ser_primitives from "../../serializers/primitives.js"
 
 const temp_integer_from_dictionary = <T extends p_di.Value>(
     dict: p_di.Dictionary<T>,
@@ -41,21 +42,29 @@ export const Root: declarations.Root = ($) => sh.CSV(
                     sh.row(p_.literal.list([
                         $v_jaar,
                         id,
-                        t_primitives_to_text.fractional_decimal(
-                            $.totaal.beginsaldo,
-                            {
-                                'number of fractional digits': 2,
-                                'decimal separator character code': 46, // '.'
-                                'thousand separator character code': p_.literal.not_set()
-                            }
+                        p_s.text_from_phrase(
+                            ser_primitives.fractional_decimal(
+                                $.totaal.beginsaldo,
+                                {
+                                    'number of fractional digits': 2,
+                                    'decimal separator character code': 46, // '.'
+                                    'thousand separator character code': p_.literal.not_set()
+                                }
+                            ),
+                            "",
+                            ""
                         ),
-                        t_primitives_to_text.fractional_decimal(
-                            $.totaal.beginsaldo + $.totaal.mutaties,
-                            {
-                                'number of fractional digits': 2,
-                                'decimal separator character code': 46, // ','
-                                'thousand separator character code': p_.literal.not_set()
-                            }
+                        p_s.text_from_phrase(
+                            ser_primitives.fractional_decimal(
+                                $.totaal.beginsaldo + $.totaal.mutaties,
+                                {
+                                    'number of fractional digits': 2,
+                                    'decimal separator character code': 46, // ','
+                                    'thousand separator character code': p_.literal.not_set()
+                                }
+                            ),
+                            "",
+                            ""
                         ),
                     ]))
                 ])

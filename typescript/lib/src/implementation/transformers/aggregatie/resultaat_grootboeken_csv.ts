@@ -1,5 +1,6 @@
 import type * as p_di from 'pareto-core/interface/schema'
 import * as p_ from 'pareto-core/implementation/transformer'
+import * as p_s from 'pareto-core/implementation/serializer'
 
 //schemas
 import * as s_out from "../../../interface/schemas/csv.js"
@@ -16,11 +17,11 @@ namespace declarations {
 //schemas
 
 //dependencies
-import * as t_primitives_to_text from "../primitives/text.js"
+import * as t_primitives_to_text from "../../serializers/primitives.js"
 
 //shorthands
 import * as sh from "pareto-csv/shorthands/csv/target"
-    
+
 export const Root: declarations.Root = ($) => sh.CSV(
     p_.literal.set(sh.row(p_.literal.list([
         "jaar", "grootboekrekening", "bedrag",
@@ -33,14 +34,18 @@ export const Root: declarations.Root = ($) => sh.CSV(
                     sh.row(p_.literal.list([
                         $v_jaar,
                         id,
-                        t_primitives_to_text.fractional_decimal(
-                            $.totaal,
-                            {
-                                'number of fractional digits': 2,
-                                'decimal separator character code': 46, // '.'
-                                'thousand separator character code': p_.literal.not_set()
-                            }
-                        ),
+                        p_s.text_from_phrase(
+                            t_primitives_to_text.fractional_decimal(
+                                $.totaal,
+                                {
+                                    'number of fractional digits': 2,
+                                    'decimal separator character code': 46, // '.'
+                                    'thousand separator character code': p_.literal.not_set()
+                                }
+                            ),
+                            "",
+                            "",
+                        )
                     ]))
                 ])
             )

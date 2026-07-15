@@ -82,7 +82,7 @@ namespace declarations {
 //schemas
 
 //dependencies
-import * as t_primitives_to_text from "../primitives/text.js"
+import * as t_primitives_to_text from "../../serializers/primitives.js"
 
 const temp_integer_from_dictionary = <T extends p_di.Value>(
     dict: p_di.Dictionary<T>,

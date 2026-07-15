@@ -11,16 +11,15 @@ import { $$ as q_query } from "lib/implementation/queries/balans_grootboeken_csv
 p_h.run_main_command(
     () => {
         return c_command(
-            null,
+            {
+                'indentation': "   ",
+                'newline': "\n",
+            },
             {
                 'read file': rs_filesystem_unrestricted.$.queries['read file'],
                 'process data': q_query(
                     {
                         'tab size': 4,
-                        'serialization parameters': {
-                            'indentation': "   ",
-                            'newline': "\n",
-                        },
                     },
                     null
                 ),

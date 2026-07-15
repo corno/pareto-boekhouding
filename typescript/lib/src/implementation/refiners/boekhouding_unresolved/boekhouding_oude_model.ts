@@ -70,7 +70,7 @@ namespace declarations {
 
 
 //shorthands
-import * as sh from "pareto-core-shorthands/unresolved_data"
+import * as sh from 'liana-core/temp_shorthand_helpers/unresolved_data'
 
 const fix_date = ($: number) => {
     return $ - 2432895 // the date of the universal declaration of human rights (1948-12-10) in julian days, rounded down to the nearest day to avoid the strange noon changeover)
