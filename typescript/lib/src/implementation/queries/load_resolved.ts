@@ -8,9 +8,9 @@ import type * as s_file_in_file_out from "pareto-common/modules/file_in_file_out
 //dependencies
 import * as r_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters.js"
 import * as ser_path from "pareto-resources/implementation/serializers/unrestricted_path"
-import * as ser_resolved_document_deserialization from "liana-core/modules/resolving/implementation/serializers/resolved_document_deserialization"
+import * as ser_resolved_document_deserialization from "liana-core/modules/resolved_document_deserialization/implementation/serializers/resolved_document_deserialization"
 import * as ser_location from "astn-core/modules/deserialization/implementation/serializers/location"
-import * as t_resolved_document_deserialization_to_location from "liana-core/modules/resolving/implementation/transformers/resolved_document_deserialization/location"
+import * as t_resolved_document_deserialization_to_location from "liana-core/modules/resolved_document_deserialization/implementation/transformers/resolved_document_deserialization/location"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/paragraph/deprecated"
