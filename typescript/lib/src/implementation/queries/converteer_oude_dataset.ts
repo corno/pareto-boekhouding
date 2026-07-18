@@ -17,7 +17,7 @@ import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_r
 import * as ser_unresolved_document_deserialization from "liana-core/modules/unresolved_document_deserialization/implementation/serializers/unresolved_document_deserialization"
 import * as t_unresolved_document_deserialization_to_location from "liana-core/modules/unresolved_document_deserialization/implementation/transformers/unresolved_document_deserialization/location"
 import * as ser_location from "astn-core/modules/deserialization/implementation/serializers/location"
-import * as ser_path from "pareto-resources/implementation/serializers/unrestricted_path"
+import * as ser_path from "pareto-filesystem-unrestricted-api/modules/unrestricted/implementation/serializers/path"
 import * as ser_resolving from "liana-core/modules/resolved_document_deserialization/implementation/serializers/resolving"
 
 //shorthands
