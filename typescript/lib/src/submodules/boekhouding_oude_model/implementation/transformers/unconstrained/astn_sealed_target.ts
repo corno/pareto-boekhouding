@@ -23,7 +23,7 @@ namespace t_signatures {
 
 import * as s_out from "../../../interface/schemas/sealed_target.js"
 
-import * as ser_primitives from "liana-core/_implementation/serializers/primitives"
+import * as ser_primitives from "liana-core/modules/serialization/implementation/serializers/primitives"
 
 export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.dictionary(
     {

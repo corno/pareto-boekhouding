@@ -11,7 +11,7 @@ namespace t_signatures {
     >
 }
 
-import * as v_serialize from "astn-core/_implementation/transformers/sealed_target/paragraph"
+import * as v_serialize from "astn-core/modules/serialization/implementation/transformers/sealed_target/paragraph"
 
 import * as v_marshall from "../transformers/unconstrained/astn_sealed_target.js"
 

@@ -3,14 +3,14 @@ import p_super_query_result from 'pareto-core/implementation/query/super_query_r
 
 //data  types
 import type * as s_boekhouding from "../../submodules/boekhouding_resolved/interface/schemas/resolved.js"
-import type * as s_file_in_file_out from "pareto-common/interface/schemas/file_in_file_out_query"
+import type * as s_file_in_file_out from "pareto-common/modules/file_in_file_out/schemas/query"
 
 //dependencies
 import * as r_boekhouding_resolved_from_loc from "../refiners/boekhouding_resolved/list_of_characters.js"
 import * as ser_path from "pareto-resources/implementation/serializers/unrestricted_path"
-import * as ser_resolved_document_deserialization from "liana-core/_implementation/serializers/resolved_document_deserialization"
-import * as ser_location from "astn-core/_implementation/serializers/location"
-import * as t_resolved_document_deserialization_to_location from "liana-core/_implementation/transformers/resolved_document_deserialization/location"
+import * as ser_resolved_document_deserialization from "liana-core/modules/resolving/implementation/serializers/resolved_document_deserialization"
+import * as ser_location from "astn-core/modules/deserialization/implementation/serializers/location"
+import * as t_resolved_document_deserialization_to_location from "liana-core/modules/resolving/implementation/transformers/resolved_document_deserialization/location"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/shorthands/paragraph/deprecated"
