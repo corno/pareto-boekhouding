@@ -10,7 +10,7 @@ namespace declarations {
 }
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/paragraph/target"
+import * as sh from "pareto-fountain-pen/modules/paragraph/shorthands/target"
 
 export const Node: declarations.Node = ($) => p_.from.dictionary($).convert_to_list(
     ($, id) => sh.sentence(

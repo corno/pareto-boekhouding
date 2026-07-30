@@ -13,7 +13,7 @@ import * as ser_location from "astn-core/modules/deserialization/implementation/
 import * as t_resolved_document_deserialization_to_location from "liana-core/modules/resolved_document_deserialization/implementation/transformers/resolved_document_deserialization/location"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/paragraph/deprecated"
+import * as sh from "pareto-fountain-pen/modules/paragraph/shorthands/deprecated"
 
 export const $$: p_.Query_Implementation<
     p_.Query_Interface<

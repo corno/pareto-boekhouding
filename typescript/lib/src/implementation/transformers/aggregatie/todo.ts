@@ -15,7 +15,7 @@ namespace declarations {
 import * as t_tree_to_phrase from "../../../submodules/helpers/implementation/transformers/tree/phrase.js"
 
 //shorthands
-import * as sh from "pareto-fountain-pen/shorthands/paragraph/target"
+import * as sh from "pareto-fountain-pen/modules/paragraph/shorthands/target"
 
 export const Root: declarations.Root = ($) => sh.pg.sentences(
     t_tree_to_phrase.Node(
