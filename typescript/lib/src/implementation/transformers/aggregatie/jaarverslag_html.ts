@@ -3,9 +3,9 @@ import * as p_ from 'pareto-core/implementation/transformer'
 import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 
 //schemas
-import type * as s_in from "../../../interface/schemas/derived.js"
-import type * as s_temp_aggregatie_2 from "../../../interface/schemas/aggregatie.js"
-import type * as s_out from "../../../interface/schemas/static_html.js"
+import type * as s_in from "../../../schemas/derived.js"
+import type * as s_temp_aggregatie_2 from "../../../schemas/aggregatie.js"
+import type * as s_out from "../../../schemas/static_html.js"
 
 namespace declarations {
     export type Balans_Grootboekrekeningen = p_.Transformer_With_Parameter<

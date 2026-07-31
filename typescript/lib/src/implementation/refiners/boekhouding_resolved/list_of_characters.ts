@@ -1,9 +1,9 @@
 import * as p_ from 'pareto-core/implementation/refiner'
 
 //schemas
-import type * as s_in from "../../../interface/schemas/list_of_characters.js"
+import type * as s_in from "../../../schemas/list_of_characters.js"
 import type * as s_function from "liana-core/modules/resolved_document_deserialization/schemas/resolved_document_deserialization"
-import type * as s_out from "../../../interface/schemas/boekhouding_resolved.js"
+import type * as s_out from "../../../schemas/boekhouding_resolved.js"
 
 namespace declarations {
 export type Root = p_.Refiner_With_Parameter<

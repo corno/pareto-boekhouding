@@ -7,7 +7,7 @@ const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
 import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
 
-import type * as s_in from "../../../interface/schemas/resolved.js"
+import type * as s_in from "../../../schemas/resolved.js"
 namespace t_signatures {
     export type Root = p_.Transformer<
         s_in.Root,

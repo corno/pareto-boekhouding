@@ -3,9 +3,9 @@ import * as p_i from 'pareto-core/interface/__internal/Abort'
 import * as p_di from 'pareto-core/interface/schema'
 import * as p_ri from 'pareto-core/interface/refiner'
 
-import * as i_generic from "../../../interface/schemas/resolving.js"
+import * as i_generic from "../../../schemas/resolving.js"
 
-import * as i_resolved from "../../../interface/schemas/resolved.js"
+import * as i_resolved from "../../../schemas/resolved.js"
 
 import * as i_unresolved from "../../../../boekhouding_unresolved/interface/schemas/unresolved.js"
 

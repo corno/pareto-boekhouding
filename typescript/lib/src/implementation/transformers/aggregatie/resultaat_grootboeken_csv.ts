@@ -3,8 +3,8 @@ import * as p_ from 'pareto-core/implementation/transformer'
 import * as p_s from 'pareto-core/implementation/serializer'
 
 //schemas
-import * as s_out from "../../../interface/schemas/csv.js"
-import type * as s_in from "../../../interface/schemas/derived.js"
+import * as s_out from "../../../schemas/csv.js"
+import type * as s_in from "../../../schemas/derived.js"
 
 
 namespace declarations {

@@ -9,7 +9,7 @@ import p_change_context from 'pareto-core/implementation/refiner/specials/change
 
 import _p_text_from_list from 'pareto-core/implementation/transformer/specials/text_from_list'
 
-import type * as s_in from "../../../interface/schemas/resolved.js"
+import type * as s_in from "../../../schemas/resolved.js"
 namespace t_signatures {
     export type Root = p_.Transformer<
         s_in.Root,
@@ -69,7 +69,7 @@ namespace t_signatures {
     >
 }
 
-import * as s_out from "../../../interface/schemas/sealed_target.js"
+import * as s_out from "../../../schemas/sealed_target.js"
 
 import * as ser_primitives from "liana-core/modules/serialization/implementation/serializers/primitives"
 

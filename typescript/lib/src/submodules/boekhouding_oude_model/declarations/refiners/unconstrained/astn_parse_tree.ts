@@ -1,11 +1,11 @@
 
 import * as p_i from 'pareto-core/interface/__internal/Abort'
 
-import * as i_generic from "../../../interface/schemas/unmarshalling.js"
+import * as i_generic from "../../../schemas/unmarshalling.js"
 
-import * as i_out from "../../../interface/schemas/data.js"
+import * as i_out from "../../../schemas/data.js"
 
-import * as i_in from "../../../interface/schemas/parse_tree.js"
+import * as i_in from "../../../schemas/parse_tree.js"
 
 export namespace Root_ {
     

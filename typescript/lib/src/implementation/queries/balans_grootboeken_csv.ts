@@ -1,7 +1,7 @@
 import * as p_ from 'pareto-core/implementation/query'
 import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
-import type * as query_interfaces_file_in_file_out from "pareto-common/modules/file_in_file_out/interface/queries"
+import type * as query_interfaces_file_in_file_out from "pareto-common/modules/file_in_file_out/queries/interfaces"
 
 
 //dependencies

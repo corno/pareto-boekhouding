@@ -12,7 +12,7 @@ import * as _p_sl from 'pareto-core/implementation/refiner/specials/lookup'
 
 import p_variables from 'pareto-core/implementation/refiner/specials/variables'
 
-import * as s_out from "../../../interface/schemas/resolved.js"
+import * as s_out from "../../../schemas/resolved.js"
 
 import * as t_signatures from "../../../declarations/refiners/resolved/unresolved.js"
 
