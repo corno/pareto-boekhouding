@@ -12,12 +12,12 @@ import type * as s_file_in_file_out from "pareto-common/modules/file_in_file_out
 import * as r_boekhouding_oude_model_from_loc from "../../submodules/boekhouding_oude_model/implementation/refiners/unconstrained/list_of_characters.js"
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../submodules/boekhouding_resolved/implementation/refiners/resolved/unresolved.js"
 import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../refiners/boekhouding_unresolved/boekhouding_oude_model.js"
-import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_resolved/implementation/transformers/resolved/paragraph.js"
+import * as t_boekhouding_resolved_to_prose from "../../submodules/boekhouding_resolved/schemas/resolved/transformers/paragraph.js"
 
-import * as ser_unresolved_document_deserialization from "liana-core/modules/unresolved_document_deserialization/implementation/serializers/unresolved_document_deserialization"
-import * as t_unresolved_document_deserialization_to_location from "liana-core/modules/unresolved_document_deserialization/implementation/transformers/unresolved_document_deserialization/location"
+import * as ser_unresolved_document_deserialization from "liana-core/modules/unresolved_document_deserialization/schemas/unresolved_document_deserialization/serializers"
+import * as t_unresolved_document_deserialization_to_location from "liana-core/modules/unresolved_document_deserialization/schemas/unresolved_document_deserialization/transformers/location"
 import * as ser_location from "astn-core/modules/deserialization/schemas/location/serializers"
-import * as ser_path from "pareto-filesystem-unrestricted-api/modules/unrestricted/implementation/serializers/path"
+import * as ser_path from "pareto-filesystem-unrestricted-api/modules/unrestricted/schemas/path/serializers"
 import * as ser_resolving from "liana-core/modules/resolved_document_deserialization/schemas/resolving/serializers"
 
 //shorthands

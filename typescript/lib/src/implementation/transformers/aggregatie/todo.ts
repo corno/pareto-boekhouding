@@ -12,7 +12,7 @@ namespace declarations {
 }
 
 //dependencies
-import * as t_tree_to_phrase from "../../../submodules/helpers/implementation/transformers/tree/phrase.js"
+import * as t_tree_to_phrase from "../../../submodules/helpers/schemas/tree/transformers/phrase.js"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/modules/paragraph/schemas/paragraph/shorthands/target"

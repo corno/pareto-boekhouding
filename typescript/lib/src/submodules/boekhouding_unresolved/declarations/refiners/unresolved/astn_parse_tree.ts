@@ -5,7 +5,7 @@ import * as i_generic from "../../../schemas/unmarshalling.js"
 
 import * as i_out from "../../../schemas/unresolved.js"
 
-import * as i_in from "../../../schemas/parse_tree.js"
+import * as i_in from "astn-core/modules/deserialization/schemas/parse_tree/schema"
 
 export namespace Root_ {
     

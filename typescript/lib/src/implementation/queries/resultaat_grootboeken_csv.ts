@@ -5,7 +5,7 @@ import type * as query_interfaces_file_in_file_out from "pareto-common/modules/f
 
 //dependencies
 import * as t_resolved_to_derived from "../transformers/boekhouding_resolved/derived.js"
-import * as t_csv_to_paragraph from "pareto-csv/implementation/transformers/csv/paragraph"
+import * as t_csv_to_paragraph from "pareto-csv/schemas/csv/transformers/paragraph"
 import * as t_aggregatie_to_resultaat_grootboeken_csv from "../transformers/aggregatie/resultaat_grootboeken_csv.js"
 
 import { $$ as q_load } from "./load_resolved.js"
