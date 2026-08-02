@@ -7,7 +7,7 @@ const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
 import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
 
-import type * as s_in from "../../../schemas/resolved/schema.js"
+import type * as s_in from "../schema.js"
 namespace t_signatures {
     export type Root = p_.Transformer<
         s_in.Root,
@@ -67,7 +67,7 @@ namespace t_signatures {
     >
 }
 
-import * as s_out from "../../../schemas/unresolved/schema.js"
+import * as s_out from "../../unresolved/schema.js"
 
 export const Root: t_signatures.Root = ($) => ({
     'Fiscaal': p_change_context(
