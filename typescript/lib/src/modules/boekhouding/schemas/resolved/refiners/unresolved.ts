@@ -11,7 +11,7 @@ import * as i_generic from "liana-core/modules/resolved_document_deserialization
 import * as i_resolved from "../schema.js"
 
 import * as i_unresolved from "../../unresolved/schema.js"
-
+namespace declarations {
 export namespace Fiscaal_ {
     
     export type I = i_unresolved.Fiscaal
@@ -419,6 +419,7 @@ export type Eerste_boekjaar_ = (
     },
     parameters: symbol,
 ) => Eerste_boekjaar_.O
+}
 
 const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
@@ -433,7 +434,7 @@ import p_variables from 'pareto-core/implementation/refiner/specials/variables'
 
 import * as s_out from "../schema.js"
 
-export const Fiscaal: Fiscaal_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Fiscaal: declarations.Fiscaal_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Balans_Hoofdcategorieen = p_change_context(
@@ -562,7 +563,7 @@ export const Fiscaal: Fiscaal_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     },
 )
 
-export const Grootboek_Categorieen: Grootboek_Categorieen_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Correctietypes_vennootschapsbelasting = p_change_context(
@@ -856,7 +857,7 @@ export const Grootboek_Categorieen: Grootboek_Categorieen_ = ($, abort, $l, $p) 
     },
 )
 
-export const Beheer: Beheer_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_BTW$mi_categorieen = p_change_context(
@@ -1479,7 +1480,7 @@ export const Beheer: Beheer_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     },
 )
 
-export const Grootboekrekeningen: Grootboekrekeningen_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Grootboekrekeningen: declarations.Grootboekrekeningen_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Balans = p_change_context(
@@ -1569,7 +1570,7 @@ export const Grootboekrekeningen: Grootboekrekeningen_ = ($, abort, $l, $p) => p
     },
 )
 
-export const Jaarbeheer: Jaarbeheer_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Resultaat = p_change_context(
@@ -2269,7 +2270,7 @@ export const Jaarbeheer: Jaarbeheer_ = ($, abort, $l, $p) => p_.literal.group_re
     },
 )
 
-export const Overige_balans_item: Overige_balans_item_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Beginsaldo = p_change_context(
@@ -2412,7 +2413,7 @@ export const Overige_balans_item: Overige_balans_item_ = ($, abort, $l, $p) => p
     },
 )
 
-export const Verwijzing_naar_Informele_rekening: Verwijzing_naar_Informele_rekening_ = ($, abort, $l, $p) => ({
+export const Verwijzing_naar_Informele_rekening: declarations.Verwijzing_naar_Informele_rekening_ = ($, abort, $l, $p) => ({
     'l entry': _p_sl.acyclic.from_resolved_dictionary(
         $p['Jaarbeheer'].Balans['Informele rekeningen'],
     ).get_entry(
@@ -2441,7 +2442,7 @@ export const Verwijzing_naar_Informele_rekening: Verwijzing_naar_Informele_reken
     'l id': $['l reference'],
 })
 
-export const Verwijzing_naar_Bankrekening: Verwijzing_naar_Bankrekening_ = ($, abort, $l, $p) => ({
+export const Verwijzing_naar_Bankrekening: declarations.Verwijzing_naar_Bankrekening_ = ($, abort, $l, $p) => ({
     'l entry': _p_sl.acyclic.from_resolved_dictionary(
         $p['Jaarbeheer'].Balans['Bankrekeningen'],
     ).get_entry(
@@ -2470,7 +2471,7 @@ export const Verwijzing_naar_Bankrekening: Verwijzing_naar_Bankrekening_ = ($, a
     'l id': $['l reference'],
 })
 
-export const Handelstransacties: Handelstransacties_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Inkopen = p_change_context(
@@ -3807,7 +3808,7 @@ export const Handelstransacties: Handelstransacties_ = ($, abort, $l, $p) => p_.
     },
 )
 
-export const Rekening_Mutatie: Rekening_Mutatie_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Jaar = p_change_context(
@@ -3978,7 +3979,7 @@ export const Rekening_Mutatie: Rekening_Mutatie_ = ($, abort, $l, $p) => p_.lite
     },
 )
 
-export const Mutaties: Mutaties_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     (): s_out.Mutaties => {
 
         const prop_Verrekenposten: s_out.Mutaties.Verrekenposten = p_change_context(
@@ -4475,7 +4476,7 @@ export const Mutaties: Mutaties_ = ($, abort, $l, $p) => p_.literal.group_resolv
     },
 )
 
-export const Eerste_boekjaar: Eerste_boekjaar_ = ($, abort, $l, $p) => p_variables(
+export const Eerste_boekjaar: declarations.Eerste_boekjaar_ = ($, abort, $l, $p) => p_variables(
     () => {
 
         const var_location = $['l location']
@@ -4539,7 +4540,7 @@ export const Eerste_boekjaar: Eerste_boekjaar_ = ($, abort, $l, $p) => p_variabl
     },
 )
 
-export const Jaren: Jaren_ = ($, abort, $l, $p) => p_.from.dictionary($['l dictionary'],
+export const Jaren: declarations.Jaren_ = ($, abort, $l, $p) => p_.from.dictionary($['l dictionary'],
 ).resolve(
     ($, id, $a, $c): s_out.Jaren.D => p_change_context(
         $['l entry'],
@@ -4675,7 +4676,7 @@ export const Jaren: Jaren_ = ($, abort, $l, $p) => p_.from.dictionary($['l dicti
     ),
 )
 
-export const Root: Root_ = ($, abort, $l, $p) => p_.literal.group_resolve(
+export const Root: declarations.Root_ = ($, abort, $l, $p) => p_.literal.group_resolve(
     () => {
 
         const prop_Fiscaal = p_change_context(

@@ -7,6 +7,7 @@ import * as i_out from "../schema.js"
 
 import * as i_in from "astn-core/modules/deserialization/schemas/parse_tree/schema"
 
+namespace declarations {    
 export namespace Root_ {
     
     export type I = i_in.Value
@@ -44,7 +45,7 @@ export type Bestandsnaam_ = (
     context: Bestandsnaam_.I,
     abort: p_i.Abort<Bestandsnaam_.E>,
 ) => Bestandsnaam_.O
-
+}
 
 import * as p_ from 'pareto-core/implementation/refiner'
 import * as p_di from 'pareto-core/interface/schema'
@@ -60,7 +61,7 @@ import * as v_unmarshalled_from_parse_tree from "liana-core/modules/value_unmars
 
 import * as v_parse_tree_to_location from "astn-core/modules/deserialization/schemas/parse_tree/transformers/start_token_range"
 
-export const Root: Root_ = ($, abort) => p_change_context(
+export const Root: declarations.Root_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -7626,7 +7627,7 @@ export const Root: Root_ = ($, abort) => p_change_context(
     ),
 )
 
-export const Bestandsnaam: Bestandsnaam_ = ($, abort) => p_change_context(
+export const Bestandsnaam: declarations.Bestandsnaam_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(

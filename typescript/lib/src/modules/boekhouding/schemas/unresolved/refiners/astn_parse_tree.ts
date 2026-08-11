@@ -11,6 +11,7 @@ import * as i_out from "../schema.js"
 
 import * as i_in from "astn-core/modules/deserialization/schemas/parse_tree/schema"
 
+namespace declarations {
 export namespace Root_ {
     
     export type I = i_in.Value
@@ -276,6 +277,7 @@ export type Eerste_boekjaar_ = (
     context: Eerste_boekjaar_.I,
     abort: p_i.Abort<Eerste_boekjaar_.E>,
 ) => Eerste_boekjaar_.O
+}
 
 const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
@@ -293,7 +295,7 @@ import * as v_unmarshalled_from_parse_tree from "liana-core/modules/value_unmars
 
 import * as v_parse_tree_to_location from "astn-core/modules/deserialization/schemas/parse_tree/transformers/start_token_range"
 
-export const Root: Root_ = ($, abort) => p_change_context(
+export const Root: declarations.Root_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -393,7 +395,7 @@ export const Root: Root_ = ($, abort) => p_change_context(
     ),
 )
 
-export const Fiscaal: Fiscaal_ = ($, abort) => p_change_context(
+export const Fiscaal: declarations.Fiscaal_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -751,7 +753,7 @@ export const Fiscaal: Fiscaal_ = ($, abort) => p_change_context(
     ),
 )
 
-export const Grootboek_Categorieen: Grootboek_Categorieen_ = ($, abort) => p_change_context(
+export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -1325,7 +1327,7 @@ export const Grootboek_Categorieen: Grootboek_Categorieen_ = ($, abort) => p_cha
     ),
 )
 
-export const Beheer: Beheer_ = ($, abort) => p_change_context(
+export const Beheer: declarations.Beheer_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -2827,7 +2829,7 @@ export const Beheer: Beheer_ = ($, abort) => p_change_context(
     ),
 )
 
-export const Grootboekrekeningen: Grootboekrekeningen_ = ($, abort) => p_change_context(
+export const Grootboekrekeningen: declarations.Grootboekrekeningen_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -3009,7 +3011,7 @@ export const Grootboekrekeningen: Grootboekrekeningen_ = ($, abort) => p_change_
     ),
 )
 
-export const Jaarbeheer: Jaarbeheer_ = ($, abort) => p_change_context(
+export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -4332,7 +4334,7 @@ export const Jaarbeheer: Jaarbeheer_ = ($, abort) => p_change_context(
     ),
 )
 
-export const Overige_balans_item: Overige_balans_item_ = ($, abort) => p_change_context(
+export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -4517,7 +4519,7 @@ export const Overige_balans_item: Overige_balans_item_ = ($, abort) => p_change_
     ),
 )
 
-export const Verwijzing_naar_Informele_rekening: Verwijzing_naar_Informele_rekening_ = ($, abort) => ({
+export const Verwijzing_naar_Informele_rekening: declarations.Verwijzing_naar_Informele_rekening_ = ($, abort) => ({
     'l location': v_parse_tree_to_location.Value(
         $,
     ),
@@ -4529,7 +4531,7 @@ export const Verwijzing_naar_Informele_rekening: Verwijzing_naar_Informele_reken
     ),
 })
 
-export const Verwijzing_naar_Bankrekening: Verwijzing_naar_Bankrekening_ = ($, abort) => ({
+export const Verwijzing_naar_Bankrekening: declarations.Verwijzing_naar_Bankrekening_ = ($, abort) => ({
     'l location': v_parse_tree_to_location.Value(
         $,
     ),
@@ -4541,7 +4543,7 @@ export const Verwijzing_naar_Bankrekening: Verwijzing_naar_Bankrekening_ = ($, a
     ),
 })
 
-export const Handelstransacties: Handelstransacties_ = ($, abort) => p_change_context(
+export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -6660,7 +6662,7 @@ export const Handelstransacties: Handelstransacties_ = ($, abort) => p_change_co
     ),
 )
 
-export const Mutaties: Mutaties_ = ($, abort) => p_change_context(
+export const Mutaties: declarations.Mutaties_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -7576,7 +7578,7 @@ export const Mutaties: Mutaties_ = ($, abort) => p_change_context(
     ),
 )
 
-export const Jaren: Jaren_ = ($, abort) => p_change_context(
+export const Jaren: declarations.Jaren_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Dictionary(
         $,
         ($) => abort(
@@ -7808,7 +7810,7 @@ export const Jaren: Jaren_ = ($, abort) => p_change_context(
     }),
 )
 
-export const Rekening_Mutatie: Rekening_Mutatie_ = ($, abort) => p_change_context(
+export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(
         $,
         ($) => abort(
@@ -7963,7 +7965,7 @@ export const Rekening_Mutatie: Rekening_Mutatie_ = ($, abort) => p_change_contex
     ),
 )
 
-export const Eerste_boekjaar: Eerste_boekjaar_ = ($, abort) => p_change_context(
+export const Eerste_boekjaar: declarations.Eerste_boekjaar_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.State(
         $,
         ($) => abort(

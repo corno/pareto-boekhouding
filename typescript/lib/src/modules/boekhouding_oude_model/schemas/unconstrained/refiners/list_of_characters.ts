@@ -9,6 +9,7 @@ import * as i_in from "astn-core/modules/deserialization/schemas/list_of_charact
 
 import * as i_out from "../schema.js"
 
+namespace declarations {
 export namespace Root {
     
     export type I = i_in.List_Of_Characters
@@ -32,12 +33,13 @@ export type Root = (
         readonly 'tab size': Root.P.tab_size
     },
 ) => Root.O
+}
 
 import * as v_deserialize from "astn-core/modules/deserialization/schemas/parse_tree/refiners/list_of_characters"
 
 import * as v_unmarshall from "./astn_parse_tree.js"
 
-export const Root: Root = ($, abort, $p) => v_unmarshall.Root(
+export const Root: declarations.Root = ($, abort, $p) => v_unmarshall.Root(
     v_deserialize.Document(
         $,
         ($) => abort(
