@@ -32,6 +32,24 @@ export const Root: declarations.Root = ($) => {
                         ($) => {
                             return {
                                 'bron': $,
+                                'regels': p_.from.dictionary($.Regels).map_optionally(
+                                    ($) => {
+                                        const $v_bron = $
+                                        return p_.from.state($.Bedrag).decide(
+                                            ($) => {
+                                                switch ($[0]) {
+                                                    case 'Bekend': return p_.option($, ($) =>
+                                                        p_.literal.set({
+                                                            'bedrag context': $,
+                                                            'bron': $v_bron
+                                                        })
+                                                    )
+                                                    default: return p_.exhaustive($[0])
+                                                }
+                                            }
+                                        )
+                                    }
+                                ),
                                 'totaal btw': p_.from.dictionary($.Regels).sum(
                                     ($) => p_.from.state($.Bedrag).decide(
                                         ($) => {
@@ -42,7 +60,8 @@ export const Root: declarations.Root = ($) => {
                                                 )
                                                 default: return p_.exhaustive($[0])
                                             }
-                                        })
+                                        }
+                                    )
                                 ),
                                 'totaal ex btw': p_.from.dictionary($.Regels).sum(
                                     ($) => p_.from.state($.Bedrag).decide(
@@ -54,7 +73,8 @@ export const Root: declarations.Root = ($) => {
                                                 )
                                                 default: return p_.exhaustive($[0])
                                             }
-                                        })
+                                        }
+                                    )
                                 ),
                             }
                         })
@@ -95,18 +115,18 @@ export const Root: declarations.Root = ($) => {
 
                                     }
                                 })
-                            const totaal_btw = p_.from.dictionary($p_regels).sum(
-                                ($) => $['btw bedrag']
-                            )
+                            // const $p_totaal_btw = p_.from.dictionary($p_regels).sum(
+                            //     ($) => $['btw bedrag']
+                            // )
                             const totaal_ex_btw = p_.from.dictionary($p_regels).sum(
                                 ($) => $.bron['Bedrag exclusief BTW']
                             )
                             return {
                                 'bron': $,
                                 'regels': $p_regels,
-                                'totaal btw': totaal_btw,
+                                // 'totaal btw': $p_totaal_btw,
                                 'totaal ex btw': totaal_ex_btw,
-                                'totaal inclusief btw': totaal_ex_btw + totaal_btw,
+                                // 'totaal inclusief btw': totaal_ex_btw + $p_totaal_btw,
                             }
                         })
                     return {
@@ -127,12 +147,14 @@ export const Root: declarations.Root = ($) => {
                             ).sum(
                                 ($) => $['totaal btw']
                             )
-                            const $p_verkopen_totaal = p_.from.dictionary(
+                            const $p_verkopen_totaal = - p_.from.dictionary(
                                 p_.from.dictionary($p_handelstransacties.verkopen).filter(
                                     ($) => $.bron['BTW-periode']['l entry'] === context
                                 )
                             ).sum(
-                                ($) => -$['totaal btw']
+                                ($) => p_.from.dictionary($.regels).sum(
+                                    ($) => $['btw bedrag']
+                                )
                             )
 
                             const $p_handelsmutaties =
@@ -792,6 +814,28 @@ export const Root: declarations.Root = ($) => {
                         ($): s_out.Overige_Balans_Item => {
                             const $v_context = $
 
+                            const $p_inkopen: s_out.Overige_Balans_Item['inkopen'] = p_.from.dictionary($p_handelstransacties.inkopen).map_optionally(
+                                ($) => {
+                                    const $p_regels = p_.from.dictionary($.regels).filter(
+                                        ($): boolean => p_.from.state($.bron.Type).decide(
+                                            ($): boolean => {
+                                                switch ($[0]) {
+                                                    case 'Balans': return p_.ss($, ($) => $['Balans item']['l entry'] === $v_context)
+                                                    case 'Kosten': return p_.ss($, ($) => false)
+                                                    default: return p_.au($[0])
+                                                }
+                                            }
+                                        )
+                                    )
+                                    return p_.from.dictionary($p_regels).on_has_entries(
+                                        ($) => p_.literal.set({
+                                            'regels': $
+                                        }),
+                                        () => p_.literal.not_set()
+                                    )
+                                }
+                            )
+
                             const $p_mutaties: s_out.Overige_Balans_Item['mutaties'] = p_.literal.group_resolve(() => {
                                 const $p_memoriaal_boekingen = p_.from.dictionary(
                                     p_.from.dictionary($v_bron_jaar.Mutaties['Overige Balans Items']).filter(
@@ -803,20 +847,11 @@ export const Root: declarations.Root = ($) => {
                                     )
 
                                 )
-                                const $p_inkopen = p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).sum(
+                                const $p_inkopenx = p_.from.dictionary($p_inkopen).sum(
                                     ($) => p_.from.dictionary(
-                                        p_.from.dictionary($.Regels).filter(
-                                            ($) => p_.from.state($.Type).decide(
-                                                ($) => $[0] === 'Balans' && p_.option($, ($) => $['Balans item']['l entry'] === $v_context))
-                                        )
+                                        $.regels
                                     ).sum(
-                                        ($) => p_.from.state($.Bedrag).decide(
-                                            ($): number => {
-                                                switch ($[0]) {
-                                                    case 'Bekend': return p_.option($, ($) => $['Bedrag inclusief geheven BTW'] - $['BTW-bedrag'])
-                                                    default: return p_.exhaustive($[0])
-                                                }
-                                            })
+                                        ($) => $['bedrag context']['Bedrag inclusief geheven BTW'] - $['bedrag context']['BTW-bedrag']
                                     )
                                 )
 
@@ -832,11 +867,11 @@ export const Root: declarations.Root = ($) => {
                                 )
                                 return {
                                     'memoriaal boekingen': $p_memoriaal_boekingen,
-                                    'inkopen': $p_inkopen,
+                                    'inkopen': $p_inkopenx,
                                     'verkopen': $p_verkopen,
                                     'totaal':
                                         + $p_memoriaal_boekingen
-                                        + $p_inkopen
+                                        + $p_inkopenx
                                         + $p_verkopen
                                 }
                             })
@@ -861,6 +896,7 @@ export const Root: declarations.Root = ($) => {
                                 + $p_mutaties.totaal
                             return {
                                 'bron': $,
+                                'inkopen': $p_inkopen,
                                 'mutaties': $p_mutaties,
                                 'eindsaldo': $p_eindsaldo,
                                 'overgenomen': $p_overgenomen,
@@ -1032,7 +1068,9 @@ export const Root: declarations.Root = ($) => {
                                             }
                                         })
                                 )).sum(
-                                    ($) => $['totaal inclusief btw']
+                                    ($) => p_.from.dictionary($.regels).sum(
+                                        ($) => $['btw bedrag'] + $.bron['Bedrag exclusief BTW']
+                                    )
                                 )
                             const $p_bankrekening_mutaties = p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).sum(
                                 ($) => {

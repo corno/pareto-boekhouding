@@ -46,14 +46,17 @@ export type Inkoop = {
     'bron': s_boekhouding.Handelstransacties.Inkopen.D
     'totaal ex btw': Bedrag_in_Euro
     'totaal btw': Bedrag_in_Euro
+    'regels': p_.Dictionary<Inkoop_Regel>
+}
+
+export type Inkoop_Regel = {
+    'bron': s_boekhouding.Handelstransacties.Inkopen.D.Regels.D
+    'bedrag context': s_boekhouding.Handelstransacties.Inkopen.D.Regels.D.Bedrag.Bekend
 }
 
 export type Verkoop = {
     'bron': s_boekhouding.Handelstransacties.Verkopen.D
     'regels': p_.Dictionary<Verkoop_Regel>
-    'totaal ex btw': Bedrag_in_Euro
-    'totaal btw': Bedrag_in_Euro
-    'totaal inclusief btw': Bedrag_in_Euro
 }
 
 export type Verkoop_Regel = {
@@ -91,6 +94,9 @@ export type Btw_Periode = {
 
 export type Overige_Balans_Item = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
+    'inkopen': p_.Dictionary<{
+        'regels': p_.Dictionary<Inkoop_Regel>
+    }>
     'mutaties': {
         'memoriaal boekingen': Bedrag_in_Euro
         'inkopen': Bedrag_in_Euro
