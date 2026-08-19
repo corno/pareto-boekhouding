@@ -5,7 +5,7 @@ import type * as query_interfaces_file_in_file_out from "pareto-common/modules/f
 
 //dependencies
 import * as t_resolved_to_derived from "../../schemas/boekhouding_resolved/transformers/derived.js"
-import * as t_aggregatie_to_todo from "../../schemas/aggregatie/transformers/todo.js"
+import * as t_aggregatie_to_todo from "../../schemas/derived/transformers/todo.js"
 
 import { $$ as q_load } from "./load_resolved.js"
 

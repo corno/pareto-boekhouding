@@ -21,15 +21,15 @@ import * as t_to_derived from "./derived.js"
 
 export const Root: declarations.Root = ($) => {
     const $p_jaren = t_to_derived.Root($).jaren
-    const $p_jaren2: s_out.Root['jaren2'] = p_temp.from.dictionary($p_jaren).resolve(
-        ($, id, $al): s_out.Jaar2 => {
+    const $p_jaren2: s_out.Root['jaren'] = p_temp.from.dictionary($p_jaren).resolve(
+        ($, id, $al): s_out.Jaar => {
             const $v_id = id
             const $v_jaar = $
             const $v_bron_jaar = $v_jaar.bron
 
 
-            const $p_resultaat: s_out.Jaar2['resultaat'] = p_.literal.group_resolve(() => {
-                const $p_resultaat_grootboekrekeningen: s_out.Resultaat.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Resultaat).map(
+            const $p_resultaat: s_out.Jaar['resultaat'] = p_.literal.group_resolve(() => {
+                const $p_grootboekrekeningen: s_out.Resultaat.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Resultaat).map(
                     ($): s_out.Resultaat.Grootboekrekening => {
                         const context = $
                         const $p_dagboeken = p_.literal.dictionary<s_out.Resultaat.Dagboek>({
@@ -128,7 +128,7 @@ export const Root: declarations.Root = ($) => {
                                 ($) => {
                                     switch ($[0]) {
                                         case 'Kosten': return p_.ss($, ($) => ['kosten', null])
-                                        case 'Opbrengsten':return p_.ss($, ($) => ['opbrengsten', null])
+                                        case 'Opbrengsten': return p_.ss($, ($) => ['opbrengsten', null])
                                         default: return p_.au($[0])
                                     }
                                 }
@@ -136,26 +136,16 @@ export const Root: declarations.Root = ($) => {
                             'hoofdcategorie': $.Stam.Hoofdcategorie['l id'],
                             'subcategorie': $.Stam.Subcategorie['l id'],
                             'dagboeken': $p_dagboeken,
-                            'totaal': p_.from.dictionary($p_dagboeken).sum(
-                                ($) => p_.from.dictionary($.boekingen).sum(
-                                    ($) => $
-                                )
-                            )
                         }
                     }
                 )
 
-                const resultaat = p_.from.dictionary($p_resultaat_grootboekrekeningen).sum(
-                    ($) => $.totaal
-                )
-
                 return {
-                    'grootboekrekeningen': $p_resultaat_grootboekrekeningen,
-                    'resultaat': resultaat,
+                    'grootboekrekeningen': $p_grootboekrekeningen,
                 }
             })
 
-            const $p_jaar2_balans: s_out.Jaar2['balans'] = p_.literal.group_resolve((): s_out.Jaar2['balans'] => {
+            const $p_jaar2_balans: s_out.Jaar['balans'] = p_.literal.group_resolve((): s_out.Jaar['balans'] => {
 
 
 
@@ -180,7 +170,13 @@ export const Root: declarations.Root = ($) => {
                                             'beginsaldo': 0,
                                             'mutaties': {
                                                 'xx': p_.literal.dictionary({}),
-                                                'totaal': - $p_resultaat.resultaat,
+                                                'totaal': - p_.from.dictionary($p_resultaat.grootboekrekeningen).sum(
+                                                    ($) => p_.from.dictionary($.dagboeken).sum(
+                                                        ($) => p_.from.dictionary($.boekingen).sum(
+                                                            ($) => $
+                                                        )
+                                                    )
+                                                ),
                                             },
                                         })
                                         : p_.literal.not_set(),
@@ -278,7 +274,7 @@ export const Root: declarations.Root = ($) => {
                                 ($) => {
                                     switch ($[0]) {
                                         case 'Activa': return p_.ss($, ($) => ['activa', null])
-                                        case 'Passiva':return p_.ss($, ($) => ['passiva', null])
+                                        case 'Passiva': return p_.ss($, ($) => ['passiva', null])
                                         default: return p_.au($[0])
                                     }
                                 }
@@ -286,34 +282,19 @@ export const Root: declarations.Root = ($) => {
                             'hoofdcategorie': $.Stam.Hoofdcategorie['l id'],
                             'subcategorie': $.Stam.Subcategorie['l id'],
                             'clusters': $p_clusters,
-                            'totaal': {
-                                'beginsaldo': p_.from.dictionary($p_clusters).sum(
-                                    ($) => p_.from.dictionary($.dagboeken).sum(
-                                        ($) => $.beginsaldo
-                                    )
-                                ),
-                                'mutaties': {
-                                    'xx': null,
-                                    'totaal': p_.from.dictionary($p_clusters).sum(
-                                        ($) => p_.from.dictionary($.dagboeken).sum(
-                                            ($) => $.mutaties.totaal
-                                        )
-                                    )
-                                },
-                            }
                         }
                     }
                 )
                 return {
                     'grootboekrekeningen': $p_balans_grootboekrekeningen,
-                    'check balans': {
-                        'begin': p_.from.dictionary($p_balans_grootboekrekeningen).sum(
-                            ($) => $.totaal.beginsaldo
-                        ) !== 0,
-                        'eind': p_.from.dictionary($p_balans_grootboekrekeningen).sum(
-                            ($) => $.totaal.beginsaldo + $.totaal.mutaties.totaal
-                        ) !== 0,
-                    },
+                    // 'check balans': {
+                    //     'begin': p_.from.dictionary($p_balans_grootboekrekeningen).sum(
+                    //         ($) => $.totaal.beginsaldo
+                    //     ) !== 0,
+                    //     'eind': p_.from.dictionary($p_balans_grootboekrekeningen).sum(
+                    //         ($) => $.totaal.beginsaldo + $.totaal.mutaties.totaal
+                    //     ) !== 0,
+                    // },
                 }
             })
             return {
@@ -324,7 +305,6 @@ export const Root: declarations.Root = ($) => {
     )
     return {
         'bron': $,
-        'jaren': $p_jaren,
-        'jaren2': $p_jaren2,
+        'jaren': $p_jaren2,
     }
 }

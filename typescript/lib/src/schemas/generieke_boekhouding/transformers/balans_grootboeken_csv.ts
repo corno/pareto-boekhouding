@@ -26,40 +26,55 @@ export const Root: declarations.Root = ($) => sh.CSV(
         "jaar", "grootboekrekening", "type", "bedrag",
     ]))),
     t_nested_to_csv.Composed_Dictionary(
-        p_.from.dictionary($.jaren2).map(
+        p_.from.dictionary($.jaren).map(
             ($): s_nested.Dictionary => ['composed', p_.from.dictionary($.balans['grootboekrekeningen']).map(
-                ($): s_nested.Dictionary => ['leaf', p_.literal.dictionary({
-                    "begin": sh.row(p_.literal.list([
-                        ser_primitives.Fractional_Decimal(
-                            $.totaal.beginsaldo,
-                            {
-                                'number of fractional digits': 2,
-                                'decimal separator character code': 46, // '.'
-                                'thousand separator character code': p_.literal.not_set()
-                            }
-                        ),
-                    ])),
-                    "mutaties": sh.row(p_.literal.list([
-                        ser_primitives.Fractional_Decimal(
-                            $.totaal.mutaties.totaal,
-                            {
-                                'number of fractional digits': 2,
-                                'decimal separator character code': 46, // ','
-                                'thousand separator character code': p_.literal.not_set()
-                            }
-                        ),
-                    ])),
-                    "eind": sh.row(p_.literal.list([
-                        ser_primitives.Fractional_Decimal(
-                            $.totaal.beginsaldo + $.totaal.mutaties.totaal,
-                            {
-                                'number of fractional digits': 2,
-                                'decimal separator character code': 46, // ','
-                                'thousand separator character code': p_.literal.not_set()
-                            }
-                        ),
-                    ])),
-                })]
+                ($): s_nested.Dictionary => {
+
+                    const begin_saldo = p_.from.dictionary($.clusters).sum(
+                        ($) => p_.from.dictionary($.dagboeken).sum(
+                            ($) => $.beginsaldo
+                        )
+                    )
+
+                    const mutatie_saldo = p_.from.dictionary($.clusters).sum(
+                        ($) => p_.from.dictionary($.dagboeken).sum(
+                            ($) => $.mutaties.totaal
+                        )
+                    )
+
+                    return ['leaf', p_.literal.dictionary({
+                        "begin": sh.row(p_.literal.list([
+                            ser_primitives.Fractional_Decimal(
+                                begin_saldo,
+                                {
+                                    'number of fractional digits': 2,
+                                    'decimal separator character code': 46, // '.'
+                                    'thousand separator character code': p_.literal.not_set()
+                                }
+                            ),
+                        ])),
+                        "mutaties": sh.row(p_.literal.list([
+                            ser_primitives.Fractional_Decimal(
+                                mutatie_saldo,
+                                {
+                                    'number of fractional digits': 2,
+                                    'decimal separator character code': 46, // ','
+                                    'thousand separator character code': p_.literal.not_set()
+                                }
+                            ),
+                        ])),
+                        "eind": sh.row(p_.literal.list([
+                            ser_primitives.Fractional_Decimal(
+                                begin_saldo + mutatie_saldo,
+                                {
+                                    'number of fractional digits': 2,
+                                    'decimal separator character code': 46, // ','
+                                    'thousand separator character code': p_.literal.not_set()
+                                }
+                            ),
+                        ])),
+                    })]
+                }
             )]
         )
     ),

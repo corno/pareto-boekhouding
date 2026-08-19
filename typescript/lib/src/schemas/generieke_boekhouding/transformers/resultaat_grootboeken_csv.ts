@@ -28,7 +28,7 @@ export const Root: declarations.Root = ($) => sh.CSV(
         "jaar", "grootboekrekening", "dagboek", "boeking", "bedrag",
     ]))),
     t_nested_to_csv.Composed_Dictionary(
-        p_.from.dictionary($.jaren2).map(
+        p_.from.dictionary($.jaren).map(
             ($): s_nested.Dictionary => ['composed', p_.from.dictionary($.resultaat.grootboekrekeningen).map(
                 ($): s_nested.Dictionary => ['composed', p_.from.dictionary($.dagboeken).map(
                     ($): s_nested.Dictionary => ['leaf', p_.from.dictionary($.boekingen).map(

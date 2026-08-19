@@ -52,14 +52,26 @@ export const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen
 
             const context = $
 
+            const beginsaldo = p_.from.dictionary($.clusters).sum(
+                ($) => p_.from.dictionary($.dagboeken).sum(
+                    ($) => $.beginsaldo
+                )
+            )
+            const mutatie_saldo = p_.from.dictionary($.clusters).sum(
+                ($) => p_.from.dictionary($.dagboeken).sum(
+                    ($) => $.mutaties.totaal
+                )
+            )
+
+
             return {
                 'hoofdcategorie': $.hoofdcategorie,
                 'subcategorie': $.subcategorie,
                 'bedrag': p_.from.state($p.type).decide(
                     ($): number => {
                         switch ($[0]) {
-                            case 'begin': return p_.option($, ($) => context.totaal.beginsaldo)
-                            case 'eind': return p_.option($, ($) => context.totaal.beginsaldo + context.totaal.mutaties.totaal)
+                            case 'begin': return p_.option($, ($) => beginsaldo)
+                            case 'eind': return p_.option($, ($) => beginsaldo + mutatie_saldo)
                             default: return p_.exhaustive($[0])
                         }
                     }),
@@ -106,7 +118,11 @@ export const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekreke
         ($) => ({
             'hoofdcategorie': $.hoofdcategorie,
             'subcategorie': $.subcategorie,
-            'bedrag': $.totaal,
+            'bedrag': p_.from.dictionary($.dagboeken).sum(
+                ($) => p_.from.dictionary($.boekingen).sum(
+                    ($) => $
+                )
+            ),
         })
     )
 
@@ -145,7 +161,7 @@ export const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekreke
 
 export const Root: declarations.Root = ($) => {
     return {
-        'jaren': p_.from.dictionary($.jaren2).map(
+        'jaren': p_.from.dictionary($.jaren).map(
             ($) => ({
                 'beginbalans': {
                     'links': Balans_Grootboekrekeningen(
@@ -190,7 +206,13 @@ export const Root: declarations.Root = ($) => {
                         }
                     ),
                 },
-                'resultaat bedrag': $.resultaat.resultaat,
+                'resultaat bedrag': p_.from.dictionary($.resultaat.grootboekrekeningen).sum(
+                    ($) => p_.from.dictionary($.dagboeken).sum(
+                        ($) => p_.from.dictionary($.boekingen).sum(
+                            ($) => $
+                        )
+                    )
+                ),
                 'eindbalans': {
                     'links': Balans_Grootboekrekeningen(
                         p_.from.dictionary($.balans['grootboekrekeningen']).filter(

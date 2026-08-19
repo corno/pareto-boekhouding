@@ -3,20 +3,15 @@ import * as p_ from 'pareto-core/interface/schema'
 import type * as s_primitives from "../primitives/schema.js"
 
 export type Root = {
-    'jaren2': p_.Dictionary<Jaar2>
+    'jaren': p_.Dictionary<Jaar>
 }
 
-export type Jaar2 = {
+export type Jaar = {
     'resultaat': {
         'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
-        'resultaat': Bedrag_in_Euro
     },
     'balans': {
         'grootboekrekeningen': Balans.Grootboek_Rekeningen
-        'check balans': {
-            'begin': boolean
-            'eind': boolean
-        }
     }
 
 
@@ -33,7 +28,6 @@ export namespace Resultaat {
         'hoofdcategorie': string
         'subcategorie': string
         'dagboeken': p_.Dictionary<Dagboek>
-        'totaal': Bedrag_in_Euro
     }
 
 
@@ -51,16 +45,15 @@ export namespace Balans {
         'hoofdcategorie': string
         'subcategorie': string
         'clusters': p_.Dictionary<Cluster>
-        'totaal': Samenvatting
     }
 
     export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
 
     export type Cluster = {
-        'dagboeken': p_.Dictionary<Samenvatting>
+        'dagboeken': p_.Dictionary<Dagboek>
     }
 
-    export type Samenvatting = {
+    export type Dagboek = {
         'beginsaldo': Bedrag_in_Euro
         'mutaties': {
             'xx': p_.Dictionary<Bedrag_in_Euro> | null
