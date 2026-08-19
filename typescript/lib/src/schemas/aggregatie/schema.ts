@@ -23,3 +23,12 @@ export type Domein_Zijde = {
 export type Grootboekrekening = {
     'bedrag': number
 }
+
+export type Root = {
+    'jaren': p_.Dictionary<{
+        'beginbalans': Domein
+        'resultaat': Domein
+        'resultaat bedrag': number
+        'eindbalans': Domein
+    }>
+}

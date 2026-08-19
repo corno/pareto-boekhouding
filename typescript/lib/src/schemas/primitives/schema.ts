@@ -1,0 +1,1 @@
+export type Fractional_Decimal = number

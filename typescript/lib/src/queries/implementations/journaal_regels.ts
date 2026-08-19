@@ -6,10 +6,9 @@ import type * as query_interfaces_file_in_file_out from "pareto-common/modules/f
 
 //dependencies
 import * as t_resolved_to_derived from "../../schemas/boekhouding_resolved/transformers/derived.js"
-
-import * as t_html_to_paragraph from "pareto-static-html/schemas/static_html/transformers/paragraph"
-import * as t_aggregatie_to_jaarverslag_html from "../../schemas/aggregatie/transformers/jaarverslag_html.js"
-import * as t_derived_to_aggregatie from "../../schemas/derived/transformers/aggregatie.js"
+import * as t_csv_to_paragraph from "pareto-csv/schemas/csv/transformers/paragraph"
+import * as t_aggregatie2_to_journaal_regels from "../../schemas/aggregatie2/transformers/journaalregels.js"
+import * as t_derived_to_aggregatie2 from "../../schemas/derived/transformers/aggregatie2.js"
 
 import { $$ as q_load } from "./load_resolved.js"
 
@@ -17,7 +16,6 @@ export const $$: p_.Query_Implementation<
     query_interfaces_file_in_file_out.operation,
     {
         'tab size': number,
-        'css': string
     },
     null
 > = p_.query(
@@ -33,17 +31,17 @@ export const $$: p_.Query_Implementation<
         )
     ).transform(
         ($) => ({
-            'paragraph': t_html_to_paragraph.Document(
-                t_aggregatie_to_jaarverslag_html.Root(
-                    t_derived_to_aggregatie.Root(
+            'paragraph': t_csv_to_paragraph.CSV(
+                t_aggregatie2_to_journaal_regels.Root(
+                    t_derived_to_aggregatie2.Root(
                         t_resolved_to_derived.Root(
                             $
                         )
-                    ),
-                    {
-                        'css': $s['css'],
-                    }
-                )
+                    )
+                ),
+                {
+                    'separator': 0x2C, // ,
+                }
             )
         })
     )

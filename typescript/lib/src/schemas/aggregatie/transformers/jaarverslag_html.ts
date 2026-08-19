@@ -1,26 +1,11 @@
 import type * as p_di from 'pareto-core/interface/schema'
 import * as p_ from 'pareto-core/implementation/transformer'
-import p_log_debug_message from 'pareto-core-dev/log_debug_message'
 
 //schemas
-import type * as s_in from "../../derived/schema.js"
-import type * as s_temp_aggregatie_2 from "../schema.js"
+import type * as s_in from "../schema.js"
 import type * as s_out from "pareto-static-html/schemas/static_html/schema"
 
 namespace declarations {
-    export type Balans_Grootboekrekeningen = p_.Transformer_With_Parameter<
-        s_in.Balans.Grootboek_Rekeningen,
-        s_temp_aggregatie_2.Domein_Zijde,
-        {
-        'type':
-        | ['begin',
-        null]
-        | ['eind',
-        null]
-        'label': string
-        'teken omkeren': boolean
-    }
-    >
     export type Bedrag = p_.Transformer_With_Parameter<
         number,
         s_out.Flow_Element.table.sections.L.rows.L.cells.L,
@@ -36,14 +21,14 @@ namespace declarations {
     }
     >
     export type Domein = p_.Transformer_With_Parameter<
-        s_temp_aggregatie_2.Domein,
+        s_in.Domein,
         s_out.Flow_Element.table.sections.L.rows,
         {
         'label': string
     }
     >
     export type Domein_Zijde = p_.Transformer<
-        s_temp_aggregatie_2.Domein_Zijde,
+        s_in.Domein_Zijde,
         p_di.List<s_out.Flow_Element.table.sections.L.rows.L.cells>
     >
     export type Indent = p_.Transformer<
@@ -53,14 +38,6 @@ namespace declarations {
     export type Indent_Blank = p_.Transformer<
         null,
         s_out.Flow_Element.table.sections.L.rows.L.cells.L
-    >
-    export type Resultaat_Grootboekrekeningen = p_.Transformer_With_Parameter<
-        s_in.Resultaat.Grootboek_Rekeningen,
-        s_temp_aggregatie_2.Domein_Zijde,
-        {
-        'label': string
-        'teken omkeren': boolean
-    }
     >
     export type Root = p_.Transformer_With_Parameter<
         s_in.Root,
@@ -84,72 +61,10 @@ namespace declarations {
 //dependencies
 import * as t_primitives_to_text from "../../primitives/serializers.js"
 
-const temp_integer_from_dictionary = <T extends p_di.Value>(
-    dict: p_di.Dictionary<T>,
-    get_value: ($: T) => number,
-): number => p_.from.list(
-    p_.from.dictionary(dict).convert_to_list(
-        ($) => $
-    )
-).sum(
-    ($) => get_value($)
-)
 
 //shorthands
 import * as sh from "pareto-static-html/schemas/static_html/shorthands/target"
 
-
-const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen = ($, $p) => {
-    const $p_grootboekrekeningen = p_.from.dictionary($).map(
-        ($) => {
-
-            const context = $
-
-            return {
-                'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
-                'subcategorie': $.bron.Stam.Subcategorie['l id'],
-                'bedrag': p_.from.state($p.type).decide(
-                    ($): number => {
-                        switch ($[0]) {
-                            case 'begin': return p_.option($, ($) => context.totaal.beginsaldo)
-                            case 'eind': return p_.option($, ($) => context.totaal.beginsaldo + context.totaal.mutaties)
-                            default: return p_.exhaustive($[0])
-                        }
-                    }),
-            }
-        }
-    )
-    return {
-        'label': $p.label,
-        'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen).group(
-            ($) => $.hoofdcategorie,
-            ($) => {
-                const $p_subcategorieen = p_.from.dictionary($).group(
-                    ($) => $.subcategorie,
-                    ($) => ({
-                        'grootboekrekeningen': $,
-                        'totaal': temp_integer_from_dictionary(
-                            $,
-                            ($) => $.bedrag
-                        )
-                    })
-                )
-                return {
-                    'subcategorieen': $p_subcategorieen,
-                    'totaal': temp_integer_from_dictionary(
-                        $p_subcategorieen,
-                        ($) => $.totaal
-                    )
-                }
-            }
-        ),
-        'totaal': temp_integer_from_dictionary(
-            $p_grootboekrekeningen,
-            ($) => $.bedrag
-        ),
-    }
-}
 
 const Bedrag: declarations.Bedrag = ($, $p) => sh.t.s.r.td(
     p_.literal.list(["bedrag"]),
@@ -157,7 +72,7 @@ const Bedrag: declarations.Bedrag = ($, $p) => sh.t.s.r.td(
     p_.literal.list([
         sh.f.span(
             p_.literal.list([
-                sh.p.p("€ " + t_primitives_to_text.fractional_decimal(
+                sh.p.p("€ " + t_primitives_to_text.Fractional_Decimal(
                     $p['teken omkeren'] ? -$ : $,
                     {
                         'number of fractional digits': 2,
@@ -351,47 +266,6 @@ const Indent_Blank: declarations.Indent_Blank = ($) => sh.t.s.r.td(
     p_.literal.list([])
 )
 
-const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekrekeningen = ($, $p) => {
-
-    const $p_grootboekrekeningen = p_.from.dictionary($).map(
-        ($) => ({
-            'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
-            'subcategorie': $.bron.Stam.Subcategorie['l id'],
-            'bedrag': $.totaal,
-        })
-    )
-
-    return {
-        'label': $p.label,
-        'teken omkeren': $p['teken omkeren'],
-        'hoofdcategorieen': p_.from.dictionary($p_grootboekrekeningen).group(
-            ($) => $.hoofdcategorie,
-            ($) => {
-                const subcategorieen = p_.from.dictionary($).group(
-                    ($) => $.subcategorie,
-                    ($) => ({
-                        'grootboekrekeningen': $,
-                        'totaal': temp_integer_from_dictionary(
-                            $,
-                            ($) => $.bedrag
-                        )
-                    })
-                )
-                return {
-                    'subcategorieen': subcategorieen,
-                    'totaal': temp_integer_from_dictionary(
-                        subcategorieen,
-                        ($) => $.totaal
-                    )
-                }
-            },
-        ),
-        'totaal': temp_integer_from_dictionary(
-            $p_grootboekrekeningen,
-            ($) => $.bedrag
-        ),
-    }
-}
 
 export const Root: declarations.Root = ($, $p) => {
     return sh.document(
@@ -454,54 +328,13 @@ export const Root: declarations.Root = ($, $p) => {
                                         ),
                                     ]),
                                     Domein(
-                                        {
-                                            'links': Balans_Grootboekrekeningen(
-                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                    ($) => $.bron.Stam.Zijde[0] === 'Activa'
-                                                ),
-                                                {
-                                                    'type': ['begin', null],
-                                                    'label': "activa",
-                                                    'teken omkeren': false
-                                                }
-                                            ),
-                                            'rechts': Balans_Grootboekrekeningen(
-                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                    ($) => $.bron.Stam.Zijde[0] === 'Passiva'
-                                                ),
-                                                {
-                                                    'type': ['begin', null],
-                                                    'label': "passiva",
-                                                    'teken omkeren': true
-                                                }
-                                            ),
-
-                                        },
+                                        $.value.beginbalans,
                                         {
                                             'label': "beginbalans",
                                         }
                                     ),
                                     Domein(
-                                        {
-                                            'links': Resultaat_Grootboekrekeningen(
-                                                p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
-                                                    ($) => $.bron.Stam.Zijde[0] === 'Kosten'
-                                                ),
-                                                {
-                                                    'label': "kosten",
-                                                    'teken omkeren': true
-                                                }
-                                            ),
-                                            'rechts': Resultaat_Grootboekrekeningen(
-                                                p_.from.dictionary($.value.jaarbeheer.resultaat['grootboekrekeningen']).filter(
-                                                    ($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'
-                                                ),
-                                                {
-                                                    'label': "opbrengsten",
-                                                    'teken omkeren': false
-                                                }
-                                            ),
-                                        },
+                                        $.value.resultaat,
                                         {
                                             'label': "resultaat",
                                         }
@@ -520,7 +353,7 @@ export const Root: declarations.Root = ($, $p) => {
                                                     }
                                                 ),
                                                 Bedrag(
-                                                    $.value.jaarbeheer.resultaat['resultaat'],
+                                                    $.value['resultaat bedrag'],
                                                     {
                                                         'teken omkeren': false
                                                     }
@@ -529,29 +362,7 @@ export const Root: declarations.Root = ($, $p) => {
                                         ),
                                     ]),
                                     Domein(
-                                        {
-                                            'links': Balans_Grootboekrekeningen(
-                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                    ($) => $.bron.Stam.Zijde[0] === 'Activa'
-                                                ),
-                                                {
-                                                    'type': ['eind', null],
-                                                    'label': "activa",
-                                                    'teken omkeren': false
-                                                }
-                                            ),
-                                            'rechts': Balans_Grootboekrekeningen(
-                                                p_.from.dictionary($.value.jaarbeheer.balans['grootboekrekeningen']).filter(
-                                                    ($) => $.bron.Stam.Zijde[0] === 'Passiva'
-                                                ),
-                                                {
-                                                    'type': ['eind', null],
-                                                    'label': "passiva",
-                                                    'teken omkeren': true
-                                                }
-                                            ),
-
-                                        },
+                                        $.value.eindbalans,
                                         {
                                             'label': "eindbalans",
                                         }

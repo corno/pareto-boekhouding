@@ -21,7 +21,7 @@ export const Root: declarations.Root = ($) => sh.pg.sentences(
     t_tree_to_phrase.Node(
         p_.from.dictionary($.jaren).map(
             ($) => p_.literal.dictionary({
-                "bankrekeningen": p_.from.dictionary($.bankrekeningen).map(
+                "bankrekeningen": p_.from.dictionary($.balans.bankrekeningen).map(
                     ($) => p_.from.dictionary($.mutaties).map_optionally(
                         ($) => p_.from.optional($['verwerking bron']).decide(
                             ($) => p_.literal.not_set(), //de mutatie is verwerkt, dus niet meer in de todo lijst

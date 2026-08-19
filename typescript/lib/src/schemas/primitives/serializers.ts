@@ -1,9 +1,10 @@
 import * as p_ from 'pareto-core/implementation/serializer'
 import p_list_build_deprecated from 'pareto-core/implementation/refiner/specials/list_build_deprecated'
-import p_text_from_list from 'pareto-core/implementation/transformer/specials/text_from_list'
 import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
-
 import * as p_di from 'pareto-core/interface/schema'
+
+import * as s_in from "./schema.js"
+
 namespace s_parameters {
 
     export type Parameters = {
@@ -14,13 +15,13 @@ namespace s_parameters {
 
 }
 namespace declarations {
-    export type fractional_decimal = p_.Serializer_With_Parameter<
-        number,
+    export type Fractional_Decimal = p_.Serializer_With_Parameter<
+        s_in.Fractional_Decimal,
         s_parameters.Parameters
     >
 }
 
-export const fractional_decimal: declarations.fractional_decimal = ($, $p) => p_.ph.list_of_characters(
+export const Fractional_Decimal: declarations.Fractional_Decimal = ($, $p) => p_.ph.list_of_characters(
     p_list_build_deprecated<number>(
         ($i) => {
             let $v_value = $
