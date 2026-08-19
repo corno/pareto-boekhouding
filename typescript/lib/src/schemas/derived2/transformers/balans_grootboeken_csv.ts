@@ -26,8 +26,8 @@ export const Root: declarations.Root = ($) => sh.CSV(
         "jaar", "grootboekrekening", "type", "bedrag",
     ]))),
     t_nested_to_csv.Composed_Dictionary(
-        p_.from.dictionary($.jaren).map(
-            ($): s_nested.Dictionary => ['composed', p_.from.dictionary($.balans.grootboekrekeningen).map(
+        p_.from.dictionary($.jaren2).map(
+            ($): s_nested.Dictionary => ['composed', p_.from.dictionary($.balans['grootboekrekeningen']).map(
                 ($): s_nested.Dictionary => ['leaf', p_.literal.dictionary({
                     "begin": sh.row(p_.literal.list([
                         ser_primitives.Fractional_Decimal(

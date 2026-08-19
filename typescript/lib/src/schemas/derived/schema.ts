@@ -10,6 +10,7 @@ export type Root = {
 
 export type Bedrag_in_Euro = s_primitives.Fractional_Decimal
 
+
 export type Jaar = {
     'bron': s_boekhouding.Jaren.D
     'handelstransacties': {
@@ -18,29 +19,15 @@ export type Jaar = {
     }
     'btw': {
         'btw periodes': p_.Dictionary<Btw_Periode>
-        'te veel aangegeven': Balans.Samenvatting,
-        'nog aan te geven': Balans.Samenvatting,
-        'openstaand': Balans.Samenvatting,
     }
-    'resultaat': {
-        'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
-        'resultaat': Bedrag_in_Euro
-
-    },
     'balans': {
         'overige balans items': p_.Dictionary<Overige_Balans_Item>
         'bankrekeningen': p_.Dictionary<Bankrekening>
         'informele rekeningen': p_.Dictionary<Informele_Rekening>
         'verrekenposten': p_.Dictionary<Verreken_Post>
-        'inkoopsaldo': Balans.Samenvatting
-        'verkoopsaldo': Balans.Samenvatting
-        'grootboekrekeningen': Balans.Grootboek_Rekeningen
-        'check balans': {
-            'begin': boolean
-            'eind': boolean
-        }
     }
 }
+
 
 export type Inkoop = {
     'bron': s_boekhouding.Handelstransacties.Inkopen.D
@@ -75,7 +62,6 @@ export type Btw_Periode = {
             'totaal': Bedrag_in_Euro
         }
     }
-    // 'mutaties totaal': Bedrag_in_Euro
     'afhandeling': {
         'betalingen': Bedrag_in_Euro
         'verrekeningen': Bedrag_in_Euro
@@ -94,11 +80,23 @@ export type Btw_Periode = {
 
 export type Overige_Balans_Item = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
-    'inkopen': p_.Dictionary<{
-        'regels': p_.Dictionary<Inkoop_Regel>
-    }>
-    'mutaties': {
-        'memoriaal boekingen': Bedrag_in_Euro
+    'references to me': {
+        'inkopen': p_.Dictionary<{
+            'regels': p_.Dictionary<{
+                'bron': Inkoop_Regel
+                'bedrag': Bedrag_in_Euro
+            }>
+        }>
+        'verkopen': p_.Dictionary<{
+            'regels': p_.Dictionary<{
+                'bron': Verkoop_Regel
+                'bedrag': Bedrag_in_Euro
+            }>
+        }>
+        'mutaties': p_.Optional_Value<s_boekhouding.Mutaties.Overige_Balans_Items.D>
+    }
+    'aggregaties': {
+        'mutaties': Bedrag_in_Euro
         'inkopen': Bedrag_in_Euro
         'verkopen': Bedrag_in_Euro
         'totaal': Bedrag_in_Euro
@@ -126,7 +124,17 @@ export type Bankrekening_Mutatie = {
 
 export type Informele_Rekening = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Informele_rekeningen.D
-    'mutaties': {
+    'references to me': {
+        'inkopen': p_.Dictionary<Inkoop>
+        'verkopen': p_.Dictionary<Verkoop>
+        'bankrekeningen': p_.Dictionary<{
+            'mutatie verwerkingen': p_.Dictionary<s_boekhouding.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D>
+        }>
+        'verrekenposten': p_.Dictionary<{
+            'mutaties': p_.Dictionary<s_boekhouding.Mutaties.Verrekenposten.D.Mutaties.D>
+        }>
+    }
+    'aggregaties': {
         'inkopen': Bedrag_in_Euro
         'verkopen': Bedrag_in_Euro
         'bankrekening mutatie verwerkingen': Bedrag_in_Euro
@@ -141,48 +149,11 @@ export type Informele_Rekening = {
 
 export type Verreken_Post = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Verrekenposten.D
-    'eigen mutaties': Bedrag_in_Euro
-    'bankrekening mutaties': Bedrag_in_Euro
+    'aggregaties': {
+        'eigen mutaties': Bedrag_in_Euro
+        'bankrekening mutaties': Bedrag_in_Euro
+    }
     'saldo': Bedrag_in_Euro
     'todo': boolean
 }
 
-
-export namespace Resultaat {
-
-    export type Grootboekrekening = {
-        'bron': s_boekhouding.Grootboekrekeningen.Resultaat.D
-        'dagboeken': p_.Dictionary<Dagboek>
-        'totaal': Bedrag_in_Euro
-    }
-
-    export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
-
-    export type Dagboek = {
-        'boekingen': p_.Dictionary<Bedrag_in_Euro>
-    }
-}
-
-export namespace Balans {
-
-    export type Grootboekrekening = {
-        'bron': s_boekhouding.Grootboekrekeningen.Balans.D
-        'clusters': p_.Dictionary<Cluster>
-        'totaal': Samenvatting
-    }
-
-    export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
-
-    export type Cluster = {
-        'dagboeken': p_.Dictionary<Samenvatting>
-    }
-
-    export type Samenvatting = {
-        'beginsaldo': Bedrag_in_Euro
-        'mutaties': {
-            'xx': p_.Dictionary<Bedrag_in_Euro> | null
-            'totaal': Bedrag_in_Euro
-        }
-    }
-
-}

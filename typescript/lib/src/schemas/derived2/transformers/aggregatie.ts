@@ -145,7 +145,7 @@ export const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekreke
 
 export const Root: declarations.Root = ($) => {
     return {
-        'jaren': p_.from.dictionary($.jaren).map(
+        'jaren': p_.from.dictionary($.jaren2).map(
             ($) => ({
                 'beginbalans': {
                     'links': Balans_Grootboekrekeningen(
