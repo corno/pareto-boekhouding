@@ -53,8 +53,8 @@ export const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen
             const context = $
 
             return {
-                'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
-                'subcategorie': $.bron.Stam.Subcategorie['l id'],
+                'hoofdcategorie': $.hoofdcategorie,
+                'subcategorie': $.subcategorie,
                 'bedrag': p_.from.state($p.type).decide(
                     ($): number => {
                         switch ($[0]) {
@@ -104,8 +104,8 @@ export const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekreke
 
     const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => ({
-            'hoofdcategorie': $.bron.Stam.Hoofdcategorie['l id'],
-            'subcategorie': $.bron.Stam.Subcategorie['l id'],
+            'hoofdcategorie': $.hoofdcategorie,
+            'subcategorie': $.subcategorie,
             'bedrag': $.totaal,
         })
     )
@@ -150,7 +150,7 @@ export const Root: declarations.Root = ($) => {
                 'beginbalans': {
                     'links': Balans_Grootboekrekeningen(
                         p_.from.dictionary($.balans['grootboekrekeningen']).filter(
-                            ($) => $.bron.Stam.Zijde[0] === 'Activa'
+                            ($) => $.zijde[0] === 'activa'
                         ),
                         {
                             'type': ['begin', null],
@@ -160,7 +160,7 @@ export const Root: declarations.Root = ($) => {
                     ),
                     'rechts': Balans_Grootboekrekeningen(
                         p_.from.dictionary($.balans['grootboekrekeningen']).filter(
-                            ($) => $.bron.Stam.Zijde[0] === 'Passiva'
+                            ($) => $.zijde[0] === 'passiva'
                         ),
                         {
                             'type': ['begin', null],
@@ -173,7 +173,7 @@ export const Root: declarations.Root = ($) => {
                 'resultaat': {
                     'links': Resultaat_Grootboekrekeningen(
                         p_.from.dictionary($.resultaat['grootboekrekeningen']).filter(
-                            ($) => $.bron.Stam.Zijde[0] === 'Kosten'
+                            ($) => $.zijde[0] === 'kosten'
                         ),
                         {
                             'label': "kosten",
@@ -182,7 +182,7 @@ export const Root: declarations.Root = ($) => {
                     ),
                     'rechts': Resultaat_Grootboekrekeningen(
                         p_.from.dictionary($.resultaat['grootboekrekeningen']).filter(
-                            ($) => $.bron.Stam.Zijde[0] === 'Opbrengsten'
+                            ($) => $.zijde[0] === 'opbrengsten'
                         ),
                         {
                             'label': "opbrengsten",
@@ -194,7 +194,7 @@ export const Root: declarations.Root = ($) => {
                 'eindbalans': {
                     'links': Balans_Grootboekrekeningen(
                         p_.from.dictionary($.balans['grootboekrekeningen']).filter(
-                            ($) => $.bron.Stam.Zijde[0] === 'Activa'
+                            ($) => $.zijde[0] === 'activa'
                         ),
                         {
                             'type': ['eind', null],
@@ -204,7 +204,7 @@ export const Root: declarations.Root = ($) => {
                     ),
                     'rechts': Balans_Grootboekrekeningen(
                         p_.from.dictionary($.balans['grootboekrekeningen']).filter(
-                            ($) => $.bron.Stam.Zijde[0] === 'Passiva'
+                            ($) => $.zijde[0] === 'passiva'
                         ),
                         {
                             'type': ['eind', null],

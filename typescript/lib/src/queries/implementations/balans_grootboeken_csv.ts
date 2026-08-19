@@ -5,9 +5,9 @@ import type * as query_interfaces_file_in_file_out from "pareto-common/modules/f
 
 
 //dependencies
-import * as t_resolved_to_derived2 from "../../schemas/boekhouding_resolved/transformers/derived2.js"
+import * as t_resolved_to_derived2 from "../../schemas/boekhouding_resolved/transformers/generieke_boekhouding.js"
 import * as t_csv_to_paragraph from "pareto-csv/schemas/csv/transformers/paragraph"
-import * as t_aggregatie_to_balans_grootboeken_csv from "../../schemas/derived2/transformers/balans_grootboeken_csv.js"
+import * as t_aggregatie_to_balans_grootboeken_csv from "../../schemas/generieke_boekhouding/transformers/balans_grootboeken_csv.js"
 
 import { $$ as q_load } from "./load_resolved.js"
 

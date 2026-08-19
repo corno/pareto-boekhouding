@@ -11,14 +11,27 @@ export type Root = {
 export type Bedrag_in_Euro = s_primitives.Fractional_Decimal
 
 
+export type Temp_Samenvatting = {
+    'beginsaldo': Bedrag_in_Euro
+    'mutaties': {
+        'xx': p_.Dictionary<Bedrag_in_Euro> | null
+        'totaal': Bedrag_in_Euro
+    }
+}
+
 export type Jaar = {
     'bron': s_boekhouding.Jaren.D
     'handelstransacties': {
         'inkopen': p_.Dictionary<Inkoop>
         'verkopen': p_.Dictionary<Verkoop>
     }
+    'inkoopsaldo': Temp_Samenvatting
+    'verkoopsaldo': Temp_Samenvatting
     'btw': {
         'btw periodes': p_.Dictionary<Btw_Periode>
+        'te veel aangegeven': Temp_Samenvatting,
+        'nog aan te geven': Temp_Samenvatting,
+        'openstaand': Temp_Samenvatting,
     }
     'balans': {
         'overige balans items': p_.Dictionary<Overige_Balans_Item>

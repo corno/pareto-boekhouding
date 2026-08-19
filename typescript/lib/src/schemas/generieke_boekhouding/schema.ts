@@ -1,6 +1,5 @@
 import * as p_ from 'pareto-core/interface/schema'
 
-import type * as s_boekhouding from "../../modules/boekhouding/schemas/resolved/schema.js"
 import type * as s_primitives from "../primitives/schema.js"
 
 export type Root = {
@@ -12,14 +11,7 @@ export type Jaar2 = {
         'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
         'resultaat': Bedrag_in_Euro
     },
-    'btw': {
-        'te veel aangegeven': Balans.Samenvatting,
-        'nog aan te geven': Balans.Samenvatting,
-        'openstaand': Balans.Samenvatting,
-    }
     'balans': {
-        'inkoopsaldo': Balans.Samenvatting
-        'verkoopsaldo': Balans.Samenvatting
         'grootboekrekeningen': Balans.Grootboek_Rekeningen
         'check balans': {
             'begin': boolean
@@ -32,13 +24,18 @@ export type Jaar2 = {
 
 export namespace Resultaat {
 
+    export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
+
     export type Grootboekrekening = {
-        'bron': s_boekhouding.Grootboekrekeningen.Resultaat.D
+        'zijde': 
+        | ['kosten', null]
+        | ['opbrengsten', null]
+        'hoofdcategorie': string
+        'subcategorie': string
         'dagboeken': p_.Dictionary<Dagboek>
         'totaal': Bedrag_in_Euro
     }
 
-    export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>
 
     export type Dagboek = {
         'boekingen': p_.Dictionary<Bedrag_in_Euro>
@@ -48,7 +45,11 @@ export namespace Resultaat {
 export namespace Balans {
 
     export type Grootboekrekening = {
-        'bron': s_boekhouding.Grootboekrekeningen.Balans.D
+        'zijde':
+        | ['activa', null]
+        | ['passiva', null]
+        'hoofdcategorie': string
+        'subcategorie': string
         'clusters': p_.Dictionary<Cluster>
         'totaal': Samenvatting
     }
