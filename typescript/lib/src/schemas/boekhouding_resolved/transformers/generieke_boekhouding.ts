@@ -7,6 +7,7 @@ import p_unreachable_code_path from 'pareto-core/implementation/transformer/spec
 
 //schemas
 import type * as s_in from "../../../modules/boekhouding/schemas/resolved/schema.js"
+import type * as s_in_derived from "../../derived/schema.js"
 import type * as s_out from "../../generieke_boekhouding/schema.js"
 
 namespace declarations {
@@ -14,10 +15,21 @@ namespace declarations {
         s_in.Root,
         s_out.Root
     >
+    export type Temp_Samenvatting = p_.Transformer<
+        s_in_derived.Temp_Samenvatting,
+        s_out.Balans.Dagboek
+    >
 }
 
 //dependencies
 import * as t_to_derived from "./derived.js"
+
+export const Temp_Samenvatting: declarations.Temp_Samenvatting = ($) => {
+    return {
+        'beginsaldo': $.beginsaldo,
+        'mutaties': $.mutaties.xx,
+    }
+}
 
 export const Root: declarations.Root = ($) => {
     const $p_jaren = t_to_derived.Root($).jaren
@@ -159,41 +171,35 @@ export const Root: declarations.Root = ($) => {
                                     "winstreserve": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor winstreserve']['l entry'] === context
                                         ? p_.literal.set({
                                             'beginsaldo': - $v_bron_jaar.Jaarbeheer.Balans['Beginsaldo winstreserve'],
-                                            'mutaties': {
-                                                'xx': p_.literal.dictionary({}),
-                                                'totaal': 0,
-                                            }
+                                            'mutaties': p_.literal.dictionary({})
                                         })
                                         : p_.literal.not_set(),
                                     "resultaat": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor resultaat dit jaar']['l entry'] === context
                                         ? p_.literal.set({
                                             'beginsaldo': 0,
-                                            'mutaties': {
-                                                'xx': p_.literal.dictionary({}),
-                                                'totaal': - p_.from.dictionary($p_resultaat.grootboekrekeningen).sum(
-                                                    ($) => p_.from.dictionary($.dagboeken).sum(
-                                                        ($) => p_.from.dictionary($.boekingen).sum(
-                                                            ($) => $
-                                                        )
+                                            'mutaties': p_.from.dictionary($p_resultaat.grootboekrekeningen).map(
+                                                ($) => p_.from.dictionary($.dagboeken).sum(
+                                                    ($) => p_.from.dictionary($.boekingen).sum(
+                                                        ($) => -$
                                                     )
-                                                ),
-                                            },
+                                                )
+                                            ),
                                         })
                                         : p_.literal.not_set(),
                                     "inkoopsaldo": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Inkoop saldo']['l entry'] === context
-                                        ? p_.literal.set($v_jaar.inkoopsaldo)
+                                        ? p_.literal.set(Temp_Samenvatting($v_jaar.inkoopsaldo))
                                         : p_.literal.not_set(),
                                     "verkoopsaldo": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor Verkoop saldo']['l entry'] === context
-                                        ? p_.literal.set($v_jaar.verkoopsaldo)
+                                        ? p_.literal.set(Temp_Samenvatting($v_jaar.verkoopsaldo))
                                         : p_.literal.not_set(),
                                     "btw te veel aangegeven": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                        ? p_.literal.set($v_jaar.btw['te veel aangegeven'])
+                                        ? p_.literal.set(Temp_Samenvatting($v_jaar.btw['te veel aangegeven']))
                                         : p_.literal.not_set(),
                                     "btw openstaand": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                        ? p_.literal.set($v_jaar.btw['openstaand'])
+                                        ? p_.literal.set(Temp_Samenvatting($v_jaar.btw['openstaand']))
                                         : p_.literal.not_set(),
                                     "btw nog aan te geven": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor nog aan te geven BTW']['l entry'] === context
-                                        ? p_.literal.set($v_jaar.btw['nog aan te geven'])
+                                        ? p_.literal.set(Temp_Samenvatting($v_jaar.btw['nog aan te geven']))
                                         : p_.literal.not_set(),
                                 })
                             },
@@ -202,10 +208,9 @@ export const Root: declarations.Root = ($) => {
                                     ($) => $.bron.Grootboekrekening['l entry'] === context
                                         ? p_.literal.set({
                                             'beginsaldo': $.bron.Beginsaldo,
-                                            'mutaties': {
-                                                'xx': null,
-                                                'totaal': $['mutaties totaal']
-                                            },
+                                            'mutaties': p_.literal.dictionary({
+                                                "dummy": $['mutaties totaal']
+                                            }),
                                         })
                                         : p_.literal.not_set()
                                 )
@@ -234,23 +239,9 @@ export const Root: declarations.Root = ($) => {
                                 ).map(
                                     ($) => ({
                                         'beginsaldo': $.bron.Beginsaldo,
-                                        'mutaties': {
-                                            'xx': p_.from.dictionary(
-                                                p_.literal.dictionary<p_schema.Dictionary<number>>({
-                                                    // "fff": p_.from.dictionary($.mutaties['bankrekening mutatie verwerkingen']).map(
-                                                    //     ($) => $
-                                                    // )
-                                                })
-                                            ).flatten(
-                                                ($) => $,
-                                                (parent, child) => parent + "_" + child,
-                                                {
-                                                    'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
-                                                }
-
-                                            ),
-                                            'totaal': $['mutatie totaal']
-                                        },
+                                        'mutaties': p_.literal.dictionary({
+                                            "dummy": $['mutatie totaal']
+                                        }),
                                     })
                                 )
                             },
@@ -262,10 +253,9 @@ export const Root: declarations.Root = ($) => {
                                 ).map(
                                     ($) => ({
                                         'beginsaldo': $.bron.Beginsaldo,
-                                        'mutaties': {
-                                            'xx': null,
-                                            'totaal': $.aggregaties.totaal
-                                        },
+                                        'mutaties': p_.literal.dictionary({
+                                            "dummy": $.aggregaties.totaal
+                                        }),
                                     }))
                             },
                         })

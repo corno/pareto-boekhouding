@@ -59,7 +59,9 @@ export const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen
             )
             const mutatie_saldo = p_.from.dictionary($.clusters).sum(
                 ($) => p_.from.dictionary($.dagboeken).sum(
-                    ($) => $.mutaties.totaal
+                    ($) => p_.from.dictionary($.mutaties).sum(
+                        ($) => $
+                    )
                 )
             )
 

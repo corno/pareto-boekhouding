@@ -18,6 +18,15 @@ namespace declarations {
 
 //dependencies
 
+const temp_samenvatting_mutaties = ($: p_schema.Dictionary<s_out.Bedrag_in_Euro>): s_out.Temp_Samenvatting['mutaties'] => {
+    return {
+        'xx': $,
+        'totaalx': p_.from.dictionary($).sum(
+            ($) => $
+        )
+    }
+}
+
 export const Root: declarations.Root = ($) => {
     const $v_bron_root = $
     const $p_jaren: s_out.Root['jaren'] = p_temp.from.dictionary($.Jaren).resolve(
@@ -145,79 +154,85 @@ export const Root: declarations.Root = ($) => {
                                 'no_such_entry': () => p_unreachable_code_path("??"),
                             }
                         ),
-                        ($) => $.inkoopsaldo.beginsaldo + $.inkoopsaldo.mutaties.totaal
+                        ($) => $.inkoopsaldo.beginsaldo + $.inkoopsaldo.mutaties.totaalx
                     )
-                const $p_mutaties = p_variables((): number => {
-
-                    const $p_inkopen_x = p_.from.dictionary(
-                        p_.from.dictionary($p_handelstransacties.inkopen).filter(
-                            ($) => p_.from.state($.bron.Afhandeling).decide(
-                                ($) => {
-                                    switch ($[0]) {
-                                        case 'Mutaties': return p_.option($, ($) => true)
-                                        default: return false
-                                    }
-                                })
-                        )
-                    ).sum(
-                        ($) => - $['totaal ex btw'] - $['totaal btw']
-                    )
-                    const $p_betalingen = p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).sum(
-                        ($) => {
-                            return p_.from.dictionary(
-                                p_.from.dictionary($['Mutatie Verwerkingen']).filter(
-                                    ($) => p_.from.state($.type).decide(
-                                        ($) => {
-                                            switch ($[0]) {
-                                                case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
-                                                    ($) => {
-                                                        switch ($[0]) {
-                                                            case 'Inkoop': return p_.option($, ($) => true)
-                                                            default: return false
-                                                        }
-                                                    }))
-                                                default: return false
-                                            }
-                                        })
-                                )
-                            ).sum(
-                                ($) => -$.Stam.Bedrag
-                            )
-                        }
-                    )
-                    const $p_verrekeningen = p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).sum(
-                        ($) => {
-                            return p_.from.dictionary(
-                                p_.from.dictionary($.Mutaties).filter(
-                                    ($) => p_.from.state($.Afhandeling).decide(
-                                        ($) => {
-                                            switch ($[0]) {
-                                                case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
-                                                    ($) => {
-                                                        switch ($[0]) {
-                                                            case 'Inkoop': return p_.option($, ($) => true)
-                                                            default: return false
-                                                        }
-                                                    }))
-                                                default: return false
-                                            }
-                                        })
-                                )
-                            ).sum(
-                                ($) => -$.Bedrag
-                            )
-                        }
-                    )
-                    return + $p_inkopen_x
-                        + $p_betalingen
-                        + $p_verrekeningen
-                })
                 return {
                     'beginsaldo': $p_beginsaldo,
-                    'mutaties': {
-                        'totaal': $p_mutaties,
-                        'xx': null
-                    },
+                    'mutaties': temp_samenvatting_mutaties(
+                        p_.from.dictionary(
+                            p_.literal.dictionary<p_schema.Dictionary<number>>({
+                                "inkopen": p_.from.dictionary($p_handelstransacties.inkopen).map_optionally(
+                                    ($) => {
+                                        const bedrag = - $['totaal ex btw'] - $['totaal btw']
+                                        return p_.from.state($.bron.Afhandeling).decide(
+                                            ($) => {
+                                                switch ($[0]) {
+                                                    case 'Mutaties': return p_.option($, ($) => p_.literal.set(bedrag))
+                                                    default: return p_.literal.not_set()
+                                                }
+                                            }
+                                        )
+                                    }
+                                ),
+                                "bankrekeningen": p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).flatten(
+                                    ($) => p_.from.dictionary($['Mutatie Verwerkingen']).map_optionally(
+                                        ($) => {
+                                            const $v_stam = $.Stam
+                                            return p_.from.state($.type).decide(
+                                                ($) => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
+                                                            ($) => {
+                                                                switch ($[0]) {
+                                                                    case 'Inkoop': return p_.option($, ($) => p_.literal.set(-$v_stam.Bedrag))
+                                                                    default: return p_.literal.not_set()
+                                                                }
+                                                            }))
+                                                        default: return p_.literal.not_set()
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    ),
+                                    (parent, child) => parent + "_" + child,
+                                    {
+                                        'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
+                                    }
+                                ),
+                                "verrekenposten": p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).flatten(
+                                    ($) => p_.from.dictionary($.Mutaties).map_optionally(
+                                        ($) => {
+                                            const $v_bedrag = $.Bedrag
+                                            return p_.from.state($.Afhandeling).decide(
+                                                ($) => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
+                                                            ($) => {
+                                                                switch ($[0]) {
+                                                                    case 'Inkoop': return p_.option($, ($) => p_.literal.set(-$v_bedrag))
+                                                                    default: return p_.literal.not_set()
+                                                                }
+                                                            }))
+                                                        default: return p_.literal.not_set()
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    ),
+                                    (parent, child) => parent + "_" + child,
+                                    {
+                                        'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
+                                    }
+                                ),
+                            })
+                        ).flatten(
+                            ($) => $,
+                            (parent, child) => parent + "_" + child,
+                            {
+                                'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
+                            }
+                        )
+                    ),
                 }
             })
 
@@ -233,81 +248,88 @@ export const Root: declarations.Root = ($) => {
                                 'no_such_entry': () => p_unreachable_code_path("??"),
                             }
                         ),
-                        ($) => $.verkoopsaldo.beginsaldo + $.verkoopsaldo.mutaties.totaal
+                        ($) => $.verkoopsaldo.beginsaldo + $.verkoopsaldo.mutaties.totaalx
                     )
-                const $p_mutaties = p_variables((): number => {
 
-                    const $p_verkopen_x = p_.from.dictionary(
-                        p_.from.dictionary($p_handelstransacties.verkopen).filter(
-                            ($) => p_.from.state($.bron.Afhandeling).decide(
-                                ($) => {
-                                    switch ($[0]) {
-                                        case 'Mutaties': return p_.option($, ($) => true)
-                                        default: return false
-                                    }
-                                })
-                        )).sum(
-                            ($) => p_.from.dictionary($.regels).sum(
-                                ($) => $['btw bedrag'] + $.bron['Bedrag exclusief BTW']
-                            )
-                        )
-                    const $p_bankrekening_mutaties = p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).sum(
-                        ($) => {
-                            return p_.from.dictionary(
-                                p_.from.dictionary($['Mutatie Verwerkingen']).filter(
-                                    ($) => p_.from.state($.type).decide(
-                                        ($) => {
-                                            switch ($[0]) {
-                                                case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
-                                                    ($) => {
-                                                        switch ($[0]) {
-                                                            case 'Verkoop': return p_.option($, ($) => true)
-                                                            default: return false
-                                                        }
-                                                    }))
-                                                default: return false
-                                            }
-                                        })
-                                )
-                            ).sum(
-                                ($) => -$.Stam.Bedrag
-                            )
-                        }
-                    )
-                    const $p_verrekening_mutaties = p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).sum(
-                        ($) => {
-                            return p_.from.dictionary(
-                                p_.from.dictionary($.Mutaties).filter(
-                                    ($) => p_.from.state($.Afhandeling).decide(
-                                        ($) => {
-                                            switch ($[0]) {
-                                                case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
-                                                    ($) => {
-                                                        switch ($[0]) {
-                                                            case 'Verkoop': return p_.option($, ($) => true)
-                                                            default: return false
-                                                        }
-                                                    }))
-                                                default: return false
-                                            }
-                                        })
-                                )
-                            ).sum(
-                                ($) => -$.Bedrag
-                            )
-                        }
-                    )
-                    return + $p_verkopen_x
-                        + $p_bankrekening_mutaties
-                        + $p_verrekening_mutaties
-                }
-                )
                 return {
                     'beginsaldo': $p_beginsaldo,
-                    'mutaties': {
-                        'totaal': $p_mutaties,
-                        'xx': p_.literal.dictionary({}),
-                    },
+                    'mutaties': temp_samenvatting_mutaties(
+                        p_.from.dictionary(
+                            p_.literal.dictionary<p_schema.Dictionary<number>>({
+                                "verkopen": p_.from.dictionary($p_handelstransacties.verkopen).map_optionally(
+                                    ($) => {
+                                        const bedrag = p_.from.dictionary($.regels).sum(
+                                            ($) => $['btw bedrag'] + $.bron['Bedrag exclusief BTW']
+                                        )
+                                        return p_.from.state($.bron.Afhandeling).decide(
+                                            ($) => {
+                                                switch ($[0]) {
+                                                    case 'Mutaties': return p_.option($, ($) => p_.literal.set(bedrag))
+                                                    default: return p_.literal.not_set()
+                                                }
+                                            }
+                                        )
+                                    }
+                                ),
+                                "bankrekeningen": p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).flatten(
+                                    ($) => p_.from.dictionary($['Mutatie Verwerkingen']).map_optionally(
+                                        ($) => {
+                                            const $v_stam = $.Stam
+                                            return p_.from.state($.type).decide(
+                                                ($) => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
+                                                            ($) => {
+                                                                switch ($[0]) {
+                                                                    case 'Verkoop': return p_.option($, ($) => p_.literal.set(-$v_stam.Bedrag))
+                                                                    default: return p_.literal.not_set()
+                                                                }
+                                                            }))
+                                                        default: return p_.literal.not_set()
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    ),
+                                    (parent, child) => parent + "_" + child,
+                                    {
+                                        'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
+                                    }
+                                ),
+                                "verrekenposten": p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).flatten(
+                                    ($) => p_.from.dictionary($.Mutaties).map_optionally(
+                                        ($) => {
+                                            const $v_bedrag = $.Bedrag
+                                            return p_.from.state($.Afhandeling).decide(
+                                                ($) => {
+                                                    switch ($[0]) {
+                                                        case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
+                                                            ($) => {
+                                                                switch ($[0]) {
+                                                                    case 'Verkoop': return p_.option($, ($) => p_.literal.set(-$v_bedrag))
+                                                                    default: return p_.literal.not_set()
+                                                                }
+                                                            }))
+                                                        default: return p_.literal.not_set()
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    ),
+                                    (parent, child) => parent + "_" + child,
+                                    {
+                                        'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
+                                    }
+                                ),
+                            })
+                        ).flatten(
+                            ($) => $,
+                            (parent, child) => parent + "_" + child,
+                            {
+                                'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
+                            }
+                        )
+                    ),
                 }
             })
 
@@ -449,22 +471,10 @@ export const Root: declarations.Root = ($) => {
                                         'no_such_entry': () => p_unreachable_code_path("??"),
                                     }
                                 ),
-                                ($) => $.btw['te veel aangegeven'].beginsaldo + $.btw['te veel aangegeven'].mutaties.totaal
+                                ($) => $.btw['te veel aangegeven'].beginsaldo + $.btw['te veel aangegeven'].mutaties.totaalx
                             ),
-                        'mutaties': {
-                            'totaal': p_.from.dictionary($p_btw_periodes).sum(
-                                ($) => {
-                                    return p_.from.state($.status).decide(
-                                        ($): number => {
-                                            switch ($[0]) {
-                                                case 'aangegeven': return p_.option($, ($) => $['te veel aangegeven'])
-                                                case 'openstaand': return p_.option($, ($) => 0)
-                                                default: return p_.exhaustive($[0])
-                                            }
-                                        })
-                                }
-                            ),
-                            'xx': p_.from.dictionary($p_btw_periodes).map_optionally(
+                        'mutaties': temp_samenvatting_mutaties(
+                            p_.from.dictionary($p_btw_periodes).map_optionally(
                                 ($) => {
                                     return p_.from.state($.status).decide(
                                         ($) => {
@@ -473,10 +483,11 @@ export const Root: declarations.Root = ($) => {
                                                 case 'openstaand': return p_.option($, ($) => p_.literal.not_set())
                                                 default: return p_.exhaustive($[0])
                                             }
-                                        })
+                                        }
+                                    )
                                 }
                             )
-                        },
+                        ),
                     }
                 })
                 const $p_btw_nog_aan_te_geven = p_variables((): s_out.Temp_Samenvatting => {
@@ -492,41 +503,23 @@ export const Root: declarations.Root = ($) => {
                                         'no_such_entry': () => p_unreachable_code_path("??"),
                                     }
                                 ),
-                                ($) => $.btw['nog aan te geven'].beginsaldo + $.btw['nog aan te geven'].mutaties.totaal
+                                ($) => $.btw['nog aan te geven'].beginsaldo + $.btw['nog aan te geven'].mutaties.totaalx
                             ),
-                        'mutaties': {
-                            'xx': p_.from.dictionary($p_btw_periodes).map_optionally(
+                        'mutaties': temp_samenvatting_mutaties(
+                            p_.from.dictionary($p_btw_periodes).map_optionally(
                                 ($) => {
                                     const $v_handelsmutaties = $.handelsmutaties
                                     return p_.from.state($.status).decide(
                                         ($) => {
                                             switch ($[0]) {
-                                                case 'openstaand': return p_.option($, ($) => p_.literal.set(+ $v_handelsmutaties.inkopen.totaal
-                                                    + $v_handelsmutaties.verkopen.totaal))
+                                                case 'openstaand': return p_.option($, ($) => p_.literal.set(+ $v_handelsmutaties.inkopen.totaal + $v_handelsmutaties.verkopen.totaal))
                                                 default: return p_.literal.not_set()
                                             }
                                         }
                                     )
                                 }
-                            ),
-                            'totaal': p_.from.dictionary(
-                                p_.from.dictionary($p_btw_periodes).filter(
-                                    ($) => p_.from.state($.status).decide(
-                                        ($): boolean => {
-                                            switch ($[0]) {
-                                                case 'openstaand': return p_.option($, ($) => true)
-                                                default: return false
-                                            }
-                                        }
-                                    )
-                                )
-                            ).sum(
-                                ($) => {
-                                    return + $.handelsmutaties.inkopen.totaal
-                                        + $.handelsmutaties.verkopen.totaal
-                                }
                             )
-                        },
+                        ),
                     }
                 })
                 const $p_btw_openstaand: s_out.Temp_Samenvatting = ({
@@ -541,10 +534,10 @@ export const Root: declarations.Root = ($) => {
                                     'no_such_entry': () => p_unreachable_code_path("??"),
                                 }
                             ),
-                            ($) => $.btw.openstaand.beginsaldo + $.btw.openstaand.mutaties.totaal
+                            ($) => $.btw.openstaand.beginsaldo + $.btw.openstaand.mutaties.totaalx
                         ),
-                    'mutaties': {
-                        'xx': p_.from.dictionary(
+                    'mutaties': temp_samenvatting_mutaties(
+                        p_.from.dictionary(
                             p_.literal.dictionary<p_schema.Dictionary<number>>({
                                 "bankrekeningen": p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).flatten(
                                     ($) => p_.from.dictionary($['Mutatie Verwerkingen']).map_optionally(
@@ -556,13 +549,14 @@ export const Root: declarations.Root = ($) => {
                                                         case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                             ($) => {
                                                                 switch ($[0]) {
-                                                                    case 'BTW-periode': return p_.option($, ($) => p_.literal.set($v_stam.Bedrag))
+                                                                    case 'BTW-periode': return p_.option($, ($) => p_.literal.set(-$v_stam.Bedrag))
                                                                     default: return p_.literal.not_set()
                                                                 }
                                                             }))
                                                         default: return p_.literal.not_set()
                                                     }
-                                                })
+                                                }
+                                            )
                                         }
                                     ),
                                     (parent, child) => parent + "_" + child,
@@ -580,7 +574,7 @@ export const Root: declarations.Root = ($) => {
                                                         case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
                                                             ($) => {
                                                                 switch ($[0]) {
-                                                                    case 'BTW-periode': return p_.option($, ($) => p_.literal.set($v_bedrag))
+                                                                    case 'BTW-periode': return p_.option($, ($) => p_.literal.set(-$v_bedrag))
                                                                     default: return p_.literal.not_set()
                                                                 }
                                                             }))
@@ -601,7 +595,7 @@ export const Root: declarations.Root = ($) => {
                                             ($): p_schema.Optional_Value<number> => {
                                                 switch ($[0]) {
                                                     case 'openstaand': return p_.option($, ($) => p_.literal.not_set())
-                                                    case 'aangegeven': return p_.option($, ($) => p_.literal.set($.bron.Bedrag))
+                                                    case 'aangegeven': return p_.option($, ($) => p_.literal.set(-$.bron.Bedrag))
                                                     default: return p_.exhaustive($[0])
                                                 }
                                             }
@@ -615,63 +609,8 @@ export const Root: declarations.Root = ($) => {
                             {
                                 'duplicate_id': () => p_unreachable_code_path("keys cannot clash")
                             }
-                        ),
-                        'totaal':
-                            + p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).sum(
-                                ($) => p_.from.dictionary(
-                                    p_.from.dictionary($['Mutatie Verwerkingen']).filter(
-                                        ($) => p_.from.state($.type).decide(
-                                            ($): boolean => {
-                                                switch ($[0]) {
-                                                    case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
-                                                        ($): boolean => {
-                                                            switch ($[0]) {
-                                                                case 'BTW-periode': return p_.option($, ($) => true)
-                                                                default: return false
-                                                            }
-                                                        }))
-                                                    default: return false
-                                                }
-                                            })
-                                    )
-                                ).sum(
-                                    ($) => - $.Stam.Bedrag
-                                )
-                            )
-                            + p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).sum(
-                                ($) => p_.from.dictionary(
-                                    p_.from.dictionary($.Mutaties).filter(
-                                        ($) => p_.from.state($.Afhandeling).decide(
-                                            ($): boolean => {
-                                                switch ($[0]) {
-                                                    case 'Resultaat': return p_.option($, ($) => p_.from.state($.type).decide(
-                                                        ($): boolean => {
-                                                            switch ($[0]) {
-                                                                case 'BTW-periode': return p_.option($, ($) => true)
-                                                                default: return false
-                                                            }
-                                                        }))
-                                                    default: return false
-                                                }
-                                            })
-                                    )
-                                ).sum(
-                                    ($) => - $.Bedrag
-                                )
-                            )
-                            + p_.from.dictionary($p_btw_periodes).sum(
-                                ($) => {
-                                    return - p_.from.state($.status).decide(
-                                        ($): number => {
-                                            switch ($[0]) {
-                                                case 'aangegeven': return p_.option($, ($) => $.bron.Bedrag)
-                                                case 'openstaand': return p_.option($, ($) => 0)
-                                                default: return p_.exhaustive($[0])
-                                            }
-                                        })
-                                }
-                            )
-                    },
+                        )
+                    ),
                 })
                 return {
                     'btw periodes': $p_btw_periodes,

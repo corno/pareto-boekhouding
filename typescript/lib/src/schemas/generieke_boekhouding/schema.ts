@@ -55,10 +55,7 @@ export namespace Balans {
 
     export type Dagboek = {
         'beginsaldo': Bedrag_in_Euro
-        'mutaties': {
-            'xx': p_.Dictionary<Bedrag_in_Euro> | null
-            'totaal': Bedrag_in_Euro
-        }
+        'mutaties': p_.Dictionary<Bedrag_in_Euro>
     }
 
 }

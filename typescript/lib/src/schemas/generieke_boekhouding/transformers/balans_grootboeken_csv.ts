@@ -38,7 +38,9 @@ export const Root: declarations.Root = ($) => sh.CSV(
 
                     const mutatie_saldo = p_.from.dictionary($.clusters).sum(
                         ($) => p_.from.dictionary($.dagboeken).sum(
-                            ($) => $.mutaties.totaal
+                            ($) => p_.from.dictionary($.mutaties).sum(
+                                ($) => $
+                            )
                         )
                     )
 
