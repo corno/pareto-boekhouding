@@ -59,7 +59,7 @@ namespace declarations {
 //schemas
 
 //dependencies
-import * as t_primitives_to_text from "../../primitives/serializers.js"
+import * as t_primitives_to_text from "../../../../../schemas/primitives/serializers.js"
 
 
 //shorthands

@@ -5,11 +5,10 @@ import type * as query_interfaces_file_in_file_out from "pareto-common/modules/f
 
 
 //dependencies
-import * as t_resolved_to_derived from "../../schemas/boekhouding_resolved/transformers/generieke_boekhouding.js"
+import * as t_resolved_to_generieke_boekhouding_interface from "../../schemas/boekhouding_resolved/transformers/generieke_boekhouding.js"
 
 import * as t_html_to_paragraph from "pareto-static-html/schemas/static_html/transformers/paragraph"
-import * as t_aggregatie_to_jaarverslag_html from "../../schemas/aggregatie/transformers/jaarverslag_html.js"
-import * as t_derived_to_aggregatie from "../../schemas/generieke_boekhouding/transformers/aggregatie.js"
+import * as t_generieke_boekhouding_interface_to_jaarverslag_html from "../../modules/generieke_boekhouding/schemas/interface/transformers/jaarverslag.js"
 
 import { $$ as q_load } from "./load_resolved.js"
 
@@ -34,11 +33,9 @@ export const $$: p_.Query_Implementation<
     ).transform(
         ($) => ({
             'paragraph': t_html_to_paragraph.Document(
-                t_aggregatie_to_jaarverslag_html.Root(
-                    t_derived_to_aggregatie.Root(
-                        t_resolved_to_derived.Root(
-                            $
-                        )
+                t_generieke_boekhouding_interface_to_jaarverslag_html.Root(
+                    t_resolved_to_generieke_boekhouding_interface.Root(
+                        $
                     ),
                     {
                         'css': $s['css'],
