@@ -23,7 +23,7 @@ import * as sh from "pareto-csv/schemas/csv/shorthands/target"
 
 export const Root: declarations.Root = ($) => sh.CSV(
     p_.literal.set(sh.row(p_.literal.list([
-        "jaar", "grootboekrekening", "cluster", "dagboek", "type", "bedrag",
+        "jaar", "grootboekrekening", "cluster", "dagboek", "mutatie", "bedrag",
     ]))),
     t_nested_to_csv.Composed_Dictionary(
         p_.from.dictionary($.jaren).map(
@@ -34,31 +34,18 @@ export const Root: declarations.Root = ($) => sh.CSV(
                     return ['composed', p_.from.dictionary($.clusters).map(
                         ($): s_nested.Dictionary => ['composed', p_.from.dictionary($.dagboeken).map(
                             ($): s_nested.Dictionary => {
-                                const mutaties_saldo = p_.from.dictionary($.mutaties).sum(
-                                    ($) => $
-                                )
-                                return ['leaf', p_.literal.dictionary({
-                                    "begin": sh.row(p_.literal.list([
+                                return ['leaf', p_.from.dictionary($.mutaties).map(
+                                    ($) => sh.row(p_.literal.list([
                                         ser_primitives.Fractional_Decimal(
-                                            $.beginsaldo,
+                                            $,
                                             {
                                                 'number of fractional digits': 2,
                                                 'decimal separator character code': 46, // '.'
                                                 'thousand separator character code': p_.literal.not_set()
                                             }
                                         ),
-                                    ])),
-                                    "eind": sh.row(p_.literal.list([
-                                            ser_primitives.Fractional_Decimal(
-                                                $.beginsaldo + mutaties_saldo,
-                                                {
-                                                    'number of fractional digits': 2,
-                                                    'decimal separator character code': 46, // '.'
-                                                    'thousand separator character code': p_.literal.not_set()
-                                                }
-                                            ),
-                                        ])),
-                                })]
+                                    ]))
+                                )]
                             }
                         )]
                     )]

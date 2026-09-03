@@ -168,6 +168,7 @@ export const Root: declarations.Root = ($) => {
                                             ($) => {
                                                 switch ($[0]) {
                                                     case 'Mutaties': return p_.option($, ($) => p_.literal.set(bedrag))
+                                                    case 'Nog te betalen': return p_.option($, ($) => p_.literal.set(bedrag))
                                                     default: return p_.literal.not_set()
                                                 }
                                             }
@@ -830,7 +831,7 @@ export const Root: declarations.Root = ($) => {
 
                                 })
                             ),
-                            'mutaties totaal': $p_mutaties,
+                            // 'mutaties totaal': $p_mutaties,
                             'eindsaldo': $p_eindsaldo,
                             'overgenomen': $p_overgenomen,
                             'openstaand': $p_openstaand,
@@ -937,10 +938,10 @@ export const Root: declarations.Root = ($) => {
                                 'mutaties': $p_mutaties,
                                 'inkopen': $p_inkopenx,
                                 'verkopen': $p_verkopenx,
-                                'totaal':
-                                    + $p_mutaties
-                                    + $p_inkopenx
-                                    + $p_verkopenx
+                                // 'totaal':
+                                //     + $p_mutaties
+                                //     + $p_inkopenx
+                                //     + $p_verkopenx
                             }
                         })
                         const $p_overgenomen = p_.from.dictionary($v_bron_root.Jaren).sum(
@@ -961,7 +962,9 @@ export const Root: declarations.Root = ($) => {
                         )
                         const $p_eindsaldo =
                             + $.Beginsaldo
-                            + $p_aggregaties.totaal
+                            + $p_aggregaties.inkopen
+                            + $p_aggregaties.verkopen
+                            + $p_aggregaties.mutaties
                         return {
                             'bron': $,
                             'references to me': $p_references_to_me,

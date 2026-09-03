@@ -112,7 +112,7 @@ export type Overige_Balans_Item = {
         'mutaties': Bedrag_in_Euro
         'inkopen': Bedrag_in_Euro
         'verkopen': Bedrag_in_Euro
-        'totaal': Bedrag_in_Euro
+        // 'totaal': Bedrag_in_Euro
     }
     'eindsaldo': Bedrag_in_Euro
     'overgenomen': Bedrag_in_Euro
@@ -123,7 +123,7 @@ export type Bankrekening = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
     'verwerking bron': p_.Optional_Value<s_boekhouding.Mutaties.Bankrekeningen.D> /** als de bankrekening ook is aangemaakt in de verwerkeringen is deze hier beschikbaar */
     'mutaties': p_.Dictionary<Bankrekening_Mutatie>
-    'mutaties totaal': Bedrag_in_Euro
+    // 'mutaties totaal': Bedrag_in_Euro
     'eindsaldo': Bedrag_in_Euro
     'overgenomen': Bedrag_in_Euro
     'openstaand': Bedrag_in_Euro
