@@ -2,7 +2,6 @@ import * as p_ from 'pareto-core/implementation/transformer'
 import * as p_temp from 'pareto-core/implementation/refiner'
 import * as p_schema from 'pareto-core/interface/schema'
 import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
-import p_variables from 'pareto-core/implementation/transformer/specials/variables'
 import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
 
 //schemas
@@ -142,7 +141,7 @@ export const Root: declarations.Root = ($) => {
             })
 
 
-            const $p_inkoopsaldo = p_variables((): s_out.Temp_Samenvatting => {
+            const $p_inkoopsaldo = p_.literal.group_resolve((): s_out.Temp_Samenvatting => {
                 const $p_beginsaldo = $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                     ? 0
                     : p_change_context(
@@ -237,7 +236,7 @@ export const Root: declarations.Root = ($) => {
                 }
             })
 
-            const $p_verkoopsaldo = p_variables((): s_out.Temp_Samenvatting => {
+            const $p_verkoopsaldo = p_.literal.group_resolve((): s_out.Temp_Samenvatting => {
                 const $p_beginsaldo = $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                     ? 0
                     : p_change_context(
@@ -459,7 +458,7 @@ export const Root: declarations.Root = ($) => {
                         }
                     }
                 )
-                const $p_btw_te_veel_aangegeven = p_variables((): s_out.Temp_Samenvatting => {
+                const $p_btw_te_veel_aangegeven = p_.literal.group_resolve((): s_out.Temp_Samenvatting => {
                     return {
                         'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
@@ -491,7 +490,7 @@ export const Root: declarations.Root = ($) => {
                         ),
                     }
                 })
-                const $p_btw_nog_aan_te_geven = p_variables((): s_out.Temp_Samenvatting => {
+                const $p_btw_nog_aan_te_geven = p_.literal.group_resolve((): s_out.Temp_Samenvatting => {
                     return {
                         'beginsaldo': $v_bron_jaar['Eerste boekjaar'][0] !== 'Nee'
                             ? 0
