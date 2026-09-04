@@ -853,9 +853,9 @@ export const Root: declarations.Root = ($) => {
                                         ($): boolean => p_.from.state($.bron.Type).decide(
                                             ($): boolean => {
                                                 switch ($[0]) {
-                                                    case 'Balans': return p_.ss($, ($) => $['Balans item']['l entry'] === $v_context)
-                                                    case 'Kosten': return p_.ss($, ($) => false)
-                                                    default: return p_.au($[0])
+                                                    case 'Balans': return p_.option($, ($) => $['Balans item']['l entry'] === $v_context)
+                                                    case 'Kosten': return p_.option($, ($) => false)
+                                                    default: return p_.exhaustive($[0])
                                                 }
                                             }
                                         )
@@ -879,9 +879,9 @@ export const Root: declarations.Root = ($) => {
                                         ($): boolean => p_.from.state($.bron.Type).decide(
                                             ($): boolean => {
                                                 switch ($[0]) {
-                                                    case 'Balans': return p_.ss($, ($) => $['Balans item']['l entry'] === $v_context)
-                                                    case 'Opbrengsten': return p_.ss($, ($) => false)
-                                                    default: return p_.au($[0])
+                                                    case 'Balans': return p_.option($, ($) => $['Balans item']['l entry'] === $v_context)
+                                                    case 'Opbrengsten': return p_.option($, ($) => false)
+                                                    default: return p_.exhaustive($[0])
                                                 }
                                             }
                                         )

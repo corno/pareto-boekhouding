@@ -116,24 +116,21 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', p_.lit
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Activa':
-                                            return p_.option(
+                                        case 'Activa': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Activa',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Passiva':
-                                            return p_.option(
+                                        case 'Passiva': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Passiva',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -163,24 +160,21 @@ export const Fiscaal: t_signatures.Fiscaal = ($) => ['group', ['verbose', p_.lit
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Kosten':
-                                            return p_.option(
+                                        case 'Kosten': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Kosten',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Opbrengsten':
-                                            return p_.option(
+                                        case 'Opbrengsten': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Opbrengsten',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -234,24 +228,21 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Activa':
-                                            return p_.option(
+                                        case 'Activa': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Activa',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Passiva':
-                                            return p_.option(
+                                        case 'Passiva': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Passiva',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -296,24 +287,21 @@ export const Grootboek_Categorieen: t_signatures.Grootboek_Categorieen = ($) => 
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Kosten':
-                                            return p_.option(
+                                        case 'Kosten': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Kosten',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Opbrengsten':
-                                            return p_.option(
+                                        case 'Opbrengsten': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Opbrengsten',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -363,8 +351,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Ja':
-                                            return p_.option(
+                                        case 'Ja': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ja',
@@ -383,16 +370,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                     )]],
                                                 }),
                                             )
-                                        case 'Nee':
-                                            return p_.option(
+                                        case 'Nee': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nee',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -431,24 +416,21 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                             $,
                                             ($): s_out.Value.state => {
                                                 switch ($[0]) {
-                                                    case 'Activa':
-                                                        return p_.option(
+                                                    case 'Activa': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Activa',
                                                                 'value': ['nothing', null],
                                                             }),
                                                         )
-                                                    case 'Passiva':
-                                                        return p_.option(
+                                                    case 'Passiva': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Passiva',
                                                                 'value': ['nothing', null],
                                                             }),
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -483,8 +465,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                             $,
                                             ($): s_out.Value.state => {
                                                 switch ($[0]) {
-                                                    case 'Kosten':
-                                                        return p_.option(
+                                                    case 'Kosten': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Kosten',
@@ -496,8 +477,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                 $,
                                                                                 ($): s_out.Value.state => {
                                                                                     switch ($[0]) {
-                                                                                        case 'Ja':
-                                                                                            return p_.option(
+                                                                                        case 'Ja': return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Ja',
@@ -513,16 +493,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                                     )]],
                                                                                                 }),
                                                                                             )
-                                                                                        case 'Nee':
-                                                                                            return p_.option(
+                                                                                        case 'Nee': return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Nee',
                                                                                                     'value': ['nothing', null],
                                                                                                 }),
                                                                                             )
-                                                                                        default:
-                                                                                            return p_.au(
+                                                                                        default: return p_.exhaustive(
                                                                                                 $[0],
                                                                                             )
                                                                                     }
@@ -533,16 +511,14 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                 )]],
                                                             }),
                                                         )
-                                                    case 'Opbrengsten':
-                                                        return p_.option(
+                                                    case 'Opbrengsten': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Opbrengsten',
                                                                 'value': ['nothing', null],
                                                             }),
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -663,8 +639,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                 $,
                                                                                 ($): s_out.Value.state => {
                                                                                     switch ($[0]) {
-                                                                                        case 'Project':
-                                                                                            return p_.option(
+                                                                                        case 'Project': return p_.option(
                                                                                                 $,
                                                                                                 ($) => ({
                                                                                                     'option': 'Project',
@@ -695,8 +670,7 @@ export const Beheer: t_signatures.Beheer = ($) => ['group', ['verbose', p_.liter
                                                                                                     )]],
                                                                                                 }),
                                                                                             )
-                                                                                        default:
-                                                                                            return p_.au(
+                                                                                        default: return p_.exhaustive(
                                                                                                 $[0],
                                                                                             )
                                                                                     }
@@ -831,8 +805,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                             $,
                                             ($): s_out.Value.state => {
                                                 switch ($[0]) {
-                                                    case 'Aangegeven':
-                                                        return p_.option(
+                                                    case 'Aangegeven': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Aangegeven',
@@ -875,16 +848,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                 )]],
                                                             }),
                                                         )
-                                                    case 'Openstaand':
-                                                        return p_.option(
+                                                    case 'Openstaand': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Openstaand',
                                                                 'value': ['nothing', null],
                                                             }),
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -986,16 +957,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                             $,
                                             ($): s_out.Value.state => {
                                                 switch ($[0]) {
-                                                    case 'Ja':
-                                                        return p_.option(
+                                                    case 'Ja': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Ja',
                                                                 'value': ['nothing', null],
                                                             }),
                                                         )
-                                                    case 'Nee':
-                                                        return p_.option(
+                                                    case 'Nee': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
@@ -1011,8 +980,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                 )]],
                                                             }),
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -1091,16 +1059,14 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                             $,
                                             ($): s_out.Value.state => {
                                                 switch ($[0]) {
-                                                    case 'Ja':
-                                                        return p_.option(
+                                                    case 'Ja': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Ja',
                                                                 'value': ['nothing', null],
                                                             }),
                                                         )
-                                                    case 'Nee':
-                                                        return p_.option(
+                                                    case 'Nee': return p_.option(
                                                             $,
                                                             ($) => ({
                                                                 'option': 'Nee',
@@ -1116,8 +1082,7 @@ export const Jaarbeheer: t_signatures.Jaarbeheer = ($) => ['group', ['verbose', 
                                                                 )]],
                                                             }),
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -1176,16 +1141,14 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                 $,
                 ($): s_out.Value.state => {
                     switch ($[0]) {
-                        case 'Ja':
-                            return p_.option(
+                        case 'Ja': return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Ja',
                                     'value': ['nothing', null],
                                 }),
                             )
-                        case 'Nee':
-                            return p_.option(
+                        case 'Nee': return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Nee',
@@ -1201,8 +1164,7 @@ export const Overige_balans_item: t_signatures.Overige_balans_item = ($) => ['gr
                                     )]],
                                 }),
                             )
-                        default:
-                            return p_.au(
+                        default: return p_.exhaustive(
                                 $[0],
                             )
                     }
@@ -1234,16 +1196,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Mutaties':
-                                            return p_.option(
+                                        case 'Mutaties': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Mutaties',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Nog te betalen':
-                                            return p_.option(
+                                        case 'Nog te betalen': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Nog te betalen',
@@ -1262,8 +1222,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        case 'Rekening courant':
-                                            return p_.option(
+                                        case 'Rekening courant': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
@@ -1279,8 +1238,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -1299,8 +1257,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Toegevoegd':
-                                            return p_.option(
+                                        case 'Toegevoegd': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
@@ -1317,24 +1274,21 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        case 'Niet van toepassing':
-                                            return p_.option(
+                                        case 'Niet van toepassing': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Niet van toepassing',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Ontbreekt':
-                                            return p_.option(
+                                        case 'Ontbreekt': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Ontbreekt',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -1362,8 +1316,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Bekend':
-                                                            return p_.option(
+                                                        case 'Bekend': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Bekend',
@@ -1397,8 +1350,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -1418,8 +1370,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Balans':
-                                                            return p_.option(
+                                                        case 'Balans': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -1435,8 +1386,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        case 'Kosten':
-                                                            return p_.option(
+                                                        case 'Kosten': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Kosten',
@@ -1452,8 +1402,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -1470,16 +1419,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Bonnetje':
-                                            return p_.option(
+                                        case 'Bonnetje': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Bonnetje',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Inkoop (met crediteur)':
-                                            return p_.option(
+                                        case 'Inkoop (met crediteur)': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Inkoop (met crediteur)',
@@ -1502,8 +1449,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        case 'Loonheffing':
-                                            return p_.option(
+                                        case 'Loonheffing': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Loonheffing',
@@ -1519,8 +1465,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        case 'Salaris':
-                                            return p_.option(
+                                        case 'Salaris': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Salaris',
@@ -1542,8 +1487,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -1566,16 +1510,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Mutaties':
-                                            return p_.option(
+                                        case 'Mutaties': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Mutaties',
                                                     'value': ['nothing', null],
                                                 }),
                                             )
-                                        case 'Rekening courant':
-                                            return p_.option(
+                                        case 'Rekening courant': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Rekening courant',
@@ -1591,8 +1533,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -1620,8 +1561,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Toegevoegd':
-                                            return p_.option(
+                                        case 'Toegevoegd': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Toegevoegd',
@@ -1638,8 +1578,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -1658,8 +1597,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                 $,
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
-                                        case 'Project':
-                                            return p_.option(
+                                        case 'Project': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Project',
@@ -1681,8 +1619,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        case 'Licentieovereenkomst':
-                                            return p_.option(
+                                        case 'Licentieovereenkomst': return p_.option(
                                                 $,
                                                 ($) => ({
                                                     'option': 'Licentieovereenkomst',
@@ -1698,8 +1635,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                     )]],
                                                 }),
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }
@@ -1727,16 +1663,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Intracommunautair':
-                                                            return p_.option(
+                                                        case 'Intracommunautair': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Intracommunautair',
                                                                     'value': ['nothing', null],
                                                                 }),
                                                             )
-                                                        case 'Standaard':
-                                                            return p_.option(
+                                                        case 'Standaard': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Standaard',
@@ -1752,16 +1686,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        case 'Binnenland: heffing verlegd':
-                                                            return p_.option(
+                                                        case 'Binnenland: heffing verlegd': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Binnenland: heffing verlegd',
                                                                     'value': ['nothing', null],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -1786,8 +1718,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Project':
-                                                            return p_.option(
+                                                        case 'Project': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Project',
@@ -1803,16 +1734,14 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        case 'Los':
-                                                            return p_.option(
+                                                        case 'Los': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Los',
                                                                     'value': ['nothing', null],
                                                                 }),
                                                             )
-                                                        case 'Licentieovereenkomst':
-                                                            return p_.option(
+                                                        case 'Licentieovereenkomst': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Licentieovereenkomst',
@@ -1828,8 +1757,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -1849,8 +1777,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Opbrengsten':
-                                                            return p_.option(
+                                                        case 'Opbrengsten': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Opbrengsten',
@@ -1866,8 +1793,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        case 'Balans':
-                                                            return p_.option(
+                                                        case 'Balans': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -1883,8 +1809,7 @@ export const Handelstransacties: t_signatures.Handelstransacties = ($) => ['grou
                                                                     )]],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -1938,8 +1863,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Resultaat':
-                                                            return p_.option(
+                                                        case 'Resultaat': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Resultaat',
@@ -1948,8 +1872,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                     ),
                                                                 }),
                                                             )
-                                                        case 'Balans':
-                                                            return p_.option(
+                                                        case 'Balans': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -1957,8 +1880,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                         $,
                                                                         ($): s_out.Value.state => {
                                                                             switch ($[0]) {
-                                                                                case 'Informele rekening':
-                                                                                    return p_.option(
+                                                                                case 'Informele rekening': return p_.option(
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Informele rekening',
@@ -1974,8 +1896,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                                             )]],
                                                                                         }),
                                                                                     )
-                                                                                default:
-                                                                                    return p_.au(
+                                                                                default: return p_.exhaustive(
                                                                                         $[0],
                                                                                     )
                                                                             }
@@ -1983,8 +1904,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                     )],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -2025,8 +1945,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                 $,
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
-                                                        case 'Resultaat':
-                                                            return p_.option(
+                                                        case 'Resultaat': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Resultaat',
@@ -2035,8 +1954,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                     ),
                                                                 }),
                                                             )
-                                                        case 'Balans':
-                                                            return p_.option(
+                                                        case 'Balans': return p_.option(
                                                                 $,
                                                                 ($) => ({
                                                                     'option': 'Balans',
@@ -2044,8 +1962,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                         $,
                                                                         ($): s_out.Value.state => {
                                                                             switch ($[0]) {
-                                                                                case 'Informele rekening':
-                                                                                    return p_.option(
+                                                                                case 'Informele rekening': return p_.option(
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Informele rekening',
@@ -2061,8 +1978,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                                             )]],
                                                                                         }),
                                                                                     )
-                                                                                case 'Verrekenpost':
-                                                                                    return p_.option(
+                                                                                case 'Verrekenpost': return p_.option(
                                                                                         $,
                                                                                         ($) => ({
                                                                                             'option': 'Verrekenpost',
@@ -2078,8 +1994,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                                             )]],
                                                                                         }),
                                                                                     )
-                                                                                default:
-                                                                                    return p_.au(
+                                                                                default: return p_.exhaustive(
                                                                                         $[0],
                                                                                     )
                                                                             }
@@ -2087,8 +2002,7 @@ export const Mutaties: t_signatures.Mutaties = ($) => ['group', ['verbose', p_.l
                                                                     )],
                                                                 }),
                                                             )
-                                                        default:
-                                                            return p_.au(
+                                                        default: return p_.exhaustive(
                                                                 $[0],
                                                             )
                                                     }
@@ -2174,24 +2088,21 @@ export const Jaren: t_signatures.Jaren = ($) => ['dictionary', p_.from.dictionar
                     $,
                     ($): s_out.Value.state => {
                         switch ($[0]) {
-                            case 'Ja':
-                                return p_.option(
+                            case 'Ja': return p_.option(
                                     $,
                                     ($) => ({
                                         'option': 'Ja',
                                         'value': ['nothing', null],
                                     }),
                                 )
-                            case 'Nee':
-                                return p_.option(
+                            case 'Nee': return p_.option(
                                     $,
                                     ($) => ({
                                         'option': 'Nee',
                                         'value': ['nothing', null],
                                     }),
                                 )
-                            default:
-                                return p_.au(
+                            default: return p_.exhaustive(
                                     $[0],
                                 )
                         }
@@ -2259,8 +2170,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                 $,
                 ($): s_out.Value.state => {
                     switch ($[0]) {
-                        case 'Inkoop':
-                            return p_.option(
+                        case 'Inkoop': return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Inkoop',
@@ -2269,8 +2179,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                                     }],
                                 }),
                             )
-                        case 'Verkoop':
-                            return p_.option(
+                        case 'Verkoop': return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'Verkoop',
@@ -2279,8 +2188,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                                     }],
                                 }),
                             )
-                        case 'BTW-periode':
-                            return p_.option(
+                        case 'BTW-periode': return p_.option(
                                 $,
                                 ($) => ({
                                     'option': 'BTW-periode',
@@ -2289,8 +2197,7 @@ export const Rekening_Mutatie: t_signatures.Rekening_Mutatie = ($) => ['group', 
                                     }],
                                 }),
                             )
-                        default:
-                            return p_.au(
+                        default: return p_.exhaustive(
                                 $[0],
                             )
                     }
@@ -2304,16 +2211,14 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', p_
     $,
     ($): s_out.Value.state => {
         switch ($[0]) {
-            case 'Ja':
-                return p_.option(
+            case 'Ja': return p_.option(
                     $,
                     ($) => ({
                         'option': 'Ja',
                         'value': ['nothing', null],
                     }),
                 )
-            case 'Nee':
-                return p_.option(
+            case 'Nee': return p_.option(
                     $,
                     ($) => ({
                         'option': 'Nee',
@@ -2329,8 +2234,7 @@ export const Eerste_boekjaar: t_signatures.Eerste_boekjaar = ($) => ['state', p_
                         )]],
                     }),
                 )
-            default:
-                return p_.au(
+            default: return p_.exhaustive(
                     $[0],
                 )
         }

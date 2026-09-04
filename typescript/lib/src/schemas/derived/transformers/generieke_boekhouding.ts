@@ -49,8 +49,8 @@ export const Root: declarations.Root = ($) => {
                                             return p_.from.state($.Type).decide(
                                                 ($): p_schema.Optional_Value<number> => {
                                                     switch ($[0]) {
-                                                        case 'Balans': return p_.ss($, ($) => p_.literal.not_set())
-                                                        case 'Kosten': return p_.ss($, ($) => $.Grootboekrekening['l entry'] === context
+                                                        case 'Balans': return p_.option($, ($) => p_.literal.not_set())
+                                                        case 'Kosten': return p_.option($, ($) => $.Grootboekrekening['l entry'] === context
                                                             ? p_.literal.set(p_.from.state($v_bedrag).decide(
                                                                 ($): number => {
                                                                     switch ($[0]) {
@@ -64,7 +64,7 @@ export const Root: declarations.Root = ($) => {
                                                             ))
                                                             : p_.literal.not_set()
                                                         )
-                                                        default: return p_.au($[0])
+                                                        default: return p_.exhaustive($[0])
                                                     }
                                                 }
                                             )
@@ -84,7 +84,7 @@ export const Root: declarations.Root = ($) => {
                                             return p_.from.state($.Type).decide(
                                                 ($) => {
                                                     switch ($[0]) {
-                                                        case 'Opbrengsten': return p_.ss($, ($) => $.Grootboekrekening['l entry'] === context
+                                                        case 'Opbrengsten': return p_.option($, ($) => $.Grootboekrekening['l entry'] === context
                                                             ? p_.literal.set($v_bedrag)
                                                             : p_.literal.not_set()
                                                         )
@@ -135,9 +135,9 @@ export const Root: declarations.Root = ($) => {
                             'zijde': p_.from.state($.Stam.Zijde).decide(
                                 ($) => {
                                     switch ($[0]) {
-                                        case 'Kosten': return p_.ss($, ($) => ['kosten', null])
-                                        case 'Opbrengsten': return p_.ss($, ($) => ['opbrengsten', null])
-                                        default: return p_.au($[0])
+                                        case 'Kosten': return p_.option($, ($) => ['kosten', null])
+                                        case 'Opbrengsten': return p_.option($, ($) => ['opbrengsten', null])
+                                        default: return p_.exhaustive($[0])
                                     }
                                 }
                             ),
@@ -261,9 +261,9 @@ export const Root: declarations.Root = ($) => {
                             'zijde': p_.from.state($.Stam.Zijde).decide(
                                 ($) => {
                                     switch ($[0]) {
-                                        case 'Activa': return p_.ss($, ($) => ['activa', null])
-                                        case 'Passiva': return p_.ss($, ($) => ['passiva', null])
-                                        default: return p_.au($[0])
+                                        case 'Activa': return p_.option($, ($) => ['activa', null])
+                                        case 'Passiva': return p_.option($, ($) => ['passiva', null])
+                                        default: return p_.exhaustive($[0])
                                     }
                                 }
                             ),

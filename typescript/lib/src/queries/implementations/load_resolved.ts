@@ -1,5 +1,4 @@
 import * as p_ from 'pareto-core/implementation/query'
-import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
 
 //data  types
 import type * as s_boekhouding from "../../modules/boekhouding/schemas/resolved/schema.js"
@@ -26,8 +25,8 @@ export const $$: p_.Query_Implementation<
     },
     null
 > = p_.query(
-    ($d, $s, $q) => p_super_query_result(p_.e.refine<s_boekhouding.Root_, s_file_in_file_out.Error>(
-        (abort) => r_boekhouding_resolved_from_loc.Root(
+    (e, $s, $q) => e.refine(
+        ($d, abort) => r_boekhouding_resolved_from_loc.Root(
             $d.data,
             ($) => abort(
                 {
@@ -50,5 +49,5 @@ export const $$: p_.Query_Implementation<
                 'tab size': $s['tab size']
             }
         )
-    ))
+    )
 )

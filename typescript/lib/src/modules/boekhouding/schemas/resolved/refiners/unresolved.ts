@@ -456,18 +456,15 @@ export const Fiscaal: declarations.Fiscaal_ = ($, abort, $l, $p) => p_.literal.g
                                             $['l state'],
                                             ($): s_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
                                                 switch ($[0]) {
-                                                    case 'Activa':
-                                                        return p_.option(
+                                                    case 'Activa': return p_.option(
                                                             $,
                                                             ($) => ['Activa', p_.literal.nothing()],
                                                         )
-                                                    case 'Passiva':
-                                                        return p_.option(
+                                                    case 'Passiva': return p_.option(
                                                             $,
                                                             ($) => ['Passiva', p_.literal.nothing()],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -516,18 +513,15 @@ export const Fiscaal: declarations.Fiscaal_ = ($, abort, $l, $p) => p_.literal.g
                                             $['l state'],
                                             ($): s_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
                                                 switch ($[0]) {
-                                                    case 'Kosten':
-                                                        return p_.option(
+                                                    case 'Kosten': return p_.option(
                                                             $,
                                                             ($) => ['Kosten', p_.literal.nothing()],
                                                         )
-                                                    case 'Opbrengsten':
-                                                        return p_.option(
+                                                    case 'Opbrengsten': return p_.option(
                                                             $,
                                                             ($) => ['Opbrengsten', p_.literal.nothing()],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -607,18 +601,15 @@ export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, ab
                                             $['l state'],
                                             ($): s_out.Grootboek_Categorieen.Balans.D.Zijde => {
                                                 switch ($[0]) {
-                                                    case 'Activa':
-                                                        return p_.option(
+                                                    case 'Activa': return p_.option(
                                                             $,
                                                             ($) => ['Activa', p_.literal.nothing()],
                                                         )
-                                                    case 'Passiva':
-                                                        return p_.option(
+                                                    case 'Passiva': return p_.option(
                                                             $,
                                                             ($) => ['Passiva', p_.literal.nothing()],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -738,18 +729,15 @@ export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, ab
                                             $['l state'],
                                             ($): s_out.Grootboek_Categorieen.Resultaat.D.Zijde => {
                                                 switch ($[0]) {
-                                                    case 'Kosten':
-                                                        return p_.option(
+                                                    case 'Kosten': return p_.option(
                                                             $,
                                                             ($) => ['Kosten', p_.literal.nothing()],
                                                         )
-                                                    case 'Opbrengsten':
-                                                        return p_.option(
+                                                    case 'Opbrengsten': return p_.option(
                                                             $,
                                                             ($) => ['Opbrengsten', p_.literal.nothing()],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -879,8 +867,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                             $['l state'],
                                             ($): s_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                                 switch ($[0]) {
-                                                    case 'Ja':
-                                                        return p_.option(
+                                                    case 'Ja': return p_.option(
                                                             $,
                                                             ($) => ['Ja', p_.literal.group_resolve(
                                                                 () => {
@@ -895,13 +882,11 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                 },
                                                             )],
                                                         )
-                                                    case 'Nee':
-                                                        return p_.option(
+                                                    case 'Nee': return p_.option(
                                                             $,
                                                             ($) => ['Nee', p_.literal.nothing()],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -1007,18 +992,15 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                         $['l state'],
                                                         ($): s_out.Beheer.Grootboekrekeningen.Balans.D.Zijde => {
                                                             switch ($[0]) {
-                                                                case 'Activa':
-                                                                    return p_.option(
+                                                                case 'Activa': return p_.option(
                                                                         $,
                                                                         ($) => ['Activa', p_.literal.nothing()],
                                                                     )
-                                                                case 'Passiva':
-                                                                    return p_.option(
+                                                                case 'Passiva': return p_.option(
                                                                         $,
                                                                         ($) => ['Passiva', p_.literal.nothing()],
                                                                     )
-                                                                default:
-                                                                    return p_.au(
+                                                                default: return p_.exhaustive(
                                                                         $[0],
                                                                     )
                                                             }
@@ -1121,8 +1103,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                         $['l state'],
                                                         ($): s_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
                                                             switch ($[0]) {
-                                                                case 'Kosten':
-                                                                    return p_.option(
+                                                                case 'Kosten': return p_.option(
                                                                         $,
                                                                         ($) => ['Kosten', p_.literal.group_resolve(
                                                                             () => {
@@ -1137,8 +1118,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                                                 $['l state'],
                                                                                                 ($): s_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                     switch ($[0]) {
-                                                                                                        case 'Ja':
-                                                                                                            return p_.option(
+                                                                                                        case 'Ja': return p_.option(
                                                                                                                 $,
                                                                                                                 ($) => ['Ja', p_.literal.group_resolve(
                                                                                                                     () => {
@@ -1180,13 +1160,11 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                                                                     },
                                                                                                                 )],
                                                                                                             )
-                                                                                                        case 'Nee':
-                                                                                                            return p_.option(
+                                                                                                        case 'Nee': return p_.option(
                                                                                                                 $,
                                                                                                                 ($) => ['Nee', p_.literal.nothing()],
                                                                                                             )
-                                                                                                        default:
-                                                                                                            return p_.au(
+                                                                                                        default: return p_.exhaustive(
                                                                                                                 $[0],
                                                                                                             )
                                                                                                     }
@@ -1201,13 +1179,11 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                             },
                                                                         )],
                                                                     )
-                                                                case 'Opbrengsten':
-                                                                    return p_.option(
+                                                                case 'Opbrengsten': return p_.option(
                                                                         $,
                                                                         ($) => ['Opbrengsten', p_.literal.nothing()],
                                                                     )
-                                                                default:
-                                                                    return p_.au(
+                                                                default: return p_.exhaustive(
                                                                         $[0],
                                                                     )
                                                             }
@@ -1381,8 +1357,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                                                         $['l state'],
                                                                                                         ($): s_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                                             switch ($[0]) {
-                                                                                                                case 'Project':
-                                                                                                                    return p_.option(
+                                                                                                                case 'Project': return p_.option(
                                                                                                                         $,
                                                                                                                         ($) => ['Project', p_.literal.group_resolve(
                                                                                                                             () => {
@@ -1403,8 +1378,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                                                                             },
                                                                                                                         )],
                                                                                                                     )
-                                                                                                                default:
-                                                                                                                    return p_.au(
+                                                                                                                default: return p_.exhaustive(
                                                                                                                         $[0],
                                                                                                                     )
                                                                                                             }
@@ -1678,8 +1652,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                         $['l state'],
                                                         ($): s_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
                                                             switch ($[0]) {
-                                                                case 'Aangegeven':
-                                                                    return p_.option(
+                                                                case 'Aangegeven': return p_.option(
                                                                         $,
                                                                         ($) => ['Aangegeven', p_.literal.group_resolve(
                                                                             () => {
@@ -1706,13 +1679,11 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                             },
                                                                         )],
                                                                     )
-                                                                case 'Openstaand':
-                                                                    return p_.option(
+                                                                case 'Openstaand': return p_.option(
                                                                         $,
                                                                         ($) => ['Openstaand', p_.literal.nothing()],
                                                                     )
-                                                                default:
-                                                                    return p_.au(
+                                                                default: return p_.exhaustive(
                                                                         $[0],
                                                                     )
                                                             }
@@ -1972,13 +1943,11 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                         $['l state'],
                                                         ($): s_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
                                                             switch ($[0]) {
-                                                                case 'Ja':
-                                                                    return p_.option(
+                                                                case 'Ja': return p_.option(
                                                                         $,
                                                                         ($) => ['Ja', p_.literal.nothing()],
                                                                     )
-                                                                case 'Nee':
-                                                                    return p_.option(
+                                                                case 'Nee': return p_.option(
                                                                         $,
                                                                         ($) => ['Nee', p_variables(
                                                                             () => {
@@ -1987,8 +1956,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                                     $p['Eerste boekjaar'],
                                                                                     ($) => {
                                                                                         switch ($[0]) {
-                                                                                            case 'Nee':
-                                                                                                return p_.option(
+                                                                                            case 'Nee': return p_.option(
                                                                                                     $,
                                                                                                     ($) => $,
                                                                                                 )
@@ -2029,8 +1997,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                             },
                                                                         )],
                                                                     )
-                                                                default:
-                                                                    return p_.au(
+                                                                default: return p_.exhaustive(
                                                                         $[0],
                                                                     )
                                                             }
@@ -2106,13 +2073,11 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                         $['l state'],
                                                         ($): s_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
                                                             switch ($[0]) {
-                                                                case 'Ja':
-                                                                    return p_.option(
+                                                                case 'Ja': return p_.option(
                                                                         $,
                                                                         ($) => ['Ja', p_.literal.nothing()],
                                                                     )
-                                                                case 'Nee':
-                                                                    return p_.option(
+                                                                case 'Nee': return p_.option(
                                                                         $,
                                                                         ($) => ['Nee', p_variables(
                                                                             () => {
@@ -2121,8 +2086,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                                     $p['Eerste boekjaar'],
                                                                                     ($) => {
                                                                                         switch ($[0]) {
-                                                                                            case 'Nee':
-                                                                                                return p_.option(
+                                                                                            case 'Nee': return p_.option(
                                                                                                     $,
                                                                                                     ($) => $,
                                                                                                 )
@@ -2163,8 +2127,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                             },
                                                                         )],
                                                                     )
-                                                                default:
-                                                                    return p_.au(
+                                                                default: return p_.exhaustive(
                                                                         $[0],
                                                                     )
                                                             }
@@ -2320,13 +2283,11 @@ export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort,
                         $['l state'],
                         ($): s_out.Overige_balans_item.Nieuw => {
                             switch ($[0]) {
-                                case 'Ja':
-                                    return p_.option(
+                                case 'Ja': return p_.option(
                                         $,
                                         ($) => ['Ja', p_.literal.nothing()],
                                     )
-                                case 'Nee':
-                                    return p_.option(
+                                case 'Nee': return p_.option(
                                         $,
                                         ($) => ['Nee', p_variables(
                                             () => {
@@ -2335,8 +2296,7 @@ export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort,
                                                     $p['Eerste boekjaar'],
                                                     ($) => {
                                                         switch ($[0]) {
-                                                            case 'Nee':
-                                                                return p_.option(
+                                                            case 'Nee': return p_.option(
                                                                     $,
                                                                     ($) => $,
                                                                 )
@@ -2395,8 +2355,7 @@ export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort,
                                             },
                                         )],
                                     )
-                                default:
-                                    return p_.au(
+                                default: return p_.exhaustive(
                                         $[0],
                                     )
                             }
@@ -2493,20 +2452,17 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                             $['l state'],
                                             ($): s_out.Handelstransacties.Inkopen.D.Afhandeling => {
                                                 switch ($[0]) {
-                                                    case 'Mutaties':
-                                                        return p_.option(
+                                                    case 'Mutaties': return p_.option(
                                                             $,
                                                             ($) => ['Mutaties', p_.literal.nothing()],
                                                         )
-                                                    case 'Nog te betalen':
-                                                        return p_.option(
+                                                    case 'Nog te betalen': return p_.option(
                                                             $,
                                                             ($) => ['Nog te betalen', {
                                                                 'Betalingstermijn': $.Betalingstermijn
                                                             }],
                                                         )
-                                                    case 'Rekening courant':
-                                                        return p_.option(
+                                                    case 'Rekening courant': return p_.option(
                                                             $,
                                                             ($) => ['Rekening courant', p_.literal.group_resolve(
                                                                 () => {
@@ -2548,8 +2504,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -2635,7 +2590,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                             //                                 )],
                             //                             )
                             //                         default:
-                            //                             return p_.au(
+                            //                             return p_.exhaustive(
                             //                                 $[0],
                             //                             )
                             //                     }
@@ -2655,8 +2610,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                             $['l state'],
                                             ($): s_out.Handelstransacties.Inkopen.D.Brondocument => {
                                                 switch ($[0]) {
-                                                    case 'Toegevoegd':
-                                                        return p_.option(
+                                                    case 'Toegevoegd': return p_.option(
                                                             $,
                                                             ($) => ['Toegevoegd', p_.literal.group_resolve(
                                                                 () => {
@@ -2671,18 +2625,15 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    case 'Niet van toepassing':
-                                                        return p_.option(
+                                                    case 'Niet van toepassing': return p_.option(
                                                             $,
                                                             ($) => ['Niet van toepassing', p_.literal.nothing()],
                                                         )
-                                                    case 'Ontbreekt':
-                                                        return p_.option(
+                                                    case 'Ontbreekt': return p_.option(
                                                             $,
                                                             ($) => ['Ontbreekt', p_.literal.nothing()],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -2716,8 +2667,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 $['l state'],
                                                                 ($): s_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
                                                                     switch ($[0]) {
-                                                                        case 'Bekend':
-                                                                            return p_.option(
+                                                                        case 'Bekend': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Bekend', p_.literal.group_resolve(
                                                                                     () => {
@@ -2738,8 +2688,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        default:
-                                                                            return p_.au(
+                                                                        default: return p_.exhaustive(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -2764,8 +2713,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 $['l state'],
                                                                 ($): s_out.Handelstransacties.Inkopen.D.Regels.D.Type => {
                                                                     switch ($[0]) {
-                                                                        case 'Balans':
-                                                                            return p_.option(
+                                                                        case 'Balans': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Balans', p_.literal.group_resolve(
                                                                                     () => {
@@ -2807,8 +2755,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        case 'Kosten':
-                                                                            return p_.option(
+                                                                        case 'Kosten': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Kosten', p_.literal.group_resolve(
                                                                                     () => {
@@ -2850,8 +2797,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        default:
-                                                                            return p_.au(
+                                                                        default: return p_.exhaustive(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -2881,13 +2827,11 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                             $['l state'],
                                             ($): s_out.Handelstransacties.Inkopen.D.Type => {
                                                 switch ($[0]) {
-                                                    case 'Bonnetje':
-                                                        return p_.option(
+                                                    case 'Bonnetje': return p_.option(
                                                             $,
                                                             ($) => ['Bonnetje', p_.literal.nothing()],
                                                         )
-                                                    case 'Inkoop (met crediteur)':
-                                                        return p_.option(
+                                                    case 'Inkoop (met crediteur)': return p_.option(
                                                             $,
                                                             ($) => ['Inkoop (met crediteur)', p_.literal.group_resolve(
                                                                 () => {
@@ -2935,8 +2879,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    case 'Loonheffing':
-                                                        return p_.option(
+                                                    case 'Loonheffing': return p_.option(
                                                             $,
                                                             ($) => ['Loonheffing', p_.literal.group_resolve(
                                                                 () => {
@@ -2978,8 +2921,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    case 'Salaris':
-                                                        return p_.option(
+                                                    case 'Salaris': return p_.option(
                                                             $,
                                                             ($) => ['Salaris', p_.literal.group_resolve(
                                                                 () => {
@@ -3054,8 +2996,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -3139,8 +3080,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                             $['l state'],
                                             ($): s_out.Handelstransacties.Verkopen.D.Brondocument => {
                                                 switch ($[0]) {
-                                                    case 'Toegevoegd':
-                                                        return p_.option(
+                                                    case 'Toegevoegd': return p_.option(
                                                             $,
                                                             ($) => ['Toegevoegd', p_.literal.group_resolve(
                                                                 () => {
@@ -3155,8 +3095,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -3208,8 +3147,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                             $['l state'],
                                             ($): s_out.Handelstransacties.Verkopen.D.Contracttype => {
                                                 switch ($[0]) {
-                                                    case 'Project':
-                                                        return p_.option(
+                                                    case 'Project': return p_.option(
                                                             $,
                                                             ($) => ['Project', p_.literal.group_resolve(
                                                                 () => {
@@ -3284,8 +3222,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    case 'Licentieovereenkomst':
-                                                        return p_.option(
+                                                    case 'Licentieovereenkomst': return p_.option(
                                                             $,
                                                             ($) => ['Licentieovereenkomst', p_.literal.group_resolve(
                                                                 () => {
@@ -3327,8 +3264,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -3350,13 +3286,11 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                             $['l state'],
                                             ($): s_out.Handelstransacties.Verkopen.D.Afhandeling => {
                                                 switch ($[0]) {
-                                                    case 'Mutaties':
-                                                        return p_.option(
+                                                    case 'Mutaties': return p_.option(
                                                             $,
                                                             ($) => ['Mutaties', p_.literal.nothing()],
                                                         )
-                                                    case 'Rekening courant':
-                                                        return p_.option(
+                                                    case 'Rekening courant': return p_.option(
                                                             $,
                                                             ($) => ['Rekening courant', p_.literal.group_resolve(
                                                                 () => {
@@ -3398,8 +3332,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 },
                                                             )],
                                                         )
-                                                    default:
-                                                        return p_.au(
+                                                    default: return p_.exhaustive(
                                                             $[0],
                                                         )
                                                 }
@@ -3428,13 +3361,11 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 $['l state'],
                                                                 ($): s_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                                     switch ($[0]) {
-                                                                        case 'Intracommunautair':
-                                                                            return p_.option(
+                                                                        case 'Intracommunautair': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Intracommunautair', p_.literal.nothing()],
                                                                             )
-                                                                        case 'Standaard':
-                                                                            return p_.option(
+                                                                        case 'Standaard': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Standaard', p_.literal.group_resolve(
                                                                                     () => {
@@ -3476,13 +3407,11 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        case 'Binnenland: heffing verlegd':
-                                                                            return p_.option(
+                                                                        case 'Binnenland: heffing verlegd': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Binnenland: heffing verlegd', p_.literal.nothing()],
                                                                             )
-                                                                        default:
-                                                                            return p_.au(
+                                                                        default: return p_.exhaustive(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -3507,8 +3436,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 $['l state'],
                                                                 ($): s_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
                                                                     switch ($[0]) {
-                                                                        case 'Project':
-                                                                            return p_.option(
+                                                                        case 'Project': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Project', p_variables(
                                                                                     () => {
@@ -3517,8 +3445,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                             parent_Contracttype,
                                                                                             ($) => {
                                                                                                 switch ($[0]) {
-                                                                                                    case 'Project':
-                                                                                                        return p_.option(
+                                                                                                    case 'Project': return p_.option(
                                                                                                             $,
                                                                                                             ($) => $,
                                                                                                         )
@@ -3577,13 +3504,11 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        case 'Los':
-                                                                            return p_.option(
+                                                                        case 'Los': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Los', p_.literal.nothing()],
                                                                             )
-                                                                        case 'Licentieovereenkomst':
-                                                                            return p_.option(
+                                                                        case 'Licentieovereenkomst': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Licentieovereenkomst', p_variables(
                                                                                     () => {
@@ -3592,8 +3517,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                             parent_Contracttype,
                                                                                             ($) => {
                                                                                                 switch ($[0]) {
-                                                                                                    case 'Licentieovereenkomst':
-                                                                                                        return p_.option(
+                                                                                                    case 'Licentieovereenkomst': return p_.option(
                                                                                                             $,
                                                                                                             ($) => $,
                                                                                                         )
@@ -3652,8 +3576,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        default:
-                                                                            return p_.au(
+                                                                        default: return p_.exhaustive(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -3678,8 +3601,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                 $['l state'],
                                                                 ($): s_out.Handelstransacties.Verkopen.D.Regels.D.Type => {
                                                                     switch ($[0]) {
-                                                                        case 'Opbrengsten':
-                                                                            return p_.option(
+                                                                        case 'Opbrengsten': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Opbrengsten', p_.literal.group_resolve(
                                                                                     () => {
@@ -3721,8 +3643,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        case 'Balans':
-                                                                            return p_.option(
+                                                                        case 'Balans': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Balans', p_.literal.group_resolve(
                                                                                     () => {
@@ -3764,8 +3685,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        default:
-                                                                            return p_.au(
+                                                                        default: return p_.exhaustive(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -3866,8 +3786,7 @@ export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort, $l, $
                         $['l state'],
                         ($): s_out.Rekening_Mutatie.type_ => {
                             switch ($[0]) {
-                                case 'Inkoop':
-                                    return p_.option(
+                                case 'Inkoop': return p_.option(
                                         $,
                                         ($) => ['Inkoop', {
                                             'l entry': _p_sl.acyclic.from_resolved_dictionary(
@@ -3898,8 +3817,7 @@ export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort, $l, $
                                             'l id': $['l reference'],
                                         }],
                                     )
-                                case 'Verkoop':
-                                    return p_.option(
+                                case 'Verkoop': return p_.option(
                                         $,
                                         ($) => ['Verkoop', {
                                             'l entry': _p_sl.acyclic.from_resolved_dictionary(
@@ -3930,8 +3848,7 @@ export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort, $l, $
                                             'l id': $['l reference'],
                                         }],
                                     )
-                                case 'BTW-periode':
-                                    return p_.option(
+                                case 'BTW-periode': return p_.option(
                                         $,
                                         ($) => ['BTW-periode', {
                                             'l entry': _p_sl.acyclic.from_resolved_dictionary(
@@ -3962,8 +3879,7 @@ export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort, $l, $
                                             'l id': $['l reference'],
                                         }],
                                     )
-                                default:
-                                    return p_.au(
+                                default: return p_.exhaustive(
                                         $[0],
                                     )
                             }
@@ -4043,8 +3959,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                 $['l state'],
                                                                 ($): s_out.Mutaties.Verrekenposten.D.Mutaties.D.Afhandeling => {
                                                                     switch ($[0]) {
-                                                                        case 'Resultaat':
-                                                                            return p_.option(
+                                                                        case 'Resultaat': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Resultaat', Rekening_Mutatie(
                                                                                     $,
@@ -4055,8 +3970,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                     $p,
                                                                                 )],
                                                                             )
-                                                                        case 'Balans':
-                                                                            return p_.option(
+                                                                        case 'Balans': return p_.option(
                                                                                 $,
                                                                                 ($) => ['Balans', p_variables(
                                                                                     () => {
@@ -4066,8 +3980,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                             $['l state'],
                                                                                             ($): s_out.Mutaties.Verrekenposten.D.Mutaties.D.Afhandeling.Balans => {
                                                                                                 switch ($[0]) {
-                                                                                                    case 'Informele rekening':
-                                                                                                        return p_.option(
+                                                                                                    case 'Informele rekening': return p_.option(
                                                                                                             $,
                                                                                                             ($) => ['Informele rekening', p_.literal.group_resolve(
                                                                                                                 () => {
@@ -4109,8 +4022,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                                                 },
                                                                                                             )],
                                                                                                         )
-                                                                                                    default:
-                                                                                                        return p_.au(
+                                                                                                    default: return p_.exhaustive(
                                                                                                             $[0],
                                                                                                         )
                                                                                                 }
@@ -4119,8 +4031,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                     },
                                                                                 )],
                                                                             )
-                                                                        default:
-                                                                            return p_.au(
+                                                                        default: return p_.exhaustive(
                                                                                 $[0],
                                                                             )
                                                                     }
@@ -4222,8 +4133,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                         $.type['l state'],
                                                         ($): s_out.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D.type_ => {
                                                             switch ($[0]) {
-                                                                case 'Resultaat':
-                                                                    return p_.option(
+                                                                case 'Resultaat': return p_.option(
                                                                         $,
                                                                         ($) => ['Resultaat', Rekening_Mutatie(
                                                                             $,
@@ -4234,8 +4144,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                             $p,
                                                                         )],
                                                                     )
-                                                                case 'Balans':
-                                                                    return p_.option(
+                                                                case 'Balans': return p_.option(
                                                                         $,
                                                                         ($) => ['Balans', p_variables(
                                                                             () => {
@@ -4245,8 +4154,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                     $['l state'],
                                                                                     ($): s_out.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D.type_.Balans => {
                                                                                         switch ($[0]) {
-                                                                                            case 'Verrekenpost':
-                                                                                                return p_.option(
+                                                                                            case 'Verrekenpost': return p_.option(
                                                                                                     $,
                                                                                                     ($) => ['Verrekenpost', p_.literal.group_resolve(
                                                                                                         () => {
@@ -4288,8 +4196,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                                         },
                                                                                                     )],
                                                                                                 )
-                                                                                            case 'Informele rekening':
-                                                                                                return p_.option(
+                                                                                            case 'Informele rekening': return p_.option(
                                                                                                     $,
                                                                                                     ($) => ['Informele rekening', p_.literal.group_resolve(
                                                                                                         () => {
@@ -4331,8 +4238,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                                         },
                                                                                                     )],
                                                                                                 )
-                                                                                            default:
-                                                                                                return p_.au(
+                                                                                            default: return p_.exhaustive(
                                                                                                     $[0],
                                                                                                 )
                                                                                         }
@@ -4341,8 +4247,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                             },
                                                                         )],
                                                                     )
-                                                                default:
-                                                                    return p_.au(
+                                                                default: return p_.exhaustive(
                                                                         $[0],
                                                                     )
                                                             }
@@ -4484,13 +4389,11 @@ export const Eerste_boekjaar: declarations.Eerste_boekjaar_ = ($, abort, $l, $p)
             $['l state'],
             ($): s_out.Eerste_boekjaar => {
                 switch ($[0]) {
-                    case 'Ja':
-                        return p_.option(
+                    case 'Ja': return p_.option(
                             $,
                             ($) => ['Ja', p_.literal.nothing()],
                         )
-                    case 'Nee':
-                        return p_.option(
+                    case 'Nee': return p_.option(
                             $,
                             ($) => ['Nee', p_.literal.group_resolve(
                                 () => {
@@ -4530,8 +4433,7 @@ export const Eerste_boekjaar: declarations.Eerste_boekjaar_ = ($, abort, $l, $p)
                                 },
                             )],
                         )
-                    default:
-                        return p_.au(
+                    default: return p_.exhaustive(
                             $[0],
                         )
                 }
@@ -4557,18 +4459,15 @@ export const Jaren: declarations.Jaren_ = ($, abort, $l, $p) => p_.from.dictiona
                                 $['l state'],
                                 ($): s_out.Jaren.D.Afgesloten => {
                                     switch ($[0]) {
-                                        case 'Ja':
-                                            return p_.option(
+                                        case 'Ja': return p_.option(
                                                 $,
                                                 ($) => ['Ja', p_.literal.nothing()],
                                             )
-                                        case 'Nee':
-                                            return p_.option(
+                                        case 'Nee': return p_.option(
                                                 $,
                                                 ($) => ['Nee', p_.literal.nothing()],
                                             )
-                                        default:
-                                            return p_.au(
+                                        default: return p_.exhaustive(
                                                 $[0],
                                             )
                                     }

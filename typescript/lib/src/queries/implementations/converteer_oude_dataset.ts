@@ -1,7 +1,5 @@
 import * as p_ from 'pareto-core/implementation/query'
 
-import p_super_query_result from 'pareto-core/implementation/query/super_query_result'
-
 import type * as query_interfaces_file_in_file_out from "pareto-common/modules/file_in_file_out/queries/interfaces"
 
 //data  types
@@ -29,8 +27,8 @@ export const $$: p_.Query_Implementation<
     },
     null
 > = p_.query(
-    ($d, $s, $q) => p_super_query_result(p_.e.refine<s_boekhouding.Root_, s_file_in_file_out.Error>(
-        (abort) => r_boekhouding_resolved_from_boekhouding_oude_model.Root(
+    (e, $s, $q) => e.refine(
+        ($d, abort) => r_boekhouding_resolved_from_boekhouding_oude_model.Root(
             r_boekhouding_oude_model_from_loc.Root(
                     $d.data,
                     ($) => abort(
@@ -80,7 +78,7 @@ export const $$: p_.Query_Implementation<
                 }
             ),
         )
-    )).transform(
+    ).transform(
         ($) => ({
             'paragraph': t_boekhouding_resolved_to_paragraph.Root(
                 $
