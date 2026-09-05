@@ -1,9 +1,9 @@
 
-import * as p_ from 'pareto-core/implementation/refiner'
-import * as p_di from 'pareto-core/interface/schema'
+import * as p_ from 'pareto-core/refiner'
+import * as p_di from 'pareto-core/schema'
 
 
-import * as p_i from 'pareto-core/interface/__internal/Abort'
+import * as p_i from 'pareto-core/__internal/Abort'
 
 import * as i_generic from "liana-core/modules/value_unmarshalling/schemas/unmarshalling/schema"
 
@@ -283,11 +283,11 @@ const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign(
 const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
 const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
-import p_change_context from 'pareto-core/implementation/refiner/specials/change_context'
+import p_change_context from 'pareto-core/refiner/specials/change_context'
 
-import p_list_from_text from 'pareto-core/implementation/refiner/specials/list_from_text'
+import p_list_from_text from 'pareto-core/refiner/specials/list_from_text'
 
-import p_variables from 'pareto-core/implementation/refiner/specials/variables'
+import p_variables from 'pareto-core/refiner/specials/variables'
 
 import * as s_out from "../schema.js"
 

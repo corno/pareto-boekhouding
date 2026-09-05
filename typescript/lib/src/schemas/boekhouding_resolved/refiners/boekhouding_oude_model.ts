@@ -1,4 +1,4 @@
-import * as p_ from 'pareto-core/implementation/refiner'
+import * as p_ from 'pareto-core/refiner'
 
 //schemas
 import type * as s_in from "../../../modules/boekhouding_oude_model/schemas/unconstrained/schema.js"

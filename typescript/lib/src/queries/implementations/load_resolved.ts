@@ -1,4 +1,4 @@
-import * as p_ from 'pareto-core/implementation/query'
+import * as p_ from 'pareto-core/query'
 
 //data  types
 import type * as s_boekhouding from "../../modules/boekhouding/schemas/resolved/schema.js"

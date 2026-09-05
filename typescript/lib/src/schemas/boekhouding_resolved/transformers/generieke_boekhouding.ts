@@ -1,4 +1,4 @@
-import * as p_ from 'pareto-core/implementation/transformer'
+import * as p_ from 'pareto-core/transformer'
 
 //schemas
 import type * as s_in from "../../../modules/boekhouding/schemas/resolved/schema.js"

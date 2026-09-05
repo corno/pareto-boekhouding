@@ -1,7 +1,7 @@
-import * as p_ from 'pareto-core/implementation/transformer'
-import * as p_temp from 'pareto-core/implementation/refiner'
-import * as p_schema from 'pareto-core/interface/schema'
-import p_unreachable_code_path from 'pareto-core/implementation/transformer/specials/unreachable_code_path'
+import * as p_ from 'pareto-core/transformer'
+import * as p_temp from 'pareto-core/refiner'
+import * as p_schema from 'pareto-core/schema'
+import p_unreachable_code_path from 'pareto-core/transformer/specials/unreachable_code_path'
 
 //schemas
 import type * as s_in from "../schema.js"
