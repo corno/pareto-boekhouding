@@ -421,9 +421,6 @@ export type Eerste_boekjaar_ = (
 ) => Eerste_boekjaar_.O
 }
 
-const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
-const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
-const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
 
 
 import p_change_context from 'pareto-core/refiner/specials/change_context'
@@ -452,8 +449,7 @@ export const Fiscaal: declarations.Fiscaal_ = ($, abort, $l, $p) => p_.literal.g
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Fiscaal.Balans_Hoofdcategorieen.D.Zijde => {
                                                 switch ($[0]) {
                                                     case 'Activa': return p_.option(
@@ -509,8 +505,7 @@ export const Fiscaal: declarations.Fiscaal_ = ($, abort, $l, $p) => p_.literal.g
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Fiscaal.Resultaat_Hoofdcategorieen.D.Zijde => {
                                                 switch ($[0]) {
                                                     case 'Kosten': return p_.option(
@@ -597,8 +592,7 @@ export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, ab
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Grootboek_Categorieen.Balans.D.Zijde => {
                                                 switch ($[0]) {
                                                     case 'Activa': return p_.option(
@@ -725,8 +719,7 @@ export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, ab
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Grootboek_Categorieen.Resultaat.D.Zijde => {
                                                 switch ($[0]) {
                                                     case 'Kosten': return p_.option(
@@ -863,8 +856,8 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state(
+                                            $['l state']).decide(
                                             ($): s_out.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                                 switch ($[0]) {
                                                     case 'Ja': return p_.option(
@@ -988,8 +981,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                 () => {
 
                                                     const var_location = $['l location']
-                                                    return p_decide_state(
-                                                        $['l state'],
+                                                    return p_.from.state($['l state']).decide(
                                                         ($): s_out.Beheer.Grootboekrekeningen.Balans.D.Zijde => {
                                                             switch ($[0]) {
                                                                 case 'Activa': return p_.option(
@@ -1099,8 +1091,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                 () => {
 
                                                     const var_location = $['l location']
-                                                    return p_decide_state(
-                                                        $['l state'],
+                                                    return p_.from.state($['l state']).decide(
                                                         ($): s_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde => {
                                                             switch ($[0]) {
                                                                 case 'Kosten': return p_.option(
@@ -1114,8 +1105,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                                         () => {
 
                                                                                             const var_location = $['l location']
-                                                                                            return p_decide_state(
-                                                                                                $['l state'],
+                                                                                            return p_.from.state($['l state']).decide(
                                                                                                 ($): s_out.Beheer.Grootboekrekeningen.Resultaat.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                     switch ($[0]) {
                                                                                                         case 'Ja': return p_.option(
@@ -1353,8 +1343,7 @@ export const Beheer: declarations.Beheer_ = ($, abort, $l, $p) => p_.literal.gro
                                                                                                 () => {
 
                                                                                                     const var_location = $['l location']
-                                                                                                    return p_decide_state(
-                                                                                                        $['l state'],
+                                                                                                    return p_.from.state($['l state']).decide(
                                                                                                         ($): s_out.Beheer.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                                                             switch ($[0]) {
                                                                                                                 case 'Project': return p_.option(
@@ -1648,8 +1637,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                 () => {
 
                                                     const var_location = $['l location']
-                                                    return p_decide_state(
-                                                        $['l state'],
+                                                    return p_.from.state($['l state']).decide(
                                                         ($): s_out.Jaarbeheer.Resultaat.BTW_periodes.D.Status => {
                                                             switch ($[0]) {
                                                                 case 'Aangegeven': return p_.option(
@@ -1939,8 +1927,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                 () => {
 
                                                     const var_location = $['l location']
-                                                    return p_decide_state(
-                                                        $['l state'],
+                                                    return p_.from.state($['l state']).decide(
                                                         ($): s_out.Jaarbeheer.Balans.Informele_rekeningen.D.Nieuw => {
                                                             switch ($[0]) {
                                                                 case 'Ja': return p_.option(
@@ -1952,8 +1939,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                         ($) => ['Nee', p_variables(
                                                                             () => {
 
-                                                                                const var_constraint_Niet_Nieuw = p_decide_state(
-                                                                                    $p['Eerste boekjaar'],
+                                                                                const var_constraint_Niet_Nieuw = p_.from.state($p['Eerste boekjaar']).decide(
                                                                                     ($) => {
                                                                                         switch ($[0]) {
                                                                                             case 'Nee': return p_.option(
@@ -2069,8 +2055,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                 () => {
 
                                                     const var_location = $['l location']
-                                                    return p_decide_state(
-                                                        $['l state'],
+                                                    return p_.from.state($['l state']).decide(
                                                         ($): s_out.Jaarbeheer.Balans.Bankrekeningen.D.Nieuw => {
                                                             switch ($[0]) {
                                                                 case 'Ja': return p_.option(
@@ -2082,8 +2067,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort, $l, $p) => p_.lit
                                                                         ($) => ['Nee', p_variables(
                                                                             () => {
 
-                                                                                const var_constraint_Niet_Nieuw = p_decide_state(
-                                                                                    $p['Eerste boekjaar'],
+                                                                                const var_constraint_Niet_Nieuw = p_.from.state($p['Eerste boekjaar']).decide(
                                                                                     ($) => {
                                                                                         switch ($[0]) {
                                                                                             case 'Nee': return p_.option(
@@ -2279,8 +2263,7 @@ export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort,
                 () => {
 
                     const var_location = $['l location']
-                    return p_decide_state(
-                        $['l state'],
+                    return p_.from.state($['l state']).decide(
                         ($): s_out.Overige_balans_item.Nieuw => {
                             switch ($[0]) {
                                 case 'Ja': return p_.option(
@@ -2292,8 +2275,7 @@ export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort,
                                         ($) => ['Nee', p_variables(
                                             () => {
 
-                                                const var_constraint_Volgend_boekjaar = p_decide_state(
-                                                    $p['Eerste boekjaar'],
+                                                const var_constraint_Volgend_boekjaar = p_.from.state($p['Eerste boekjaar']).decide(
                                                     ($) => {
                                                         switch ($[0]) {
                                                             case 'Nee': return p_.option(
@@ -2448,8 +2430,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Handelstransacties.Inkopen.D.Afhandeling => {
                                                 switch ($[0]) {
                                                     case 'Mutaties': return p_.option(
@@ -2553,8 +2534,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                             //         () => {
 
                             //             const var_location = $['l location']
-                            //             return p_decide_state(
-                            //                 $['l state'],
+                            //             return p_.from.state(//                 $['l state']).decide(
                             //                 ($): s_out.Handelstransacties.Inkopen.D.BTW$mi_regime => {
                             //                     switch ($[0]) {
                             //                         case 'Binnenland: heffing verlegd':
@@ -2606,8 +2586,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Handelstransacties.Inkopen.D.Brondocument => {
                                                 switch ($[0]) {
                                                     case 'Toegevoegd': return p_.option(
@@ -2663,8 +2642,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                         () => {
 
                                                             const var_location = $['l location']
-                                                            return p_decide_state(
-                                                                $['l state'],
+                                                            return p_.from.state($['l state']).decide(
                                                                 ($): s_out.Handelstransacties.Inkopen.D.Regels.D.Bedrag => {
                                                                     switch ($[0]) {
                                                                         case 'Bekend': return p_.option(
@@ -2709,8 +2687,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                         () => {
 
                                                             const var_location = $['l location']
-                                                            return p_decide_state(
-                                                                $['l state'],
+                                                            return p_.from.state($['l state']).decide(
                                                                 ($): s_out.Handelstransacties.Inkopen.D.Regels.D.Type => {
                                                                     switch ($[0]) {
                                                                         case 'Balans': return p_.option(
@@ -2823,8 +2800,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Handelstransacties.Inkopen.D.Type => {
                                                 switch ($[0]) {
                                                     case 'Bonnetje': return p_.option(
@@ -3076,8 +3052,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Handelstransacties.Verkopen.D.Brondocument => {
                                                 switch ($[0]) {
                                                     case 'Toegevoegd': return p_.option(
@@ -3143,8 +3118,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Handelstransacties.Verkopen.D.Contracttype => {
                                                 switch ($[0]) {
                                                     case 'Project': return p_.option(
@@ -3282,8 +3256,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                     () => {
 
                                         const var_location = $['l location']
-                                        return p_decide_state(
-                                            $['l state'],
+                                        return p_.from.state($['l state']).decide(
                                             ($): s_out.Handelstransacties.Verkopen.D.Afhandeling => {
                                                 switch ($[0]) {
                                                     case 'Mutaties': return p_.option(
@@ -3357,8 +3330,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                         () => {
 
                                                             const var_location = $['l location']
-                                                            return p_decide_state(
-                                                                $['l state'],
+                                                            return p_.from.state($['l state']).decide(
                                                                 ($): s_out.Handelstransacties.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                                     switch ($[0]) {
                                                                         case 'Intracommunautair': return p_.option(
@@ -3432,8 +3404,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                         () => {
 
                                                             const var_location = $['l location']
-                                                            return p_decide_state(
-                                                                $['l state'],
+                                                            return p_.from.state($['l state']).decide(
                                                                 ($): s_out.Handelstransacties.Verkopen.D.Regels.D.Contracttype => {
                                                                     switch ($[0]) {
                                                                         case 'Project': return p_.option(
@@ -3441,8 +3412,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                 ($) => ['Project', p_variables(
                                                                                     () => {
 
-                                                                                        const var_constraint_Definitie = p_decide_state(
-                                                                                            parent_Contracttype,
+                                                                                        const var_constraint_Definitie = p_.from.state(parent_Contracttype).decide(
                                                                                             ($) => {
                                                                                                 switch ($[0]) {
                                                                                                     case 'Project': return p_.option(
@@ -3513,8 +3483,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                                                 ($) => ['Licentieovereenkomst', p_variables(
                                                                                     () => {
 
-                                                                                        const var_constraint_Definitie = p_decide_state(
-                                                                                            parent_Contracttype,
+                                                                                        const var_constraint_Definitie = p_.from.state(parent_Contracttype).decide(
                                                                                             ($) => {
                                                                                                 switch ($[0]) {
                                                                                                     case 'Licentieovereenkomst': return p_.option(
@@ -3597,8 +3566,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort, $
                                                         () => {
 
                                                             const var_location = $['l location']
-                                                            return p_decide_state(
-                                                                $['l state'],
+                                                            return p_.from.state($['l state']).decide(
                                                                 ($): s_out.Handelstransacties.Verkopen.D.Regels.D.Type => {
                                                                     switch ($[0]) {
                                                                         case 'Opbrengsten': return p_.option(
@@ -3782,8 +3750,7 @@ export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort, $l, $
                 () => {
 
                     const var_location = $['l location']
-                    return p_decide_state(
-                        $['l state'],
+                    return p_.from.state($['l state']).decide(
                         ($): s_out.Rekening_Mutatie.type_ => {
                             switch ($[0]) {
                                 case 'Inkoop': return p_.option(
@@ -3955,8 +3922,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                         () => {
 
                                                             const var_location = $['l location']
-                                                            return p_decide_state(
-                                                                $['l state'],
+                                                            return p_.from.state($['l state']).decide(
                                                                 ($): s_out.Mutaties.Verrekenposten.D.Mutaties.D.Afhandeling => {
                                                                     switch ($[0]) {
                                                                         case 'Resultaat': return p_.option(
@@ -3976,8 +3942,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                                     () => {
 
                                                                                         const var_location = $['l location']
-                                                                                        return p_decide_state(
-                                                                                            $['l state'],
+                                                                                        return p_.from.state($['l state']).decide(
                                                                                             ($): s_out.Mutaties.Verrekenposten.D.Mutaties.D.Afhandeling.Balans => {
                                                                                                 switch ($[0]) {
                                                                                                     case 'Informele rekening': return p_.option(
@@ -4129,8 +4094,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                             ),
                                                         }
                                                     ),
-                                                    'type': p_decide_state(
-                                                        $.type['l state'],
+                                                    'type': p_.from.state($.type['l state']).decide(
                                                         ($): s_out.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D.type_ => {
                                                             switch ($[0]) {
                                                                 case 'Resultaat': return p_.option(
@@ -4150,8 +4114,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort, $l, $p) => p_.literal
                                                                             () => {
 
                                                                                 const var_location = $['l location']
-                                                                                return p_decide_state(
-                                                                                    $['l state'],
+                                                                                return p_.from.state($['l state']).decide(
                                                                                     ($): s_out.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D.type_.Balans => {
                                                                                         switch ($[0]) {
                                                                                             case 'Verrekenpost': return p_.option(
@@ -4385,8 +4348,7 @@ export const Eerste_boekjaar: declarations.Eerste_boekjaar_ = ($, abort, $l, $p)
     () => {
 
         const var_location = $['l location']
-        return p_decide_state(
-            $['l state'],
+        return p_.from.state($['l state']).decide(
             ($): s_out.Eerste_boekjaar => {
                 switch ($[0]) {
                     case 'Ja': return p_.option(
@@ -4455,8 +4417,7 @@ export const Jaren: declarations.Jaren_ = ($, abort, $l, $p) => p_.from.dictiona
                         () => {
 
                             const var_location = $['l location']
-                            return p_decide_state(
-                                $['l state'],
+                            return p_.from.state($['l state']).decide(
                                 ($): s_out.Jaren.D.Afgesloten => {
                                     switch ($[0]) {
                                         case 'Ja': return p_.option(

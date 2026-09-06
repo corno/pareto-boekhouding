@@ -1,9 +1,6 @@
 
 import * as p_ from 'pareto-core/transformer'
-import * as p_di from 'pareto-core/schema'
-const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
-const p_decide_optional = <OV extends p_di.Value, B extends p_di.Value>($: p_di.Optional_Value<OV>,  assign: ($: OV) => B,  otherwise: () => B) => p_.from.optional($).decide(assign, otherwise)
-const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
+
 
 import p_change_context from 'pareto-core/refiner/specials/change_context'
 
@@ -66,8 +63,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ),
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', p_decide_state(
-                                                        $,
+                                                    ($) => ['state', p_.from.state($).decide(
                                                         ($): s_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa': return p_.option(
@@ -107,8 +103,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', p_decide_state(
-                                                        $,
+                                                    ($) => ['state', p_.from.state($).decide(
                                                         ($): s_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa': return p_.option(
@@ -172,8 +167,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', p_decide_state(
-                                                        $,
+                                                    ($) => ['state', p_.from.state($).decide(
                                                         ($): s_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Activa': return p_.option(
@@ -225,8 +219,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                 {
                                     "BTW-heffing": p_change_context(
                                         $['BTW-heffing'],
-                                        ($) => ['state', p_decide_state(
-                                            $,
+                                        ($) => ['state', p_.from.state($).decide(
                                             ($): s_out.Value.state => {
                                                 switch ($[0]) {
                                                     case 'Ja': return p_.option(
@@ -346,8 +339,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                 ),
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', p_decide_state(
-                                                        $,
+                                                    ($) => ['state', p_.from.state($).decide(
                                                         ($): s_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten': return p_.option(
@@ -358,8 +350,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                 {
                                                                                     "Correctie op vennootschapsbelasting": p_change_context(
                                                                                         $['Correctie op vennootschapsbelasting'],
-                                                                                        ($) => ['state', p_decide_state(
-                                                                                            $,
+                                                                                        ($) => ['state', p_.from.state($).decide(
                                                                                             ($): s_out.Value.state => {
                                                                                                 switch ($[0]) {
                                                                                                     case 'Ja': return p_.option(
@@ -427,8 +418,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', p_decide_state(
-                                                        $,
+                                                    ($) => ['state', p_.from.state($).decide(
                                                         ($): s_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten': return p_.option(
@@ -492,8 +482,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                             {
                                                 "Zijde": p_change_context(
                                                     $['Zijde'],
-                                                    ($) => ['state', p_decide_state(
-                                                        $,
+                                                    ($) => ['state', p_.from.state($).decide(
                                                         ($): s_out.Value.state => {
                                                             switch ($[0]) {
                                                                 case 'Kosten': return p_.option(
@@ -557,8 +546,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                     {
                         "Afgesloten": p_change_context(
                             $['Afgesloten'],
-                            ($) => ['state', p_decide_state(
-                                $,
+                            ($) => ['state', p_.from.state($).decide(
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja': return p_.option(
@@ -594,8 +582,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     {
                                         "Type": p_change_context(
                                             $['Type'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bankrekening': return p_.option(
@@ -691,8 +678,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ),
                                                         "Status": p_change_context(
                                                             $['Status'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Nog te verwerken': return p_.option(
@@ -712,8 +698,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                                         {
                                                                                             "Afhandeling": p_change_context(
                                                                                                 $['Afhandeling'],
-                                                                                                ($) => ['state', p_decide_state(
-                                                                                                    $,
+                                                                                                ($) => ['state', p_.from.state($).decide(
                                                                                                     ($): s_out.Value.state => {
                                                                                                         switch ($[0]) {
                                                                                                             case 'Inkoop': return p_.option(
@@ -846,8 +831,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Nieuw": p_change_context(
                                             $['Nieuw'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja': return p_.option(
@@ -966,8 +950,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Status": p_change_context(
                                             $['Status'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Aangegeven': return p_.option(
@@ -1029,8 +1012,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                         ),
                         "Eerste boekjaar": p_change_context(
                             $['Eerste boekjaar'],
-                            ($) => ['state', p_decide_state(
-                                $,
+                            ($) => ['state', p_.from.state($).decide(
                                 ($): s_out.Value.state => {
                                     switch ($[0]) {
                                         case 'Ja': return p_.option(
@@ -1118,8 +1100,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Nieuw": p_change_context(
                                             $['Nieuw'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja': return p_.option(
@@ -1174,8 +1155,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     {
                                         "Afhandeling": p_change_context(
                                             $['Afhandeling'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Nog te betalen': return p_.option(
@@ -1232,8 +1212,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "BTW-regime": p_change_context(
                                             $['BTW-regime'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Binnenland: heffing verlegd': return p_.option(
@@ -1330,8 +1309,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Brondocument": p_change_context(
                                             $['Brondocument'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Toegevoegd': return p_.option(
@@ -1401,8 +1379,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                     {
                                                         "Bedrag": p_change_context(
                                                             $['Bedrag'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Bekend': return p_.option(
@@ -1449,8 +1426,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ),
                                                         "Type": p_change_context(
                                                             $['Type'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Balans': return p_.option(
@@ -1500,8 +1476,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Type": p_change_context(
                                             $['Type'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Bonnetje': return p_.option(
@@ -1669,8 +1644,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Nieuw": p_change_context(
                                             $['Nieuw'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Ja': return p_.option(
@@ -1766,8 +1740,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                     {
                                         "Afhandeling": p_change_context(
                                             $['Afhandeling'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Mutaties': return p_.option(
@@ -1821,8 +1794,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Brondocument": p_change_context(
                                             $['Brondocument'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Toegevoegd': return p_.option(
@@ -1850,8 +1822,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                         ),
                                         "Contracttype": p_change_context(
                                             $['Contracttype'],
-                                            ($) => ['state', p_decide_state(
-                                                $,
+                                            ($) => ['state', p_.from.state($).decide(
                                                 ($): s_out.Value.state => {
                                                     switch ($[0]) {
                                                         case 'Project': return p_.option(
@@ -1926,8 +1897,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                     {
                                                         "BTW-regime": p_change_context(
                                                             $['BTW-regime'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Intracommunautair': return p_.option(
@@ -1983,8 +1953,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ),
                                                         "Contracttype": p_change_context(
                                                             $['Contracttype'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Project': return p_.option(
@@ -2046,8 +2015,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ),
                                                         "Type": p_change_context(
                                                             $['Type'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Opbrengsten': return p_.option(
@@ -2122,8 +2090,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                         ),
                                                         "Afhandeling": p_change_context(
                                                             $['Afhandeling'],
-                                                            ($) => ['state', p_decide_state(
-                                                                $,
+                                                            ($) => ['state', p_.from.state($).decide(
                                                                 ($): s_out.Value.state => {
                                                                     switch ($[0]) {
                                                                         case 'Inkoop': return p_.option(
@@ -2289,8 +2256,7 @@ export const Root: t_signatures.Root = ($) => ['group', ['verbose', p_.literal.d
                                                                     {
                                                                         "Type": p_change_context(
                                                                             $['Type'],
-                                                                            ($) => ['state', p_decide_state(
-                                                                                $,
+                                                                            ($) => ['state', p_.from.state($).decide(
                                                                                 ($): s_out.Value.state => {
                                                                                     switch ($[0]) {
                                                                                         case 'Project': return p_.option(

@@ -1,6 +1,5 @@
 
 import * as p_ from 'pareto-core/transformer'
-const p_decide_state = <State, B>($: State,  assign: ($: State) => B) => assign($)
 
 import p_change_context from 'pareto-core/refiner/specials/change_context'
 
@@ -49,8 +48,7 @@ export const Root: t_signatures.Root = ($) => ({
                                 ),
                                 'Zijde': p_change_context(
                                     $['Zijde'],
-                                    ($) => p_decide_state(
-                                        $,
+                                    ($) => p_.from.state($).decide(
                                         ($): s_out.Root.Beheer.Balans.Grootboekrekeningen.D.Zijde => {
                                             switch ($[0]) {
                                                 case 'Activa': return p_.option(
@@ -78,8 +76,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ($, id) => ({
                                 'Zijde': p_change_context(
                                     $['Zijde'],
-                                    ($) => p_decide_state(
-                                        $,
+                                    ($) => p_.from.state($).decide(
                                         ($): s_out.Root.Beheer.Balans.Hoofdcategorieen.D.Zijde => {
                                             switch ($[0]) {
                                                 case 'Activa': return p_.option(
@@ -123,8 +120,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ($, id) => ({
                                 'Zijde': p_change_context(
                                     $['Zijde'],
-                                    ($) => p_decide_state(
-                                        $,
+                                    ($) => p_.from.state($).decide(
                                         ($): s_out.Root.Beheer.Balans.Hoofdcategorieen_fiscus.D.Zijde => {
                                             switch ($[0]) {
                                                 case 'Activa': return p_.option(
@@ -161,8 +157,7 @@ export const Root: t_signatures.Root = ($) => ({
                     ($, id) => ({
                         'BTW-heffing': p_change_context(
                             $['BTW-heffing'],
-                            ($) => p_decide_state(
-                                $,
+                            ($) => p_.from.state($).decide(
                                 ($): s_out.Root.Beheer.BTW$mi_categorieen.D.BTW$mi_heffing => {
                                     switch ($[0]) {
                                         case 'Ja': return p_.option(
@@ -238,8 +233,7 @@ export const Root: t_signatures.Root = ($) => ({
                                 ),
                                 'Zijde': p_change_context(
                                     $['Zijde'],
-                                    ($) => p_decide_state(
-                                        $,
+                                    ($) => p_.from.state($).decide(
                                         ($): s_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde => {
                                             switch ($[0]) {
                                                 case 'Kosten': return p_.option(
@@ -247,8 +241,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                         ($) => ['Kosten', {
                                                             'Correctie op vennootschapsbelasting': p_change_context(
                                                                 $['Correctie op vennootschapsbelasting'],
-                                                                ($) => p_decide_state(
-                                                                    $,
+                                                                ($) => p_.from.state($).decide(
                                                                     ($): s_out.Root.Beheer.Resultaat.Grootboekrekeningen.D.Zijde.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                         switch ($[0]) {
                                                                             case 'Ja': return p_.option(
@@ -294,8 +287,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ($, id) => ({
                                 'Zijde': p_change_context(
                                     $['Zijde'],
-                                    ($) => p_decide_state(
-                                        $,
+                                    ($) => p_.from.state($).decide(
                                         ($): s_out.Root.Beheer.Resultaat.Hoofdcategorieen.D.Zijde => {
                                             switch ($[0]) {
                                                 case 'Kosten': return p_.option(
@@ -339,8 +331,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ($, id) => ({
                                 'Zijde': p_change_context(
                                     $['Zijde'],
-                                    ($) => p_decide_state(
-                                        $,
+                                    ($) => p_.from.state($).decide(
                                         ($): s_out.Root.Beheer.Resultaat.Hoofdcategorieen_fiscus.D.Zijde => {
                                             switch ($[0]) {
                                                 case 'Kosten': return p_.option(
@@ -386,8 +377,7 @@ export const Root: t_signatures.Root = ($) => ({
             ($, id) => ({
                 'Afgesloten': p_change_context(
                     $['Afgesloten'],
-                    ($) => p_decide_state(
-                        $,
+                    ($) => p_.from.state($).decide(
                         ($): s_out.Root.Jaren.D.Afgesloten => {
                             switch ($[0]) {
                                 case 'Ja': return p_.option(
@@ -412,8 +402,7 @@ export const Root: t_signatures.Root = ($) => ({
                         ($, id) => ({
                             'Type': p_change_context(
                                 $['Type'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Balans_grootboekrekeningen.D.Type => {
                                         switch ($[0]) {
                                             case 'Bankrekening': return p_.option(
@@ -470,8 +459,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         ),
                                         'Status': p_change_context(
                                             $['Status'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status => {
                                                     switch ($[0]) {
                                                         case 'Nog te verwerken': return p_.option(
@@ -483,8 +471,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                                 ($) => ['Verwerkt', {
                                                                     'Afhandeling': p_change_context(
                                                                         $['Afhandeling'],
-                                                                        ($) => p_decide_state(
-                                                                            $,
+                                                                        ($) => p_.from.state($).decide(
                                                                             ($): s_out.Root.Jaren.D.Bankrekeningen.D.Mutaties.D.Status.Verwerkt.Afhandeling => {
                                                                                 switch ($[0]) {
                                                                                     case 'Inkoop': return p_.option(
@@ -565,8 +552,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Nieuw': p_change_context(
                                 $['Nieuw'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Bankrekeningen.D.Nieuw => {
                                         switch ($[0]) {
                                             case 'Ja': return p_.option(
@@ -645,8 +631,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Status': p_change_context(
                                 $['Status'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.BTW_periodes.D.Status => {
                                         switch ($[0]) {
                                             case 'Aangegeven': return p_.option(
@@ -682,8 +667,7 @@ export const Root: t_signatures.Root = ($) => ({
                 ),
                 'Eerste boekjaar': p_change_context(
                     $['Eerste boekjaar'],
-                    ($) => p_decide_state(
-                        $,
+                    ($) => p_.from.state($).decide(
                         ($): s_out.Root.Jaren.D.Eerste_boekjaar => {
                             switch ($[0]) {
                                 case 'Ja': return p_.option(
@@ -737,8 +721,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Nieuw': p_change_context(
                                 $['Nieuw'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Informele_rekeningen.D.Nieuw => {
                                         switch ($[0]) {
                                             case 'Ja': return p_.option(
@@ -775,8 +758,7 @@ export const Root: t_signatures.Root = ($) => ({
                         ($, id) => ({
                             'Afhandeling': p_change_context(
                                 $['Afhandeling'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Inkopen.D.Afhandeling => {
                                         switch ($[0]) {
                                             case 'Nog te betalen': return p_.option(
@@ -810,8 +792,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'BTW-regime': p_change_context(
                                 $['BTW-regime'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Inkopen.D.BTW$mi_regime => {
                                         switch ($[0]) {
                                             case 'Binnenland: heffing verlegd': return p_.option(
@@ -868,8 +849,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Brondocument': p_change_context(
                                 $['Brondocument'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Inkopen.D.Brondocument => {
                                         switch ($[0]) {
                                             case 'Toegevoegd': return p_.option(
@@ -913,8 +893,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     ($, id) => ({
                                         'Bedrag': p_change_context(
                                             $['Bedrag'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Inkopen.D.Regels.D.Bedrag => {
                                                     switch ($[0]) {
                                                         case 'Bekend': return p_.option(
@@ -943,8 +922,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         ),
                                         'Type': p_change_context(
                                             $['Type'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Inkopen.D.Regels.D.Type => {
                                                     switch ($[0]) {
                                                         case 'Balans': return p_.option(
@@ -977,8 +955,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Type': p_change_context(
                                 $['Type'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Inkopen.D.Type => {
                                         switch ($[0]) {
                                             case 'Bonnetje': return p_.option(
@@ -1078,8 +1055,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Nieuw': p_change_context(
                                 $['Nieuw'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Overige_balans_items.D.Nieuw => {
                                         switch ($[0]) {
                                             case 'Ja': return p_.option(
@@ -1143,8 +1119,7 @@ export const Root: t_signatures.Root = ($) => ({
                         ($, id) => ({
                             'Afhandeling': p_change_context(
                                 $['Afhandeling'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Verkopen.D.Afhandeling => {
                                         switch ($[0]) {
                                             case 'Mutaties': return p_.option(
@@ -1177,8 +1152,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Brondocument': p_change_context(
                                 $['Brondocument'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Verkopen.D.Brondocument => {
                                         switch ($[0]) {
                                             case 'Toegevoegd': return p_.option(
@@ -1201,8 +1175,7 @@ export const Root: t_signatures.Root = ($) => ({
                             ),
                             'Contracttype': p_change_context(
                                 $['Contracttype'],
-                                ($) => p_decide_state(
-                                    $,
+                                ($) => p_.from.state($).decide(
                                     ($): s_out.Root.Jaren.D.Verkopen.D.Contracttype => {
                                         switch ($[0]) {
                                             case 'Project': return p_.option(
@@ -1249,8 +1222,7 @@ export const Root: t_signatures.Root = ($) => ({
                                     ($, id) => ({
                                         'BTW-regime': p_change_context(
                                             $['BTW-regime'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Verkopen.D.Regels.D.BTW$mi_regime => {
                                                     switch ($[0]) {
                                                         case 'Intracommunautair': return p_.option(
@@ -1283,8 +1255,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         ),
                                         'Contracttype': p_change_context(
                                             $['Contracttype'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Verkopen.D.Regels.D.Contracttype => {
                                                     switch ($[0]) {
                                                         case 'Project': return p_.option(
@@ -1322,8 +1293,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         ),
                                         'Type': p_change_context(
                                             $['Type'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Verkopen.D.Regels.D.Type => {
                                                     switch ($[0]) {
                                                         case 'Opbrengsten': return p_.option(
@@ -1373,8 +1343,7 @@ export const Root: t_signatures.Root = ($) => ({
                                         ),
                                         'Afhandeling': p_change_context(
                                             $['Afhandeling'],
-                                            ($) => p_decide_state(
-                                                $,
+                                            ($) => p_.from.state($).decide(
                                                 ($): s_out.Root.Jaren.D.Verrekenposten.D.Mutaties.D.Afhandeling => {
                                                     switch ($[0]) {
                                                         case 'Inkoop': return p_.option(
@@ -1483,8 +1452,7 @@ export const Root: t_signatures.Root = ($) => ({
                                                 ($, id) => ({
                                                     'Type': p_change_context(
                                                         $['Type'],
-                                                        ($) => p_decide_state(
-                                                            $,
+                                                        ($) => p_.from.state($).decide(
                                                             ($): s_out.Root.Klanten.D.Projecten.D.Offertes.D.Opbrengsten.D.Type => {
                                                                 switch ($[0]) {
                                                                     case 'Project': return p_.option(
