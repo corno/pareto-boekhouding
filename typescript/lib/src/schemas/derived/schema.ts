@@ -13,18 +13,32 @@ export type Bedrag_in_Euro = s_primitives.Fractional_Decimal
 
 export type Temp_Samenvatting = {
     'beginsaldo': Bedrag_in_Euro
-    'mutaties': {
+    'mutaties': Temp_Samenvatting.Mutaties
+}
+
+export namespace Temp_Samenvatting {
+    export type Mutaties = {
         'xx': p_.Dictionary<Bedrag_in_Euro>
         'totaalx': Bedrag_in_Euro
     }
 }
 
+export namespace Jaar {
+
+    export namespace handelstransacties {
+        export type inkopen = p_.Dictionary<Inkoop>
+        export type verkopen = p_.Dictionary<Verkoop>
+    }
+
+    export type handelstransacties = {
+        'inkopen': handelstransacties.inkopen
+        'verkopen': handelstransacties.verkopen
+    }
+}
+
 export type Jaar = {
     'bron': s_boekhouding.Jaren.D
-    'handelstransacties': {
-        'inkopen': p_.Dictionary<Inkoop>
-        'verkopen': p_.Dictionary<Verkoop>
-    }
+    'handelstransacties': Jaar.handelstransacties
     'inkoopsaldo': Temp_Samenvatting
     'verkoopsaldo': Temp_Samenvatting
     'btw': {

@@ -6,13 +6,18 @@ export type Root = {
     'jaren': p_.Dictionary<Jaar>
 }
 
-export type Jaar = {
-    'resultaat': {
+export namespace Jaar {
+    export type resultaat = {
         'grootboekrekeningen': Resultaat.Grootboek_Rekeningen
-    },
-    'balans': {
+    }
+    export type balans = {
         'grootboekrekeningen': Balans.Grootboek_Rekeningen
     }
+}
+
+export type Jaar = {
+    'resultaat': Jaar.resultaat,
+    'balans': Jaar.balans,
 
 
 }
@@ -38,13 +43,17 @@ export namespace Resultaat {
 
 export namespace Balans {
 
+    export namespace Grootboekrekening {
+        export type clusters = p_.Dictionary<Cluster>
+    }
+
     export type Grootboekrekening = {
         'zijde':
         | ['activa', null]
         | ['passiva', null]
         'hoofdcategorie': string
         'subcategorie': string
-        'clusters': p_.Dictionary<Cluster>
+        'clusters': Grootboekrekening.clusters
     }
 
     export type Grootboek_Rekeningen = p_.Dictionary<Grootboekrekening>

@@ -17,7 +17,7 @@ namespace declarations {
 
 //dependencies
 
-const temp_samenvatting_mutaties = ($: p_schema.Dictionary<s_out.Bedrag_in_Euro>): s_out.Temp_Samenvatting['mutaties'] => {
+const temp_samenvatting_mutaties = ($: p_schema.Dictionary<s_out.Bedrag_in_Euro>): s_out.Temp_Samenvatting.Mutaties => {
     return {
         'xx': $,
         'totaalx': p_.from.dictionary($).sum(
@@ -32,8 +32,8 @@ export const Root: declarations.Root = ($) => {
         ($, id, $al): s_out.Jaar => {
             const $v_bron_jaar = $
 
-            const $p_handelstransacties: s_out.Jaar['handelstransacties'] = p_.literal.group_resolve(() => {
-                const $p_inkopen: s_out.Jaar['handelstransacties']['inkopen'] = p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).map(
+            const $p_handelstransacties: s_out.Jaar.handelstransacties = p_.literal.group_resolve(() => {
+                const $p_inkopen: s_out.Jaar.handelstransacties.inkopen = p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).map(
                     ($) => {
                         return {
                             'bron': $,
@@ -61,7 +61,7 @@ export const Root: declarations.Root = ($) => {
                                         switch ($[0]) {
                                             case 'Bekend': return p_.option($, ($) =>
                                                 // + $['Bedrag inclusief geheven BTW']
-                                                + $['BTW-bedrag']
+                                                $['BTW-bedrag']
                                             )
                                             default: return p_.exhaustive($[0])
                                         }
@@ -73,7 +73,7 @@ export const Root: declarations.Root = ($) => {
                                     ($) => {
                                         switch ($[0]) {
                                             case 'Bekend': return p_.option($, ($) =>
-                                                + $['Bedrag inclusief geheven BTW']
+                                                $['Bedrag inclusief geheven BTW']
                                                 - $['BTW-bedrag']
                                             )
                                             default: return p_.exhaustive($[0])
@@ -83,7 +83,7 @@ export const Root: declarations.Root = ($) => {
                             ),
                         }
                     })
-                const $p_verkopen: s_out.Jaar['handelstransacties']['verkopen'] = p_.from.dictionary($v_bron_jaar.Handelstransacties.Verkopen).map(
+                const $p_verkopen: s_out.Jaar.handelstransacties.verkopen = p_.from.dictionary($v_bron_jaar.Handelstransacties.Verkopen).map(
                     ($) => {
 
                         const $p_regels = p_.from.dictionary($.Regels).map(

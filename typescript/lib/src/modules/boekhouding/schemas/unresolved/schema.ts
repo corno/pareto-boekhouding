@@ -4,6 +4,8 @@ import * as p_di from 'pareto-core/schema'
 
 import * as i_location from "astn-core/modules/deserialization/schemas/location/schema"
 
+export type Bestandsnaam = string
+
 export namespace Root_ {
     
     export type Fiscaal = Fiscaal_

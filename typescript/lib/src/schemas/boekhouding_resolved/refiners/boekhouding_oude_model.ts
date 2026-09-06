@@ -22,13 +22,11 @@ import * as sh from "pareto-fountain-pen/modules/paragraph/schemas/paragraph/sho
 import * as r_boekhouding_resolved_from_boekhouding_unresolved from "../../../modules/boekhouding/schemas/resolved/refiners/unresolved.js"
 import * as r_boekhouding_unresolved_from_boekhouding_oude_model from "../../boekhouding_unresolved/refiners/boekhouding_oude_model.js"
 
-export const Root: declarations.Root = ($, abort) => {
-    return r_boekhouding_resolved_from_boekhouding_unresolved.Root(
-        r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
-            $,
-        ),
-        ($) => abort($),
-        p_.literal.nothing(),
-        p_.literal.nothing(),
-    )
-}
+export const Root: declarations.Root = ($, abort) => r_boekhouding_resolved_from_boekhouding_unresolved.Root(
+    r_boekhouding_unresolved_from_boekhouding_oude_model.Root(
+        $,
+    ),
+    ($) => abort($),
+    p_.literal.nothing(),
+    p_.literal.nothing(),
+)

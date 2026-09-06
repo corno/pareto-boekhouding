@@ -36,18 +36,18 @@ export const Root: declarations.Root = ($) => {
             const $v_bron_jaar = $v_jaar.bron
 
 
-            const $p_resultaat: s_out.Jaar['resultaat'] = p_.literal.group_resolve(() => {
+            const $p_resultaat: s_out.Jaar.resultaat = p_.literal.group_resolve(() => {
                 const $p_grootboekrekeningen: s_out.Resultaat.Grootboek_Rekeningen = p_.from.dictionary($v_bron_jaar.Grootboekrekeningen.Resultaat).map(
                     ($): s_out.Resultaat.Grootboekrekening => {
                         const context = $
                         const $p_dagboeken = p_.literal.dictionary<s_out.Resultaat.Dagboek>({
                             "inkopen": p_.literal.group_resolve(() => ({
                                 'boekingen': p_.from.dictionary($v_bron_jaar.Handelstransacties.Inkopen).flatten(
-                                    ($) => p_.from.dictionary($.Regels).map_optionally(
+                                    ($) => p_.from.dictionary($.Regels).map_optionally<s_out.Bedrag_in_Euro>(
                                         ($) => {
                                             const $v_bedrag = $.Bedrag
                                             return p_.from.state($.Type).decide(
-                                                ($): p_schema.Optional_Value<number> => {
+                                                ($) => {
                                                     switch ($[0]) {
                                                         case 'Balans': return p_.option($, ($) => p_.literal.not_set())
                                                         case 'Kosten': return p_.option($, ($) => $.Grootboekrekening['l entry'] === context
@@ -55,8 +55,8 @@ export const Root: declarations.Root = ($) => {
                                                                 ($): number => {
                                                                     switch ($[0]) {
                                                                         case 'Bekend': return p_.option($, ($) =>
+                                                                            $['BTW-bedrag']
                                                                             - $['Bedrag inclusief geheven BTW']
-                                                                            + $['BTW-bedrag']
                                                                         )
                                                                         default: return p_.exhaustive($[0])
                                                                     }
@@ -153,7 +153,7 @@ export const Root: declarations.Root = ($) => {
                 }
             })
 
-            const $p_jaar2_balans: s_out.Jaar['balans'] = p_.literal.group_resolve((): s_out.Jaar['balans'] => {
+            const $p_jaar2_balans: s_out.Jaar.balans = p_.literal.group_resolve((): s_out.Jaar['balans'] => {
 
 
 
@@ -161,7 +161,7 @@ export const Root: declarations.Root = ($) => {
                     ($): s_out.Balans.Grootboekrekening => {
                         const context = $
 
-                        const $p_clusters: s_out.Balans.Grootboekrekening['clusters'] = p_.literal.dictionary<s_out.Balans.Cluster>({
+                        const $p_clusters: s_out.Balans.Grootboekrekening.clusters = p_.literal.dictionary<s_out.Balans.Cluster>({
                             "globalen": {
                                 'dagboeken': p_.literal.optionals_dictionary({
                                     "winstreserve": $v_bron_jaar.Jaarbeheer.Balans['Grootboekrekening voor winstreserve']['l entry'] === context
