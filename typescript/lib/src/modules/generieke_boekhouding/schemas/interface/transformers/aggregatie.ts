@@ -33,19 +33,6 @@ namespace declarations {
     >
 }
 
-
-const temp_integer_from_dictionary = <T extends p_di.Value>(
-    dict: p_di.Dictionary<T>,
-    get_value: ($: T) => number,
-): number => p_.from.list(
-    p_.from.dictionary(dict).convert_to_list(
-        ($) => $
-    )
-).sum(
-    ($) => get_value($)
-)
-
-
 export const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen = ($, $p) => {
     const $p_grootboekrekeningen = p_.from.dictionary($).map(
         ($) => {
@@ -90,23 +77,26 @@ export const Balans_Grootboekrekeningen: declarations.Balans_Grootboekrekeningen
                     ($) => $.subcategorie,
                     ($) => ({
                         'grootboekrekeningen': $,
-                        'totaal': temp_integer_from_dictionary(
+                        'totaal': p_.from.dictionary(
                             $,
+                        ).sum(
                             ($) => $.bedrag
                         )
                     })
                 )
                 return {
                     'subcategorieen': $p_subcategorieen,
-                    'totaal': temp_integer_from_dictionary(
+                    'totaal': p_.from.dictionary(
                         $p_subcategorieen,
+                    ).sum(
                         ($) => $.totaal
                     )
                 }
             }
         ),
-        'totaal': temp_integer_from_dictionary(
+        'totaal': p_.from.dictionary(
             $p_grootboekrekeningen,
+        ).sum(
             ($) => $.bedrag
         ),
     }
@@ -138,23 +128,26 @@ export const Resultaat_Grootboekrekeningen: declarations.Resultaat_Grootboekreke
                     ($) => $.subcategorie,
                     ($) => ({
                         'grootboekrekeningen': $,
-                        'totaal': temp_integer_from_dictionary(
+                        'totaal': p_.from.dictionary(
                             $,
+                        ).sum(
                             ($) => $.bedrag
                         )
                     })
                 )
                 return {
                     'subcategorieen': subcategorieen,
-                    'totaal': temp_integer_from_dictionary(
+                    'totaal': p_.from.dictionary(
                         subcategorieen,
+                    ).sum(
                         ($) => $.totaal
                     )
                 }
             },
         ),
-        'totaal': temp_integer_from_dictionary(
+        'totaal': p_.from.dictionary(
             $p_grootboekrekeningen,
+        ).sum(
             ($) => $.bedrag
         ),
     }
