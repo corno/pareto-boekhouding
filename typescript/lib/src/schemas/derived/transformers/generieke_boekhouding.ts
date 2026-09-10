@@ -29,7 +29,7 @@ export const Temp_Samenvatting: declarations.Temp_Samenvatting = ($) => {
 
 export const Root: declarations.Root = ($) => {
     const $p_jaren = $.jaren
-    const $p_jaren2: s_out.Root['jaren'] = p_temp.from.dictionary($p_jaren).map(
+    const $p_jaren2: s_out.Root.jaren = p_temp.from.dictionary($p_jaren).map(
         ($, id): s_out.Jaar => {
             const $v_id = id
             const $v_jaar = $
@@ -153,7 +153,7 @@ export const Root: declarations.Root = ($) => {
                 }
             })
 
-            const $p_jaar2_balans: s_out.Jaar.balans = p_.literal.group_resolve((): s_out.Jaar['balans'] => {
+            const $p_jaar2_balans: s_out.Jaar.balans = p_.literal.group_resolve((): s_out.Jaar.balans => {
 
 
 

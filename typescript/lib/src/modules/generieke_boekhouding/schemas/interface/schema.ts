@@ -3,7 +3,11 @@ import * as p_ from 'pareto-core/schema'
 import type * as s_primitives from "../primitives/schema.js"
 
 export type Root = {
-    'jaren': p_.Dictionary<Jaar>
+    'jaren': Root.jaren
+}
+
+export namespace Root {
+    export type jaren = p_.Dictionary<Jaar>
 }
 
 export namespace Jaar {

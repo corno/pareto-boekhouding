@@ -28,7 +28,7 @@ const temp_samenvatting_mutaties = ($: p_schema.Dictionary<s_out.Bedrag_in_Euro>
 
 export const Root: declarations.Root = ($) => {
     const $v_bron_root = $
-    const $p_jaren: s_out.Root['jaren'] = p_temp.from.dictionary($.Jaren).resolve(
+    const $p_jaren: s_out.Root.jaren = p_temp.from.dictionary($.Jaren).resolve(
         ($, id, $al): s_out.Jaar => {
             const $v_bron_jaar = $
 
@@ -334,7 +334,7 @@ export const Root: declarations.Root = ($) => {
             })
 
 
-            const $p_btw: s_out.Jaar['btw'] = p_.literal.group_resolve(() => {
+            const $p_btw: s_out.Jaar.btw = p_.literal.group_resolve(() => {
                 const $p_btw_periodes = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Resultaat['BTW periodes']).map(
                     ($): s_out.Btw_Periode => {
                         const context = $
@@ -415,8 +415,8 @@ export const Root: declarations.Root = ($) => {
 
                         const $p_afhandelings_mutaties = + $p_bankrekening_mutaties + $p_verrekenpost_mutaties
 
-                        const $p_status: s_out.Btw_Periode['status'] = p_.from.state($.Status).decide(
-                            ($): s_out.Btw_Periode['status'] => {
+                        const $p_status: s_out.Btw_Periode.status = p_.from.state($.Status).decide(
+                            ($): s_out.Btw_Periode.status => {
                                 switch ($[0]) {
                                     case 'Aangegeven': return p_.option($, ($) => {
                                         const $p_totaal_aangegeven_plus_afronding = + $.Bedrag + $.Afronding
@@ -621,15 +621,15 @@ export const Root: declarations.Root = ($) => {
             })
 
 
-            const $p_balans: s_out.Jaar['balans'] = p_.literal.group_resolve((): s_out.Jaar['balans'] => {
+            const $p_balans: s_out.Jaar.balans = p_.literal.group_resolve((): s_out.Jaar.balans => {
                 const $p_informele_rekeningen = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans['Informele rekeningen']).map(
                     ($): s_out.Informele_Rekening => {
                         const $v_context = $
 
 
 
-                        const $p_references_to_me: s_out.Informele_Rekening['references to me'] = p_.literal.group_resolve(() => {
-                            const $p_inkopen: s_out.Informele_Rekening['references to me']['inkopen'] = p_.from.dictionary($p_handelstransacties.inkopen).filter(
+                        const $p_references_to_me: s_out.Informele_Rekening.references_to_me = p_.literal.group_resolve(() => {
+                            const $p_inkopen: s_out.Informele_Rekening.references_to_me.inkopen = p_.from.dictionary($p_handelstransacties.inkopen).filter(
                                 ($) => p_.from.state($.bron.Afhandeling).decide(
                                     ($) => {
                                         switch ($[0]) {
@@ -639,7 +639,7 @@ export const Root: declarations.Root = ($) => {
                                     }
                                 )
                             )
-                            const $p_verkopen: s_out.Informele_Rekening['references to me']['verkopen'] = p_.from.dictionary($p_handelstransacties.verkopen).filter(
+                            const $p_verkopen: s_out.Informele_Rekening.references_to_me.verkopen = p_.from.dictionary($p_handelstransacties.verkopen).filter(
                                 ($) => p_.from.state($.bron.Afhandeling).decide(
                                     ($) => {
                                         switch ($[0]) {
@@ -650,7 +650,7 @@ export const Root: declarations.Root = ($) => {
                                 )
                             )
 
-                            const $p_bankrekeningen: s_out.Informele_Rekening['references to me']['bankrekeningen'] = p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).map_optionally(
+                            const $p_bankrekeningen: s_out.Informele_Rekening.references_to_me.bankrekeningen = p_.from.dictionary($v_bron_jaar.Mutaties.Bankrekeningen).map_optionally(
                                 ($) => {
                                     const $p_mutatie_verwerkingen = p_.from.dictionary($['Mutatie Verwerkingen']).filter(
                                         ($): boolean => p_.from.state($.type).decide(
@@ -677,7 +677,7 @@ export const Root: declarations.Root = ($) => {
                                 }
                             )
 
-                            const $p_verrekenposten: s_out.Informele_Rekening['references to me']['verrekenposten'] = p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).map_optionally(
+                            const $p_verrekenposten: s_out.Informele_Rekening.references_to_me.verrekenposten = p_.from.dictionary($v_bron_jaar.Mutaties.Verrekenposten).map_optionally(
                                 ($) => {
                                     const $p_mutaties = p_.from.dictionary($.Mutaties).filter(
                                         ($): boolean => p_.from.state($.Afhandeling).decide(
@@ -840,14 +840,14 @@ export const Root: declarations.Root = ($) => {
                 )
 
 
-                const $p_overige_balans_items: s_out.Jaar['balans']['overige balans items'] = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans['Overige balans items']).map(
+                const $p_overige_balans_items: s_out.Jaar.balans.overige_balans_items = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans['Overige balans items']).map(
                     ($, id): s_out.Overige_Balans_Item => {
                         const $v_id = id
                         const $v_context = $
 
 
-                        const $p_references_to_me: s_out.Overige_Balans_Item['references to me'] = p_.literal.group_resolve(() => {
-                            const $p_inkopen: s_out.Overige_Balans_Item['references to me']['inkopen'] = p_.from.dictionary($p_handelstransacties.inkopen).map_optionally(
+                        const $p_references_to_me: s_out.Overige_Balans_Item.references_to_me = p_.literal.group_resolve(() => {
+                            const $p_inkopen: s_out.Overige_Balans_Item.references_to_me.inkopen = p_.from.dictionary($p_handelstransacties.inkopen).map_optionally(
                                 ($) => {
                                     const $p_regels = p_.from.dictionary($.regels).filter(
                                         ($): boolean => p_.from.state($.bron.Type).decide(
@@ -873,7 +873,7 @@ export const Root: declarations.Root = ($) => {
                                     )
                                 }
                             )
-                            const $p_verkopen: s_out.Overige_Balans_Item['references to me']['verkopen'] = p_.from.dictionary($p_handelstransacties.verkopen).map_optionally(
+                            const $p_verkopen: s_out.Overige_Balans_Item.references_to_me.verkopen = p_.from.dictionary($p_handelstransacties.verkopen).map_optionally(
                                 ($) => {
                                     const $p_regels = p_.from.dictionary($.regels).filter(
                                         ($): boolean => p_.from.state($.bron.Type).decide(
@@ -899,7 +899,7 @@ export const Root: declarations.Root = ($) => {
                                     )
                                 }
                             )
-                            const $p_mutaties: s_out.Overige_Balans_Item['references to me']['mutaties'] = p_.from.dictionary($v_bron_jaar.Mutaties['Overige Balans Items']).get_possible_entry(
+                            const $p_mutaties: s_out.Overige_Balans_Item.references_to_me.mutaties = p_.from.dictionary($v_bron_jaar.Mutaties['Overige Balans Items']).get_possible_entry(
                                 $v_id,
                                 ($) => p_.literal.set($),
                                 () => p_.literal.not_set(),
@@ -911,7 +911,7 @@ export const Root: declarations.Root = ($) => {
                             }
                         })
 
-                        const $p_aggregaties: s_out.Overige_Balans_Item['aggregaties'] = p_.literal.group_resolve(() => {
+                        const $p_aggregaties: s_out.Overige_Balans_Item.aggregaties = p_.literal.group_resolve(() => {
                             const $p_mutaties = p_.from.optional($p_references_to_me.mutaties).decide(
                                 ($) => p_.from.dictionary($['Memoriaal Boekingen']).sum(
                                     ($) => $.Bedrag
@@ -975,7 +975,7 @@ export const Root: declarations.Root = ($) => {
                     }
                 )
 
-                const $p_verrekenposten: s_out.Jaar['balans']['verrekenposten'] = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans.Verrekenposten).map(
+                const $p_verrekenposten: s_out.Jaar.balans.verrekenposten = p_.from.dictionary($v_bron_jaar.Jaarbeheer.Balans.Verrekenposten).map(
                     ($) => {
                         const bron_verrekenpost = $
                         const context = bron_verrekenpost

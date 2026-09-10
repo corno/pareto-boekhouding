@@ -279,8 +279,6 @@ export type Eerste_boekjaar_ = (
 ) => Eerste_boekjaar_.O
 }
 
-const p_decide_text = <B>($: string,  assign: ($: string) => B) => assign($)
-
 import p_change_context from 'pareto-core/refiner/specials/change_context'
 
 import p_variables from 'pareto-core/refiner/specials/variables'
@@ -483,8 +481,7 @@ export const Fiscaal: declarations.Fiscaal_ = ($, abort) => p_change_context(
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Fiscaal.Balans_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Activa':
@@ -648,8 +645,7 @@ export const Fiscaal: declarations.Fiscaal_ = ($, abort) => p_change_context(
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Fiscaal.Resultaat_Hoofdcategorieen.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Kosten':
@@ -923,8 +919,7 @@ export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, ab
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Grootboek_Categorieen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Activa':
@@ -1155,8 +1150,7 @@ export const Grootboek_Categorieen: declarations.Grootboek_Categorieen_ = ($, ab
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Grootboek_Categorieen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                                     switch ($t) {
                                                                         case 'Kosten':
@@ -1419,8 +1413,7 @@ export const Beheer: declarations.Beheer_ = ($, abort) => p_change_context(
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Beheer.BTW$mi_categorieen.l_dictionary.D.l_entry.BTW$mi_heffing => {
                                                                     switch ($t) {
                                                                         case 'Ja':
@@ -1668,8 +1661,7 @@ export const Beheer: declarations.Beheer_ = ($, abort) => p_change_context(
                                                                                         $,
                                                                                     ),
                                                                                 ),
-                                                                                ($) => p_decide_text(
-                                                                                    $['option']['token']['value'],
+                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                     ($t): s_out.Beheer.Grootboekrekeningen.Balans.l_dictionary.D.l_entry.Zijde => {
                                                                                         switch ($t) {
                                                                                             case 'Activa':
@@ -1841,8 +1833,7 @@ export const Beheer: declarations.Beheer_ = ($, abort) => p_change_context(
                                                                                         $,
                                                                                     ),
                                                                                 ),
-                                                                                ($) => p_decide_text(
-                                                                                    $['option']['token']['value'],
+                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                     ($t): s_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde => {
                                                                                         switch ($t) {
                                                                                             case 'Kosten':
@@ -1892,8 +1883,7 @@ export const Beheer: declarations.Beheer_ = ($, abort) => p_change_context(
                                                                                                                                         $,
                                                                                                                                     ),
                                                                                                                                 ),
-                                                                                                                                ($) => p_decide_text(
-                                                                                                                                    $['option']['token']['value'],
+                                                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                                                     ($t): s_out.Beheer.Grootboekrekeningen.Resultaat.l_dictionary.D.l_entry.Zijde.l_state.Kosten.Correctie_op_vennootschapsbelasting => {
                                                                                                                                         switch ($t) {
                                                                                                                                             case 'Ja':
@@ -2606,8 +2596,7 @@ export const Beheer: declarations.Beheer_ = ($, abort) => p_change_context(
                                                                                                                                                                                 $,
                                                                                                                                                                             ),
                                                                                                                                                                         ),
-                                                                                                                                                                        ($) => p_decide_text(
-                                                                                                                                                                            $['option']['token']['value'],
+                                                                                                                                                                        ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                                                                                             ($t): s_out.Beheer.Klanten.l_dictionary.D.l_entry.Projecten.l_dictionary.D.l_entry.Offertes.l_dictionary.D.l_entry.Opbrengsten.l_dictionary.D.l_entry.Type => {
                                                                                                                                                                                 switch ($t) {
                                                                                                                                                                                     case 'Project':
@@ -3332,8 +3321,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort) => p_change_conte
                                                                                         $,
                                                                                     ),
                                                                                 ),
-                                                                                ($) => p_decide_text(
-                                                                                    $['option']['token']['value'],
+                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                     ($t): s_out.Jaarbeheer.Resultaat.BTW_periodes.l_dictionary.D.l_entry.Status => {
                                                                                         switch ($t) {
                                                                                             case 'Aangegeven':
@@ -3810,8 +3798,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort) => p_change_conte
                                                                                         $,
                                                                                     ),
                                                                                 ),
-                                                                                ($) => p_decide_text(
-                                                                                    $['option']['token']['value'],
+                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                     ($t): s_out.Jaarbeheer.Balans.Bankrekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
@@ -4147,8 +4134,7 @@ export const Jaarbeheer: declarations.Jaarbeheer_ = ($, abort) => p_change_conte
                                                                                         $,
                                                                                     ),
                                                                                 ),
-                                                                                ($) => p_decide_text(
-                                                                                    $['option']['token']['value'],
+                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                     ($t): s_out.Jaarbeheer.Balans.Informele_rekeningen.l_dictionary.D.l_entry.Nieuw => {
                                                                                         switch ($t) {
                                                                                             case 'Ja':
@@ -4419,8 +4405,7 @@ export const Overige_balans_item: declarations.Overige_balans_item_ = ($, abort)
                                 $,
                             ),
                         ),
-                        ($) => p_decide_text(
-                            $['option']['token']['value'],
+                        ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                             ($t): s_out.Overige_balans_item.Nieuw => {
                                 switch ($t) {
                                     case 'Ja':
@@ -4635,8 +4620,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                                     switch ($t) {
                                                                         case 'Mutaties':
@@ -4824,8 +4808,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Brondocument => {
                                                                     switch ($t) {
                                                                         case 'Toegevoegd':
@@ -5017,8 +5000,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Bedrag => {
                                                                                                         switch ($t) {
                                                                                                             case 'Bekend':
@@ -5155,8 +5137,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                                                         switch ($t) {
                                                                                                             case 'Balans':
@@ -5316,8 +5297,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Handelstransacties.Inkopen.l_dictionary.D.l_entry.Type => {
                                                                     switch ($t) {
                                                                         case 'Bonnetje':
@@ -5650,8 +5630,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Afhandeling => {
                                                                     switch ($t) {
                                                                         case 'Mutaties':
@@ -5804,8 +5783,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Brondocument => {
                                                                     switch ($t) {
                                                                         case 'Toegevoegd':
@@ -5916,8 +5894,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                     $,
                                                                 ),
                                                             ),
-                                                            ($) => p_decide_text(
-                                                                $['option']['token']['value'],
+                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                 ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Contracttype => {
                                                                     switch ($t) {
                                                                         case 'Project':
@@ -6168,8 +6145,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.BTW$mi_regime => {
                                                                                                         switch ($t) {
                                                                                                             case 'Intracommunautair':
@@ -6316,8 +6292,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Contracttype => {
                                                                                                         switch ($t) {
                                                                                                             case 'Project':
@@ -6501,8 +6476,7 @@ export const Handelstransacties: declarations.Handelstransacties_ = ($, abort) =
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Handelstransacties.Verkopen.l_dictionary.D.l_entry.Regels.l_dictionary.D.l_entry.Type => {
                                                                                                         switch ($t) {
                                                                                                             case 'Opbrengsten':
@@ -6844,8 +6818,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort) => p_change_context(
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling => {
                                                                                                         switch ($t) {
                                                                                                             case 'Resultaat':
@@ -6877,8 +6850,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort) => p_change_context(
                                                                                                                                     $,
                                                                                                                                 ),
                                                                                                                             ),
-                                                                                                                            ($) => p_decide_text(
-                                                                                                                                $['option']['token']['value'],
+                                                                                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                                                 ($t): s_out.Mutaties.Verrekenposten.l_dictionary.D.l_entry.Mutaties.l_dictionary.D.l_entry.Afhandeling.l_state.Balans => {
                                                                                                                                     switch ($t) {
                                                                                                                                         case 'Informele rekening':
@@ -7142,8 +7114,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort) => p_change_context(
                                                                                                         $,
                                                                                                     ),
                                                                                                 ),
-                                                                                                ($) => p_decide_text(
-                                                                                                    $['option']['token']['value'],
+                                                                                                ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                     ($t): s_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_ => {
                                                                                                         switch ($t) {
                                                                                                             case 'Resultaat':
@@ -7175,8 +7146,7 @@ export const Mutaties: declarations.Mutaties_ = ($, abort) => p_change_context(
                                                                                                                                     $,
                                                                                                                                 ),
                                                                                                                             ),
-                                                                                                                            ($) => p_decide_text(
-                                                                                                                                $['option']['token']['value'],
+                                                                                                                            ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                                                                                                                 ($t): s_out.Mutaties.Bankrekeningen.l_dictionary.D.l_entry.Mutatie_Verwerkingen.l_dictionary.D.l_entry.type_.l_state.Balans => {
                                                                                                                                     switch ($t) {
                                                                                                                                         case 'Informele rekening':
@@ -7637,8 +7607,7 @@ export const Jaren: declarations.Jaren_ = ($, abort) => p_change_context(
                                                 $,
                                             ),
                                         ),
-                                        ($) => p_decide_text(
-                                            $['option']['token']['value'],
+                                        ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                                             ($t): s_out.Jaren.l_dictionary.D.l_entry.Afgesloten => {
                                                 switch ($t) {
                                                     case 'Ja':
@@ -7878,8 +7847,7 @@ export const Rekening_Mutatie: declarations.Rekening_Mutatie_ = ($, abort) => p_
                                 $,
                             ),
                         ),
-                        ($) => p_decide_text(
-                            $['option']['token']['value'],
+                        ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
                             ($t): s_out.Rekening_Mutatie.type_ => {
                                 switch ($t) {
                                     case 'Inkoop':
@@ -7968,8 +7936,7 @@ export const Eerste_boekjaar: declarations.Eerste_boekjaar_ = ($, abort) => p_ch
             $,
         ),
     ),
-    ($) => p_decide_text(
-        $['option']['token']['value'],
+    ($) => p_.from.text($['option']['token']['value']).deprecated_to_any_value(
         ($t): s_out.Eerste_boekjaar => {
             switch ($t) {
                 case 'Ja':

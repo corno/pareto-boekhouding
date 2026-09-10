@@ -5,7 +5,10 @@ import type * as s_primitives from "../primitives/schema.js"
 
 export type Root = {
     'bron': s_boekhouding.Root
-    'jaren': p_.Dictionary<Jaar>
+    'jaren': Root.jaren
+}
+export namespace Root {
+    export type jaren = p_.Dictionary<Jaar>
 }
 
 export type Bedrag_in_Euro = s_primitives.Fractional_Decimal
@@ -41,17 +44,27 @@ export type Jaar = {
     'handelstransacties': Jaar.handelstransacties
     'inkoopsaldo': Temp_Samenvatting
     'verkoopsaldo': Temp_Samenvatting
-    'btw': {
+    'btw': Jaar.btw
+    'balans': Jaar.balans
+}
+export namespace Jaar {
+    export type btw = {
         'btw periodes': p_.Dictionary<Btw_Periode>
         'te veel aangegeven': Temp_Samenvatting,
         'nog aan te geven': Temp_Samenvatting,
         'openstaand': Temp_Samenvatting,
     }
-    'balans': {
-        'overige balans items': p_.Dictionary<Overige_Balans_Item>
-        'bankrekeningen': p_.Dictionary<Bankrekening>
-        'informele rekeningen': p_.Dictionary<Informele_Rekening>
-        'verrekenposten': p_.Dictionary<Verreken_Post>
+    export type balans = {
+        'overige balans items': balans.overige_balans_items
+        'bankrekeningen': balans.bankrekeningen
+        'informele rekeningen': balans.informele_rekeningen
+        'verrekenposten': balans.verrekenposten
+    }
+    export namespace balans {
+        export type overige_balans_items = p_.Dictionary<Overige_Balans_Item>
+        export type verrekenposten = p_.Dictionary<Verreken_Post>
+        export type informele_rekeningen = p_.Dictionary<Informele_Rekening>
+        export type bankrekeningen = p_.Dictionary<Bankrekening>
     }
 }
 
@@ -93,46 +106,57 @@ export type Btw_Periode = {
         'betalingen': Bedrag_in_Euro
         'verrekeningen': Bedrag_in_Euro
     }
-    'status':
-    | ['openstaand', {
-        'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Openstaand
-    }]
-    | ['aangegeven', {
-        'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Aangegeven
-        'totaal aangegeven + afronding': Bedrag_in_Euro
-        'todo niet volledig afgesloten': boolean
-        'te veel aangegeven': Bedrag_in_Euro
-    }]
+    'status': Btw_Periode.status
+}
+export namespace Btw_Periode {
+    export type status =
+        | ['openstaand', {
+            'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Openstaand
+        }]
+        | ['aangegeven', {
+            'bron': s_boekhouding.Jaarbeheer.Resultaat.BTW_periodes.D.Status.Aangegeven
+            'totaal aangegeven + afronding': Bedrag_in_Euro
+            'todo niet volledig afgesloten': boolean
+            'te veel aangegeven': Bedrag_in_Euro
+        }]
 }
 
 export type Overige_Balans_Item = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Overige_balans_items.D
-    'references to me': {
-        'inkopen': p_.Dictionary<{
+    'references to me': Overige_Balans_Item.references_to_me
+    'aggregaties': Overige_Balans_Item.aggregaties
+    'eindsaldo': Bedrag_in_Euro
+    'overgenomen': Bedrag_in_Euro
+    'todo': boolean
+}
+export namespace Overige_Balans_Item {
+    export type references_to_me = {
+        'inkopen': references_to_me.inkopen
+        'verkopen': references_to_me.verkopen
+        'mutaties': references_to_me.mutaties
+    }
+    export namespace references_to_me {
+        export type inkopen = p_.Dictionary<{
             'regels': p_.Dictionary<{
                 'bron': Inkoop_Regel
                 'bedrag': Bedrag_in_Euro
             }>
         }>
-        'verkopen': p_.Dictionary<{
+        export type verkopen = p_.Dictionary<{
             'regels': p_.Dictionary<{
                 'bron': Verkoop_Regel
                 'bedrag': Bedrag_in_Euro
             }>
         }>
-        'mutaties': p_.Optional_Value<s_boekhouding.Mutaties.Overige_Balans_Items.D>
+        export type mutaties = p_.Optional_Value<s_boekhouding.Mutaties.Overige_Balans_Items.D>
     }
-    'aggregaties': {
+    export type aggregaties = {
         'mutaties': Bedrag_in_Euro
         'inkopen': Bedrag_in_Euro
         'verkopen': Bedrag_in_Euro
         // 'totaal': Bedrag_in_Euro
     }
-    'eindsaldo': Bedrag_in_Euro
-    'overgenomen': Bedrag_in_Euro
-    'todo': boolean
 }
-
 export type Bankrekening = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Bankrekeningen.D
     'verwerking bron': p_.Optional_Value<s_boekhouding.Mutaties.Bankrekeningen.D> /** als de bankrekening ook is aangemaakt in de verwerkeringen is deze hier beschikbaar */
@@ -151,16 +175,7 @@ export type Bankrekening_Mutatie = {
 
 export type Informele_Rekening = {
     'bron': s_boekhouding.Jaarbeheer.Balans.Informele_rekeningen.D
-    'references to me': {
-        'inkopen': p_.Dictionary<Inkoop>
-        'verkopen': p_.Dictionary<Verkoop>
-        'bankrekeningen': p_.Dictionary<{
-            'mutatie verwerkingen': p_.Dictionary<s_boekhouding.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D>
-        }>
-        'verrekenposten': p_.Dictionary<{
-            'mutaties': p_.Dictionary<s_boekhouding.Mutaties.Verrekenposten.D.Mutaties.D>
-        }>
-    }
+    'references to me': Informele_Rekening.references_to_me
     'aggregaties': {
         'inkopen': Bedrag_in_Euro
         'verkopen': Bedrag_in_Euro
@@ -172,6 +187,24 @@ export type Informele_Rekening = {
     'overgenomen': Bedrag_in_Euro
     'openstaand': Bedrag_in_Euro
     'todo': boolean
+}
+export namespace Informele_Rekening {
+    export type references_to_me = {
+        'inkopen': references_to_me.inkopen
+        'verkopen': references_to_me.verkopen
+        'bankrekeningen': references_to_me.bankrekeningen
+        'verrekenposten': references_to_me.verrekenposten
+    }
+    export namespace references_to_me {
+        export type inkopen = p_.Dictionary<Inkoop>
+        export type verkopen = p_.Dictionary<Verkoop>
+        export type bankrekeningen = p_.Dictionary<{
+            'mutatie verwerkingen': p_.Dictionary<s_boekhouding.Mutaties.Bankrekeningen.D.Mutatie_Verwerkingen.D>
+        }>
+        export type verrekenposten = p_.Dictionary<{
+            'mutaties': p_.Dictionary<s_boekhouding.Mutaties.Verrekenposten.D.Mutaties.D>
+        }>
+    }
 }
 
 export type Verreken_Post = {
