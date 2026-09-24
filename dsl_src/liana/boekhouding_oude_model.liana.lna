@@ -1,0 +1,1486 @@
+(
+    `schema`: | `schema` (
+        `schema imports`: {}
+        `resolver imports`: {}
+        `globals`: (
+            `complexity`: | `unconstrained` ~
+            `text types`: {
+                'Pseudo Reference': (
+                    `type`: | `single line` ~
+                    `link`: | `no` ~
+                )
+                'Bestandsnaam': (
+                    `type`: | `single line` ~
+                    `link`: | `no` ~
+                )
+                'Wachtwoord': (
+                    `type`: | `single line` ~
+                    `link`: | `no` ~
+                )
+                'Benaming': (
+                    `type`: | `single line` ~
+                    `link`: | `no` ~
+                )
+                'Omschrijving': (
+                    `type`: | `multi line` ~
+                    `link`: | `no` ~
+                )
+                'text': (
+                    `type`: | `single line` ~
+                    `link`: | `no` ~
+                )
+            }
+            `simple types`: {
+                'Bedrag': (
+                    `type`: | `number` (
+                        `precision`: | `exact` (
+                            `number of fractional digits`: _
+                            `type`: | `integer` ~
+                        )
+                    )
+                )
+                'Dagen': (
+                    `type`: | `number` (
+                        `precision`: | `exact` (
+                            `number of fractional digits`: _
+                            `type`: | `positive natural` ~
+                        )
+                    )
+                )
+                'Datum': (
+                    `type`: | `number` (
+                        `precision`: | `exact` (
+                            `number of fractional digits`: _
+                            `type`: | `integer` ~
+                        )
+                    )
+                )
+                'Promillage': (
+                    `type`: | `number` (
+                        `precision`: | `exact` (
+                            `number of fractional digits`: _
+                            `type`: | `natural` ~
+                        )
+                    )
+                )
+            }
+        )
+        `modules`: {
+            'Root': (
+                `root value`: | `group` {
+                    'Bankrekeningen': (
+                        `description`: _
+                        `value`: | `dictionary` (
+                            `value`: | `group` {}
+                        )
+                    )
+                    'Beheer': (
+                        `description`: _
+                        `value`: | `group` {
+                            'Balans': (
+                                `description`: _
+                                `value`: | `group` {
+                                    'Grootboekrekeningen': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Hoofdcategorie': (
+                                                    `description`: _
+                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                )
+                                                'Subcategorie': (
+                                                    `description`: _
+                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                )
+                                                'Zijde': (
+                                                    `description`: _
+                                                    `value`: | `state` (
+                                                        `options`: {
+                                                            'Activa': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                            'Passiva': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                        }
+                                                        `results`: _
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                    'Hoofdcategorieen': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Zijde': (
+                                                    `description`: _
+                                                    `value`: | `state` (
+                                                        `options`: {
+                                                            'Activa': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                            'Passiva': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                        }
+                                                        `results`: _
+                                                    )
+                                                )
+                                                'Subcategorieen': (
+                                                    `description`: _
+                                                    `value`: | `dictionary` (
+                                                        `value`: | `group` {
+                                                            'Hoofdcategorie fiscus': (
+                                                                `description`: _
+                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                            )
+                                                            'Subcategorie fiscus': (
+                                                                `description`: _
+                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                            )
+                                                        }
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                    'Hoofdcategorieen fiscus': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Zijde': (
+                                                    `description`: _
+                                                    `value`: | `state` (
+                                                        `options`: {
+                                                            'Activa': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                            'Passiva': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                        }
+                                                        `results`: _
+                                                    )
+                                                )
+                                                'Subcategorieen': (
+                                                    `description`: _
+                                                    `value`: | `dictionary` (
+                                                        `value`: | `group` {}
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                }
+                            )
+                            'BTW-categorieen': (
+                                `description`: _
+                                `value`: | `dictionary` (
+                                    `value`: | `group` {
+                                        'BTW-heffing': (
+                                            `description`: _
+                                            `value`: | `state` (
+                                                `options`: {
+                                                    'Ja': (
+                                                        `constraints`: _
+                                                        `description`: _
+                                                        `value`: | `group` {
+                                                            'BTW-promillage': (
+                                                                `description`: _
+                                                                `value`: | `simple` | `global` 'Promillage'
+                                                            )
+                                                        }
+                                                    )
+                                                    'Nee': (
+                                                        `constraints`: _
+                                                        `description`: _
+                                                        `value`: | `group` {}
+                                                    )
+                                                }
+                                                `results`: _
+                                            )
+                                        )
+                                    }
+                                )
+                            )
+                            'Gebruikers': (
+                                `description`: _
+                                `value`: | `dictionary` (
+                                    `value`: | `group` {
+                                        'Volledige naam': (
+                                            `description`: _
+                                            `value`: | `text` | `global` 'Benaming'
+                                        )
+                                        'Wachtwoord': (
+                                            `description`: _
+                                            `value`: | `text` | `global` 'Wachtwoord'
+                                        )
+                                    }
+                                )
+                            )
+                            'Huidige datum': (
+                                `description`: _
+                                `value`: | `simple` | `global` 'Datum'
+                            )
+                            'Resultaat': (
+                                `description`: _
+                                `value`: | `group` {
+                                    'Correctietypes vennootschapsbelasting': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Te corrigeren promillage': (
+                                                    `description`: _
+                                                    `value`: | `simple` | `global` 'Promillage'
+                                                )
+                                            }
+                                        )
+                                    )
+                                    'Grootboekrekeningen': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Hoofdcategorie': (
+                                                    `description`: _
+                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                )
+                                                'Subcategorie': (
+                                                    `description`: _
+                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                )
+                                                'Zijde': (
+                                                    `description`: _
+                                                    `value`: | `state` (
+                                                        `options`: {
+                                                            'Kosten': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {
+                                                                    'Correctie op vennootschapsbelasting': (
+                                                                        `description`: _
+                                                                        `value`: | `state` (
+                                                                            `options`: {
+                                                                                'Ja': (
+                                                                                    `constraints`: _
+                                                                                    `description`: _
+                                                                                    `value`: | `group` {
+                                                                                        'Correctietype': (
+                                                                                            `description`: _
+                                                                                            `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                        )
+                                                                                    }
+                                                                                )
+                                                                                'Nee': (
+                                                                                    `constraints`: _
+                                                                                    `description`: _
+                                                                                    `value`: | `group` {}
+                                                                                )
+                                                                            }
+                                                                            `results`: _
+                                                                        )
+                                                                    )
+                                                                }
+                                                            )
+                                                            'Opbrengsten': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                        }
+                                                        `results`: _
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                    'Hoofdcategorieen': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Zijde': (
+                                                    `description`: _
+                                                    `value`: | `state` (
+                                                        `options`: {
+                                                            'Kosten': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                            'Opbrengsten': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                        }
+                                                        `results`: _
+                                                    )
+                                                )
+                                                'Subcategorieen': (
+                                                    `description`: _
+                                                    `value`: | `dictionary` (
+                                                        `value`: | `group` {
+                                                            'Hoofdcategorie fiscus': (
+                                                                `description`: _
+                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                            )
+                                                            'Subcategorie fiscus': (
+                                                                `description`: _
+                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                            )
+                                                        }
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                    'Hoofdcategorieen fiscus': (
+                                        `description`: _
+                                        `value`: | `dictionary` (
+                                            `value`: | `group` {
+                                                'Zijde': (
+                                                    `description`: _
+                                                    `value`: | `state` (
+                                                        `options`: {
+                                                            'Kosten': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                            'Opbrengsten': (
+                                                                `constraints`: _
+                                                                `description`: _
+                                                                `value`: | `group` {}
+                                                            )
+                                                        }
+                                                        `results`: _
+                                                    )
+                                                )
+                                                'Subcategorieen': (
+                                                    `description`: _
+                                                    `value`: | `dictionary` (
+                                                        `value`: | `group` {}
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
+                                }
+                            )
+                        }
+                    )
+                    'Informele rekeningen': (
+                        `description`: _
+                        `value`: | `dictionary` (
+                            `value`: | `group` {}
+                        )
+                    )
+                    'Jaren': (
+                        `description`: _
+                        `value`: | `dictionary` (
+                            `value`: | `group` {
+                                'Afgesloten': (
+                                    `description`: _
+                                    `value`: | `state` (
+                                        `options`: {
+                                            'Ja': (
+                                                `constraints`: _
+                                                `description`: _
+                                                `value`: | `group` {}
+                                            )
+                                            'Nee': (
+                                                `constraints`: _
+                                                `description`: _
+                                                `value`: | `group` {}
+                                            )
+                                        }
+                                        `results`: _
+                                    )
+                                )
+                                'Balans grootboekrekeningen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Type': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Bankrekening': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Overig': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Informele rekening': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Bankrekeningen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Beginsaldo': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Bedrag'
+                                            )
+                                            'Grootboekrekening': (
+                                                `description`: _
+                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                            )
+                                            'Mutaties': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Bedrag': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Bedrag'
+                                                        )
+                                                        'Datum': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Datum'
+                                                        )
+                                                        'Omschrijving': (
+                                                            `description`: _
+                                                            `value`: | `text` | `global` 'Omschrijving'
+                                                        )
+                                                        'Status': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Nog te verwerken': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {}
+                                                                    )
+                                                                    'Verwerkt': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Afhandeling': (
+                                                                                `description`: _
+                                                                                `value`: | `state` (
+                                                                                    `options`: {
+                                                                                        'Inkoop': (
+                                                                                            `constraints`: _
+                                                                                            `description`: _
+                                                                                            `value`: | `group` {
+                                                                                                'Jaar': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                                'Inkoop': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                            }
+                                                                                        )
+                                                                                        'Verrekenpost': (
+                                                                                            `constraints`: _
+                                                                                            `description`: _
+                                                                                            `value`: | `group` {
+                                                                                                'Verrekenpost': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                            }
+                                                                                        )
+                                                                                        'BTW-periode': (
+                                                                                            `constraints`: _
+                                                                                            `description`: _
+                                                                                            `value`: | `group` {
+                                                                                                'Jaar': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                                'BTW-periode': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                            }
+                                                                                        )
+                                                                                        'Verkoop': (
+                                                                                            `constraints`: _
+                                                                                            `description`: _
+                                                                                            `value`: | `group` {
+                                                                                                'Jaar': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                                'Verkoop': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                            }
+                                                                                        )
+                                                                                        'Informele rekening': (
+                                                                                            `constraints`: _
+                                                                                            `description`: _
+                                                                                            `value`: | `group` {
+                                                                                                'Informele rekening': (
+                                                                                                    `description`: _
+                                                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                                                )
+                                                                                            }
+                                                                                        )
+                                                                                    }
+                                                                                    `results`: _
+                                                                                )
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                            'Nieuw': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Ja': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Nee': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Jaar': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                                'Rekening': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Beginsaldo nog aan te geven BTW': (
+                                    `description`: _
+                                    `value`: | `simple` | `global` 'Bedrag'
+                                )
+                                'Beginsaldo winstreserve': (
+                                    `description`: _
+                                    `value`: | `simple` | `global` 'Bedrag'
+                                )
+                                'BTW periode saldo': (
+                                    `description`: _
+                                    `value`: | `group` {
+                                        'Grootboekrekening': (
+                                            `description`: _
+                                            `value`: | `text` | `global` 'Pseudo Reference'
+                                        )
+                                    }
+                                )
+                                'BTW periodes': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            '1. BTW-categorieen': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {}
+                                                )
+                                            )
+                                            'Documenten': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Bestand': (
+                                                            `description`: _
+                                                            `value`: | `component` (
+                                                                `type`: | `internal` 'Bestandsnaam'
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                            'Omschrijving': (
+                                                `description`: _
+                                                `value`: | `text` | `global` 'Omschrijving'
+                                            )
+                                            'Status': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Aangegeven': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Afronding': (
+                                                                    `description`: _
+                                                                    `value`: | `simple` | `global` 'Bedrag'
+                                                                )
+                                                                'Bedrag': (
+                                                                    `description`: _
+                                                                    `value`: | `simple` | `global` 'Bedrag'
+                                                                )
+                                                                'Datum': (
+                                                                    `description`: _
+                                                                    `value`: | `simple` | `global` 'Datum'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Openstaand': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Eerste boekjaar': (
+                                    `description`: _
+                                    `value`: | `state` (
+                                        `options`: {
+                                            'Ja': (
+                                                `constraints`: _
+                                                `description`: _
+                                                `value`: | `group` {}
+                                            )
+                                            'Nee': (
+                                                `constraints`: _
+                                                `description`: _
+                                                `value`: | `group` {
+                                                    'Vorig boekjaar': (
+                                                        `description`: _
+                                                        `value`: | `text` | `global` 'Pseudo Reference'
+                                                    )
+                                                }
+                                            )
+                                        }
+                                        `results`: _
+                                    )
+                                )
+                                'Grootboekrekening voor BTW afrondingen': (
+                                    `description`: _
+                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                )
+                                'Grootboekrekening voor nog aan te geven BTW': (
+                                    `description`: _
+                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                )
+                                'Grootboekrekening voor resultaat dit jaar': (
+                                    `description`: _
+                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                )
+                                'Grootboekrekening voor winstreserve': (
+                                    `description`: _
+                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                )
+                                'Informele rekeningen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Beginsaldo': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Bedrag'
+                                            )
+                                            'Grootboekrekening': (
+                                                `description`: _
+                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                            )
+                                            'Nieuw': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Ja': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Nee': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Jaar': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                                'Rekening': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Inkopen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Afhandeling': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Nog te betalen': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Betalingstermijn': (
+                                                                    `description`: _
+                                                                    `value`: | `simple` | `global` 'Dagen'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Mutaties': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Rekening courant': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Rekening courant': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                            'BTW-regime': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Binnenland: heffing verlegd': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'BTW-periode': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Geen BTW van toepassing': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'BTW-periode': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Import van buiten de EU': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'BTW-periode': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Intracommunautair': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'BTW-periode': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Standaard': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'BTW-periode': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                            'Brondocument': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Toegevoegd': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Document': (
+                                                                    `description`: _
+                                                                    `value`: | `component` (
+                                                                        `type`: | `internal` 'Bestandsnaam'
+                                                                        `results`: _
+                                                                    )
+                                                                )
+                                                            }
+                                                        )
+                                                        'Niet van toepassing': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Ontbreekt': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Nog toevoegen': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                            'Datum': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Datum'
+                                            )
+                                            'Regels': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Bedrag': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Bekend': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'BTW-bedrag': (
+                                                                                `description`: _
+                                                                                `value`: | `simple` | `global` 'Bedrag'
+                                                                            )
+                                                                            'Bedrag inclusief geheven BTW': (
+                                                                                `description`: _
+                                                                                `value`: | `simple` | `global` 'Bedrag'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                        'Omschrijving': (
+                                                            `description`: _
+                                                            `value`: | `text` | `global` 'Omschrijving'
+                                                        )
+                                                        'Type': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Balans': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Balans item': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'Kosten': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Grootboekrekening': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                            'Type': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Bonnetje': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Inkoop (met crediteur)': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Crediteur': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                                'Factuurnummer': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Benaming'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Loonheffing': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Ronde': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Salaris': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Ronde': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                                'Medewerker': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Inkoop saldo': (
+                                    `description`: _
+                                    `value`: | `group` {
+                                        'Grootboekrekening': (
+                                            `description`: _
+                                            `value`: | `text` | `global` 'Pseudo Reference'
+                                        )
+                                    }
+                                )
+                                'Overige balans items': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Beginsaldo': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Bedrag'
+                                            )
+                                            'Grootboekrekening': (
+                                                `description`: _
+                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                            )
+                                            'Memoriaal boekingen': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Bedrag': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Bedrag'
+                                                        )
+                                                        'Datum': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Datum'
+                                                        )
+                                                        'Grootboekrekening': (
+                                                            `description`: _
+                                                            `value`: | `text` | `global` 'Pseudo Reference'
+                                                        )
+                                                        'Omschrijving': (
+                                                            `description`: _
+                                                            `value`: | `text` | `global` 'Omschrijving'
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                            'Nieuw': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Ja': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Nee': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Jaar': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                                'Balans item': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Resultaat grootboekrekeningen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {}
+                                    )
+                                )
+                                'Salarisrondes': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {}
+                                    )
+                                )
+                                'Startdatum boekjaar': (
+                                    `description`: _
+                                    `value`: | `simple` | `global` 'Datum'
+                                )
+                                'Verkoop saldo': (
+                                    `description`: _
+                                    `value`: | `group` {
+                                        'Grootboekrekening': (
+                                            `description`: _
+                                            `value`: | `text` | `global` 'Pseudo Reference'
+                                        )
+                                    }
+                                )
+                                'Verkopen': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Afhandeling': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Mutaties': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {}
+                                                        )
+                                                        'Rekening courant': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Rekening courant': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                            'Betalingstermijn': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Dagen'
+                                            )
+                                            'BTW-periode': (
+                                                `description`: _
+                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                            )
+                                            'Brondocument': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Toegevoegd': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Document': (
+                                                                    `description`: _
+                                                                    `value`: | `component` (
+                                                                        `type`: | `internal` 'Bestandsnaam'
+                                                                        `results`: _
+                                                                    )
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                            'Contracttype': (
+                                                `description`: _
+                                                `value`: | `state` (
+                                                    `options`: {
+                                                        'Project': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Project': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                                'Offerte': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                        'Licentieovereenkomst': (
+                                                            `constraints`: _
+                                                            `description`: _
+                                                            `value`: | `group` {
+                                                                'Overeenkomst': (
+                                                                    `description`: _
+                                                                    `value`: | `text` | `global` 'Pseudo Reference'
+                                                                )
+                                                            }
+                                                        )
+                                                    }
+                                                    `results`: _
+                                                )
+                                            )
+                                            'Datum': (
+                                                `description`: _
+                                                `value`: | `simple` | `global` 'Datum'
+                                            )
+                                            'Debiteur': (
+                                                `description`: _
+                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                            )
+                                            'Regels': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'BTW-regime': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Intracommunautair': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {}
+                                                                    )
+                                                                    'Standaard': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'BTW-categorie': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'Binnenland: heffing verlegd': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {}
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                        'Bedrag exclusief BTW': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Bedrag'
+                                                        )
+                                                        'Contracttype': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Project': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Opbrengst': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'Los': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {}
+                                                                    )
+                                                                    'Licentieovereenkomst': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Periode': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                        'Omschrijving': (
+                                                            `description`: _
+                                                            `value`: | `text` | `global` 'Omschrijving'
+                                                        )
+                                                        'Type': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Opbrengsten': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Grootboekrekening': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'Balans': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Balans item': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Verrekenposten': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Mutaties': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Bedrag': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Bedrag'
+                                                        )
+                                                        'Afhandeling': (
+                                                            `description`: _
+                                                            `value`: | `state` (
+                                                                `options`: {
+                                                                    'Inkoop': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Jaar': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                            'Inkoop': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'Informele rekening': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Informele rekening': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'Verkoop': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Jaar': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                            'Verkoop': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                    'BTW-periode': (
+                                                                        `constraints`: _
+                                                                        `description`: _
+                                                                        `value`: | `group` {
+                                                                            'Jaar': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                            'BTW-periode': (
+                                                                                `description`: _
+                                                                                `value`: | `text` | `global` 'Pseudo Reference'
+                                                                            )
+                                                                        }
+                                                                    )
+                                                                }
+                                                                `results`: _
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                            }
+                        )
+                    )
+                    'Klanten': (
+                        `description`: _
+                        `value`: | `dictionary` (
+                            `value`: | `group` {
+                                'Licentieovereenkomsten': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Periodes': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Bedrag': (
+                                                            `description`: _
+                                                            `value`: | `simple` | `global` 'Bedrag'
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                                'Projecten': (
+                                    `description`: _
+                                    `value`: | `dictionary` (
+                                        `value`: | `group` {
+                                            'Offertes': (
+                                                `description`: _
+                                                `value`: | `dictionary` (
+                                                    `value`: | `group` {
+                                                        'Opbrengsten': (
+                                                            `description`: _
+                                                            `value`: | `dictionary` (
+                                                                `value`: | `group` {
+                                                                    'Type': (
+                                                                        `description`: _
+                                                                        `value`: | `state` (
+                                                                            `options`: {
+                                                                                'Project': (
+                                                                                    `constraints`: _
+                                                                                    `description`: _
+                                                                                    `value`: | `group` {
+                                                                                        'Bedrag': (
+                                                                                            `description`: _
+                                                                                            `value`: | `simple` | `global` 'Bedrag'
+                                                                                        )
+                                                                                        'Betaaldatum': (
+                                                                                            `description`: _
+                                                                                            `value`: | `simple` | `global` 'Datum'
+                                                                                        )
+                                                                                    }
+                                                                                )
+                                                                            }
+                                                                            `results`: _
+                                                                        )
+                                                                    )
+                                                                }
+                                                            )
+                                                        )
+                                                    }
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                            }
+                        )
+                    )
+                    'Leveranciers': (
+                        `description`: _
+                        `value`: | `dictionary` (
+                            `value`: | `group` {}
+                        )
+                    )
+                    'Medewerkers': (
+                        `description`: _
+                        `value`: | `dictionary` (
+                            `value`: | `group` {}
+                        )
+                    )
+                }
+            )
+            'Bestandsnaam': (
+                `root value`: | `group` {
+                    'stem': (
+                        `description`: _
+                        `value`: | `text` | `global` 'text'
+                    )
+                    'extension': (
+                        `description`: _
+                        `value`: | `text` | `global` 'text'
+                    )
+                }
+            )
+        }
+        `complexity`: | `unconstrained` ~
+    )
+    `schema path`: [ ]
+    `complexity`: | `constrained` (
+        `module resolver`: "Root"
+    )
+)
