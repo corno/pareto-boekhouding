@@ -5,11 +5,11 @@ import * as p_di from 'pareto-core/schema'
 
 import * as p_i from 'pareto-core/__internal/Abort'
 
-import * as i_generic from "liana-core/modules/value_unmarshalling/schemas/unmarshalling/schema"
+import * as i_generic from "liana-runtime/modules/value_unmarshalling/schemas/unmarshalling/schema"
 
 import * as i_out from "../schema.js"
 
-import * as i_in from "astn-core/modules/deserialization/schemas/parse_tree/schema"
+import * as i_in from "astn-runtime/modules/deserialization/schemas/parse_tree/schema"
 
 namespace declarations {
 export namespace Root_ {
@@ -285,9 +285,9 @@ import p_variables from 'pareto-core/refiner/specials/variables'
 
 import * as s_out from "../schema.js"
 
-import * as v_unmarshalled_from_parse_tree from "liana-core/modules/value_unmarshalling/schemas/unmarshalled_value/refiners/astn_parse_tree"
+import * as v_unmarshalled_from_parse_tree from "liana-runtime/modules/value_unmarshalling/schemas/unmarshalled_value/refiners/astn_parse_tree"
 
-import * as v_parse_tree_to_location from "astn-core/modules/deserialization/schemas/parse_tree/transformers/start_token_range"
+import * as v_parse_tree_to_location from "astn-runtime/modules/deserialization/schemas/parse_tree/transformers/start_token_range"
 
 export const Root: declarations.Root_ = ($, abort) => p_change_context(
     v_unmarshalled_from_parse_tree.Verbose_Group(

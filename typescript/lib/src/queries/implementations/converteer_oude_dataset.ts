@@ -11,11 +11,11 @@ import * as r_boekhouding_oude_model_from_loc from "../../modules/boekhouding_ou
 import * as r_boekhouding_resolved_from_boekhouding_oude_model from "../../schemas/boekhouding_resolved/refiners/boekhouding_oude_model.js"
 import * as t_boekhouding_resolved_to_paragraph from "../../modules/boekhouding/schemas/resolved/transformers/paragraph.js"
 
-import * as ser_unresolved_document_deserialization from "liana-core/modules/unresolved_document_deserialization/schemas/unresolved_document_deserialization/serializers"
-import * as t_unresolved_document_deserialization_to_location from "liana-core/modules/unresolved_document_deserialization/schemas/unresolved_document_deserialization/transformers/location"
-import * as ser_location from "astn-core/modules/deserialization/schemas/location/serializers"
+import * as ser_unresolved_document_deserialization from "liana-runtime/modules/unresolved_document_deserialization/schemas/unresolved_document_deserialization/serializers"
+import * as t_unresolved_document_deserialization_to_location from "liana-runtime/modules/unresolved_document_deserialization/schemas/unresolved_document_deserialization/transformers/location"
+import * as ser_location from "astn-runtime/modules/deserialization/schemas/location/serializers"
 import * as ser_path from "pareto-filesystem-unrestricted-api/modules/unrestricted/schemas/path/serializers"
-import * as ser_resolving from "liana-core/modules/resolved_document_deserialization/schemas/resolving/serializers"
+import * as ser_resolving from "liana-runtime/modules/resolved_document_deserialization/schemas/resolving/serializers"
 
 //shorthands
 import * as sh from "pareto-fountain-pen/modules/paragraph/schemas/paragraph/shorthands/deprecated"

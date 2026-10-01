@@ -2,7 +2,7 @@ import * as p_ from 'pareto-core/refiner'
 
 //schemas
 import type * as s_in from "../../../modules/boekhouding_oude_model/schemas/unconstrained/schema.js"
-import type * as s_function from "liana-core/modules/resolved_document_deserialization/schemas/resolving/schema"
+import type * as s_function from "liana-runtime/modules/resolved_document_deserialization/schemas/resolving/schema"
 import type * as s_out from "../schema.js"
 
 namespace declarations {

@@ -91,7 +91,7 @@ namespace declarations {
 
 
 //shorthands
-import * as sh from 'liana-core/temp/shorthand_helpers/unresolved_data'
+import * as sh from 'liana-runtime/temp/shorthand_helpers/unresolved_data'
 
 const fix_date: p_temp.Transformer<
     number,

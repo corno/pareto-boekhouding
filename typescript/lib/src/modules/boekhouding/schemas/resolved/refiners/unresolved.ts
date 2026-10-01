@@ -6,7 +6,7 @@ import * as p_i from 'pareto-core/__internal/Abort'
 import * as p_di from 'pareto-core/schema'
 import * as p_ri from 'pareto-core/refiner'
 
-import * as i_generic from "liana-core/modules/resolved_document_deserialization/schemas/resolving/schema"
+import * as i_generic from "liana-runtime/modules/resolved_document_deserialization/schemas/resolving/schema"
 
 import * as i_resolved from "../schema.js"
 
